@@ -1,0 +1,27 @@
+{
+    "nearlmod:NearlStrike": {
+        "NAME": "打击",
+        "DESCRIPTION": "造成 !D! 点伤害。",
+        "UPGRADE_DESCRIPTION": ""
+    },
+    "nearlmod:NearlDefend": {
+        "NAME": "防御",
+        "DESCRIPTION": "获得 !B! 点 格挡 。",
+        "UPGRADE_DESCRIPTION": ""
+    },
+    "nearlmod:NightScouringGleam": {
+        "NAME": "逐夜烁光",
+        "DESCRIPTION": "造成 !D! 点伤害。 NL 令目标失去 99 点力量。 NL 如果你处于剑枪形态，改为群体攻击。 NL 消耗。",
+        "UPGRADE_DESCRIPTION": ""
+    },
+    "nearlmod:SwitchType": {
+        "NAME": "切换形态",
+        "DESCRIPTION": "切换你的 形态 。",
+        "UPGRADE_DESCRIPTION": ""
+    },
+    "nearlmod:MajestyLight": {
+        "NAME": "手执威光",
+        "DESCRIPTION": "使用 nearlmod:光 ，然后获得 !M! 层 nearlmod:光 。",
+        "UPGRADE_DESCRIPTION": ""
+    }
+}

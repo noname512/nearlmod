@@ -103,7 +103,7 @@ public class NLMOD implements EditCardsSubscriber, EditCharactersSubscriber, Edi
         // Basic.
         BaseMod.addCard(new NearlStrike()); // 打击
         BaseMod.addCard(new NearlDefend()); // 防御
-        // BaseMod.addCard(new SwitchType()); // 形态切换
+        BaseMod.addCard(new SwitchType()); // 形态切换
         BaseMod.addCard(new MajestyLight()); // 手执威光
         BaseMod.addCard(new NightScouringGleam()); // 逐夜烁光
     }
@@ -135,5 +135,7 @@ public class NLMOD implements EditCardsSubscriber, EditCharactersSubscriber, Edi
     public void receiveEditStrings() {
         String cardStrings = Gdx.files.internal("strings/cards.json").readString(String.valueOf(StandardCharsets.UTF_8));
         BaseMod.loadCustomStrings(CardStrings.class, cardStrings);
+        String powerStrings = Gdx.files.internal("strings/powers.json").readString(String.valueOf(StandardCharsets.UTF_8));
+        BaseMod.loadCustomStrings(PowerStrings.class, powerStrings);
     }
 }

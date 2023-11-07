@@ -2,12 +2,16 @@ nearlmod\cards\NearlStrike.class
 nearlmod\powers\LightPower.class
 nearlmod\patches\NearlEnum.class
 nearlmod\NLMOD$1.class
+nearlmod\powers\DefMode.class
 nearlmod\cards\NearlDefend.class
+nearlmod\powers\AtkMode.class
+nearlmod\cards\SwitchType.class
 nearlmod\cards\AbstractNearlCard.class
 nearlmod\cards\MajestyLight.class
 nearlmod\patches\LibraryTypeEnum.class
 nearlmod\cards\NightScouringGleam.class
 nearlmod\patches\NearlTags.class
 nearlmod\patches\AbstractCardEnum.class
+nearlmod\characters\Nearl$MODE.class
 nearlmod\characters\Nearl.class
 nearlmod\NLMOD.class

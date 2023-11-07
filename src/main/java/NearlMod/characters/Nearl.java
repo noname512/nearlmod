@@ -1,5 +1,7 @@
 package nearlmod.characters;
 
+import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
+import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import nearlmod.NLMOD;
 import basemod.abstracts.CustomPlayer;
 import com.badlogic.gdx.graphics.Color;
@@ -20,6 +22,7 @@ import com.megacrit.cardcrawl.unlock.UnlockTracker;
 import nearlmod.cards.*;
 import nearlmod.patches.AbstractCardEnum;
 import nearlmod.patches.NearlEnum;
+import nearlmod.powers.DefMode;
 
 import java.util.ArrayList;
 
@@ -41,6 +44,12 @@ public class Nearl extends CustomPlayer {
         "images/char/orb/layer4d.png",
         "images/char/orb/layer5d.png"
     };
+
+    public enum MODE {
+        ATK_MODE, DEF_MODE
+    }
+
+    public static MODE mode;
 
     public Nearl(String name) {
         // 参数列表：角色名，角色类枚举，能量面板贴图路径列表，能量面板特效贴图路径，能量面板贴图旋转速度列表，能量面板，模型资源路径，动画资源路径
@@ -83,7 +92,7 @@ public class Nearl extends CustomPlayer {
     public String getTitle(PlayerClass playerClass) {
         return "玛嘉烈·临光";
     }
-    
+
     @Override
     public String getLocalizedCharacterName() {
         return "玛嘉烈·临光";
@@ -150,7 +159,7 @@ public class Nearl extends CustomPlayer {
         ret.add(NearlDefend.ID);
         ret.add(NearlDefend.ID);
         ret.add(NearlDefend.ID);
-        // ret.add(SwitchType.ID);
+        ret.add(SwitchType.ID);
         ret.add(MajestyLight.ID);
         return ret;
     }
