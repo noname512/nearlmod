@@ -27,15 +27,25 @@ import java.util.ArrayList;
 public class Nearl extends CustomPlayer {
     private static final Color NearlGold = CardHelper.getColor(255, 236, 194);
     public static final String TACHI = "images/char/tachi.png";
-    public static final String SHOULDER = null;//"images/char/shoulder.png";
+    public static final String SHOULDER = "images/char/tachi.png";
     public static final String CORPSE = "images/char/corpse.png";
     public static final String[] orbTextures = {
-        "images/char/orb.png"
+        "images/char/orb/layer1.png",
+        "images/char/orb/layer2.png",
+        "images/char/orb/layer3.png",
+        "images/char/orb/layer4.png",
+        "images/char/orb/layer5.png",
+        "images/char/orb/layer6.png",
+        "images/char/orb/layer1d.png",
+        "images/char/orb/layer2d.png",
+        "images/char/orb/layer3d.png",
+        "images/char/orb/layer4d.png",
+        "images/char/orb/layer5d.png"
     };
 
     public Nearl(String name) {
         // 参数列表：角色名，角色类枚举，能量面板贴图路径列表，能量面板特效贴图路径，能量面板贴图旋转速度列表，能量面板，模型资源路径，动画资源路径
-        super(name, NearlEnum.NEARL_CLASS, orbTextures, orbTextures[0], null, null, null);
+        super(name, NearlEnum.NEARL_CLASS, orbTextures, "images/char/orb/vfx.png", null, null, null);
         
         // 对话框位置，默认就好
         dialogX = drawX + 0.0F * Settings.scale;

@@ -3,6 +3,7 @@ nearlmod\patches\NearlEnum.class
 nearlmod\NLMOD$1.class
 nearlmod\cards\NearlDefend.class
 nearlmod\cards\AbstractNearlCard.class
+nearlmod\patches\LibraryTypeEnum.class
 nearlmod\patches\NearlTags.class
 nearlmod\patches\AbstractCardEnum.class
 nearlmod\characters\Nearl.class
