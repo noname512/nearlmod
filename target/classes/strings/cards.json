@@ -1,0 +1,22 @@
+{
+    "nearlmod:NearlStrike": {
+        "NAME": "打击",
+        "DESCRIPTION": "造成 !D! 点伤害。",
+        "UPGRADE_DESCRIPTION": ""
+    },
+    "nearlmod:NearlDefend": {
+        "NAME": "防御",
+        "DESCRIPTION": "获得 !B! 点格挡。",
+        "UPGRADE_DESCRIPTION": ""
+    },
+    "nearlmod:SwitchType": {
+        "NAME": "切换形态",
+        "DESCRIPTION": "切换你的形态。",
+        "UPGRADE_DESCRIPTION": ""
+    },
+    "nearlmod:MajestyLight": {
+        "NAME": "手执威光",
+        "DESCRIPTION": "使用光，然后获得 !M! 层光。",
+        "UPGRADE_DESCRIPTION": ""
+    }
+}
