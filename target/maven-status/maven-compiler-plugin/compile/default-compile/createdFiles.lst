@@ -6,6 +6,7 @@ nearlmod\cards\NearlDefend.class
 nearlmod\cards\AbstractNearlCard.class
 nearlmod\cards\MajestyLight.class
 nearlmod\patches\LibraryTypeEnum.class
+nearlmod\cards\NightScouringGleam.class
 nearlmod\patches\NearlTags.class
 nearlmod\patches\AbstractCardEnum.class
 nearlmod\characters\Nearl.class

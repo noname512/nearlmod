@@ -105,6 +105,7 @@ public class NLMOD implements EditCardsSubscriber, EditCharactersSubscriber, Edi
         BaseMod.addCard(new NearlDefend()); // 防御
         // BaseMod.addCard(new SwitchType()); // 形态切换
         BaseMod.addCard(new MajestyLight()); // 手执威光
+        BaseMod.addCard(new NightScouringGleam()); // 逐夜烁光
     }
 
     @Override
