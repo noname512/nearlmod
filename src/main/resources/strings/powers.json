@@ -1,0 +1,6 @@
+{
+  "nearlmod:LightPower": {
+    "NAME": "光",
+    "DESCRIPTION": ["使用时对敌人造成", "点伤害。", "使用时获得", "点临时生命。"]
+  }
+}

@@ -1,8 +1,10 @@
 nearlmod\cards\NearlStrike.class
+nearlmod\powers\LightPower.class
 nearlmod\patches\NearlEnum.class
 nearlmod\NLMOD$1.class
 nearlmod\cards\NearlDefend.class
 nearlmod\cards\AbstractNearlCard.class
+nearlmod\cards\MajestyLight.class
 nearlmod\patches\LibraryTypeEnum.class
 nearlmod\patches\NearlTags.class
 nearlmod\patches\AbstractCardEnum.class

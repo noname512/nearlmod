@@ -6,7 +6,7 @@
     },
     "nearlmod:NearlDefend": {
         "NAME": "防御",
-        "DESCRIPTION": "获得 !B! 点格挡。",
+        "DESCRIPTION": "获得 !B! 点 格挡 。",
         "UPGRADE_DESCRIPTION": ""
     },
     "nearlmod:NightScouringGleam": {
@@ -16,12 +16,12 @@
     },
     "nearlmod:SwitchType": {
         "NAME": "切换形态",
-        "DESCRIPTION": "切换你的形态。",
+        "DESCRIPTION": "切换你的 形态 。",
         "UPGRADE_DESCRIPTION": ""
     },
     "nearlmod:MajestyLight": {
         "NAME": "手执威光",
-        "DESCRIPTION": "使用光，然后获得 !M! 层光。",
+        "DESCRIPTION": "使用 nearlmod:光 ，然后获得 !M! 层 nearlmod:光 。",
         "UPGRADE_DESCRIPTION": ""
     }
 }
