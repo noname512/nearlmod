@@ -24,6 +24,6 @@ public abstract class AbstractNearlCard extends CustomCard {
     @Override
     public List<TooltipInfo> getCustomTooltips() {
         List<TooltipInfo> ret = new ArrayList<>();
-        
+        return ret;
     }
 }

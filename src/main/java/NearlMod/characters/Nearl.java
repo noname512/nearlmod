@@ -2,12 +2,30 @@ package nearlmod.characters;
 
 import nearlmod.NLMOD;
 import basemod.abstracts.CustomPlayer;
+import com.badlogic.gdx.graphics.Color;
+import com.badlogic.gdx.graphics.g2d.BitmapFont;
+import com.badlogic.gdx.math.MathUtils;
+import com.megacrit.cardcrawl.actions.AbstractGameAction;
+import com.megacrit.cardcrawl.cards.AbstractCard;
+import com.megacrit.cardcrawl.characters.AbstractPlayer;
+import com.megacrit.cardcrawl.core.CardCrawlGame;
+import com.megacrit.cardcrawl.core.EnergyManager;
+import com.megacrit.cardcrawl.core.Settings;
+import com.megacrit.cardcrawl.helpers.CardHelper;
+import com.megacrit.cardcrawl.helpers.FontHelper;
+import com.megacrit.cardcrawl.helpers.ScreenShake;
+import com.megacrit.cardcrawl.localization.CharacterStrings;
+import com.megacrit.cardcrawl.screens.CharSelectInfo;
+import com.megacrit.cardcrawl.unlock.UnlockTracker;
+import nearlmod.cards.NearlDefend;
+import nearlmod.cards.NearlStrike;
+import nearlmod.patches.AbstractCardEnum;
+import nearlmod.patches.NearlEnum;
 
 import java.util.ArrayList;
 
 public class Nearl extends CustomPlayer {
     private static final Color NearlGold = CardHelper.getColor(255, 236, 194);
-    public static final String ID = "Nearl";
     public static final String TACHI = "images/char/tachi.png";
     public static final String SHOULDER = null;//"images/char/shoulder.png";
     public static final String CORPSE = "images/char/corpse.png";
@@ -15,16 +33,16 @@ public class Nearl extends CustomPlayer {
         "images/char/orb.png"
     };
 
-    public Nearl() {
+    public Nearl(String name) {
         // 参数列表：角色名，角色类枚举，能量面板贴图路径列表，能量面板特效贴图路径，能量面板贴图旋转速度列表，能量面板，模型资源路径，动画资源路径
-        super(ID, NearlEnum.NEARL_CLASS, orbTextures, null, null, null);
+        super(name, NearlEnum.NEARL_CLASS, orbTextures, orbTextures[0], null, null, null);
         
         // 对话框位置，默认就好
         dialogX = drawX + 0.0F * Settings.scale;
         dialogY = drawY + 220.0F * Settings.scale;
 
         // 参数列表：静态贴图路径，越肩视角2贴图路径，越肩视角贴图路径，失败时贴图路径，角色选择界面信息，碰撞箱XY宽高，初始能量数
-        initializeClass(TACHI, SHOULDER, SHOULDER, CORPSE, getLoadout(), 20.0F, -10.0F, 220.0F, 290.0F, new EnergyManager(START_ENERGY));
+        initializeClass(TACHI, SHOULDER, SHOULDER, CORPSE, getLoadout(), 20.0F, -10.0F, 220.0F, 290.0F, new EnergyManager(3));
     }
 
     @Override
@@ -63,8 +81,54 @@ public class Nearl extends CustomPlayer {
     }
 
     @Override
+    public String getVampireText() {
+        return "";
+    }
+
+    @Override
     public AbstractPlayer newInstance() {
         return new Nearl(name);
+    }
+
+    @Override
+    public AbstractCard getStartCardForEvent() {
+        return new NearlStrike();
+    }
+
+    @Override
+    public int getAscensionMaxHPLoss() {
+        return 5;
+    }
+
+    @Override
+    public BitmapFont getEnergyNumFont() {
+        return FontHelper.energyNumFontRed;
+    }
+
+    @Override
+    public void doCharSelectScreenSelectEffect() {
+        CardCrawlGame.sound.playA("ATTACK_FIRE", MathUtils.random(-0.2f, 0.2f));
+        CardCrawlGame.sound.playA("ATTACK_FAST", MathUtils.random(-0.2f, 0.2f));
+        CardCrawlGame.screenShake.shake(ScreenShake.ShakeIntensity.MED, ScreenShake.ShakeDur.SHORT, false);
+    }
+
+    @Override
+    public String getCustomModeCharacterButtonSoundKey() {
+        return "ATTACK_FIRE";
+    }
+
+    @Override
+    public AbstractGameAction.AttackEffect[] getSpireHeartSlashEffect() {
+        return new AbstractGameAction.AttackEffect[]{
+                AbstractGameAction.AttackEffect.SLASH_DIAGONAL,
+                AbstractGameAction.AttackEffect.FIRE,
+                AbstractGameAction.AttackEffect.SLASH_HORIZONTAL,
+                AbstractGameAction.AttackEffect.POISON,
+                AbstractGameAction.AttackEffect.BLUNT_LIGHT,
+                AbstractGameAction.AttackEffect.BLUNT_LIGHT,
+                AbstractGameAction.AttackEffect.BLUNT_LIGHT,
+                AbstractGameAction.AttackEffect.BLUNT_HEAVY
+        };
     }
 
     public ArrayList<String> getStartingDeck() {
@@ -90,7 +154,7 @@ public class Nearl extends CustomPlayer {
     
     @Override
     public CharSelectInfo getLoadout() {
-        return new CharSelectInfo(NAMES[0], TEXT[0],
+        return new CharSelectInfo("玛嘉烈·临光", "骑士临光，是防御与治疗并重的战场核心，NL 也是身披炙阳、踏碎迷障的天马。",
                 77, 77, 0, 99, 5, //starting hp, max hp, max orbs, starting gold, starting hand size
                 this, getStartingRelics(), getStartingDeck(), false);
     }

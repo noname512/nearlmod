@@ -25,16 +25,20 @@ import com.megacrit.cardcrawl.powers.AbstractPower;
 import com.megacrit.cardcrawl.relics.AbstractRelic;
 import com.megacrit.cardcrawl.rooms.AbstractRoom;
 import com.megacrit.cardcrawl.screens.custom.CustomMod;
+import nearlmod.patches.NearlEnum;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
-import nearlmod.Cards.*;
-import nearlmod.Characters.Nearl;
+import nearlmod.cards.*;
+import nearlmod.characters.Nearl;
 
 import java.io.IOException;
 import java.lang.reflect.Type;
 import java.nio.charset.StandardCharsets;
 import java.util.*;
+
+import static basemod.BaseMod.logger;
+import static nearlmod.patches.AbstractCardEnum.NEARL_GOLD;
 
 @SpireInitializer
 public class NLMOD implements EditCardsSubscriber, EditCharactersSubscriber, EditKeywordsSubscriber, EditRelicsSubscriber, EditStringsSubscriber, PostBattleSubscriber, PostInitializeSubscriber, PostDungeonInitializeSubscriber, AddCustomModeModsSubscriber, OnStartBattleSubscriber, OnPlayerLoseBlockSubscriber, RelicGetSubscriber {
@@ -51,11 +55,12 @@ public class NLMOD implements EditCardsSubscriber, EditCharactersSubscriber, Edi
     private static final String charButton = "images/charSelect/button.png";
     private static final String charPortrait = "images/charSelect/portrait.png";
     private static final String miniManaSymbol = "images/manaSymbol.png";
+    private static Logger logger = LogManager.getLogger(NLMOD.class.getName());
 
     public NLMOD() {
         BaseMod.subscribe(this);
         
-        BaseMod.addColor(MYSTIC_PURPLE,
+        BaseMod.addColor(NEARL_GOLD,
                 NearlGold, NearlGold, NearlGold, NearlGold, NearlGold, NearlGold, NearlGold,   //Background color, back color, frame color, frame outline color, description box color, glow color
                 attackCard, skillCard, powerCard, energyOrb,                                   //attack background image, skill background image, power background image, energy orb image
                 attackCardPortrait, skillCardPortrait, powerCardPortrait, energyOrbPortrait,   //as above, but for card inspect view
@@ -68,6 +73,31 @@ public class NLMOD implements EditCardsSubscriber, EditCharactersSubscriber, Edi
     }
 
     @Override
+    public void receivePostInitialize() {}
+
+    @Override
+    public void receivePostDungeonInitialize() {}
+
+    @Override
+    public void receiveCustomModeMods(List<CustomMod> modList) {
+//        modList.add(new CustomMod())
+    }
+
+    @Override
+    public int receiveOnPlayerLoseBlock(int cnt) {
+        return cnt;
+    }
+
+    @Override
+    public void receiveOnBattleStart(AbstractRoom room) {}
+
+    @Override
+    public void receivePostBattle(final AbstractRoom p0) {}
+
+    @Override
+    public void receiveRelicGet(AbstractRelic r) {}
+
+    @Override
     public void receiveEditCards() {
         // Basic.
         BaseMod.addCard(new NearlStrike()); // 打击
@@ -78,7 +108,7 @@ public class NLMOD implements EditCardsSubscriber, EditCharactersSubscriber, Edi
 
     @Override
     public void receiveEditCharacters() {
-        BaseMod.addCharacter(new Nearl(CardCrawlGame.playerName), charButton, charPortrait, MysticEnum.MYSTIC_CLASS);
+        BaseMod.addCharacter(new Nearl(CardCrawlGame.playerName), charButton, charPortrait, NearlEnum.NEARL_CLASS);
     }
 
     @Override
@@ -95,6 +125,9 @@ public class NLMOD implements EditCardsSubscriber, EditCharactersSubscriber, Edi
             BaseMod.addKeyword("nearlmod:", v.PROPER_NAME, v.NAMES, v.DESCRIPTION);
         });
     }
+
+    @Override
+    public void receiveEditRelics() {}
 
     @Override
     public void receiveEditStrings() {
