@@ -9,7 +9,7 @@
         "DESCRIPTION": "获得 !B! 点格挡。",
         "UPGRADE_DESCRIPTION": ""
     },
-    "nearlmod:NearlNightScouringGleam": {
+    "nearlmod:NightScouringGleam": {
         "NAME": "逐夜烁光",
         "DESCRIPTION": "造成 !D! 点伤害。 NL令目标失去 99 点力量。 NL 如果你处于剑枪形态，改为群体攻击。消耗。",
         "UPGRADE_DESCRIPTION": ""
