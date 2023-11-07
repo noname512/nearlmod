@@ -59,7 +59,8 @@ public class NLMOD implements EditCardsSubscriber, EditCharactersSubscriber, Edi
 
     public NLMOD() {
         BaseMod.subscribe(this);
-        
+
+        logger.info("addColor NEARL_GOLD");
         BaseMod.addColor(NEARL_GOLD,
                 NearlGold, NearlGold, NearlGold, NearlGold, NearlGold, NearlGold, NearlGold,   //Background color, back color, frame color, frame outline color, description box color, glow color
                 attackCard, skillCard, powerCard, energyOrb,                                   //attack background image, skill background image, power background image, energy orb image
