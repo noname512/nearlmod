@@ -11,7 +11,7 @@
     },
     "nearlmod:NearlNightScouringGleam": {
         "NAME": "逐夜烁光",
-        "DESCRIPTION": "造成 !B! 点伤害。 NL令目标失去 99 点力量。 NL 如果你处于剑枪形态，改为群体攻击。",
+        "DESCRIPTION": "造成 !D! 点伤害。 NL令目标失去 99 点力量。 NL 如果你处于剑枪形态，改为群体攻击。消耗。",
         "UPGRADE_DESCRIPTION": ""
     },
     "nearlmod:SwitchType": {
