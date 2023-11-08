@@ -1,6 +1,7 @@
 package nearlmod.characters;
 
 import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
+import com.megacrit.cardcrawl.actions.watcher.ChangeStanceAction;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import nearlmod.NLMOD;
 import basemod.abstracts.CustomPlayer;
@@ -23,6 +24,8 @@ import nearlmod.cards.*;
 import nearlmod.patches.AbstractCardEnum;
 import nearlmod.patches.NearlEnum;
 import nearlmod.powers.DefMode;
+import nearlmod.stances.AtkStance;
+import nearlmod.stances.DefStance;
 
 import java.util.ArrayList;
 
@@ -175,5 +178,13 @@ public class Nearl extends CustomPlayer {
         return new CharSelectInfo("玛嘉烈·临光", "骑士临光，是防御与治疗并重的战场核心， NL 也是身披炙阳、踏碎迷障的天马。",
                 77, 77, 0, 99, 5, //starting hp, max hp, max orbs, starting gold, starting hand size
                 this, getStartingRelics(), getStartingDeck(), false);
+    }
+
+    @Override
+    public void applyStartOfCombatLogic() {
+        super.applyStartOfCombatLogic();
+        AtkStance.atkInc = 0;
+        DefStance.defInc = -1;
+        AbstractDungeon.actionManager.addToBottom(new ChangeStanceAction(new DefStance()));
     }
 }

@@ -14,6 +14,7 @@ import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import nearlmod.patches.AbstractCardEnum;
 import nearlmod.patches.NearlTags;
 import nearlmod.powers.LightPower;
+import nearlmod.stances.DefStance;
 
 public class MajestyLight extends AbstractNearlCard {
     public static final String ID = "nearlmod:MajestyLight";
@@ -46,7 +47,7 @@ public class MajestyLight extends AbstractNearlCard {
 
     @Override
     public void switchedStance() {
-        if (this.target == CardTarget.ENEMY) this.target = CardTarget.SELF;
+        if (AbstractDungeon.player.stance.ID.equals(DefStance.STANCE_ID)) this.target = CardTarget.SELF;
         else this.target = CardTarget.ENEMY;
     }
 

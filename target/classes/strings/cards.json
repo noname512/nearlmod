@@ -11,7 +11,7 @@
     },
     "nearlmod:NightScouringGleam": {
         "NAME": "逐夜烁光",
-        "DESCRIPTION": "造成 !D! 点伤害。 NL 令目标失去 99 点力量。 NL 如果你处于剑枪形态，改为群体攻击。 NL 消耗。",
+        "DESCRIPTION": "造成 !D! 点伤害。 NL 令目标本回合失去 99 点力量。 NL 如果你处于剑枪形态，改为群体攻击。 NL 消耗。",
         "UPGRADE_DESCRIPTION": ""
     },
     "nearlmod:SwitchType": {
@@ -56,6 +56,11 @@
     },
 
 
+    "nearlmod:SwallowLight": {
+        "NAME": "侵吞光芒",
+        "DESCRIPTION": "召唤薇薇安娜作为伙伴。 NL 消耗所有 nearlmod:光 ，三分之一转化为薇薇安娜的 力量 。",
+        "UPGRADE_DESCRIPTION": "召唤薇薇安娜作为伙伴。 NL 消耗所有 nearlmod:光 ，一半转化为薇薇安娜的 力量 。"
+    },
     "nearlmod:LSSwiftSword": {
         "NAME": "光影迅捷剑",
         "DESCRIPTION": "造成 !D! 点伤害 !M! 次。",
