@@ -24,7 +24,7 @@ public class NightScouringGleam extends AbstractNearlCard {
     private static final int COST = 2;
     private static final int ATTACK_DMG = 6;
     private static final int UPGRADE_COST = 1;
-    private static final int DECREASE_STRENGTH = -99;
+    private static final int DECREASE_STRENGTH = 99;
 
     public NightScouringGleam() {
         super(ID, NAME, IMG_PATH, COST, DESCRIPTION,
@@ -37,8 +37,12 @@ public class NightScouringGleam extends AbstractNearlCard {
 
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
+        if (p.stance.ID.equals(AtkStance.STANCE_ID))
+        {
+
+        }
         AbstractDungeon.actionManager.addToBottom(new DamageAction(m, new DamageInfo(p, damage, damageTypeForTurn), AbstractGameAction.AttackEffect.SLASH_DIAGONAL));
-        AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(m, p, new StrengthPower(m, DECREASE_STRENGTH), DECREASE_STRENGTH));
+        AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(m, p, new StrengthPower(m, -DECREASE_STRENGTH), -DECREASE_STRENGTH));
     }
 
     @Override
