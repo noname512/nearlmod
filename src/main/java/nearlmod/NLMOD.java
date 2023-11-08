@@ -114,6 +114,7 @@ public class NLMOD implements EditCardsSubscriber, EditCharactersSubscriber, Edi
 
         // Uncommon.
         BaseMod.addCard(new SecondSun()); // 第二轮太阳
+        BaseMod.addCard(new LightArrowStrike()); // 光箭打击
 
         // Rare.
         BaseMod.addCard(new NightScouringGleam()); // 逐夜烁光

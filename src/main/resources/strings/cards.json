@@ -48,5 +48,10 @@
         "NAME": "第二轮太阳",
         "DESCRIPTION": "使你的 nearlmod:光 翻倍。 NL 消耗。",
         "UPGRADE_DESCRIPTION": ""
+    },
+    "nearlmod:LightArrowStrike": {
+        "NAME": "光箭打击",
+        "DESCRIPTION": "造成等同于你的 nearlmod:光 的层数的伤害。",
+        "UPGRADE_DESCRIPTION": ""
     }
 }
