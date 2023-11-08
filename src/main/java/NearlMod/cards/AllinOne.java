@@ -11,48 +11,53 @@ import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.localization.CardStrings;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
+import jdk.jfr.Description;
 import nearlmod.patches.AbstractCardEnum;
-import nearlmod.patches.NearlTags;
 import nearlmod.stances.AtkStance;
 import nearlmod.stances.DefStance;
 
-public class KnightCrest extends AbstractNearlCard {
-    public static final String ID = "nearlmod:KnightCrest";
+public class AllinOne extends AbstractNearlCard {
+    public static final String ID = "nearlmod:AllinOne";
     public static final CardStrings cardStrings = CardCrawlGame.languagePack.getCardStrings(ID);
     public static final String NAME = cardStrings.NAME;
     public static final String DESCRIPTION = cardStrings.DESCRIPTION;
     public static final String UPGRADE_DESCRIPTION = cardStrings.UPGRADE_DESCRIPTION;
-    public static final String IMG_PATH = "images/cards/gumbobreadbowl.jpg";
-    private static final int COST = 0;
-    private static final int ATTACK_DMG = 3;
-    private static final int UPGRADE_PLUS_DMG = 2;
+    public static final String IMG_PATH = "images/cards/nearlstrike.png";
+    private static final int COST = 1;
+    private static final int ATTACK_DMG = 4;
+    private static final int BLOCK_AMT = 4;
 
-    public KnightCrest() {
+    public AllinOne() {
         super(ID, NAME, IMG_PATH, COST, DESCRIPTION,
                 CardType.ATTACK, AbstractCardEnum.NEARL_GOLD,
                 CardRarity.COMMON, CardTarget.ENEMY);
         damage = baseDamage = ATTACK_DMG;
-        tags.add(NearlTags.IS_USE_LIGHT_AFTER);
+        block = baseBlock = BLOCK_AMT;
     }
 
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
-        if (p.stance.ID.equals(DefStance.STANCE_ID)) {
+        if (p.stance.ID.equals(AtkStance.STANCE_ID)) {
+            AbstractDungeon.actionManager.addToBottom(new ChangeStanceAction(new DefStance()));
+        } else {
             AbstractDungeon.actionManager.addToBottom(new ChangeStanceAction(new AtkStance()));
         }
-        AbstractDungeon.actionManager.addToBottom(new DamageAction(p, new DamageInfo(m, damage, this.damageType), AbstractGameAction.AttackEffect.SLASH_DIAGONAL));
+        AbstractDungeon.actionManager.addToBottom(new DamageAction(m, new DamageInfo(p, damage, damageTypeForTurn), AbstractGameAction.AttackEffect.SLASH_DIAGONAL));
+        AbstractDungeon.actionManager.addToBottom(new GainBlockAction(p, p, block));
     }
 
     @Override
     public AbstractCard makeCopy() {
-        return new KnightCrest();
+        return new AllinOne();
     }
 
     @Override
     public void upgrade() {
         if (!upgraded) {
             upgradeName();
-            upgradeDamage(UPGRADE_PLUS_DMG);
+            rawDescription = UPGRADE_DESCRIPTION;
+            initializeDescription();
+            // TODO: 怎么吃两边buff啊（主要是描述更改），或许需要第二个魔法值？
         }
     }
 }

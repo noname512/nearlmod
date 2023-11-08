@@ -109,6 +109,11 @@ public class NLMOD implements EditCardsSubscriber, EditCharactersSubscriber, Edi
         // Common.
         BaseMod.addCard(new GumboBreadBowl()); // 浓汤面包碗
         BaseMod.addCard(new KnightCrest()); // 骑士之辉
+        BaseMod.addCard(new AllinOne()); // 攻防一体
+        BaseMod.addCard(new SwordShield()); // 剑盾骑士
+
+        // Uncommon.
+        BaseMod.addCard(new SecondSun()); // 第二轮太阳
 
         // Rare.
         BaseMod.addCard(new NightScouringGleam()); // 逐夜烁光
