@@ -13,6 +13,7 @@ import com.megacrit.cardcrawl.localization.CardStrings;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import com.megacrit.cardcrawl.powers.StrengthPower;
 import nearlmod.patches.AbstractCardEnum;
+import nearlmod.stances.AtkStance;
 
 public class NightScouringGleam extends AbstractNearlCard {
     public static final String ID = "nearlmod:NightScouringGleam";
@@ -37,9 +38,11 @@ public class NightScouringGleam extends AbstractNearlCard {
 
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
-        if (p.stance.ID.equals(AtkStance.STANCE_ID))
-        {
-
+        if (p.stance.ID.equals(AtkStance.STANCE_ID)) {
+            isMultiDamage = true;
+        }
+        else {
+            isMultiDamage = false;
         }
         AbstractDungeon.actionManager.addToBottom(new DamageAction(m, new DamageInfo(p, damage, damageTypeForTurn), AbstractGameAction.AttackEffect.SLASH_DIAGONAL));
         AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(m, p, new StrengthPower(m, -DECREASE_STRENGTH), -DECREASE_STRENGTH));
