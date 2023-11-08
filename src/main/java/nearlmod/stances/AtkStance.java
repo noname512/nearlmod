@@ -15,7 +15,7 @@ public class AtkStance extends AbstractStance {
     private static final StanceStrings stanceString = CardCrawlGame.languagePack.getStanceString(STANCE_ID);;
     public static final String NAME = stanceString.NAME;
     public static final String[] DESCRIPTION = stanceString.DESCRIPTION;
-    private static int atkInc = 0;
+    private int atkInc = 0;
 
     public AtkStance() {
         this.ID = "nearlmod:AtkStance";

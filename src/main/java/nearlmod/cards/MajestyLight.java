@@ -54,7 +54,7 @@ public class MajestyLight extends AbstractNearlCard {
     public void upgrade() {
         if (!upgraded) {
             upgradeName();
-            upgradeDamage(UPGRADE_PLUS_LIGHT);
+            upgradeMagicNumber(UPGRADE_PLUS_LIGHT);
         }
     }
 }

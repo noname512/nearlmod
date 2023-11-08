@@ -14,7 +14,7 @@ public class DefStance extends AbstractStance {
     private static final StanceStrings stanceString = CardCrawlGame.languagePack.getStanceString(STANCE_ID);;
     public static final String NAME = stanceString.NAME;
     public static final String[] DESCRIPTION = stanceString.DESCRIPTION;
-    private static int defInc = 0;
+    private int defInc = 0;
 
     public DefStance() {
         this.ID = "nearlmod:DefStance";
