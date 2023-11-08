@@ -32,7 +32,7 @@ import java.util.ArrayList;
 public class Nearl extends CustomPlayer {
     private static final Color NearlGold = CardHelper.getColor(255, 236, 194);
     public static final String TACHI = "images/char/tachi.png";
-    public static final String SHOULDER = "images/char/tachi.png";
+    public static final String SHOULDER = "images/char/shoulder.png";
     public static final String CORPSE = "images/char/corpse.png";
     public static final String[] orbTextures = {
         "images/char/orb/layer1.png",
