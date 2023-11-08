@@ -53,5 +53,17 @@
         "NAME": "光箭打击",
         "DESCRIPTION": "造成等同于你的 nearlmod:光 的层数的伤害。",
         "UPGRADE_DESCRIPTION": ""
+    },
+
+
+    "nearlmod:SwallowLight": {
+        "NAME": "侵吞光芒",
+        "DESCRIPTION": "召唤薇薇安娜作为伙伴。 NL 消耗所有 nearlmod:光 ，三分之一转化为薇薇安娜的 力量 。",
+        "UPGRADE_DESCRIPTION": "召唤薇薇安娜作为伙伴。 NL 消耗所有 nearlmod:光 ，一半转化为薇薇安娜的 力量 。"
+    },
+    "nearlmod:LSSwiftSword": {
+        "NAME": "光影迅捷剑",
+        "DESCRIPTION": "造成 !D! 点伤害 !M! 次。",
+        "UPGRADE_DESCRIPTION": ""
     }
 }

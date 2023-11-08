@@ -1,6 +1,7 @@
 nearlmod\cards\LightArrowStrike.class
 nearlmod\cards\NearlStrike.class
 nearlmod\powers\LightPower.class
+nearlmod\cards\SwallowLight.class
 nearlmod\cards\KnightCrest.class
 nearlmod\patches\NearlEnum.class
 nearlmod\NLMOD$1.class
@@ -10,13 +11,16 @@ nearlmod\cards\NearlDefend.class
 nearlmod\powers\AtkMode.class
 nearlmod\cards\SwitchType.class
 nearlmod\cards\AbstractNearlCard.class
+nearlmod\actions\SummonOrbAction.class
 nearlmod\cards\MajestyLight.class
 nearlmod\patches\LibraryTypeEnum.class
 nearlmod\cards\NightScouringGleam.class
 nearlmod\patches\NearlTags.class
 nearlmod\patches\AbstractCardEnum.class
+nearlmod\cards\LSSwiftSword.class
 nearlmod\characters\Nearl$MODE.class
 nearlmod\stances\AtkStance.class
 nearlmod\stances\DefStance.class
 nearlmod\characters\Nearl.class
 nearlmod\NLMOD.class
+nearlmod\orbs\Viviana.class

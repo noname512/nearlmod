@@ -53,5 +53,12 @@
         "NAME": "光箭打击",
         "DESCRIPTION": "造成等同于你的 nearlmod:光 的层数的伤害。",
         "UPGRADE_DESCRIPTION": ""
+    },
+
+
+    "nearlmod:LSSwiftSword": {
+        "NAME": "光影迅捷剑",
+        "DESCRIPTION": "造成 !D! 点伤害 !M! 次。",
+        "UPGRADE_DESCRIPTION": ""
     }
 }

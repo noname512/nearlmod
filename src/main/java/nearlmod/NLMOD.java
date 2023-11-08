@@ -115,9 +115,13 @@ public class NLMOD implements EditCardsSubscriber, EditCharactersSubscriber, Edi
         // Uncommon.
         BaseMod.addCard(new SecondSun()); // 第二轮太阳
         BaseMod.addCard(new LightArrowStrike()); // 光箭打击
+        BaseMod.addCard(new SwallowLight()); // 侵吞光芒
 
         // Rare.
         BaseMod.addCard(new NightScouringGleam()); // 逐夜烁光
+
+        // Friend.
+        BaseMod.addCard(new LSSwiftSword()); // 光影迅捷剑
     }
 
     @Override
@@ -151,5 +155,7 @@ public class NLMOD implements EditCardsSubscriber, EditCharactersSubscriber, Edi
         BaseMod.loadCustomStrings(PowerStrings.class, powerStrings);
         String stanceStrings = Gdx.files.internal("strings/stances.json").readString(String.valueOf(StandardCharsets.UTF_8));
         BaseMod.loadCustomStrings(StanceStrings.class, stanceStrings);
+        String orbStrings = Gdx.files.internal("strings/orbs.json").readString(String.valueOf(StandardCharsets.UTF_8));
+        BaseMod.loadCustomStrings(OrbStrings.class, orbStrings);
     }
 }
