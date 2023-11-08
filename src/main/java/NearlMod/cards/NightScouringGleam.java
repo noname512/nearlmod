@@ -29,7 +29,7 @@ public class NightScouringGleam extends AbstractNearlCard {
     public NightScouringGleam() {
         super(ID, NAME, IMG_PATH, COST, DESCRIPTION,
                 AbstractCard.CardType.ATTACK, AbstractCardEnum.NEARL_GOLD,
-                AbstractCard.CardRarity.RARE, AbstractCard.CardTarget.ENEMY);
+                AbstractCard.CardRarity.COMMON, AbstractCard.CardTarget.ENEMY);
         
         damage = baseDamage = ATTACK_DMG;
         exhaust = true;

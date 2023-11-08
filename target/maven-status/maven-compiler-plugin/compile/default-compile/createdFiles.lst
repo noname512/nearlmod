@@ -1,7 +1,9 @@
 nearlmod\cards\NearlStrike.class
 nearlmod\powers\LightPower.class
+nearlmod\cards\KnightCrest.class
 nearlmod\patches\NearlEnum.class
 nearlmod\NLMOD$1.class
+nearlmod\cards\GumboBreadBowl.class
 nearlmod\powers\DefMode.class
 nearlmod\cards\NearlDefend.class
 nearlmod\powers\AtkMode.class
@@ -13,5 +15,7 @@ nearlmod\cards\NightScouringGleam.class
 nearlmod\patches\NearlTags.class
 nearlmod\patches\AbstractCardEnum.class
 nearlmod\characters\Nearl$MODE.class
+nearlmod\stances\AtkStance.class
+nearlmod\stances\DefStance.class
 nearlmod\characters\Nearl.class
 nearlmod\NLMOD.class
