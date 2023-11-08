@@ -4,13 +4,16 @@ import basemod.helpers.BaseModCardTags;
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
 import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
 import com.megacrit.cardcrawl.actions.common.DamageAction;
+import com.megacrit.cardcrawl.actions.common.DamageAllEnemiesAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.cards.DamageInfo;
+import com.megacrit.cardcrawl.cards.colorless.DarkShackles;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.localization.CardStrings;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
+import com.megacrit.cardcrawl.powers.GainStrengthPower;
 import com.megacrit.cardcrawl.powers.StrengthPower;
 import nearlmod.patches.AbstractCardEnum;
 import nearlmod.stances.AtkStance;
@@ -30,7 +33,7 @@ public class NightScouringGleam extends AbstractNearlCard {
     public NightScouringGleam() {
         super(ID, NAME, IMG_PATH, COST, DESCRIPTION,
                 AbstractCard.CardType.ATTACK, AbstractCardEnum.NEARL_GOLD,
-                AbstractCard.CardRarity.COMMON, AbstractCard.CardTarget.ENEMY);
+                AbstractCard.CardRarity.RARE, AbstractCard.CardTarget.ENEMY);
         
         damage = baseDamage = ATTACK_DMG;
         exhaust = true;
@@ -38,19 +41,35 @@ public class NightScouringGleam extends AbstractNearlCard {
 
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
-        if (p.stance.ID.equals(AtkStance.STANCE_ID)) {
-            isMultiDamage = true;
+        if (this.target == CardTarget.ALL_ENEMY) {
+            AbstractDungeon.actionManager.addToBottom(new DamageAllEnemiesAction(p, damage, damageTypeForTurn, AbstractGameAction.AttackEffect.SLASH_DIAGONAL));
+            for (AbstractMonster mo : AbstractDungeon.getCurrRoom().monsters.monsters) {
+                if (!mo.isDeadOrEscaped()) {
+                    AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(mo, p, new StrengthPower(mo, -DECREASE_STRENGTH), -DECREASE_STRENGTH));
+                    if (!mo.hasPower("Artifact")) {
+                        AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(mo, p, new GainStrengthPower(mo, DECREASE_STRENGTH), DECREASE_STRENGTH));
+                    }
+                }
+            }
         }
         else {
-            isMultiDamage = false;
+            AbstractDungeon.actionManager.addToBottom(new DamageAction(m, new DamageInfo(p, damage, damageTypeForTurn), AbstractGameAction.AttackEffect.SLASH_DIAGONAL));
+            AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(m, p, new StrengthPower(m, -DECREASE_STRENGTH), -DECREASE_STRENGTH));
+            if (m != null && !m.hasPower("Artifact")) {
+                AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(m, p, new GainStrengthPower(m, DECREASE_STRENGTH), DECREASE_STRENGTH));
+            }
         }
-        AbstractDungeon.actionManager.addToBottom(new DamageAction(m, new DamageInfo(p, damage, damageTypeForTurn), AbstractGameAction.AttackEffect.SLASH_DIAGONAL));
-        AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(m, p, new StrengthPower(m, -DECREASE_STRENGTH), -DECREASE_STRENGTH));
     }
 
     @Override
     public AbstractCard makeCopy() {
         return new NightScouringGleam();
+    }
+
+    @Override
+    public void switchedStance() {
+        if (this.target == CardTarget.ENEMY) this.target = CardTarget.ALL_ENEMY;
+        else this.target = CardTarget.ENEMY;
     }
 
     @Override
