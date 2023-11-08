@@ -25,9 +25,9 @@ import nearlmod.stances.AtkStance;
 
 public class LightPower extends AbstractPower implements CloneablePowerInterface {
     public static final String POWER_ID = "nearlmod:LightPower";
-    public static final PowerStrings cardStrings = CardCrawlGame.languagePack.getPowerStrings(POWER_ID);
-    public static final String NAME = cardStrings.NAME;
-    public static final String[] DESCRIPTIONS = cardStrings.DESCRIPTIONS;
+    public static final PowerStrings powerStrings = CardCrawlGame.languagePack.getPowerStrings(POWER_ID);
+    public static final String NAME = powerStrings.NAME;
+    public static final String[] DESCRIPTIONS = powerStrings.DESCRIPTIONS;
 
     public LightPower(AbstractCreature owner, int amount) {
         name = NAME;
@@ -73,7 +73,8 @@ public class LightPower extends AbstractPower implements CloneablePowerInterface
 
     @Override
     public void onChangeStance(AbstractStance oldStance, AbstractStance newStance) {
-        updateDescription();
+        if (newStance.ID.equals(AtkStance.STANCE_ID)) description = DESCRIPTIONS[0] + amount + DESCRIPTIONS[1];
+        else description = DESCRIPTIONS[2] + amount + DESCRIPTIONS[3];
     }
 
     @Override

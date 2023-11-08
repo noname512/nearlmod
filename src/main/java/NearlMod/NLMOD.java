@@ -44,13 +44,13 @@ import static nearlmod.patches.AbstractCardEnum.NEARL_GOLD;
 public class NLMOD implements EditCardsSubscriber, EditCharactersSubscriber, EditKeywordsSubscriber, EditRelicsSubscriber, EditStringsSubscriber, PostBattleSubscriber, PostInitializeSubscriber, PostDungeonInitializeSubscriber, AddCustomModeModsSubscriber, OnStartBattleSubscriber, OnPlayerLoseBlockSubscriber, RelicGetSubscriber {
 
     private static final Color NearlGold = CardHelper.getColor(255, 236, 194);
-    private static final String attackCard = "images/512/bg_attack_mystic.png";
-    private static final String skillCard = "images/512/bg_skill_mystic.png";
-    private static final String powerCard = "images/512/bg_power_mystic.png";
+    private static final String attackCard = "images/512/bg_attack_nearl.png";
+    private static final String skillCard = "images/512/bg_skill_nearl.png";
+    private static final String powerCard = "images/512/bg_power_nearl.png";
     private static final String energyOrb = "images/512/card_mystic_orb.png";
-    private static final String attackCardPortrait = "images/1024/bg_attack_mystic.png";
-    private static final String skillCardPortrait = "images/1024/bg_skill_mystic.png";
-    private static final String powerCardPortrait = "images/1024/bg_power_mystic.png";
+    private static final String attackCardPortrait = "images/1024/bg_attack_nearl.png";
+    private static final String skillCardPortrait = "images/1024/bg_skill_nearl.png";
+    private static final String powerCardPortrait = "images/1024/bg_power_nearl.png";
     private static final String energyOrbPortrait = "images/1024/card_mystic_orb.png";
     private static final String charButton = "images/charSelect/button.png";
     private static final String charPortrait = "images/charSelect/portrait.png";
