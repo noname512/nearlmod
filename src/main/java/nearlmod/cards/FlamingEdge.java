@@ -31,7 +31,7 @@ public class FlamingEdge extends AbstractNearlCard {
     public static final String UPGRADE_DESCRIPTION = cardStrings.UPGRADE_DESCRIPTION;
     public static final String IMG_PATH = "images/cards/flamingedge.png";
     private static final int COST = 1;
-    private static final int LIGHT_GAIN = 4;
+    private static final int LIGHT_GAIN = 6;
     private static final int UPGRADE_LIGHT_GAIN = 2;
 
     public FlamingEdge() {
@@ -45,6 +45,7 @@ public class FlamingEdge extends AbstractNearlCard {
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
         AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(p, p, new FlamingEdgePower(p, magicNumber)));
+        AtkStance.upgradeIncNum(1);
         if (!p.stance.ID.equals(AtkStance.STANCE_ID)) {
             AbstractDungeon.actionManager.addToBottom(new ChangeStanceAction(new AtkStance()));
         }

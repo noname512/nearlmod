@@ -41,6 +41,7 @@ public class GumboBreadBowl extends AbstractNearlCard {
         if (p.stance.ID.equals(AtkStance.STANCE_ID)) {
             AbstractDungeon.actionManager.addToBottom(new ChangeStanceAction(new DefStance()));
         }
+
         AbstractDungeon.actionManager.addToBottom(new GainBlockAction(p, p, block));
     }
 

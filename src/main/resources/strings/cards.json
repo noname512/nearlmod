@@ -11,7 +11,7 @@
     },
     "nearlmod:NightScouringGleam": {
         "NAME": "逐夜烁光",
-        "DESCRIPTION": "造成 !D! 点伤害。 NL 令目标本回合失去 99 点力量。 NL 如果你处于剑枪形态，改为群体攻击。 NL 消耗。",
+        "DESCRIPTION": "造成 !D! 点伤害。 NL 令目标本回合失去 99 点 力量 。 NL 如果你处于剑枪形态，改为群体攻击。 NL 消耗。",
         "UPGRADE_DESCRIPTION": ""
     },
     "nearlmod:SwitchType": {
@@ -36,8 +36,8 @@
     },
     "nearlmod:AllinOne": {
         "NAME": "攻防一体",
-        "DESCRIPTION": "切换你的形态，造成 !D! 点伤害，获得 !B! 点 格挡 。",
-        "UPGRADE_DESCRIPTION": "切换你的形态，造成 !D! 点伤害，获得 !B! 点 格挡 。同时受到 力量 和 敏捷 的加成。"
+        "DESCRIPTION": "切换你的形态， NL 造成 !D! 点伤害， NL 获得 !B! 点 格挡 。",
+        "UPGRADE_DESCRIPTION": "切换你的形态， NL 造成 !D! 点伤害， N: 获得 !B! 点 格挡 。 NL 同时受到 力量 和 敏捷 的加成。"
     },
     "nearlmod:SwordShield": {
         "NAME": "剑盾骑士",
@@ -56,16 +56,16 @@
     },
     "nearlmod:NobleLight": {
         "NAME": "崇高者",
-        "DESCRIPTION": "是你的伙伴获得 1 点 力量 。"
+        "DESCRIPTION": "使你的伙伴获得 1 点 力量 。"
     },
     "nearlmod:FirstAid": {
         "NAME" : "急救",
-        "DESCRIPTION": "切换至使徒模式。 NL 获得 !B! 点格挡。 NL 如果你处于半血以下，额外获得等量的临时生命。",
+        "DESCRIPTION": "切换至使徒形态。 NL 获得 !B! 点 格挡。 NL 如果你处于半血以下，额外获得等量的 basemod:临时生命。",
         "UPGRADE_DESCRIPTION": ""
     },
     "nearlmod:FlamingEdge": {
         "NAME" : "灿焰长刃",
-        "DESCRIPTION": "每当你切换至剑枪形态时，获得 !M! 层光。切换至剑枪形态。",
+        "DESCRIPTION": "每当你切换至剑枪形态时，获得 !M! 层光并使该次切换数值加 1 。 NL 切换至剑枪形态。",
         "UPGRADE_DESCRIPTION": ""
     },
 

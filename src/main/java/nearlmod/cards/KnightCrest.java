@@ -22,7 +22,7 @@ public class KnightCrest extends AbstractNearlCard {
     public static final String NAME = cardStrings.NAME;
     public static final String DESCRIPTION = cardStrings.DESCRIPTION;
     public static final String UPGRADE_DESCRIPTION = cardStrings.UPGRADE_DESCRIPTION;
-    public static final String IMG_PATH = "images/cards/knightcrest.jpg";
+    public static final String IMG_PATH = "images/cards/knightcrest.png";
     private static final int COST = 0;
     private static final int ATTACK_DMG = 3;
     private static final int UPGRADE_PLUS_DMG = 2;
@@ -39,6 +39,7 @@ public class KnightCrest extends AbstractNearlCard {
     public void use(AbstractPlayer p, AbstractMonster m) {
         if (!p.stance.ID.equals(AtkStance.STANCE_ID)) {
             AbstractDungeon.actionManager.addToBottom(new ChangeStanceAction(new AtkStance()));
+
         }
         AbstractDungeon.actionManager.addToBottom(new DamageAction(m, new DamageInfo(p, damage, this.damageType), AbstractGameAction.AttackEffect.SLASH_DIAGONAL));
     }

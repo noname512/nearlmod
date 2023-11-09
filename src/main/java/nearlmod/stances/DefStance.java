@@ -15,6 +15,7 @@ public class DefStance extends AbstractStance {
     public static final String NAME = stanceString.NAME;
     public static final String[] DESCRIPTION = stanceString.DESCRIPTION;
     public static int defInc = 0;
+    public static int incNum = 1;
 
     public DefStance() {
         this.ID = "nearlmod:DefStance";
@@ -27,17 +28,21 @@ public class DefStance extends AbstractStance {
         this.description = DESCRIPTION[0] + defInc + DESCRIPTION[1];
     }
 
+    public static void upgradeIncNum(int updateNum) {
+        incNum += updateNum;
+    }
+
     @Override
     public void onEnterStance() {
-        defInc++;
+        defInc+=incNum;
         AbstractPlayer p = AbstractDungeon.player;
-        AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(p, p, new DexterityPower(p, defInc), defInc));
+        AbstractDungeon.actionManager.addToTop(new ApplyPowerAction(p, p, new DexterityPower(p, defInc), defInc));
         updateDescription();
     }
 
     @Override
     public void onExitStance() {
         AbstractPlayer p = AbstractDungeon.player;
-        AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(p, p, new DexterityPower(p, -defInc), -defInc));
+        AbstractDungeon.actionManager.addToTop(new ApplyPowerAction(p, p, new DexterityPower(p, -defInc), -defInc));
     }
 }

@@ -43,7 +43,7 @@ public class FlamingEdgePower extends AbstractPower implements CloneablePowerInt
         if (!AbstractDungeon.getMonsters().areMonstersBasicallyDead()) {
             this.flash();
             if (newStance.ID.equals(AtkStance.STANCE_ID)) {
-                AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(owner, owner, new LightPower(owner, amount), amount));
+                AbstractDungeon.actionManager.addToTop(new ApplyPowerAction(owner, owner, new LightPower(owner, amount), amount));
             }
         }
     }

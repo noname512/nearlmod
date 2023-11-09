@@ -164,14 +164,18 @@ public class Nearl extends CustomPlayer {
         ArrayList<String> ret = new ArrayList<String>();
         ret.add(NearlStrike.ID);
         ret.add(NearlStrike.ID);
+        /*
         ret.add(NearlStrike.ID);
         ret.add(NearlStrike.ID);
         ret.add(NearlDefend.ID);
         ret.add(NearlDefend.ID);
+        */
         ret.add(NearlDefend.ID);
         ret.add(NearlDefend.ID);
         ret.add(SwitchType.ID);
         ret.add(MajestyLight.ID);
+        ret.add(FlamingEdge.ID);
+        ret.add(AllinOne.ID);
         return ret;
     }
 
@@ -193,6 +197,8 @@ public class Nearl extends CustomPlayer {
         super.applyStartOfCombatLogic();
         AtkStance.atkInc = 0;
         DefStance.defInc = -1;
+        AtkStance.incNum = 1;
+        DefStance.incNum = 1;
         AbstractDungeon.actionManager.addToBottom(new ChangeStanceAction(new DefStance()));
     }
 
