@@ -30,6 +30,7 @@ import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
 import nearlmod.cards.*;
+import nearlmod.cards.friendcards.*;
 import nearlmod.characters.Nearl;
 
 import java.io.IOException;
@@ -125,6 +126,7 @@ public class NLMOD implements EditCardsSubscriber, EditCharactersSubscriber, Edi
 
         // Friend.
         BaseMod.addCard(new LSSwiftSword()); // 光影迅捷剑
+        BaseMod.addCard(new FlashFade()); // “明灭”
     }
 
     @Override

@@ -69,5 +69,10 @@
         "NAME": "光影迅捷剑",
         "DESCRIPTION": "造成 !M! 点伤害 !nearlmod:M2! 次。",
         "UPGRADE_DESCRIPTION": ""
+    },
+    "nearlmod:FlashFade": {
+        "NAME": "“明灭”",
+        "DESCRIPTION": "切换至剑枪形态，造成 !M! 点伤害 !nearlmod:M2! 次。 NL 也受到你的 力量 加成。",
+        "UPGRADE_DESCRIPTION": ""
     }
 }
