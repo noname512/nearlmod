@@ -9,11 +9,6 @@
         "DESCRIPTION": "获得 !B! 点 格挡 。",
         "UPGRADE_DESCRIPTION": ""
     },
-    "nearlmod:NightScouringGleam": {
-        "NAME": "逐夜烁光",
-        "DESCRIPTION": "造成 !D! 点伤害。 NL 令目标本回合失去 99 点 力量 。 NL 如果你处于剑枪形态，改为群体攻击。 NL 消耗。",
-        "UPGRADE_DESCRIPTION": ""
-    },
     "nearlmod:SwitchType": {
         "NAME": "切换形态",
         "DESCRIPTION": "切换你的 形态 。",
@@ -24,6 +19,7 @@
         "DESCRIPTION": "使用 nearlmod:光 ，然后获得 !M! 层 nearlmod:光 。",
         "UPGRADE_DESCRIPTION": ""
     },
+
     "nearlmod:GumboBreadBowl": {
         "NAME": "浓汤面包碗",
         "DESCRIPTION": "切换至使徒形态，获得 !B! 点 格挡 ，使用 nearlmod:光 。",
@@ -36,8 +32,8 @@
     },
     "nearlmod:AllinOne": {
         "NAME": "攻防一体",
-        "DESCRIPTION": "切换你的形态， NL 造成 !D! 点伤害， NL 获得 !B! 点 格挡 。",
-        "UPGRADE_DESCRIPTION": "切换你的形态， NL 造成 !D! 点伤害， N: 获得 !B! 点 格挡 。 NL 同时受到 力量 和 敏捷 的加成。"
+        "DESCRIPTION": "造成 !D! 点伤害， NL 获得 !B! 点 格挡 ， NL 切换你的形态。",
+        "UPGRADE_DESCRIPTION": "造成 !D! 点伤害， NL 获得 !B! 点 格挡 ， NL 切换你的形态。 NL 同时受到 力量 和 敏捷 的加成。"
     },
     "nearlmod:SwordShield": {
         "NAME": "剑盾骑士",
@@ -57,6 +53,12 @@
     "nearlmod:NobleLight": {
         "NAME": "崇高者",
         "DESCRIPTION": "使你的伙伴获得 1 点 力量 。"
+    },
+
+    "nearlmod:NightScouringGleam": {
+        "NAME": "逐夜烁光",
+        "DESCRIPTION": "造成 !D! 点伤害。 NL 令目标本回合失去 99 点 力量 。 NL 如果你处于剑枪形态，改为群体攻击。 NL 消耗。",
+        "UPGRADE_DESCRIPTION": ""
     },
     "nearlmod:FirstAid": {
         "NAME" : "急救",

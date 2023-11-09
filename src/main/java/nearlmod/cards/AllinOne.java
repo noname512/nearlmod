@@ -1,6 +1,7 @@
 package nearlmod.cards;
 
 import com.badlogic.gdx.graphics.g3d.particles.influencers.DynamicsModifier;
+import com.jcraft.jorbis.Block;
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
 import com.megacrit.cardcrawl.actions.common.DamageAction;
 import com.megacrit.cardcrawl.actions.common.GainBlockAction;
@@ -43,17 +44,18 @@ public class AllinOne extends AbstractNearlCard {
 
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
+        applyPowers();
+        AbstractDungeon.actionManager.addToBottom(new DamageAction(m, new DamageInfo(p, damage, damageTypeForTurn), AbstractGameAction.AttackEffect.SLASH_DIAGONAL));
+        AbstractDungeon.actionManager.addToBottom(new GainBlockAction(p, p, block));
         if (p.stance.ID.equals(AtkStance.STANCE_ID)) {
             AbstractDungeon.actionManager.addToBottom(new ChangeStanceAction(new DefStance()));
         } else {
             AbstractDungeon.actionManager.addToBottom(new ChangeStanceAction(new AtkStance()));
         }
-        applyPowers();
-        AbstractDungeon.actionManager.addToBottom(new DamageAction(m, new DamageInfo(p, damage, damageTypeForTurn), AbstractGameAction.AttackEffect.SLASH_DIAGONAL));
-        AbstractDungeon.actionManager.addToBottom(new GainBlockAction(p, p, block));
     }
 
     public void applyPowers() {
+        super.applyPowers();
         if (upgraded) {
             AbstractPower tempDex = AbstractDungeon.player.getPower("Dexterity");
             AbstractPower tempStr = AbstractDungeon.player.getPower("Strength");
@@ -64,10 +66,21 @@ public class AllinOne extends AbstractNearlCard {
             if (tempStr != null) {
                 str = tempStr.amount;
             }
-            baseDamage = ATTACK_DMG + dex;
-            baseBlock = BLOCK_AMT + str;
+            damage = damage + dex;
+            if (damage < 0) {
+                damage = 0;
+            }
+            if (damage != baseDamage) {
+                isDamageModified = true;
+            }
+            block = block + str;
+            if (block < 0) {
+                block = 0;
+            }
+            if (block != baseBlock) {
+                isBlockModified = true;
+            }
         }
-        super.applyPowers();
     }
     @Override
     public AbstractCard makeCopy() {
@@ -80,7 +93,7 @@ public class AllinOne extends AbstractNearlCard {
             upgradeName();
             rawDescription = UPGRADE_DESCRIPTION;
             initializeDescription();
-            // TODO: 怎么吃两边buff啊（描述更改），或许需要第二个魔法值？
+            // TODO: 怎么吃两边buff啊（绿字）
         }
     }
 }

@@ -39,7 +39,6 @@ public class KnightCrest extends AbstractNearlCard {
     public void use(AbstractPlayer p, AbstractMonster m) {
         if (!p.stance.ID.equals(AtkStance.STANCE_ID)) {
             AbstractDungeon.actionManager.addToBottom(new ChangeStanceAction(new AtkStance()));
-
         }
         AbstractDungeon.actionManager.addToBottom(new DamageAction(m, new DamageInfo(p, damage, this.damageType), AbstractGameAction.AttackEffect.SLASH_DIAGONAL));
     }

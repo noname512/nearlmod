@@ -50,7 +50,7 @@ public class LightPower extends AbstractPower implements CloneablePowerInterface
 
     void useLight(AbstractPlayer p, AbstractCreature m) {
         if (p.stance.ID.equals(AtkStance.STANCE_ID)) {
-            AbstractDungeon.actionManager.addToBottom(new DamageAction(m, new DamageInfo(p, this.amount, DamageInfo.DamageType.NORMAL), AbstractGameAction.AttackEffect.LIGHTNING));
+            AbstractDungeon.actionManager.addToBottom(new DamageAction(m, new DamageInfo(p, this.amount, DamageInfo.DamageType.THORNS), AbstractGameAction.AttackEffect.LIGHTNING));
         } else {
             AbstractDungeon.actionManager.addToBottom(new GainBlockAction(p, p, this.amount));
         }
