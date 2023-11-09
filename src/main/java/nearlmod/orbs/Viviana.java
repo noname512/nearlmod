@@ -7,6 +7,7 @@ import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.cards.CardSave;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
+import com.megacrit.cardcrawl.helpers.ImageMaster;
 import com.megacrit.cardcrawl.localization.OrbStrings;
 import com.megacrit.cardcrawl.localization.StanceStrings;
 import com.megacrit.cardcrawl.orbs.AbstractOrb;
@@ -26,7 +27,9 @@ public class Viviana extends AbstractFriend {
     public static final String NAME = orbStrings.NAME;
     public static final String[] DESCRIPTION = orbStrings.DESCRIPTION;
     public static final String IMAGE = "images/orbs/viviana.png";
+    public static final String CHARGINGIMAGE = "images/orbs/viviana_charging.png";
     public boolean upgraded;
+    public static int chargingTurn;
 
     public Viviana(int amount) {
         super(ORB_ID, NAME, 0, 0, DESCRIPTION[0], "", IMAGE);
@@ -36,6 +39,7 @@ public class Viviana extends AbstractFriend {
         channelAnimTimer = 0.5f;
         passiveAmount = amount;
         upgraded = false;
+        chargingTurn = 0;
         updateDescription();
     }
 
@@ -64,16 +68,31 @@ public class Viviana extends AbstractFriend {
         return new Viviana();
     }
 
+    public void startCharging(int turns) {
+        chargingTurn = turns;
+        img = ImageMaster.loadImage(CHARGINGIMAGE);
+    }
+
     @Override
     public void onStartOfTurn() {
-        int random = (int)AbstractDungeon.cardRng.random(0, 3);
+        if (chargingTurn > 0) {
+            chargingTurn--;
+            if (chargingTurn == 0)
+                img = ImageMaster.loadImage(IMAGE);
+            return;
+        }
+        int random = (int)AbstractDungeon.cardRng.random(uniqueUsed? 1 : 0, 3);
         AbstractCard card = null;
         switch (random) {
             case 0:
+                card = new FlameShadow();
+                break;
             case 1:
                 card = new FlashFade();
                 break;
             case 2:
+                card = new GlimmeringTouch();
+                break;
             default:
                 card = new LSSwiftSword();
         }

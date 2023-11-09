@@ -1,5 +1,6 @@
 package nearlmod.cards;
 
+import com.megacrit.cardcrawl.actions.common.RemoveSpecificPowerAction;
 import com.megacrit.cardcrawl.actions.watcher.ChangeStanceAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
@@ -39,7 +40,7 @@ public class SwallowLight extends AbstractNearlCard {
         int amount = 0;
         if (power != null) {
             amount = power.amount;
-            power.reducePower(amount);
+            AbstractDungeon.actionManager.addToBottom(new RemoveSpecificPowerAction(p, p, power));
             if (!upgraded) amount = (amount + 2) / 3;
             else amount = (amount + 1) / 2;
         }

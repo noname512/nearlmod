@@ -1,37 +1,44 @@
 {
-  "CANTRIP": {
+  "LIGHT": {
     "PROPER_NAME": "光",
     "NAMES": [
       "光"
     ],
     "DESCRIPTION": "一个可叠加状态，在剑枪形态下使用会对敌人造成伤害，在使徒形态下使用会为自身提供临时生命，使用后会消失。"
   },
-  "FEAT": {
+  "FRIEND": {
     "PROPER_NAME": "伙伴",
     "NAMES": [
       "伙伴"
     ],
     "DESCRIPTION": "可以与你并肩战斗，每回合会提供来自该伙伴的一张 [#FF5252]伙伴牌[] 。"
   },
-  "SPELLPOWER": {
+  "FRIENDCARD": {
     "PROPER_NAME": "伙伴牌",
     "NAMES": [
       "伙伴牌"
     ],
     "DESCRIPTION": "伙伴专属卡牌，使用伙伴自身的属性加成，且不占用手牌上限。"
   },
-  "STONESKIN": {
+  "PLAYCOST": {
     "PROPER_NAME": "部署费用",
     "NAMES": [
       "部署费用"
     ],
     "DESCRIPTION": "可以且优先用于使用 [#FF5252]伙伴牌[] 的能量，回合结束不会清空。"
   },
-  "TECHNIQUE": {
+  "UNIQUE": {
     "PROPER_NAME": "唯一",
     "NAMES": [
       "唯一"
     ],
     "DESCRIPTION": "使用这张牌后，伙伴不会再提供这张牌。"
+  },
+  "CHARGING": {
+    "PROPER_NAME": "蓄力",
+    "NAMES": [
+      "蓄力"
+    ],
+    "DESCRIPTION": "在此期间，伙伴不再提供 [#FF5252]伙伴牌[] 。"
   }
 }

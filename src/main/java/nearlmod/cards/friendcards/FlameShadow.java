@@ -2,6 +2,8 @@ package nearlmod.cards.friendcards;
 
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
 import com.megacrit.cardcrawl.actions.common.DamageAction;
+import com.megacrit.cardcrawl.actions.common.DamageAllEnemiesAction;
+import com.megacrit.cardcrawl.actions.common.RemoveSpecificPowerAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.cards.DamageInfo;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
@@ -16,32 +18,28 @@ import nearlmod.orbs.Viviana;
 import nearlmod.patches.AbstractCardEnum;
 import nearlmod.patches.NearlTags;
 
+import java.util.ArrayList;
 import java.util.Iterator;
 
-public class FlashFade extends AbstractNearlCard {
-    public static final String ID = "nearlmod:FlashFade";
+public class FlameShadow extends AbstractNearlCard {
+    public static final String ID = "nearlmod:FlameShadow";
     public static final CardStrings cardStrings = CardCrawlGame.languagePack.getCardStrings(ID);
     public static final String NAME = cardStrings.NAME;
     public static final String DESCRIPTION = cardStrings.DESCRIPTION;
     public static final String UPGRADE_DESCRIPTION = cardStrings.UPGRADE_DESCRIPTION;
-    public static final String IMG_PATH = "images/cards/flashfade.png";
-    private static final int COST = 2;
-    private static final int ATTACK_DMG = 8;
-    private static final int ATTACK_TIMES = 2;
-    private static final int UPGRADE_PLUS_TIMES = 1;
-    private int extraStr;
+    public static final String IMG_PATH = "images/cards/flameshadow.png";
+    private static final int COST = 1;
+    private static final int LIGHT_ADD = 10;
 
-    public FlashFade() {
+    public FlameShadow() {
         super(ID, NAME, IMG_PATH, COST, DESCRIPTION + " NL 虚无 。 NL 消耗 。",
                 CardType.ATTACK, AbstractCardEnum.NEARL_GOLD,
-                CardRarity.SPECIAL, CardTarget.ENEMY);
-        magicNumber = baseMagicNumber = ATTACK_DMG;
-        secondMagicNumber = baseSecondMagicNumber = ATTACK_TIMES;
+                CardRarity.SPECIAL, CardTarget.SELF);
         tags.add(NearlTags.IS_FRIEND_CARD);
         belongFriend = "nearlmod:Viviana";
+        magicNumber = 0;
         exhaust = true;
         isEthereal = true;
-        extraStr = 0;
         updateDmg();
     }
 
@@ -50,52 +48,47 @@ public class FlashFade extends AbstractNearlCard {
         if (p == null || p.orbs == null) return;
         for (Iterator it = p.orbs.iterator(); it.hasNext();) {
             AbstractOrb orb = (AbstractOrb)it.next();
-            if (orb instanceof Viviana){
+            if (orb instanceof Viviana) {
                 int str = ((Viviana)orb).passiveAmount;
                 magicNumber += str;
             }
         }
-        AbstractPower str = p.getPower("Strength");
-        if (str != null) {
-            magicNumber += str.amount;
-            extraStr = str.amount;
-        }
-        isMagicNumberModified = (magicNumber != baseMagicNumber);
     }
 
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
-        for (int i = 1; i <= secondMagicNumber; i++)
-            AbstractDungeon.actionManager.addToBottom(new DamageAction(m, new DamageInfo(p, magicNumber, damageTypeForTurn), AbstractGameAction.AttackEffect.SLASH_DIAGONAL));
+        AbstractPower power = p.getPower("nearlmod:LightPower");
+        int dmg = 0;
+        if (power != null) {
+            dmg += power.amount * 2;
+            AbstractDungeon.actionManager.addToBottom(new RemoveSpecificPowerAction(p, p, power));
+        }
+        if (upgraded) dmg += LIGHT_ADD * 2;
+        dmg += magicNumber;
+        ArrayList<AbstractMonster> monsters = AbstractDungeon.getCurrRoom().monsters.monsters;
+        Iterator<AbstractMonster> it = monsters.iterator();
+        while (it.hasNext()) {
+            AbstractMonster ms = it.next();
+            AbstractDungeon.actionManager.addToBottom(new DamageAction(ms, new DamageInfo(p, dmg, DamageInfo.DamageType.NORMAL), AbstractGameAction.AttackEffect.LIGHTNING));
+        }
+        Viviana.uniqueUsed = true;
     }
 
     @Override
     public AbstractCard makeCopy() {
-        return new FlashFade();
+        return new FlameShadow();
     }
 
     @Override
     public void upgrade() {
         if (!upgraded) {
             upgradeName();
-            upgradeSecondMagicNumber(UPGRADE_PLUS_TIMES);
+            rawDescription = UPGRADE_DESCRIPTION;
         }
     }
 
     @Override
     public void applyFriendPower(int amount) {
         magicNumber += amount;
-        isMagicNumberModified = true;
-    }
-
-    @Override
-    public void applyPowers() {
-        super.applyPowers();
-        AbstractPower str = AbstractDungeon.player.getPower("Strength");
-        if (str != null) {
-            magicNumber += str.amount - extraStr;
-            extraStr = str.amount;
-        }
-        isMagicNumberModified = true;
     }
 }

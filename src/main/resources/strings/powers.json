@@ -14,5 +14,9 @@
   "nearlmod:FlamingEdgePower": {
     "NAME": "灿焰长刀",
     "DESCRIPTIONS": ["每当你切换至剑枪形态时，获得", "层 光。"]
+  },
+  "nearlmod:GlimmeringTouchPower": {
+    "NAME": "微光之触",
+    "DESCRIPTIONS": ["回合后，对所有敌人造成", "点伤害。"]
   }
 }

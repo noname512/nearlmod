@@ -175,7 +175,8 @@ public class Nearl extends CustomPlayer {
         ret.add(SwitchType.ID);
         ret.add(MajestyLight.ID);
         ret.add(FlamingEdge.ID);
-        ret.add(AllinOne.ID);
+        ret.add(SwallowLight.ID);
+        ret.add(SwallowLight.ID);
         return ret;
     }
 

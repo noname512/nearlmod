@@ -48,11 +48,10 @@ public class LSSwiftSword extends AbstractNearlCard {
         if (p == null || p.orbs == null) return;
         for (Iterator it = p.orbs.iterator(); it.hasNext();) {
             AbstractOrb orb = (AbstractOrb)it.next();
-            if (orb instanceof Viviana)
-                if (((Viviana)orb).ORB_ID.equals(belongFriend)) {
-                    int str = ((Viviana)orb).passiveAmount;
-                    magicNumber += str;
-                }
+            if (orb instanceof Viviana) {
+                int str = ((Viviana)orb).passiveAmount;
+                magicNumber += str;
+            }
         }
         isMagicNumberModified = (magicNumber != baseMagicNumber);
     }

@@ -85,5 +85,15 @@
         "NAME": "“明灭”",
         "DESCRIPTION": "切换至剑枪形态，造成 !M! 点伤害 !nearlmod:M2! 次。 NL 也受到你的 力量 加成。",
         "UPGRADE_DESCRIPTION": ""
+    },
+    "nearlmod:GlimmeringTouch": {
+        "NAME": "微光之触",
+        "DESCRIPTION": "进入 nearlmod:蓄力 。 NL 两个回合后回合开始时，对所有敌人造成 !M! 点伤害，并获得 10 层光。",
+        "UPGRADE_DESCRIPTION": "进入 nearlmod:蓄力 。 NL 下个回合开始时，对所有敌人造成 !M! 点伤害，并获得 10 层光。"
+    },
+    "nearlmod:FlameShadow": {
+        "NAME": "烛燃影息",
+        "DESCRIPTION": "nearlmod:唯一 。 NL 消耗所有的 nearlmod:光 ，对所有敌人造成其层数两倍的伤害。",
+        "UPGRADE_DESCRIPTION": "nearlmod:唯一 。 NL 获得 10 层 nearlmod:光 。 NL 消耗所有的 nearlmod:光 ，对所有敌人造成其层数两倍的伤害。"
     }
 }
