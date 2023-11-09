@@ -44,7 +44,7 @@ public class FlamingEdge extends AbstractNearlCard {
 
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
-        AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(p, p, new FlamingEdgePower(p, LIGHT_GAIN)));
+        AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(p, p, new FlamingEdgePower(p, magicNumber)));
         if (!p.stance.ID.equals(AtkStance.STANCE_ID)) {
             AbstractDungeon.actionManager.addToBottom(new ChangeStanceAction(new AtkStance()));
         }
