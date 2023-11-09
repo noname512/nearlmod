@@ -46,12 +46,22 @@ public class FirstAid extends AbstractNearlCard {
         if (!p.stance.ID.equals(DefStance.STANCE_ID)) {
             AbstractDungeon.actionManager.addToBottom(new ChangeStanceAction(new DefStance()));
         }
+        applyPowers();
         AbstractDungeon.actionManager.addToBottom(new GainBlockAction(p, p, block));
         if (AbstractDungeon.player.currentHealth * 2 <= AbstractDungeon.player.maxHealth) {
             AbstractDungeon.actionManager.addToBottom((new AddTemporaryHPAction(p, p, block)));
         }
     }
 
+    @Override
+    public void applyPowers() {
+        super.applyPowers();
+        if (!AbstractDungeon.player.stance.ID.equals(DefStance.STANCE_ID)) {
+            block += DefStance.incNum;
+            block += DefStance.defInc;
+            isBlockModified = (block != baseBlock);
+        }
+    }
     @Override
     public AbstractCard makeCopy() {
         return new FirstAid();

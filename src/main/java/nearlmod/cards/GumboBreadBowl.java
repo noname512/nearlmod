@@ -38,11 +38,21 @@ public class GumboBreadBowl extends AbstractNearlCard {
 
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
-        if (p.stance.ID.equals(AtkStance.STANCE_ID)) {
+        if (!p.stance.ID.equals(DefStance.STANCE_ID)) {
             AbstractDungeon.actionManager.addToBottom(new ChangeStanceAction(new DefStance()));
         }
-
+        applyPowers();
         AbstractDungeon.actionManager.addToBottom(new GainBlockAction(p, p, block));
+    }
+
+    @Override
+    public void applyPowers() {
+        super.applyPowers();
+        if (!AbstractDungeon.player.stance.ID.equals(DefStance.STANCE_ID)) {
+            block += DefStance.incNum;
+            block += DefStance.defInc;
+            isBlockModified = (block != baseBlock);
+        }
     }
 
     @Override
