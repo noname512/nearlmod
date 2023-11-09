@@ -19,58 +19,47 @@ import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import com.megacrit.cardcrawl.powers.GainStrengthPower;
 import com.megacrit.cardcrawl.powers.StrengthPower;
 import nearlmod.patches.AbstractCardEnum;
+import nearlmod.powers.FlamingEdgePower;
 import nearlmod.stances.AtkStance;
 import nearlmod.stances.DefStance;
 
-public class FirstAid extends AbstractNearlCard {
-    public static final String ID = "nearlmod:FirstAid";
+public class FlamingEdge extends AbstractNearlCard {
+    public static final String ID = "nearlmod:FlamingEdge";
     public static final CardStrings cardStrings = CardCrawlGame.languagePack.getCardStrings(ID);
     public static final String NAME = cardStrings.NAME;
     public static final String DESCRIPTION = cardStrings.DESCRIPTION;
     public static final String UPGRADE_DESCRIPTION = cardStrings.UPGRADE_DESCRIPTION;
-    public static final String IMG_PATH = "images/cards/nearldefend.png";
+    public static final String IMG_PATH = "images/cards/majestylight.png";
     private static final int COST = 1;
-    private static final int BLOCK_AMT = 10;
-    private static final int UPGRADE_PLUS_BLOCK = 4;
+    private static final int LIGHT_GAIN = 4;
+    private static final int UPGRADE_LIGHT_GAIN = 2;
 
-    public FirstAid() {
+    public FlamingEdge() {
         super(ID, NAME, IMG_PATH, COST, DESCRIPTION,
-                AbstractCard.CardType.SKILL, AbstractCardEnum.NEARL_GOLD,
+                AbstractCard.CardType.POWER, AbstractCardEnum.NEARL_GOLD,
                 AbstractCard.CardRarity.RARE, AbstractCard.CardTarget.SELF);
 
-        block = baseBlock = BLOCK_AMT;
+        magicNumber = baseMagicNumber = LIGHT_GAIN;
     }
 
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
-        if (!p.stance.ID.equals(DefStance.STANCE_ID)) {
-            AbstractDungeon.actionManager.addToBottom(new ChangeStanceAction(new DefStance()));
-        }
-        AbstractDungeon.actionManager.addToBottom(new GainBlockAction(p, p, block));
-        if (AbstractDungeon.player.currentHealth * 2 <= AbstractDungeon.player.maxHealth) {
-            AbstractDungeon.actionManager.addToBottom((new AddTemporaryHPAction(p, p, block)));
+        AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(p, p, new FlamingEdgePower(p, LIGHT_GAIN)));
+        if (!p.stance.ID.equals(AtkStance.STANCE_ID)) {
+            AbstractDungeon.actionManager.addToBottom(new ChangeStanceAction(new AtkStance()));
         }
     }
 
     @Override
     public AbstractCard makeCopy() {
-        return new FirstAid();
-    }
-
-    public void triggerOnGlowCheck() {
-        if (AbstractDungeon.player.currentHealth * 2 <= AbstractDungeon.player.maxHealth) {
-            this.glowColor = AbstractCard.GOLD_BORDER_GLOW_COLOR.cpy();
-        } else {
-            this.glowColor = AbstractCard.BLUE_BORDER_GLOW_COLOR.cpy();
-        }
-
+        return new FlamingEdge();
     }
 
     @Override
     public void upgrade() {
         if (!upgraded) {
             upgradeName();
-            upgradeBlock(UPGRADE_PLUS_BLOCK);
+            upgradeMagicNumber(UPGRADE_LIGHT_GAIN);
         }
     }
 }

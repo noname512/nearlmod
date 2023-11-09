@@ -6,6 +6,7 @@ import basemod.interfaces.*;
 import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.graphics.Color;
 import com.badlogic.gdx.graphics.Texture;
+import com.badlogic.gdx.utils.compression.lzma.Base;
 import com.evacipated.cardcrawl.mod.stslib.Keyword;
 import com.evacipated.cardcrawl.modthespire.Loader;
 import com.evacipated.cardcrawl.modthespire.lib.SpireConfig;
@@ -123,6 +124,8 @@ public class NLMOD implements EditCardsSubscriber, EditCharactersSubscriber, Edi
 
         // Rare.
         BaseMod.addCard(new NightScouringGleam()); // 逐夜烁光
+        BaseMod.addCard(new FirstAid());
+        BaseMod.addCard(new FlamingEdge());
 
         // Friend.
         BaseMod.addCard(new LSSwiftSword()); // 光影迅捷剑
