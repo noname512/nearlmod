@@ -14,7 +14,6 @@ import java.util.ArrayList;
 import java.util.Iterator;
 
 public abstract class AbstractFriend extends CustomOrb {
-    public boolean upgraded;
 
     public AbstractFriend(String ID, String NAME, int basePassiveAmount, int baseEvokeAmount, String passiveDescription, String evokeDescription, String imgPath) {
         super(ID, NAME, basePassiveAmount, baseEvokeAmount, passiveDescription, evokeDescription, imgPath);
@@ -22,7 +21,6 @@ public abstract class AbstractFriend extends CustomOrb {
         showEvokeValue = false;
         angle = MathUtils.random(360.0f);
         channelAnimTimer = 0.5f;
-        upgraded = false;
     }
 
     public void applyStrength(int amount) {
@@ -37,11 +35,6 @@ public abstract class AbstractFriend extends CustomOrb {
                     nCard.applyFriendPower(amount);
             }
         }
-    }
-
-    public void upgrade() {
-        upgraded = true;
-        applyStrength(2);
     }
 
     @Override

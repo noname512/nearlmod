@@ -17,6 +17,8 @@ import nearlmod.patches.NearlTags;
 import java.util.ArrayList;
 import java.util.Iterator;
 
+import static basemod.BaseMod.logger;
+
 public class Viviana extends AbstractFriend {
 
     public static final String ORB_ID = "nearlmod:Viviana";
@@ -47,10 +49,9 @@ public class Viviana extends AbstractFriend {
         updateDescription();
     }
 
-    @Override
     public void upgrade() {
-        super.upgrade();
-        updateDescription();
+        upgraded = true;
+        applyStrength(2);
     }
 
     @Override

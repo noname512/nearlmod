@@ -19,7 +19,7 @@ import nearlmod.patches.NearlTags;
 import java.util.Iterator;
 
 public class FlashFade extends AbstractNearlCard {
-    public static final String ID = "nearlmod:LSSwiftSword";
+    public static final String ID = "nearlmod:FlashFade";
     public static final CardStrings cardStrings = CardCrawlGame.languagePack.getCardStrings(ID);
     public static final String NAME = cardStrings.NAME;
     public static final String DESCRIPTION = cardStrings.DESCRIPTION;
@@ -56,7 +56,7 @@ public class FlashFade extends AbstractNearlCard {
                     magicNumber += str;
                 }
         }
-        AbstractPower str = p.getPower("strength");
+        AbstractPower str = p.getPower("Strength");
         if (str != null) {
             magicNumber += str.amount;
             extraStr = str.amount;
@@ -86,19 +86,17 @@ public class FlashFade extends AbstractNearlCard {
     @Override
     public void applyFriendPower(int amount) {
         magicNumber += amount;
-        isMagicNumberModified = (magicNumber != baseMagicNumber);
-        flash();
+        isMagicNumberModified = true;
     }
 
     @Override
     public void applyPowers() {
         super.applyPowers();
-        AbstractPower str = AbstractDungeon.player.getPower("strength");
+        AbstractPower str = AbstractDungeon.player.getPower("Strength");
         if (str != null) {
             magicNumber += str.amount - extraStr;
             extraStr = str.amount;
         }
-        isMagicNumberModified = (magicNumber != baseMagicNumber);
-        flash();
+        isMagicNumberModified = true;
     }
 }
