@@ -10,5 +10,9 @@
   "nearlmod:DefMode": {
     "NAME": "使徒形态",
     "DESCRIPTIONS": ["处于此形态时，获得", "点 敏捷 。"]
+  },
+  "nearlmod:FlamingEdgePower": {
+    "NAME": "灿焰长刀",
+    "DESCRIPTIONS": ["每当你切换至剑枪形态时，获得", "层 光。"]
   }
 }

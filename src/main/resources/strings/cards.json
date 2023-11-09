@@ -74,5 +74,10 @@
         "NAME" : "急救",
         "DESCRIPTION": "切换至使徒模式。 NL 获得 !B! 点格挡。 NL 如果你处于半血以下，额外获得等量的临时生命。",
         "UPGRADE_DESCRIPTION": ""
+    },
+    "nearlmod:FlamingEdge": {
+        "NAME" : "灿焰长刀",
+        "DESCRIPTION": "每当你切换至剑枪形态时，获得 !M! 层光。切换至剑枪形态。",
+        "UPGRADE_DESCRIPTION": ""
     }
 }
