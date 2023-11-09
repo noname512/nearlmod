@@ -100,6 +100,8 @@ public class NLMOD implements EditCardsSubscriber, EditCharactersSubscriber, Edi
 
     @Override
     public void receiveEditCards() {
+        BaseMod.addDynamicVariable(new AbstractNearlCard.SecondMagicNumber());
+
         // Basic.
         BaseMod.addCard(new NearlStrike()); // 打击
         BaseMod.addCard(new NearlDefend()); // 防御
@@ -111,6 +113,7 @@ public class NLMOD implements EditCardsSubscriber, EditCharactersSubscriber, Edi
         BaseMod.addCard(new KnightCrest()); // 骑士之辉
         BaseMod.addCard(new AllinOne()); // 攻防一体
         BaseMod.addCard(new SwordShield()); // 剑盾骑士
+        BaseMod.addCard(new NobleLight()); // 崇高者
 
         // Uncommon.
         BaseMod.addCard(new SecondSun()); // 第二轮太阳
