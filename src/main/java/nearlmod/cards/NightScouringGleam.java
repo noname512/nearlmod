@@ -17,6 +17,7 @@ import com.megacrit.cardcrawl.powers.GainStrengthPower;
 import com.megacrit.cardcrawl.powers.StrengthPower;
 import nearlmod.patches.AbstractCardEnum;
 import nearlmod.stances.AtkStance;
+import nearlmod.stances.DefStance;
 
 public class NightScouringGleam extends AbstractNearlCard {
     public static final String ID = "nearlmod:NightScouringGleam";
@@ -68,8 +69,17 @@ public class NightScouringGleam extends AbstractNearlCard {
 
     @Override
     public void switchedStance() {
-        if (this.target == CardTarget.ENEMY) this.target = CardTarget.ALL_ENEMY;
+        if (AbstractDungeon.player.stance.ID.equals(AtkStance.STANCE_ID)) this.target = CardTarget.ALL_ENEMY;
         else this.target = CardTarget.ENEMY;
+    }
+
+    public void triggerOnGlowCheck() {
+        if (AbstractDungeon.player.stance.ID.equals(AtkStance.STANCE_ID)) {
+            this.glowColor = AbstractCard.GOLD_BORDER_GLOW_COLOR.cpy();
+        } else {
+            this.glowColor = AbstractCard.BLUE_BORDER_GLOW_COLOR.cpy();
+        }
+
     }
 
     @Override
