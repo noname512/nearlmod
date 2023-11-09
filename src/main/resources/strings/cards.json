@@ -62,7 +62,7 @@
     },
     "nearlmod:FirstAid": {
         "NAME" : "急救",
-        "DESCRIPTION": "切换至使徒形态。 NL 获得 !B! 点 格挡。 NL 如果你处于半血以下，额外获得等量的 basemod:临时生命。",
+        "DESCRIPTION": "切换至使徒形态。 NL 获得 !B! 点 格挡。 NL 如果你处于半血以下，额外获得等量的 stslib:临时生命 。",
         "UPGRADE_DESCRIPTION": ""
     },
     "nearlmod:FlamingEdge": {
