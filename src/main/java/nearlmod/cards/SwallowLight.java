@@ -35,14 +35,6 @@ public class SwallowLight extends AbstractNearlCard {
 
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
-        for (Iterator it = AbstractDungeon.player.orbs.iterator(); it.hasNext();) {
-            AbstractOrb orb = (AbstractOrb)it.next();
-            if (orb instanceof Viviana) {
-                ((Viviana) orb).applyStrength(2);
-                return;
-            }
-        }
-
         AbstractPower power = p.getPower("nearlmod:LightPower");
         int amount = 0;
         if (power != null) {
@@ -50,6 +42,14 @@ public class SwallowLight extends AbstractNearlCard {
             power.reducePower(amount);
             if (!upgraded) amount = (amount + 2) / 3;
             else amount = (amount + 1) / 2;
+        }
+        for (Iterator it = AbstractDungeon.player.orbs.iterator(); it.hasNext();) {
+            AbstractOrb orb = (AbstractOrb)it.next();
+            if (orb instanceof Viviana) {
+                ((Viviana) orb).applyStrength(amount);
+                ((Viviana) orb).upgrade();
+                return;
+            }
         }
         AbstractDungeon.actionManager.addToBottom(new SummonOrbAction(new Viviana(amount)));
     }
@@ -64,6 +64,7 @@ public class SwallowLight extends AbstractNearlCard {
         if (!upgraded) {
             upgradeName();
             upgradeBaseCost(UPGRADE_COST);
+            rawDescription = UPGRADE_DESCRIPTION;
         }
     }
 }

@@ -11,19 +11,20 @@ import com.megacrit.cardcrawl.localization.OrbStrings;
 import com.megacrit.cardcrawl.localization.StanceStrings;
 import com.megacrit.cardcrawl.orbs.AbstractOrb;
 import nearlmod.cards.AbstractNearlCard;
-import nearlmod.cards.LSSwiftSword;
+import nearlmod.cards.friendcards.*;
 import nearlmod.patches.NearlTags;
 
 import java.util.ArrayList;
 import java.util.Iterator;
 
-public class Viviana extends CustomOrb {
+public class Viviana extends AbstractFriend {
 
     public static final String ORB_ID = "nearlmod:Viviana";
     private static final OrbStrings orbStrings = CardCrawlGame.languagePack.getOrbString(ORB_ID);
     public static final String NAME = orbStrings.NAME;
     public static final String[] DESCRIPTION = orbStrings.DESCRIPTION;
     public static final String IMAGE = "images/orbs/viviana.png";
+    public boolean upgraded;
 
     public Viviana(int amount) {
         super(ORB_ID, NAME, 0, 0, DESCRIPTION[0], "", IMAGE);
@@ -32,6 +33,7 @@ public class Viviana extends CustomOrb {
         angle = MathUtils.random(360.0f);
         channelAnimTimer = 0.5f;
         passiveAmount = amount;
+        upgraded = false;
         updateDescription();
     }
 
@@ -39,33 +41,21 @@ public class Viviana extends CustomOrb {
         this(0);
     }
 
+    @Override
     public void applyStrength(int amount) {
-        passiveAmount += amount;
-        ArrayList<AbstractCard> cardSet = AbstractDungeon.player.hand.group;
-        Iterator it = cardSet.iterator();
-        while (it.hasNext()) {
-            AbstractCard card = (AbstractCard)it.next();
-            if (card instanceof AbstractNearlCard)
-                if (((AbstractNearlCard) card).hasTag(NearlTags.IS_FRIEND_CARD) &&
-                    ((AbstractNearlCard) card).belongFriend.equals(ORB_ID)) {
-                    ((AbstractNearlCard) card).applyFriendPower(amount);
-                }
-        }
+        super.applyStrength(amount);
         updateDescription();
     }
 
     @Override
-    public void onEvoke() {}
-
-    @Override
-    public void applyFocus() {}
-
-//    @Override
-//    public void updateAnimation() {}
+    public void upgrade() {
+        super.upgrade();
+        updateDescription();
+    }
 
     @Override
     public void updateDescription() {
-        description = DESCRIPTION[0] + passiveAmount + DESCRIPTION[1];
+        description = DESCRIPTION[upgraded? 2 : 0] + passiveAmount + DESCRIPTION[1];
     }
 
     @Override
@@ -76,15 +66,17 @@ public class Viviana extends CustomOrb {
     @Override
     public void onStartOfTurn() {
         int random = (int)AbstractDungeon.cardRng.random(0, 3);
+        AbstractCard card = null;
         switch (random) {
             case 0:
             case 1:
+                card = new FlashFade();
+                break;
             case 2:
             default:
-                AbstractDungeon.player.hand.addToHand(new LSSwiftSword());
+                card = new LSSwiftSword();
         }
+        if (upgraded) card.upgrade();
+        AbstractDungeon.player.hand.addToHand(card);
     }
-
-    @Override
-    public void playChannelSFX() {}
 }

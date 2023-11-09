@@ -1,4 +1,4 @@
-package nearlmod.cards;
+package nearlmod.cards.friendcards;
 
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
 import com.megacrit.cardcrawl.actions.common.DamageAction;
@@ -11,25 +11,27 @@ import com.megacrit.cardcrawl.localization.CardStrings;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import com.megacrit.cardcrawl.orbs.AbstractOrb;
 import com.megacrit.cardcrawl.powers.AbstractPower;
+import nearlmod.cards.AbstractNearlCard;
 import nearlmod.orbs.Viviana;
 import nearlmod.patches.AbstractCardEnum;
 import nearlmod.patches.NearlTags;
 
 import java.util.Iterator;
 
-public class LSSwiftSword extends AbstractNearlCard {
+public class FlashFade extends AbstractNearlCard {
     public static final String ID = "nearlmod:LSSwiftSword";
     public static final CardStrings cardStrings = CardCrawlGame.languagePack.getCardStrings(ID);
     public static final String NAME = cardStrings.NAME;
     public static final String DESCRIPTION = cardStrings.DESCRIPTION;
     public static final String UPGRADE_DESCRIPTION = cardStrings.UPGRADE_DESCRIPTION;
     public static final String IMG_PATH = "images/cards/nearlstrike.png";
-    private static final int COST = 1;
-    private static final int ATTACK_DMG = 5;
+    private static final int COST = 2;
+    private static final int ATTACK_DMG = 8;
     private static final int ATTACK_TIMES = 2;
     private static final int UPGRADE_PLUS_TIMES = 1;
+    private int extraStr;
 
-    public LSSwiftSword() {
+    public FlashFade() {
         super(ID, NAME, IMG_PATH, COST, DESCRIPTION + " NL 虚无 。 NL 消耗 。",
                 CardType.ATTACK, AbstractCardEnum.NEARL_GOLD,
                 CardRarity.SPECIAL, CardTarget.ENEMY);
@@ -39,6 +41,7 @@ public class LSSwiftSword extends AbstractNearlCard {
         belongFriend = "nearlmod:Viviana";
         exhaust = true;
         isEthereal = true;
+        extraStr = 0;
         updateDmg();
     }
 
@@ -53,6 +56,11 @@ public class LSSwiftSword extends AbstractNearlCard {
                     magicNumber += str;
                 }
         }
+        AbstractPower str = p.getPower("strength");
+        if (str != null) {
+            magicNumber += str.amount;
+            extraStr = str.amount;
+        }
         isMagicNumberModified = (magicNumber != baseMagicNumber);
     }
 
@@ -64,7 +72,7 @@ public class LSSwiftSword extends AbstractNearlCard {
 
     @Override
     public AbstractCard makeCopy() {
-        return new LSSwiftSword();
+        return new FlashFade();
     }
 
     @Override
@@ -79,5 +87,18 @@ public class LSSwiftSword extends AbstractNearlCard {
     public void applyFriendPower(int amount) {
         magicNumber += amount;
         isMagicNumberModified = (magicNumber != baseMagicNumber);
+        flash();
+    }
+
+    @Override
+    public void applyPowers() {
+        super.applyPowers();
+        AbstractPower str = AbstractDungeon.player.getPower("strength");
+        if (str != null) {
+            magicNumber += str.amount - extraStr;
+            extraStr = str.amount;
+        }
+        isMagicNumberModified = (magicNumber != baseMagicNumber);
+        flash();
     }
 }

@@ -1,6 +1,6 @@
 {
   "nearlmod:Viviana": {
     "NAME": "薇薇安娜",
-    "DESCRIPTION": ["回合开始时，给予你一张薇薇安娜的 nearlmod:伙伴牌 。当前拥有", "点 力量 。"]
+    "DESCRIPTION": ["回合开始时，给予你一张薇薇安娜的 nearlmod:伙伴牌 。当前拥有", "点 力量 。", "回合开始时，给予你一张薇薇安娜的已升级的 nearlmod:伙伴牌 。当前拥有"]
   }
 }
