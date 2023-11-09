@@ -46,13 +46,17 @@
     },
     "nearlmod:SecondSun": {
         "NAME": "第二轮太阳",
-        "DESCRIPTION": "使你的 nearlmod:光 翻倍。 NL 消耗。",
+        "DESCRIPTION": "使你的 nearlmod:光 翻倍。 NL 消耗 。",
         "UPGRADE_DESCRIPTION": ""
     },
     "nearlmod:LightArrowStrike": {
         "NAME": "光箭打击",
         "DESCRIPTION": "造成等同于你的 nearlmod:光 的层数的伤害。",
         "UPGRADE_DESCRIPTION": ""
+    },
+    "nearlmod:NobleLight": {
+        "NAME": "崇高者",
+        "DESCRIPTION": "是你的伙伴获得 1 点 力量 。"
     },
 
 
@@ -63,7 +67,7 @@
     },
     "nearlmod:LSSwiftSword": {
         "NAME": "光影迅捷剑",
-        "DESCRIPTION": "造成 !D! 点伤害 !M! 次。",
+        "DESCRIPTION": "造成 !M! 点伤害 !nearlmod:M2! 次。",
         "UPGRADE_DESCRIPTION": ""
     },
     "nearlmod:FirstAid": {

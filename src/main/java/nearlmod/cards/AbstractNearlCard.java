@@ -15,6 +15,12 @@ import java.util.List;
 
 public abstract class AbstractNearlCard extends CustomCard {
 
+    public int baseSecondMagicNumber;
+    public int secondMagicNumber;
+    public boolean isSecondMagicNumberModified;
+    public boolean upgradedSecondMagicNumber;
+    public String belongFriend;
+
     public AbstractNearlCard(String id, String name, String img, int cost, String rawDescription,
                              AbstractCard.CardType type, AbstractCard.CardColor color,
                              AbstractCard.CardRarity rarity, AbstractCard.CardTarget target) {
@@ -25,5 +31,64 @@ public abstract class AbstractNearlCard extends CustomCard {
     public List<TooltipInfo> getCustomTooltips() {
         List<TooltipInfo> ret = new ArrayList<>();
         return ret;
+    }
+
+    public void upgradeSecondMagicNumber(int amount) {
+        baseSecondMagicNumber += amount;
+        secondMagicNumber = baseSecondMagicNumber;
+        upgradedSecondMagicNumber = true;
+    }
+
+    public void applyFriendPower(int amount) {}
+
+    public static class SecondMagicNumber extends DynamicVariable {
+
+        @Override
+        public String key() {
+            return "nearlmod:M2";
+        }
+
+        @Override
+        public boolean isModified(AbstractCard card) {
+            if (card instanceof AbstractNearlCard) {
+                return ((AbstractNearlCard)card).isSecondMagicNumberModified;
+            } else {
+                return false;
+            }
+        }
+
+        @Override
+        public void setIsModified(AbstractCard card, boolean v) {
+            if (card instanceof AbstractNearlCard) {
+                ((AbstractNearlCard)card).isSecondMagicNumberModified = v;
+            }
+        }
+
+        @Override
+        public int value(AbstractCard card) {
+            if (card instanceof AbstractNearlCard) {
+                return ((AbstractNearlCard) card).secondMagicNumber;
+            } else {
+                return 0;
+            }
+        }
+
+        @Override
+        public int baseValue(AbstractCard card) {
+            if (card instanceof AbstractNearlCard) {
+                return ((AbstractNearlCard) card).baseSecondMagicNumber;
+            } else {
+                return 0;
+            }
+        }
+
+        @Override
+        public boolean upgraded(AbstractCard card) {
+            if (card instanceof AbstractNearlCard) {
+                return ((AbstractNearlCard)card).upgradedSecondMagicNumber;
+            } else {
+                return false;
+            }
+        }
     }
 }

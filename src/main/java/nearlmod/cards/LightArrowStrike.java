@@ -9,6 +9,7 @@ import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.localization.CardStrings;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
+import com.megacrit.cardcrawl.powers.AbstractPower;
 import nearlmod.patches.AbstractCardEnum;
 
 public class LightArrowStrike extends AbstractNearlCard {
@@ -29,8 +30,19 @@ public class LightArrowStrike extends AbstractNearlCard {
     }
 
     @Override
+    public boolean canPlay(AbstractCard card) {
+        if (card.cardID.equals(ID) && AbstractDungeon.player.getPower("nearlmod:LightPower") == null) {
+            return false;
+        } else {
+            return super.canPlay(card);
+        }
+    }
+
+    @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
-        int lightAmount = AbstractDungeon.player.getPower("nearlmod:LightPower").amount;
+        AbstractPower power = AbstractDungeon.player.getPower("nearlmod:LightPower");
+        if (power == null) return;
+        int lightAmount = power.amount;
         AbstractDungeon.actionManager.addToBottom(new DamageAction(m, new DamageInfo(p, lightAmount, damageTypeForTurn), AbstractGameAction.AttackEffect.SLASH_DIAGONAL));
     }
 

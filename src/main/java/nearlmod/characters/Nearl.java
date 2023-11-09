@@ -1,8 +1,10 @@
 package nearlmod.characters;
 
+import com.badlogic.gdx.graphics.Texture;
 import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
 import com.megacrit.cardcrawl.actions.watcher.ChangeStanceAction;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
+import com.megacrit.cardcrawl.helpers.ImageMaster;
 import nearlmod.NLMOD;
 import basemod.abstracts.CustomPlayer;
 import com.badlogic.gdx.graphics.Color;
@@ -31,9 +33,15 @@ import java.util.ArrayList;
 
 public class Nearl extends CustomPlayer {
     private static final Color NearlGold = CardHelper.getColor(255, 236, 194);
-    public static final String TACHI = "images/char/tachi.png";
-    public static final String SHOULDER = "images/char/tachi.png";
-    public static final String CORPSE = "images/char/corpse.png";
+    public static final String SWORD = "images/char/sword.png";
+    public static final Texture SWORDIMG = ImageMaster.loadImage(SWORD);
+    public static final String SWORDDIE = "images/char/sworddie.png";
+    public static final Texture SWORDDIEIMG = ImageMaster.loadImage(SWORDDIE);
+    public static final String SHIELD = "images/char/shield.png";
+    public static final Texture SHIELDIMG = ImageMaster.loadImage(SHIELD);
+    public static final String SHIELDDIE = "images/char/shielddie.png";
+    public static final Texture SHIELDDIEIMG = ImageMaster.loadImage(SHIELDDIE);
+    public static final String SHOULDER = "images/char/shoulder.png";
     public static final String[] orbTextures = {
         "images/char/orb/layer1.png",
         "images/char/orb/layer2.png",
@@ -63,7 +71,7 @@ public class Nearl extends CustomPlayer {
         dialogY = drawY + 220.0F * Settings.scale;
 
         // 参数列表：静态贴图路径，越肩视角2贴图路径，越肩视角贴图路径，失败时贴图路径，角色选择界面信息，碰撞箱XY宽高，初始能量数
-        initializeClass(TACHI, SHOULDER, SHOULDER, CORPSE, getLoadout(), 20.0F, -10.0F, 220.0F, 290.0F, new EnergyManager(3));
+        initializeClass(SHIELD, SHOULDER, SHOULDER, SHIELDDIE, getLoadout(), 20.0F, -10.0F, 220.0F, 290.0F, new EnergyManager(3));
     }
 
     @Override
@@ -164,7 +172,6 @@ public class Nearl extends CustomPlayer {
         ret.add(NearlDefend.ID);
         ret.add(SwitchType.ID);
         ret.add(MajestyLight.ID);
-        ret.add(FirstAid.ID);
         return ret;
     }
 
@@ -187,5 +194,16 @@ public class Nearl extends CustomPlayer {
         AtkStance.atkInc = 0;
         DefStance.defInc = -1;
         AbstractDungeon.actionManager.addToBottom(new ChangeStanceAction(new DefStance()));
+    }
+
+    @Override
+    public void onStanceChange(String id) {
+        if (id.equals(AtkStance.STANCE_ID)) {
+            this.img = SWORDIMG;
+            this.corpseImg = SWORDDIEIMG;
+        } else {
+            this.img = SHIELDIMG;
+            this.corpseImg = SHIELDDIEIMG;
+        }
     }
 }
