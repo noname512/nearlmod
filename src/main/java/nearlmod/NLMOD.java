@@ -125,9 +125,10 @@ public class NLMOD implements EditCardsSubscriber, EditCharactersSubscriber, Edi
         BaseMod.addCard(new SwallowLight()); // 侵吞光芒
 
         // Rare.
-        BaseMod.addCard(new NightScouringGleam()); // 逐夜烁光
+        BaseMod.addCard(new BravetheDarkness()); // 不畏苦暗
         BaseMod.addCard(new FirstAid()); // 急救
         BaseMod.addCard(new FlamingEdge()); // 灿焰长刃
+        BaseMod.addCard(new NightScouringGleam()); // 逐夜烁光
 
         // Friend.
         BaseMod.addCard(new LSSwiftSword()); // 光影迅捷剑
