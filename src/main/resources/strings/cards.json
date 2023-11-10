@@ -73,7 +73,7 @@
     "nearlmod:NightScouringGleam": {
         "NAME" : "逐夜烁光",
         "DESCRIPTION": "获得 15 点 力量 。 NL 获得 !M! 层 缓冲。 NL 2 回合后死亡。 NL 切换至剑枪形态。 NL 消耗 ",
-        "UPGRADE_DESCRIPTION": "保留。 NL "
+        "UPGRADE_DESCRIPTION": " 保留 。 NL "
     },
 
     "nearlmod:SwallowLight": {
