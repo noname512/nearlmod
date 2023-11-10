@@ -2,6 +2,7 @@ package nearlmod;
 
 import basemod.*;
 import basemod.abstracts.CustomCard;
+import basemod.helpers.RelicType;
 import basemod.interfaces.*;
 import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.graphics.Color;
@@ -27,6 +28,7 @@ import com.megacrit.cardcrawl.relics.AbstractRelic;
 import com.megacrit.cardcrawl.rooms.AbstractRoom;
 import com.megacrit.cardcrawl.screens.custom.CustomMod;
 import nearlmod.patches.NearlEnum;
+import nearlmod.relics.CureUp;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
@@ -155,7 +157,10 @@ public class NLMOD implements EditCardsSubscriber, EditCharactersSubscriber, Edi
     }
 
     @Override
-    public void receiveEditRelics() {}
+    public void receiveEditRelics() {
+        // starter.
+        BaseMod.addRelicToCustomPool(new CureUp(), NEARL_GOLD);
+    }
 
     @Override
     public void receiveEditStrings() {
@@ -167,5 +172,7 @@ public class NLMOD implements EditCardsSubscriber, EditCharactersSubscriber, Edi
         BaseMod.loadCustomStrings(StanceStrings.class, stanceStrings);
         String orbStrings = Gdx.files.internal("strings/orbs.json").readString(String.valueOf(StandardCharsets.UTF_8));
         BaseMod.loadCustomStrings(OrbStrings.class, orbStrings);
+        String relicStrings = Gdx.files.internal("strings/relics.json").readString(String.valueOf(StandardCharsets.UTF_8));
+        BaseMod.loadCustomStrings(RelicStrings.class, relicStrings);
     }
 }

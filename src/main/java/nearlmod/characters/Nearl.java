@@ -23,6 +23,7 @@ import com.megacrit.cardcrawl.localization.CharacterStrings;
 import com.megacrit.cardcrawl.screens.CharSelectInfo;
 import com.megacrit.cardcrawl.unlock.UnlockTracker;
 import nearlmod.cards.*;
+import nearlmod.relics.*;
 import nearlmod.patches.AbstractCardEnum;
 import nearlmod.patches.NearlEnum;
 import nearlmod.powers.DefMode;
@@ -183,6 +184,8 @@ public class Nearl extends CustomPlayer {
     @Override
     public ArrayList<String> getStartingRelics() {
         ArrayList<String> ret = new ArrayList<String>();
+        ret.add(CureUp.ID);
+        UnlockTracker.markRelicAsSeen(CureUp.ID);
         return ret;
     }
     
