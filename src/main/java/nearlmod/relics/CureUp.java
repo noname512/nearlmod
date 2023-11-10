@@ -24,7 +24,7 @@ public class CureUp extends CustomRelic {
     public static int amount;
     public static final int MAX_AMOUNT = 10;
     public CureUp() {
-        super(ID, IMG, IMG_OUTLINE, RelicTier.STARTER, LandingSound.CLINK);
+        super(ID, IMG, IMG_OUTLINE, RelicTier.STARTER, LandingSound.FLAT);
     }
 
     @Override
@@ -34,16 +34,14 @@ public class CureUp extends CustomRelic {
 
     @Override
     public void atTurnStart() {
-        logger.info("CureUp::atTurnStart");
-        amount = MAX_AMOUNT;
+        this.counter = MAX_AMOUNT;
     }
 
     @Override
     public int onPlayerGainedBlock(float blockAmount) {
         int block = floor(blockAmount);
-        logger.info("CureUp::onPlayerGainBlock: blockAmount = " + block + ", amount = " + amount);
-        int exchange = min(block, amount);
-        amount -= exchange;
+        int exchange = min(block, this.counter);
+        this.counter -= exchange;
         AbstractPlayer p = AbstractDungeon.player;
         if (exchange > 0)
             AbstractDungeon.actionManager.addToBottom(new AddTemporaryHPAction(p, p, exchange));
