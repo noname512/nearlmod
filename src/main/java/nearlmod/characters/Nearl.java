@@ -161,19 +161,14 @@ public class Nearl extends CustomPlayer {
         ArrayList<String> ret = new ArrayList<>();
         ret.add(NearlStrike.ID);
         ret.add(NearlStrike.ID);
-        /*
         ret.add(NearlStrike.ID);
         ret.add(NearlStrike.ID);
         ret.add(NearlDefend.ID);
         ret.add(NearlDefend.ID);
-        */
         ret.add(NearlDefend.ID);
         ret.add(NearlDefend.ID);
         ret.add(SwitchType.ID);
         ret.add(MajestyLight.ID);
-        ret.add(FlamingEdge.ID);
-        ret.add(SwallowLight.ID);
-        ret.add(SwallowLight.ID);
         return ret;
     }
 
