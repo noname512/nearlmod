@@ -129,7 +129,17 @@
     },
     "nearlmod:CraftsmanEcho": {
         "NAME": "工匠团的回响",
-        "DESCRIPTION": "[#FF0000]待修改，别打！[] NL 选择一个形态，切换到该形态，本次切换形态获得的数值增加 !M! 点。",
+        "DESCRIPTION": "选择一个形态，切换到该形态，本次切换形态获得的数值增加 3 点。",
+        "UPGRADE_DESCRIPTION": ""
+    },
+    "nearlmod:ToAtkStance": {
+        "NAME": "剑枪形态",
+        "DESCRIPTION": "切换到剑枪形态，本次切换形态获得的数值增加 3 点。",
+        "UPGRADE_DESCRIPTION": ""
+    },
+    "nearlmod:ToDefStance": {
+        "NAME": "使徒形态",
+        "DESCRIPTION": "切换到使徒形态，本次切换形态获得的数值增加 3 点。",
         "UPGRADE_DESCRIPTION": ""
     },
 
