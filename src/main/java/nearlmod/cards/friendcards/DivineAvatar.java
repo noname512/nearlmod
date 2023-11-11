@@ -8,6 +8,7 @@ import com.megacrit.cardcrawl.cards.DamageInfo;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
+import com.megacrit.cardcrawl.helpers.ImageMaster;
 import com.megacrit.cardcrawl.localization.CardStrings;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import nearlmod.orbs.Blemishine;
@@ -33,6 +34,8 @@ public class DivineAvatar extends AbstractFriendCard {
                 CardRarity.SPECIAL, CardTarget.ENEMY, "nearlmod:Blemishine");
         magicNumber = baseMagicNumber = ATTACK_DMG;
         secondMagicNumber = baseSecondMagicNumber = RECOVER_HP;
+        this.bannerSmallRegion = ImageMaster.CARD_BANNER_RARE;
+        this.bannerLargeRegion = ImageMaster.CARD_BANNER_RARE_L;
         updateDmg();
     }
 

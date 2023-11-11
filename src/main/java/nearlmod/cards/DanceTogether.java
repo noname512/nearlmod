@@ -43,7 +43,7 @@ public class DanceTogether extends AbstractNearlCard {
             card.rawDescription = card.baseDescription + " NL 保留 。 NL 消耗 。";
             card.isEthereal = false;
             card.selfRetain = true;
-            card.initializeDescriptionCN();
+            card.initializeDescription();
         }
         AbstractDungeon.player.hand.addToHand(card);
     }
