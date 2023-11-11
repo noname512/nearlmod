@@ -1,7 +1,7 @@
 {
   "nearlmod:LightPower": {
     "NAME": "光",
-    "DESCRIPTIONS": ["使用时对敌人造成", "点伤害。", "使用时获得", "点临时生命。"]
+    "DESCRIPTIONS": ["使用时对敌人造成", "点伤害。", "使用时获得", "点 临时生命 。"]
   },
   "nearlmod:AtkMode": {
     "NAME": "剑枪形态",
@@ -13,7 +13,7 @@
   },
   "nearlmod:FlamingEdgePower": {
     "NAME": "灿焰长刀",
-    "DESCRIPTIONS": ["每当你切换至剑枪形态时，获得", "层 nearlmod:光 。"]
+    "DESCRIPTIONS": ["每当你切换至剑枪形态时，获得", "层 光 。"]
   },
   "nearlmod:GlimmeringTouchPower": {
     "NAME": "微光之触",
@@ -26,5 +26,13 @@
   "nearlmod:WFPPower": {
     "NAME": "白恶魔的庇护",
     "DESCRIPTIONS": ["你不再被 脆弱 、 虚弱 、 易伤 。 NL 如果你同时拥有 [#FF5252]黑恶魔的庇护[] ，每回合开始时获得一层 人工制品 。"]
+  },
+  "nearlmod:Exsanguination": {
+    "NAME": "血归",
+    "DESCRIPTIONS": ["你的 力量 无法超过 0 。"]
+  },
+  "nearlmod:Invincible": {
+    "NAME": "伙伴们的庇护",
+    "DESCRIPTIONS": ["本回合内，你不会受到伤害 。"]
   }
 }

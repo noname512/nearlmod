@@ -1,10 +1,10 @@
 {
   "nearlmod:AtkStance": {
     "NAME": "剑枪形态",
-    "DESCRIPTION": ["处于此形态时，获得", "点 力量 。"]
+    "DESCRIPTION": ["处于此形态时，获得", "点 力量 。当你下次进入该形态时，额外获得", "点 力量 "]
   },
   "nearlmod:DefStance": {
     "NAME": "使徒形态",
-    "DESCRIPTION": ["处于此形态时，获得", "点 敏捷 。"]
+    "DESCRIPTION": ["处于此形态时，获得", "点 敏捷 。当你下次进入该形态时，额外获得", "点 敏捷"]
   }
 }

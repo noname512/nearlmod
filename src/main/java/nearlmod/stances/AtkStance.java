@@ -24,7 +24,7 @@ public class AtkStance extends AbstractStance {
 
     @Override
     public void updateDescription() {
-        this.description = DESCRIPTION[0] + atkInc + DESCRIPTION[1];
+        this.description = DESCRIPTION[0] + atkInc + DESCRIPTION[1] + incNum + DESCRIPTION[2];
     }
     
     public static void upgradeIncNum(int updateNum) {
