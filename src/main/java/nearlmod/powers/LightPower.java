@@ -2,6 +2,7 @@ package nearlmod.powers;
 
 import basemod.interfaces.CloneablePowerInterface;
 import com.badlogic.gdx.graphics.g2d.TextureAtlas;
+import com.evacipated.cardcrawl.mod.stslib.actions.tempHp.AddTemporaryHPAction;
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
 import com.megacrit.cardcrawl.actions.common.DamageAction;
 import com.megacrit.cardcrawl.actions.common.GainBlockAction;
@@ -49,7 +50,7 @@ public class LightPower extends AbstractPower implements CloneablePowerInterface
         if (p.stance.ID.equals(AtkStance.STANCE_ID)) {
             AbstractDungeon.actionManager.addToBottom(new DamageAction(m, new DamageInfo(p, this.amount, DamageInfo.DamageType.THORNS), AbstractGameAction.AttackEffect.LIGHTNING));
         } else {
-            AbstractDungeon.actionManager.addToBottom(new GainBlockAction(p, p, this.amount));
+            AbstractDungeon.actionManager.addToBottom(new AddTemporaryHPAction(p, p, this.amount));
         }
         this.amount = 0;
     }
