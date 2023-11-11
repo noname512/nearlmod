@@ -14,16 +14,14 @@ public class Nightingale extends AbstractFriend {
     public static final String NAME = orbStrings.NAME;
     public static final String[] DESCRIPTION = orbStrings.DESCRIPTION;
     public static final String IMAGE = "images/orbs/nightingale.png";
+    public static boolean uniqueUsed;
     public boolean upgraded;
 
     public Nightingale(int amount) {
         super(ORB_ID, NAME, 0, 0, DESCRIPTION[0], "", IMAGE);
-
-        showEvokeValue = false;
-        angle = MathUtils.random(360.0f);
-        channelAnimTimer = 0.5f;
         passiveAmount = amount;
         upgraded = false;
+        uniqueUsed = false;
         updateDescription();
     }
 

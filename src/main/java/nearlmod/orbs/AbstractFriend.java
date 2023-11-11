@@ -9,15 +9,12 @@ import nearlmod.patches.NearlTags;
 import java.util.ArrayList;
 
 public abstract class AbstractFriend extends CustomOrb {
-
-    public static boolean uniqueUsed;
     public AbstractFriend(String ID, String NAME, int basePassiveAmount, int baseEvokeAmount, String passiveDescription, String evokeDescription, String imgPath) {
         super(ID, NAME, basePassiveAmount, baseEvokeAmount, passiveDescription, evokeDescription, imgPath);
 
         showEvokeValue = false;
         angle = MathUtils.random(360.0f);
         channelAnimTimer = 0.5f;
-        uniqueUsed = false;
     }
 
     public void applyStrength(int amount) {
