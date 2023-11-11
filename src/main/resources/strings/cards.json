@@ -77,12 +77,12 @@
     },
     "nearlmod:WaytoChampion": {
         "NAME" : "冠军之路",
-        "DESCRIPTION": "给予所有敌人 1 层 nearlmod:血归， NL 本回合不会受到伤害。 NL 消耗 。",
+        "DESCRIPTION": "给予所有敌人 1 层 nearlmod:血归 ， NL 本回合不会受到伤害。 NL 消耗 。",
         "UPGRADE_DESCRIPTION": ""
     },
     "nearlmod:Dawn": {
         "NAME" : "曙光",
-        "DESCRIPTION": "对所有敌人造成 !D! 点伤害。 NL  升级 这张牌。 NL 可无限 升级 。 NL  消耗 。 NL  虚无 。 ",
+        "DESCRIPTION": "对所有敌人造成 !D! 点伤害。 升级 这张牌。 NL 可无限 升级 。 NL  消耗 。 NL  虚无 。 ",
         "UPGRADE_DESCRIPTION": ""
     },
 
