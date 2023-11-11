@@ -52,8 +52,8 @@ public class Nightingale extends AbstractFriend {
         return new Nightingale();
     }
 
-    public static AbstractFriendCard getRandomCard(boolean upgraded) {
-        int random = AbstractDungeon.cardRng.random(uniqueUsed? 1 : 0, 3);
+    public static AbstractFriendCard getRandomCard(boolean upgraded, boolean notUnique) {
+        int random = AbstractDungeon.cardRng.random(notUnique? 1 : 0, 3);
         AbstractFriendCard card;
         switch (random) {
             case 0:
@@ -74,6 +74,6 @@ public class Nightingale extends AbstractFriend {
 
     @Override
     public void onStartOfTurn() {
-        AbstractDungeon.player.hand.addToHand(getRandomCard(upgraded));
+        AbstractDungeon.player.hand.addToHand(getRandomCard(upgraded, uniqueUsed));
     }
 }
