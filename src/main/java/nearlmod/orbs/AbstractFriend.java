@@ -3,15 +3,10 @@ package nearlmod.orbs;
 import basemod.abstracts.CustomOrb;
 import com.badlogic.gdx.math.MathUtils;
 import com.megacrit.cardcrawl.cards.AbstractCard;
-import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
-import com.megacrit.cardcrawl.localization.OrbStrings;
-import com.megacrit.cardcrawl.orbs.AbstractOrb;
 import nearlmod.cards.AbstractNearlCard;
 import nearlmod.patches.NearlTags;
-
 import java.util.ArrayList;
-import java.util.Iterator;
 
 public abstract class AbstractFriend extends CustomOrb {
 
@@ -28,15 +23,12 @@ public abstract class AbstractFriend extends CustomOrb {
     public void applyStrength(int amount) {
         passiveAmount += amount;
         ArrayList<AbstractCard> cardSet = AbstractDungeon.player.hand.group;
-        Iterator it = cardSet.iterator();
-        while (it.hasNext()) {
-            AbstractCard card = (AbstractCard)it.next();
+        for (AbstractCard card : cardSet)
             if (card instanceof AbstractNearlCard) {
                 AbstractNearlCard nCard = (AbstractNearlCard) card;
                 if (nCard.hasTag(NearlTags.IS_FRIEND_CARD) && nCard.belongFriend.equals(ID))
                     nCard.applyFriendPower(amount);
             }
-        }
     }
 
     @Override

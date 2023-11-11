@@ -1,24 +1,16 @@
 package nearlmod.cards.friendcards;
 
 import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
-import com.megacrit.cardcrawl.actions.common.DamageAction;
-import com.megacrit.cardcrawl.actions.common.RemoveSpecificPowerAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
-import com.megacrit.cardcrawl.cards.DamageInfo;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.localization.CardStrings;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import com.megacrit.cardcrawl.orbs.AbstractOrb;
-import com.megacrit.cardcrawl.powers.AbstractPower;
-import nearlmod.cards.AbstractNearlCard;
 import nearlmod.orbs.Viviana;
 import nearlmod.powers.GlimmeringTouchPower;
 import nearlmod.patches.AbstractCardEnum;
-import nearlmod.patches.NearlTags;
-
-import java.util.Iterator;
 
 public class GlimmeringTouch extends AbstractFriendCard {
     public static final String ID = "nearlmod:GlimmeringTouch";
@@ -44,13 +36,9 @@ public class GlimmeringTouch extends AbstractFriendCard {
 
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
-        Iterator it = AbstractDungeon.player.orbs.iterator();
-        while (it.hasNext()) {
-            AbstractOrb orb = (AbstractOrb)it.next();
-            if (orb instanceof Viviana) {
+        for (AbstractOrb orb : p.orbs)
+            if (orb instanceof Viviana)
                 ((Viviana)orb).startCharging(secondMagicNumber);
-            }
-        }
         AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(p, p, new GlimmeringTouchPower(p, secondMagicNumber, magicNumber)));
     }
 

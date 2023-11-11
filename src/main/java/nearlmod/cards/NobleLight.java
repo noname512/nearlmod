@@ -1,20 +1,13 @@
 package nearlmod.cards;
 
-import com.megacrit.cardcrawl.actions.watcher.ChangeStanceAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
-import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.localization.CardStrings;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import com.megacrit.cardcrawl.orbs.AbstractOrb;
 import nearlmod.orbs.AbstractFriend;
-import nearlmod.orbs.Viviana;
 import nearlmod.patches.AbstractCardEnum;
-import nearlmod.stances.AtkStance;
-import nearlmod.stances.DefStance;
-
-import java.util.Iterator;
 
 public class NobleLight extends AbstractNearlCard {
     public static final String ID = "nearlmod:NobleLight";
@@ -34,12 +27,9 @@ public class NobleLight extends AbstractNearlCard {
 
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
-        Iterator it = p.orbs.iterator();
-        while (it.hasNext()) {
-            AbstractOrb orb = (AbstractOrb) it.next();
+        for (AbstractOrb orb : p.orbs)
             if (orb instanceof AbstractFriend)
-                ((AbstractFriend)orb).applyStrength(1);
-        }
+                ((AbstractFriend) orb).applyStrength(1);
     }
 
     @Override

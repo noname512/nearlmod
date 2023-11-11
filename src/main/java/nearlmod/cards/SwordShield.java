@@ -1,12 +1,8 @@
 package nearlmod.cards;
 
-import com.megacrit.cardcrawl.actions.AbstractGameAction;
 import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
-import com.megacrit.cardcrawl.actions.common.DamageAction;
-import com.megacrit.cardcrawl.actions.common.GainBlockAction;
 import com.megacrit.cardcrawl.actions.watcher.ChangeStanceAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
-import com.megacrit.cardcrawl.cards.DamageInfo;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
@@ -18,8 +14,6 @@ import nearlmod.patches.AbstractCardEnum;
 import nearlmod.powers.LightPower;
 import nearlmod.stances.AtkStance;
 import nearlmod.stances.DefStance;
-
-import java.util.Iterator;
 
 public class SwordShield extends AbstractNearlCard {
     public static final String ID = "nearlmod:SwordShield";
@@ -45,13 +39,11 @@ public class SwordShield extends AbstractNearlCard {
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
         boolean hasBlemishine = false;
-        for (Iterator<AbstractOrb> it = p.orbs.iterator(); it.hasNext(); ) {
-            AbstractOrb orb = it.next();
+        for (AbstractOrb orb : p.orbs)
             if (orb instanceof Blemishine) {
                 hasBlemishine = true;
                 break;
             }
-        }
         if (p.stance.ID.equals(AtkStance.STANCE_ID)) {
             AbstractDungeon.actionManager.addToBottom(new ChangeStanceAction(new DefStance()));
             if (hasBlemishine) DefStance.defInc += secondMagicNumber;

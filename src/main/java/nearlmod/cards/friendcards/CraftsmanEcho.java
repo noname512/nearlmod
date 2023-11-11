@@ -29,7 +29,6 @@ public class CraftsmanEcho extends AbstractFriendCard {
     private static final int LIGHT_INC = 4;
     private static final int UPGRADE_PLUS_WEAK = 1;
     private static final int UPGRADE_PLUS_LIGHT = 2;
-    private int extraStr;
     public static final String BG_IMG = "images/512/bg_friend_test.png";
 
     public CraftsmanEcho() {
@@ -45,9 +44,7 @@ public class CraftsmanEcho extends AbstractFriendCard {
     public void use(AbstractPlayer p, AbstractMonster m) { // TODO
         AbstractDungeon.actionManager.addToBottom(new VFXAction(p, new IntimidateEffect(AbstractDungeon.player.hb.cX, AbstractDungeon.player.hb.cY), 1.0F));
         ArrayList<AbstractMonster> monsters = AbstractDungeon.getCurrRoom().monsters.monsters;
-        Iterator<AbstractMonster> it = monsters.iterator();
-        while (it.hasNext()) {
-            AbstractMonster ms = it.next();
+        for (AbstractMonster ms : monsters) {
             AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(ms, p, new WeakPower(ms, magicNumber, false), magicNumber, true, AbstractGameAction.AttackEffect.NONE));
         }
         AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(p, p, new LightPower(p, secondMagicNumber), secondMagicNumber));

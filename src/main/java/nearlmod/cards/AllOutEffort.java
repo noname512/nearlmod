@@ -12,13 +12,10 @@ import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import com.megacrit.cardcrawl.orbs.AbstractOrb;
 import nearlmod.actions.SummonOrbAction;
 import nearlmod.orbs.Blemishine;
-import nearlmod.orbs.Viviana;
 import nearlmod.patches.AbstractCardEnum;
 import nearlmod.powers.LightPower;
 import nearlmod.stances.AtkStance;
 import nearlmod.stances.DefStance;
-
-import java.util.Iterator;
 
 public class AllOutEffort extends AbstractNearlCard {
     public static final String ID = "nearlmod:AllOutEffort";
@@ -49,13 +46,11 @@ public class AllOutEffort extends AbstractNearlCard {
         if (p.stance.ID.equals(DefStance.STANCE_ID)) {
             AbstractDungeon.actionManager.addToBottom(new ChangeStanceAction(new AtkStance()));
         }
-        for (Iterator it = p.orbs.iterator(); it.hasNext();) {
-            AbstractOrb orb = (AbstractOrb)it.next();
+        for (AbstractOrb orb : p.orbs)
             if (orb instanceof Blemishine) {
                 ((Blemishine) orb).upgrade();
                 return;
             }
-        }
         AbstractDungeon.actionManager.addToBottom(new SummonOrbAction(new Blemishine()));
     }
 

@@ -1,8 +1,5 @@
 package nearlmod.cards;
 
-import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
-import com.megacrit.cardcrawl.actions.common.GainBlockAction;
-import com.megacrit.cardcrawl.actions.watcher.ChangeStanceAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
@@ -12,15 +9,8 @@ import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import com.megacrit.cardcrawl.orbs.AbstractOrb;
 import nearlmod.actions.SummonOrbAction;
 import nearlmod.cards.friendcards.AbstractFriendCard;
-import nearlmod.orbs.AbstractFriend;
-import nearlmod.orbs.Blemishine;
 import nearlmod.orbs.Nightingale;
 import nearlmod.patches.AbstractCardEnum;
-import nearlmod.powers.LightPower;
-import nearlmod.stances.AtkStance;
-import nearlmod.stances.DefStance;
-
-import java.util.Iterator;
 
 public class DanceTogether extends AbstractNearlCard {
     public static final String ID = "nearlmod:DanceTogether";
@@ -41,13 +31,11 @@ public class DanceTogether extends AbstractNearlCard {
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
         boolean hasOrb = false;
-        for (Iterator it = p.orbs.iterator(); it.hasNext();) {
-            AbstractOrb orb = (AbstractOrb)it.next();
+        for (AbstractOrb orb : p.orbs)
             if (orb instanceof Nightingale) {
                 ((Nightingale) orb).upgrade();
                 hasOrb = true;
             }
-        }
         if (!hasOrb)
             AbstractDungeon.actionManager.addToBottom(new SummonOrbAction(new Nightingale()));
         AbstractFriendCard card = Nightingale.getRandomCard(false);

@@ -3,12 +3,9 @@ package nearlmod.powers;
 import basemod.interfaces.CloneablePowerInterface;
 import com.badlogic.gdx.graphics.g2d.TextureAtlas;
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
-import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
 import com.megacrit.cardcrawl.actions.common.DamageAction;
-import com.megacrit.cardcrawl.actions.common.DamageAllEnemiesAction;
 import com.megacrit.cardcrawl.actions.common.RemoveSpecificPowerAction;
 import com.megacrit.cardcrawl.cards.DamageInfo;
-import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.core.AbstractCreature;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
@@ -16,12 +13,7 @@ import com.megacrit.cardcrawl.helpers.ImageMaster;
 import com.megacrit.cardcrawl.localization.PowerStrings;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import com.megacrit.cardcrawl.powers.AbstractPower;
-import com.megacrit.cardcrawl.stances.AbstractStance;
-import com.megacrit.cardcrawl.vfx.AbstractGameEffect;
-import nearlmod.stances.AtkStance;
-
 import java.util.ArrayList;
-import java.util.Iterator;
 
 public class GlimmeringTouchPower extends AbstractPower implements CloneablePowerInterface {
     public static final String POWER_ID = "nearlmod:GlimmeringTouchPower";
@@ -53,9 +45,7 @@ public class GlimmeringTouchPower extends AbstractPower implements CloneablePowe
         if (amount == 0) {
 //            AbstractDungeon.actionManager.addToBottom(new DamageAllEnemiesAction(null, damage, DamageInfo.DamageType.THORNS, AbstractGameAction.AttackEffect.FIRE));
             ArrayList<AbstractMonster> monsters = AbstractDungeon.getCurrRoom().monsters.monsters;
-            Iterator<AbstractMonster> it = monsters.iterator();
-            while (it.hasNext()) {
-                AbstractMonster ms = it.next();
+            for (AbstractMonster ms : monsters) {
                 AbstractDungeon.actionManager.addToBottom(new DamageAction(ms, new DamageInfo(owner, damage, DamageInfo.DamageType.NORMAL), AbstractGameAction.AttackEffect.FIRE));
             }
             AbstractDungeon.actionManager.addToBottom(new RemoveSpecificPowerAction(owner, owner, this));

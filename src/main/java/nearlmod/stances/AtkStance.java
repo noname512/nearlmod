@@ -7,12 +7,10 @@ import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.localization.StanceStrings;
 import com.megacrit.cardcrawl.stances.AbstractStance;
 import com.megacrit.cardcrawl.powers.StrengthPower;
-import nearlmod.NLMOD;
-import nearlmod.characters.Nearl;
 
 public class AtkStance extends AbstractStance {
     public static final String STANCE_ID = "nearlmod:AtkStance";
-    private static final StanceStrings stanceString = CardCrawlGame.languagePack.getStanceString(STANCE_ID);;
+    private static final StanceStrings stanceString = CardCrawlGame.languagePack.getStanceString(STANCE_ID);
     public static final String NAME = stanceString.NAME;
     public static final String[] DESCRIPTION = stanceString.DESCRIPTION;
     public static int atkInc = 0;

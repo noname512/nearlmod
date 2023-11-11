@@ -1,7 +1,6 @@
 package nearlmod.orbs;
 
 import com.badlogic.gdx.math.MathUtils;
-import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.localization.OrbStrings;
@@ -54,8 +53,8 @@ public class Nightingale extends AbstractFriend {
     }
 
     public static AbstractFriendCard getRandomCard(boolean upgraded) {
-        int random = (int)AbstractDungeon.cardRng.random(uniqueUsed? 1 : 0, 3);
-        AbstractFriendCard card = null;
+        int random = AbstractDungeon.cardRng.random(uniqueUsed? 1 : 0, 3);
+        AbstractFriendCard card;
         switch (random) {
             case 0:
                 card = new WhiteFiendProtection();

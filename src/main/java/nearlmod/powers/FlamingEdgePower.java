@@ -2,24 +2,15 @@ package nearlmod.powers;
 
 import basemod.interfaces.CloneablePowerInterface;
 import com.badlogic.gdx.graphics.g2d.TextureAtlas;
-import com.megacrit.cardcrawl.actions.AbstractGameAction;
 import com.megacrit.cardcrawl.actions.common.*;
-import com.megacrit.cardcrawl.actions.utility.UseCardAction;
-import com.megacrit.cardcrawl.cards.AbstractCard;
-import com.megacrit.cardcrawl.cards.DamageInfo;
-import com.megacrit.cardcrawl.cards.tempCards.Shiv;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.core.AbstractCreature;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.helpers.ImageMaster;
 import com.megacrit.cardcrawl.localization.PowerStrings;
-import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import com.megacrit.cardcrawl.powers.AbstractPower;
 import com.megacrit.cardcrawl.stances.AbstractStance;
-import nearlmod.NLMOD;
-import nearlmod.characters.Nearl;
-import nearlmod.patches.NearlTags;
 import nearlmod.stances.AtkStance;
 
 public class FlamingEdgePower extends AbstractPower implements CloneablePowerInterface {
@@ -49,7 +40,6 @@ public class FlamingEdgePower extends AbstractPower implements CloneablePowerInt
     }
     @Override
     public void updateDescription() {
-        AbstractPlayer p = (AbstractPlayer)this.owner;
         description = DESCRIPTIONS[0] + amount + DESCRIPTIONS[1];
     }
 

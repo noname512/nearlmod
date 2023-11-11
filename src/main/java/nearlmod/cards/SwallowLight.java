@@ -1,7 +1,6 @@
 package nearlmod.cards;
 
 import com.megacrit.cardcrawl.actions.common.RemoveSpecificPowerAction;
-import com.megacrit.cardcrawl.actions.watcher.ChangeStanceAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
@@ -13,10 +12,6 @@ import com.megacrit.cardcrawl.powers.AbstractPower;
 import nearlmod.actions.SummonOrbAction;
 import nearlmod.orbs.Viviana;
 import nearlmod.patches.AbstractCardEnum;
-import nearlmod.stances.AtkStance;
-import nearlmod.stances.DefStance;
-
-import java.util.Iterator;
 
 public class SwallowLight extends AbstractNearlCard {
     public static final String ID = "nearlmod:SwallowLight";
@@ -44,14 +39,12 @@ public class SwallowLight extends AbstractNearlCard {
             if (!upgraded) amount = (amount + 2) / 3;
             else amount = (amount + 1) / 2;
         }
-        for (Iterator it = AbstractDungeon.player.orbs.iterator(); it.hasNext();) {
-            AbstractOrb orb = (AbstractOrb)it.next();
+        for (AbstractOrb orb : AbstractDungeon.player.orbs)
             if (orb instanceof Viviana) {
                 ((Viviana) orb).applyStrength(amount);
                 ((Viviana) orb).upgrade();
                 return;
             }
-        }
         AbstractDungeon.actionManager.addToBottom(new SummonOrbAction(new Viviana(amount)));
     }
 

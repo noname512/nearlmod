@@ -1,7 +1,6 @@
 package nearlmod.cards.friendcards;
 
 import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
-import com.megacrit.cardcrawl.actions.common.GainBlockAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
@@ -11,10 +10,7 @@ import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import com.megacrit.cardcrawl.powers.AbstractPower;
 import nearlmod.orbs.Nightingale;
 import nearlmod.patches.AbstractCardEnum;
-import nearlmod.powers.SanctuaryPower;
 import nearlmod.powers.WFPPower;
-
-import java.util.Iterator;
 
 public class WhiteFiendProtection extends AbstractFriendCard {
     public static final String ID = "nearlmod:WhiteFiendProtection";
@@ -37,12 +33,9 @@ public class WhiteFiendProtection extends AbstractFriendCard {
         Nightingale.uniqueUsed = true;
         AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(p, p, new WFPPower(p), -1));
         if (upgraded) {
-            Iterator<AbstractPower> it = p.powers.iterator();
-            while (it.hasNext()) {
-                AbstractPower power = it.next();
+            for (AbstractPower power : p.powers)
                 if (power.type == AbstractPower.PowerType.DEBUFF)
                     power.reducePower(1);
-            }
         }
     }
 

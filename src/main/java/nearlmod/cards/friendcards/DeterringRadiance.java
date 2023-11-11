@@ -1,11 +1,8 @@
 package nearlmod.cards.friendcards;
 
-import com.megacrit.cardcrawl.actions.AbstractGameAction;
 import com.megacrit.cardcrawl.actions.animations.VFXAction;
 import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
-import com.megacrit.cardcrawl.actions.common.DamageAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
-import com.megacrit.cardcrawl.cards.DamageInfo;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
@@ -17,7 +14,6 @@ import nearlmod.patches.AbstractCardEnum;
 import nearlmod.powers.LightPower;
 
 import java.util.ArrayList;
-import java.util.Iterator;
 
 public class DeterringRadiance extends AbstractFriendCard {
     public static final String ID = "nearlmod:DeterringRadiance";
@@ -31,7 +27,6 @@ public class DeterringRadiance extends AbstractFriendCard {
     private static final int LIGHT_INC = 4;
     private static final int UPGRADE_PLUS_WEAK = 1;
     private static final int UPGRADE_PLUS_LIGHT = 2;
-    private int extraStr;
     public static final String BG_IMG = "images/512/bg_friend_test.png";
 
     public DeterringRadiance() {
@@ -47,9 +42,7 @@ public class DeterringRadiance extends AbstractFriendCard {
     public void use(AbstractPlayer p, AbstractMonster m) {
         AbstractDungeon.actionManager.addToBottom(new VFXAction(p, new IntimidateEffect(AbstractDungeon.player.hb.cX, AbstractDungeon.player.hb.cY), 1.0F));
         ArrayList<AbstractMonster> monsters = AbstractDungeon.getCurrRoom().monsters.monsters;
-        Iterator<AbstractMonster> it = monsters.iterator();
-        while (it.hasNext()) {
-            AbstractMonster ms = it.next();
+        for (AbstractMonster ms : monsters) {
             AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(ms, p, new WeakPower(ms, secondMagicNumber, false)));
         }
         AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(p, p, new LightPower(p, magicNumber)));

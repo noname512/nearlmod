@@ -4,7 +4,6 @@ import com.badlogic.gdx.math.MathUtils;
 import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
-import com.megacrit.cardcrawl.helpers.ImageMaster;
 import com.megacrit.cardcrawl.localization.OrbStrings;
 import com.megacrit.cardcrawl.orbs.AbstractOrb;
 import nearlmod.cards.friendcards.*;
@@ -56,8 +55,8 @@ public class Blemishine extends AbstractFriend {
 
     @Override
     public void onStartOfTurn() {
-        int random = (int)AbstractDungeon.cardRng.random(uniqueUsed? 1 : 0, 3);
-        AbstractCard card = null;
+        int random = AbstractDungeon.cardRng.random(uniqueUsed? 1 : 0, 3);
+        AbstractCard card;
         switch (random) {
             case 0:
                 card = new DivineAvatar();

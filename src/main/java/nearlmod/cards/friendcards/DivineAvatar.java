@@ -1,7 +1,6 @@
 package nearlmod.cards.friendcards;
 
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
-import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
 import com.megacrit.cardcrawl.actions.common.DamageAction;
 import com.megacrit.cardcrawl.actions.common.HealAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
@@ -13,7 +12,6 @@ import com.megacrit.cardcrawl.localization.CardStrings;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import nearlmod.orbs.Blemishine;
 import nearlmod.patches.AbstractCardEnum;
-import nearlmod.powers.LightPower;
 
 public class DivineAvatar extends AbstractFriendCard {
     public static final String ID = "nearlmod:DivineAvatar";
@@ -27,7 +25,6 @@ public class DivineAvatar extends AbstractFriendCard {
     private static final int RECOVER_HP = 12;
     private static final int UPGRADE_PLUS_DMG = 3;
     private static final int UPGRADE_PLUS_HP = 6;
-    private int extraStr;
     public static final String BG_IMG = "images/512/bg_friend_test.png";
 
     public DivineAvatar() {
