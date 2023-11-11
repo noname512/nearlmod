@@ -37,7 +37,7 @@
     },
     "nearlmod:SwordShield": {
         "NAME": "剑盾骑士",
-        "DESCRIPTION": "切换你的形态，获得 !M! 层 nearlmod:光 。 NL 如果瑕光在场，本次切换数值+1。",
+        "DESCRIPTION": "切换你的形态，获得 !M! 层 nearlmod:光 。 NL 如果瑕光在场，本次切换数值额外增加 !nearlmod:M2! 点。",
         "UPGRADE_DESCRIPTION": ""
     },
     "nearlmod:SecondSun": {
@@ -100,5 +100,57 @@
         "NAME": "烛燃影息",
         "DESCRIPTION": "nearlmod:唯一 。 NL 消耗所有的 nearlmod:光 ，对所有敌人造成其层数两倍的伤害。",
         "UPGRADE_DESCRIPTION": "nearlmod:唯一 。 NL 获得 10 层 nearlmod:光 。 NL 消耗所有的 nearlmod:光 ，对所有敌人造成其层数两倍的伤害。"
+    },
+
+    "nearlmod:AllOutEffort": {
+        "NAME": "全力以赴",
+        "DESCRIPTION": "召唤瑕光作为伙伴。 NL 获得 !M! 层 nearlmod:光 并切换至剑枪形态。",
+        "UPGRADE_DESCRIPTION": "召唤瑕光作为伙伴。 NL 获得 !M! 层 nearlmod:光 和 !B! 点 格挡 并切换至剑枪形态。"
+    },
+    "nearlmod:SurgingBrilliance": {
+        "NAME": "光芒涌动",
+        "DESCRIPTION": "造成 !M! 点伤害，获得 !nearlmod:M2! 层 nearlmod:光 。",
+        "UPGRADE_DESCRIPTION": ""
+    },
+    "nearlmod:DeterringRadiance": {
+        "NAME": "慑敌辉光",
+        "DESCRIPTION": "使所有敌人获得 !nearlmod:M2! 层 虚弱 ，获得 !M! 层 nearlmod:光 。",
+        "UPGRADE_DESCRIPTION": ""
+    },
+    "nearlmod:DivineAvatar": {
+        "NAME": "先贤化身",
+        "DESCRIPTION": "nearlmod:唯一 。 NL 造成 !M! 点伤害，回复 !nearlmod:M2! 点生命。",
+        "UPGRADE_DESCRIPTION": ""
+    },
+    "nearlmod:CraftsmanEcho": {
+        "NAME": "工匠团的回响",
+        "DESCRIPTION": "[#FF0000]待修改，别打！[] NL 选择一个形态，切换到该形态，本次切换形态获得的数值增加 !M! 点。",
+        "UPGRADE_DESCRIPTION": ""
+    },
+
+    "nearlmod:DanceTogether": {
+        "NAME": "共舞一曲",
+        "DESCRIPTION": "召唤夜莺作为伙伴。 NL 获得来自夜莺的一张 nearlmod:伙伴牌 。",
+        "UPGRADE_DESCRIPTION": "召唤夜莺作为伙伴。 NL 获得来自夜莺的一张 nearlmod:伙伴牌 ，使其失去 虚无 ，获得 保留 。"
+    },
+    "nearlmod:ArtsShield": {
+        "NAME": "法术护盾",
+        "DESCRIPTION": "获得 !M! 点 格挡 ， !nearlmod:M2! 点 stslib:临时生命 。",
+        "UPGRADE_DESCRIPTION": ""
+    },
+    "nearlmod:Sanctuary": {
+        "NAME": "圣域",
+        "DESCRIPTION": "获得 !M! 点 格挡 ，在接下来的 !nearlmod:M2! 回合内，你受到的伤害减半。",
+        "UPGRADE_DESCRIPTION": ""
+    },
+    "nearlmod:WhiteFiendProtection": {
+        "NAME": "白恶魔的庇护",
+        "DESCRIPTION": "nearlmod:唯一 。 NL 你不会被 虚弱 、 脆弱 、 易伤 。如果你同时拥有 [#FF5252]黑恶魔的庇护[] ，每回合额外获得 1 层 人工制品 。",
+        "UPGRADE_DESCRIPTION": ""
+    },
+    "nearlmod:FleetingPhantom": {
+        "NAME": "转瞬即逝的幻影",
+        "DESCRIPTION": "[#FF0000]INFO:当前效果为圣域[]  NL 召唤一个拥有 !M! 点生命且拥有 无实体 的鸟笼。敌人会优先攻击该鸟笼。 NL 切换至使徒形态。",
+        "UPGRADE_DESCRIPTION": ""
     }
 }

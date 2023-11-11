@@ -17,10 +17,7 @@ import com.megacrit.cardcrawl.helpers.ImageMaster;
 import com.megacrit.cardcrawl.localization.PowerStrings;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import com.megacrit.cardcrawl.powers.AbstractPower;
-import com.megacrit.cardcrawl.powers.InfiniteBladesPower;
 import com.megacrit.cardcrawl.stances.AbstractStance;
-import nearlmod.NLMOD;
-import nearlmod.characters.Nearl;
 import nearlmod.patches.NearlTags;
 import nearlmod.stances.AtkStance;
 

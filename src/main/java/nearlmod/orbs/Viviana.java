@@ -1,24 +1,13 @@
 package nearlmod.orbs;
 
-import basemod.abstracts.CustomOrb;
 import com.badlogic.gdx.math.MathUtils;
-import com.megacrit.cardcrawl.actions.common.DrawCardAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
-import com.megacrit.cardcrawl.cards.CardSave;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.helpers.ImageMaster;
 import com.megacrit.cardcrawl.localization.OrbStrings;
-import com.megacrit.cardcrawl.localization.StanceStrings;
 import com.megacrit.cardcrawl.orbs.AbstractOrb;
-import nearlmod.cards.AbstractNearlCard;
 import nearlmod.cards.friendcards.*;
-import nearlmod.patches.NearlTags;
-
-import java.util.ArrayList;
-import java.util.Iterator;
-
-import static basemod.BaseMod.logger;
 
 public class Viviana extends AbstractFriend {
 
@@ -81,8 +70,8 @@ public class Viviana extends AbstractFriend {
                 img = ImageMaster.loadImage(IMAGE);
             return;
         }
-        int random = (int)AbstractDungeon.cardRng.random(uniqueUsed? 1 : 0, 3);
-        AbstractCard card = null;
+        int random = AbstractDungeon.cardRng.random(uniqueUsed? 1 : 0, 3);
+        AbstractCard card;
         switch (random) {
             case 0:
                 card = new FlameShadow();

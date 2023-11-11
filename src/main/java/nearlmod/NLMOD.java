@@ -1,29 +1,16 @@
 package nearlmod;
 
 import basemod.*;
-import basemod.abstracts.CustomCard;
-import basemod.helpers.RelicType;
 import basemod.interfaces.*;
 import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.graphics.Color;
-import com.badlogic.gdx.graphics.Texture;
-import com.badlogic.gdx.utils.compression.lzma.Base;
 import com.evacipated.cardcrawl.mod.stslib.Keyword;
-import com.evacipated.cardcrawl.modthespire.Loader;
-import com.evacipated.cardcrawl.modthespire.lib.SpireConfig;
 import com.evacipated.cardcrawl.modthespire.lib.SpireInitializer;
 import com.google.gson.Gson;
 import com.google.gson.reflect.TypeToken;
-import com.megacrit.cardcrawl.audio.Sfx;
-import com.megacrit.cardcrawl.audio.SoundMaster;
-import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
-import com.megacrit.cardcrawl.core.Settings;
-import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.helpers.*;
 import com.megacrit.cardcrawl.localization.*;
-import com.megacrit.cardcrawl.monsters.city.Healer;
-import com.megacrit.cardcrawl.powers.AbstractPower;
 import com.megacrit.cardcrawl.relics.AbstractRelic;
 import com.megacrit.cardcrawl.rooms.AbstractRoom;
 import com.megacrit.cardcrawl.screens.custom.CustomMod;
@@ -31,17 +18,12 @@ import nearlmod.patches.NearlEnum;
 import nearlmod.relics.CureUp;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
-
 import nearlmod.cards.*;
 import nearlmod.cards.friendcards.*;
 import nearlmod.characters.Nearl;
-
-import java.io.IOException;
 import java.lang.reflect.Type;
 import java.nio.charset.StandardCharsets;
 import java.util.*;
-
-import static basemod.BaseMod.logger;
 import static nearlmod.patches.AbstractCardEnum.NEARL_GOLD;
 
 @SpireInitializer
@@ -59,7 +41,7 @@ public class NLMOD implements EditCardsSubscriber, EditCharactersSubscriber, Edi
     private static final String charButton = "images/charSelect/button.png";
     private static final String charPortrait = "images/charSelect/portrait.png";
     private static final String miniManaSymbol = "images/manaSymbol.png";
-    private static Logger logger = LogManager.getLogger(NLMOD.class.getName());
+    private static final Logger logger = LogManager.getLogger(NLMOD.class.getName());
 
     public NLMOD() {
         BaseMod.subscribe(this);
@@ -123,6 +105,8 @@ public class NLMOD implements EditCardsSubscriber, EditCharactersSubscriber, Edi
         BaseMod.addCard(new SecondSun()); // 第二轮太阳
         BaseMod.addCard(new LightArrowStrike()); // 光箭打击
         BaseMod.addCard(new SwallowLight()); // 侵吞光芒
+        BaseMod.addCard(new AllOutEffort()); // 全力以赴
+        BaseMod.addCard(new DanceTogether()); // 共舞一曲
 
         // Rare.
         BaseMod.addCard(new BravetheDarkness()); // 不畏苦暗
@@ -135,6 +119,16 @@ public class NLMOD implements EditCardsSubscriber, EditCharactersSubscriber, Edi
         BaseMod.addCard(new FlashFade()); // “明灭”
         BaseMod.addCard(new FlameShadow()); // 烛燃影息
         BaseMod.addCard(new GlimmeringTouch()); // 微光之触
+
+        BaseMod.addCard(new SurgingBrilliance()); // 光芒涌动
+        BaseMod.addCard(new DeterringRadiance()); // 慑敌辉光
+        BaseMod.addCard(new DivineAvatar()); // 先贤化身
+        BaseMod.addCard(new CraftsmanEcho()); // 工匠团的回响
+
+        BaseMod.addCard(new ArtsShield()); // 法术护盾
+        BaseMod.addCard(new Sanctuary()); // 圣域
+        BaseMod.addCard(new WhiteFiendProtection()); // 白恶魔的庇护
+        BaseMod.addCard(new FleetingPhantom()); // 转瞬即逝的幻影
     }
 
     @Override

@@ -2,25 +2,13 @@ package nearlmod.powers;
 
 import com.megacrit.cardcrawl.actions.animations.VFXAction;
 import com.megacrit.cardcrawl.actions.common.*;
-import com.megacrit.cardcrawl.actions.watcher.JudgementAction;
 import com.megacrit.cardcrawl.cards.DamageInfo;
-import com.megacrit.cardcrawl.cards.purple.Judgement;
-import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.core.AbstractCreature;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.localization.PowerStrings;
-import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import com.megacrit.cardcrawl.powers.*;
 import com.megacrit.cardcrawl.vfx.combat.ExplosionSmallEffect;
 
-import com.megacrit.cardcrawl.actions.animations.VFXAction;
-import com.megacrit.cardcrawl.actions.common.ReducePowerAction;
-import com.megacrit.cardcrawl.actions.common.SuicideAction;
-import com.megacrit.cardcrawl.core.AbstractCreature;
-import com.megacrit.cardcrawl.core.CardCrawlGame;
-import com.megacrit.cardcrawl.localization.PowerStrings;
-import com.megacrit.cardcrawl.monsters.AbstractMonster;
-import com.megacrit.cardcrawl.vfx.combat.ExplosionSmallEffect;
 public class MyFadingPower extends AbstractPower {
     public static final String POWER_ID = "nearlmod:Fading";
     private static final PowerStrings powerStrings;
@@ -29,7 +17,7 @@ public class MyFadingPower extends AbstractPower {
 
     public MyFadingPower(AbstractCreature owner, int turns) {
         this.name = NAME;
-        this.ID = "MyFading";
+        this.ID = POWER_ID;
         this.owner = owner;
         this.amount = turns;
         this.type = PowerType.DEBUFF;
@@ -48,12 +36,12 @@ public class MyFadingPower extends AbstractPower {
 
     public void atStartOfTurn() {
         if (this.amount == 1 && !this.owner.isDying) {
-            this.addToBot(new VFXAction(new ExplosionSmallEffect(this.owner.hb.cX, this.owner.hb.cY), 0.1F));
-            this.addToBot(new RemoveSpecificPowerAction(this.owner, this.owner, "Buffer"));
-            this.addToBot(new DamageAction(this.owner, new DamageInfo(this.owner, 99999999, DamageInfo.DamageType.HP_LOSS)));
+            addToBot(new VFXAction(new ExplosionSmallEffect(this.owner.hb.cX, this.owner.hb.cY), 0.1F));
+            addToBot(new RemoveSpecificPowerAction(this.owner, this.owner, "Buffer"));
+            addToBot(new DamageAction(this.owner, new DamageInfo(this.owner, 99999999, DamageInfo.DamageType.HP_LOSS)));
         } else {
-            this.addToBot(new ReducePowerAction(this.owner, this.owner, "MyFading", 1));
-            this.updateDescription();
+            amount--;
+            updateDescription();
         }
 
     }

@@ -1,6 +1,5 @@
 package nearlmod.cards;
 
-import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
 import com.megacrit.cardcrawl.actions.common.GainBlockAction;
 import com.megacrit.cardcrawl.actions.watcher.ChangeStanceAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
@@ -13,9 +12,6 @@ import nearlmod.actions.UseLightAction;
 import nearlmod.characters.Nearl;
 import nearlmod.patches.AbstractCardEnum;
 import nearlmod.patches.NearlTags;
-import nearlmod.powers.AtkMode;
-import nearlmod.powers.DefMode;
-import nearlmod.stances.AtkStance;
 import nearlmod.stances.DefStance;
 
 public class GumboBreadBowl extends AbstractNearlCard {

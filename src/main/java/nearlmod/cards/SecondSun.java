@@ -7,8 +7,8 @@ import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.localization.CardStrings;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
+import com.megacrit.cardcrawl.powers.AbstractPower;
 import nearlmod.patches.AbstractCardEnum;
-import nearlmod.patches.NearlTags;
 import nearlmod.powers.LightPower;
 
 public class SecondSun extends AbstractNearlCard {
@@ -30,7 +30,9 @@ public class SecondSun extends AbstractNearlCard {
 
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
-        int lightAmount = AbstractDungeon.player.getPower("nearlmod:LightPower").amount;
+        AbstractPower power = AbstractDungeon.player.getPower("nearlmod:LightPower");
+        if (power == null) return;
+        int lightAmount = power.amount;
         AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(p, p, new LightPower(p, lightAmount), lightAmount));
     }
 

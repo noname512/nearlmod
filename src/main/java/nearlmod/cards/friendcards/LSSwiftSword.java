@@ -9,14 +9,7 @@ import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.localization.CardStrings;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
-import com.megacrit.cardcrawl.orbs.AbstractOrb;
-import com.megacrit.cardcrawl.powers.AbstractPower;
-import nearlmod.cards.AbstractNearlCard;
-import nearlmod.orbs.Viviana;
 import nearlmod.patches.AbstractCardEnum;
-import nearlmod.patches.NearlTags;
-
-import java.util.Iterator;
 
 public class LSSwiftSword extends AbstractFriendCard {
     public static final String ID = "nearlmod:LSSwiftSword";

@@ -2,7 +2,6 @@ package nearlmod.cards.friendcards;
 
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
 import com.megacrit.cardcrawl.actions.common.DamageAction;
-import com.megacrit.cardcrawl.actions.common.DamageAllEnemiesAction;
 import com.megacrit.cardcrawl.actions.common.RemoveSpecificPowerAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.cards.DamageInfo;
@@ -11,15 +10,11 @@ import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.localization.CardStrings;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
-import com.megacrit.cardcrawl.orbs.AbstractOrb;
 import com.megacrit.cardcrawl.powers.AbstractPower;
-import nearlmod.cards.AbstractNearlCard;
 import nearlmod.orbs.Viviana;
 import nearlmod.patches.AbstractCardEnum;
-import nearlmod.patches.NearlTags;
 
 import java.util.ArrayList;
-import java.util.Iterator;
 
 public class FlameShadow extends AbstractFriendCard {
     public static final String ID = "nearlmod:FlameShadow";
@@ -50,10 +45,9 @@ public class FlameShadow extends AbstractFriendCard {
         }
         if (upgraded) dmg += LIGHT_ADD * 2;
         dmg += magicNumber;
+//        AbstractDungeon.actionManager.addToBottom(new DamageAllEnemiesAction(null, dmg, DamageInfo.DamageType.THORNS, AbstractGameAction.AttackEffect.LIGHTNING));
         ArrayList<AbstractMonster> monsters = AbstractDungeon.getCurrRoom().monsters.monsters;
-        Iterator<AbstractMonster> it = monsters.iterator();
-        while (it.hasNext()) {
-            AbstractMonster ms = it.next();
+        for (AbstractMonster ms : monsters) {
             AbstractDungeon.actionManager.addToBottom(new DamageAction(ms, new DamageInfo(p, dmg, DamageInfo.DamageType.NORMAL), AbstractGameAction.AttackEffect.LIGHTNING));
         }
         Viviana.uniqueUsed = true;

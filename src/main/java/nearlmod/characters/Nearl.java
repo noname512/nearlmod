@@ -1,11 +1,9 @@
 package nearlmod.characters;
 
 import com.badlogic.gdx.graphics.Texture;
-import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
 import com.megacrit.cardcrawl.actions.watcher.ChangeStanceAction;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.helpers.ImageMaster;
-import nearlmod.NLMOD;
 import basemod.abstracts.CustomPlayer;
 import com.badlogic.gdx.graphics.Color;
 import com.badlogic.gdx.graphics.g2d.BitmapFont;
@@ -19,14 +17,12 @@ import com.megacrit.cardcrawl.core.Settings;
 import com.megacrit.cardcrawl.helpers.CardHelper;
 import com.megacrit.cardcrawl.helpers.FontHelper;
 import com.megacrit.cardcrawl.helpers.ScreenShake;
-import com.megacrit.cardcrawl.localization.CharacterStrings;
 import com.megacrit.cardcrawl.screens.CharSelectInfo;
 import com.megacrit.cardcrawl.unlock.UnlockTracker;
 import nearlmod.cards.*;
 import nearlmod.relics.*;
 import nearlmod.patches.AbstractCardEnum;
 import nearlmod.patches.NearlEnum;
-import nearlmod.powers.DefMode;
 import nearlmod.stances.AtkStance;
 import nearlmod.stances.DefStance;
 
@@ -162,7 +158,7 @@ public class Nearl extends CustomPlayer {
     }
 
     public ArrayList<String> getStartingDeck() {
-        ArrayList<String> ret = new ArrayList<String>();
+        ArrayList<String> ret = new ArrayList<>();
         ret.add(NearlStrike.ID);
         ret.add(NearlStrike.ID);
         ret.add(NearlStrike.ID);
@@ -178,7 +174,7 @@ public class Nearl extends CustomPlayer {
 
     @Override
     public ArrayList<String> getStartingRelics() {
-        ArrayList<String> ret = new ArrayList<String>();
+        ArrayList<String> ret = new ArrayList<>();
         ret.add(CureUp.ID);
         UnlockTracker.markRelicAsSeen(CureUp.ID);
         return ret;
