@@ -24,7 +24,7 @@ public class DefStance extends AbstractStance {
 
     @Override
     public void updateDescription() {
-        this.description = DESCRIPTION[0] + defInc + DESCRIPTION[1];
+        this.description = DESCRIPTION[0] + defInc + DESCRIPTION[1] + incNum + DESCRIPTION[2];
     }
 
     public static void upgradeIncNum(int updateNum) {
@@ -35,13 +35,17 @@ public class DefStance extends AbstractStance {
     public void onEnterStance() {
         defInc+=incNum;
         AbstractPlayer p = AbstractDungeon.player;
-        AbstractDungeon.actionManager.addToTop(new ApplyPowerAction(p, p, new DexterityPower(p, defInc), defInc));
+        if (defInc != 0) {
+            AbstractDungeon.actionManager.addToTop(new ApplyPowerAction(p, p, new DexterityPower(p, defInc), defInc));
+        }
         updateDescription();
     }
 
     @Override
     public void onExitStance() {
         AbstractPlayer p = AbstractDungeon.player;
-        AbstractDungeon.actionManager.addToTop(new ApplyPowerAction(p, p, new DexterityPower(p, -defInc), -defInc));
+        if (defInc != 0) {
+            AbstractDungeon.actionManager.addToTop(new ApplyPowerAction(p, p, new DexterityPower(p, -defInc), -defInc));
+        }
     }
 }
