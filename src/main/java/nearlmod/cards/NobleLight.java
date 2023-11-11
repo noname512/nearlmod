@@ -8,6 +8,7 @@ import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.localization.CardStrings;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import com.megacrit.cardcrawl.orbs.AbstractOrb;
+import nearlmod.orbs.AbstractFriend;
 import nearlmod.orbs.Viviana;
 import nearlmod.patches.AbstractCardEnum;
 import nearlmod.stances.AtkStance;
@@ -36,8 +37,8 @@ public class NobleLight extends AbstractNearlCard {
         Iterator it = p.orbs.iterator();
         while (it.hasNext()) {
             AbstractOrb orb = (AbstractOrb) it.next();
-            if (orb instanceof Viviana)
-                ((Viviana)orb).applyStrength(1);
+            if (orb instanceof AbstractFriend)
+                ((AbstractFriend)orb).applyStrength(1);
         }
     }
 

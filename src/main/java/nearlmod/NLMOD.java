@@ -123,6 +123,7 @@ public class NLMOD implements EditCardsSubscriber, EditCharactersSubscriber, Edi
         BaseMod.addCard(new SecondSun()); // 第二轮太阳
         BaseMod.addCard(new LightArrowStrike()); // 光箭打击
         BaseMod.addCard(new SwallowLight()); // 侵吞光芒
+        BaseMod.addCard(new AllOutEffort()); // 全力以赴
 
         // Rare.
         BaseMod.addCard(new NightScouringGleam()); // 逐夜烁光
@@ -134,6 +135,11 @@ public class NLMOD implements EditCardsSubscriber, EditCharactersSubscriber, Edi
         BaseMod.addCard(new FlashFade()); // “明灭”
         BaseMod.addCard(new FlameShadow()); // 烛燃影息
         BaseMod.addCard(new GlimmeringTouch()); // 微光之触
+
+        BaseMod.addCard(new SurgingBrilliance()); // 光芒涌动
+        BaseMod.addCard(new DeterringRadiance()); // 慑敌辉光
+        BaseMod.addCard(new DivineAvatar()); // 先贤化身
+        BaseMod.addCard(new CraftsmanEcho()); // 工匠团的回响
     }
 
     @Override
