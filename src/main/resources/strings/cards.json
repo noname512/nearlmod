@@ -37,7 +37,7 @@
     },
     "nearlmod:SwordShield": {
         "NAME": "剑盾骑士",
-        "DESCRIPTION": "切换你的形态，获得 !M! 层 nearlmod:光 。 NL 如果瑕光在场，本次切换数值+1。",
+        "DESCRIPTION": "切换你的形态，获得 !M! 层 nearlmod:光 。 NL 如果瑕光在场，本次切换数值额外增加 !nearlmod:M2! 点。",
         "UPGRADE_DESCRIPTION": ""
     },
     "nearlmod:SecondSun": {
