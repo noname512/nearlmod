@@ -17,7 +17,7 @@ public class Sanctuary extends AbstractFriendCard {
     public static final String NAME = cardStrings.NAME;
     public static final String DESCRIPTION = cardStrings.DESCRIPTION;
     public static final String UPGRADE_DESCRIPTION = cardStrings.UPGRADE_DESCRIPTION;
-    public static final String IMG_PATH = "images/cards/flashfade.png";
+    public static final String IMG_PATH = "images/cards/sanctuary.png";
     private static final int COST = 3;
     private static final int BLOCK_AMT = 10;
     private static final int POWER_TURN = 2;

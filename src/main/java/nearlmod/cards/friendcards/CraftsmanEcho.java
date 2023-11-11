@@ -23,7 +23,7 @@ public class CraftsmanEcho extends AbstractFriendCard {
     public static final String NAME = cardStrings.NAME;
     public static final String DESCRIPTION = cardStrings.DESCRIPTION;
     public static final String UPGRADE_DESCRIPTION = cardStrings.UPGRADE_DESCRIPTION;
-    public static final String IMG_PATH = "images/cards/flashfade.png";
+    public static final String IMG_PATH = "images/cards/crafsmanecho.png";
     private static final int COST = 1;
     private static final int WEAK_CNT = 1;
     private static final int LIGHT_INC = 4;
