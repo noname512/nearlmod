@@ -22,7 +22,7 @@ import com.megacrit.cardcrawl.localization.PowerStrings;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import com.megacrit.cardcrawl.vfx.combat.ExplosionSmallEffect;
 public class MyFadingPower extends AbstractPower {
-    public static final String POWER_ID = "MyFading";
+    public static final String POWER_ID = "nearlmod:Fading";
     private static final PowerStrings powerStrings;
     public static final String NAME;
     public static final String[] DESCRIPTIONS;

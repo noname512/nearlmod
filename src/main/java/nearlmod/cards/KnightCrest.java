@@ -11,6 +11,7 @@ import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.localization.CardStrings;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
+import nearlmod.actions.UseLightAction;
 import nearlmod.patches.AbstractCardEnum;
 import nearlmod.patches.NearlTags;
 import nearlmod.stances.AtkStance;
@@ -42,6 +43,7 @@ public class KnightCrest extends AbstractNearlCard {
         }
         applyPowers();
         AbstractDungeon.actionManager.addToBottom(new DamageAction(m, new DamageInfo(p, damage, this.damageType), AbstractGameAction.AttackEffect.SLASH_DIAGONAL));
+        AbstractDungeon.actionManager.addToBottom(new UseLightAction(m));
     }
 
     @Override

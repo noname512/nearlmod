@@ -48,16 +48,16 @@ public class LightPower extends AbstractPower implements CloneablePowerInterface
         else description = DESCRIPTIONS[2] + amount + DESCRIPTIONS[3];
     }
 
-    void useLight(AbstractPlayer p, AbstractCreature m) {
+    public void useLight(AbstractPlayer p, AbstractCreature m) {
         if (p.stance.ID.equals(AtkStance.STANCE_ID)) {
             AbstractDungeon.actionManager.addToBottom(new DamageAction(m, new DamageInfo(p, this.amount, DamageInfo.DamageType.THORNS), AbstractGameAction.AttackEffect.LIGHTNING));
         } else {
             AbstractDungeon.actionManager.addToBottom(new GainBlockAction(p, p, this.amount));
         }
         this.amount = 0;
-        AbstractDungeon.actionManager.addToBottom(new RemoveSpecificPowerAction(p, p, this));
     }
 
+    /*
     @Override
     public void onPlayCard(AbstractCard card, AbstractMonster m) { // use light before play card
         if (card.hasTag(NearlTags.IS_USE_LIGHT_BEFORE)) {
@@ -71,6 +71,7 @@ public class LightPower extends AbstractPower implements CloneablePowerInterface
             useLight((AbstractPlayer)this.owner, action.target);
         }
     }
+    */
 
     @Override
     public void onChangeStance(AbstractStance oldStance, AbstractStance newStance) {

@@ -11,6 +11,7 @@ import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.localization.CardStrings;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
+import nearlmod.actions.UseLightAction;
 import nearlmod.patches.AbstractCardEnum;
 import nearlmod.patches.NearlTags;
 import nearlmod.powers.LightPower;
@@ -37,6 +38,12 @@ public class MajestyLight extends AbstractNearlCard {
 
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
+        if (AbstractDungeon.player.stance.ID.equals(DefStance.STANCE_ID)) {
+            AbstractDungeon.actionManager.addToBottom(new UseLightAction(p));
+        }
+        else {
+            AbstractDungeon.actionManager.addToBottom(new UseLightAction(m));
+        }
         AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(p, p, new LightPower(p, magicNumber), magicNumber));
     }
 

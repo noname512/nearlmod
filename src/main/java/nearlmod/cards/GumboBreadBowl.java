@@ -9,6 +9,7 @@ import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.localization.CardStrings;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
+import nearlmod.actions.UseLightAction;
 import nearlmod.characters.Nearl;
 import nearlmod.patches.AbstractCardEnum;
 import nearlmod.patches.NearlTags;
@@ -43,6 +44,7 @@ public class GumboBreadBowl extends AbstractNearlCard {
         }
         applyPowers();
         AbstractDungeon.actionManager.addToBottom(new GainBlockAction(p, p, block));
+        AbstractDungeon.actionManager.addToBottom(new UseLightAction(p));
     }
 
     @Override
