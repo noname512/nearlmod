@@ -93,7 +93,6 @@ public class AllinOne extends AbstractNearlCard {
             upgradeName();
             rawDescription = UPGRADE_DESCRIPTION;
             initializeDescription();
-            // TODO: 怎么吃两边buff啊（绿字）
         }
     }
 }
