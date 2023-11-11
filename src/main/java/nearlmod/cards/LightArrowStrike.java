@@ -42,8 +42,10 @@ public class LightArrowStrike extends AbstractNearlCard {
     public void use(AbstractPlayer p, AbstractMonster m) {
         AbstractPower power = AbstractDungeon.player.getPower("nearlmod:LightPower");
         if (power == null) return;
-        int lightAmount = power.amount;
-        AbstractDungeon.actionManager.addToBottom(new DamageAction(m, new DamageInfo(p, lightAmount, damageTypeForTurn), AbstractGameAction.AttackEffect.SLASH_DIAGONAL));
+        int damage = power.amount;
+        power = AbstractDungeon.player.getPower("Strength");
+        if (power != null) damage += power.amount;
+        AbstractDungeon.actionManager.addToBottom(new DamageAction(m, new DamageInfo(p, damage, damageTypeForTurn), AbstractGameAction.AttackEffect.SLASH_DIAGONAL));
     }
 
     @Override
