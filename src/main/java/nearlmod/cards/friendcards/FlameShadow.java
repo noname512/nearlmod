@@ -50,6 +50,7 @@ public class FlameShadow extends AbstractFriendCard {
         }
         if (upgraded) dmg += LIGHT_ADD * 2;
         dmg += magicNumber;
+//        AbstractDungeon.actionManager.addToBottom(new DamageAllEnemiesAction(null, dmg, DamageInfo.DamageType.THORNS, AbstractGameAction.AttackEffect.LIGHTNING));
         ArrayList<AbstractMonster> monsters = AbstractDungeon.getCurrRoom().monsters.monsters;
         Iterator<AbstractMonster> it = monsters.iterator();
         while (it.hasNext()) {

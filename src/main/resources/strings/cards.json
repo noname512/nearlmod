@@ -137,7 +137,7 @@
         "NAME": "法术护盾",
         "DESCRIPTION": "获得 !M! 点 格挡 ， !nearlmod:M2! 点 stslib:临时生命 。",
         "UPGRADE_DESCRIPTION": ""
-    },,
+    },
     "nearlmod:Sanctuary": {
         "NAME": "圣域",
         "DESCRIPTION": "获得 !M! 点 格挡 ，在接下来的 !nearlmod:M2! 回合内，你受到的伤害减半。",
@@ -150,7 +150,7 @@
     },
     "nearlmod:FleetingPhantom": {
         "NAME": "转瞬即逝的幻影",
-        "DESCRIPTION": "召唤一个拥有 !M! 点生命且拥有 无实体 的鸟笼。敌人会优先攻击该鸟笼。 NL 切换至使徒形态。",
+        "DESCRIPTION": "[#FF0000]INFO:当前效果为圣域[]  NL 召唤一个拥有 !M! 点生命且拥有 无实体 的鸟笼。敌人会优先攻击该鸟笼。 NL 切换至使徒形态。",
         "UPGRADE_DESCRIPTION": ""
     }
 }

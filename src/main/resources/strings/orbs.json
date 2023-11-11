@@ -1,26 +1,26 @@
 {
   "nearlmod:Viviana": {
     "NAME": "薇薇安娜",
-    "DESCRIPTION": ["回合开始时，给予你一张薇薇安娜的 nearlmod:伙伴牌 。当前拥有", "点 力量 。", "回合开始时，给予你一张薇薇安娜的已升级的 nearlmod:伙伴牌 。当前拥有"]
+    "DESCRIPTION": ["回合开始时，给予你一张薇薇安娜的 [#FF5252]伙伴牌[] 。当前拥有", "点力量。", "回合开始时，给予你一张薇薇安娜的已升级的 nearlmod:伙伴牌 。当前拥有"]
   },
   "nearlmod:Blemishine": {
     "NAME": "瑕光",
-    "DESCRIPTION": ["回合开始时，给予你一张瑕光的 nearlmod:伙伴牌 。当前拥有", "点 力量 。", "回合开始时，给予你一张薇薇安娜的已升级的 nearlmod:伙伴牌 。当前拥有"]
+    "DESCRIPTION": ["回合开始时，给予你一张瑕光的 [#FF5252]伙伴牌[] 。当前拥有", "点力量。", "回合开始时，给予你一张瑕光的已升级的 [#FF5252]伙伴牌[] 。当前拥有"]
   },
-  "nearlmod:nightingale": {
+  "nearlmod:Nightingale": {
     "NAME": "夜莺",
-    "DESCRIPTION": ["回合开始时，给予你一张夜莺的 nearlmod:伙伴牌 。当前拥有", "点 力量 。", "回合开始时，给予你一张薇薇安娜的已升级的 nearlmod:伙伴牌 。当前拥有"]
+    "DESCRIPTION": ["回合开始时，给予你一张夜莺的 [#FF5252]伙伴牌[] 。当前拥有", "点力量。", "回合开始时，给予你一张夜莺的已升级的 [#FF5252]伙伴牌[] 。当前拥有"]
   },
-  "nearlmod:shining": {
+  "nearlmod:Shining": {
     "NAME": "闪灵",
-    "DESCRIPTION": ["回合开始时，给予你一张闪灵的 nearlmod:伙伴牌 。当前拥有", "点 力量 。", "回合开始时，给予你一张薇薇安娜的已升级的 nearlmod:伙伴牌 。当前拥有"]
+    "DESCRIPTION": ["回合开始时，给予你一张闪灵的 [#FF5252]伙伴牌[] 。当前拥有", "点力量。", "回合开始时，给予你一张闪灵的已升级的 [#FF5252]伙伴牌[] 。当前拥有"]
   },
-  "nearlmod:whislash": {
+  "nearlmod:Whislash": {
     "NAME": "鞭刃",
-    "DESCRIPTION": ["回合开始时，给予你一张鞭刃的 nearlmod:伙伴牌 。当前拥有", "点 力量 。", "回合开始时，给予你一张薇薇安娜的已升级的 nearlmod:伙伴牌 。当前拥有"]
+    "DESCRIPTION": ["回合开始时，给予你一张鞭刃的 [#FF5252]伙伴牌[] 。当前拥有", "点力量。", "回合开始时，给予你一张鞭刃的已升级的 nearlmod:伙伴牌 。当前拥有"]
   },
-  "nearlmod:flametail": {
+  "nearlmod:Flametail": {
     "NAME": "焰尾",
-    "DESCRIPTION": ["回合开始时，给予你一张焰尾的 nearlmod:伙伴牌 。当前拥有", "点 力量 。", "回合开始时，给予你一张薇薇安娜的已升级的 nearlmod:伙伴牌 。当前拥有"]
+    "DESCRIPTION": ["回合开始时，给予你一张焰尾的 [#FF5252]伙伴牌[] 。当前拥有", "点力量。", "回合开始时，给予你一张焰尾的已升级的 nearlmod:伙伴牌 。当前拥有"]
   }
 }

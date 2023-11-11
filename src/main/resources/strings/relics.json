@@ -2,6 +2,6 @@
   "nearlmod:CureUp": {
     "NAME": "治疗效果大提升",
     "FLAVOR": "治疗效果……大提升！//TODO",
-    "DESCRIPTIONS": ["你每回合获得的前 10 点 格挡 转化为 stslib:临时生命 。"]
+    "DESCRIPTIONS": ["你每回合获得的前 10 点 格挡 转化为临时生命。"]
   }
 }

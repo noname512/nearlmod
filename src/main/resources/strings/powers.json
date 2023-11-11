@@ -13,10 +13,18 @@
   },
   "nearlmod:FlamingEdgePower": {
     "NAME": "灿焰长刀",
-    "DESCRIPTIONS": ["每当你切换至剑枪形态时，获得", "层 光。"]
+    "DESCRIPTIONS": ["每当你切换至剑枪形态时，获得", "层 nearlmod:光 。"]
   },
   "nearlmod:GlimmeringTouchPower": {
     "NAME": "微光之触",
     "DESCRIPTIONS": ["回合后，对所有敌人造成", "点伤害。"]
+  },
+  "nearlmod:SanctuaryPower": {
+    "NAME": "圣域",
+    "DESCRIPTIONS": ["回合内受到的伤害减半。"]
+  },
+  "nearlmod:WFPPower": {
+    "NAME": "白恶魔的庇护",
+    "DESCRIPTIONS": ["你不再被 脆弱 、 虚弱 、 易伤 。 NL 如果你同时拥有 [#FF5252]黑恶魔的庇护[] ，每回合开始时获得一层 人工制品 。"]
   }
 }

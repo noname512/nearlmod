@@ -124,6 +124,7 @@ public class NLMOD implements EditCardsSubscriber, EditCharactersSubscriber, Edi
         BaseMod.addCard(new LightArrowStrike()); // 光箭打击
         BaseMod.addCard(new SwallowLight()); // 侵吞光芒
         BaseMod.addCard(new AllOutEffort()); // 全力以赴
+        BaseMod.addCard(new DanceTogether()); // 共舞一曲
 
         // Rare.
         BaseMod.addCard(new BravetheDarkness()); // 不畏苦暗
@@ -141,6 +142,11 @@ public class NLMOD implements EditCardsSubscriber, EditCharactersSubscriber, Edi
         BaseMod.addCard(new DeterringRadiance()); // 慑敌辉光
         BaseMod.addCard(new DivineAvatar()); // 先贤化身
         BaseMod.addCard(new CraftsmanEcho()); // 工匠团的回响
+
+        BaseMod.addCard(new ArtsShield()); // 法术护盾
+        BaseMod.addCard(new Sanctuary()); // 圣域
+        BaseMod.addCard(new WhiteFiendProtection()); // 白恶魔的庇护
+        BaseMod.addCard(new FleetingPhantom()); // 转瞬即逝的幻影
     }
 
     @Override

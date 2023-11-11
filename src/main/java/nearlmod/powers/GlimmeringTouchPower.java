@@ -51,6 +51,7 @@ public class GlimmeringTouchPower extends AbstractPower implements CloneablePowe
     public void atStartOfTurn() {
         amount--;
         if (amount == 0) {
+//            AbstractDungeon.actionManager.addToBottom(new DamageAllEnemiesAction(null, damage, DamageInfo.DamageType.THORNS, AbstractGameAction.AttackEffect.FIRE));
             ArrayList<AbstractMonster> monsters = AbstractDungeon.getCurrRoom().monsters.monsters;
             Iterator<AbstractMonster> it = monsters.iterator();
             while (it.hasNext()) {

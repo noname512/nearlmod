@@ -20,12 +20,14 @@ import java.util.Iterator;
 
 public abstract class AbstractFriendCard extends AbstractNearlCard {
     public static final String BG_IMG = "images/512/bg_friend_test.png";
+    public String baseDescription = "";
 
     public AbstractFriendCard(String id, String name, String img, int cost, String rawDescription,
                               AbstractCard.CardType type, AbstractCard.CardColor color,
                               AbstractCard.CardRarity rarity, AbstractCard.CardTarget target, String belongFriend) {
         super(id, name, img, cost, rawDescription + " NL 虚无 。 NL 消耗 。",
                 type, color, rarity, target);
+        baseDescription = rawDescription;
         tags.add(NearlTags.IS_FRIEND_CARD);
         exhaust = true;
         isEthereal = true;

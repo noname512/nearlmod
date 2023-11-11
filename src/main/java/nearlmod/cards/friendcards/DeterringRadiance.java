@@ -37,7 +37,7 @@ public class DeterringRadiance extends AbstractFriendCard {
     public DeterringRadiance() {
         super(ID, NAME, IMG_PATH, COST, DESCRIPTION,
                 CardType.SKILL, AbstractCardEnum.NEARL_GOLD,
-                CardRarity.SPECIAL, CardTarget.ENEMY, "nearlmod:Blemishine");
+                CardRarity.SPECIAL, CardTarget.ALL_ENEMY, "nearlmod:Blemishine");
         magicNumber = baseMagicNumber = LIGHT_INC;
         secondMagicNumber = baseSecondMagicNumber = WEAK_CNT;
         updateDmg();
@@ -50,9 +50,9 @@ public class DeterringRadiance extends AbstractFriendCard {
         Iterator<AbstractMonster> it = monsters.iterator();
         while (it.hasNext()) {
             AbstractMonster ms = it.next();
-            AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(ms, p, new WeakPower(ms, magicNumber, false), magicNumber, true, AbstractGameAction.AttackEffect.NONE));
+            AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(ms, p, new WeakPower(ms, secondMagicNumber, false)));
         }
-        AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(p, p, new LightPower(p, secondMagicNumber), secondMagicNumber));
+        AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(p, p, new LightPower(p, magicNumber)));
     }
 
     @Override
