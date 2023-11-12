@@ -1,6 +1,7 @@
 package nearlmod.cards.friendcards;
 
 import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
+import com.megacrit.cardcrawl.actions.common.RemoveSpecificPowerAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
@@ -37,8 +38,12 @@ public class WhiteFiendProtection extends AbstractFriendCard {
         AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(p, p, new WFPPower(p), -1));
         if (upgraded) {
             for (AbstractPower power : p.powers)
-                if (power.type == AbstractPower.PowerType.DEBUFF)
-                    power.reducePower(1);
+                if (power.type == AbstractPower.PowerType.DEBUFF) {
+                    if (power.amount > 1)
+                        power.reducePower(1);
+                    else
+                        addToBot(new RemoveSpecificPowerAction(p, p, power));
+                }
         }
     }
 
