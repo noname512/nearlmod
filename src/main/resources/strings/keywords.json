@@ -11,7 +11,7 @@
     "NAMES": [
       "伙伴"
     ],
-    "DESCRIPTION": "可以与你并肩战斗，每回合会提供来自该伙伴的一张 [#FF5252]伙伴牌[] 。"
+    "DESCRIPTION": "可以与你并肩战斗，每回合会提供来自该伙伴的一张 [#EFC851]伙伴牌[] 。"
   },
   "FRIENDCARD": {
     "PROPER_NAME": "伙伴牌",
@@ -25,7 +25,7 @@
     "NAMES": [
       "部署费用"
     ],
-    "DESCRIPTION": "可以且优先用于使用 [#FF5252]伙伴牌[] 的能量，回合结束不会清空。"
+    "DESCRIPTION": "可以且优先用于使用 [#EFC851]伙伴牌[] 的能量，回合结束不会清空。"
   },
   "UNIQUE": {
     "PROPER_NAME": "唯一",
@@ -39,7 +39,7 @@
     "NAMES": [
       "蓄力"
     ],
-    "DESCRIPTION": "在此期间，伙伴不再提供 [#FF5252]伙伴牌[] 。"
+    "DESCRIPTION": "在此期间，伙伴不再提供 [#EFC851]伙伴牌[] 。"
   },
   "EXSANGUINATION": {
     "PROPER_NAME": "血归",

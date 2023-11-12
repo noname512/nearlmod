@@ -215,7 +215,7 @@
         "UPGRADE_DESCRIPTION": "nearlmod:唯一 。 NL 给予所有敌人一层 虚弱 。 NL 你每回合第一张非伙伴攻击牌会随机给予目标一层 易伤 或 虚弱 。如果你同时拥有 [#FF5252]白恶魔的庇护[] ，改为给予目标一层 易伤 和 虚弱 。"
     },
     "nearlmod:CreedField": {
-        "NAME": "教条立场",
+        "NAME": "教条力场",
         "DESCRIPTION": "获得 !M! 点 格挡 。 在接下来的 2 回合内，每次受到的伤害减少 !nealmod:M2! 点。",
         "UPGRADE_DESCRIPTION": "获得 !M! 点 格挡 。 在接下来的 3 回合内，每次受到的伤害减少 !nealmod:M2! 点。"
     }
