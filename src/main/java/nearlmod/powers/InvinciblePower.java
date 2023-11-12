@@ -34,7 +34,7 @@ public class InvinciblePower extends AbstractPower implements CloneablePowerInte
     }
 
     public void atStartOfTurn() {
-        AbstractDungeon.actionManager.addToBottom(new RemoveSpecificPowerAction(owner, owner, "Invincible"));
+        AbstractDungeon.actionManager.addToBottom(new RemoveSpecificPowerAction(owner, owner, "nearlmod:Invincible"));
     }
 
     @Override
