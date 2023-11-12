@@ -16,6 +16,8 @@ import com.megacrit.cardcrawl.rooms.AbstractRoom;
 import com.megacrit.cardcrawl.screens.custom.CustomMod;
 import nearlmod.patches.NearlEnum;
 import nearlmod.relics.CureUp;
+import nearlmod.relics.PegasusHalo;
+import nearlmod.relics.PoemLooks;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 import nearlmod.cards.*;
@@ -169,6 +171,12 @@ public class NLMOD implements EditCardsSubscriber, EditCharactersSubscriber, Edi
     public void receiveEditRelics() {
         // starter.
         BaseMod.addRelicToCustomPool(new CureUp(), NEARL_GOLD);
+
+        // boss.
+        BaseMod.addRelicToCustomPool(new PegasusHalo(), NEARL_GOLD);
+
+        // event.
+        BaseMod.addRelicToCustomPool(new PoemLooks(), NEARL_GOLD);
     }
 
     @Override

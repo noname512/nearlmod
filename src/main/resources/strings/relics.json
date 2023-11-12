@@ -2,6 +2,16 @@
   "nearlmod:CureUp": {
     "NAME": "治疗效果大提升",
     "FLAVOR": "治疗效果……大提升！//TODO",
-    "DESCRIPTIONS": ["你每回合获得的前 10 点 格挡 转化为临时生命。"]
+    "DESCRIPTIONS": ["你每回合获得的前 10 点格挡转化为临时生命。"]
+  },
+  "nearlmod:PegasusHalo": {
+    "NAME": "天马光环",
+    "FLAVOR": "流淌着金色血液的天马。",
+    "DESCRIPTIONS": ["失去你的初始遗物。你获得的格挡转化为临时生命。"]
+  },
+  "nearlmod:PoemLooks": {
+    "NAME": "诗的容貌",
+    "FLAVOR": "或许你不是那光芒，但你亦曾，为守护它而拔剑。",
+    "DESCRIPTIONS": ["对战开始时，召唤薇薇安娜作为伙伴。"]
   }
 }

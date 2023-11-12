@@ -9,20 +9,20 @@ import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.localization.RelicStrings;
 import com.megacrit.cardcrawl.relics.AbstractRelic;
+
 import static com.badlogic.gdx.math.MathUtils.floor;
 import static java.lang.Math.min;
 
-public class CureUp extends CustomRelic {
+public class PegasusHalo extends CustomRelic {
 
-    public static final String ID = "nearlmod:CureUp";
+    public static final String ID = "nearlmod:PegasusHalo";
     public static final RelicStrings relicStrings = CardCrawlGame.languagePack.getRelicStrings(ID);
     public static final String NAME = relicStrings.NAME;
     public static final String[] DESCRIPTIONS = relicStrings.DESCRIPTIONS;
     public static final Texture IMG = new Texture("images/relics/cureup.png");
     public static final Texture IMG_OUTLINE = new Texture("images/relics/cureup_p.png");
-    public static final int MAX_AMOUNT = 10;
-    public CureUp() {
-        super(ID, IMG, IMG_OUTLINE, RelicTier.STARTER, LandingSound.FLAT);
+    public PegasusHalo() {
+        super(ID, IMG, IMG_OUTLINE, RelicTier.BOSS, LandingSound.FLAT);
     }
 
     @Override
@@ -31,25 +31,20 @@ public class CureUp extends CustomRelic {
     }
 
     @Override
-    public void atTurnStart() {
-        this.counter = MAX_AMOUNT;
+    public int onPlayerGainedBlock(float blockAmount) {
+        addToBot(new RelicAboveCreatureAction(AbstractDungeon.player, this));
+        AbstractPlayer p = AbstractDungeon.player;
+        addToBot(new AddTemporaryHPAction(p, p, floor(blockAmount)));
+        return 0;
     }
 
     @Override
-    public int onPlayerGainedBlock(float blockAmount) {
-        int block = floor(blockAmount);
-        int exchange = min(block, this.counter);
-        this.counter -= exchange;
-        AbstractPlayer p = AbstractDungeon.player;
-        if (exchange > 0) {
-            addToBot(new RelicAboveCreatureAction(AbstractDungeon.player, this));
-            addToBot(new AddTemporaryHPAction(p, p, exchange));
-        }
-        return block - exchange;
+    public boolean canSpawn() {
+        return AbstractDungeon.player.hasRelic("nearlmod:CureUp");
     }
 
     @Override
     public AbstractRelic makeCopy() {
-        return new CureUp();
+        return new PegasusHalo();
     }
 }
