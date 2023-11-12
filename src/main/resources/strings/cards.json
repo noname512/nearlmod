@@ -40,6 +40,11 @@
         "DESCRIPTION": "切换你的 形态 ，获得 !M! 层 nearlmod:光 。 NL 如果瑕光在场，本次切换数值额外增加 !nearlmod:M2! 点。",
         "UPGRADE_DESCRIPTION": ""
     },
+    "nearlmod:NobleLight": {
+        "NAME": "崇高者",
+        "DESCRIPTION": "使你的 nearlmod:伙伴 获得 1 点 力量 。"
+    },
+
     "nearlmod:SecondSun": {
         "NAME": "第二轮太阳",
         "DESCRIPTION": "使你的 nearlmod:光 翻倍。 NL 消耗 。",
@@ -50,9 +55,10 @@
         "DESCRIPTION": "造成等同于你的 nearlmod:光 的层数的伤害。",
         "UPGRADE_DESCRIPTION": ""
     },
-    "nearlmod:NobleLight": {
-        "NAME": "崇高者",
-        "DESCRIPTION": "使你的 nearlmod:伙伴 获得 1 点 力量 。"
+    "nearlmod:SweepWrong": {
+        "NAME": "扫尽恶行",
+        "DESCRIPTION": "对所有敌人造成 !D! 点伤害，如果目标意图是攻击，额外造成 !M! 点伤害。",
+        "UPGRADE_DESCRIPTION": ""
     },
 
     "nearlmod:BravetheDarkness": {
