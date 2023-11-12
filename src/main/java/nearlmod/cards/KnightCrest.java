@@ -14,6 +14,7 @@ import nearlmod.actions.UseLightAction;
 import nearlmod.patches.AbstractCardEnum;
 import nearlmod.patches.NearlTags;
 import nearlmod.stances.AtkStance;
+import nearlmod.stances.DefStance;
 
 public class KnightCrest extends AbstractNearlCard {
     public static final String ID = "nearlmod:KnightCrest";
@@ -46,11 +47,28 @@ public class KnightCrest extends AbstractNearlCard {
 
     @Override
     public void applyPowers() {
+        if (!AbstractDungeon.player.stance.ID.equals(AtkStance.STANCE_ID)) {
+            this.baseDamage += AtkStance.incNum;
+            this.baseDamage += AtkStance.atkInc;
+        }
         super.applyPowers();
         if (!AbstractDungeon.player.stance.ID.equals(AtkStance.STANCE_ID)) {
-            damage += AtkStance.incNum;
-            damage += AtkStance.atkInc;
-            isDamageModified = (damage != baseDamage);
+            this.baseDamage -= AtkStance.incNum;
+            this.baseDamage -= AtkStance.atkInc;
+            isDamageModified = (baseDamage != damage);
+        }
+    }
+    @Override
+    public void calculateCardDamage(AbstractMonster mo) {
+        if (!AbstractDungeon.player.stance.ID.equals(AtkStance.STANCE_ID)) {
+            this.baseDamage += AtkStance.incNum;
+            this.baseDamage += AtkStance.atkInc;
+        }
+        super.calculateCardDamage(mo);
+        if (!AbstractDungeon.player.stance.ID.equals(AtkStance.STANCE_ID)) {
+            this.baseDamage -= AtkStance.incNum;
+            this.baseDamage -= AtkStance.atkInc;
+            isDamageModified = (baseDamage != damage);
         }
     }
     @Override

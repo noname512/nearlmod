@@ -45,10 +45,14 @@ public class FirstAid extends AbstractNearlCard {
 
     @Override
     public void applyPowers() {
+        if (!AbstractDungeon.player.stance.ID.equals(DefStance.STANCE_ID)) {
+            baseBlock += DefStance.incNum;
+            baseBlock += DefStance.defInc;
+        }
         super.applyPowers();
         if (!AbstractDungeon.player.stance.ID.equals(DefStance.STANCE_ID)) {
-            block += DefStance.incNum;
-            block += DefStance.defInc;
+            baseBlock -= DefStance.incNum;
+            baseBlock -= DefStance.defInc;
             isBlockModified = (block != baseBlock);
         }
     }
@@ -63,7 +67,20 @@ public class FirstAid extends AbstractNearlCard {
         } else {
             this.glowColor = AbstractCard.BLUE_BORDER_GLOW_COLOR.cpy();
         }
+    }
 
+    @Override
+    public void calculateCardDamage(AbstractMonster mo) {
+        if (!AbstractDungeon.player.stance.ID.equals(DefStance.STANCE_ID)) {
+            this.baseBlock += DefStance.incNum;
+            this.baseBlock += DefStance.defInc;
+        }
+        super.calculateCardDamage(mo);
+        if (!AbstractDungeon.player.stance.ID.equals(DefStance.STANCE_ID)) {
+            this.baseBlock -= DefStance.incNum;
+            this.baseBlock -= DefStance.defInc;
+            isBlockModified = (baseBlock != block);
+        }
     }
 
     @Override

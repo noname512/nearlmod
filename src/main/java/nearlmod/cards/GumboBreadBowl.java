@@ -12,6 +12,7 @@ import nearlmod.actions.UseLightAction;
 import nearlmod.characters.Nearl;
 import nearlmod.patches.AbstractCardEnum;
 import nearlmod.patches.NearlTags;
+import nearlmod.stances.AtkStance;
 import nearlmod.stances.DefStance;
 
 public class GumboBreadBowl extends AbstractNearlCard {
@@ -45,10 +46,14 @@ public class GumboBreadBowl extends AbstractNearlCard {
 
     @Override
     public void applyPowers() {
+        if (!AbstractDungeon.player.stance.ID.equals(DefStance.STANCE_ID)) {
+            baseBlock += DefStance.incNum;
+            baseBlock += DefStance.defInc;
+        }
         super.applyPowers();
         if (!AbstractDungeon.player.stance.ID.equals(DefStance.STANCE_ID)) {
-            block += DefStance.incNum;
-            block += DefStance.defInc;
+            baseBlock -= DefStance.incNum;
+            baseBlock -= DefStance.defInc;
             isBlockModified = (block != baseBlock);
         }
     }
@@ -56,6 +61,20 @@ public class GumboBreadBowl extends AbstractNearlCard {
     @Override
     public AbstractCard makeCopy() {
         return new GumboBreadBowl();
+    }
+
+    @Override
+    public void calculateCardDamage(AbstractMonster mo) {
+        if (!AbstractDungeon.player.stance.ID.equals(DefStance.STANCE_ID)) {
+            this.baseBlock += DefStance.incNum;
+            this.baseBlock += DefStance.defInc;
+        }
+        super.calculateCardDamage(mo);
+        if (!AbstractDungeon.player.stance.ID.equals(DefStance.STANCE_ID)) {
+            this.baseBlock -= DefStance.incNum;
+            this.baseBlock -= DefStance.defInc;
+            isBlockModified = (baseBlock != block);
+        }
     }
 
     @Override

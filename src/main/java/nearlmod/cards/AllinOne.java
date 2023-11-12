@@ -48,33 +48,51 @@ public class AllinOne extends AbstractNearlCard {
     }
 
     public void applyPowers() {
+        AbstractPower tempDex = AbstractDungeon.player.getPower("Dexterity");
+        AbstractPower tempStr = AbstractDungeon.player.getPower("Strength");
+        int dex = 0, str = 0;
+        if (tempDex != null) {
+            dex = tempDex.amount;
+        }
+        if (tempStr != null) {
+            str = tempStr.amount;
+        }
+        if (upgraded) {
+            baseDamage += dex;
+            baseBlock += str;
+        }
         super.applyPowers();
         if (upgraded) {
-            AbstractPower tempDex = AbstractDungeon.player.getPower("Dexterity");
-            AbstractPower tempStr = AbstractDungeon.player.getPower("Strength");
-            int dex = 0, str = 0;
-            if (tempDex != null) {
-                dex = tempDex.amount;
-            }
-            if (tempStr != null) {
-                str = tempStr.amount;
-            }
-            damage = damage + dex;
-            if (damage < 0) {
-                damage = 0;
-            }
-            if (damage != baseDamage) {
-                isDamageModified = true;
-            }
-            block = block + str;
-            if (block < 0) {
-                block = 0;
-            }
-            if (block != baseBlock) {
-                isBlockModified = true;
-            }
+            baseDamage -= dex;
+            baseBlock -= str;
+            isDamageModified = (damage != baseDamage);
+            isBlockModified = (block != baseBlock);
         }
     }
+    @Override
+    public void calculateCardDamage(AbstractMonster mo) {
+        AbstractPower tempDex = AbstractDungeon.player.getPower("Dexterity");
+        AbstractPower tempStr = AbstractDungeon.player.getPower("Strength");
+        int dex = 0, str = 0;
+        if (tempDex != null) {
+            dex = tempDex.amount;
+        }
+        if (tempStr != null) {
+            str = tempStr.amount;
+        }
+        if (upgraded) {
+            baseDamage += dex;
+            baseBlock += str;
+        }
+        super.calculateCardDamage(mo);
+        if (upgraded) {
+            baseDamage -= dex;
+            baseBlock -= str;
+            isDamageModified = (damage != baseDamage);
+            isBlockModified = (block != baseBlock);
+        }
+    }
+
     @Override
     public AbstractCard makeCopy() {
         return new AllinOne();

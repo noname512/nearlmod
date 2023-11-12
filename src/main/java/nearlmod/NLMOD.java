@@ -119,6 +119,7 @@ public class NLMOD implements EditCardsSubscriber, EditCharactersSubscriber, Edi
         BaseMod.addCard(new WaytoChampion()); // 冠军之路
         BaseMod.addCard(new Dawn()); // 曙光
         BaseMod.addCard(new TheReturn()); // 归来
+        BaseMod.addCard(new FullSpeedAhead()); // 全力冲锋
 
         // Friend.
         BaseMod.addCard(new LSSwiftSword()); // 光影迅捷剑

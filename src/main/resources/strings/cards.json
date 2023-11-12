@@ -100,6 +100,11 @@
         "DESCRIPTION": "召唤 闪灵 和 夜莺 作为 nearlmod:伙伴 ， NL 切换至 nearlmod:剑枪形态 。",
         "UPGRADE_DESCRIPTION": " 固有 。 NL "
     },
+    "nearlmod:FullSpeedAhead": {
+        "NAME" : "全力冲锋",
+        "DESCRIPTION": " 造成相当于你 格挡 的伤害，如果你处于 nearlmod:使徒形态 ，切换至 nearlmod:剑枪形态 并额外造成等同于你 stslib:临时生命 的伤害。",
+        "UPGRADE_DESCRIPTION": "（当前造成 !D! 点）"
+    },
 
     "nearlmod:SwallowLight": {
         "NAME": "侵吞光芒",

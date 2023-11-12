@@ -34,7 +34,7 @@ public class Guardian extends AbstractNearlCard {
 
     public Guardian() {
         super(ID, NAME, IMG_PATH, COST, DESCRIPTION,
-                CardType.ATTACK, AbstractCardEnum.NEARL_GOLD,
+                CardType.SKILL, AbstractCardEnum.NEARL_GOLD,
                 CardRarity.COMMON, CardTarget.SELF);
         
         block = baseBlock = BLOCK_AMT;
