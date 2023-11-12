@@ -10,6 +10,7 @@ import com.megacrit.cardcrawl.localization.CardStrings;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import com.megacrit.cardcrawl.powers.WeakPower;
 import com.megacrit.cardcrawl.vfx.combat.IntimidateEffect;
+import nearlmod.actions.WeakenAllAction;
 import nearlmod.patches.AbstractCardEnum;
 import nearlmod.powers.LightPower;
 
@@ -41,10 +42,7 @@ public class DeterringRadiance extends AbstractFriendCard {
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
         AbstractDungeon.actionManager.addToBottom(new VFXAction(p, new IntimidateEffect(AbstractDungeon.player.hb.cX, AbstractDungeon.player.hb.cY), 1.0F));
-        ArrayList<AbstractMonster> monsters = AbstractDungeon.getCurrRoom().monsters.monsters;
-        for (AbstractMonster ms : monsters) {
-            AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(ms, p, new WeakPower(ms, secondMagicNumber, false)));
-        }
+        addToBot(new WeakenAllAction(p, secondMagicNumber));
         AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(p, p, new LightPower(p, magicNumber)));
     }
 
