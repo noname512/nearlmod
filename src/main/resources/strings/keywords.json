@@ -40,5 +40,12 @@
       "蓄力"
     ],
     "DESCRIPTION": "在此期间，伙伴不再提供 [#FF5252]伙伴牌[] 。"
+  },
+  "EXSANGUINATION": {
+    "PROPER_NAME": "血归",
+    "NAMES": [
+      "血归"
+    ],
+    "DESCRIPTION": " 力量 不超过 0 。"
   }
 }

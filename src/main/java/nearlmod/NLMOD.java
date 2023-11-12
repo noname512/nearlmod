@@ -115,6 +115,7 @@ public class NLMOD implements EditCardsSubscriber, EditCharactersSubscriber, Edi
         BaseMod.addCard(new FlamingEdge()); // 灿焰长刃
         BaseMod.addCard(new NightScouringGleam()); // 逐夜烁光
         BaseMod.addCard(new WaytoChampion()); // 冠军之路
+        BaseMod.addCard(new Dawn()); // 曙光
 
         // Friend.
         BaseMod.addCard(new LSSwiftSword()); // 光影迅捷剑
