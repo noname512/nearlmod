@@ -22,22 +22,22 @@
 
     "nearlmod:GumboBreadBowl": {
         "NAME": "浓汤面包碗",
-        "DESCRIPTION": "切换至使徒形态，获得 !B! 点 格挡 ，使用 nearlmod:光 。",
+        "DESCRIPTION": "切换至 nearlmod:使徒形态 ，获得 !B! 点 格挡 ，使用 nearlmod:光 。",
         "UPGRADE_DESCRIPTION": ""
     },
     "nearlmod:KnightCrest": {
         "NAME": "骑士之辉",
-        "DESCRIPTION": "切换至剑枪形态，造成 !D! 点伤害，使用 nearlmod:光 。",
+        "DESCRIPTION": "切换至 nearlmod:剑枪形态 ，造成 !D! 点伤害，使用 nearlmod:光 。",
         "UPGRADE_DESCRIPTION": ""
     },
     "nearlmod:AllinOne": {
         "NAME": "攻防一体",
-        "DESCRIPTION": "造成 !D! 点伤害， NL 获得 !B! 点 格挡 ， NL 切换你的形态。",
-        "UPGRADE_DESCRIPTION": "造成 !D! 点伤害， NL 获得 !B! 点 格挡 ， NL 切换你的形态。 NL 同时受到 力量 和 敏捷 的加成。"
+        "DESCRIPTION": "造成 !D! 点伤害， NL 获得 !B! 点 格挡 ， NL 切换你的 形态 。",
+        "UPGRADE_DESCRIPTION": "造成 !D! 点伤害， NL 获得 !B! 点 格挡 ， NL 切换你的 形态 。 NL 同时受到 力量 和 敏捷 的加成。"
     },
     "nearlmod:SwordShield": {
         "NAME": "剑盾骑士",
-        "DESCRIPTION": "切换你的形态，获得 !M! 层 nearlmod:光 。 NL 如果瑕光在场，本次切换数值额外增加 !nearlmod:M2! 点。",
+        "DESCRIPTION": "切换你的 形态 ，获得 !M! 层 nearlmod:光 。 NL 如果瑕光在场，本次切换数值额外增加 !nearlmod:M2! 点。",
         "UPGRADE_DESCRIPTION": ""
     },
     "nearlmod:SecondSun": {
@@ -52,32 +52,32 @@
     },
     "nearlmod:NobleLight": {
         "NAME": "崇高者",
-        "DESCRIPTION": "使你的伙伴获得 1 点 力量 。"
+        "DESCRIPTION": "使你的 nearlmod:伙伴 获得 1 点 力量 。"
     },
 
     "nearlmod:BravetheDarkness": {
         "NAME": "不畏苦暗",
-        "DESCRIPTION": "造成 !D! 点伤害。 NL 令目标本回合失去 99 点 力量 。 NL 如果你处于剑枪形态，改为群体攻击。 NL 消耗。",
+        "DESCRIPTION": "造成 !D! 点伤害。 NL 令目标本回合失去 99 点 力量 。 NL 如果你处于 nearlmod:剑枪形态 ，改为群体攻击。 NL 消耗。",
         "UPGRADE_DESCRIPTION": ""
     },
     "nearlmod:FirstAid": {
         "NAME" : "急救",
-        "DESCRIPTION": "切换至使徒形态。 NL 获得 !B! 点 格挡。 NL 如果你处于半血以下，额外获得等量的 stslib:临时生命 。",
+        "DESCRIPTION": "切换至 nearlmod:使徒形态 。 NL 获得 !B! 点 格挡。 NL 如果你处于半血以下，额外获得等量的 stslib:临时生命 。",
         "UPGRADE_DESCRIPTION": ""
     },
     "nearlmod:FlamingEdge": {
         "NAME" : "灿焰长刃",
-        "DESCRIPTION": "每当你切换至剑枪形态时，获得 !M! 层光并使该次切换数值加 1 。 NL 切换至剑枪形态。",
+        "DESCRIPTION": "每当你切换至 nearlmod:剑枪形态 时，获得 !M! 层光并使该次切换数值加 1 。 NL 切换至 nearlmod:剑枪形态 。",
         "UPGRADE_DESCRIPTION": ""
     },
     "nearlmod:NightScouringGleam": {
         "NAME" : "逐夜烁光",
-        "DESCRIPTION": "获得 15 点 力量 。 NL 获得 !M! 层 缓冲。 NL 2 回合后死亡。 NL 切换至剑枪形态。 NL 消耗 。",
+        "DESCRIPTION": "获得 15 点 力量 。 NL 获得 !M! 层 缓冲。 NL 2 回合后死亡。 NL 切换至 nearlmod:剑枪形态 。 NL 消耗 。",
         "UPGRADE_DESCRIPTION": " 保留 。 NL "
     },
     "nearlmod:WaytoChampion": {
         "NAME" : "冠军之路",
-        "DESCRIPTION": "给予所有敌人 1 层 nearlmod:血归 ， NL 本回合不会受到伤害。 NL 消耗 。",
+        "DESCRIPTION": "所有敌人的 力量 不再超过 0 ， NL 本回合不会受到伤害。 NL 消耗 。",
         "UPGRADE_DESCRIPTION": ""
     },
     "nearlmod:Dawn": {
@@ -85,11 +85,16 @@
         "DESCRIPTION": "对所有敌人造成 !D! 点伤害。 升级 这张牌。 NL 可无限 升级 。 NL  消耗 。 NL  虚无 。 ",
         "UPGRADE_DESCRIPTION": ""
     },
+    "nearlmod:TheReturn": {
+        "NAME" : "归来",
+        "DESCRIPTION": "召唤 闪灵 和 夜莺 作为 nearlmod:伙伴 ， NL 切换至 nearlmod:剑枪形态 。",
+        "UPGRADE_DESCRIPTION": " 固有 。 NL "
+    },
 
     "nearlmod:SwallowLight": {
         "NAME": "侵吞光芒",
-        "DESCRIPTION": "召唤薇薇安娜作为伙伴。 NL 消耗所有 nearlmod:光 ，三分之一转化为薇薇安娜的 力量 。",
-        "UPGRADE_DESCRIPTION": "召唤薇薇安娜作为伙伴。 NL 消耗所有 nearlmod:光 ，一半转化为薇薇安娜的 力量 。"
+        "DESCRIPTION": "召唤薇薇安娜作为 nearlmod:伙伴 。 NL 消耗所有 nearlmod:光 ，三分之一转化为薇薇安娜的 力量 。",
+        "UPGRADE_DESCRIPTION": "召唤薇薇安娜作为 nearlmod:伙伴 。 NL 消耗所有 nearlmod:光 ，一半转化为薇薇安娜的 力量 。"
     },
     "nearlmod:LSSwiftSword": {
         "NAME": "光影迅捷剑",
@@ -98,7 +103,7 @@
     },
     "nearlmod:FlashFade": {
         "NAME": "“明灭”",
-        "DESCRIPTION": "切换至剑枪形态，造成 !M! 点伤害 !nearlmod:M2! 次。 NL 也受到你的 力量 加成。",
+        "DESCRIPTION": "切换至 nearlmod:剑枪形态 ，造成 !M! 点伤害 !nearlmod:M2! 次。 NL 也受到你的 力量 加成。",
         "UPGRADE_DESCRIPTION": ""
     },
     "nearlmod:GlimmeringTouch": {
@@ -114,8 +119,8 @@
 
     "nearlmod:AllOutEffort": {
         "NAME": "全力以赴",
-        "DESCRIPTION": "召唤瑕光作为伙伴。 NL 获得 !M! 层 nearlmod:光 并切换至剑枪形态。",
-        "UPGRADE_DESCRIPTION": "召唤瑕光作为伙伴。 NL 获得 !M! 层 nearlmod:光 和 !B! 点 格挡 并切换至剑枪形态。"
+        "DESCRIPTION": "召唤瑕光作为 nearlmod:伙伴 。 NL 获得 !M! 层 nearlmod:光 并切换至 nearlmod:剑枪形态 。",
+        "UPGRADE_DESCRIPTION": "召唤瑕光作为 nearlmod:伙伴 。 NL 获得 !M! 层 nearlmod:光 和 !B! 点 格挡 并切换至 nearlmod:剑枪形态 。"
     },
     "nearlmod:SurgingBrilliance": {
         "NAME": "光芒涌动",
@@ -134,24 +139,24 @@
     },
     "nearlmod:CraftsmanEcho": {
         "NAME": "工匠团的回响",
-        "DESCRIPTION": "选择一个形态，切换到该形态，本次切换形态获得的数值增加 3 点。",
+        "DESCRIPTION": "选择一个 形态 ，切换到该 形态 ，本次切换 形态 获得的数值增加 3 点。",
         "UPGRADE_DESCRIPTION": ""
     },
     "nearlmod:ToAtkStance": {
         "NAME": "剑枪形态",
-        "DESCRIPTION": "切换到剑枪形态，本次切换形态获得的数值增加 3 点。",
+        "DESCRIPTION": "切换到 nearlmod:剑枪形态 ，本次切换 形态 获得的数值增加 3 点。",
         "UPGRADE_DESCRIPTION": ""
     },
     "nearlmod:ToDefStance": {
         "NAME": "使徒形态",
-        "DESCRIPTION": "切换到使徒形态，本次切换形态获得的数值增加 3 点。",
+        "DESCRIPTION": "切换到 nearlmod:使徒形态 ，本次切换 形态 获得的数值增加 3 点。",
         "UPGRADE_DESCRIPTION": ""
     },
 
     "nearlmod:DanceTogether": {
         "NAME": "共舞一曲",
-        "DESCRIPTION": "召唤夜莺作为伙伴。 NL 获得来自夜莺的一张 nearlmod:伙伴牌 。",
-        "UPGRADE_DESCRIPTION": "召唤夜莺作为伙伴。 NL 获得来自夜莺的一张 nearlmod:伙伴牌 ，使其失去 虚无 ，获得 保留 。"
+        "DESCRIPTION": "召唤夜莺作为 nearlmod:伙伴 。 NL 获得来自夜莺的一张 nearlmod:伙伴牌 。",
+        "UPGRADE_DESCRIPTION": "召唤夜莺作为 nearlmod:伙伴 。 NL 获得来自夜莺的一张 nearlmod:伙伴牌 ，使其失去 虚无 ，获得 保留 。"
     },
     "nearlmod:ArtsShield": {
         "NAME": "法术护盾",
@@ -176,12 +181,12 @@
 
     "nearlmod:DawnDuskSaber": {
         "NAME": "斩破晨昏",
-        "DESCRIPTION": "召唤闪灵作为伙伴。 NL 对所有敌人造成 !D! 点伤害。",
-        "UPGRADE_DESCRIPTION": "召唤闪灵作为伙伴。 NL 对所有敌人造成 !D! 点伤害并给予一层 虚弱 。"
+        "DESCRIPTION": "召唤闪灵作为 nearlmod:伙伴 。 NL 对所有敌人造成 !D! 点伤害。",
+        "UPGRADE_DESCRIPTION": "召唤闪灵作为 nearlmod:伙伴 。 NL 对所有敌人造成 !D! 点伤害并给予一层 虚弱 。"
     },
     "nearlmod:Creed": {
         "NAME": "信条",
-        "DESCRIPTION": "造成 !M! 点伤害，切换至至使徒形态。",
+        "DESCRIPTION": "造成 !M! 点伤害，切换至至 nearlmod:使徒形态 。",
         "UPGRADE_DESCRIPTION": ""
     },
     "nearlmod:AutoProtect": {

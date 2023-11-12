@@ -18,6 +18,8 @@ import com.megacrit.cardcrawl.vfx.UpgradeShineEffect;
 import com.megacrit.cardcrawl.vfx.cardManip.ShowCardBrieflyEffect;
 import nearlmod.patches.AbstractCardEnum;
 
+import java.util.Iterator;
+
 public class Dawn extends AbstractNearlCard {
     public static final String ID = "nearlmod:Dawn";
     public static final CardStrings cardStrings = CardCrawlGame.languagePack.getCardStrings(ID);
@@ -50,12 +52,21 @@ public class Dawn extends AbstractNearlCard {
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
         AbstractDungeon.actionManager.addToBottom(new DamageAllEnemiesAction(p, damage, damageTypeForTurn, AbstractGameAction.AttackEffect.BLUNT_HEAVY));
-        copiedFrom.upgrade();
-        // Copied from 勤学精进
-        AbstractDungeon.player.bottledCardUpgradeCheck(this.copiedFrom);
-        AbstractDungeon.effectsQueue.add(new UpgradeShineEffect((float) Settings.WIDTH / 2.0F, (float)Settings.HEIGHT / 2.0F));
-        AbstractDungeon.topLevelEffectsQueue.add(new ShowCardBrieflyEffect(this.copiedFrom.makeStatEquivalentCopy()));
-        this.addToTop(new WaitAction(Settings.ACTION_DUR_MED));
+        upgrade();
+        Iterator var1 = AbstractDungeon.player.masterDeck.group.iterator();
+
+        AbstractCard c;
+        while(var1.hasNext()) {
+            c = (AbstractCard)var1.next();
+            if (c == copiedFrom) {
+                copiedFrom.upgrade();
+                // Copied from 勤学精进
+                AbstractDungeon.player.bottledCardUpgradeCheck(this.copiedFrom);
+                AbstractDungeon.effectsQueue.add(new UpgradeShineEffect((float) Settings.WIDTH / 2.0F, (float)Settings.HEIGHT / 2.0F));
+                AbstractDungeon.topLevelEffectsQueue.add(new ShowCardBrieflyEffect(this.copiedFrom.makeStatEquivalentCopy()));
+                this.addToTop(new WaitAction(Settings.ACTION_DUR_MED));
+            }
+        }
     }
 
     @Override

@@ -47,5 +47,19 @@
       "血归"
     ],
     "DESCRIPTION": " 力量 不超过 0 。"
+  },
+  "ATK_STANCE": {
+    "PROPER_NAME": "剑枪形态",
+    "NAMES": [
+      "剑枪形态"
+    ],
+    "DESCRIPTION": "切换至剑枪形态时，你的力量会增加，数值取决于你切换至该形态的次数。"
+  },
+  "DEF_STANCE": {
+    "PROPER_NAME": "使徒形态",
+    "NAMES": [
+      "使徒形态"
+    ],
+    "DESCRIPTION": "切换至使徒形态时，你的敏捷会增加，数值取决于你切换至该形态的次数。"
   }
 }

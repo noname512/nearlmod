@@ -40,8 +40,8 @@ public class MyFadingPower extends AbstractPower {
             addToBot(new RemoveSpecificPowerAction(this.owner, this.owner, "Buffer"));
             addToBot(new DamageAction(this.owner, new DamageInfo(this.owner, 99999999, DamageInfo.DamageType.HP_LOSS)));
         } else {
-            amount--;
-            updateDescription();
+            this.addToBot(new ReducePowerAction(this.owner, this.owner, "Fading", 1));
+            this.updateDescription();
         }
 
     }

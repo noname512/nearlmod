@@ -12,7 +12,7 @@ import nearlmod.patches.AbstractCardEnum;
 import nearlmod.powers.CreedFieldPower;
 
 public class CreedField extends AbstractFriendCard {
-    public static final String ID = "nearlmod:Sanctuary";
+    public static final String ID = "nearlmod:CreedField";
     public static final CardStrings cardStrings = CardCrawlGame.languagePack.getCardStrings(ID);
     public static final String NAME = cardStrings.NAME;
     public static final String DESCRIPTION = cardStrings.DESCRIPTION;
