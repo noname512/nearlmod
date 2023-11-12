@@ -39,7 +39,6 @@ public class Guardian extends AbstractNearlCard {
         
         block = baseBlock = BLOCK_AMT;
         magicNumber = baseMagicNumber = LIGHT_GET;
-        exhaust = true;
     }
 
     @Override

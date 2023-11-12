@@ -44,6 +44,10 @@
         "NAME": "崇高者",
         "DESCRIPTION": "使你的 nearlmod:伙伴 获得 1 点 力量 。"
     },
+    "nearlmod:Guardian": {
+        "NAME": "守护者",
+        "DESCRIPTION": "获得 !B! 点 格挡 。如果你处于 nearlmod:使徒形态 ，获得 !M! 层 nearlmod:光 。"
+    },
 
     "nearlmod:SecondSun": {
         "NAME": "第二轮太阳",
