@@ -2,6 +2,7 @@ package nearlmod.cards.friendcards;
 
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
 import com.megacrit.cardcrawl.actions.common.DamageAction;
+import com.megacrit.cardcrawl.actions.watcher.ChangeStanceAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.cards.DamageInfo;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
@@ -11,6 +12,8 @@ import com.megacrit.cardcrawl.localization.CardStrings;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import com.megacrit.cardcrawl.powers.AbstractPower;
 import nearlmod.patches.AbstractCardEnum;
+import nearlmod.stances.AtkStance;
+import nearlmod.stances.DefStance;
 
 public class FlashFade extends AbstractFriendCard {
     public static final String ID = "nearlmod:FlashFade";
@@ -51,8 +54,13 @@ public class FlashFade extends AbstractFriendCard {
 
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
+        int dmg = magicNumber;
+        if (p.stance.ID.equals(DefStance.STANCE_ID)) {
+            addToBot(new ChangeStanceAction(new AtkStance()));
+            dmg += AtkStance.atkInc + AtkStance.incNum;
+        }
         for (int i = 1; i <= secondMagicNumber; i++)
-            AbstractDungeon.actionManager.addToBottom(new DamageAction(m, new DamageInfo(p, magicNumber, damageTypeForTurn), AbstractGameAction.AttackEffect.SLASH_DIAGONAL));
+            AbstractDungeon.actionManager.addToBottom(new DamageAction(m, new DamageInfo(p, dmg, damageTypeForTurn), AbstractGameAction.AttackEffect.SLASH_DIAGONAL));
     }
 
     @Override
