@@ -24,7 +24,7 @@ public class WaytoChampion extends AbstractNearlCard {
     public WaytoChampion() {
         super(ID, NAME, IMG_PATH, COST, DESCRIPTION,
                 CardType.SKILL, AbstractCardEnum.NEARL_GOLD,
-                CardRarity.UNCOMMON, CardTarget.SELF);
+                CardRarity.RARE, CardTarget.SELF);
         exhaust = true;
     }
 
