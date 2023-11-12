@@ -11,16 +11,18 @@ import com.megacrit.cardcrawl.helpers.ImageMaster;
 import com.megacrit.cardcrawl.localization.PowerStrings;
 import com.megacrit.cardcrawl.powers.AbstractPower;
 
-public class SanctuaryPower extends AbstractPower implements CloneablePowerInterface {
-    public static final String POWER_ID = "nearlmod:SanctuaryPower";
+public class CreedFieldPower extends AbstractPower implements CloneablePowerInterface {
+    public static final String POWER_ID = "nearlmod:CreedFieldPower";
     public static final PowerStrings powerStrings = CardCrawlGame.languagePack.getPowerStrings(POWER_ID);
     public static final String NAME = powerStrings.NAME;
     public static final String[] DESCRIPTIONS = powerStrings.DESCRIPTIONS;
+    private int dmgDec;
 
-    public SanctuaryPower(AbstractCreature owner, int amount) {
+    public CreedFieldPower(AbstractCreature owner, int amount, int dmgDec) {
         name = NAME;
         ID = POWER_ID;
         this.owner = owner;
+        this.dmgDec = dmgDec;
         region128 = new TextureAtlas.AtlasRegion(ImageMaster.loadImage("images/powers/sanctuary power 84.png"), 0, 0, 84, 84);
         region48 = new TextureAtlas.AtlasRegion(ImageMaster.loadImage("images/powers/sanctuary power 32.png"), 0, 0, 32, 32);
         type = PowerType.BUFF;
@@ -30,7 +32,7 @@ public class SanctuaryPower extends AbstractPower implements CloneablePowerInter
 
     @Override
     public void updateDescription() {
-        description = amount + DESCRIPTIONS[0];
+        description = amount + DESCRIPTIONS[0] + dmgDec + DESCRIPTIONS[1];
     }
 
     @Override
@@ -43,14 +45,18 @@ public class SanctuaryPower extends AbstractPower implements CloneablePowerInter
     }
 
     @Override
-    public float atDamageReceive(float damage, DamageInfo.DamageType damageType) {
-        if (damageType != DamageInfo.DamageType.HP_LOSS)
-            return damage * 0.5F;
-        return damage;
+    public int onAttacked(DamageInfo info, int damageAmount) {
+        if (info.type != DamageInfo.DamageType.HP_LOSS) {
+            if (damageAmount > dmgDec)
+                return damageAmount - dmgDec;
+            else
+                return 0;
+        }
+        return damageAmount;
     }
 
     @Override
     public AbstractPower makeCopy() {
-        return new SanctuaryPower(owner, amount);
+        return new CreedFieldPower(owner, amount, dmgDec);
     }
 }

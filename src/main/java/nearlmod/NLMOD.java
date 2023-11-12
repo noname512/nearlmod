@@ -107,6 +107,7 @@ public class NLMOD implements EditCardsSubscriber, EditCharactersSubscriber, Edi
         BaseMod.addCard(new SwallowLight()); // 侵吞光芒
         BaseMod.addCard(new AllOutEffort()); // 全力以赴
         BaseMod.addCard(new DanceTogether()); // 共舞一曲
+        BaseMod.addCard(new DawnDuskSaber()); // 斩破晨昏
 
         // Rare.
         BaseMod.addCard(new BravetheDarkness()); // 不畏苦暗
@@ -132,6 +133,11 @@ public class NLMOD implements EditCardsSubscriber, EditCharactersSubscriber, Edi
         BaseMod.addCard(new Sanctuary()); // 圣域
         BaseMod.addCard(new WhiteFiendProtection()); // 白恶魔的庇护
         BaseMod.addCard(new FleetingPhantom()); // 转瞬即逝的幻影
+
+        BaseMod.addCard(new Creed()); // 信条
+        BaseMod.addCard(new AutoProtect()); // 自动掩护
+        BaseMod.addCard(new CreedField()); // 教条立场
+        BaseMod.addCard(new BlackFiendProtection()); // 黑恶魔的庇护
     }
 
     @Override

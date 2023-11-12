@@ -27,6 +27,14 @@
     "NAME": "白恶魔的庇护",
     "DESCRIPTIONS": ["你不再被 脆弱 、 虚弱 、 易伤 。 NL 如果你同时拥有 [#FF5252]黑恶魔的庇护[] ，每回合开始时获得一层 人工制品 。"]
   },
+  "nearlmod:CreedFieldPower": {
+    "NAME": "教条立场",
+    "DESCRIPTIONS": ["回合内每次受到的伤害减少", "点。"]
+  },
+  "nearlmod:BFPPower": {
+    "NAME": "黑恶魔的庇护",
+    "DESCRIPTIONS": ["你每回合第一张非伙伴攻击牌会随机给予目标一层 易伤 或 虚弱 。如果你同时拥有 [#FF5252]白恶魔的庇护[] ，改为给予目标一层 易伤 和 虚弱 。"]
+  },
   "nearlmod:Exsanguination": {
     "NAME": "血归",
     "DESCRIPTIONS": ["你的 力量 无法超过 0 。"]
