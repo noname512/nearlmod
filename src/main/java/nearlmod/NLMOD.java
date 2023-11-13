@@ -1,6 +1,8 @@
 package nearlmod;
 
 import basemod.*;
+import basemod.eventUtil.AddEventParams;
+import basemod.eventUtil.EventUtils;
 import basemod.interfaces.*;
 import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.graphics.Color;
@@ -11,9 +13,13 @@ import com.google.gson.reflect.TypeToken;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.helpers.*;
 import com.megacrit.cardcrawl.localization.*;
+import com.megacrit.cardcrawl.monsters.AbstractMonster;
+import com.megacrit.cardcrawl.monsters.MonsterGroup;
 import com.megacrit.cardcrawl.relics.AbstractRelic;
 import com.megacrit.cardcrawl.rooms.AbstractRoom;
 import com.megacrit.cardcrawl.screens.custom.CustomMod;
+import nearlmod.events.PoemLooksEvent;
+import nearlmod.monsters.CandleKnight;
 import nearlmod.patches.NearlEnum;
 import nearlmod.relics.CureUp;
 import nearlmod.relics.PegasusHalo;
@@ -62,7 +68,18 @@ public class NLMOD implements EditCardsSubscriber, EditCharactersSubscriber, Edi
     }
 
     @Override
-    public void receivePostInitialize() {}
+    public void receivePostInitialize() {
+        initializeEvents();
+        initializeMonsters();
+    }
+
+    private void initializeEvents() {
+        BaseMod.addEvent("nearlmod:PoemLooksEvent", PoemLooksEvent.class, PoemLooksEvent.ID);
+    }
+
+    private void initializeMonsters() {
+        BaseMod.addMonster("nearlmod:CandleKnight", CandleKnight.NAME, () -> new MonsterGroup(new AbstractMonster[] {new CandleKnight()}));
+    }
 
     @Override
     public void receivePostDungeonInitialize() {}
@@ -191,5 +208,9 @@ public class NLMOD implements EditCardsSubscriber, EditCharactersSubscriber, Edi
         BaseMod.loadCustomStrings(OrbStrings.class, orbStrings);
         String relicStrings = Gdx.files.internal("strings/relics.json").readString(String.valueOf(StandardCharsets.UTF_8));
         BaseMod.loadCustomStrings(RelicStrings.class, relicStrings);
+        String eventStrings = Gdx.files.internal("strings/events.json").readString(String.valueOf(StandardCharsets.UTF_8));
+        BaseMod.loadCustomStrings(EventStrings.class, eventStrings);
+        String monsterStrings = Gdx.files.internal("strings/monsters.json").readString(String.valueOf(StandardCharsets.UTF_8));
+        BaseMod.loadCustomStrings(MonsterStrings.class, monsterStrings);
     }
 }
