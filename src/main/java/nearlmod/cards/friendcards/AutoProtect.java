@@ -31,7 +31,6 @@ public class AutoProtect extends AbstractFriendCard {
                 CardType.SKILL, AbstractCardEnum.NEARL_GOLD,
                 CardRarity.SPECIAL, CardTarget.SELF, "nearlmod:Shining");
         magicNumber = baseMagicNumber = BLOCK_DMT;
-        updateDmg();
     }
 
     @Override

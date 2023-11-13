@@ -31,7 +31,6 @@ public class GlimmeringTouch extends AbstractFriendCard {
                 CardRarity.SPECIAL, CardTarget.SELF, "nearlmod:Viviana");
         magicNumber = baseMagicNumber = ATTACK_DMG;
         secondMagicNumber = CHARGE_TURN;
-        updateDmg();
     }
 
     @Override

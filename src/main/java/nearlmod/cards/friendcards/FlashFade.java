@@ -35,13 +35,12 @@ public class FlashFade extends AbstractFriendCard {
                 CardRarity.SPECIAL, CardTarget.ENEMY, "nearlmod:Viviana");
         magicNumber = baseMagicNumber = ATTACK_DMG;
         secondMagicNumber = baseSecondMagicNumber = ATTACK_TIMES;
-        updateDmg();
     }
 
     @Override
-    public void updateDmg() {
+    public void applyPowers() {
+        super.applyPowers();
         extraStr = 0;
-        super.updateDmg();
         AbstractPlayer p = AbstractDungeon.player;
         if (p == null || p.orbs == null) return;
         AbstractPower str = p.getPower("Strength");
@@ -49,18 +48,18 @@ public class FlashFade extends AbstractFriendCard {
             magicNumber += str.amount;
             extraStr = str.amount;
         }
+        if (p.stance.ID.equals(DefStance.STANCE_ID)) {
+            addToBot(new ChangeStanceAction(new AtkStance()));
+            magicNumber += AtkStance.atkInc + AtkStance.incNum;
+        }
         isMagicNumberModified = (magicNumber != baseMagicNumber);
     }
 
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
-        int dmg = magicNumber;
-        if (p.stance.ID.equals(DefStance.STANCE_ID)) {
-            addToBot(new ChangeStanceAction(new AtkStance()));
-            dmg += AtkStance.atkInc + AtkStance.incNum;
-        }
+        applyPowers();
         for (int i = 1; i <= secondMagicNumber; i++)
-            AbstractDungeon.actionManager.addToBottom(new DamageAction(m, new DamageInfo(p, dmg, damageTypeForTurn), AbstractGameAction.AttackEffect.SLASH_DIAGONAL));
+            AbstractDungeon.actionManager.addToBottom(new DamageAction(m, new DamageInfo(p, magicNumber, damageTypeForTurn), AbstractGameAction.AttackEffect.SLASH_DIAGONAL));
     }
 
     @Override
@@ -74,16 +73,5 @@ public class FlashFade extends AbstractFriendCard {
             upgradeName();
             upgradeSecondMagicNumber(UPGRADE_PLUS_TIMES);
         }
-    }
-
-    @Override
-    public void applyPowers() {
-        super.applyPowers();
-        AbstractPower str = AbstractDungeon.player.getPower("Strength");
-        if (str != null) {
-            magicNumber += str.amount - extraStr;
-            extraStr = str.amount;
-        }
-        isMagicNumberModified = true;
     }
 }

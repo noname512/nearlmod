@@ -30,7 +30,6 @@ public class ArtsShield extends AbstractFriendCard {
                 CardRarity.SPECIAL, CardTarget.SELF, "nearlmod:Nightingale");
         magicNumber = baseMagicNumber = BLOCK_AMT;
         secondMagicNumber = baseSecondMagicNumber = TEMP_HP;
-        updateDmg();
     }
 
     @Override

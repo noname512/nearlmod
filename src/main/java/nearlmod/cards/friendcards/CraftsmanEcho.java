@@ -37,14 +37,13 @@ public class CraftsmanEcho extends AbstractFriendCard {
         super(ID, NAME, IMG_PATH, COST, DESCRIPTION,
                 CardType.SKILL, AbstractCardEnum.NEARL_GOLD,
                 CardRarity.SPECIAL, CardTarget.SELF, "nearlmod:Blemishine");
-        updateDmg();
     }
 
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
         ArrayList<AbstractCard> choice = new ArrayList<>();
-        choice.add(new ToAtkStance());
-        choice.add(new ToDefStance());
+        choice.add(new ToAtkStance(EXTRA_INC));
+        choice.add(new ToDefStance(EXTRA_INC));
         addToBot(new ChooseOneAction(choice));
         AbstractCard card = new AllinOne();
         card.upgrade();

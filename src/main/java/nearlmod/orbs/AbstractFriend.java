@@ -19,13 +19,6 @@ public abstract class AbstractFriend extends CustomOrb {
 
     public void applyStrength(int amount) {
         passiveAmount += amount;
-        ArrayList<AbstractCard> cardSet = AbstractDungeon.player.hand.group;
-        for (AbstractCard card : cardSet)
-            if (card instanceof AbstractNearlCard) {
-                AbstractNearlCard nCard = (AbstractNearlCard) card;
-                if (nCard.hasTag(NearlTags.IS_FRIEND_CARD) && nCard.belongFriend.equals(ID))
-                    nCard.applyFriendPower(amount);
-            }
     }
 
     @Override

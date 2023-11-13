@@ -1,5 +1,6 @@
 package nearlmod.cards;
 
+import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
 import com.megacrit.cardcrawl.actions.watcher.ChangeStanceAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
@@ -7,6 +8,8 @@ import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.localization.CardStrings;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
+import com.megacrit.cardcrawl.powers.DexterityPower;
+import com.megacrit.cardcrawl.powers.StrengthPower;
 import nearlmod.stances.AtkStance;
 import nearlmod.stances.DefStance;
 
@@ -19,9 +22,16 @@ public class ToDefStance extends AbstractNearlCard {
     public static final String IMG_PATH = "images/cards/nearldefend.png";
 
     public ToDefStance() {
+        this(0);
+    }
+    public ToDefStance(int defInc) {
         super(ID, NAME, IMG_PATH, -2, DESCRIPTION,
                 CardType.POWER, CardColor.COLORLESS,
                 CardRarity.SPECIAL, CardTarget.NONE);
+        magicNumber = defInc;
+        if (magicNumber != 0) {
+            rawDescription = DESCRIPTION + UPGRADE_DESCRIPTION;
+        }
     }
 
     @Override
@@ -31,9 +41,13 @@ public class ToDefStance extends AbstractNearlCard {
 
     @Override
     public void onChoseThisOption() {
-        DefStance.defInc += 3;
-        if (AbstractDungeon.player.stance.ID.equals(AtkStance.STANCE_ID)) {
+        DefStance.defInc += magicNumber;
+        AbstractPlayer p = AbstractDungeon.player;
+        if (!AbstractDungeon.player.stance.ID.equals(DefStance.STANCE_ID)) {
             AbstractDungeon.actionManager.addToBottom(new ChangeStanceAction(new DefStance()));
+        }
+        else {
+            AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(p, p, new DexterityPower(p, magicNumber)));
         }
     }
 

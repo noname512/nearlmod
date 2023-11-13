@@ -30,7 +30,6 @@ public class LSSwiftSword extends AbstractFriendCard {
                 CardRarity.SPECIAL, CardTarget.ENEMY, "nearlmod:Viviana");
         magicNumber = baseMagicNumber = ATTACK_DMG;
         secondMagicNumber = baseSecondMagicNumber = ATTACK_TIMES;
-        updateDmg();
     }
 
     @Override

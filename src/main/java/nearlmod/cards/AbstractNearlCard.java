@@ -34,8 +34,6 @@ public abstract class AbstractNearlCard extends CustomCard {
         upgradedSecondMagicNumber = true;
     }
 
-    public void applyFriendPower(int amount) {}
-
     public static class SecondMagicNumber extends DynamicVariable {
 
         @Override

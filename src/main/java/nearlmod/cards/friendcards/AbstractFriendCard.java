@@ -26,7 +26,13 @@ public abstract class AbstractFriendCard extends AbstractNearlCard {
         this.belongFriend = belongFriend;
     }
 
-    public void updateDmg() {
+    @Override
+    public void applyPowers() {
+        super.applyPowers();
+        applyFriendPower();
+    }
+    public void applyFriendPower() {
+        magicNumber = baseMagicNumber;
         AbstractPlayer p = AbstractDungeon.player;
         if (p == null || p.orbs == null) return;
         for (AbstractOrb orb : p.orbs) {
@@ -35,12 +41,6 @@ public abstract class AbstractFriendCard extends AbstractNearlCard {
                     magicNumber += orb.passiveAmount;
         }
         isMagicNumberModified = (magicNumber != baseMagicNumber);
-    }
-
-    @Override
-    public void applyFriendPower(int amount) {
-        magicNumber += amount;
-        isMagicNumberModified = true;
     }
 
     @Override

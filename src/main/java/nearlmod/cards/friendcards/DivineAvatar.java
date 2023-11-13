@@ -36,7 +36,6 @@ public class DivineAvatar extends AbstractFriendCard {
         secondMagicNumber = baseSecondMagicNumber = RECOVER_HP;
         this.bannerSmallRegion = ImageMaster.CARD_BANNER_RARE;
         this.bannerLargeRegion = ImageMaster.CARD_BANNER_RARE_L;
-        updateDmg();
     }
 
     @Override

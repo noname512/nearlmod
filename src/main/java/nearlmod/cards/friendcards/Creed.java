@@ -31,7 +31,6 @@ public class Creed extends AbstractFriendCard {
                 CardType.ATTACK, AbstractCardEnum.NEARL_GOLD,
                 CardRarity.SPECIAL, CardTarget.ENEMY, "nearlmod:Shining");
         magicNumber = baseMagicNumber = ATTACK_DMG;
-        updateDmg();
     }
 
     @Override

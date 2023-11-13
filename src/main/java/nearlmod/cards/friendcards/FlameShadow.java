@@ -32,7 +32,6 @@ public class FlameShadow extends AbstractFriendCard {
                 CardType.ATTACK, AbstractCardEnum.NEARL_GOLD,
                 CardRarity.SPECIAL, CardTarget.SELF, "nearlmod:Viviana");
         magicNumber = 0;
-        updateDmg();
     }
 
     @Override

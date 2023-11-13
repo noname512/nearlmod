@@ -159,13 +159,13 @@
     },
     "nearlmod:ToAtkStance": {
         "NAME": "剑枪形态",
-        "DESCRIPTION": "切换到 nearlmod:剑枪形态 ，本次切换 形态 获得的数值增加 3 点。",
-        "UPGRADE_DESCRIPTION": ""
+        "DESCRIPTION": "切换到 nearlmod:剑枪形态 。",
+        "UPGRADE_DESCRIPTION": "本次切换 形态 获得的数值增加 !M! 点。"
     },
     "nearlmod:ToDefStance": {
         "NAME": "使徒形态",
-        "DESCRIPTION": "切换到 nearlmod:使徒形态 ，本次切换 形态 获得的数值增加 3 点。",
-        "UPGRADE_DESCRIPTION": ""
+        "DESCRIPTION": "切换到 nearlmod:使徒形态 。",
+        "UPGRADE_DESCRIPTION": "本次切换 形态 获得的数值增加 !M! 点。"
     },
 
     "nearlmod:DanceTogether": {
