@@ -9,6 +9,7 @@ import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.localization.CardStrings;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
+import nearlmod.actions.UseShadowAction;
 import nearlmod.patches.AbstractCardEnum;
 
 public class LSSwiftSword extends AbstractFriendCard {
@@ -36,6 +37,18 @@ public class LSSwiftSword extends AbstractFriendCard {
     public void use(AbstractPlayer p, AbstractMonster m) {
         for (int i = 1; i <= secondMagicNumber; i++)
             AbstractDungeon.actionManager.addToBottom(new DamageAction(m, new DamageInfo(p, magicNumber, damageTypeForTurn), AbstractGameAction.AttackEffect.SLASH_DIAGONAL));
+        AbstractDungeon.actionManager.addToBottom(new UseShadowAction(p));
+    }
+
+    @Override
+    public void applyPowers() {
+        super.applyPowers();
+        AbstractPlayer p = AbstractDungeon.player;
+        if (p.getPower("nearlmod:Shadow") != null)
+        {
+            magicNumber += p.getPower("nearlmod:Shadow").amount;
+        }
+        isMagicNumberModified = (magicNumber != baseMagicNumber);
     }
 
     @Override

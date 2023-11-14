@@ -8,6 +8,7 @@ import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.localization.CardStrings;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import com.megacrit.cardcrawl.orbs.AbstractOrb;
+import nearlmod.actions.UseShadowAction;
 import nearlmod.orbs.Viviana;
 import nearlmod.powers.GlimmeringTouchPower;
 import nearlmod.patches.AbstractCardEnum;
@@ -39,8 +40,19 @@ public class GlimmeringTouch extends AbstractFriendCard {
             if (orb instanceof Viviana)
                 ((Viviana)orb).startCharging(secondMagicNumber);
         AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(p, p, new GlimmeringTouchPower(p, secondMagicNumber, magicNumber)));
+        AbstractDungeon.actionManager.addToBottom(new UseShadowAction(p));
     }
 
+    @Override
+    public void applyPowers() {
+        super.applyPowers();
+        AbstractPlayer p = AbstractDungeon.player;
+        if (p.getPower("nearlmod:Shadow") != null)
+        {
+            magicNumber += p.getPower("nearlmod:Shadow").amount;
+        }
+        isMagicNumberModified = (magicNumber != baseMagicNumber);
+    }
     @Override
     public AbstractCard makeCopy() {
         return new GlimmeringTouch();

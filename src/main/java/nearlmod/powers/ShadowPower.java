@@ -6,10 +6,7 @@ import com.evacipated.cardcrawl.mod.stslib.actions.tempHp.AddTemporaryHPAction;
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
 import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
 import com.megacrit.cardcrawl.actions.common.DamageAction;
-import com.megacrit.cardcrawl.actions.common.GainBlockAction;
 import com.megacrit.cardcrawl.actions.common.RemoveSpecificPowerAction;
-import com.megacrit.cardcrawl.actions.utility.UseCardAction;
-import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.cards.DamageInfo;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.core.AbstractCreature;
@@ -17,19 +14,17 @@ import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.helpers.ImageMaster;
 import com.megacrit.cardcrawl.localization.PowerStrings;
-import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import com.megacrit.cardcrawl.powers.AbstractPower;
 import com.megacrit.cardcrawl.stances.AbstractStance;
-import nearlmod.patches.NearlTags;
 import nearlmod.stances.AtkStance;
 
-public class LightPower extends AbstractPower implements CloneablePowerInterface {
-    public static final String POWER_ID = "nearlmod:LightPower";
+public class ShadowPower extends AbstractPower implements CloneablePowerInterface {
+    public static final String POWER_ID = "nearlmod:Shadow";
     public static final PowerStrings powerStrings = CardCrawlGame.languagePack.getPowerStrings(POWER_ID);
     public static final String NAME = powerStrings.NAME;
     public static final String[] DESCRIPTIONS = powerStrings.DESCRIPTIONS;
 
-    public LightPower(AbstractCreature owner, int amount) {
+    public ShadowPower(AbstractCreature owner, int amount) {
         name = NAME;
         ID = POWER_ID;
         this.owner = owner;
@@ -40,33 +35,21 @@ public class LightPower extends AbstractPower implements CloneablePowerInterface
         updateDescription();
     }
 
+    public void useShadow(AbstractPlayer p, AbstractCreature m) {
+        if (p.getPower("nearlmod:Poem'sLooks") != null) {
+            AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(p, p, new LightPower(p, amount)));
+            p.getPower("nearlmod:Poem'sLooks").flash();
+        }
+        AbstractDungeon.actionManager.addToBottom(new RemoveSpecificPowerAction(p, p, "nearmod:ShadowPower"));
+    }
+
     @Override
     public void updateDescription() {
-        AbstractPlayer p = (AbstractPlayer)this.owner;
-        if (p.stance.ID.equals(AtkStance.STANCE_ID)) description = DESCRIPTIONS[0] + amount + DESCRIPTIONS[1];
-        else description = DESCRIPTIONS[2] + amount + DESCRIPTIONS[3];
-    }
-
-    public void useLight(AbstractPlayer p, AbstractCreature m) {
-        if (p.getPower("nearlmod:Poem'sLooks") != null) {
-            AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(p, p, new ShadowPower(p, amount)));
-        }
-        if (p.stance.ID.equals(AtkStance.STANCE_ID)) {
-            AbstractDungeon.actionManager.addToBottom(new DamageAction(m, new DamageInfo(p, this.amount, DamageInfo.DamageType.THORNS), AbstractGameAction.AttackEffect.LIGHTNING));
-        } else {
-            AbstractDungeon.actionManager.addToBottom(new AddTemporaryHPAction(p, p, this.amount));
-        }
-        this.amount = 0;
-    }
-
-    @Override
-    public void onChangeStance(AbstractStance oldStance, AbstractStance newStance) {
-        if (newStance.ID.equals(AtkStance.STANCE_ID)) description = DESCRIPTIONS[0] + amount + DESCRIPTIONS[1];
-        else description = DESCRIPTIONS[2] + amount + DESCRIPTIONS[3];
+        description = DESCRIPTIONS[0] + amount + DESCRIPTIONS[1];
     }
 
     @Override
     public AbstractPower makeCopy() {
-        return new LightPower(owner, amount);
+        return new ShadowPower(owner, amount);
     }
 }

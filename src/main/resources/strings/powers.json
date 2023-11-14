@@ -42,5 +42,13 @@
   "nearlmod:Invincible": {
     "NAME": "伙伴们的庇护",
     "DESCRIPTIONS": ["本回合内，你不会受到伤害 。"]
+  },
+  "nearlmod:Shadow": {
+    "NAME": "影",
+    "DESCRIPTIONS": ["薇薇安娜下一次攻击增加" , "点。"]
+  },
+  "nearlmod:Poem'sLooks": {
+    "NAME": "诗的容貌",
+    "DESCRIPTIONS": ["在你使用完 光 后，获得等量的 影 。 在你使用完 影 后，获得等量的 光 。"]
   }
 }

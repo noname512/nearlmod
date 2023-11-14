@@ -11,6 +11,7 @@ import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.localization.CardStrings;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import com.megacrit.cardcrawl.powers.AbstractPower;
+import nearlmod.actions.UseShadowAction;
 import nearlmod.patches.AbstractCardEnum;
 import nearlmod.stances.AtkStance;
 import nearlmod.stances.DefStance;
@@ -40,16 +41,19 @@ public class FlashFade extends AbstractFriendCard {
     @Override
     public void applyPowers() {
         super.applyPowers();
-        extraStr = 0;
         AbstractPlayer p = AbstractDungeon.player;
         if (p == null || p.orbs == null) return;
+        if (p.getPower("nearlmod:Shadow") != null)
+        {
+            magicNumber += p.getPower("nearlmod:Shadow").amount;
+        }
+        extraStr = 0;
         AbstractPower str = p.getPower("Strength");
         if (str != null) {
             magicNumber += str.amount;
             extraStr = str.amount;
         }
-        if (p.stance.ID.equals(DefStance.STANCE_ID)) {
-            addToBot(new ChangeStanceAction(new AtkStance()));
+        if (!p.stance.ID.equals(AtkStance.STANCE_ID)) {
             magicNumber += AtkStance.atkInc + AtkStance.incNum;
         }
         isMagicNumberModified = (magicNumber != baseMagicNumber);
@@ -58,8 +62,12 @@ public class FlashFade extends AbstractFriendCard {
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
         applyPowers();
+        if (!p.stance.ID.equals(AtkStance.STANCE_ID)) {
+            AbstractDungeon.actionManager.addToBottom(new ChangeStanceAction(new AtkStance()));
+        }
         for (int i = 1; i <= secondMagicNumber; i++)
             AbstractDungeon.actionManager.addToBottom(new DamageAction(m, new DamageInfo(p, magicNumber, damageTypeForTurn), AbstractGameAction.AttackEffect.SLASH_DIAGONAL));
+        AbstractDungeon.actionManager.addToBottom(new UseShadowAction(p));
     }
 
     @Override
