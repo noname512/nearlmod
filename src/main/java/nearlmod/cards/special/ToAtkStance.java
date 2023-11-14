@@ -1,4 +1,4 @@
-package nearlmod.special.cards;
+package nearlmod.cards.special;
 
 import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
 import com.megacrit.cardcrawl.actions.watcher.ChangeStanceAction;
@@ -9,6 +9,7 @@ import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.localization.CardStrings;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import com.megacrit.cardcrawl.powers.StrengthPower;
+import nearlmod.cards.AbstractNearlCard;
 import nearlmod.stances.AtkStance;
 import nearlmod.stances.DefStance;
 

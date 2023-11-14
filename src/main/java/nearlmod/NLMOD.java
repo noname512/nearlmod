@@ -28,6 +28,7 @@ import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 import nearlmod.cards.*;
 import nearlmod.cards.friendcards.*;
+import nearlmod.cards.special.*;
 import nearlmod.characters.Nearl;
 import java.lang.reflect.Type;
 import java.nio.charset.StandardCharsets;

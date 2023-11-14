@@ -62,6 +62,7 @@ public class FlameShadow extends AbstractFriendCard {
         if (!upgraded) {
             upgradeName();
             rawDescription = UPGRADE_DESCRIPTION;
+            initializeDescription();
         }
     }
 }

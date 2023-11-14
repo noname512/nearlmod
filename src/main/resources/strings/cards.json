@@ -186,7 +186,7 @@
     "nearlmod:WhiteFiendProtection": {
         "NAME": "白恶魔的庇护",
         "DESCRIPTION": "nearlmod:唯一 。 NL 你不会被 虚弱 、 脆弱 、 易伤 。如果你同时拥有 [#FF5252]黑恶魔的庇护[] ，每回合额外获得 1 层 人工制品 。",
-        "UPGRADE_DESCRIPTION": ""
+        "UPGRADE_DESCRIPTION": "nearlmod:唯一 。 NL 你不会被 虚弱 、 脆弱 、 易伤 。如果你同时拥有 [#FF5252]黑恶魔的庇护[] ，每回合额外获得 1 层 人工制品 。所有负面效果失去 1 层。"
     },
     "nearlmod:FleetingPhantom": {
         "NAME": "转瞬即逝的幻影",
@@ -216,7 +216,7 @@
     },
     "nearlmod:CreedField": {
         "NAME": "教条力场",
-        "DESCRIPTION": "获得 !M! 点 格挡 。 在接下来的 2 回合内，每次受到的伤害减少 !nealmod:M2! 点。",
-        "UPGRADE_DESCRIPTION": "获得 !M! 点 格挡 。 在接下来的 3 回合内，每次受到的伤害减少 !nealmod:M2! 点。"
+        "DESCRIPTION": "获得 !M! 点 格挡 。 在接下来的 2 回合内，每次受到的伤害减少 !nearlmod:M2! 点。",
+        "UPGRADE_DESCRIPTION": "获得 !M! 点 格挡 。 在接下来的 3 回合内，每次受到的伤害减少 !nearlmod:M2! 点。"
     }
 }

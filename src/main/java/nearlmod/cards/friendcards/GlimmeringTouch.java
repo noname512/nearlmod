@@ -52,6 +52,7 @@ public class GlimmeringTouch extends AbstractFriendCard {
             upgradeName();
             rawDescription = UPGRADE_DESCRIPTION;
             secondMagicNumber = UPGRADE_CHARGE_TURN;
+            initializeDescription();
         }
     }
 }

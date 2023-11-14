@@ -13,8 +13,8 @@ import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import com.megacrit.cardcrawl.powers.WeakPower;
 import com.megacrit.cardcrawl.vfx.combat.IntimidateEffect;
 import nearlmod.cards.AllinOne;
-import nearlmod.cards.ToAtkStance;
-import nearlmod.cards.ToDefStance;
+import nearlmod.cards.special.ToAtkStance;
+import nearlmod.cards.special.ToDefStance;
 import nearlmod.patches.AbstractCardEnum;
 import nearlmod.powers.LightPower;
 
@@ -42,8 +42,8 @@ public class CraftsmanEcho extends AbstractFriendCard {
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
         ArrayList<AbstractCard> choice = new ArrayList<>();
-        choice.add(new ToAtkStance(EXTRA_INC));
         choice.add(new ToDefStance(EXTRA_INC));
+        choice.add(new ToAtkStance(EXTRA_INC));
         addToBot(new ChooseOneAction(choice));
         AbstractCard card = new AllinOne();
         card.upgrade();
