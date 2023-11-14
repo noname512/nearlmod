@@ -64,9 +64,8 @@ public class Nearl extends CustomPlayer {
         // 参数列表：角色名，角色类枚举，能量面板贴图路径列表，能量面板特效贴图路径，能量面板贴图旋转速度列表，能量面板，模型资源路径，动画资源路径
         super(name, NearlEnum.NEARL_CLASS, orbTextures, "images/char/orb/vfx.png", null, null, null);
         
-        // 对话框位置，默认就好
-        dialogX = drawX + 0.0F * Settings.scale;
-        dialogY = drawY + 220.0F * Settings.scale;
+        dialogX = 50.0F * Settings.scale;
+        dialogY = 170.0F * Settings.scale;
 
         // 参数列表：静态贴图路径，越肩视角2贴图路径，越肩视角贴图路径，失败时贴图路径，角色选择界面信息，碰撞箱XY宽高，初始能量数
         initializeClass(SHIELD, SHOULDER, SHOULDER, SHIELDDIE, getLoadout(), 20.0F, -10.0F, 220.0F, 290.0F, new EnergyManager(3));
