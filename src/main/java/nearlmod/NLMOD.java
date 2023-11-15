@@ -213,5 +213,7 @@ public class NLMOD implements EditCardsSubscriber, EditCharactersSubscriber, Edi
         BaseMod.loadCustomStrings(EventStrings.class, eventStrings);
         String monsterStrings = Gdx.files.internal("strings/monsters.json").readString(String.valueOf(StandardCharsets.UTF_8));
         BaseMod.loadCustomStrings(MonsterStrings.class, monsterStrings);
+        String uiStrings = Gdx.files.internal("strings/ui.json").readString(String.valueOf(StandardCharsets.UTF_8));
+        BaseMod.loadCustomStrings(UIStrings.class, uiStrings);
     }
 }

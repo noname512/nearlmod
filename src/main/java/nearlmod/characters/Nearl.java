@@ -19,6 +19,7 @@ import com.megacrit.cardcrawl.helpers.CardHelper;
 import com.megacrit.cardcrawl.helpers.FontHelper;
 import com.megacrit.cardcrawl.helpers.ScreenShake;
 import com.megacrit.cardcrawl.screens.CharSelectInfo;
+import com.megacrit.cardcrawl.ui.panels.energyorb.EnergyOrbInterface;
 import com.megacrit.cardcrawl.unlock.UnlockTracker;
 import nearlmod.cards.*;
 import nearlmod.relics.*;
@@ -26,6 +27,7 @@ import nearlmod.patches.AbstractCardEnum;
 import nearlmod.patches.NearlEnum;
 import nearlmod.stances.AtkStance;
 import nearlmod.stances.DefStance;
+import nearlmod.util.CostEnergyOrb;
 
 import java.util.ArrayList;
 
@@ -62,7 +64,7 @@ public class Nearl extends CustomPlayer {
 
     public Nearl(String name) {
         // 参数列表：角色名，角色类枚举，能量面板贴图路径列表，能量面板特效贴图路径，能量面板贴图旋转速度列表，能量面板，模型资源路径，动画资源路径
-        super(name, NearlEnum.NEARL_CLASS, orbTextures, "images/char/orb/vfx.png", null, null, null);
+        super(name, NearlEnum.NEARL_CLASS, new CostEnergyOrb(orbTextures, "images/char/orb/vfx.png", null), null, null);
         
         dialogX = 50.0F * Settings.scale;
         dialogY = 170.0F * Settings.scale;
