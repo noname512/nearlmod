@@ -21,6 +21,7 @@ import com.megacrit.cardcrawl.helpers.ScreenShake;
 import com.megacrit.cardcrawl.screens.CharSelectInfo;
 import com.megacrit.cardcrawl.ui.panels.energyorb.EnergyOrbInterface;
 import com.megacrit.cardcrawl.unlock.UnlockTracker;
+import nearlmod.actions.GainCostAction;
 import nearlmod.cards.*;
 import nearlmod.relics.*;
 import nearlmod.patches.AbstractCardEnum;
@@ -28,6 +29,7 @@ import nearlmod.patches.NearlEnum;
 import nearlmod.stances.AtkStance;
 import nearlmod.stances.DefStance;
 import nearlmod.util.CostEnergyOrb;
+import nearlmod.util.CostReserves;
 
 import java.util.ArrayList;
 
@@ -207,6 +209,7 @@ public class Nearl extends CustomPlayer {
         AtkStance.incNum = 1;
         DefStance.incNum = 1;
         AbstractDungeon.actionManager.addToBottom(new ChangeStanceAction(new DefStance()));
+        CostReserves.resetReserves();
     }
 
     @Override
@@ -222,5 +225,11 @@ public class Nearl extends CustomPlayer {
         }
 //        AnimationState.TrackEntry e = this.state.setAnimation(0, "Idle", true);
 //        e.setTimeScale(1.5F);
+    }
+
+    @Override
+    public void applyStartOfTurnOrbs() {
+        super.applyStartOfTurnOrbs();
+        AbstractDungeon.actionManager.addToBottom(new GainCostAction(1));
     }
 }
