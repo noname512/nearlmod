@@ -28,8 +28,8 @@ public class ShadowPower extends AbstractPower implements CloneablePowerInterfac
         name = NAME;
         ID = POWER_ID;
         this.owner = owner;
-        region128 = new TextureAtlas.AtlasRegion(ImageMaster.loadImage("images/powers/light power 84.png"), 0, 0, 84, 84);
-        region48 = new TextureAtlas.AtlasRegion(ImageMaster.loadImage("images/powers/light power 32.png"), 0, 0, 32, 32);
+        region128 = new TextureAtlas.AtlasRegion(ImageMaster.loadImage("images/powers/shadow power 84.png"), 0, 0, 84, 84);
+        region48 = new TextureAtlas.AtlasRegion(ImageMaster.loadImage("images/powers/shadow power 32.png"), 0, 0, 32, 32);
         type = PowerType.BUFF;
         this.amount = amount;
         updateDescription();
