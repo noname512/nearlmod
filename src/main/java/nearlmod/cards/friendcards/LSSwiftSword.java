@@ -23,7 +23,6 @@ public class LSSwiftSword extends AbstractFriendCard {
     private static final int ATTACK_DMG = 5;
     private static final int ATTACK_TIMES = 2;
     private static final int UPGRADE_PLUS_TIMES = 1;
-    public static final String BG_IMG = "images/512/bg_friend_test.png";
 
     public LSSwiftSword() {
         super(ID, NAME, IMG_PATH, COST, DESCRIPTION,

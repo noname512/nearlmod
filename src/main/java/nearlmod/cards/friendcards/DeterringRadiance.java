@@ -28,7 +28,6 @@ public class DeterringRadiance extends AbstractFriendCard {
     private static final int LIGHT_INC = 4;
     private static final int UPGRADE_PLUS_WEAK = 1;
     private static final int UPGRADE_PLUS_LIGHT = 2;
-    public static final String BG_IMG = "images/512/bg_friend_test.png";
 
     public DeterringRadiance() {
         super(ID, NAME, IMG_PATH, COST, DESCRIPTION,

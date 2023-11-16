@@ -22,7 +22,6 @@ public class ArtsShield extends AbstractFriendCard {
     private static final int TEMP_HP = 5;
     private static final int UPGRADE_PLUS_BLOCK = 2;
     private static final int UPGRADE_PLUS_HP = 2;
-    public static final String BG_IMG = "images/512/bg_friend_test.png";
 
     public ArtsShield() {
         super(ID, NAME, IMG_PATH, COST, DESCRIPTION,

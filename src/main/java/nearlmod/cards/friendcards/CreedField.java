@@ -23,7 +23,6 @@ public class CreedField extends AbstractFriendCard {
     private static final int DAMAGE_DEC = 4;
     private static final int UPGRADE_PLUS_BLOCK = 6;
     private static final int UPGRADE_PLUS_DEC = 2;
-    public static final String BG_IMG = "images/512/bg_friend_test.png";
 
     public CreedField() {
         super(ID, NAME, IMG_PATH, COST, DESCRIPTION,

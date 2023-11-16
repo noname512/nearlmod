@@ -27,7 +27,6 @@ public class FlameHeart extends AbstractFriendCard {
     private static final int COST_GAIN = 1;
     private static final int ATTACK_DMG = 7;
     private static final int THORN_GAIN = 6;
-    public static final String BG_IMG = "images/512/bg_friend_test.png";
 
     public FlameHeart() {
         super(ID, NAME, IMG_PATH, COST, DESCRIPTION,

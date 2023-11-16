@@ -31,7 +31,6 @@ public class CraftsmanEcho extends AbstractFriendCard {
     private static final int COST = 2;
     private static final int EXTRA_INC = 3;
     private static final int UPGRADE_PLUS_COST = 1;
-    public static final String BG_IMG = "images/512/bg_friend_test.png";
 
     public CraftsmanEcho() {
         super(ID, NAME, IMG_PATH, COST, DESCRIPTION,

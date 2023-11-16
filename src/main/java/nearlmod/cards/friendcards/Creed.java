@@ -24,7 +24,6 @@ public class Creed extends AbstractFriendCard {
     private static final int COST = 1;
     private static final int ATTACK_DMG = 8;
     private static final int UPGRADE_PLUS_DMG = 3;
-    public static final String BG_IMG = "images/512/bg_friend_test.png";
 
     public Creed() {
         super(ID, NAME, IMG_PATH, COST, DESCRIPTION,

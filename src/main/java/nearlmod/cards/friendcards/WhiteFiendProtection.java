@@ -22,7 +22,6 @@ public class WhiteFiendProtection extends AbstractFriendCard {
     public static final String UPGRADE_DESCRIPTION = cardStrings.UPGRADE_DESCRIPTION;
     public static final String IMG_PATH = "images/cards/flashfade.png";
     private static final int COST = 2;
-    public static final String BG_IMG = "images/512/bg_friend_test.png";
 
     public WhiteFiendProtection() {
         super(ID, NAME, IMG_PATH, COST, DESCRIPTION,

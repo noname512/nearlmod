@@ -24,7 +24,6 @@ public class GlimmeringTouch extends AbstractFriendCard {
     private static final int CHARGE_TURN = 2;
     private static final int UPGRADE_CHARGE_TURN = 1;
     private static final int ATTACK_DMG = 30;
-    public static final String BG_IMG = "images/512/bg_friend_test.png";
 
     public GlimmeringTouch() {
         super(ID, NAME, IMG_PATH, COST, DESCRIPTION,

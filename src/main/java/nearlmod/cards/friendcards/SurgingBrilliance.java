@@ -27,7 +27,6 @@ public class SurgingBrilliance extends AbstractFriendCard {
     private static final int LIGHT_INC = 7;
     private static final int UPGRADE_PLUS_DMG = 2;
     private static final int UPGRADE_PLUS_LIGHT = 2;
-    public static final String BG_IMG = "images/512/bg_friend_test.png";
 
     public SurgingBrilliance() {
         super(ID, NAME, IMG_PATH, COST, DESCRIPTION,

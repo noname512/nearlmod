@@ -28,7 +28,6 @@ public class FlashFade extends AbstractFriendCard {
     private static final int ATTACK_TIMES = 2;
     private static final int UPGRADE_PLUS_TIMES = 1;
     private int extraStr;
-    public static final String BG_IMG = "images/512/bg_friend_test.png";
 
     public FlashFade() {
         super(ID, NAME, IMG_PATH, COST, DESCRIPTION,

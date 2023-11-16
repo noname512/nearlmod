@@ -27,7 +27,6 @@ public class FlameShadow extends AbstractFriendCard {
     public static final String DESCRIPTION = cardStrings.DESCRIPTION;
     public static final String UPGRADE_DESCRIPTION = cardStrings.UPGRADE_DESCRIPTION;
     public static final String IMG_PATH = "images/cards/flameshadow.png";
-    public static final String BG_IMG = "images/512/bg_friend_test.png";
     private static final int COST = 2;
     private static final int LIGHT_ADD = 10;
 

@@ -25,7 +25,6 @@ public class AutoProtect extends AbstractFriendCard {
     private static final int COST = 1;
     private static final int BLOCK_DMT = 5;
     private static final int UPGRADE_PLUS_AMT = 3;
-    public static final String BG_IMG = "images/512/bg_friend_test.png";
 
     public AutoProtect() {
         super(ID, NAME, IMG_PATH, COST, DESCRIPTION,

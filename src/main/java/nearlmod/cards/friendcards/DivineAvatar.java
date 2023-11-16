@@ -26,7 +26,6 @@ public class DivineAvatar extends AbstractFriendCard {
     private static final int RECOVER_HP = 12;
     private static final int UPGRADE_PLUS_DMG = 3;
     private static final int UPGRADE_PLUS_HP = 6;
-    public static final String BG_IMG = "images/512/bg_friend_test.png";
 
     public DivineAvatar() {
         super(ID, NAME, IMG_PATH, COST, DESCRIPTION,

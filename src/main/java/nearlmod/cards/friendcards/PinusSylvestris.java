@@ -23,7 +23,6 @@ public class PinusSylvestris extends AbstractFriendCard {
     private static final int COST = 1;
     private static final int COST_GAIN = 2;
     private static final int UPGRADE_PLUS_COST = 1;
-    public static final String BG_IMG = "images/512/bg_friend_test.png";
 
     public PinusSylvestris() {
         super(ID, NAME, IMG_PATH, COST, DESCRIPTION,
