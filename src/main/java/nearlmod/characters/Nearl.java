@@ -80,10 +80,10 @@ public class Nearl extends CustomPlayer {
 //        e.setTimeScale(1.5F);
     }
 
-    @Override
-    public void playDeathAnimation() {
-        this.state.setAnimation(0, "Die", false);
-    }
+//    @Override
+//    public void playDeathAnimation() {
+//        this.state.setAnimation(0, "Die", false);
+//    }
 
     @Override
     public Color getSlashAttackColor() {
