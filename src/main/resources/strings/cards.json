@@ -222,7 +222,7 @@
 
     "nearlmod:PersonalCharm": {
         "NAME": "个人魅力",
-        "DESCRIPTION": "随机召唤 !M! 个红松骑士团成员作为伙伴。",
+        "DESCRIPTION": "随机召唤 1 个红松骑士团成员作为伙伴。",
         "UPGRADE_DESCRIPTION": ""
     },
     "nearlmod:PinusSylvestris": {
@@ -243,6 +243,16 @@
     "nearlmod:LanceCharge": {
         "NAME": "夹枪冲锋",
         "DESCRIPTION": "造成 !M! 点伤害，如果目标意图是攻击，令其本回合失去 99 点 力量 。",
+        "UPGRADE_DESCRIPTION": ""
+    },
+    "nearlmod:JusticeDrive": {
+        "NAME": "正义助威",
+        "DESCRIPTION": "给所有敌人 !nearlmod:M2! 层 易伤 ，击落所有 飞行 的敌人。",
+        "UPGRADE_DESCRIPTION": ""
+    },
+    "nearlmod:BeepActivate": {
+        "NAME": "“滴滴，启动！”",
+        "DESCRIPTION": "获得 !nearlmod:M2! 层 多层护甲 。",
         "UPGRADE_DESCRIPTION": ""
     }
 }

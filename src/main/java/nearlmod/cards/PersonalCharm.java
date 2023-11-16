@@ -33,6 +33,7 @@ public class PersonalCharm extends AbstractNearlCard {
         ArrayList<AbstractFriend> list = new ArrayList<>();
         list.add(new Flametail());
         list.add(new Wildmane());
+        list.add(new JusticeKnight());
         Collections.shuffle(list);
         addToBot(new SummonOrbAction(list.get(0)));
         if (upgraded && list.size() >= 2)
