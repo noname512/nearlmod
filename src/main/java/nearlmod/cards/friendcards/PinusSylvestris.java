@@ -38,6 +38,8 @@ public class PinusSylvestris extends AbstractFriendCard {
         ArrayList<AbstractCard> list = new ArrayList<>();
         list.add(new PinusSylvestris());
         list.add(new FlameHeart());
+        list.add(new StabbingLance());
+        list.add(new LanceCharge());
         int random = AbstractDungeon.cardRng.random(0, list.size() - 1);
         AbstractCard card = list.get(random);
         if (upgraded) card.upgrade();

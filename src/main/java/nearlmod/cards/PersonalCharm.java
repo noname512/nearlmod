@@ -6,8 +6,7 @@ import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.localization.CardStrings;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import nearlmod.actions.SummonOrbAction;
-import nearlmod.orbs.AbstractFriend;
-import nearlmod.orbs.Flametail;
+import nearlmod.orbs.*;
 import nearlmod.patches.AbstractCardEnum;
 
 import java.util.ArrayList;
@@ -33,6 +32,7 @@ public class PersonalCharm extends AbstractNearlCard {
     public void use(AbstractPlayer p, AbstractMonster m) {
         ArrayList<AbstractFriend> list = new ArrayList<>();
         list.add(new Flametail());
+        list.add(new Wildmane());
         Collections.shuffle(list);
         addToBot(new SummonOrbAction(list.get(0)));
         if (upgraded && list.size() >= 2)

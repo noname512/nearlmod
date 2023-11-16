@@ -167,6 +167,8 @@ public class NLMOD implements EditCardsSubscriber, EditCharactersSubscriber, Edi
 
         BaseMod.addCard(new PinusSylvestris()); // “红松林”
         BaseMod.addCard(new FlameHeart()); // 焰心
+        BaseMod.addCard(new StabbingLance()); // 骑枪刺击
+        BaseMod.addCard(new LanceCharge()); // 夹枪冲锋
     }
 
     @Override

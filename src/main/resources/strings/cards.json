@@ -227,12 +227,22 @@
     },
     "nearlmod:PinusSylvestris": {
         "NAME": "“红松林”",
-        "DESCRIPTION": "获得 !nearlmod:M2! 点部署费用，随机获得一张红松骑士团的 nearlmod:伙伴牌 。",
-        "UPGRADE_DESCRIPTION": "获得 !nearlmod:M2! 点部署费用，随机获得一张红松骑士团的升级后的 nearlmod:伙伴牌 。"
+        "DESCRIPTION": "获得 !nearlmod:M2! 点 nearlmod:部署费用 ，随机获得一张红松骑士团的 nearlmod:伙伴牌 。",
+        "UPGRADE_DESCRIPTION": "获得 !nearlmod:M2! 点 nearlmod:部署费用 ，随机获得一张红松骑士团的升级后的 nearlmod:伙伴牌 。"
     },
     "nearlmod:FlameHeart": {
         "NAME": "焰心",
-        "DESCRIPTION": "获得 1 点部署费用，造成 !M! 点伤害，获得 !nearlmod:M2! 层临时荆棘。",
-        "UPGRADE_DESCRIPTION": "获得 1 点部署费用，造成 !M! 点伤害，获得 !nearlmod:M2! 层临时荆棘和 1 层 无实体 。"
+        "DESCRIPTION": "获得 1 点 nearlmod:部署费用 ，造成 !M! 点伤害，获得 !nearlmod:M2! 层临时荆棘。",
+        "UPGRADE_DESCRIPTION": "获得 1 点 nearlmod:部署费用 ，造成 !M! 点伤害，获得 !nearlmod:M2! 层临时荆棘和 1 层 无实体 。"
+    },
+    "nearlmod:StabbingLance": {
+        "NAME": "骑枪刺击",
+        "DESCRIPTION": "随机造成 !M! 点伤害 !nearlmod:M2! 次，每有一个敌人因此被击倒，获得 1 点 nearlmod:部署费用 。",
+        "UPGRADE_DESCRIPTION": "随机造成 !M! 点伤害 !nearlmod:M2! 次，每有一个敌人因此被击倒，获得 2 点 nearlmod:部署费用 。"
+    },
+    "nearlmod:LanceCharge": {
+        "NAME": "夹枪冲锋",
+        "DESCRIPTION": "造成 !M! 点伤害，如果目标意图是攻击，令其本回合失去 99 点 力量 。",
+        "UPGRADE_DESCRIPTION": ""
     }
 }
