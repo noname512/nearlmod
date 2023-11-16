@@ -29,7 +29,7 @@ public class FlameShadow extends AbstractFriendCard {
     public static final String IMG_PATH = "images/cards/flameshadow.png";
     public static final String BG_IMG = "images/512/bg_friend_test.png";
     private static final int COST = 2;
-    private static final int LIGHT_ADD = 10;
+    private static final int UPGRADED_COST = 1;
 
     public FlameShadow() {
         super(ID, NAME, IMG_PATH, COST, DESCRIPTION,
@@ -48,10 +48,6 @@ public class FlameShadow extends AbstractFriendCard {
             light += power.amount;
             AbstractDungeon.actionManager.addToBottom(new RemoveSpecificPowerAction(p, p, power));
         }
-        if (upgraded) {
-            dmg += LIGHT_ADD * 2;
-            light += LIGHT_ADD;
-        }
         dmg += magicNumber;
         ArrayList<AbstractMonster> monsters = AbstractDungeon.getCurrRoom().monsters.monsters;
         for (AbstractMonster ms : monsters) {
@@ -59,7 +55,9 @@ public class FlameShadow extends AbstractFriendCard {
         }
         Viviana.uniqueUsed = true;
         AbstractDungeon.actionManager.addToBottom(new UseShadowAction(p));
-        AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(p, p, new ShadowPower(p, light)));
+        if (light != 0) {
+            AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(p, p, new ShadowPower(p, light)));
+        }
         AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(p, p, new PoemsLooksPower(p)));
     }
 
@@ -83,7 +81,7 @@ public class FlameShadow extends AbstractFriendCard {
     public void upgrade() {
         if (!upgraded) {
             upgradeName();
-            rawDescription = UPGRADE_DESCRIPTION;
+            upgradeBaseCost(UPGRADED_COST);
             initializeDescription();
         }
     }

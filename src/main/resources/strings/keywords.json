@@ -48,6 +48,20 @@
     ],
     "DESCRIPTION": " 力量 不超过 0 。"
   },
+  "POEM'SLOOK": {
+    "PROPER_NAME": "诗的容貌",
+    "NAMES": [
+      "诗的容貌"
+    ],
+    "DESCRIPTION": "在你使用完 光 后，获得等量的 影 。 在你使用完 影 后，获得等量的 光 。"
+  },
+  "SHADOW": {
+    "PROPER_NAME": "影",
+    "NAMES": [
+      "影"
+    ],
+    "DESCRIPTION": "让 [#EFC851]薇薇安娜[] 下一次攻击增加。"
+  },
   "ATK_STANCE": {
     "PROPER_NAME": "剑枪形态",
     "NAMES": [

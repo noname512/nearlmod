@@ -20,7 +20,7 @@ public class CureUp extends CustomRelic {
     public static final String[] DESCRIPTIONS = relicStrings.DESCRIPTIONS;
     public static final Texture IMG = new Texture("images/relics/cureup.png");
     public static final Texture IMG_OUTLINE = new Texture("images/relics/cureup_p.png");
-    public static final int MAX_AMOUNT = 10;
+    public static final int MAX_AMOUNT = 5;
     public CureUp() {
         super(ID, IMG, IMG_OUTLINE, RelicTier.STARTER, LandingSound.FLAT);
     }
