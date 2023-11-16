@@ -18,7 +18,7 @@ public class ChangeImgAction extends AbstractGameAction {
     private String imgUrl;
 
     public ChangeImgAction(AbstractCreature source, String imgUrl) {
-        actionType = ActionType.POWER;
+        actionType = ActionType.SPECIAL;
         duration = Settings.ACTION_DUR_FAST;
         this.source = source;
         this.imgUrl = imgUrl;
