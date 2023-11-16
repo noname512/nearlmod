@@ -6,6 +6,7 @@ import com.megacrit.cardcrawl.actions.common.DamageAllEnemiesAction;
 import com.megacrit.cardcrawl.actions.utility.WaitAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.cards.DamageInfo;
+import com.megacrit.cardcrawl.cards.colorless.RitualDagger;
 import com.megacrit.cardcrawl.cards.purple.LessonLearned;
 import com.megacrit.cardcrawl.cards.red.SearingBlow;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
@@ -16,6 +17,7 @@ import com.megacrit.cardcrawl.localization.CardStrings;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import com.megacrit.cardcrawl.vfx.UpgradeShineEffect;
 import com.megacrit.cardcrawl.vfx.cardManip.ShowCardBrieflyEffect;
+import nearlmod.actions.DawnAction;
 import nearlmod.patches.AbstractCardEnum;
 
 import java.util.Iterator;
@@ -31,7 +33,7 @@ public class Dawn extends AbstractNearlCard {
     private static final int ATTACK_DMG = 10;
     private static final int UPGRADE_PLUS_DMG = 5;
 
-    private Dawn copiedFrom = null;
+    public Dawn copiedFrom = null;
 
     public Dawn() {
         this(null, 0);
@@ -51,22 +53,7 @@ public class Dawn extends AbstractNearlCard {
 
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
-        AbstractDungeon.actionManager.addToBottom(new DamageAllEnemiesAction(p, damage, damageTypeForTurn, AbstractGameAction.AttackEffect.BLUNT_HEAVY));
-        upgrade();
-        Iterator var1 = AbstractDungeon.player.masterDeck.group.iterator();
-
-        AbstractCard c;
-        while(var1.hasNext()) {
-            c = (AbstractCard)var1.next();
-            if (c == copiedFrom) {
-                copiedFrom.upgrade();
-                // Copied from 勤学精进
-                AbstractDungeon.player.bottledCardUpgradeCheck(this.copiedFrom);
-                AbstractDungeon.effectsQueue.add(new UpgradeShineEffect((float) Settings.WIDTH / 2.0F, (float)Settings.HEIGHT / 2.0F));
-                AbstractDungeon.topLevelEffectsQueue.add(new ShowCardBrieflyEffect(this.copiedFrom.makeStatEquivalentCopy()));
-                this.addToTop(new WaitAction(Settings.ACTION_DUR_MED));
-            }
-        }
+        AbstractDungeon.actionManager.addToBottom(new DawnAction(new DamageInfo(p, damage, damageTypeForTurn), this));
     }
 
     @Override

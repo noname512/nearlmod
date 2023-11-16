@@ -29,8 +29,8 @@ public class Guardian extends AbstractNearlCard {
     private static final int COST = 1;
     private static final int BLOCK_AMT = 7;
     private static final int UPGRADE_PLUS_BLOCK = 4;
-    private static final int LIGHT_GET = 7;
-    private static final int UPGRADE_PLUS_LIGHT = 4;
+    private static final int LIGHT_GET = 5;
+    private static final int UPGRADE_PLUS_LIGHT = 2;
 
     public Guardian() {
         super(ID, NAME, IMG_PATH, COST, DESCRIPTION,

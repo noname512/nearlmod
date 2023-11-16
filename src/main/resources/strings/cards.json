@@ -92,7 +92,7 @@
     },
     "nearlmod:Dawn": {
         "NAME" : "曙光",
-        "DESCRIPTION": "对所有敌人造成 !D! 点伤害。 升级 这张牌。 NL 可无限 升级 。 NL  消耗 。 NL  虚无 。 ",
+        "DESCRIPTION": "对所有敌人造成 !D! 点伤害。 如果未击杀敌人， 升级 这张牌。 NL 可无限 升级 。 NL  消耗 。 NL  虚无 。 ",
         "UPGRADE_DESCRIPTION": ""
     },
     "nearlmod:TheReturn": {
@@ -185,8 +185,8 @@
     },
     "nearlmod:WhiteFiendProtection": {
         "NAME": "白恶魔的庇护",
-        "DESCRIPTION": "nearlmod:唯一 。 NL 你不会被 虚弱 、 脆弱 、 易伤 。如果你同时拥有 [#FF5252]黑恶魔的庇护[] ，每回合额外获得 1 层 人工制品 。",
-        "UPGRADE_DESCRIPTION": "nearlmod:唯一 。 NL 你不会被 虚弱 、 脆弱 、 易伤 。如果你同时拥有 [#FF5252]黑恶魔的庇护[] ，每回合额外获得 1 层 人工制品 。所有负面效果失去 1 层。"
+        "DESCRIPTION": "nearlmod:唯一 。 NL 你不会被 虚弱 、 脆弱 、 易伤 。如果你同时拥有 [#FF5252]黑恶魔的庇护[] ， 每回合额外获得 1 层 人工制品 。",
+        "UPGRADE_DESCRIPTION": "nearlmod:唯一 。 NL 你不会被 虚弱 、 脆弱 、 易伤 。如果你同时拥有 [#FF5252]黑恶魔的庇护[] ， 每回合额外获得 1 层 人工制品 。所有负面效果失去 1 层。"
     },
     "nearlmod:FleetingPhantom": {
         "NAME": "转瞬即逝的幻影",
@@ -206,7 +206,7 @@
     },
     "nearlmod:AutoProtect": {
         "NAME": "自动掩护",
-        "DESCRIPTION": "获得 !M! 点 格挡 和 1 层 残影 。",
+        "DESCRIPTION": "获得 !M! 点 格挡 ，下回合获得 !M! 点 格挡 。",
         "UPGRADE_DESCRIPTION": ""
     },
     "nearlmod:BlackFiendProtection": {
