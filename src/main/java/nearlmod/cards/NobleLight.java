@@ -39,23 +39,6 @@ public class NobleLight extends AbstractNearlCard {
     }
 
     @Override
-    public void triggerOnGlowCheck() {
-        AbstractPlayer p = AbstractDungeon.player;
-        if (p == null || p.orbs == null) return;
-        boolean gold = false;
-        for (AbstractOrb orb : p.orbs) {
-            if (orb instanceof AbstractFriend)
-                if (orb.ID.equals("BlamingShine"))
-                    gold = true;
-        }
-        if (gold) {
-            this.glowColor = AbstractCard.GOLD_BORDER_GLOW_COLOR.cpy();
-        } else {
-            this.glowColor = AbstractCard.BLUE_BORDER_GLOW_COLOR.cpy();
-        }
-    }
-
-    @Override
     public void upgrade() {
         if (!upgraded) {
             upgradeName();
