@@ -9,6 +9,7 @@ import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.localization.CardStrings;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import com.megacrit.cardcrawl.orbs.AbstractOrb;
+import nearlmod.orbs.AbstractFriend;
 import nearlmod.orbs.Blemishine;
 import nearlmod.patches.AbstractCardEnum;
 import nearlmod.powers.LightPower;
@@ -45,13 +46,31 @@ public class SwordShield extends AbstractNearlCard {
                 break;
             }
         if (p.stance.ID.equals(AtkStance.STANCE_ID)) {
-            AbstractDungeon.actionManager.addToBottom(new ChangeStanceAction(new DefStance()));
             if (hasBlemishine) DefStance.defInc += secondMagicNumber;
+            AbstractDungeon.actionManager.addToBottom(new ChangeStanceAction(new DefStance()));
         } else {
-            AbstractDungeon.actionManager.addToBottom(new ChangeStanceAction(new AtkStance()));
             if (hasBlemishine) AtkStance.atkInc += secondMagicNumber;
+            AbstractDungeon.actionManager.addToBottom(new ChangeStanceAction(new AtkStance()));
         }
         AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(p, p, new LightPower(p, magicNumber), magicNumber));
+    }
+
+    @Override
+    public void triggerOnGlowCheck() {
+        AbstractPlayer p = AbstractDungeon.player;
+        if (p == null || p.orbs == null) return;
+        boolean hasBlemishine = false;
+        for (AbstractOrb orb : p.orbs) {
+            if (orb instanceof Blemishine) {
+                hasBlemishine = true;
+                break;
+            }
+        }
+        if (hasBlemishine) {
+            this.glowColor = AbstractCard.GOLD_BORDER_GLOW_COLOR.cpy();
+        } else {
+            this.glowColor = AbstractCard.BLUE_BORDER_GLOW_COLOR.cpy();
+        }
     }
 
     @Override

@@ -10,6 +10,7 @@ import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.localization.CardStrings;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
+import com.megacrit.cardcrawl.powers.NextTurnBlockPower;
 import nearlmod.patches.AbstractCardEnum;
 import nearlmod.stances.AtkStance;
 import nearlmod.stances.DefStance;
@@ -22,8 +23,8 @@ public class AutoProtect extends AbstractFriendCard {
     public static final String UPGRADE_DESCRIPTION = cardStrings.UPGRADE_DESCRIPTION;
     public static final String IMG_PATH = "images/cards/lsswiftsword.png";
     private static final int COST = 1;
-    private static final int BLOCK_DMT = 7;
-    private static final int UPGRADE_PLUS_AMT = 4;
+    private static final int BLOCK_DMT = 5;
+    private static final int UPGRADE_PLUS_AMT = 3;
     public static final String BG_IMG = "images/512/bg_friend_test.png";
 
     public AutoProtect() {
@@ -36,7 +37,7 @@ public class AutoProtect extends AbstractFriendCard {
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
         addToBot(new GainBlockAction(p, magicNumber));
-//        addToBot(new ApplyPowerAction(p, p, new ))
+        addToBot(new ApplyPowerAction(p, p, new NextTurnBlockPower(p, magicNumber, NAME)));
     }
 
     @Override
