@@ -75,7 +75,7 @@ public class NLMOD implements EditCardsSubscriber, EditCharactersSubscriber, Edi
     }
 
     private void initializeEvents() {
-        BaseMod.addEvent("nearlmod:PoemLooksEvent", PoemLooksEvent.class, PoemLooksEvent.ID);
+        BaseMod.addEvent("nearlmod:PoemLooksEvent", PoemLooksEvent.class);
     }
 
     private void initializeMonsters() {
