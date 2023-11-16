@@ -218,5 +218,21 @@
         "NAME": "教条力场",
         "DESCRIPTION": "获得 !M! 点 格挡 。 在接下来的 2 回合内，每次受到的伤害减少 !nearlmod:M2! 点。",
         "UPGRADE_DESCRIPTION": "获得 !M! 点 格挡 。 在接下来的 3 回合内，每次受到的伤害减少 !nearlmod:M2! 点。"
+    },
+
+    "nearlmod:PersonalCharm": {
+        "NAME": "个人魅力",
+        "DESCRIPTION": "随机召唤 !M! 个红松骑士团成员作为伙伴。",
+        "UPGRADE_DESCRIPTION": ""
+    },
+    "nearlmod:PinusSylvestris": {
+        "NAME": "“红松林”",
+        "DESCRIPTION": "获得 !nearlmod:M2! 点部署费用，随机获得一张红松骑士团的 nearlmod:伙伴牌 。",
+        "UPGRADE_DESCRIPTION": "获得 !nearlmod:M2! 点部署费用，随机获得一张红松骑士团的升级后的 nearlmod:伙伴牌 。"
+    },
+    "nearlmod:FlameHeart": {
+        "NAME": "焰心",
+        "DESCRIPTION": "获得 1 点部署费用，造成 !M! 点伤害，获得 !nearlmod:M2! 层临时荆棘。",
+        "UPGRADE_DESCRIPTION": "获得 1 点部署费用，造成 !M! 点伤害，获得 !nearlmod:M2! 层临时荆棘和 1 层 无实体 。"
     }
 }

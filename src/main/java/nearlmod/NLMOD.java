@@ -140,6 +140,7 @@ public class NLMOD implements EditCardsSubscriber, EditCharactersSubscriber, Edi
         BaseMod.addCard(new Dawn()); // 曙光
         BaseMod.addCard(new TheReturn()); // 归来
         BaseMod.addCard(new FullSpeedAhead()); // 全力冲锋
+        BaseMod.addCard(new PersonalCharm()); // 个人魅力
 
         // Friend.
         BaseMod.addCard(new LSSwiftSword()); // 光影迅捷剑
@@ -163,6 +164,9 @@ public class NLMOD implements EditCardsSubscriber, EditCharactersSubscriber, Edi
         BaseMod.addCard(new AutoProtect()); // 自动掩护
         BaseMod.addCard(new CreedField()); // 教条立场
         BaseMod.addCard(new BlackFiendProtection()); // 黑恶魔的庇护
+
+        BaseMod.addCard(new PinusSylvestris()); // “红松林”
+        BaseMod.addCard(new FlameHeart()); // 焰心
     }
 
     @Override
