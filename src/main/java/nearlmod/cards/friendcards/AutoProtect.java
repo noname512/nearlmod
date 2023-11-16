@@ -10,6 +10,7 @@ import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.localization.CardStrings;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
+import com.megacrit.cardcrawl.powers.NextTurnBlockPower;
 import nearlmod.patches.AbstractCardEnum;
 import nearlmod.stances.AtkStance;
 import nearlmod.stances.DefStance;
@@ -36,7 +37,7 @@ public class AutoProtect extends AbstractFriendCard {
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
         addToBot(new GainBlockAction(p, magicNumber));
-//        addToBot(new ApplyPowerAction(p, p, new ))
+        addToBot(new ApplyPowerAction(p, p, new NextTurnBlockPower(p, magicNumber, NAME)));
     }
 
     @Override
