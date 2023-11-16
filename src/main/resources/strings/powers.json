@@ -50,5 +50,9 @@
   "nearlmod:Poem'sLooks": {
     "NAME": "诗的容貌",
     "DESCRIPTIONS": ["在你使用完 光 后，获得等量的 影 。 在你使用完 影 后，获得等量的 光 。"]
+  },
+  "nearlmod:LoseThornsPower": {
+    "NAME": "蜕刺",
+    "DESCRIPTIONS": ["下回合开始时，失去 #b", " 层 荆棘 。"]
   }
 }

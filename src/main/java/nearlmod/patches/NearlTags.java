@@ -7,4 +7,5 @@ public class NearlTags {
     @SpireEnum public static AbstractCard.CardTags IS_FRIEND_CARD;
     @SpireEnum public static AbstractCard.CardTags IS_USE_LIGHT_BEFORE;
     @SpireEnum public static AbstractCard.CardTags IS_USE_LIGHT_AFTER;
+    @SpireEnum public static AbstractCard.CardTags IS_KNIGHT_CARD;
 }

@@ -26,7 +26,7 @@ public class Dawn extends AbstractNearlCard {
     public static final String NAME = cardStrings.NAME;
     public static final String DESCRIPTION = cardStrings.DESCRIPTION;
     public static final String UPGRADE_DESCRIPTION = cardStrings.UPGRADE_DESCRIPTION;
-    public static final String IMG_PATH = "images/cards/nearlstrike.png";
+    public static final String IMG_PATH = "images/cards/dawn.png";
     private static final int COST = 3;
     private static final int ATTACK_DMG = 10;
     private static final int UPGRADE_PLUS_DMG = 5;
