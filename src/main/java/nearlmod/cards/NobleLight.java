@@ -3,6 +3,7 @@ package nearlmod.cards;
 import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
+import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.localization.CardStrings;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import com.megacrit.cardcrawl.orbs.AbstractOrb;
@@ -35,6 +36,23 @@ public class NobleLight extends AbstractNearlCard {
     @Override
     public AbstractCard makeCopy() {
         return new NobleLight();
+    }
+
+    @Override
+    public void triggerOnGlowCheck() {
+        AbstractPlayer p = AbstractDungeon.player;
+        if (p == null || p.orbs == null) return;
+        boolean gold = false;
+        for (AbstractOrb orb : p.orbs) {
+            if (orb instanceof AbstractFriend)
+                if (orb.ID.equals("BlamingShine"))
+                    gold = true;
+        }
+        if (gold) {
+            this.glowColor = AbstractCard.GOLD_BORDER_GLOW_COLOR.cpy();
+        } else {
+            this.glowColor = AbstractCard.BLUE_BORDER_GLOW_COLOR.cpy();
+        }
     }
 
     @Override
