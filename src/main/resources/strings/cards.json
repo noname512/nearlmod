@@ -128,8 +128,8 @@
     },
     "nearlmod:FlameShadow": {
         "NAME": "烛燃影息",
-        "DESCRIPTION": "nearlmod:唯一 。 NL 消耗所有的 nearlmod:光 ，对所有敌人造成其层数两倍的伤害。",
-        "UPGRADE_DESCRIPTION": "nearlmod:唯一 。 NL 获得 10 层 nearlmod:光 。 NL 消耗所有的 nearlmod:光 ，对所有敌人造成其层数两倍的伤害。"
+        "DESCRIPTION": "nearlmod:唯一 。 NL 消耗所有的 nearlmod:光 ，转化为等量的 nearlmod:影 ，并对所有敌人造成其层数两倍的伤害。 获得 nearlmod:诗的容貌 。",
+        "UPGRADE_DESCRIPTION": ""
     },
 
     "nearlmod:AllOutEffort": {
