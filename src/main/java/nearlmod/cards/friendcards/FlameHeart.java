@@ -8,6 +8,7 @@ import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.localization.CardStrings;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
+import com.megacrit.cardcrawl.powers.IntangiblePlayerPower;
 import com.megacrit.cardcrawl.powers.IntangiblePower;
 import com.megacrit.cardcrawl.powers.ThornsPower;
 import nearlmod.actions.GainCostAction;
@@ -44,7 +45,7 @@ public class FlameHeart extends AbstractFriendCard {
         addToBot(new ApplyPowerAction(p, p, new ThornsPower(p, secondMagicNumber)));
         addToBot(new ApplyPowerAction(p, p, new LoseThornsPower(p, secondMagicNumber)));
         if (upgraded)
-            addToBot(new ApplyPowerAction(p, p, new IntangiblePower(p, 1)));
+            addToBot(new ApplyPowerAction(p, p, new IntangiblePlayerPower(p, 1)));
     }
 
     @Override
