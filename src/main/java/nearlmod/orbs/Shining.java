@@ -14,7 +14,6 @@ public class Shining extends AbstractFriend {
     public static final String[] DESCRIPTION = orbStrings.DESCRIPTION;
     public static final String IMAGE = "images/orbs/shining.png";
     public static boolean uniqueUsed;
-    public boolean upgraded;
 
     public Shining(int amount) {
         super(ORB_ID, NAME, 0, 0, DESCRIPTION[0], "", IMAGE);
@@ -32,11 +31,6 @@ public class Shining extends AbstractFriend {
     public void applyStrength(int amount) {
         super.applyStrength(amount);
         updateDescription();
-    }
-
-    public void upgrade() {
-        upgraded = true;
-        applyStrength(2);
     }
 
     @Override

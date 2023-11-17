@@ -18,7 +18,6 @@ public class Viviana extends AbstractFriend {
     public static final String IMAGE = "images/orbs/viviana.png";
     public static final String CHARGINGIMAGE = "images/orbs/viviana_charging.png";
     public static boolean uniqueUsed;
-    public boolean upgraded;
     public static int chargingTurn;
 
     public Viviana(int amount) {
@@ -38,11 +37,6 @@ public class Viviana extends AbstractFriend {
     public void applyStrength(int amount) {
         super.applyStrength(amount);
         updateDescription();
-    }
-
-    public void upgrade() {
-        upgraded = true;
-        applyStrength(2);
     }
 
     @Override

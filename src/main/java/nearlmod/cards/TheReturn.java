@@ -1,22 +1,15 @@
 package nearlmod.cards;
 
-import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
 import com.megacrit.cardcrawl.actions.watcher.ChangeStanceAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
-import com.megacrit.cardcrawl.cards.green.Backstab;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
-import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.localization.CardStrings;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
-import com.megacrit.cardcrawl.orbs.AbstractOrb;
 import nearlmod.actions.SummonOrbAction;
 import nearlmod.orbs.Nightingale;
 import nearlmod.orbs.Shining;
-import nearlmod.orbs.Viviana;
 import nearlmod.patches.AbstractCardEnum;
-import nearlmod.powers.ExsanguinationPower;
-import nearlmod.powers.InvinciblePower;
 import nearlmod.stances.AtkStance;
 
 public class TheReturn extends AbstractNearlCard {
@@ -36,29 +29,11 @@ public class TheReturn extends AbstractNearlCard {
 
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
-        boolean isShiningExsit = false;
-        for (AbstractOrb orb : AbstractDungeon.player.orbs)
-            if (orb instanceof Shining) {
-                ((Shining) orb).upgrade();
-                isShiningExsit = true;
-                break;
-            }
-        if (!isShiningExsit) {
-            AbstractDungeon.actionManager.addToBottom(new SummonOrbAction(new Shining()));
-        }
-        boolean isNightangleExsit = false;
-        for (AbstractOrb orb : AbstractDungeon.player.orbs)
-            if (orb instanceof Nightingale) {
-                ((Nightingale) orb).upgrade();
-                isNightangleExsit = true;
-                break;
-            }
-        if (!isNightangleExsit) {
-            AbstractDungeon.actionManager.addToBottom(new SummonOrbAction(new Nightingale()));
-        }
+        addToBot(new SummonOrbAction(new Shining()));
+        addToBot(new SummonOrbAction(new Nightingale()));
 
         if (!p.stance.ID.equals(AtkStance.STANCE_ID)) {
-            AbstractDungeon.actionManager.addToBottom(new ChangeStanceAction(new AtkStance()));
+            addToBot(new ChangeStanceAction(new AtkStance()));
         }
     }
 

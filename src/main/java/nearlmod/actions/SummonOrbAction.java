@@ -5,6 +5,8 @@ import com.megacrit.cardcrawl.actions.defect.ChannelAction;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.orbs.AbstractOrb;
 import com.megacrit.cardcrawl.core.Settings;
+import nearlmod.orbs.AbstractFriend;
+import nearlmod.orbs.Nightingale;
 
 public class SummonOrbAction extends AbstractGameAction {
 
@@ -22,8 +24,17 @@ public class SummonOrbAction extends AbstractGameAction {
             return;
         }
 
-        AbstractDungeon.actionManager.addToTop(new ChannelAction(summon, false));
-        AbstractDungeon.player.increaseMaxOrbSlots(1, false);
+        boolean isOrbExist = false;
+        for (AbstractOrb orb : AbstractDungeon.player.orbs)
+            if (orb.ID.equals(summon.ID)) {
+                ((AbstractFriend) orb).upgrade();
+                isOrbExist = true;
+                break;
+            }
+        if (!isOrbExist) {
+            AbstractDungeon.actionManager.addToTop(new ChannelAction(summon, false));
+            AbstractDungeon.player.increaseMaxOrbSlots(1, false);
+        }
         isDone = true;
     }
 }

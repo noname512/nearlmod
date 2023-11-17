@@ -32,11 +32,6 @@ public class Wildmane extends AbstractFriend {
         updateDescription();
     }
 
-    public void upgrade() {
-        upgraded = true;
-        applyStrength(2);
-    }
-
     @Override
     public void updateDescription() {
         description = DESCRIPTION[upgraded? 2 : 0] + passiveAmount + DESCRIPTION[1];
