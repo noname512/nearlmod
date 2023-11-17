@@ -35,13 +35,13 @@ import java.util.ArrayList;
 
 public class Nearl extends CustomPlayer {
     private static final Color NearlGold = CardHelper.getColor(255, 236, 194);
-    public static final String SWORD = "images/char/sword.png";
+    public static final String SWORD = "images/char/atkidle.png";
     public static final Texture SWORDIMG = ImageMaster.loadImage(SWORD);
-    public static final String SWORDDIE = "images/char/sworddie.png";
+    public static final String SWORDDIE = "images/char/atkdie.png";
     public static final Texture SWORDDIEIMG = ImageMaster.loadImage(SWORDDIE);
-    public static final String SHIELD = "images/char/shield.png";
+    public static final String SHIELD = "images/char/defidle.png";
     public static final Texture SHIELDIMG = ImageMaster.loadImage(SHIELD);
-    public static final String SHIELDDIE = "images/char/shielddie.png";
+    public static final String SHIELDDIE = "images/char/defdie.png";
     public static final Texture SHIELDDIEIMG = ImageMaster.loadImage(SHIELDDIE);
     public static final String SHOULDER = "images/char/shoulder.png";
     public static final String[] orbTextures = {
