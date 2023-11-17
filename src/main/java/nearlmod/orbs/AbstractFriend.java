@@ -9,6 +9,7 @@ import nearlmod.patches.NearlTags;
 import java.util.ArrayList;
 
 public abstract class AbstractFriend extends CustomOrb {
+    public boolean upgraded;
     public AbstractFriend(String ID, String NAME, int basePassiveAmount, int baseEvokeAmount, String passiveDescription, String evokeDescription, String imgPath) {
         super(ID, NAME, basePassiveAmount, baseEvokeAmount, passiveDescription, evokeDescription, imgPath);
 
@@ -19,6 +20,11 @@ public abstract class AbstractFriend extends CustomOrb {
 
     public void applyStrength(int amount) {
         passiveAmount += amount;
+    }
+
+    public void upgrade() {
+        upgraded = true;
+        applyStrength(2);
     }
 
     @Override

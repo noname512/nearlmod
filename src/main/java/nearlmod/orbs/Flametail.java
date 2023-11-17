@@ -13,8 +13,6 @@ public class Flametail extends AbstractFriend {
     public static final String NAME = orbStrings.NAME;
     public static final String[] DESCRIPTION = orbStrings.DESCRIPTION;
     public static final String IMAGE = "images/orbs/flametail.png";
-    public static boolean uniqueUsed;
-    public boolean upgraded;
 
     public Flametail(int amount) {
         super(ORB_ID, NAME, 0, 0, DESCRIPTION[0], "", IMAGE);
@@ -31,11 +29,6 @@ public class Flametail extends AbstractFriend {
     public void applyStrength(int amount) {
         super.applyStrength(amount);
         updateDescription();
-    }
-
-    public void upgrade() {
-        upgraded = true;
-        applyStrength(2);
     }
 
     @Override

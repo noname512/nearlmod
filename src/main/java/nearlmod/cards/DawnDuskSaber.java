@@ -39,14 +39,7 @@ public class DawnDuskSaber extends AbstractNearlCard {
 
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
-        boolean hasOrb = false;
-        for (AbstractOrb orb : p.orbs)
-            if (orb instanceof Shining) {
-                ((Shining) orb).upgrade();
-                hasOrb = true;
-            }
-        if (!hasOrb)
-            addToBot(new SummonOrbAction(new Shining()));
+        addToBot(new SummonOrbAction(new Shining()));
         addToBot(new DamageAllEnemiesAction(p, DamageInfo.createDamageMatrix(damage, true, false), DamageInfo.DamageType.NORMAL, AbstractGameAction.AttackEffect.SLASH_VERTICAL));
         if (upgraded) addToBot(new WeakenAllAction(p));
     }

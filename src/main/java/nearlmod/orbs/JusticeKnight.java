@@ -6,23 +6,22 @@ import com.megacrit.cardcrawl.localization.OrbStrings;
 import com.megacrit.cardcrawl.orbs.AbstractOrb;
 import nearlmod.cards.friendcards.*;
 
-public class Wildmane extends AbstractFriend {
+public class JusticeKnight extends AbstractFriend {
 
-    public static final String ORB_ID = "nearlmod:Wildmane";
+    public static final String ORB_ID = "nearlmod:JusticeKnight";
     private static final OrbStrings orbStrings = CardCrawlGame.languagePack.getOrbString(ORB_ID);
     public static final String NAME = orbStrings.NAME;
     public static final String[] DESCRIPTION = orbStrings.DESCRIPTION;
-    public static final String IMAGE = "images/orbs/wildmane.png";
-    public boolean upgraded;
+    public static final String IMAGE = "images/orbs/justiceknight.png";
 
-    public Wildmane(int amount) {
+    public JusticeKnight(int amount) {
         super(ORB_ID, NAME, 0, 0, DESCRIPTION[0], "", IMAGE);
         passiveAmount = amount;
         upgraded = false;
         updateDescription();
     }
 
-    public Wildmane() {
+    public JusticeKnight() {
         this(0);
     }
 
@@ -39,16 +38,16 @@ public class Wildmane extends AbstractFriend {
 
     @Override
     public AbstractOrb makeCopy() {
-        return new Wildmane();
+        return new JusticeKnight();
     }
 
     public static AbstractFriendCard getRandomCard(boolean upgraded) {
         int random = AbstractDungeon.cardRng.random(0, 1);
         AbstractFriendCard card;
         if (random == 0)
-            card = new StabbingLance();
+            card = new JusticeDrive();
         else
-            card = new LanceCharge();
+            card = new BeepActivate();
         if (upgraded) card.upgrade();
         return card;
     }

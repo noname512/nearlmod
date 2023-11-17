@@ -1,54 +1,50 @@
-package nearlmod.cards;
+package nearlmod.cards.friendcards;
 
-import com.megacrit.cardcrawl.actions.watcher.ChangeStanceAction;
+import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.localization.CardStrings;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
-import nearlmod.actions.SummonOrbAction;
-import nearlmod.orbs.Nightingale;
-import nearlmod.orbs.Shining;
 import nearlmod.patches.AbstractCardEnum;
-import nearlmod.stances.AtkStance;
+import nearlmod.powers.AllySupportPower;
 
-public class TheReturn extends AbstractNearlCard {
-    public static final String ID = "nearlmod:TheReturn";
+import static nearlmod.patches.NearlTags.IS_KNIGHT_CARD;
+
+public class AllySupport extends AbstractFriendCard {
+    public static final String ID = "nearlmod:AllySupport";
     public static final CardStrings cardStrings = CardCrawlGame.languagePack.getCardStrings(ID);
     public static final String NAME = cardStrings.NAME;
     public static final String DESCRIPTION = cardStrings.DESCRIPTION;
     public static final String UPGRADE_DESCRIPTION = cardStrings.UPGRADE_DESCRIPTION;
-    public static final String IMG_PATH = "images/cards/thereturn.png";
-    private static final int COST = 3;
+    public static final String IMG_PATH = "images/cards/allysupport.png";
+    private static final int COST = 1;
+    private static final int ATTACK_DMG = 2;
+    private static final int UPGRADE_PLUS_DMG = 1;
 
-    public TheReturn() {
+    public AllySupport() {
         super(ID, NAME, IMG_PATH, COST, DESCRIPTION,
                 CardType.POWER, AbstractCardEnum.NEARL_GOLD,
-                CardRarity.RARE, CardTarget.SELF);
+                CardRarity.SPECIAL, CardTarget.SELF, "nearlmod:Fartooth");
+        secondMagicNumber = baseSecondMagicNumber = ATTACK_DMG;
+        tags.add(IS_KNIGHT_CARD);
     }
 
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
-        addToBot(new SummonOrbAction(new Shining()));
-        addToBot(new SummonOrbAction(new Nightingale()));
-
-        if (!p.stance.ID.equals(AtkStance.STANCE_ID)) {
-            addToBot(new ChangeStanceAction(new AtkStance()));
-        }
+        addToBot(new ApplyPowerAction(p, p, new AllySupportPower(p, secondMagicNumber)));
     }
 
     @Override
     public AbstractCard makeCopy() {
-        return new TheReturn();
+        return new AllySupport();
     }
 
     @Override
     public void upgrade() {
         if (!upgraded) {
             upgradeName();
-            rawDescription = UPGRADE_DESCRIPTION + DESCRIPTION;
-            isInnate = true;
-            initializeDescription();
+            upgradeSecondMagicNumber(UPGRADE_PLUS_DMG);
         }
     }
 }

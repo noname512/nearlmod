@@ -30,14 +30,7 @@ public class DanceTogether extends AbstractNearlCard {
 
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
-        boolean hasOrb = false;
-        for (AbstractOrb orb : p.orbs)
-            if (orb instanceof Nightingale) {
-                ((Nightingale) orb).upgrade();
-                hasOrb = true;
-            }
-        if (!hasOrb)
-            AbstractDungeon.actionManager.addToBottom(new SummonOrbAction(new Nightingale()));
+        addToBot(new SummonOrbAction(new Nightingale()));
         AbstractFriendCard card = Nightingale.getRandomCard(false, true);
         if (upgraded) {
             card.rawDescription = card.baseDescription + " NL 保留 。 NL 消耗 。";

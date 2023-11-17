@@ -4,25 +4,26 @@ import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.localization.OrbStrings;
 import com.megacrit.cardcrawl.orbs.AbstractOrb;
-import nearlmod.cards.friendcards.*;
+import nearlmod.cards.friendcards.AbstractFriendCard;
+import nearlmod.cards.friendcards.AllySupport;
+import nearlmod.cards.friendcards.FeathershineArrows;
 
-public class Wildmane extends AbstractFriend {
+public class Fartooth extends AbstractFriend {
 
-    public static final String ORB_ID = "nearlmod:Wildmane";
+    public static final String ORB_ID = "nearlmod:Fartooth";
     private static final OrbStrings orbStrings = CardCrawlGame.languagePack.getOrbString(ORB_ID);
     public static final String NAME = orbStrings.NAME;
     public static final String[] DESCRIPTION = orbStrings.DESCRIPTION;
-    public static final String IMAGE = "images/orbs/wildmane.png";
-    public boolean upgraded;
+    public static final String IMAGE = "images/orbs/fartooth.png";
 
-    public Wildmane(int amount) {
+    public Fartooth(int amount) {
         super(ORB_ID, NAME, 0, 0, DESCRIPTION[0], "", IMAGE);
         passiveAmount = amount;
         upgraded = false;
         updateDescription();
     }
 
-    public Wildmane() {
+    public Fartooth() {
         this(0);
     }
 
@@ -39,16 +40,16 @@ public class Wildmane extends AbstractFriend {
 
     @Override
     public AbstractOrb makeCopy() {
-        return new Wildmane();
+        return new Fartooth();
     }
 
     public static AbstractFriendCard getRandomCard(boolean upgraded) {
         int random = AbstractDungeon.cardRng.random(0, 1);
         AbstractFriendCard card;
         if (random == 0)
-            card = new StabbingLance();
+            card = new AllySupport();
         else
-            card = new LanceCharge();
+            card = new FeathershineArrows();
         if (upgraded) card.upgrade();
         return card;
     }

@@ -46,12 +46,7 @@ public class AllOutEffort extends AbstractNearlCard {
         if (p.stance.ID.equals(DefStance.STANCE_ID)) {
             AbstractDungeon.actionManager.addToBottom(new ChangeStanceAction(new AtkStance()));
         }
-        for (AbstractOrb orb : p.orbs)
-            if (orb instanceof Blemishine) {
-                ((Blemishine) orb).upgrade();
-                return;
-            }
-        AbstractDungeon.actionManager.addToBottom(new SummonOrbAction(new Blemishine()));
+        addToBot(new SummonOrbAction(new Blemishine()));
     }
 
     @Override

@@ -1,12 +1,12 @@
 package nearlmod.cards.friendcards;
 
-import com.megacrit.cardcrawl.actions.common.AttackDamageRandomEnemyAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.localization.CardStrings;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
+import nearlmod.actions.MyRandomAttackAction;
 import nearlmod.actions.StabbingLanceAction;
 import nearlmod.patches.AbstractCardEnum;
 
@@ -18,7 +18,7 @@ public class StabbingLance extends AbstractFriendCard {
     public static final String NAME = cardStrings.NAME;
     public static final String DESCRIPTION = cardStrings.DESCRIPTION;
     public static final String UPGRADE_DESCRIPTION = cardStrings.UPGRADE_DESCRIPTION;
-    public static final String IMG_PATH = "images/cards/flameheart.png";
+    public static final String IMG_PATH = "images/cards/stabbinglance.png";
     private static final int COST = 1;
     private static final int ATTACK_DMG = 2;
     private static final int ATTACK_TIMES = 6;
@@ -39,9 +39,8 @@ public class StabbingLance extends AbstractFriendCard {
         for (AbstractMonster ms : AbstractDungeon.getCurrRoom().monsters.monsters)
             if (!ms.isDeadOrEscaped())
                 resMonster++;
-        damage = baseDamage = magicNumber;
         for (int i = 1; i <= secondMagicNumber; i++)
-            addToBot(new AttackDamageRandomEnemyAction(this));
+            addToBot(new MyRandomAttackAction(p, magicNumber));
         addToBot(new StabbingLanceAction(resMonster, upgraded? 2 : 1));
     }
 
