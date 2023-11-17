@@ -6,13 +6,9 @@ import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.core.AbstractCreature;
 import com.megacrit.cardcrawl.core.Settings;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
-import nearlmod.powers.LightPower;
 import nearlmod.powers.ShadowPower;
 
 public class UseShadowAction extends AbstractGameAction {
-
-    private AbstractCreature target;
-
     public UseShadowAction(AbstractCreature Target) {
         actionType = ActionType.POWER;
         duration = Settings.ACTION_DUR_FAST;

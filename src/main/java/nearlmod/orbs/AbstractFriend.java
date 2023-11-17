@@ -1,19 +1,11 @@
 package nearlmod.orbs;
 
 import basemod.abstracts.CustomOrb;
-import com.badlogic.gdx.graphics.Color;
 import com.badlogic.gdx.graphics.g2d.SpriteBatch;
 import com.badlogic.gdx.math.MathUtils;
-import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.core.Settings;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.helpers.FontHelper;
-import com.megacrit.cardcrawl.orbs.EmptyOrbSlot;
-import nearlmod.cards.AbstractNearlCard;
-import nearlmod.patches.NearlTags;
-import java.util.ArrayList;
-
-import static java.lang.Math.max;
 
 public abstract class AbstractFriend extends CustomOrb {
     public boolean upgraded;

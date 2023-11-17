@@ -6,7 +6,6 @@ import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.orbs.AbstractOrb;
 import com.megacrit.cardcrawl.core.Settings;
 import nearlmod.orbs.AbstractFriend;
-import nearlmod.orbs.Nightingale;
 
 public class SummonOrbAction extends AbstractGameAction {
 

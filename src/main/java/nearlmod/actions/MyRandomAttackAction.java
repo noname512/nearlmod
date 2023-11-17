@@ -8,10 +8,6 @@ import com.megacrit.cardcrawl.core.Settings;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 
 public class MyRandomAttackAction extends AbstractGameAction {
-
-    private AbstractPlayer source;
-    private int amount;
-
     public MyRandomAttackAction(AbstractPlayer source, int amount) {
         actionType = ActionType.DAMAGE;
         duration = Settings.ACTION_DUR_FAST;
