@@ -1,6 +1,7 @@
 package nearlmod.orbs;
 
 import com.megacrit.cardcrawl.core.CardCrawlGame;
+import com.megacrit.cardcrawl.core.Settings;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.localization.OrbStrings;
 import com.megacrit.cardcrawl.orbs.AbstractOrb;
@@ -20,6 +21,7 @@ public class Wildmane extends AbstractFriend {
         passiveAmount = amount;
         upgraded = false;
         updateDescription();
+        MY_X_OFFSET = 70.0F * Settings.scale;
     }
 
     public Wildmane() {
