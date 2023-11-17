@@ -20,7 +20,6 @@ public class PersonalCharm extends AbstractNearlCard {
     public static final String UPGRADE_DESCRIPTION = cardStrings.UPGRADE_DESCRIPTION;
     public static final String IMG_PATH = "images/cards/personalcharm.png";
     private static final int COST = 2;
-    private static final int UPGRADE_COST = 1;
 
     public PersonalCharm() {
         super(ID, NAME, IMG_PATH, COST, DESCRIPTION,
@@ -50,7 +49,6 @@ public class PersonalCharm extends AbstractNearlCard {
     public void upgrade() {
         if (!upgraded) {
             upgradeName();
-            upgradeBaseCost(UPGRADE_COST);
             rawDescription = UPGRADE_DESCRIPTION;
             initializeDescription();
         }

@@ -26,7 +26,7 @@ public class Sanctuary extends AbstractFriendCard {
 
     public Sanctuary() {
         super(ID, NAME, IMG_PATH, COST, DESCRIPTION,
-                CardType.POWER, AbstractCardEnum.NEARL_GOLD,
+                CardType.SKILL, AbstractCardEnum.NEARL_GOLD,
                 CardRarity.SPECIAL, CardTarget.SELF, "nearlmod:Nightingale");
         magicNumber = baseMagicNumber = BLOCK_AMT;
         secondMagicNumber = baseSecondMagicNumber = POWER_TURN;

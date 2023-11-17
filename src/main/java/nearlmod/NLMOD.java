@@ -11,6 +11,7 @@ import com.evacipated.cardcrawl.modthespire.lib.SpireInitializer;
 import com.google.gson.Gson;
 import com.google.gson.reflect.TypeToken;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
+import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.helpers.*;
 import com.megacrit.cardcrawl.localization.*;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
@@ -75,7 +76,13 @@ public class NLMOD implements EditCardsSubscriber, EditCharactersSubscriber, Edi
     }
 
     private void initializeEvents() {
-        BaseMod.addEvent("nearlmod:PoemLooksEvent", PoemLooksEvent.class);
+        BaseMod.addEvent(new AddEventParams.Builder(PoemLooksEvent.ID, PoemLooksEvent.class).
+                eventType(EventUtils.EventType.ONE_TIME).
+                playerClass(NearlEnum.NEARL_CLASS).
+                dungeonID("Exordium").
+                bonusCondition(() -> (AbstractDungeon.floorNum > 6)).
+                create());
+        //BaseMod.addEvent("nearlmod:PoemLooksEvent", PoemLooksEvent.class, "Exordium");
     }
 
     private void initializeMonsters() {

@@ -216,14 +216,14 @@
     },
     "nearlmod:CreedField": {
         "NAME": "教条力场",
-        "DESCRIPTION": "获得 !M! 点 格挡 。 在接下来的 2 回合内，每次受到的伤害减少 !nearlmod:M2! 点。",
-        "UPGRADE_DESCRIPTION": "获得 !M! 点 格挡 。 在接下来的 3 回合内，每次受到的伤害减少 !nearlmod:M2! 点。"
+        "DESCRIPTION": "获得 !M! 点 格挡 。 在接下来的 !nearlmod:M2! 回合内，每次受到的伤害减少 6 点。",
+        "UPGRADE_DESCRIPTION": "获得 !M! 点 格挡 。 在接下来的 !nearlmod:M2! 回合内，每次受到的伤害减少 6 点。"
     },
 
     "nearlmod:PersonalCharm": {
         "NAME": "个人魅力",
-        "DESCRIPTION": "随机召唤 1 个红松骑士团成员作为伙伴。",
-        "UPGRADE_DESCRIPTION": "随机召唤 2 个红松骑士团成员作为伙伴。"
+        "DESCRIPTION": "随机召唤一个红松骑士团成员作为伙伴。",
+        "UPGRADE_DESCRIPTION": "随机召唤两个红松骑士团成员作为伙伴。"
     },
     "nearlmod:PinusSylvestris": {
         "NAME": "“红松林”",

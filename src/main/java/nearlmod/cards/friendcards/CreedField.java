@@ -20,22 +20,23 @@ public class CreedField extends AbstractFriendCard {
     public static final String IMG_PATH = "images/cards/creedfield.png";
     private static final int COST = 3;
     private static final int BLOCK_AMT = 18;
-    private static final int DAMAGE_DEC = 4;
+    private static final int DAMAGE_DEC = 6;
+    private static final int TURNS = 2;
     private static final int UPGRADE_PLUS_BLOCK = 6;
-    private static final int UPGRADE_PLUS_DEC = 2;
+    private static final int UPGRADE_TURNS = 2;
 
     public CreedField() {
         super(ID, NAME, IMG_PATH, COST, DESCRIPTION,
                 CardType.POWER, AbstractCardEnum.NEARL_GOLD,
                 CardRarity.SPECIAL, CardTarget.SELF, "nearlmod:Shining");
         magicNumber = baseMagicNumber = BLOCK_AMT;
-        secondMagicNumber = baseSecondMagicNumber = DAMAGE_DEC;
+        secondMagicNumber = baseSecondMagicNumber = TURNS;
     }
 
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
         AbstractDungeon.actionManager.addToBottom(new GainBlockAction(p, magicNumber));
-        AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(p, p, new CreedFieldPower(p, upgraded? 3 : 2, secondMagicNumber)));
+        AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(p, p, new CreedFieldPower(p, DAMAGE_DEC, secondMagicNumber)));
     }
 
     @Override
@@ -48,7 +49,7 @@ public class CreedField extends AbstractFriendCard {
         if (!upgraded) {
             upgradeName();
             upgradeMagicNumber(UPGRADE_PLUS_BLOCK);
-            upgradeSecondMagicNumber(UPGRADE_PLUS_DEC);
+            upgradeSecondMagicNumber(UPGRADE_TURNS);
         }
     }
 }
