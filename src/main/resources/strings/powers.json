@@ -54,5 +54,9 @@
   "nearlmod:LoseThornsPower": {
     "NAME": "蜕刺",
     "DESCRIPTIONS": ["下回合开始时，失去 #b", " 层 荆棘 。"]
+  },
+  "nearlmod:AllySupportPower": {
+    "NAME": "同盟支援",
+    "DESCRIPTIONS": ["你或者其他 伙伴 对敌人造成伤害时，远牙对其造成 #b", " 点伤害。"]
   }
 }

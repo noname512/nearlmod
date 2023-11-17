@@ -6,45 +6,45 @@ import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.localization.CardStrings;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
-import com.megacrit.cardcrawl.powers.PlatedArmorPower;
 import nearlmod.patches.AbstractCardEnum;
+import nearlmod.powers.AllySupportPower;
 
 import static nearlmod.patches.NearlTags.IS_KNIGHT_CARD;
 
-public class BeepActivate extends AbstractFriendCard {
-    public static final String ID = "nearlmod:BeepActivate";
+public class AllySupport extends AbstractFriendCard {
+    public static final String ID = "nearlmod:AllySupport";
     public static final CardStrings cardStrings = CardCrawlGame.languagePack.getCardStrings(ID);
     public static final String NAME = cardStrings.NAME;
     public static final String DESCRIPTION = cardStrings.DESCRIPTION;
     public static final String UPGRADE_DESCRIPTION = cardStrings.UPGRADE_DESCRIPTION;
-    public static final String IMG_PATH = "images/cards/beepactivate.png";
-    private static final int COST = 0;
-    private static final int BLOCK_GAIN = 2;
-    private static final int UPGRADE_PLUS_BLOCK = 1;
+    public static final String IMG_PATH = "images/cards/allysupport.png";
+    private static final int COST = 1;
+    private static final int ATTACK_DMG = 2;
+    private static final int UPGRADE_PLUS_DMG = 1;
 
-    public BeepActivate() {
+    public AllySupport() {
         super(ID, NAME, IMG_PATH, COST, DESCRIPTION,
-                CardType.SKILL, AbstractCardEnum.NEARL_GOLD,
-                CardRarity.SPECIAL, CardTarget.ALL_ENEMY, "nearlmod:JusticeKnight");
-        secondMagicNumber = baseSecondMagicNumber = BLOCK_GAIN;
+                CardType.POWER, AbstractCardEnum.NEARL_GOLD,
+                CardRarity.SPECIAL, CardTarget.SELF, "nearlmod:Fartooth");
+        secondMagicNumber = baseSecondMagicNumber = ATTACK_DMG;
         tags.add(IS_KNIGHT_CARD);
     }
 
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
-        addToBot(new ApplyPowerAction(p, p, new PlatedArmorPower(p, secondMagicNumber)));
+        addToBot(new ApplyPowerAction(p, p, new AllySupportPower(p, secondMagicNumber)));
     }
 
     @Override
     public AbstractCard makeCopy() {
-        return new BeepActivate();
+        return new AllySupport();
     }
 
     @Override
     public void upgrade() {
         if (!upgraded) {
             upgradeName();
-            upgradeSecondMagicNumber(UPGRADE_PLUS_BLOCK);
+            upgradeSecondMagicNumber(UPGRADE_PLUS_DMG);
         }
     }
 }

@@ -223,7 +223,7 @@
     "nearlmod:PersonalCharm": {
         "NAME": "个人魅力",
         "DESCRIPTION": "随机召唤 1 个红松骑士团成员作为伙伴。",
-        "UPGRADE_DESCRIPTION": ""
+        "UPGRADE_DESCRIPTION": "随机召唤 2 个红松骑士团成员作为伙伴。"
     },
     "nearlmod:PinusSylvestris": {
         "NAME": "“红松林”",
@@ -254,5 +254,14 @@
         "NAME": "“滴滴，启动！”",
         "DESCRIPTION": "获得 !nearlmod:M2! 层 多层护甲 。",
         "UPGRADE_DESCRIPTION": ""
+    },
+    "nearlmod:AllySupport": {
+        "NAME": "同盟支援",
+        "DESCRIPTION": "你或者其他 nearlmod:伙伴 对敌人造成伤害时，远牙对其造成 !nearlmod:M2! 点伤害。",
+        "UPGRADE_DESCRIPTION": ""
+    },
+    "nearlmod:FeathershineArrows": {
+        "NAME": "光羽箭",
+        "DESCRIPTION": "对当前生命值最低的敌人造成 !M! 点伤害。"
     }
 }

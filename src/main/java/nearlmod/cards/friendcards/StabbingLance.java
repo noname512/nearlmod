@@ -18,7 +18,7 @@ public class StabbingLance extends AbstractFriendCard {
     public static final String NAME = cardStrings.NAME;
     public static final String DESCRIPTION = cardStrings.DESCRIPTION;
     public static final String UPGRADE_DESCRIPTION = cardStrings.UPGRADE_DESCRIPTION;
-    public static final String IMG_PATH = "images/cards/flameheart.png";
+    public static final String IMG_PATH = "images/cards/stabbinglance.png";
     private static final int COST = 1;
     private static final int ATTACK_DMG = 2;
     private static final int ATTACK_TIMES = 6;
