@@ -11,8 +11,8 @@ import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import nearlmod.patches.AbstractCardEnum;
 import nearlmod.powers.SanctuaryPower;
 
-public class FleetingPhantom extends AbstractFriendCard {
-    public static final String ID = "nearlmod:FleetingPhantom";
+public class ClosedHope extends AbstractFriendCard {
+    public static final String ID = "nearlmod:ClosedHope";
     public static final CardStrings cardStrings = CardCrawlGame.languagePack.getCardStrings(ID);
     public static final String NAME = cardStrings.NAME;
     public static final String DESCRIPTION = cardStrings.DESCRIPTION;
@@ -24,7 +24,7 @@ public class FleetingPhantom extends AbstractFriendCard {
     private static final int UPGRADE_PLUS_BLOCK = 2;
     private static final int UPGRADE_PLUS_TURN = 1;
 
-    public FleetingPhantom() {
+    public ClosedHope() {
         super(ID, NAME, IMG_PATH, COST, DESCRIPTION,
                 CardType.SKILL, AbstractCardEnum.NEARL_GOLD,
                 CardRarity.SPECIAL, CardTarget.SELF, "nearlmod:Nightingale");
@@ -40,7 +40,7 @@ public class FleetingPhantom extends AbstractFriendCard {
 
     @Override
     public AbstractCard makeCopy() {
-        return new FleetingPhantom();
+        return new ClosedHope();
     }
 
     @Override

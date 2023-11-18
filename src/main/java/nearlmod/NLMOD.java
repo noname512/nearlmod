@@ -167,7 +167,7 @@ public class NLMOD implements EditCardsSubscriber, EditCharactersSubscriber, Edi
         BaseMod.addCard(new ArtsShield()); // 法术护盾
         BaseMod.addCard(new Sanctuary()); // 圣域
         BaseMod.addCard(new WhiteFiendProtection()); // 白恶魔的庇护
-        BaseMod.addCard(new FleetingPhantom()); // 转瞬即逝的幻影
+        BaseMod.addCard(new ClosedHope()); // 封闭的希望
 
         BaseMod.addCard(new Creed()); // 信条
         BaseMod.addCard(new AutoProtect()); // 自动掩护

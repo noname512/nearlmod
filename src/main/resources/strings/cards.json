@@ -198,7 +198,7 @@
         "DESCRIPTION": " nearlmod:伙伴牌 ， nearlmod:唯一 。 NL 你不会被 虚弱 、 脆弱 、 易伤 。如果你同时拥有 [#EFC851]黑恶魔的庇护[] ，每回 NL 合额外获得 1 层 人工制品 。",
         "UPGRADE_DESCRIPTION": " nearlmod:伙伴牌 ， nearlmod:唯一 。 NL 你不会被 虚弱 、 脆弱 、 易伤 。如果你同时拥有 [#EFC851]黑恶魔的庇护[] ，每回 NL 合额外获得 1 层 人工制品 。所有负面效果立即失去 1 层。"
     },
-    "nearlmod:FleetingPhantom": {
+    "nearlmod:ClosedHope": {
         "NAME": "封闭的希望",
         "DESCRIPTION": " nearlmod:伙伴牌 。 NL 切换至使徒形态。 NL 获得 !M! 点 格挡 ，如果本回合 格挡 未被击破，获得 2 层人工制品。",
         "UPGRADE_DESCRIPTION": ""

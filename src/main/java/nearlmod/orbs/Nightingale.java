@@ -55,7 +55,7 @@ public class Nightingale extends AbstractFriend {
                 card = new Sanctuary();
                 break;
             default:
-                card = new FleetingPhantom();
+                card = new ClosedHope();
         }
         if (upgraded) card.upgrade();
         return card;
