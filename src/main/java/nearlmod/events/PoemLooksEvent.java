@@ -5,7 +5,7 @@ import com.megacrit.cardcrawl.events.AbstractEvent;
 import com.megacrit.cardcrawl.localization.EventStrings;
 import com.megacrit.cardcrawl.monsters.MonsterGroup;
 import nearlmod.monsters.CandleKnight;
-import nearlmod.relics.PoemLooks;
+import nearlmod.relics.Marigold;
 
 public class PoemLooksEvent extends AbstractEvent {
     public static final String ID = "nearlmod:PoemLooksEvent";
@@ -42,7 +42,7 @@ public class PoemLooksEvent extends AbstractEvent {
                 break;
             case FIGHT_2:
                 AbstractDungeon.getCurrRoom().addGoldToRewards(99);
-                AbstractDungeon.getCurrRoom().addRelicToRewards(new PoemLooks());
+                AbstractDungeon.getCurrRoom().addRelicToRewards(new Marigold());
                 enterCombat();
                 AbstractDungeon.lastCombatMetricKey = "Viviana";
                 break;

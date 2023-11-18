@@ -23,8 +23,8 @@ import nearlmod.events.PoemLooksEvent;
 import nearlmod.monsters.CandleKnight;
 import nearlmod.patches.NearlEnum;
 import nearlmod.relics.CureUp;
+import nearlmod.relics.Marigold;
 import nearlmod.relics.PegasusHalo;
-import nearlmod.relics.PoemLooks;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 import nearlmod.cards.*;
@@ -211,7 +211,7 @@ public class NLMOD implements EditCardsSubscriber, EditCharactersSubscriber, Edi
         BaseMod.addRelicToCustomPool(new PegasusHalo(), NEARL_GOLD);
 
         // event.
-        BaseMod.addRelicToCustomPool(new PoemLooks(), NEARL_GOLD);
+        BaseMod.addRelicToCustomPool(new Marigold(), NEARL_GOLD);
     }
 
     @Override
