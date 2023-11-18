@@ -73,17 +73,15 @@ public class Nearl extends CustomPlayer {
 
         // 参数列表：静态贴图路径，越肩视角2贴图路径，越肩视角贴图路径，失败时贴图路径，角色选择界面信息，碰撞箱XY宽高，初始能量数
         initializeClass(SHIELD, SHOULDER, SHOULDER, SHIELDDIE, getLoadout(), 20.0F, -10.0F, 220.0F, 290.0F, new EnergyManager(3));
-//        loadAnimation("images/char/char_148_nearl.atlas", "images/char/char_148_nearl.json", 1.5F);
-//        loadAnimation("images/char/char_1014_nearl2.atlas", "images/char/char_1014_nearl2.json", 1.5F);
-//        this.stateData.setMix("Idle", "Die", 0.1F);
-//        AnimationState.TrackEntry e = this.state.setAnimation(0, "Idle", true);
-//        e.setTimeScale(1.5F);
+        loadAnimation("images/char/char_148_nearl.atlas", "images/char/char_148_nearl.json", 1.5F);
+        this.stateData.setMix("Idle", "Die", 0.1F);
+        AnimationState.TrackEntry e = this.state.setAnimation(0, "Idle", true);
     }
 
-//    @Override
-//    public void playDeathAnimation() {
-//        this.state.setAnimation(0, "Die", false);
-//    }
+    @Override
+    public void playDeathAnimation() {
+        this.state.setAnimation(0, "Die", false);
+    }
 
     @Override
     public Color getSlashAttackColor() {
@@ -215,16 +213,15 @@ public class Nearl extends CustomPlayer {
     @Override
     public void onStanceChange(String id) {
         if (id.equals(AtkStance.STANCE_ID)) {
-//            loadAnimation("images/char/char_1014_nearl2.atlas", "images/char/char_1014_nearl2.json", 1.5F);
+            loadAnimation("images/char/char_1014_nearl2.atlas", "images/char/char_1014_nearl237.json", 1.5F);
             this.img = SWORDIMG;
             this.corpseImg = SWORDDIEIMG;
         } else {
-//            loadAnimation("images/char/char_148_nearl.atlas", "images/char/char_148_nearl.json", 1.5F);
+            loadAnimation("images/char/char_148_nearl.atlas", "images/char/char_148_nearl.json", 1.5F);
             this.img = SHIELDIMG;
             this.corpseImg = SHIELDDIEIMG;
         }
-//        AnimationState.TrackEntry e = this.state.setAnimation(0, "Idle", true);
-//        e.setTimeScale(1.5F);
+        AnimationState.TrackEntry e = this.state.setAnimation(0, "Idle", true);
     }
 
     @Override
