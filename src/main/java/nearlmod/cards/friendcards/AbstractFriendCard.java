@@ -1,5 +1,7 @@
 package nearlmod.cards.friendcards;
 
+import com.megacrit.cardcrawl.actions.common.ExhaustAction;
+import com.megacrit.cardcrawl.actions.common.ExhaustSpecificCardAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
@@ -20,7 +22,7 @@ public abstract class AbstractFriendCard extends AbstractNearlCard {
     public AbstractFriendCard(String id, String name, String img, int cost, String rawDescription,
                               AbstractCard.CardType type, AbstractCard.CardColor color,
                               AbstractCard.CardRarity rarity, AbstractCard.CardTarget target, String belongFriend) {
-        super(id, name, img, cost, rawDescription + " NL 虚无 。 NL 消耗 。",
+        super(id, name, img, cost, " nearlmod:伙伴牌 NL " + rawDescription,
                 type, color, rarity, target);
         baseDescription = rawDescription;
         tags.add(NearlTags.IS_FRIEND_CARD);
@@ -61,4 +63,14 @@ public abstract class AbstractFriendCard extends AbstractNearlCard {
 
     @Override
     public abstract void use(AbstractPlayer abstractPlayer, AbstractMonster abstractMonster);
+
+    @Override
+    public void onMoveToDiscard() {
+        addToTop(new ExhaustSpecificCardAction(this, AbstractDungeon.player.discardPile));
+    }
+
+    @Override
+    public void triggerOnManualDiscard() {
+        addToTop(new ExhaustSpecificCardAction(this, AbstractDungeon.player.discardPile));
+    }
 }

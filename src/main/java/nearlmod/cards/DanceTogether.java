@@ -34,10 +34,8 @@ public class DanceTogether extends AbstractNearlCard {
         addToBot(new SummonOrbAction(new Nightingale()));
         AbstractFriendCard card = Nightingale.getRandomCard(false, true);
         if (upgraded) {
-            card.rawDescription = card.baseDescription + " NL 保留 。 NL 消耗 。";
             card.isEthereal = false;
             card.selfRetain = true;
-            card.initializeDescription();
         }
         AbstractDungeon.player.hand.addToHand(card);
     }
