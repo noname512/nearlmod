@@ -8,6 +8,7 @@ import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.localization.CardStrings;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import com.megacrit.cardcrawl.powers.LoseStrengthPower;
+import com.megacrit.cardcrawl.powers.StrengthPower;
 import nearlmod.actions.SummonOrbAction;
 import nearlmod.orbs.Whislash;
 import nearlmod.patches.AbstractCardEnum;
@@ -36,8 +37,10 @@ public class TheRoadtoHome extends AbstractNearlCard {
     public void use(AbstractPlayer p, AbstractMonster m) {
         addToBot(new SummonOrbAction(new Whislash()));
         addToBot(new DrawCardAction(p, 1));
-        if (upgraded)
+        if (upgraded) {
+            addToBot(new ApplyPowerAction(p, p, new StrengthPower(p, magicNumber)));
             addToBot(new ApplyPowerAction(p, p, new LoseStrengthPower(p, magicNumber)));
+        }
     }
 
     @Override

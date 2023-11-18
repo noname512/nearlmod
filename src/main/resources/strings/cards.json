@@ -71,8 +71,8 @@
     },
     "nearlmod:SightImpairingShowdown": {
         "NAME": "有损视力的对决",
-        "DESCRIPTION": "随机将一张非 nearlmod:唯一 的薇薇安娜的 nearlmod:伙伴牌 加入手牌。如果薇薇安娜在场，她获得 !M! 点 力量 。",
-        "UPGRADE_DESCRIPTION": "选择一张非 nearlmod:唯一 的薇薇安娜的 nearlmod:伙伴牌 加入手牌。如果薇薇安娜在场，她获得 !M! 点 力量 。"
+        "DESCRIPTION": "随机将一张非 nearlmod:唯一 的薇薇安娜的 nearlmod:伙伴牌 加入手牌。如果薇薇安娜在场，她获得 !nearlmod:M2! 点 力量 。",
+        "UPGRADE_DESCRIPTION": "选择一张非 nearlmod:唯一 的薇薇安娜的 nearlmod:伙伴牌 加入手牌。如果薇薇安娜在场，她获得 !nearlmod:M2! 点 力量 。"
     },
 
     "nearlmod:BravetheDarkness": {
@@ -199,8 +199,8 @@
         "UPGRADE_DESCRIPTION": "nearlmod:唯一 。 NL 你不会被 虚弱 、 脆弱 、 易伤 。如果你同时拥有 [#FF5252]黑恶魔的庇护[] ， 每回合额外获得 1 层 人工制品 。所有负面效果失去 1 层。"
     },
     "nearlmod:FleetingPhantom": {
-        "NAME": "转瞬即逝的幻影",
-        "DESCRIPTION": "[#FF0000]INFO:当前效果为圣域[]  NL 召唤一个拥有 !M! 点生命且拥有 无实体 的鸟笼。敌人会优先攻击该鸟笼。 NL 切换至使徒形态。",
+        "NAME": "封闭的希望",
+        "DESCRIPTION": "切换至使徒形态。 NL 获得 !M! 点 格挡 ，如果本回合 格挡 未被击破，获得 2 层人工制品。",
         "UPGRADE_DESCRIPTION": ""
     },
 
