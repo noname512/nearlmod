@@ -201,7 +201,7 @@
     },
     "nearlmod:Creed": {
         "NAME": "信条",
-        "DESCRIPTION": "造成 !M! 点伤害，切换至至 nearlmod:使徒形态 。",
+        "DESCRIPTION": "造成 !M! 点伤害，切换至 nearlmod:使徒形态 。",
         "UPGRADE_DESCRIPTION": ""
     },
     "nearlmod:AutoProtect": {
@@ -218,6 +218,32 @@
         "NAME": "教条力场",
         "DESCRIPTION": "获得 !M! 点 格挡 。 在接下来的 !nearlmod:M2! 回合内，每次受到的伤害减少 6 点。",
         "UPGRADE_DESCRIPTION": "获得 !M! 点 格挡 。 在接下来的 !nearlmod:M2! 回合内，每次受到的伤害减少 6 点。"
+    },
+
+    "nearlmod:TheRoadtoHome": {
+        "NAME": "归乡之路",
+        "DESCRIPTION": "召唤鞭刃作为 nearlmod:伙伴 。 NL 抽一张牌。",
+        "UPGRADE_DESCRIPTION": "召唤鞭刃作为 nearlmod:伙伴 。 NL 抽一张牌。 NL 获得 !M! 点 临时力量 。"
+    },
+    "nearlmod:VisionofUnity": {
+        "NAME": "比肩的愿景",
+        "DESCRIPTION": "获得 !nearlmod:M2! 层 缓冲 。",
+        "UPGRADE_DESCRIPTION": ""
+    },
+    "nearlmod:Rebuke": {
+        "NAME": "责骂",
+        "DESCRIPTION": "nearlmod:唯一 。 NL 切换形态获得的数值额外增加 !nearlmod:M2! 点。 NL 切换你的形态。",
+        "UPGRADE_DESCRIPTION": ""
+    },
+    "nearlmod:MotivationalSkill": {
+        "NAME": "激励艺术",
+        "DESCRIPTION": "切换至剑枪形态，如果已经处于剑枪形态，获得 !nearlmod:M2! 点 力量 。",
+        "UPGRADE_DESCRIPTION": ""
+    },
+    "nearlmod:WhipSword": {
+        "NAME": "鞭刃",
+        "DESCRIPTION": "你和所有 nearlmod:伙伴 对所有敌人分别造成 !nearlmod:M2! 点伤害。",
+        "UPGRADE_DESCRIPTION": "你和所有 nearlmod:伙伴 对所有敌人分别造成 !nearlmod:M2! 点伤害。鞭刃额外对所有敌人造成 !M! 点伤害。"
     },
 
     "nearlmod:PersonalCharm": {
