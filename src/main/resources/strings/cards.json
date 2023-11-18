@@ -230,7 +230,7 @@
         "UPGRADE_DESCRIPTION": " nearlmod:伙伴牌 。 NL 获得 !M! 点 格挡 。 在接下来的 !nearlmod:M2! 回合内，每次受到的伤害减少 6 点。"
     },
 
-    "nearlmod:TheRoadtoHome": {
+    "nearlmod:WaytoHome": {
         "NAME": "归乡之路",
         "DESCRIPTION": "召唤鞭刃作为 nearlmod:伙伴 。 NL 抽一张牌。",
         "UPGRADE_DESCRIPTION": "召唤鞭刃作为 nearlmod:伙伴 。 NL 抽一张牌。 NL 获得 !M! 点 临时力量 。"

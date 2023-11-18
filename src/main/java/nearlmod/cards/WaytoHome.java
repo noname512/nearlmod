@@ -14,8 +14,8 @@ import nearlmod.orbs.Whislash;
 import nearlmod.patches.AbstractCardEnum;
 import nearlmod.patches.NearlTags;
 
-public class TheRoadtoHome extends AbstractNearlCard {
-    public static final String ID = "nearlmod:TheRoadtoHome";
+public class WaytoHome extends AbstractNearlCard {
+    public static final String ID = "nearlmod:WaytoHome";
     public static final CardStrings cardStrings = CardCrawlGame.languagePack.getCardStrings(ID);
     public static final String NAME = cardStrings.NAME;
     public static final String DESCRIPTION = cardStrings.DESCRIPTION;
@@ -25,7 +25,7 @@ public class TheRoadtoHome extends AbstractNearlCard {
     private static final int UPGRADE_COST = 1;
     private static final int POWER_GAIN = 5;
 
-    public TheRoadtoHome() {
+    public WaytoHome() {
         super(ID, NAME, IMG_PATH, COST, DESCRIPTION,
                 CardType.POWER, AbstractCardEnum.NEARL_GOLD,
                 CardRarity.UNCOMMON, CardTarget.SELF);
@@ -45,7 +45,7 @@ public class TheRoadtoHome extends AbstractNearlCard {
 
     @Override
     public AbstractCard makeCopy() {
-        return new TheRoadtoHome();
+        return new WaytoHome();
     }
 
     @Override

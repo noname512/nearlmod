@@ -174,7 +174,7 @@ public class NLMOD implements EditCardsSubscriber, EditCharactersSubscriber, Edi
         BaseMod.addCard(new CreedField()); // 教条立场
         BaseMod.addCard(new BlackFiendProtection()); // 黑恶魔的庇护
 
-        BaseMod.addCard(new TheRoadtoHome()); // 归乡之路
+        BaseMod.addCard(new WaytoHome()); // 归乡之路
         BaseMod.addCard(new VisionofUnity()); // 比肩的愿景
         BaseMod.addCard(new Rebuke()); // 责骂
         BaseMod.addCard(new MotivationalSkill()); // 激励艺术
