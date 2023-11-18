@@ -16,9 +16,7 @@ public class Wildmane extends AbstractFriend {
     public static final String IMAGE = "images/orbs/wildmane.png";
 
     public Wildmane(int amount) {
-        super(ORB_ID, NAME, 0, 0, DESCRIPTION[0], "", IMAGE);
-        passiveAmount = amount;
-        upgraded = false;
+        super(ORB_ID, NAME, 0, 0, DESCRIPTION[0], "", IMAGE, amount);
         updateDescription();
         MY_X_OFFSET = 70.0F * Settings.scale;
     }
