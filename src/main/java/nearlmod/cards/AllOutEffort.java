@@ -9,10 +9,10 @@ import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.localization.CardStrings;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
-import com.megacrit.cardcrawl.orbs.AbstractOrb;
 import nearlmod.actions.SummonOrbAction;
 import nearlmod.orbs.Blemishine;
 import nearlmod.patches.AbstractCardEnum;
+import nearlmod.patches.NearlTags;
 import nearlmod.powers.LightPower;
 import nearlmod.stances.AtkStance;
 import nearlmod.stances.DefStance;
@@ -35,6 +35,7 @@ public class AllOutEffort extends AbstractNearlCard {
                 CardRarity.UNCOMMON, CardTarget.SELF);
         magicNumber = baseMagicNumber = LIGHT_GAIN;
         block = baseBlock = BLOCK_AMT;
+        tags.add(NearlTags.IS_SUMMON_CARD);
     }
 
     @Override

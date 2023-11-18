@@ -8,6 +8,7 @@ import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import nearlmod.actions.SummonOrbAction;
 import nearlmod.orbs.*;
 import nearlmod.patches.AbstractCardEnum;
+import nearlmod.patches.NearlTags;
 
 import java.util.ArrayList;
 import java.util.Collections;
@@ -25,6 +26,7 @@ public class PersonalCharm extends AbstractNearlCard {
         super(ID, NAME, IMG_PATH, COST, DESCRIPTION,
                 CardType.POWER, AbstractCardEnum.NEARL_GOLD,
                 CardRarity.RARE, CardTarget.SELF);
+        tags.add(NearlTags.IS_SUMMON_CARD);
     }
 
     @Override

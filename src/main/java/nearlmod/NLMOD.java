@@ -137,6 +137,7 @@ public class NLMOD implements EditCardsSubscriber, EditCharactersSubscriber, Edi
         BaseMod.addCard(new DanceTogether()); // 共舞一曲
         BaseMod.addCard(new DawnDuskSaber()); // 斩破晨昏
         BaseMod.addCard(new SweepWrong()); // 扫尽恶行
+        BaseMod.addCard(new ReliableFriend()); // 信赖伙伴
 
         // Rare.
         BaseMod.addCard(new BravetheDarkness()); // 不畏苦暗

@@ -10,9 +10,9 @@ import com.megacrit.cardcrawl.localization.CardStrings;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import com.megacrit.cardcrawl.orbs.AbstractOrb;
 import com.megacrit.cardcrawl.powers.AbstractPower;
-import nearlmod.actions.SummonOrbAction;
 import nearlmod.orbs.Viviana;
 import nearlmod.patches.AbstractCardEnum;
+import nearlmod.patches.NearlTags;
 
 public class SwallowLight extends AbstractNearlCard {
     public static final String ID = "nearlmod:SwallowLight";
@@ -28,6 +28,7 @@ public class SwallowLight extends AbstractNearlCard {
         super(ID, NAME, IMG_PATH, COST, DESCRIPTION,
                 CardType.POWER, AbstractCardEnum.NEARL_GOLD,
                 CardRarity.UNCOMMON, CardTarget.SELF);
+        tags.add(NearlTags.IS_SUMMON_CARD);
     }
 
     @Override

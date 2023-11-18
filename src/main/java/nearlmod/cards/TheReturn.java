@@ -10,6 +10,7 @@ import nearlmod.actions.SummonOrbAction;
 import nearlmod.orbs.Nightingale;
 import nearlmod.orbs.Shining;
 import nearlmod.patches.AbstractCardEnum;
+import nearlmod.patches.NearlTags;
 import nearlmod.stances.AtkStance;
 
 public class TheReturn extends AbstractNearlCard {
@@ -25,6 +26,7 @@ public class TheReturn extends AbstractNearlCard {
         super(ID, NAME, IMG_PATH, COST, DESCRIPTION,
                 CardType.POWER, AbstractCardEnum.NEARL_GOLD,
                 CardRarity.RARE, CardTarget.SELF);
+        tags.add(NearlTags.IS_SUMMON_CARD);
     }
 
     @Override

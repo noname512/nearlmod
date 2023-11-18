@@ -11,6 +11,7 @@ import com.megacrit.cardcrawl.powers.LoseStrengthPower;
 import nearlmod.actions.SummonOrbAction;
 import nearlmod.orbs.Whislash;
 import nearlmod.patches.AbstractCardEnum;
+import nearlmod.patches.NearlTags;
 
 public class TheRoadtoHome extends AbstractNearlCard {
     public static final String ID = "nearlmod:TheRoadtoHome";
@@ -28,6 +29,7 @@ public class TheRoadtoHome extends AbstractNearlCard {
                 CardType.POWER, AbstractCardEnum.NEARL_GOLD,
                 CardRarity.UNCOMMON, CardTarget.SELF);
         magicNumber = baseMagicNumber = POWER_GAIN;
+        tags.add(NearlTags.IS_SUMMON_CARD);
     }
 
     @Override

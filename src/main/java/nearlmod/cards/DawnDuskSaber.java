@@ -1,23 +1,18 @@
 package nearlmod.cards;
 
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
-import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
 import com.megacrit.cardcrawl.actions.common.DamageAllEnemiesAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.cards.DamageInfo;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
-import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.localization.CardStrings;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
-import com.megacrit.cardcrawl.orbs.AbstractOrb;
-import com.megacrit.cardcrawl.powers.WeakPower;
 import nearlmod.actions.SummonOrbAction;
 import nearlmod.actions.WeakenAllAction;
 import nearlmod.orbs.Shining;
 import nearlmod.patches.AbstractCardEnum;
-
-import java.util.ArrayList;
+import nearlmod.patches.NearlTags;
 
 public class DawnDuskSaber extends AbstractNearlCard {
     public static final String ID = "nearlmod:DawnDuskSaber";
@@ -35,6 +30,7 @@ public class DawnDuskSaber extends AbstractNearlCard {
                 CardType.POWER, AbstractCardEnum.NEARL_GOLD,
                 CardRarity.UNCOMMON, CardTarget.SELF);
         damage = baseDamage = ATTACK_DMG;
+        tags.add(NearlTags.IS_SUMMON_CARD);
     }
 
     @Override

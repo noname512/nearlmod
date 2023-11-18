@@ -6,11 +6,11 @@ import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.localization.CardStrings;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
-import com.megacrit.cardcrawl.orbs.AbstractOrb;
 import nearlmod.actions.SummonOrbAction;
 import nearlmod.cards.friendcards.AbstractFriendCard;
 import nearlmod.orbs.Nightingale;
 import nearlmod.patches.AbstractCardEnum;
+import nearlmod.patches.NearlTags;
 
 public class DanceTogether extends AbstractNearlCard {
     public static final String ID = "nearlmod:DanceTogether";
@@ -26,6 +26,7 @@ public class DanceTogether extends AbstractNearlCard {
         super(ID, NAME, IMG_PATH, COST, DESCRIPTION,
                 CardType.POWER, AbstractCardEnum.NEARL_GOLD,
                 CardRarity.UNCOMMON, CardTarget.SELF);
+        tags.add(NearlTags.IS_SUMMON_CARD);
     }
 
     @Override
