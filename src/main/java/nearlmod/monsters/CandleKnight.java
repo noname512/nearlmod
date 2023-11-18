@@ -26,9 +26,17 @@ public class CandleKnight extends AbstractMonster {
     public CandleKnight() {
         super(NAME, ID, 100, 0, 0, 150.0F, 320.0F, IMAGE);
         this.type = EnemyType.ELITE;
-        candleDmg = 10;
-        flameDmg = 30;
-        swordDmg = 6;
+        if (AbstractDungeon.ascensionLevel >= 8)
+            setHp(110);
+        if (AbstractDungeon.ascensionLevel >= 3) {
+            candleDmg = 12;
+            flameDmg = 33;
+            swordDmg = 7;
+        } else {
+            candleDmg = 10;
+            flameDmg = 30;
+            swordDmg = 6;
+        }
         this.damage.add(new DamageInfo(this, candleDmg));
         this.damage.add(new DamageInfo(this, flameDmg));
         this.damage.add(new DamageInfo(this, swordDmg));
@@ -56,6 +64,7 @@ public class CandleKnight extends AbstractMonster {
             addToBot(new TalkAction(AbstractDungeon.player, DIALOG[4], 0.3F, 3.0F));
         }
         if (this.nextMove == 2) {
+            addToBot(new ChangeImgAction(this, CHARGING_IMAGE));
             setMove(MOVES[1], (byte) 3, Intent.ATTACK, this.damage.get(1).base);
         } else {
             if (this.nextMove == 1) {
@@ -72,7 +81,6 @@ public class CandleKnight extends AbstractMonster {
                     addToBot(new DamageAction(AbstractDungeon.player, this.damage.get(2)));
             }
             if (this.nextMove == 1 || AbstractDungeon.aiRng.random(0, 4) == 0) {
-                addToBot(new ChangeImgAction(this, CHARGING_IMAGE));
                 setMove(MOVES[0], (byte) 2, Intent.UNKNOWN);
                 return;
             }
