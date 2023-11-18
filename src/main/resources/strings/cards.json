@@ -288,6 +288,17 @@
     },
     "nearlmod:FeathershineArrows": {
         "NAME": "光羽箭",
-        "DESCRIPTION": "对当前生命值最低的敌人造成 !M! 点伤害。"
+        "DESCRIPTION": "对当前生命值最低的敌人造成 !M! 点伤害。",
+        "UPGRADE_DESCRIPTION": ""
+    },
+    "nearlmod:FocusedBombardment": {
+        "NAME": "专注轰击",
+        "DESCRIPTION": "所有敌人造成 !M! 点伤害 !nearlmod:M2! 次。",
+        "UPGRADE_DESCRIPTION": ""
+    },
+    "nearlmod:BombardmentStudies": {
+        "NAME": "炮术研习",
+        "DESCRIPTION": "使你的 [#EFC851]专注轰击[] 数值增加 !nearlmod:M2! 点，下回合开始时，将一张 [#EFC851]专注轰击[] 置入你的手牌。",
+        "UPGRADE_DESCRIPTION": "使你的 [#EFC851]专注轰击[] 数值增加 !nearlmod:M2! 点，下回合开始时，将一张 [#EFC851]专注轰击+[] 置入你的手牌。"
     }
 }

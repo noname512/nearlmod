@@ -44,6 +44,8 @@ public class PinusSylvestris extends AbstractFriendCard {
         list.add(new BeepActivate());
         list.add(new AllySupport());
         list.add(new FeathershineArrows());
+        list.add(new FocusedBombardment());
+        list.add(new BombardmentStudies());
         int random = AbstractDungeon.cardRng.random(0, list.size() - 1);
         AbstractCard card = list.get(random);
         if (upgraded) card.upgrade();

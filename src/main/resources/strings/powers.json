@@ -58,5 +58,9 @@
   "nearlmod:AllySupportPower": {
     "NAME": "同盟支援",
     "DESCRIPTIONS": ["你或者其他 伙伴 对敌人造成伤害时，远牙对其造成 #b", " 点伤害。"]
+  },
+  "nearlmod:BombardmentStudiesPower": {
+    "NAME": "炮术研习",
+    "DESCRIPTIONS": ["你的 [#EFC851]专注轰击[] 数值增加 #b", " 点。"]
   }
 }
