@@ -17,9 +17,7 @@ public class Fartooth extends AbstractFriend {
     public static final String IMAGE = "images/orbs/fartooth.png";
 
     public Fartooth(int amount) {
-        super(ORB_ID, NAME, 0, 0, DESCRIPTION[0], "", IMAGE);
-        passiveAmount = amount;
-        upgraded = false;
+        super(ORB_ID, NAME, 0, 0, DESCRIPTION[0], "", IMAGE, amount);
         updateDescription();
     }
 

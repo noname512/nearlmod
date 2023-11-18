@@ -14,12 +14,9 @@ public class Ashlock extends AbstractFriend {
     public static final String NAME = orbStrings.NAME;
     public static final String[] DESCRIPTION = orbStrings.DESCRIPTION;
     public static final String IMAGE = "images/orbs/ashlock.png";
-    public boolean upgraded;
 
     public Ashlock(int amount) {
-        super(ORB_ID, NAME, 0, 0, DESCRIPTION[0], "", IMAGE);
-        passiveAmount = amount;
-        upgraded = false;
+        super(ORB_ID, NAME, 0, 0, DESCRIPTION[0], "", IMAGE, amount);
         updateDescription();
         MY_X_OFFSET = 20.0F * Settings.scale;
     }

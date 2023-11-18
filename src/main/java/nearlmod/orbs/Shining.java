@@ -16,9 +16,7 @@ public class Shining extends AbstractFriend {
     public static boolean uniqueUsed;
 
     public Shining(int amount) {
-        super(ORB_ID, NAME, 0, 0, DESCRIPTION[0], "", IMAGE);
-        passiveAmount = amount;
-        upgraded = false;
+        super(ORB_ID, NAME, 0, 0, DESCRIPTION[0], "", IMAGE, amount);
         uniqueUsed = false;
         updateDescription();
     }

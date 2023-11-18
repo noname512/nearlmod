@@ -11,9 +11,9 @@ public abstract class AbstractFriend extends CustomOrb {
     public boolean upgraded;
     protected static float MY_X_OFFSET = 50.0F * Settings.scale;
     protected static float MY_Y_OFFSET = 20.0F * Settings.scale;
-    public AbstractFriend(String ID, String NAME, int basePassiveAmount, int baseEvokeAmount, String passiveDescription, String evokeDescription, String imgPath) {
+    public AbstractFriend(String ID, String NAME, int basePassiveAmount, int baseEvokeAmount, String passiveDescription, String evokeDescription, String imgPath, int amount) {
         super(ID, NAME, basePassiveAmount, baseEvokeAmount, passiveDescription, evokeDescription, imgPath);
-
+        passiveAmount = amount;
         showEvokeValue = false;
         angle = MathUtils.random(360.0f);
         channelAnimTimer = 0.5f;

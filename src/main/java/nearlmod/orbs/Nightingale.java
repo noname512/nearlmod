@@ -16,9 +16,7 @@ public class Nightingale extends AbstractFriend {
     public static boolean uniqueUsed;
 
     public Nightingale(int amount) {
-        super(ORB_ID, NAME, 0, 0, DESCRIPTION[0], "", IMAGE);
-        passiveAmount = amount;
-        upgraded = false;
+        super(ORB_ID, NAME, 0, 0, DESCRIPTION[0], "", IMAGE, amount);
         uniqueUsed = false;
         updateDescription();
     }
