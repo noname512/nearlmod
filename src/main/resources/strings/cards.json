@@ -66,7 +66,13 @@
     },
     "nearlmod:ReliableFriend": {
         "NAME": "信赖伙伴",
-        "DESCRIPTION": "从抽牌堆中选择一张召唤 nearlmod:伙伴 的能力牌放入你的手牌，并将其 保留 。"
+        "DESCRIPTION": "从抽牌堆中选择一张召唤 nearlmod:伙伴 的能力牌放入你的手牌，并将其 保留 。",
+        "UPGRADE_DESCRIPTION":""
+    },
+    "nearlmod:SightImpairingShowdown": {
+        "NAME": "有损视力的对决",
+        "DESCRIPTION": "随机将一张非 nearlmod:唯一 的薇薇安娜的 nearlmod:伙伴牌 加入手牌。如果薇薇安娜在场，她获得 !M! 点 力量 。",
+        "UPGRADE_DESCRIPTION": "选择一张非 nearlmod:唯一 的薇薇安娜的 nearlmod:伙伴牌 加入手牌。如果薇薇安娜在场，她获得 !M! 点 力量 。"
     },
 
     "nearlmod:BravetheDarkness": {

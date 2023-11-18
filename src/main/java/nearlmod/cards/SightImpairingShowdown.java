@@ -1,0 +1,66 @@
+package nearlmod.cards;
+
+import com.megacrit.cardcrawl.cards.AbstractCard;
+import com.megacrit.cardcrawl.characters.AbstractPlayer;
+import com.megacrit.cardcrawl.core.CardCrawlGame;
+import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
+import com.megacrit.cardcrawl.localization.CardStrings;
+import com.megacrit.cardcrawl.monsters.AbstractMonster;
+import com.megacrit.cardcrawl.orbs.AbstractOrb;
+import nearlmod.actions.ChooseSpecificCardAction;
+import nearlmod.cards.friendcards.FlashFade;
+import nearlmod.cards.friendcards.GlimmeringTouch;
+import nearlmod.cards.friendcards.LSSwiftSword;
+import nearlmod.orbs.Viviana;
+import nearlmod.patches.AbstractCardEnum;
+
+import java.util.ArrayList;
+
+public class SightImpairingShowdown extends AbstractNearlCard {
+    public static final String ID = "nearlmod:SightImpairingShowdown";
+    public static final CardStrings cardStrings = CardCrawlGame.languagePack.getCardStrings(ID);
+    public static final String NAME = cardStrings.NAME;
+    public static final String DESCRIPTION = cardStrings.DESCRIPTION;
+    public static final String UPGRADE_DESCRIPTION = cardStrings.UPGRADE_DESCRIPTION;
+    public static final String IMG_PATH = "images/cards/nearldefend.png";
+    private static final int COST = 0;
+    private static final int POWER_GAIN = 1;
+
+    public SightImpairingShowdown() {
+        super(ID, NAME, IMG_PATH, COST, DESCRIPTION,
+                CardType.SKILL, AbstractCardEnum.NEARL_GOLD,
+                CardRarity.UNCOMMON, CardTarget.SELF);
+        secondMagicNumber = baseSecondMagicNumber = POWER_GAIN;
+    }
+
+    @Override
+    public void use(AbstractPlayer p, AbstractMonster m) {
+        for (AbstractOrb orb : p.orbs)
+            if (orb instanceof Viviana)
+                ((Viviana)orb).applyStrength(secondMagicNumber);
+        if (!upgraded) {
+            AbstractCard card = Viviana.getRandomCard(false, true);
+            AbstractDungeon.player.hand.addToHand(card);
+        } else {
+            ArrayList<AbstractCard> list = new ArrayList<>();
+            list.add(new LSSwiftSword());
+            list.add(new GlimmeringTouch());
+            list.add(new FlashFade());
+            addToBot(new ChooseSpecificCardAction(list));
+        }
+    }
+
+    @Override
+    public AbstractCard makeCopy() {
+        return new SightImpairingShowdown();
+    }
+
+    @Override
+    public void upgrade() {
+        if (!upgraded) {
+            upgradeName();
+            rawDescription = UPGRADE_DESCRIPTION;
+            initializeDescription();
+        }
+    }
+}

@@ -53,16 +53,9 @@ public class Viviana extends AbstractFriend {
         img = ImageMaster.loadImage(CHARGINGIMAGE);
     }
 
-    @Override
-    public void onStartOfTurn() {
-        if (chargingTurn > 0) {
-            chargingTurn--;
-            if (chargingTurn == 0)
-                img = ImageMaster.loadImage(IMAGE);
-            return;
-        }
-        int random = AbstractDungeon.cardRng.random(uniqueUsed? 1 : 0, 3);
-        AbstractCard card;
+    public static AbstractFriendCard getRandomCard(boolean upgraded, boolean notUnique) {
+        int random = AbstractDungeon.cardRng.random(notUnique? 1 : 0, 3);
+        AbstractFriendCard card;
         switch (random) {
             case 0:
                 card = new FlameShadow();
@@ -77,6 +70,17 @@ public class Viviana extends AbstractFriend {
                 card = new LSSwiftSword();
         }
         if (upgraded) card.upgrade();
-        AbstractDungeon.player.hand.addToHand(card);
+        return card;
+    }
+
+    @Override
+    public void onStartOfTurn() {
+        if (chargingTurn > 0) {
+            chargingTurn--;
+            if (chargingTurn == 0)
+                img = ImageMaster.loadImage(IMAGE);
+            return;
+        }
+        AbstractDungeon.player.hand.addToHand(getRandomCard(upgraded, uniqueUsed));
     }
 }
