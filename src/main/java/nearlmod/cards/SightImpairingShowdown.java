@@ -30,14 +30,14 @@ public class SightImpairingShowdown extends AbstractNearlCard {
         super(ID, NAME, IMG_PATH, COST, DESCRIPTION,
                 CardType.SKILL, AbstractCardEnum.NEARL_GOLD,
                 CardRarity.UNCOMMON, CardTarget.SELF);
-        secondMagicNumber = baseSecondMagicNumber = POWER_GAIN;
+        magicNumber = baseMagicNumber = POWER_GAIN;
     }
 
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
         for (AbstractOrb orb : p.orbs)
             if (orb instanceof Viviana)
-                ((Viviana)orb).applyStrength(secondMagicNumber);
+                ((Viviana)orb).applyStrength(magicNumber);
         if (!upgraded) {
             AbstractCard card = Viviana.getRandomCard(false, true);
             AbstractDungeon.player.hand.addToHand(card);
