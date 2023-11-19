@@ -23,7 +23,7 @@ public class CreedField extends AbstractFriendCard {
     private static final int DAMAGE_DEC = 6;
     private static final int TURNS = 2;
     private static final int UPGRADE_PLUS_BLOCK = 6;
-    private static final int UPGRADE_TURNS = 2;
+    private static final int UPGRADE_TURNS = 1;
 
     public CreedField() {
         super(ID, NAME, IMG_PATH, COST, DESCRIPTION,

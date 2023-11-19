@@ -9,6 +9,7 @@ import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.localization.CardStrings;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import nearlmod.patches.AbstractCardEnum;
+import nearlmod.powers.ClosedHopePower;
 import nearlmod.powers.SanctuaryPower;
 
 public class ClosedHope extends AbstractFriendCard {
@@ -18,24 +19,22 @@ public class ClosedHope extends AbstractFriendCard {
     public static final String DESCRIPTION = cardStrings.DESCRIPTION;
     public static final String UPGRADE_DESCRIPTION = cardStrings.UPGRADE_DESCRIPTION;
     public static final String IMG_PATH = "images/cards/flashfade.png";
-    private static final int COST = 3;
-    private static final int BLOCK_AMT = 10;
-    private static final int POWER_TURN = 2;
-    private static final int UPGRADE_PLUS_BLOCK = 2;
-    private static final int UPGRADE_PLUS_TURN = 1;
+    private static final int COST = 2;
+    private static final int BLOCK_AMT = 8;
+    private static final int UPGRADE_PLUS_BLOCK = 3;
+    private static final int ARTIFACT_NUM = 2;
 
     public ClosedHope() {
         super(ID, NAME, IMG_PATH, COST, DESCRIPTION,
                 CardType.SKILL, AbstractCardEnum.NEARL_GOLD,
                 CardRarity.SPECIAL, CardTarget.SELF, "nearlmod:Nightingale");
         magicNumber = baseMagicNumber = BLOCK_AMT;
-        secondMagicNumber = baseSecondMagicNumber = POWER_TURN;
     }
 
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
         AbstractDungeon.actionManager.addToBottom(new GainBlockAction(p, magicNumber));
-        AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(p, p, new SanctuaryPower(p, secondMagicNumber)));
+        AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(p, p, new ClosedHopePower(p, ARTIFACT_NUM)));
     }
 
     @Override
@@ -48,7 +47,6 @@ public class ClosedHope extends AbstractFriendCard {
         if (!upgraded) {
             upgradeName();
             upgradeMagicNumber(UPGRADE_PLUS_BLOCK);
-            upgradeSecondMagicNumber(UPGRADE_PLUS_TURN);
         }
     }
 }
