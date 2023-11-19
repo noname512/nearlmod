@@ -2,6 +2,8 @@ package nearlmod.monsters;
 
 import com.badlogic.gdx.graphics.Texture;
 import com.esotericsoftware.spine.AnimationState;
+import com.megacrit.cardcrawl.actions.AbstractGameAction;
+import com.megacrit.cardcrawl.actions.animations.AnimateFastAttackAction;
 import com.megacrit.cardcrawl.actions.animations.TalkAction;
 import com.megacrit.cardcrawl.actions.common.DamageAction;
 import com.megacrit.cardcrawl.cards.DamageInfo;
@@ -77,17 +79,20 @@ public class CandleKnight extends AbstractMonster {
         } else {
             if (this.nextMove == 1) {
                 addToBot(new TalkAction(this, DIALOG[0], 3.0F, 3.0F));
-                addToBot(new DamageAction(AbstractDungeon.player, this.damage.get(0)));
+                this.state.setAnimation(0, "Attack", false);
+                addToBot(new DamageAction(AbstractDungeon.player, this.damage.get(0), AbstractGameAction.AttackEffect.FIRE));
                 addToBot(new TalkAction(this, DIALOG[1], 0.3F, 3.0F));
             } else if (this.nextMove == 4) {
-                addToBot(new DamageAction(AbstractDungeon.player, this.damage.get(0)));
+                this.state.setAnimation(0, "Attack", false);
+                addToBot(new DamageAction(AbstractDungeon.player, this.damage.get(0), AbstractGameAction.AttackEffect.FIRE));
             } else if (this.nextMove == 3) {
                 addToBot(new DamageAction(AbstractDungeon.player, this.damage.get(1)));
 //                addToBot(new ChangeImgAction(this, IMAGE));
                 this.state.setAnimation(0, "Skill_End", false);
             } else if (this.nextMove == 5) {
+                addToBot(new AnimateFastAttackAction(this));
                 for (int i = 1; i <= 2; i++)
-                    addToBot(new DamageAction(AbstractDungeon.player, this.damage.get(2)));
+                    addToBot(new DamageAction(AbstractDungeon.player, this.damage.get(2), AbstractGameAction.AttackEffect.SLASH_HORIZONTAL));
             }
             if (this.nextMove == 1 || AbstractDungeon.aiRng.random(0, 4) == 0) {
                 setMove(MOVES[0], (byte) 2, Intent.UNKNOWN);
