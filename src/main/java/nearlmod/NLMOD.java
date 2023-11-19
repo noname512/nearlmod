@@ -19,8 +19,12 @@ import com.megacrit.cardcrawl.monsters.MonsterGroup;
 import com.megacrit.cardcrawl.relics.AbstractRelic;
 import com.megacrit.cardcrawl.rooms.AbstractRoom;
 import com.megacrit.cardcrawl.screens.custom.CustomMod;
+import nearlmod.events.LaughAllYouWantEvent;
 import nearlmod.events.PoemLooksEvent;
 import nearlmod.monsters.CandleKnight;
+import nearlmod.monsters.Monique;
+import nearlmod.monsters.Platinum;
+import nearlmod.monsters.Roy;
 import nearlmod.patches.NearlEnum;
 import nearlmod.relics.CureUp;
 import nearlmod.relics.Marigold;
@@ -82,11 +86,19 @@ public class NLMOD implements EditCardsSubscriber, EditCharactersSubscriber, Edi
                 dungeonID("Exordium").
                 bonusCondition(() -> (AbstractDungeon.floorNum > 6)).
                 create());
-        //BaseMod.addEvent("nearlmod:PoemLooksEvent", PoemLooksEvent.class, "Exordium");
+        BaseMod.addEvent(new AddEventParams.Builder(LaughAllYouWantEvent.ID, LaughAllYouWantEvent.class).
+                eventType(EventUtils.EventType.ONE_TIME).
+                playerClass(NearlEnum.NEARL_CLASS).
+                dungeonID("Exordium").
+                bonusCondition(() -> (AbstractDungeon.floorNum > 6)).
+                create());
     }
 
     private void initializeMonsters() {
         BaseMod.addMonster("nearlmod:CandleKnight", CandleKnight.NAME, () -> new MonsterGroup(new AbstractMonster[] {new CandleKnight()}));
+        BaseMod.addMonster("nearlmod:Platinum", Platinum.NAME, () -> new MonsterGroup(new AbstractMonster[] {new Platinum(0.0F, 0.0F)}));
+        BaseMod.addMonster("nearlmod:Roy", Roy.NAME, () -> new MonsterGroup(new AbstractMonster[] {new Roy(0.0F, 0.0F)}));
+        BaseMod.addMonster("nearlmod:Monique", Monique.NAME, () -> new MonsterGroup(new AbstractMonster[] {new Monique(0.0F, 0.0F)}));
     }
 
     @Override
