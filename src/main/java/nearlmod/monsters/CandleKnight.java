@@ -1,6 +1,7 @@
 package nearlmod.monsters;
 
 import com.badlogic.gdx.graphics.Texture;
+import com.esotericsoftware.spine.AnimationState;
 import com.megacrit.cardcrawl.actions.animations.TalkAction;
 import com.megacrit.cardcrawl.actions.common.DamageAction;
 import com.megacrit.cardcrawl.cards.DamageInfo;
@@ -40,6 +41,11 @@ public class CandleKnight extends AbstractMonster {
         this.damage.add(new DamageInfo(this, candleDmg));
         this.damage.add(new DamageInfo(this, flameDmg));
         this.damage.add(new DamageInfo(this, swordDmg));
+        loadAnimation("images/monsters/enemy_1184_cadkgt_3.atlas", "images/monsters/enemy_1184_cadkgt_337.json", 1.5F);
+        this.flipHorizontal = true;
+        this.stateData.setMix("Idle", "Die", 0.1F);
+        this.stateData.setMix("Skill_Loop", "Skill_End", 0.1F);
+        AnimationState.TrackEntry e = this.state.setAnimation(0, "Idle", true);
     }
 
     @Override
@@ -64,7 +70,9 @@ public class CandleKnight extends AbstractMonster {
             addToBot(new TalkAction(AbstractDungeon.player, DIALOG[4], 0.3F, 3.0F));
         }
         if (this.nextMove == 2) {
-            addToBot(new ChangeImgAction(this, CHARGING_IMAGE));
+            this.state.setAnimation(0, "Skill_Begin", false);
+            this.state.addAnimation(0, "Skill_Loop", true, 0.0F);
+//            addToBot(new ChangeImgAction(this, CHARGING_IMAGE));
             setMove(MOVES[1], (byte) 3, Intent.ATTACK, this.damage.get(1).base);
         } else {
             if (this.nextMove == 1) {
@@ -75,7 +83,8 @@ public class CandleKnight extends AbstractMonster {
                 addToBot(new DamageAction(AbstractDungeon.player, this.damage.get(0)));
             } else if (this.nextMove == 3) {
                 addToBot(new DamageAction(AbstractDungeon.player, this.damage.get(1)));
-                addToBot(new ChangeImgAction(this, IMAGE));
+//                addToBot(new ChangeImgAction(this, IMAGE));
+                this.state.setAnimation(0, "Skill_End", false);
             } else if (this.nextMove == 5) {
                 for (int i = 1; i <= 2; i++)
                     addToBot(new DamageAction(AbstractDungeon.player, this.damage.get(2)));
@@ -94,6 +103,7 @@ public class CandleKnight extends AbstractMonster {
 
     @Override
     public void die() {
+        this.state.setAnimation(0, "Die", false);
         // TODO 如果要死亡前说话可能需要额外写一个dieAction，保证super.die()在对话完成后再执行
         addToBot(new TalkAction(this, DIALOG[7], 0.3F, 3.0F));
         super.die();
