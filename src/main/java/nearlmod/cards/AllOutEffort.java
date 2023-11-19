@@ -61,6 +61,7 @@ public class AllOutEffort extends AbstractNearlCard {
             upgradeName();
             upgradeBaseCost(UPGRADE_COST);
             rawDescription = UPGRADE_DESCRIPTION;
+            initializeDescription();
         }
     }
 }

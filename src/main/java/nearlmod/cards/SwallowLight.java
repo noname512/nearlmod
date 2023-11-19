@@ -62,6 +62,7 @@ public class SwallowLight extends AbstractNearlCard {
             upgradeName();
             upgradeBaseCost(UPGRADE_COST);
             rawDescription = UPGRADE_DESCRIPTION;
+            initializeDescription();
         }
     }
 }

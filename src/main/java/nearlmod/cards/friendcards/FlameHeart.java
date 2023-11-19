@@ -57,6 +57,8 @@ public class FlameHeart extends AbstractFriendCard {
     public void upgrade() {
         if (!upgraded) {
             upgradeName();
+            rawDescription = UPGRADE_DESCRIPTION;
+            initializeDescription();
         }
     }
 }
