@@ -46,7 +46,7 @@ public class ClosedHopePower extends AbstractPower {
 
 
     static {
-        powerStrings = CardCrawlGame.languagePack.getPowerStrings("Fading");
+        powerStrings = CardCrawlGame.languagePack.getPowerStrings("nearlmod:ClosedHope");
         NAME = powerStrings.NAME;
         DESCRIPTIONS = powerStrings.DESCRIPTIONS;
     }

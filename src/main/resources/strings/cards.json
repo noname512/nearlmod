@@ -66,7 +66,7 @@
     },
     "nearlmod:ReliableFriend": {
         "NAME": "信赖伙伴",
-        "DESCRIPTION": "从抽牌堆中选择一张召唤 nearlmod:伙伴 的能力牌放入你的手牌，并将其 保留 。",
+        "DESCRIPTION": "从抽牌堆中选择一张召唤 nearlmod:伙伴 的能力牌放入你的手牌，并将其 保留 。 NL  消耗 。",
         "UPGRADE_DESCRIPTION":""
     },
     "nearlmod:SightImpairingShowdown": {

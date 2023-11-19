@@ -28,8 +28,8 @@ public class BombardmentStudies extends AbstractFriendCard {
 
     public BombardmentStudies() {
         super(ID, NAME, IMG_PATH, COST, DESCRIPTION,
-                CardType.ATTACK, AbstractCardEnum.NEARL_GOLD,
-                CardRarity.SPECIAL, CardTarget.ALL_ENEMY, "nearlmod:Ashlock");
+                CardType.POWER, AbstractCardEnum.NEARL_GOLD,
+                CardRarity.SPECIAL, CardTarget.SELF, "nearlmod:Ashlock");
         secondMagicNumber = baseSecondMagicNumber = ADDITION_VAL;
         tags.add(IS_KNIGHT_CARD);
     }

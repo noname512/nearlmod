@@ -62,5 +62,9 @@
   "nearlmod:BombardmentStudiesPower": {
     "NAME": "炮术研习",
     "DESCRIPTIONS": ["你的 [#EFC851]专注轰击[] 数值增加 #b", " 点。"]
+  },
+  "nearlmod:ClosedHope": {
+    "NAME": "封闭的希望",
+    "DESCRIPTIONS": ["你的回合开始时，如果你仍有格挡，获得", " 层 [#EFC851]人工制品[] 。"]
   }
 }
