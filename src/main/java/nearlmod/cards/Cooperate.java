@@ -3,7 +3,6 @@ package nearlmod.cards;
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
 import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
 import com.megacrit.cardcrawl.actions.common.DamageAction;
-import com.megacrit.cardcrawl.actions.watcher.ChangeStanceAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.cards.DamageInfo;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
@@ -14,8 +13,6 @@ import com.megacrit.cardcrawl.orbs.AbstractOrb;
 import nearlmod.orbs.Blemishine;
 import nearlmod.patches.AbstractCardEnum;
 import nearlmod.powers.LightPower;
-import nearlmod.stances.AtkStance;
-import nearlmod.stances.DefStance;
 
 public class Cooperate extends AbstractNearlCard {
     public static final String ID = "nearlmod:Cooperate";
