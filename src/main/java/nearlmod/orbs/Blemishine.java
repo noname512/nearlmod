@@ -5,6 +5,7 @@ import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.localization.OrbStrings;
 import com.megacrit.cardcrawl.orbs.AbstractOrb;
+import nearlmod.actions.AddFriendCardToHandAction;
 import nearlmod.cards.friendcards.*;
 
 public class Blemishine extends AbstractFriend {
@@ -42,10 +43,9 @@ public class Blemishine extends AbstractFriend {
         return new Blemishine();
     }
 
-    @Override
-    public void onStartOfTurn() {
-        int random = AbstractDungeon.cardRng.random(uniqueUsed? 1 : 0, 3);
-        AbstractCard card;
+    public static AbstractFriendCard getRandomCard(boolean upgraded, boolean notUnique) {
+        int random = AbstractDungeon.cardRng.random(notUnique? 1 : 0, 3);
+        AbstractFriendCard card;
         switch (random) {
             case 0:
                 card = new DivineAvatar();
@@ -60,6 +60,11 @@ public class Blemishine extends AbstractFriend {
                 card = new CraftsmanEcho();
         }
         if (upgraded) card.upgrade();
-        AbstractDungeon.player.hand.addToHand(card);
+        return card;
+    }
+
+    @Override
+    public void onStartOfTurn() {
+        AbstractDungeon.actionManager.addToBottom(new AddFriendCardToHandAction(getRandomCard(upgraded, uniqueUsed)));
     }
 }

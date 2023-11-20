@@ -3,11 +3,12 @@ package nearlmod.cards;
 import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
-import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.localization.CardStrings;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import com.megacrit.cardcrawl.orbs.AbstractOrb;
+import nearlmod.actions.AddFriendCardToHandAction;
 import nearlmod.actions.ChooseSpecificCardAction;
+import nearlmod.cards.friendcards.AbstractFriendCard;
 import nearlmod.cards.friendcards.FlashFade;
 import nearlmod.cards.friendcards.GlimmeringTouch;
 import nearlmod.cards.friendcards.LSSwiftSword;
@@ -39,8 +40,8 @@ public class SightImpairingShowdown extends AbstractNearlCard {
             if (orb instanceof Viviana)
                 ((Viviana)orb).applyStrength(magicNumber);
         if (!upgraded) {
-            AbstractCard card = Viviana.getRandomCard(false, true);
-            AbstractDungeon.player.hand.addToHand(card);
+            AbstractFriendCard card = Viviana.getRandomCard(false, true);
+            addToBot(new AddFriendCardToHandAction(card));
         } else {
             ArrayList<AbstractCard> list = new ArrayList<>();
             list.add(new LSSwiftSword());

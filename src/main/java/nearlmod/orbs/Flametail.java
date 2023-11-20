@@ -4,6 +4,7 @@ import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.localization.OrbStrings;
 import com.megacrit.cardcrawl.orbs.AbstractOrb;
+import nearlmod.actions.AddFriendCardToHandAction;
 import nearlmod.cards.friendcards.*;
 
 public class Flametail extends AbstractFriend {
@@ -52,6 +53,6 @@ public class Flametail extends AbstractFriend {
 
     @Override
     public void onStartOfTurn() {
-        AbstractDungeon.player.hand.addToHand(getRandomCard(upgraded));
+        AbstractDungeon.actionManager.addToBottom(new AddFriendCardToHandAction(getRandomCard(upgraded)));
     }
 }

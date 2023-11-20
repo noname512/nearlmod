@@ -6,6 +6,7 @@ import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.localization.CardStrings;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
+import nearlmod.actions.AddFriendCardToHandAction;
 import nearlmod.actions.GainCostAction;
 import nearlmod.patches.AbstractCardEnum;
 
@@ -35,7 +36,7 @@ public class PinusSylvestris extends AbstractFriendCard {
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
         addToBot(new GainCostAction(secondMagicNumber));
-        ArrayList<AbstractCard> list = new ArrayList<>();
+        ArrayList<AbstractFriendCard> list = new ArrayList<>();
         list.add(new PinusSylvestris());
         list.add(new FlameHeart());
         list.add(new StabbingLance());
@@ -47,9 +48,9 @@ public class PinusSylvestris extends AbstractFriendCard {
         list.add(new FocusedBombardment());
         list.add(new BombardmentStudies());
         int random = AbstractDungeon.cardRng.random(0, list.size() - 1);
-        AbstractCard card = list.get(random);
+        AbstractFriendCard card = list.get(random);
         if (upgraded) card.upgrade();
-        p.hand.addToHand(card);
+        addToBot(new AddFriendCardToHandAction(card));
     }
 
     @Override

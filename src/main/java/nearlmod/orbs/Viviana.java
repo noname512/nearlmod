@@ -6,6 +6,7 @@ import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.helpers.ImageMaster;
 import com.megacrit.cardcrawl.localization.OrbStrings;
 import com.megacrit.cardcrawl.orbs.AbstractOrb;
+import nearlmod.actions.AddFriendCardToHandAction;
 import nearlmod.cards.friendcards.*;
 
 public class Viviana extends AbstractFriend {
@@ -79,6 +80,6 @@ public class Viviana extends AbstractFriend {
                 img = ImageMaster.loadImage(IMAGE);
             return;
         }
-        AbstractDungeon.player.hand.addToHand(getRandomCard(upgraded, uniqueUsed));
+        AbstractDungeon.actionManager.addToBottom(new AddFriendCardToHandAction(getRandomCard(upgraded, uniqueUsed)));
     }
 }

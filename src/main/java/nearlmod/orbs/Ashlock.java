@@ -5,6 +5,7 @@ import com.megacrit.cardcrawl.core.Settings;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.localization.OrbStrings;
 import com.megacrit.cardcrawl.orbs.AbstractOrb;
+import nearlmod.actions.AddFriendCardToHandAction;
 import nearlmod.cards.friendcards.*;
 
 public class Ashlock extends AbstractFriend {
@@ -54,6 +55,6 @@ public class Ashlock extends AbstractFriend {
 
     @Override
     public void onStartOfTurn() {
-        AbstractDungeon.player.hand.addToHand(getRandomCard(upgraded));
+        AbstractDungeon.actionManager.addToBottom(new AddFriendCardToHandAction(getRandomCard(upgraded)));
     }
 }

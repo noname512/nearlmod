@@ -1,5 +1,6 @@
 package nearlmod.actions;
 
+import basemod.BaseMod;
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.core.Settings;
@@ -33,10 +34,8 @@ public class ChooseSpecificCardAction extends AbstractGameAction {
             AbstractCard card = AbstractDungeon.cardRewardScreen.discoveryCard.makeStatEquivalentCopy();
             if (AbstractDungeon.player.hasPower("MasterRealityPower"))
                 card.upgrade();
-            if (AbstractDungeon.player.hand.size() < 10)
-                AbstractDungeon.effectList.add(new ShowCardAndAddToHandEffect(card, Settings.WIDTH / 2.0F, Settings.HEIGHT / 2.0F));
-            else
-                AbstractDungeon.effectList.add(new ShowCardAndAddToDiscardEffect(card, Settings.WIDTH / 2.0F, Settings.HEIGHT / 2.0F));
+            BaseMod.MAX_HAND_SIZE++;
+            AbstractDungeon.effectList.add(new ShowCardAndAddToHandEffect(card, Settings.WIDTH / 2.0F, Settings.HEIGHT / 2.0F));
             AbstractDungeon.cardRewardScreen.discoveryCard = null;
             isDone = true;
         }

@@ -1,5 +1,6 @@
 package nearlmod.cards.friendcards;
 
+import basemod.BaseMod;
 import com.megacrit.cardcrawl.actions.common.ExhaustAction;
 import com.megacrit.cardcrawl.actions.common.ExhaustSpecificCardAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
@@ -72,5 +73,10 @@ public abstract class AbstractFriendCard extends AbstractNearlCard {
     @Override
     public void triggerOnManualDiscard() {
         addToTop(new ExhaustSpecificCardAction(this, AbstractDungeon.player.discardPile));
+    }
+
+    @Override
+    public void triggerOnExhaust() {
+        BaseMod.MAX_HAND_SIZE--;
     }
 }

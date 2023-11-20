@@ -6,6 +6,7 @@ import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.localization.CardStrings;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
+import nearlmod.actions.AddFriendCardToHandAction;
 import nearlmod.actions.SummonOrbAction;
 import nearlmod.cards.friendcards.AbstractFriendCard;
 import nearlmod.orbs.Nightingale;
@@ -37,7 +38,7 @@ public class DanceTogether extends AbstractNearlCard {
             card.isEthereal = false;
             card.selfRetain = true;
         }
-        AbstractDungeon.player.hand.addToHand(card);
+        addToBot(new AddFriendCardToHandAction(card));
     }
 
     @Override
