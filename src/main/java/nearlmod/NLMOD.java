@@ -26,6 +26,7 @@ import nearlmod.monsters.Monique;
 import nearlmod.monsters.Platinum;
 import nearlmod.monsters.Roy;
 import nearlmod.patches.NearlEnum;
+import nearlmod.potions.ChangeStancePotion;
 import nearlmod.relics.CureUp;
 import nearlmod.relics.EmergencyCallBook;
 import nearlmod.relics.Marigold;
@@ -44,7 +45,7 @@ import static nearlmod.patches.AbstractCardEnum.NEARL_GOLD;
 @SpireInitializer
 public class NLMOD implements EditCardsSubscriber, EditCharactersSubscriber, EditKeywordsSubscriber, EditRelicsSubscriber, EditStringsSubscriber, PostBattleSubscriber, PostInitializeSubscriber, PostDungeonInitializeSubscriber, AddCustomModeModsSubscriber, OnStartBattleSubscriber, OnPlayerLoseBlockSubscriber, RelicGetSubscriber {
 
-    private static final Color NearlGold = CardHelper.getColor(255, 236, 194);
+    public static final Color NearlGold = CardHelper.getColor(255, 236, 194);
     private static final String attackCard = "images/512/bg_attack_nearl.png";
     private static final String skillCard = "images/512/bg_skill_nearl.png";
     private static final String powerCard = "images/512/bg_power_nearl.png";
@@ -78,6 +79,7 @@ public class NLMOD implements EditCardsSubscriber, EditCharactersSubscriber, Edi
     public void receivePostInitialize() {
         initializeEvents();
         initializeMonsters();
+        initializePotions();
     }
 
     private void initializeEvents() {
@@ -96,10 +98,14 @@ public class NLMOD implements EditCardsSubscriber, EditCharactersSubscriber, Edi
     }
 
     private void initializeMonsters() {
-        BaseMod.addMonster("nearlmod:CandleKnight", CandleKnight.NAME, () -> new MonsterGroup(new AbstractMonster[] {new CandleKnight()}));
-        BaseMod.addMonster("nearlmod:Platinum", Platinum.NAME, () -> new MonsterGroup(new AbstractMonster[] {new Platinum(0.0F, 0.0F)}));
-        BaseMod.addMonster("nearlmod:Roy", Roy.NAME, () -> new MonsterGroup(new AbstractMonster[] {new Roy(0.0F, 0.0F)}));
-        BaseMod.addMonster("nearlmod:Monique", Monique.NAME, () -> new MonsterGroup(new AbstractMonster[] {new Monique(0.0F, 0.0F)}));
+        BaseMod.addMonster(CandleKnight.ID, CandleKnight.NAME, () -> new MonsterGroup(new AbstractMonster[] {new CandleKnight()}));
+        BaseMod.addMonster(Platinum.ID, Platinum.NAME, () -> new MonsterGroup(new AbstractMonster[] {new Platinum(0.0F, 0.0F)}));
+        BaseMod.addMonster(Roy.ID, Roy.NAME, () -> new MonsterGroup(new AbstractMonster[] {new Roy(0.0F, 0.0F)}));
+        BaseMod.addMonster(Monique.ID, Monique.NAME, () -> new MonsterGroup(new AbstractMonster[] {new Monique(0.0F, 0.0F)}));
+    }
+
+    private void initializePotions() {
+        BaseMod.addPotion(ChangeStancePotion.class, Color.GOLD, Color.CYAN, null, ChangeStancePotion.ID, NearlEnum.NEARL_CLASS);
     }
 
     @Override
@@ -258,5 +264,7 @@ public class NLMOD implements EditCardsSubscriber, EditCharactersSubscriber, Edi
         BaseMod.loadCustomStrings(MonsterStrings.class, monsterStrings);
         String uiStrings = Gdx.files.internal("strings/ui.json").readString(String.valueOf(StandardCharsets.UTF_8));
         BaseMod.loadCustomStrings(UIStrings.class, uiStrings);
+        String potionStrings = Gdx.files.internal("strings/potions.json").readString(String.valueOf(StandardCharsets.UTF_8));
+        BaseMod.loadCustomStrings(PotionStrings.class, potionStrings);
     }
 }

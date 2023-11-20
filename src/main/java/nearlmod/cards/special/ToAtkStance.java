@@ -27,8 +27,8 @@ public class ToAtkStance extends AbstractNearlCard {
         super(ID, NAME, IMG_PATH, -2, DESCRIPTION,
                 CardType.POWER, CardColor.COLORLESS,
                 CardRarity.SPECIAL, CardTarget.NONE);
-        magicNumber = atkInc;
-        if (magicNumber != 0) {
+        magicNumber = baseMagicNumber = atkInc;
+        if (atkInc != 0) {
             rawDescription = UPGRADE_DESCRIPTION;
             initializeDescription();
         }

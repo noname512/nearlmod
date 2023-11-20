@@ -65,14 +65,16 @@
   "ATK_STANCE": {
     "PROPER_NAME": "无畏",
     "NAMES": [
-      "无畏"
+      "无畏",
+      "atkstance"
     ],
     "DESCRIPTION": "进入无畏时，你的力量会增加，数值取决于你切换至该形态的次数。"
   },
   "DEF_STANCE": {
     "PROPER_NAME": "守护",
     "NAMES": [
-      "守护"
+      "守护",
+      "defstance"
     ],
     "DESCRIPTION": "进入守护时，你的敏捷会增加，数值取决于你切换至该形态的次数。"
   },

@@ -1,0 +1,6 @@
+{
+  "nearlmod:ChangeStancePotion": {
+    "NAME": "形态药水",
+    "DESCRIPTIONS": ["进入 #y守护 或 #y无畏 。本次切换形态获得的数值增加 1 点。"]
+  }
+}

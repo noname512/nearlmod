@@ -27,7 +27,7 @@ public class ToDefStance extends AbstractNearlCard {
         super(ID, NAME, IMG_PATH, -2, DESCRIPTION,
                 CardType.POWER, CardColor.COLORLESS,
                 CardRarity.SPECIAL, CardTarget.NONE);
-        magicNumber = defInc;
+        magicNumber = baseMagicNumber = defInc;
         if (magicNumber != 0) {
             rawDescription = UPGRADE_DESCRIPTION;
             initializeDescription();
