@@ -63,17 +63,23 @@
     "DESCRIPTION": "让 [#EFC851]薇薇安娜[] 下一次攻击增加。"
   },
   "ATK_STANCE": {
-    "PROPER_NAME": "剑枪形态",
+    "PROPER_NAME": "无畏",
     "NAMES": [
-      "剑枪形态"
+      "无畏"
     ],
-    "DESCRIPTION": "切换至剑枪形态时，你的力量会增加，数值取决于你切换至该形态的次数。"
+    "DESCRIPTION": "进入无畏时，你的力量会增加，数值取决于你切换至该形态的次数。"
   },
   "DEF_STANCE": {
-    "PROPER_NAME": "使徒形态",
+    "PROPER_NAME": "守护",
     "NAMES": [
-      "使徒形态"
+      "守护"
     ],
-    "DESCRIPTION": "切换至使徒形态时，你的敏捷会增加，数值取决于你切换至该形态的次数。"
+    "DESCRIPTION": "进入守护时，你的敏捷会增加，数值取决于你切换至该形态的次数。"
+  },
+  "NEARL_STANCE": {
+    "NAMES": [
+      "形态"
+    ],
+    "DESCRIPTION": "你同一时间只能处于一种形态（守护或无畏）。"
   }
 }

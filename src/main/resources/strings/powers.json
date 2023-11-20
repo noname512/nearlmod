@@ -4,16 +4,16 @@
     "DESCRIPTIONS": ["使用时对敌人造成", "点伤害。", "使用时获得", "点 临时生命 。"]
   },
   "nearlmod:AtkMode": {
-    "NAME": "剑枪形态",
+    "NAME": "无畏",
     "DESCRIPTIONS": ["处于此形态时，获得", "点 力量 。"]
   },
   "nearlmod:DefMode": {
-    "NAME": "使徒形态",
+    "NAME": "守护",
     "DESCRIPTIONS": ["处于此形态时，获得", "点 敏捷 。"]
   },
   "nearlmod:FlamingEdgePower": {
     "NAME": "灿焰长刀",
-    "DESCRIPTIONS": ["每当你切换至剑枪形态时，获得", "层 光 。"]
+    "DESCRIPTIONS": ["每当你进入 [#EFC851]无畏[] 时，获得", "层 光 。"]
   },
   "nearlmod:GlimmeringTouchPower": {
     "NAME": "微光之触",
@@ -49,7 +49,7 @@
   },
   "nearlmod:Poem'sLooks": {
     "NAME": "诗的容貌",
-    "DESCRIPTIONS": ["在你使用完 光 后，获得等量的 影 。 在你使用完 影 后，获得等量的 光 。"]
+    "DESCRIPTIONS": ["在你使用完 [#EFC851]光[] 后，获得等量的 [#EFC851]影[] 。 在你使用完 [#EFC851]影[] 后，获得等量的 [#EFC851]光[] 。"]
   },
   "nearlmod:LoseThornsPower": {
     "NAME": "蜕刺",
@@ -57,7 +57,7 @@
   },
   "nearlmod:AllySupportPower": {
     "NAME": "同盟支援",
-    "DESCRIPTIONS": ["你或者其他 伙伴 对敌人造成伤害时，远牙对其造成 #b", " 点伤害。"]
+    "DESCRIPTIONS": ["你或者其他 [#EFC851]伙伴[] 对敌人造成伤害时，远牙对其造成 #b", " 点伤害。"]
   },
   "nearlmod:BombardmentStudiesPower": {
     "NAME": "炮术研习",

@@ -9,9 +9,7 @@ import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.localization.CardStrings;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import com.megacrit.cardcrawl.powers.DexterityPower;
-import com.megacrit.cardcrawl.powers.StrengthPower;
 import nearlmod.cards.AbstractNearlCard;
-import nearlmod.stances.AtkStance;
 import nearlmod.stances.DefStance;
 
 public class ToDefStance extends AbstractNearlCard {
@@ -31,7 +29,8 @@ public class ToDefStance extends AbstractNearlCard {
                 CardRarity.SPECIAL, CardTarget.NONE);
         magicNumber = defInc;
         if (magicNumber != 0) {
-            rawDescription = DESCRIPTION + UPGRADE_DESCRIPTION;
+            rawDescription = UPGRADE_DESCRIPTION;
+            initializeDescription();
         }
     }
 

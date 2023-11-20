@@ -11,7 +11,6 @@ import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import com.megacrit.cardcrawl.powers.StrengthPower;
 import nearlmod.cards.AbstractNearlCard;
 import nearlmod.stances.AtkStance;
-import nearlmod.stances.DefStance;
 
 public class ToAtkStance extends AbstractNearlCard {
     public static final String ID = "nearlmod:ToAtkStance";
@@ -30,7 +29,8 @@ public class ToAtkStance extends AbstractNearlCard {
                 CardRarity.SPECIAL, CardTarget.NONE);
         magicNumber = atkInc;
         if (magicNumber != 0) {
-            rawDescription = DESCRIPTION + UPGRADE_DESCRIPTION;
+            rawDescription = UPGRADE_DESCRIPTION;
+            initializeDescription();
         }
     }
 

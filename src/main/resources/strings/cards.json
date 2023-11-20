@@ -11,7 +11,7 @@
     },
     "nearlmod:SwitchType": {
         "NAME": "切换形态",
-        "DESCRIPTION": "切换你的 形态 。",
+        "DESCRIPTION": "切换你的 nearlmod:形态 。",
         "UPGRADE_DESCRIPTION": ""
     },
     "nearlmod:MajestyLight": {
@@ -22,22 +22,22 @@
 
     "nearlmod:GumboBreadBowl": {
         "NAME": "浓汤面包碗",
-        "DESCRIPTION": "切换至 nearlmod:使徒形态 ，获得 !B! 点 格挡 ，使用 nearlmod:光 。",
+        "DESCRIPTION": "进入 nearlmod:守护 ，获得 !B! 点 格挡 ，使用 nearlmod:光 。",
         "UPGRADE_DESCRIPTION": ""
     },
     "nearlmod:KnightCrest": {
         "NAME": "骑士之辉",
-        "DESCRIPTION": "切换至 nearlmod:剑枪形态 ，造成 !D! 点伤害，使用 nearlmod:光 。",
+        "DESCRIPTION": "进入 nearlmod:无畏 ，造成 !D! 点伤害，使用 nearlmod:光 。",
         "UPGRADE_DESCRIPTION": ""
     },
     "nearlmod:AllinOne": {
         "NAME": "攻防一体",
-        "DESCRIPTION": "造成 !D! 点伤害， NL 获得 !B! 点 格挡 ， NL 切换你的 形态 。",
-        "UPGRADE_DESCRIPTION": "造成 !D! 点伤害， NL 获得 !B! 点 格挡 ， NL 切换你的 形态 。 NL 同时受到 力量 和 敏捷 的加成。"
+        "DESCRIPTION": "造成 !D! 点伤害， NL 获得 !B! 点 格挡 ， NL 切换你的 nearlmod:形态 。",
+        "UPGRADE_DESCRIPTION": "造成 !D! 点伤害， NL 获得 !B! 点 格挡 ， NL 切换你的 nearlmod:形态 。 NL 同时受到 力量 和 敏捷 的加成。"
     },
     "nearlmod:SwordShield": {
         "NAME": "剑盾骑士",
-        "DESCRIPTION": "切换你的 形态 ，获得 !M! 层 nearlmod:光 。 NL 如果瑕光在场，本次切换数值额外增加 !nearlmod:M2! 点。",
+        "DESCRIPTION": "切换你的 nearlmod:形态 ，获得 !M! 层 nearlmod:光 。 NL 如果瑕光在场，本次切换数值额外增加 !nearlmod:M2! 点。",
         "UPGRADE_DESCRIPTION": ""
     },
     "nearlmod:NobleLight": {
@@ -46,7 +46,7 @@
     },
     "nearlmod:Guardian": {
         "NAME": "守护者",
-        "DESCRIPTION": "获得 !B! 点 格挡 。如果你处于 nearlmod:使徒形态 ，获得 !M! 层 nearlmod:光 。"
+        "DESCRIPTION": "获得 !B! 点 格挡 。 NL nearlmod:守护 ：获得 !M! 层 nearlmod:光 。"
     },
 
     "nearlmod:SecondSun": {
@@ -77,22 +77,22 @@
 
     "nearlmod:BravetheDarkness": {
         "NAME": "不畏苦暗",
-        "DESCRIPTION": "造成 !D! 点伤害，令目标本回合失去 99 点 力量 。如果你处于 nearlmod:剑枪形态 ，改为群体攻击。 NL 消耗 。",
+        "DESCRIPTION": "造成 !D! 点伤害，令目标本回合失去 99 点 力量 。 NL nearlmod:无畏 ：改为群体攻击。 NL 消耗 。",
         "UPGRADE_DESCRIPTION": ""
     },
     "nearlmod:FirstAid": {
         "NAME" : "急救",
-        "DESCRIPTION": "切换至 nearlmod:使徒形态 。 NL 获得 !B! 点 格挡。 NL 如果你处于半血以下，额外获得等量的 stslib:临时生命 。",
+        "DESCRIPTION": "进入 nearlmod:守护 。 NL 获得 !B! 点 格挡。 NL 如果你处于半血以下，额外获得等量的 stslib:临时生命 。",
         "UPGRADE_DESCRIPTION": ""
     },
     "nearlmod:FlamingEdge": {
         "NAME" : "灿焰长刃",
-        "DESCRIPTION": "每当你切换至 nearlmod:剑枪形态 时，获得 !M! 层光并使该次切换数值增加 1 点。 NL 切换至 nearlmod:剑枪形态 。",
+        "DESCRIPTION": "每当你进入 nearlmod:无畏 时，获得 !M! 层光并使该次切换数值增加 1 点。 NL 进入 nearlmod:无畏 。",
         "UPGRADE_DESCRIPTION": ""
     },
     "nearlmod:NightScouringGleam": {
         "NAME" : "逐夜烁光",
-        "DESCRIPTION": "获得 15 点 力量 。 NL 获得 !M! 层 缓冲。 NL 2 回合后死亡。 NL 切换至 nearlmod:剑枪形态 。 NL 消耗 。",
+        "DESCRIPTION": "获得 15 点 力量 。 NL 获得 !M! 层 缓冲。 NL 2 回合后死亡。 NL 进入 nearlmod:无畏 。 NL 消耗 。",
         "UPGRADE_DESCRIPTION": " 保留 。 NL "
     },
     "nearlmod:WaytoChampion": {
@@ -107,12 +107,12 @@
     },
     "nearlmod:TheReturn": {
         "NAME" : "归来",
-        "DESCRIPTION": "召唤 闪灵 和 夜莺 作为 nearlmod:伙伴 。切换至 nearlmod:剑枪形态 。",
+        "DESCRIPTION": "召唤 闪灵 和 夜莺 作为 nearlmod:伙伴 。进入 nearlmod:无畏 。",
         "UPGRADE_DESCRIPTION": " 固有 。 NL "
     },
     "nearlmod:FullSpeedAhead": {
         "NAME" : "全力冲锋",
-        "DESCRIPTION": " 造成相当于你 格挡 的伤害，如果你处于 nearlmod:使徒形态 ，切换至 nearlmod:剑枪形态 并额外造成等同于你 stslib:临时生命 的伤害。",
+        "DESCRIPTION": " 造成你当前 格挡 值的伤害。 NL nearlmod:守护 ：进入 nearlmod:无畏 并额外造成你当前 stslib:临时生命 值的伤害。",
         "UPGRADE_DESCRIPTION": "（当前造成 !D! 点）"
     },
 
@@ -128,7 +128,7 @@
     },
     "nearlmod:FlashFade": {
         "NAME": "“明灭”",
-        "DESCRIPTION": " nearlmod:伙伴牌 。 NL 切换至 nearlmod:剑枪形态 ，造成 !M! 点伤害 !nearlmod:M2! 次。 NL 也受到你的 力量 加成。",
+        "DESCRIPTION": " nearlmod:伙伴牌 。 NL 进入 nearlmod:无畏 ，造成 !M! 点伤害 !nearlmod:M2! 次。 NL 也受到你的 力量 加成。",
         "UPGRADE_DESCRIPTION": ""
     },
     "nearlmod:GlimmeringTouch": {
@@ -144,8 +144,8 @@
 
     "nearlmod:AllOutEffort": {
         "NAME": "全力以赴",
-        "DESCRIPTION": "召唤瑕光作为 nearlmod:伙伴 。 NL 获得 !M! 层 nearlmod:光 并切换至 nearlmod:剑枪形态 。",
-        "UPGRADE_DESCRIPTION": "召唤瑕光作为 nearlmod:伙伴 。 NL 获得 !M! 层 nearlmod:光 和 !B! 点 格挡 并切换至 nearlmod:剑枪形态 。"
+        "DESCRIPTION": "召唤瑕光作为 nearlmod:伙伴 。 NL 获得 !M! 层 nearlmod:光 并进入 nearlmod:无畏 。",
+        "UPGRADE_DESCRIPTION": "召唤瑕光作为 nearlmod:伙伴 。 NL 获得 !M! 层 nearlmod:光 和 !B! 点 格挡 并进入 nearlmod:无畏 。"
     },
     "nearlmod:SurgingBrilliance": {
         "NAME": "光芒涌动",
@@ -164,18 +164,18 @@
     },
     "nearlmod:CraftsmanEcho": {
         "NAME": "工匠团的回响",
-        "DESCRIPTION": " nearlmod:伙伴牌 。 NL 选择一个 形态 ，切换到该 形态 ，本次切换 形态 获得的数值增加 3 点。",
+        "DESCRIPTION": " nearlmod:伙伴牌 。 NL 进入 nearlmod:守护 或 nearlmod:无畏 ，本次切换 nearlmod:形态 获得的数值增加 3 点。",
         "UPGRADE_DESCRIPTION": ""
     },
     "nearlmod:ToAtkStance": {
-        "NAME": "剑枪形态",
-        "DESCRIPTION": "切换到 nearlmod:剑枪形态 。",
-        "UPGRADE_DESCRIPTION": "本次切换 形态 获得的数值增加 !M! 点。"
+        "NAME": "无畏",
+        "DESCRIPTION": "进入 nearlmod:无畏 。",
+        "UPGRADE_DESCRIPTION": "进入 nearlmod:无畏 。 NL 本次切换 nearlmod:形态 获得的数值增加 !M! 点。"
     },
     "nearlmod:ToDefStance": {
-        "NAME": "使徒形态",
-        "DESCRIPTION": "切换到 nearlmod:使徒形态 。",
-        "UPGRADE_DESCRIPTION": "本次切换 形态 获得的数值增加 !M! 点。"
+        "NAME": "守护",
+        "DESCRIPTION": "进入 nearlmod:守护 。",
+        "UPGRADE_DESCRIPTION": "进入 nearlmod:无畏 。 NL 本次切换 nearlmod:形态 获得的数值增加 !M! 点。"
     },
 
     "nearlmod:DanceTogether": {
@@ -200,7 +200,7 @@
     },
     "nearlmod:ClosedHope": {
         "NAME": "封闭的希望",
-        "DESCRIPTION": " nearlmod:伙伴牌 。 NL 切换至使徒形态。 NL 获得 !M! 点 格挡 ，如果本回合 格挡 未被击破，获得 2 层人工制品。",
+        "DESCRIPTION": " nearlmod:伙伴牌 。 NL 进入 nearlmod:守护 。 NL 获得 !M! 点 格挡 ，如果本回合 格挡 未被击破，获得 2 层人工制品。",
         "UPGRADE_DESCRIPTION": ""
     },
 
@@ -211,7 +211,7 @@
     },
     "nearlmod:Creed": {
         "NAME": "信条",
-        "DESCRIPTION": " nearlmod:伙伴牌 。 NL 造成 !M! 点伤害，切换至 nearlmod:使徒形态 。",
+        "DESCRIPTION": " nearlmod:伙伴牌 。 NL 造成 !M! 点伤害，进入 nearlmod:守护 。",
         "UPGRADE_DESCRIPTION": ""
     },
     "nearlmod:AutoProtect": {
@@ -242,12 +242,12 @@
     },
     "nearlmod:Rebuke": {
         "NAME": "责骂",
-        "DESCRIPTION": " nearlmod:伙伴牌 ， nearlmod:唯一 。 NL 切换形态获得的数值额外增加 !nearlmod:M2! 点。切换你的形态。",
+        "DESCRIPTION": " nearlmod:伙伴牌 ， nearlmod:唯一 。 NL 切换 nearlmod:形态 获得的数值额外增加 !nearlmod:M2! 点。切换你的 nearlmod:形态 。",
         "UPGRADE_DESCRIPTION": ""
     },
     "nearlmod:MotivationalSkill": {
         "NAME": "激励艺术",
-        "DESCRIPTION": " nearlmod:伙伴牌 。 NL 切换至剑枪形态，如果已经处于剑枪形态，获得 !nearlmod:M2! 点 力量 。",
+        "DESCRIPTION": " nearlmod:伙伴牌 。 NL 进入 nearlmod:无畏 ，如果已经处于 nearlmod:无畏 ，获得 !nearlmod:M2! 点 力量 。",
         "UPGRADE_DESCRIPTION": ""
     },
     "nearlmod:WhipSword": {

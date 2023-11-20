@@ -2,21 +2,21 @@
   "nearlmod:CureUp": {
     "NAME": "治疗效果大提升",
     "FLAVOR": "治疗效果……大提升！//TODO",
-    "DESCRIPTIONS": ["你每回合获得的前 5 点格挡转化为临时生命。"]
+    "DESCRIPTIONS": ["你每回合获得的前 #b5 点格挡转化为 [#EFC851]临时生命[] 。"]
   },
   "nearlmod:PegasusHalo": {
     "NAME": "天马光环",
     "FLAVOR": "流淌着金色血液的天马。",
-    "DESCRIPTIONS": ["失去你的初始遗物。你获得的格挡转化为临时生命。"]
+    "DESCRIPTIONS": ["失去你的初始遗物。你获得的格挡转化为 [#EFC851]临时生命[] 。"]
   },
   "nearlmod:Marigold": {
     "NAME": "金盏花",
     "FLAVOR": "或许你不是那光芒，但你亦曾，为守护它而拔剑。",
-    "DESCRIPTIONS": ["对战开始时，召唤薇薇安娜作为伙伴。"]
+    "DESCRIPTIONS": ["对战开始时，召唤薇薇安娜作为 [#EFC851]伙伴[] 。"]
   },
   "nearlmod:EmergencyCallBook": {
     "NAME": "应急通讯指南",
     "FLAVOR": "所有的基站都被毁了，你就是最后一台。",
-    "DESCRIPTIONS": ["回合开始时，获得 1 点部署费用"]
+    "DESCRIPTIONS": ["回合开始时，获得 #b1 点 [#EFC851]部署费用[] 。"]
   }
 }
