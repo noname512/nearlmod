@@ -7,6 +7,7 @@ import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.localization.StanceStrings;
 import com.megacrit.cardcrawl.powers.DexterityPower;
 import com.megacrit.cardcrawl.stances.AbstractStance;
+import nearlmod.actions.SpecialApplyPowerAction;
 
 public class DefStance extends AbstractStance {
     public static final String STANCE_ID = "nearlmod:DefStance";
@@ -33,7 +34,7 @@ public class DefStance extends AbstractStance {
 
     @Override
     public void onEnterStance() {
-        defInc+=incNum;
+        defInc += incNum;
         AbstractPlayer p = AbstractDungeon.player;
         if (defInc != 0) {
             AbstractDungeon.actionManager.addToTop(new ApplyPowerAction(p, p, new DexterityPower(p, defInc), defInc));
@@ -45,7 +46,7 @@ public class DefStance extends AbstractStance {
     public void onExitStance() {
         AbstractPlayer p = AbstractDungeon.player;
         if (defInc != 0) {
-            AbstractDungeon.actionManager.addToTop(new ApplyPowerAction(p, p, new DexterityPower(p, -defInc), -defInc));
+            AbstractDungeon.actionManager.addToTop(new SpecialApplyPowerAction(p, p, new DexterityPower(p, -defInc), -defInc));
         }
     }
 }

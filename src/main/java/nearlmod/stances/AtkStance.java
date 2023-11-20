@@ -7,6 +7,7 @@ import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.localization.StanceStrings;
 import com.megacrit.cardcrawl.stances.AbstractStance;
 import com.megacrit.cardcrawl.powers.StrengthPower;
+import nearlmod.actions.SpecialApplyPowerAction;
 
 public class AtkStance extends AbstractStance {
     public static final String STANCE_ID = "nearlmod:AtkStance";
@@ -42,6 +43,6 @@ public class AtkStance extends AbstractStance {
     @Override
     public void onExitStance() {
         AbstractPlayer p = AbstractDungeon.player;
-        AbstractDungeon.actionManager.addToTop(new ApplyPowerAction(p, p, new StrengthPower(p, -atkInc), -atkInc));
+        AbstractDungeon.actionManager.addToTop(new SpecialApplyPowerAction(p, p, new StrengthPower(p, -atkInc), -atkInc));
     }
 }
