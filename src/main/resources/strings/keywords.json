@@ -11,7 +11,7 @@
     "NAMES": [
       "伙伴"
     ],
-    "DESCRIPTION": "可以与你并肩战斗，每回合会提供来自该伙伴的一张 [#EFC851]伙伴牌[] 。"
+    "DESCRIPTION": "可以与你并肩战斗，每回合会提供来自该伙伴的一张 [#EFC851]伙伴牌[] 。第二次及之后召唤伙伴时，改为使其升级并获得 #b2 点信赖。"
   },
   "FRIENDCARD": {
     "PROPER_NAME": "伙伴牌",
@@ -19,7 +19,15 @@
       "伙伴牌",
       "friendcard"
     ],
-    "DESCRIPTION": "伙伴专属牌，使用对应伙伴的属性加成，不占用手牌上限， [#EFC851]虚无[] 且离开手牌时 [#EFC851]消耗[] 。"
+    "DESCRIPTION": "[#EFC851]伙伴[] 专属牌，使用对应伙伴的属性加成，不占用手牌上限， [#EFC851]虚无[] 且离开手牌时 [#EFC851]消耗[] 。"
+  },
+  "TRUST": {
+    "PROPERT_NAME": "信赖",
+    "NAMES": [
+      "信赖",
+      "trust"
+    ],
+    "DESCRIPTION": "[#EFC851]伙伴[] 的一种属性，增加 [#EFC851]伙伴牌[] 造成的伤害、提供的格挡和光。"
   },
   "PLAYCOST": {
     "PROPER_NAME": "部署费用",
@@ -33,35 +41,35 @@
     "NAMES": [
       "唯一"
     ],
-    "DESCRIPTION": "使用这张牌后，伙伴不会再提供这张牌。"
+    "DESCRIPTION": "使用这张牌后， [#EFC851]伙伴[] 不会再提供这张牌。"
   },
   "CHARGING": {
     "PROPER_NAME": "蓄力",
     "NAMES": [
       "蓄力"
     ],
-    "DESCRIPTION": "在此期间，伙伴不再提供 [#EFC851]伙伴牌[] 。"
+    "DESCRIPTION": "在此期间， [#EFC851]伙伴[] 不再提供 [#EFC851]伙伴牌[] 。"
   },
   "EXSANGUINATION": {
     "PROPER_NAME": "血归",
     "NAMES": [
       "血归"
     ],
-    "DESCRIPTION": " 力量 不超过 0 。"
+    "DESCRIPTION": " 力量 不能超过 0 。"
   },
   "POEM'SLOOK": {
     "PROPER_NAME": "诗的容貌",
     "NAMES": [
       "诗的容貌"
     ],
-    "DESCRIPTION": "你使用 光 后，获得等量的 影 ；使用 影 后，获得等量的 光 。"
+    "DESCRIPTION": "你使用 [#EFC851]光[] 后，获得等量的 [#EFC851]影[] ；使用 [#EFC851]影[] 后，获得等量的 [#EFC851]光[] 。"
   },
   "SHADOW": {
     "PROPER_NAME": "影",
     "NAMES": [
       "影"
     ],
-    "DESCRIPTION": "让 [#EFC851]薇薇安娜[] 下一次攻击增加。"
+    "DESCRIPTION": "让薇薇安娜下一次攻击造成额外的伤害。"
   },
   "ATK_STANCE": {
     "PROPER_NAME": "无畏",
@@ -69,7 +77,7 @@
       "无畏",
       "atkstance"
     ],
-    "DESCRIPTION": "进入无畏时，你的力量会增加，数值取决于你切换至该形态的次数。"
+    "DESCRIPTION": "进入无畏时，你的 [#EFC851]力量[] 会增加，数值取决于你切换至该形态的次数。"
   },
   "DEF_STANCE": {
     "PROPER_NAME": "守护",
@@ -77,7 +85,7 @@
       "守护",
       "defstance"
     ],
-    "DESCRIPTION": "进入守护时，你的敏捷会增加，数值取决于你切换至该形态的次数。"
+    "DESCRIPTION": "进入守护时，你的 [#EFC851]敏捷[] 会增加，数值取决于你切换至该形态的次数。"
   },
   "NEARL_STANCE": {
     "NAMES": [

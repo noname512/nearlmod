@@ -42,7 +42,7 @@
     },
     "nearlmod:NobleLight": {
         "NAME": "崇高者",
-        "DESCRIPTION": "使你的 nearlmod:伙伴 获得 1 点 力量 。",
+        "DESCRIPTION": "使你的 nearlmod:伙伴 获得 1 点 nearlmod:信赖 。",
         "UPGRADE_DESCRIPTION": ""
     },
     "nearlmod:Guardian": {
@@ -98,8 +98,8 @@
     },
     "nearlmod:SightImpairingShowdown": {
         "NAME": "有损视力的对决",
-        "DESCRIPTION": "随机将一张非 nearlmod:唯一 的薇薇安娜的 nearlmod:伙伴牌 加入手牌。如果薇薇安娜在场，她获得 !nearlmod:M2! 点 力量 。",
-        "UPGRADE_DESCRIPTION": "选择一张非 nearlmod:唯一 的薇薇安娜的 nearlmod:伙伴牌 加入手牌。如果薇薇安娜在场，她获得 !nearlmod:M2! 点 力量 。"
+        "DESCRIPTION": "随机将一张非 nearlmod:唯一 的薇薇安娜的 nearlmod:伙伴牌 加入手牌。如果薇薇安娜在场，她获得 !nearlmod:M2! 点 nearlmod:信赖 。",
+        "UPGRADE_DESCRIPTION": "选择一张非 nearlmod:唯一 的薇薇安娜的 nearlmod:伙伴牌 加入手牌。如果薇薇安娜在场，她获得 !nearlmod:M2! 点 nearlmod:信赖 。"
     },
     "nearlmod:GloriousKazimierz": {
         "NAME": "光耀卡西米尔",
@@ -160,8 +160,8 @@
 
     "nearlmod:SwallowLight": {
         "NAME": "侵吞光芒",
-        "DESCRIPTION": "召唤薇薇安娜作为 nearlmod:伙伴 。 NL 消耗所有 nearlmod:光 ，三分之一转化为薇薇安娜的 力量 。",
-        "UPGRADE_DESCRIPTION": "召唤薇薇安娜作为 nearlmod:伙伴 。 NL 消耗所有 nearlmod:光 ，一半转化为薇薇安娜的 力量 。"
+        "DESCRIPTION": "召唤薇薇安娜作为 nearlmod:伙伴 。 NL 消耗所有 nearlmod:光 ，三分之一转化为薇薇安娜的 nearlmod:信赖 。",
+        "UPGRADE_DESCRIPTION": "召唤薇薇安娜作为 nearlmod:伙伴 。 NL 消耗所有 nearlmod:光 ，一半转化为薇薇安娜的 nearlmod:信赖 。"
     },
     "nearlmod:LSSwiftSword": {
         "NAME": "光影迅捷剑",
@@ -175,8 +175,8 @@
     },
     "nearlmod:GlimmeringTouch": {
         "NAME": "微光之触",
-        "DESCRIPTION": " nearlmod:伙伴牌 。 NL 进入 nearlmod:蓄力 。两个回合后回合开始时，对所有敌人造成 !M! 点伤害，并获得 10 层光。",
-        "UPGRADE_DESCRIPTION": " nearlmod:伙伴牌 。 NL 进入 nearlmod:蓄力 。下个回合开始时，对所有敌人造成 !M! 点伤害，并获得 10 层光。"
+        "DESCRIPTION": " nearlmod:伙伴牌 。 NL 进入 nearlmod:蓄力 。两个回合后回合开始时，对所有敌人造成 !M! 点伤害，并获得 !nearlmod:M2! 层光。",
+        "UPGRADE_DESCRIPTION": " nearlmod:伙伴牌 。 NL 进入 nearlmod:蓄力 。下个回合开始时，对所有敌人造成 !M! 点伤害，并获得 !nearlmod:M2! 层光。"
     },
     "nearlmod:FlameShadow": {
         "NAME": "烛燃影息",
@@ -206,7 +206,7 @@
     },
     "nearlmod:CraftsmanEcho": {
         "NAME": "工匠团的回响",
-        "DESCRIPTION": " nearlmod:伙伴牌 。 NL 进入 nearlmod:守护 或 nearlmod:无畏 ，本次切换 nearlmod:形态 获得的数值增加 3 点。",
+        "DESCRIPTION": " nearlmod:伙伴牌 。 NL 进入 nearlmod:守护 或 nearlmod:无畏 ，本次切换 nearlmod:形态 获得的数值增加 !nearlmod:M2! 点。",
         "UPGRADE_DESCRIPTION": ""
     },
     "nearlmod:ToAtkStance": {
@@ -242,7 +242,7 @@
     },
     "nearlmod:ClosedHope": {
         "NAME": "封闭的希望",
-        "DESCRIPTION": " nearlmod:伙伴牌 。 NL 进入 nearlmod:守护 。 NL 获得 !M! 点 格挡 ，如果本回合 格挡 未被击破，获得 2 层人工制品。",
+        "DESCRIPTION": " nearlmod:伙伴牌 。 NL 进入 nearlmod:守护 。 NL 获得 !M! 点 格挡 ，如果本回合 格挡 未被击破，获得 !nearlmod:M2! 层人工制品。",
         "UPGRADE_DESCRIPTION": ""
     },
 

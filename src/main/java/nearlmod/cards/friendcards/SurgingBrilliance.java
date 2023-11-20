@@ -10,8 +10,6 @@ import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.localization.CardStrings;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
-import com.megacrit.cardcrawl.orbs.AbstractOrb;
-import nearlmod.orbs.AbstractFriend;
 import nearlmod.patches.AbstractCardEnum;
 import nearlmod.powers.LightPower;
 
@@ -34,6 +32,7 @@ public class SurgingBrilliance extends AbstractFriendCard {
                 CardRarity.SPECIAL, CardTarget.ENEMY, "nearlmod:Blemishine");
         magicNumber = baseMagicNumber = ATTACK_DMG;
         secondMagicNumber = baseSecondMagicNumber = LIGHT_INC;
+        isSecondMagicNumberUseTrust = true;
     }
 
     @Override
@@ -54,22 +53,5 @@ public class SurgingBrilliance extends AbstractFriendCard {
             upgradeMagicNumber(UPGRADE_PLUS_DMG);
             upgradeSecondMagicNumber(UPGRADE_PLUS_LIGHT);
         }
-    }
-
-    @Override
-    public void applyFriendPower() {
-        magicNumber = baseMagicNumber;
-        secondMagicNumber = baseSecondMagicNumber;
-        AbstractPlayer p = AbstractDungeon.player;
-        if (p == null || p.orbs == null) return;
-        for (AbstractOrb orb : p.orbs) {
-            if (orb instanceof AbstractFriend)
-                if (orb.ID.equals(belongFriend)) {
-                    magicNumber += ((AbstractFriend) orb).trustAmount;
-                    secondMagicNumber += ((AbstractFriend) orb).trustAmount;
-                }
-        }
-        isMagicNumberModified = (magicNumber != baseMagicNumber);
-        isSecondMagicNumberModified = (secondMagicNumber != baseSecondMagicNumber);
     }
 }

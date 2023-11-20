@@ -28,12 +28,13 @@ public class ClosedHope extends AbstractFriendCard {
                 CardType.SKILL, AbstractCardEnum.NEARL_GOLD,
                 CardRarity.SPECIAL, CardTarget.SELF, "nearlmod:Nightingale");
         magicNumber = baseMagicNumber = BLOCK_AMT;
+        secondMagicNumber = baseSecondMagicNumber = ARTIFACT_NUM;
     }
 
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
         AbstractDungeon.actionManager.addToBottom(new GainBlockAction(p, magicNumber));
-        AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(p, p, new ClosedHopePower(p, ARTIFACT_NUM)));
+        AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(p, p, new ClosedHopePower(p, secondMagicNumber)));
     }
 
     @Override

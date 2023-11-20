@@ -21,25 +21,25 @@ public class GlimmeringTouch extends AbstractFriendCard {
     public static final String UPGRADE_DESCRIPTION = cardStrings.UPGRADE_DESCRIPTION;
     public static final String IMG_PATH = "images/cards/glimmeringtouch.png";
     private static final int COST = 2;
-    private static final int CHARGE_TURN = 2;
-    private static final int UPGRADE_CHARGE_TURN = 1;
-    private static final int ATTACK_DMG = 30;
+    private static final int ATTACK_DMG = 40;
+    private static final int LIGHT_GAIN = 10;
 
     public GlimmeringTouch() {
         super(ID, NAME, IMG_PATH, COST, DESCRIPTION,
                 CardType.SKILL, AbstractCardEnum.NEARL_GOLD,
                 CardRarity.SPECIAL, CardTarget.SELF, "nearlmod:Viviana");
         magicNumber = baseMagicNumber = ATTACK_DMG;
-        secondMagicNumber = CHARGE_TURN;
+        secondMagicNumber = baseSecondMagicNumber = LIGHT_GAIN;
+        isSecondMagicNumberUseTrust = true;
     }
 
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
         for (AbstractOrb orb : p.orbs)
             if (orb instanceof Viviana)
-                ((Viviana)orb).startCharging(secondMagicNumber);
-        AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(p, p, new GlimmeringTouchPower(p, secondMagicNumber, magicNumber)));
-        AbstractDungeon.actionManager.addToBottom(new UseShadowAction(p));
+                ((Viviana)orb).startCharging(upgraded? 1 : 2);
+        addToBot(new ApplyPowerAction(p, p, new GlimmeringTouchPower(p, upgraded? 1 : 2, magicNumber)));
+        addToBot(new UseShadowAction(p));
     }
 
     @Override
@@ -61,7 +61,6 @@ public class GlimmeringTouch extends AbstractFriendCard {
         if (!upgraded) {
             upgradeName();
             rawDescription = UPGRADE_DESCRIPTION;
-            secondMagicNumber = UPGRADE_CHARGE_TURN;
             initializeDescription();
         }
     }

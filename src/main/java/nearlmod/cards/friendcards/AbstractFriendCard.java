@@ -18,6 +18,7 @@ public abstract class AbstractFriendCard extends AbstractNearlCard {
     public static final String SKILL_IMG = "bg_skill_friend.png";
     public static final String POWER_IMG = "bg_power_friend.png";
     public String baseDescription;
+    public boolean isSecondMagicNumberUseTrust = false;
 
     public AbstractFriendCard(String id, String name, String img, int cost, String rawDescription,
                               AbstractCard.CardType type, AbstractCard.CardColor color,
@@ -55,7 +56,10 @@ public abstract class AbstractFriendCard extends AbstractNearlCard {
                 if (orb.ID.equals(belongFriend))
                     magicNumber += ((AbstractFriend) orb).trustAmount;
         }
+        if (isSecondMagicNumberUseTrust)
+            secondMagicNumber = baseSecondMagicNumber + (magicNumber - baseMagicNumber);
         isMagicNumberModified = (magicNumber != baseMagicNumber);
+        isSecondMagicNumberUseTrust = (secondMagicNumber != baseSecondMagicNumber);
     }
 
     @Override

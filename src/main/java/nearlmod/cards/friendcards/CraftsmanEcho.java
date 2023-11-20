@@ -28,13 +28,14 @@ public class CraftsmanEcho extends AbstractFriendCard {
         super(ID, NAME, IMG_PATH, COST, DESCRIPTION,
                 CardType.SKILL, AbstractCardEnum.NEARL_GOLD,
                 CardRarity.SPECIAL, CardTarget.SELF, "nearlmod:Blemishine");
+        secondMagicNumber = baseSecondMagicNumber = EXTRA_INC;
     }
 
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
         ArrayList<AbstractCard> choice = new ArrayList<>();
-        choice.add(new ToDefStance(EXTRA_INC));
-        choice.add(new ToAtkStance(EXTRA_INC));
+        choice.add(new ToDefStance(secondMagicNumber));
+        choice.add(new ToAtkStance(secondMagicNumber));
         addToBot(new ChooseOneAction(choice));
         AbstractCard card = new AllinOne();
         card.upgrade();
