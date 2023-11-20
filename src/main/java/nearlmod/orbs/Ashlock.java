@@ -17,24 +17,12 @@ public class Ashlock extends AbstractFriend {
     public static final String IMAGE = "images/orbs/ashlock.png";
 
     public Ashlock(int amount) {
-        super(ORB_ID, NAME, 0, 0, DESCRIPTION[0], "", IMAGE, amount);
-        updateDescription();
+        super(ORB_ID, NAME, DESCRIPTION, IMAGE, amount);
         MY_X_OFFSET = 20.0F * Settings.scale;
     }
 
     public Ashlock() {
         this(0);
-    }
-
-    @Override
-    public void applyStrength(int amount) {
-        super.applyStrength(amount);
-        updateDescription();
-    }
-
-    @Override
-    public void updateDescription() {
-        description = DESCRIPTION[upgraded? 2 : 0] + passiveAmount + DESCRIPTION[1];
     }
 
     @Override

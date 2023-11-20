@@ -65,8 +65,8 @@ public class SurgingBrilliance extends AbstractFriendCard {
         for (AbstractOrb orb : p.orbs) {
             if (orb instanceof AbstractFriend)
                 if (orb.ID.equals(belongFriend)) {
-                    magicNumber += orb.passiveAmount;
-                    secondMagicNumber += orb.passiveAmount;
+                    magicNumber += ((AbstractFriend) orb).trustAmount;
+                    secondMagicNumber += ((AbstractFriend) orb).trustAmount;
                 }
         }
         isMagicNumberModified = (magicNumber != baseMagicNumber);

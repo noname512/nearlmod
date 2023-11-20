@@ -21,25 +21,13 @@ public class Viviana extends AbstractFriend {
     public static int chargingTurn;
 
     public Viviana(int amount) {
-        super(ORB_ID, NAME, 0, 0, DESCRIPTION[0], "", IMAGE, amount);
+        super(ORB_ID, NAME, DESCRIPTION, IMAGE, amount);
         chargingTurn = 0;
         uniqueUsed = false;
-        updateDescription();
     }
 
     public Viviana() {
         this(0);
-    }
-
-    @Override
-    public void applyStrength(int amount) {
-        super.applyStrength(amount);
-        updateDescription();
-    }
-
-    @Override
-    public void updateDescription() {
-        description = DESCRIPTION[upgraded? 2 : 0] + passiveAmount + DESCRIPTION[1];
     }
 
     @Override

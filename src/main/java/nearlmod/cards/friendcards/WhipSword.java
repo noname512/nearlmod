@@ -41,7 +41,7 @@ public class WhipSword extends AbstractFriendCard {
             addToBot(new DamageAction(ms, new DamageInfo(p, dmg, DamageInfo.DamageType.NORMAL)));
         for (AbstractOrb orb : p.orbs)
             if (orb instanceof AbstractFriend) {
-                dmg = secondMagicNumber + orb.passiveAmount;
+                dmg = secondMagicNumber + ((AbstractFriend)orb).trustAmount;
                 if (orb instanceof Fartooth)
                     for (AbstractMonster ms : AbstractDungeon.getMonsters().monsters)
                         addToBot(new DamageAction(ms, new DamageInfo(null, dmg, DamageInfo.DamageType.THORNS)));

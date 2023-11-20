@@ -53,7 +53,7 @@ public abstract class AbstractFriendCard extends AbstractNearlCard {
         for (AbstractOrb orb : p.orbs) {
             if (orb instanceof AbstractFriend)
                 if (orb.ID.equals(belongFriend))
-                    magicNumber += orb.passiveAmount;
+                    magicNumber += ((AbstractFriend) orb).trustAmount;
         }
         isMagicNumberModified = (magicNumber != baseMagicNumber);
     }

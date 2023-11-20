@@ -11,16 +11,21 @@ public abstract class AbstractFriend extends CustomOrb {
     public boolean upgraded;
     protected static float MY_X_OFFSET = 50.0F * Settings.scale;
     protected static float MY_Y_OFFSET = 20.0F * Settings.scale;
-    public AbstractFriend(String ID, String NAME, int basePassiveAmount, int baseEvokeAmount, String passiveDescription, String evokeDescription, String imgPath, int amount) {
-        super(ID, NAME, basePassiveAmount, baseEvokeAmount, passiveDescription, evokeDescription, imgPath);
-        passiveAmount = amount;
+    public int trustAmount;
+    private final String[] DESCRIPTION;
+    public AbstractFriend(String ID, String NAME, String[] DESCRIPTION, String imgPath, int amount) {
+        super(ID, NAME, 0, 0, "", "", imgPath);
+        trustAmount = amount;
         showEvokeValue = false;
         angle = MathUtils.random(360.0f);
         channelAnimTimer = 0.5f;
+        this.DESCRIPTION = DESCRIPTION;
+        updateDescription();
     }
 
     public void applyStrength(int amount) {
-        passiveAmount += amount;
+        trustAmount += amount;
+        updateDescription();
     }
 
     public void upgrade() {
@@ -52,8 +57,16 @@ public abstract class AbstractFriend extends CustomOrb {
     }
 
     @Override
+    public void updateDescription() {
+        if (DESCRIPTION == null)
+            description = "";
+        else
+            description = DESCRIPTION[upgraded? 2 : 0] + trustAmount + DESCRIPTION[1];
+    }
+
+    @Override
     protected void renderText(SpriteBatch sb) {
-        FontHelper.renderFontCentered(sb, FontHelper.cardEnergyFont_L, Integer.toString(this.passiveAmount), this.cX + MY_X_OFFSET, this.cY + this.bobEffect.y / 2.0F + MY_Y_OFFSET, this.c, this.fontScale);
+        FontHelper.renderFontCentered(sb, FontHelper.cardEnergyFont_L, Integer.toString(this.trustAmount), this.cX + MY_X_OFFSET, this.cY + this.bobEffect.y / 2.0F + MY_Y_OFFSET, this.c, this.fontScale);
     }
 
 //    @Override
