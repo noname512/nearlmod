@@ -23,6 +23,7 @@ import com.megacrit.cardcrawl.ui.panels.energyorb.EnergyOrbInterface;
 import com.megacrit.cardcrawl.unlock.UnlockTracker;
 import nearlmod.actions.GainCostAction;
 import nearlmod.cards.*;
+import nearlmod.cards.friendcards.*;
 import nearlmod.relics.*;
 import nearlmod.patches.AbstractCardEnum;
 import nearlmod.patches.NearlEnum;
@@ -31,6 +32,7 @@ import nearlmod.stances.DefStance;
 import nearlmod.util.CostEnergyOrb;
 import nearlmod.util.CostReserves;
 
+import java.lang.reflect.Array;
 import java.util.ArrayList;
 
 public class Nearl extends CustomPlayer {
@@ -222,5 +224,20 @@ public class Nearl extends CustomPlayer {
             this.corpseImg = SHIELDDIEIMG;
         }
         AnimationState.TrackEntry e = this.state.setAnimation(0, "Idle", true);
+    }
+
+    public static ArrayList<AbstractCard> getUnuniqueFriendCard() {
+        ArrayList<AbstractCard> list = new ArrayList<>();
+        list.add(new PinusSylvestris());
+        list.add(new FlameHeart());
+        list.add(new StabbingLance());
+        list.add(new LanceCharge());
+        list.add(new JusticeDrive());
+        list.add(new BeepActivate());
+        list.add(new AllySupport());
+        list.add(new FeatherShineArrows());
+        list.add(new FocusedBombardment());
+        list.add(new BombardmentStudies());
+        return list;
     }
 }

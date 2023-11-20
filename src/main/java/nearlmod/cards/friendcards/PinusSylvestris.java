@@ -8,6 +8,7 @@ import com.megacrit.cardcrawl.localization.CardStrings;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import nearlmod.actions.AddFriendCardToHandAction;
 import nearlmod.actions.GainCostAction;
+import nearlmod.characters.Nearl;
 import nearlmod.patches.AbstractCardEnum;
 
 import java.util.ArrayList;
@@ -36,19 +37,9 @@ public class PinusSylvestris extends AbstractFriendCard {
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
         addToBot(new GainCostAction(secondMagicNumber));
-        ArrayList<AbstractFriendCard> list = new ArrayList<>();
-        list.add(new PinusSylvestris());
-        list.add(new FlameHeart());
-        list.add(new StabbingLance());
-        list.add(new LanceCharge());
-        list.add(new JusticeDrive());
-        list.add(new BeepActivate());
-        list.add(new AllySupport());
-        list.add(new FeatherShineArrows());
-        list.add(new FocusedBombardment());
-        list.add(new BombardmentStudies());
+        ArrayList<AbstractCard> list = Nearl.getUnuniqueFriendCard();
         int random = AbstractDungeon.cardRng.random(0, list.size() - 1);
-        AbstractFriendCard card = list.get(random);
+        AbstractFriendCard card = (AbstractFriendCard) list.get(random);
         if (upgraded) card.upgrade();
         addToBot(new AddFriendCardToHandAction(card));
     }

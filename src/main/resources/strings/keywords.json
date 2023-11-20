@@ -16,7 +16,8 @@
   "FRIENDCARD": {
     "PROPER_NAME": "伙伴牌",
     "NAMES": [
-      "伙伴牌"
+      "伙伴牌",
+      "friendcard"
     ],
     "DESCRIPTION": "伙伴专属牌，使用对应伙伴的属性加成，不占用手牌上限， [#EFC851]虚无[] 且离开手牌时 [#EFC851]消耗[] 。"
   },

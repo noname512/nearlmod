@@ -27,6 +27,7 @@ import nearlmod.monsters.Platinum;
 import nearlmod.monsters.Roy;
 import nearlmod.patches.NearlEnum;
 import nearlmod.potions.ChangeStancePotion;
+import nearlmod.potions.FriendPotion;
 import nearlmod.relics.CureUp;
 import nearlmod.relics.EmergencyCallBook;
 import nearlmod.relics.Marigold;
@@ -106,6 +107,7 @@ public class NLMOD implements EditCardsSubscriber, EditCharactersSubscriber, Edi
 
     private void initializePotions() {
         BaseMod.addPotion(ChangeStancePotion.class, Color.GOLD, Color.CYAN, null, ChangeStancePotion.ID, NearlEnum.NEARL_CLASS);
+        BaseMod.addPotion(FriendPotion.class, Color.GOLD, Color.CYAN, null, FriendPotion.ID, NearlEnum.NEARL_CLASS);
     }
 
     @Override
