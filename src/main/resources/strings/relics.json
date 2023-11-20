@@ -13,5 +13,10 @@
     "NAME": "金盏花",
     "FLAVOR": "或许你不是那光芒，但你亦曾，为守护它而拔剑。",
     "DESCRIPTIONS": ["对战开始时，召唤薇薇安娜作为伙伴。"]
+  },
+  "nearlmod:EmergencyCallBook": {
+    "NAME": "应急通讯指南",
+    "FLAVOR": "所有的基站都被毁了，你就是最后一台。",
+    "DESCRIPTIONS": ["回合开始时，获得 1 点部署费用"]
   }
 }

@@ -223,10 +223,4 @@ public class Nearl extends CustomPlayer {
         }
         AnimationState.TrackEntry e = this.state.setAnimation(0, "Idle", true);
     }
-
-    @Override
-    public void applyStartOfTurnOrbs() {
-        super.applyStartOfTurnOrbs();
-        AbstractDungeon.actionManager.addToBottom(new GainCostAction(1));
-    }
 }
