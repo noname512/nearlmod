@@ -34,6 +34,18 @@ public abstract class AbstractNearlCard extends CustomCard {
         upgradedSecondMagicNumber = true;
     }
 
+    public boolean extraTriggered() {
+        return false;
+    }
+
+    @Override
+    public void triggerOnGlowCheck() {
+        if (extraTriggered())
+            this.glowColor = AbstractCard.GOLD_BORDER_GLOW_COLOR.cpy();
+        else
+            this.glowColor = AbstractCard.BLUE_BORDER_GLOW_COLOR.cpy();
+    }
+
     public static class SecondMagicNumber extends DynamicVariable {
 
         @Override

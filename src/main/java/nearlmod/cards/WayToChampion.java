@@ -30,12 +30,10 @@ public class WayToChampion extends AbstractNearlCard {
 
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
-        AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(p, p, new InvinciblePower(p)));
-        for (AbstractMonster mo : AbstractDungeon.getCurrRoom().monsters.monsters) {
-            if (!mo.isDeadOrEscaped()) {
-                AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(mo, p, new ExsanguinationPower(mo)));
-            }
-        }
+        addToBot(new ApplyPowerAction(p, p, new InvinciblePower(p)));
+        for (AbstractMonster mo : AbstractDungeon.getMonsters().monsters)
+            if (!mo.isDeadOrEscaped())
+                addToBot(new ApplyPowerAction(mo, p, new ExsanguinationPower(mo)));
     }
 
     @Override

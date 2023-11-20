@@ -5,7 +5,6 @@ import com.megacrit.cardcrawl.actions.watcher.ChangeStanceAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
-import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.localization.CardStrings;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import nearlmod.patches.AbstractCardEnum;
@@ -27,16 +26,15 @@ public class FlamingEdge extends AbstractNearlCard {
         super(ID, NAME, IMG_PATH, COST, DESCRIPTION,
                 AbstractCard.CardType.POWER, AbstractCardEnum.NEARL_GOLD,
                 AbstractCard.CardRarity.RARE, AbstractCard.CardTarget.SELF);
-
         magicNumber = baseMagicNumber = LIGHT_GAIN;
     }
 
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
-        AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(p, p, new FlamingEdgePower(p, magicNumber)));
+        addToBot(new ApplyPowerAction(p, p, new FlamingEdgePower(p, magicNumber)));
         AtkStance.upgradeIncNum(1);
         if (!p.stance.ID.equals(AtkStance.STANCE_ID)) {
-            AbstractDungeon.actionManager.addToBottom(new ChangeStanceAction(new AtkStance()));
+            addToBot(new ChangeStanceAction(new AtkStance()));
         }
     }
 

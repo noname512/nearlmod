@@ -38,23 +38,27 @@ public class BraveTheDarkness extends AbstractNearlCard {
     }
 
     @Override
+    public boolean extraTriggered() {
+        return AbstractDungeon.player.stance.ID.equals(AtkStance.STANCE_ID);
+    }
+
+    @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
-        if (this.target == CardTarget.ALL_ENEMY) {
-            AbstractDungeon.actionManager.addToBottom(new DamageAllEnemiesAction(p, damage, damageTypeForTurn, AbstractGameAction.AttackEffect.SLASH_DIAGONAL));
-            for (AbstractMonster mo : AbstractDungeon.getCurrRoom().monsters.monsters) {
+        if (extraTriggered()) {
+            addToBot(new DamageAllEnemiesAction(p, damage, damageTypeForTurn, AbstractGameAction.AttackEffect.SLASH_DIAGONAL));
+            for (AbstractMonster mo : AbstractDungeon.getMonsters().monsters) {
                 if (!mo.isDeadOrEscaped()) {
-                    AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(mo, p, new StrengthPower(mo, -DECREASE_STRENGTH), -DECREASE_STRENGTH));
+                    addToBot(new ApplyPowerAction(mo, p, new StrengthPower(mo, -DECREASE_STRENGTH), -DECREASE_STRENGTH));
                     if (!mo.hasPower("Artifact")) {
-                        AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(mo, p, new GainStrengthPower(mo, DECREASE_STRENGTH), DECREASE_STRENGTH));
+                        addToBot(new ApplyPowerAction(mo, p, new GainStrengthPower(mo, DECREASE_STRENGTH), DECREASE_STRENGTH));
                     }
                 }
             }
-        }
-        else {
-            AbstractDungeon.actionManager.addToBottom(new DamageAction(m, new DamageInfo(p, damage, damageTypeForTurn), AbstractGameAction.AttackEffect.SLASH_DIAGONAL));
-            AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(m, p, new StrengthPower(m, -DECREASE_STRENGTH), -DECREASE_STRENGTH));
+        } else {
+            addToBot(new DamageAction(m, new DamageInfo(p, damage, damageTypeForTurn), AbstractGameAction.AttackEffect.SLASH_DIAGONAL));
+            addToBot(new ApplyPowerAction(m, p, new StrengthPower(m, -DECREASE_STRENGTH), -DECREASE_STRENGTH));
             if (m != null && !m.hasPower("Artifact")) {
-                AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(m, p, new GainStrengthPower(m, DECREASE_STRENGTH), DECREASE_STRENGTH));
+                addToBot(new ApplyPowerAction(m, p, new GainStrengthPower(m, DECREASE_STRENGTH), DECREASE_STRENGTH));
             }
         }
     }
@@ -66,17 +70,8 @@ public class BraveTheDarkness extends AbstractNearlCard {
 
     @Override
     public void switchedStance() {
-        if (AbstractDungeon.player.stance.ID.equals(AtkStance.STANCE_ID)) this.target = CardTarget.ALL_ENEMY;
+        if (extraTriggered()) this.target = CardTarget.ALL_ENEMY;
         else this.target = CardTarget.ENEMY;
-    }
-
-    public void triggerOnGlowCheck() {
-        if (AbstractDungeon.player.stance.ID.equals(AtkStance.STANCE_ID)) {
-            this.glowColor = AbstractCard.GOLD_BORDER_GLOW_COLOR.cpy();
-        } else {
-            this.glowColor = AbstractCard.BLUE_BORDER_GLOW_COLOR.cpy();
-        }
-
     }
 
     @Override

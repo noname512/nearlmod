@@ -5,11 +5,9 @@ import com.megacrit.cardcrawl.actions.watcher.ChangeStanceAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
-import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.localization.CardStrings;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
-import com.megacrit.cardcrawl.orbs.AbstractOrb;
-import nearlmod.orbs.AbstractFriend;
+import nearlmod.NLMOD;
 import nearlmod.orbs.Blemishine;
 import nearlmod.patches.AbstractCardEnum;
 import nearlmod.powers.LightPower;
@@ -38,39 +36,20 @@ public class SwordShield extends AbstractNearlCard {
     }
 
     @Override
-    public void use(AbstractPlayer p, AbstractMonster m) {
-        boolean hasBlemishine = false;
-        for (AbstractOrb orb : p.orbs)
-            if (orb instanceof Blemishine) {
-                hasBlemishine = true;
-                break;
-            }
-        if (p.stance.ID.equals(AtkStance.STANCE_ID)) {
-            if (hasBlemishine) DefStance.defInc += secondMagicNumber;
-            AbstractDungeon.actionManager.addToBottom(new ChangeStanceAction(new DefStance()));
-        } else {
-            if (hasBlemishine) AtkStance.atkInc += secondMagicNumber;
-            AbstractDungeon.actionManager.addToBottom(new ChangeStanceAction(new AtkStance()));
-        }
-        AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(p, p, new LightPower(p, magicNumber), magicNumber));
+    public boolean extraTriggered() {
+        return NLMOD.checkOrb(Blemishine.ORB_ID);
     }
 
     @Override
-    public void triggerOnGlowCheck() {
-        AbstractPlayer p = AbstractDungeon.player;
-        if (p == null || p.orbs == null) return;
-        boolean hasBlemishine = false;
-        for (AbstractOrb orb : p.orbs) {
-            if (orb instanceof Blemishine) {
-                hasBlemishine = true;
-                break;
-            }
-        }
-        if (hasBlemishine) {
-            this.glowColor = AbstractCard.GOLD_BORDER_GLOW_COLOR.cpy();
+    public void use(AbstractPlayer p, AbstractMonster m) {
+        if (p.stance.ID.equals(AtkStance.STANCE_ID)) {
+            if (extraTriggered()) DefStance.defInc += secondMagicNumber;
+            addToBot(new ChangeStanceAction(new DefStance()));
         } else {
-            this.glowColor = AbstractCard.BLUE_BORDER_GLOW_COLOR.cpy();
+            if (extraTriggered()) AtkStance.atkInc += secondMagicNumber;
+            addToBot(new ChangeStanceAction(new AtkStance()));
         }
+        addToBot(new ApplyPowerAction(p, p, new LightPower(p, magicNumber), magicNumber));
     }
 
     @Override

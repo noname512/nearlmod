@@ -31,75 +31,67 @@ public class FullSpeedAhead extends AbstractNearlCard {
         super(ID, NAME, IMG_PATH, COST, DESCRIPTION,
                 CardType.ATTACK, AbstractCardEnum.NEARL_GOLD,
                 CardRarity.RARE, CardTarget.ENEMY);
-        
         damage = baseDamage = 0;
     }
 
     @Override
+    public boolean extraTriggered() {
+        return AbstractDungeon.player.stance.ID.equals(DefStance.STANCE_ID);
+    }
+    @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
         applyPowers();
-        if (AbstractDungeon.player.stance.ID.equals(DefStance.STANCE_ID)) {
+        if (extraTriggered()) {
             AbstractDungeon.actionManager.addToBottom(new ChangeStanceAction(new AtkStance()));
         }
-        this.addToBot(new DamageAction(m, new DamageInfo(p, damage, DamageInfo.DamageType.NORMAL), AbstractGameAction.AttackEffect.BLUNT_HEAVY));
-        this.rawDescription = cardStrings.DESCRIPTION;
-        this.initializeDescription();
+        addToBot(new DamageAction(m, new DamageInfo(p, damage, DamageInfo.DamageType.NORMAL), AbstractGameAction.AttackEffect.BLUNT_HEAVY));
+        rawDescription = DESCRIPTION;
+        initializeDescription();
     }
 
     @Override
     public void applyPowers() {
-        this.baseDamage = AbstractDungeon.player.currentBlock;
-        if (AbstractDungeon.player.stance.ID.equals(DefStance.STANCE_ID)) {
-            this.baseDamage += TempHPField.tempHp.get(AbstractDungeon.player);
+        baseDamage = AbstractDungeon.player.currentBlock;
+        if (extraTriggered()) {
+            baseDamage += TempHPField.tempHp.get(AbstractDungeon.player);
         }
         super.applyPowers();
-        if (AbstractDungeon.player.stance.ID.equals(DefStance.STANCE_ID)) {
-            this.damage += AtkStance.incNum;
-            this.damage += AtkStance.atkInc;
+        if (extraTriggered()) {
+            damage += AtkStance.incNum;
+            damage += AtkStance.atkInc;
             isDamageModified = (baseDamage != damage);
         }
-        this.rawDescription = cardStrings.DESCRIPTION;
-        this.rawDescription = this.rawDescription + cardStrings.UPGRADE_DESCRIPTION;
-        this.initializeDescription();
+        rawDescription = DESCRIPTION + UPGRADE_DESCRIPTION;
+        initializeDescription();
     }
 
     @Override
     public void onMoveToDiscard() {
-        this.rawDescription = cardStrings.DESCRIPTION;
-        this.initializeDescription();
+        rawDescription = DESCRIPTION;
+        initializeDescription();
     }
 
     @Override
     public void calculateCardDamage(AbstractMonster mo) {
-        if (AbstractDungeon.player.stance.ID.equals(DefStance.STANCE_ID)) {
-            this.baseDamage += AtkStance.incNum;
-            this.baseDamage += AtkStance.atkInc;
+        if (extraTriggered()) {
+            baseDamage += AtkStance.incNum;
+            baseDamage += AtkStance.atkInc;
         }
         super.calculateCardDamage(mo);
-        if (AbstractDungeon.player.stance.ID.equals(DefStance.STANCE_ID)) {
-            this.baseDamage -= AtkStance.incNum;
-            this.baseDamage -= AtkStance.atkInc;
+        if (extraTriggered()) {
+            baseDamage -= AtkStance.incNum;
+            baseDamage -= AtkStance.atkInc;
             isDamageModified = (baseDamage != damage);
-            this.rawDescription = DEFMODE_DESCRIPTION;
+            rawDescription = DEFMODE_DESCRIPTION;
+        } else {
+            rawDescription = ATKMODE_DESCRIPTION;
         }
-        else {
-            this.rawDescription = ATKMODE_DESCRIPTION;
-        }
-        this.initializeDescription();
+        initializeDescription();
     }
 
     @Override
     public AbstractCard makeCopy() {
         return new FullSpeedAhead();
-    }
-
-    public void triggerOnGlowCheck() {
-        if (AbstractDungeon.player.stance.ID.equals(DefStance.STANCE_ID)) {
-            this.glowColor = AbstractCard.GOLD_BORDER_GLOW_COLOR.cpy();
-        } else {
-            this.glowColor = AbstractCard.BLUE_BORDER_GLOW_COLOR.cpy();
-        }
-
     }
 
     @Override

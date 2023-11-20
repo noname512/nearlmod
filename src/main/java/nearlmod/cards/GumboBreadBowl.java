@@ -9,10 +9,8 @@ import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.localization.CardStrings;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import nearlmod.actions.UseLightAction;
-import nearlmod.characters.Nearl;
 import nearlmod.patches.AbstractCardEnum;
 import nearlmod.patches.NearlTags;
-import nearlmod.stances.AtkStance;
 import nearlmod.stances.DefStance;
 
 public class GumboBreadBowl extends AbstractNearlCard {
@@ -37,11 +35,11 @@ public class GumboBreadBowl extends AbstractNearlCard {
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
         if (!p.stance.ID.equals(DefStance.STANCE_ID)) {
-            AbstractDungeon.actionManager.addToBottom(new ChangeStanceAction(new DefStance()));
+            addToBot(new ChangeStanceAction(new DefStance()));
         }
         applyPowers();
-        AbstractDungeon.actionManager.addToBottom(new GainBlockAction(p, p, block));
-        AbstractDungeon.actionManager.addToBottom(new UseLightAction(p));
+        addToBot(new GainBlockAction(p, p, block));
+        addToBot(new UseLightAction(p));
     }
 
     @Override

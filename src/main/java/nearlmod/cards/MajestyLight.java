@@ -35,12 +35,11 @@ public class MajestyLight extends AbstractNearlCard {
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
         if (AbstractDungeon.player.stance.ID.equals(DefStance.STANCE_ID)) {
-            AbstractDungeon.actionManager.addToBottom(new UseLightAction(p));
+            addToBot(new UseLightAction(p));
+        } else {
+            addToBot(new UseLightAction(m));
         }
-        else {
-            AbstractDungeon.actionManager.addToBottom(new UseLightAction(m));
-        }
-        AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(p, p, new LightPower(p, magicNumber), magicNumber));
+        addToBot(new ApplyPowerAction(p, p, new LightPower(p, magicNumber), magicNumber));
     }
 
     @Override

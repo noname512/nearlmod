@@ -9,7 +9,7 @@ import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.localization.CardStrings;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
-import com.megacrit.cardcrawl.orbs.AbstractOrb;
+import nearlmod.NLMOD;
 import nearlmod.orbs.Blemishine;
 import nearlmod.patches.AbstractCardEnum;
 import nearlmod.powers.LightPower;
@@ -36,13 +36,15 @@ public class Cooperate extends AbstractNearlCard {
     }
 
     @Override
+    public boolean extraTriggered() {
+        return NLMOD.checkOrb(Blemishine.ORB_ID);
+    }
+
+    @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
         addToBot(new DamageAction(m, new DamageInfo(p, damage), AbstractGameAction.AttackEffect.LIGHTNING));
-        for (AbstractOrb orb : p.orbs)
-            if (orb instanceof Blemishine) {
-                addToBot(new ApplyPowerAction(p, p, new LightPower(p, magicNumber)));
-                break;
-            }
+        if (extraTriggered())
+            addToBot(new ApplyPowerAction(p, p, new LightPower(p, magicNumber)));
     }
 
     @Override

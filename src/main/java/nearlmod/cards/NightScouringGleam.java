@@ -5,7 +5,6 @@ import com.megacrit.cardcrawl.actions.watcher.ChangeStanceAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
-import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.localization.CardStrings;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import com.megacrit.cardcrawl.powers.BufferPower;
@@ -31,18 +30,17 @@ public class NightScouringGleam extends AbstractNearlCard {
         super(ID, NAME, IMG_PATH, COST, DESCRIPTION,
                 AbstractCard.CardType.SKILL, AbstractCardEnum.NEARL_GOLD,
                 AbstractCard.CardRarity.RARE, AbstractCard.CardTarget.SELF);
-        
         baseMagicNumber = magicNumber = GET_BUFFER;
         exhaust = true;
     }
 
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
-        AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(p, p, new StrengthPower(p, GET_STRENGTH), GET_STRENGTH));
-        AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(p, p, new BufferPower(p, magicNumber), magicNumber));
-        AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(p,p, new MyFadingPower(p, DIE_TURN), DIE_TURN));
+        addToBot(new ApplyPowerAction(p, p, new StrengthPower(p, GET_STRENGTH), GET_STRENGTH));
+        addToBot(new ApplyPowerAction(p, p, new BufferPower(p, magicNumber), magicNumber));
+        addToBot(new ApplyPowerAction(p,p, new MyFadingPower(p, DIE_TURN), DIE_TURN));
         if (!p.stance.ID.equals(AtkStance.STANCE_ID)) {
-            AbstractDungeon.actionManager.addToBottom(new ChangeStanceAction(new AtkStance()));
+            addToBot(new ChangeStanceAction(new AtkStance()));
         }
     }
 

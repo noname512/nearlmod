@@ -27,8 +27,12 @@ public class FirstAid extends AbstractNearlCard {
         super(ID, NAME, IMG_PATH, COST, DESCRIPTION,
                 AbstractCard.CardType.SKILL, AbstractCardEnum.NEARL_GOLD,
                 AbstractCard.CardRarity.RARE, AbstractCard.CardTarget.SELF);
-
         block = baseBlock = BLOCK_AMT;
+    }
+
+    @Override
+    public boolean extraTriggered() {
+        return AbstractDungeon.player.currentHealth * 2 <= AbstractDungeon.player.maxHealth;
     }
 
     @Override
@@ -38,7 +42,7 @@ public class FirstAid extends AbstractNearlCard {
         }
         applyPowers();
         AbstractDungeon.actionManager.addToBottom(new GainBlockAction(p, p, block));
-        if (AbstractDungeon.player.currentHealth * 2 <= AbstractDungeon.player.maxHealth) {
+        if (extraTriggered()) {
             AbstractDungeon.actionManager.addToBottom((new AddTemporaryHPAction(p, p, block)));
         }
     }
@@ -61,24 +65,16 @@ public class FirstAid extends AbstractNearlCard {
         return new FirstAid();
     }
 
-    public void triggerOnGlowCheck() {
-        if (AbstractDungeon.player.currentHealth * 2 <= AbstractDungeon.player.maxHealth) {
-            this.glowColor = AbstractCard.GOLD_BORDER_GLOW_COLOR.cpy();
-        } else {
-            this.glowColor = AbstractCard.BLUE_BORDER_GLOW_COLOR.cpy();
-        }
-    }
-
     @Override
     public void calculateCardDamage(AbstractMonster mo) {
         if (!AbstractDungeon.player.stance.ID.equals(DefStance.STANCE_ID)) {
-            this.baseBlock += DefStance.incNum;
-            this.baseBlock += DefStance.defInc;
+            baseBlock += DefStance.incNum;
+            baseBlock += DefStance.defInc;
         }
         super.calculateCardDamage(mo);
         if (!AbstractDungeon.player.stance.ID.equals(DefStance.STANCE_ID)) {
-            this.baseBlock -= DefStance.incNum;
-            this.baseBlock -= DefStance.defInc;
+            baseBlock -= DefStance.incNum;
+            baseBlock -= DefStance.defInc;
             isBlockModified = (baseBlock != block);
         }
     }

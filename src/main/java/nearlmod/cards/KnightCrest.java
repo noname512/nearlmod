@@ -14,7 +14,6 @@ import nearlmod.actions.UseLightAction;
 import nearlmod.patches.AbstractCardEnum;
 import nearlmod.patches.NearlTags;
 import nearlmod.stances.AtkStance;
-import nearlmod.stances.DefStance;
 
 public class KnightCrest extends AbstractNearlCard {
     public static final String ID = "nearlmod:KnightCrest";
@@ -38,11 +37,11 @@ public class KnightCrest extends AbstractNearlCard {
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
         if (!p.stance.ID.equals(AtkStance.STANCE_ID)) {
-            AbstractDungeon.actionManager.addToBottom(new ChangeStanceAction(new AtkStance()));
+            addToBot(new ChangeStanceAction(new AtkStance()));
         }
         applyPowers();
-        AbstractDungeon.actionManager.addToBottom(new DamageAction(m, new DamageInfo(p, damage, this.damageType), AbstractGameAction.AttackEffect.SLASH_DIAGONAL));
-        AbstractDungeon.actionManager.addToBottom(new UseLightAction(m));
+        addToBot(new DamageAction(m, new DamageInfo(p, damage, this.damageType), AbstractGameAction.AttackEffect.SLASH_DIAGONAL));
+        addToBot(new UseLightAction(m));
     }
 
     @Override

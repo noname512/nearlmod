@@ -16,6 +16,7 @@ import com.megacrit.cardcrawl.helpers.*;
 import com.megacrit.cardcrawl.localization.*;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import com.megacrit.cardcrawl.monsters.MonsterGroup;
+import com.megacrit.cardcrawl.orbs.AbstractOrb;
 import com.megacrit.cardcrawl.relics.AbstractRelic;
 import com.megacrit.cardcrawl.rooms.AbstractRoom;
 import com.megacrit.cardcrawl.screens.custom.CustomMod;
@@ -150,6 +151,10 @@ public class NLMOD implements EditCardsSubscriber, EditCharactersSubscriber, Edi
         BaseMod.addCard(new NobleLight()); // 崇高者
         BaseMod.addCard(new Guardian()); // 守护者
         BaseMod.addCard(new WornOut()); // 大道磨灭
+        BaseMod.addCard(new LightsOut()); // 熄灯
+        BaseMod.addCard(new GlowingBlueBird()); // 发光的蓝色羽兽
+        BaseMod.addCard(new Facing()); // 直面
+        BaseMod.addCard(new ChargingWithShield()); // 持盾冲锋
 
         // Uncommon.
         BaseMod.addCard(new SecondSun()); // 第二轮太阳
@@ -272,5 +277,12 @@ public class NLMOD implements EditCardsSubscriber, EditCharactersSubscriber, Edi
         BaseMod.loadCustomStrings(UIStrings.class, uiStrings);
         String potionStrings = Gdx.files.internal("strings/potions.json").readString(String.valueOf(StandardCharsets.UTF_8));
         BaseMod.loadCustomStrings(PotionStrings.class, potionStrings);
+    }
+
+    public static boolean checkOrb(String orbId) {
+        for (AbstractOrb orb : AbstractDungeon.player.orbs)
+            if (orb.ID.equals(orbId))
+                return true;
+        return false;
     }
 }
