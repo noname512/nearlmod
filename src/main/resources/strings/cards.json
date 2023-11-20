@@ -50,6 +50,11 @@
         "DESCRIPTION": "获得 !B! 点 格挡 。 NL nearlmod:守护 ：获得 !M! 层 nearlmod:光 。",
         "UPGRADE_DESCRIPTION": ""
     },
+    "nearlmod:WornOut": {
+        "NAME": "大道磨灭",
+        "DESCRIPTION": "下一回合获得 !M! 点 nearlmod:部署费用 。",
+        "UPGRADE_DESCRIPTION": ""
+    },
 
     "nearlmod:SecondSun": {
         "NAME": "第二轮太阳",

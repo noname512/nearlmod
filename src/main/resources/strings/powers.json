@@ -66,5 +66,9 @@
   "nearlmod:ClosedHope": {
     "NAME": "封闭的希望",
     "DESCRIPTIONS": ["你的回合开始时，如果你仍有格挡，获得", " 层 [#EFC851]人工制品[] 。"]
+  },
+  "nearlmod:CostNextTurnPower": {
+    "NAME": "部署费用提升",
+    "DESCRIPTIONS": ["下一回合获得 #b", " 点 [#EFC851]部署费用[] 。"]
   }
 }
