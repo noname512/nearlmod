@@ -74,6 +74,21 @@
         "DESCRIPTION": "随机将一张非 nearlmod:唯一 的薇薇安娜的 nearlmod:伙伴牌 加入手牌。如果薇薇安娜在场，她获得 !nearlmod:M2! 点 力量 。",
         "UPGRADE_DESCRIPTION": "选择一张非 nearlmod:唯一 的薇薇安娜的 nearlmod:伙伴牌 加入手牌。如果薇薇安娜在场，她获得 !nearlmod:M2! 点 力量 。"
     },
+    "nearlmod:GloriousKazimierz": {
+        "NAME": "光耀卡西米尔",
+        "DESCRIPTION": "选择一个敌人，如果其意图不是攻击，进入 nearlmod:守护 ，否则对其造成 !D! 点伤害。",
+        "UPGRADE_DESCRIPTION": ""
+    },
+    "nearlmod:ScarlyMartin": {
+        "NAME": "“恐怖马丁”",
+        "DESCRIPTION": "造成 !D! 点伤害。这张牌被打出时每有 1 点 力量 ，它在本场战斗中的基础 伤害 增加 1 。",
+        "UPGRADE_DESCRIPTION": ""
+    },
+    "nearlmod:Cooperate": {
+        "NAME": "协同战斗",
+        "DESCRIPTION": "造成 !D! 点伤害。如果瑕光在场，获得 !M! 层 nearlmod:光 。",
+        "UPGRADE_DESCRIPTION": ""
+    },
 
     "nearlmod:BraveTheDarkness": {
         "NAME": "不畏苦暗",

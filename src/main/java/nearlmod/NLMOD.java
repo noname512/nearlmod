@@ -160,6 +160,9 @@ public class NLMOD implements EditCardsSubscriber, EditCharactersSubscriber, Edi
         BaseMod.addCard(new SweepWrong()); // 扫尽恶行
         BaseMod.addCard(new ReliableFriend()); // 信赖伙伴
         BaseMod.addCard(new SightImpairingShowdown()); // 有损视力的对决
+        BaseMod.addCard(new GloriousKazimierz()); // 光耀卡西米尔
+        BaseMod.addCard(new ScarlyMartin()); // “恐怖马丁”
+        BaseMod.addCard(new Cooperate()); // 协同战斗
 
         // Rare.
         BaseMod.addCard(new BraveTheDarkness()); // 不畏苦暗
