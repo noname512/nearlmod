@@ -50,7 +50,7 @@ public class Whislash extends AbstractFriend {
                 card = new Rebuke();
                 break;
             case 1:
-                card = new VisionofUnity();
+                card = new VisionOfUnity();
                 break;
             case 2:
                 card = new MotivationalSkill();

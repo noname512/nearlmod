@@ -1,6 +1,5 @@
 package nearlmod.cards.friendcards;
 
-import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
 import com.megacrit.cardcrawl.actions.common.DamageAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.cards.DamageInfo;
@@ -9,11 +8,7 @@ import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.localization.CardStrings;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
-import com.megacrit.cardcrawl.powers.IntangiblePlayerPower;
-import com.megacrit.cardcrawl.powers.ThornsPower;
-import nearlmod.actions.GainCostAction;
 import nearlmod.patches.AbstractCardEnum;
-import nearlmod.powers.LoseThornsPower;
 
 import static nearlmod.patches.NearlTags.IS_KNIGHT_CARD;
 

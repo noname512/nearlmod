@@ -154,11 +154,11 @@ public class NLMOD implements EditCardsSubscriber, EditCharactersSubscriber, Edi
         BaseMod.addCard(new SightImpairingShowdown()); // 有损视力的对决
 
         // Rare.
-        BaseMod.addCard(new BravetheDarkness()); // 不畏苦暗
+        BaseMod.addCard(new BraveTheDarkness()); // 不畏苦暗
         BaseMod.addCard(new FirstAid()); // 急救
         BaseMod.addCard(new FlamingEdge()); // 灿焰长刃
         BaseMod.addCard(new NightScouringGleam()); // 逐夜烁光
-        BaseMod.addCard(new WaytoChampion()); // 冠军之路
+        BaseMod.addCard(new WayToChampion()); // 冠军之路
         BaseMod.addCard(new Dawn()); // 曙光
         BaseMod.addCard(new TheReturn()); // 归来
         BaseMod.addCard(new FullSpeedAhead()); // 全力冲锋
@@ -187,8 +187,8 @@ public class NLMOD implements EditCardsSubscriber, EditCharactersSubscriber, Edi
         BaseMod.addCard(new CreedField()); // 教条立场
         BaseMod.addCard(new BlackFiendProtection()); // 黑恶魔的庇护
 
-        BaseMod.addCard(new WaytoHome()); // 归乡之路
-        BaseMod.addCard(new VisionofUnity()); // 比肩的愿景
+        BaseMod.addCard(new WayToHome()); // 归乡之路
+        BaseMod.addCard(new VisionOfUnity()); // 比肩的愿景
         BaseMod.addCard(new Rebuke()); // 责骂
         BaseMod.addCard(new MotivationalSkill()); // 激励艺术
         BaseMod.addCard(new WhipSword()); // 鞭刃
@@ -198,7 +198,7 @@ public class NLMOD implements EditCardsSubscriber, EditCharactersSubscriber, Edi
         BaseMod.addCard(new FocusedBombardment()); // 专注轰击
         BaseMod.addCard(new BombardmentStudies()); // 炮术研习
         BaseMod.addCard(new AllySupport()); // 同盟支援
-        BaseMod.addCard(new FeathershineArrows()); // 光羽箭
+        BaseMod.addCard(new FeatherShineArrows()); // 光羽箭
         BaseMod.addCard(new StabbingLance()); // 骑枪刺击
         BaseMod.addCard(new LanceCharge()); // 夹枪冲锋
         BaseMod.addCard(new JusticeDrive()); // 正义助威

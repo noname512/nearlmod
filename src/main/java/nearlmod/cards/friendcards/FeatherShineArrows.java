@@ -1,6 +1,5 @@
 package nearlmod.cards.friendcards;
 
-import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
 import com.megacrit.cardcrawl.actions.common.DamageAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.cards.DamageInfo;
@@ -10,12 +9,11 @@ import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.localization.CardStrings;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import nearlmod.patches.AbstractCardEnum;
-import nearlmod.powers.AllySupportPower;
 
 import static nearlmod.patches.NearlTags.IS_KNIGHT_CARD;
 
-public class FeathershineArrows extends AbstractFriendCard {
-    public static final String ID = "nearlmod:FeathershineArrows";
+public class FeatherShineArrows extends AbstractFriendCard {
+    public static final String ID = "nearlmod:FeatherShineArrows";
     public static final CardStrings cardStrings = CardCrawlGame.languagePack.getCardStrings(ID);
     public static final String NAME = cardStrings.NAME;
     public static final String DESCRIPTION = cardStrings.DESCRIPTION;
@@ -25,7 +23,7 @@ public class FeathershineArrows extends AbstractFriendCard {
     private static final int ATTACK_DMG = 17;
     private static final int UPGRADE_PLUS_DMG = 7;
 
-    public FeathershineArrows() {
+    public FeatherShineArrows() {
         super(ID, NAME, IMG_PATH, COST, DESCRIPTION,
                 CardType.ATTACK, AbstractCardEnum.NEARL_GOLD,
                 CardRarity.SPECIAL, CardTarget.ALL_ENEMY, "nearlmod:Fartooth");
@@ -45,7 +43,7 @@ public class FeathershineArrows extends AbstractFriendCard {
 
     @Override
     public AbstractCard makeCopy() {
-        return new FeathershineArrows();
+        return new FeatherShineArrows();
     }
 
     @Override

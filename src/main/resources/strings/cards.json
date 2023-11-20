@@ -75,7 +75,7 @@
         "UPGRADE_DESCRIPTION": "选择一张非 nearlmod:唯一 的薇薇安娜的 nearlmod:伙伴牌 加入手牌。如果薇薇安娜在场，她获得 !nearlmod:M2! 点 力量 。"
     },
 
-    "nearlmod:BravetheDarkness": {
+    "nearlmod:BraveTheDarkness": {
         "NAME": "不畏苦暗",
         "DESCRIPTION": "造成 !D! 点伤害，令目标本回合失去 99 点 力量 。 NL nearlmod:无畏 ：改为群体攻击。 NL 消耗 。",
         "UPGRADE_DESCRIPTION": ""
@@ -95,7 +95,7 @@
         "DESCRIPTION": "获得 15 点 力量 。 NL 获得 !M! 层 缓冲。 NL 2 回合后死亡。 NL 进入 nearlmod:无畏 。 NL 消耗 。",
         "UPGRADE_DESCRIPTION": " 保留 。 NL "
     },
-    "nearlmod:WaytoChampion": {
+    "nearlmod:WayToChampion": {
         "NAME" : "冠军之路",
         "DESCRIPTION": "所有敌人的 力量 不再超过 0 。本回合不会受到伤害。 NL 消耗 。",
         "UPGRADE_DESCRIPTION": ""
@@ -230,12 +230,12 @@
         "UPGRADE_DESCRIPTION": " nearlmod:伙伴牌 。 NL 获得 !M! 点 格挡 。 在接下来的 !nearlmod:M2! 回合内，每次受到的伤害减少 6 点。"
     },
 
-    "nearlmod:WaytoHome": {
+    "nearlmod:WayToHome": {
         "NAME": "归乡之路",
         "DESCRIPTION": "召唤鞭刃作为 nearlmod:伙伴 。 NL 抽一张牌。",
         "UPGRADE_DESCRIPTION": "召唤鞭刃作为 nearlmod:伙伴 。 NL 抽一张牌。 NL 获得 !M! 点 临时力量 。"
     },
-    "nearlmod:VisionofUnity": {
+    "nearlmod:VisionOfUnity": {
         "NAME": "比肩的愿景",
         "DESCRIPTION": " nearlmod:伙伴牌 。 NL 获得 !nearlmod:M2! 层 缓冲 。",
         "UPGRADE_DESCRIPTION": ""
@@ -296,7 +296,7 @@
         "DESCRIPTION": " nearlmod:伙伴牌 。 NL 你或者其他 nearlmod:伙伴 对敌人造成伤害时，远牙对其造成 !nearlmod:M2! 点伤害。",
         "UPGRADE_DESCRIPTION": ""
     },
-    "nearlmod:FeathershineArrows": {
+    "nearlmod:FeatherShineArrows": {
         "NAME": "光羽箭",
         "DESCRIPTION": " nearlmod:伙伴牌 。 NL 对当前生命值最低的敌人造成 !M! 点伤害。",
         "UPGRADE_DESCRIPTION": ""

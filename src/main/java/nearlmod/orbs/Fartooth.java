@@ -7,7 +7,7 @@ import com.megacrit.cardcrawl.orbs.AbstractOrb;
 import nearlmod.actions.AddFriendCardToHandAction;
 import nearlmod.cards.friendcards.AbstractFriendCard;
 import nearlmod.cards.friendcards.AllySupport;
-import nearlmod.cards.friendcards.FeathershineArrows;
+import nearlmod.cards.friendcards.FeatherShineArrows;
 
 public class Fartooth extends AbstractFriend {
 
@@ -48,7 +48,7 @@ public class Fartooth extends AbstractFriend {
         if (random == 0)
             card = new AllySupport();
         else
-            card = new FeathershineArrows();
+            card = new FeatherShineArrows();
         if (upgraded) card.upgrade();
         return card;
     }

@@ -43,8 +43,7 @@ public class LSSwiftSword extends AbstractFriendCard {
     public void applyPowers() {
         super.applyPowers();
         AbstractPlayer p = AbstractDungeon.player;
-        if (p.getPower("nearlmod:Shadow") != null)
-        {
+        if (p.getPower("nearlmod:Shadow") != null) {
             magicNumber += p.getPower("nearlmod:Shadow").amount;
         }
         isMagicNumberModified = (magicNumber != baseMagicNumber);

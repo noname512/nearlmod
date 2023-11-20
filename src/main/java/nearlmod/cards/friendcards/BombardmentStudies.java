@@ -2,14 +2,11 @@ package nearlmod.cards.friendcards;
 
 import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
-import com.megacrit.cardcrawl.cards.green.Nightmare;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.localization.CardStrings;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
-import com.megacrit.cardcrawl.powers.DrawCardNextTurnPower;
 import com.megacrit.cardcrawl.powers.NightmarePower;
-import nearlmod.actions.AddCardToDeckTopAction;
 import nearlmod.patches.AbstractCardEnum;
 import nearlmod.powers.BombardmentStudiesPower;
 

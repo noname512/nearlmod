@@ -1,25 +1,17 @@
 package nearlmod.cards.friendcards;
 
-import com.megacrit.cardcrawl.actions.AbstractGameAction;
-import com.megacrit.cardcrawl.actions.animations.VFXAction;
-import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
 import com.megacrit.cardcrawl.actions.watcher.ChooseOneAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
-import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.localization.CardStrings;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
-import com.megacrit.cardcrawl.powers.WeakPower;
-import com.megacrit.cardcrawl.vfx.combat.IntimidateEffect;
 import nearlmod.cards.AllinOne;
 import nearlmod.cards.special.ToAtkStance;
 import nearlmod.cards.special.ToDefStance;
 import nearlmod.patches.AbstractCardEnum;
-import nearlmod.powers.LightPower;
 
 import java.util.ArrayList;
-import java.util.Iterator;
 
 public class CraftsmanEcho extends AbstractFriendCard {
     public static final String ID = "nearlmod:CraftsmanEcho";

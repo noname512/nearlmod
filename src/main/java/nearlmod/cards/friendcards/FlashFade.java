@@ -14,7 +14,6 @@ import com.megacrit.cardcrawl.powers.AbstractPower;
 import nearlmod.actions.UseShadowAction;
 import nearlmod.patches.AbstractCardEnum;
 import nearlmod.stances.AtkStance;
-import nearlmod.stances.DefStance;
 
 public class FlashFade extends AbstractFriendCard {
     public static final String ID = "nearlmod:FlashFade";
@@ -27,7 +26,6 @@ public class FlashFade extends AbstractFriendCard {
     private static final int ATTACK_DMG = 8;
     private static final int ATTACK_TIMES = 2;
     private static final int UPGRADE_PLUS_TIMES = 1;
-    private int extraStr;
 
     public FlashFade() {
         super(ID, NAME, IMG_PATH, COST, DESCRIPTION,
@@ -42,15 +40,12 @@ public class FlashFade extends AbstractFriendCard {
         super.applyPowers();
         AbstractPlayer p = AbstractDungeon.player;
         if (p == null || p.orbs == null) return;
-        if (p.getPower("nearlmod:Shadow") != null)
-        {
+        if (p.getPower("nearlmod:Shadow") != null) {
             magicNumber += p.getPower("nearlmod:Shadow").amount;
         }
-        extraStr = 0;
         AbstractPower str = p.getPower("Strength");
         if (str != null) {
             magicNumber += str.amount;
-            extraStr = str.amount;
         }
         if (!p.stance.ID.equals(AtkStance.STANCE_ID)) {
             magicNumber += AtkStance.atkInc + AtkStance.incNum;

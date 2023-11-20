@@ -8,13 +8,10 @@ import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.localization.CardStrings;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
-import com.megacrit.cardcrawl.powers.WeakPower;
 import com.megacrit.cardcrawl.vfx.combat.IntimidateEffect;
 import nearlmod.actions.WeakenAllAction;
 import nearlmod.patches.AbstractCardEnum;
 import nearlmod.powers.LightPower;
-
-import java.util.ArrayList;
 
 public class DeterringRadiance extends AbstractFriendCard {
     public static final String ID = "nearlmod:DeterringRadiance";

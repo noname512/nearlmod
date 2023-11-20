@@ -10,7 +10,6 @@ import com.megacrit.cardcrawl.localization.CardStrings;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import nearlmod.patches.AbstractCardEnum;
 import nearlmod.powers.ClosedHopePower;
-import nearlmod.powers.SanctuaryPower;
 
 public class ClosedHope extends AbstractFriendCard {
     public static final String ID = "nearlmod:ClosedHope";

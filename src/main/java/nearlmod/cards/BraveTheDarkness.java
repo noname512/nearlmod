@@ -16,8 +16,8 @@ import com.megacrit.cardcrawl.powers.StrengthPower;
 import nearlmod.patches.AbstractCardEnum;
 import nearlmod.stances.AtkStance;
 
-public class BravetheDarkness extends AbstractNearlCard {
-    public static final String ID = "nearlmod:BravetheDarkness";
+public class BraveTheDarkness extends AbstractNearlCard {
+    public static final String ID = "nearlmod:BraveTheDarkness";
     public static final CardStrings cardStrings = CardCrawlGame.languagePack.getCardStrings(ID);
     public static final String NAME = cardStrings.NAME;
     public static final String DESCRIPTION = cardStrings.DESCRIPTION;
@@ -28,7 +28,7 @@ public class BravetheDarkness extends AbstractNearlCard {
     private static final int UPGRADE_COST = 1;
     private static final int DECREASE_STRENGTH = 99;
 
-    public BravetheDarkness() {
+    public BraveTheDarkness() {
         super(ID, NAME, IMG_PATH, COST, DESCRIPTION,
                 AbstractCard.CardType.ATTACK, AbstractCardEnum.NEARL_GOLD,
                 AbstractCard.CardRarity.RARE, AbstractCard.CardTarget.ENEMY);
@@ -61,7 +61,7 @@ public class BravetheDarkness extends AbstractNearlCard {
 
     @Override
     public AbstractCard makeCopy() {
-        return new BravetheDarkness();
+        return new BraveTheDarkness();
     }
 
     @Override
