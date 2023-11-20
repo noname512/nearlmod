@@ -10,7 +10,6 @@ import com.megacrit.cardcrawl.localization.CardStrings;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import com.megacrit.cardcrawl.orbs.AbstractOrb;
 import nearlmod.orbs.AbstractFriend;
-import nearlmod.orbs.Fartooth;
 import nearlmod.patches.AbstractCardEnum;
 
 public class WhipSword extends AbstractFriendCard {
@@ -37,21 +36,19 @@ public class WhipSword extends AbstractFriendCard {
         int dmg = secondMagicNumber;
         if (p.hasPower("Strength"))
             dmg += p.getPower("Strength").amount;
+        if (upgraded)
+            dmg += secondMagicNumber;
+        DamageInfo info = new DamageInfo(p, dmg);
+        info.name = belongFriend + AbstractFriendCard.damageSuffix;
         for (AbstractMonster ms : AbstractDungeon.getMonsters().monsters)
-            addToBot(new DamageAction(ms, new DamageInfo(p, dmg, DamageInfo.DamageType.NORMAL)));
+            addToBot(new DamageAction(ms, info));
         for (AbstractOrb orb : p.orbs)
             if (orb instanceof AbstractFriend) {
-                dmg = secondMagicNumber + ((AbstractFriend)orb).trustAmount;
-                if (orb instanceof Fartooth)
-                    for (AbstractMonster ms : AbstractDungeon.getMonsters().monsters)
-                        addToBot(new DamageAction(ms, new DamageInfo(null, dmg, DamageInfo.DamageType.THORNS)));
-                else
-                    for (AbstractMonster ms : AbstractDungeon.getMonsters().monsters)
-                        addToBot(new DamageAction(ms, new DamageInfo(p, dmg, DamageInfo.DamageType.NORMAL)));
+                info = new DamageInfo(p, secondMagicNumber + ((AbstractFriend)orb).trustAmount);
+                info.name = orb.ID + AbstractFriendCard.damageSuffix;
+                for (AbstractMonster ms : AbstractDungeon.getMonsters().monsters)
+                    addToBot(new DamageAction(ms, info));
             }
-        if (upgraded)
-            for (AbstractMonster ms : AbstractDungeon.getMonsters().monsters)
-                addToBot(new DamageAction(ms, new DamageInfo(p, magicNumber, DamageInfo.DamageType.NORMAL)));
     }
 
     @Override

@@ -34,8 +34,8 @@ public class Sanctuary extends AbstractFriendCard {
 
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
-        AbstractDungeon.actionManager.addToBottom(new GainBlockAction(p, magicNumber));
-        AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(p, p, new SanctuaryPower(p, secondMagicNumber)));
+        addToBot(new GainBlockAction(p, magicNumber));
+        addToBot(new ApplyPowerAction(p, p, new SanctuaryPower(p, secondMagicNumber)));
     }
 
     @Override

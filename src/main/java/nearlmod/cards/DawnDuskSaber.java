@@ -13,6 +13,7 @@ import nearlmod.actions.WeakenAllAction;
 import nearlmod.orbs.Shining;
 import nearlmod.patches.AbstractCardEnum;
 import nearlmod.patches.NearlTags;
+import nearlmod.powers.BFPPower;
 
 public class DawnDuskSaber extends AbstractNearlCard {
     public static final String ID = "nearlmod:DawnDuskSaber";
@@ -36,6 +37,8 @@ public class DawnDuskSaber extends AbstractNearlCard {
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
         addToBot(new SummonOrbAction(new Shining()));
+        if (p.hasPower("nearlmod:BFPPower"))
+            ((BFPPower) p.getPower("nearlmod:BFPPower")).cardPlayed++;
         addToBot(new DamageAllEnemiesAction(p, DamageInfo.createDamageMatrix(damage, true, false), DamageInfo.DamageType.NORMAL, AbstractGameAction.AttackEffect.SLASH_VERTICAL));
         if (upgraded) addToBot(new WeakenAllAction(p));
     }

@@ -9,6 +9,7 @@ import com.megacrit.cardcrawl.cards.DamageInfo;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
+import com.megacrit.cardcrawl.helpers.ImageMaster;
 import com.megacrit.cardcrawl.localization.CardStrings;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import com.megacrit.cardcrawl.powers.AbstractPower;
@@ -34,7 +35,9 @@ public class FlameShadow extends AbstractFriendCard {
         super(ID, NAME, IMG_PATH, COST, DESCRIPTION,
                 CardType.ATTACK, AbstractCardEnum.NEARL_GOLD,
                 CardRarity.SPECIAL, CardTarget.SELF, "nearlmod:Viviana");
-        magicNumber = 0;
+        magicNumber = baseMagicNumber = 0;
+        bannerSmallRegion = ImageMaster.CARD_BANNER_RARE;
+        bannerLargeRegion = ImageMaster.CARD_BANNER_RARE_L;
     }
 
     @Override
@@ -45,19 +48,20 @@ public class FlameShadow extends AbstractFriendCard {
         if (power != null) {
             dmg += power.amount * 2;
             light += power.amount;
-            AbstractDungeon.actionManager.addToBottom(new RemoveSpecificPowerAction(p, p, power));
+            addToBot(new RemoveSpecificPowerAction(p, p, power));
         }
         dmg += magicNumber;
-        ArrayList<AbstractMonster> monsters = AbstractDungeon.getCurrRoom().monsters.monsters;
-        for (AbstractMonster ms : monsters) {
-            AbstractDungeon.actionManager.addToBottom(new DamageAction(ms, new DamageInfo(p, dmg, DamageInfo.DamageType.NORMAL), AbstractGameAction.AttackEffect.LIGHTNING));
+        DamageInfo info = new DamageInfo(p, dmg);
+        info.name = belongFriend + AbstractFriendCard.damageSuffix;
+        for (AbstractMonster ms : AbstractDungeon.getMonsters().monsters) {
+            addToBot(new DamageAction(ms, info, AbstractGameAction.AttackEffect.LIGHTNING));
         }
         Viviana.uniqueUsed = true;
-        AbstractDungeon.actionManager.addToBottom(new UseShadowAction(p));
+        addToBot(new UseShadowAction(p));
         if (light != 0) {
-            AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(p, p, new ShadowPower(p, light)));
+            addToBot(new ApplyPowerAction(p, p, new ShadowPower(p, light)));
         }
-        AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(p, p, new PoemsLooksPower(p)));
+        addToBot(new ApplyPowerAction(p, p, new PoemsLooksPower(p)));
     }
 
     @Override

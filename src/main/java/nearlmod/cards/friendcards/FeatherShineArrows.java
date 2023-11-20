@@ -37,8 +37,11 @@ public class FeatherShineArrows extends AbstractFriendCard {
         for (AbstractMonster ms : AbstractDungeon.getMonsters().monsters)
             if (!ms.isDeadOrEscaped() && (target == null || ms.currentHealth < target.currentHealth))
                 target = ms;
-        if (target != null)
-            addToBot(new DamageAction(target, new DamageInfo(null, magicNumber, DamageInfo.DamageType.THORNS)));
+        if (target != null) {
+            DamageInfo info = new DamageInfo(p, magicNumber);
+            info.name = belongFriend + AbstractFriendCard.damageSuffix;
+            addToBot(new DamageAction(target, info));
+        }
     }
 
     @Override

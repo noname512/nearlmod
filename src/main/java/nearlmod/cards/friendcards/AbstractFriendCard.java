@@ -19,6 +19,7 @@ public abstract class AbstractFriendCard extends AbstractNearlCard {
     public static final String POWER_IMG = "bg_power_friend.png";
     public String baseDescription;
     public boolean isSecondMagicNumberUseTrust = false;
+    public static final String damageSuffix = "FriendDmg";
 
     public AbstractFriendCard(String id, String name, String img, int cost, String rawDescription,
                               AbstractCard.CardType type, AbstractCard.CardColor color,

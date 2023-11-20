@@ -1,6 +1,7 @@
 package nearlmod.cards.friendcards;
 
 import com.megacrit.cardcrawl.cards.AbstractCard;
+import com.megacrit.cardcrawl.cards.DamageInfo;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
@@ -39,8 +40,10 @@ public class StabbingLance extends AbstractFriendCard {
         for (AbstractMonster ms : AbstractDungeon.getCurrRoom().monsters.monsters)
             if (!ms.isDeadOrEscaped())
                 resMonster++;
+        DamageInfo info = new DamageInfo(p, magicNumber);
+        info.name = belongFriend + AbstractFriendCard.damageSuffix;
         for (int i = 1; i <= secondMagicNumber; i++)
-            addToBot(new MyRandomAttackAction(p, magicNumber));
+            addToBot(new MyRandomAttackAction(info));
         addToBot(new StabbingLanceAction(resMonster, upgraded? 2 : 1));
     }
 

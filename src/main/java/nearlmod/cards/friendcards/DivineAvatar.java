@@ -33,14 +33,16 @@ public class DivineAvatar extends AbstractFriendCard {
                 CardRarity.SPECIAL, CardTarget.ENEMY, "nearlmod:Blemishine");
         magicNumber = baseMagicNumber = ATTACK_DMG;
         secondMagicNumber = baseSecondMagicNumber = RECOVER_HP;
-        this.bannerSmallRegion = ImageMaster.CARD_BANNER_RARE;
-        this.bannerLargeRegion = ImageMaster.CARD_BANNER_RARE_L;
+        bannerSmallRegion = ImageMaster.CARD_BANNER_RARE;
+        bannerLargeRegion = ImageMaster.CARD_BANNER_RARE_L;
     }
 
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
-        AbstractDungeon.actionManager.addToBottom(new DamageAction(m, new DamageInfo(p, magicNumber, damageTypeForTurn), AbstractGameAction.AttackEffect.SLASH_DIAGONAL));
-        AbstractDungeon.actionManager.addToBottom(new HealAction(p, p, secondMagicNumber));
+        DamageInfo info = new DamageInfo(p, magicNumber);
+        info.name = belongFriend + AbstractFriendCard.damageSuffix;
+        addToBot(new DamageAction(m, info, AbstractGameAction.AttackEffect.SLASH_DIAGONAL));
+        addToBot(new HealAction(p, p, secondMagicNumber));
         Blemishine.uniqueUsed = true;
     }
 

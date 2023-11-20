@@ -35,9 +35,11 @@ public class FocusedBombardment extends AbstractFriendCard {
 
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
+        DamageInfo info = new DamageInfo(p, magicNumber);
+        info.name = belongFriend + AbstractFriendCard.damageSuffix;
         for (int i = 1; i <= secondMagicNumber; i++)
             for (AbstractMonster ms : AbstractDungeon.getMonsters().monsters)
-                addToBot(new DamageAction(ms, new DamageInfo(p, magicNumber, DamageInfo.DamageType.NORMAL)));
+                addToBot(new DamageAction(ms, info));
     }
 
     @Override

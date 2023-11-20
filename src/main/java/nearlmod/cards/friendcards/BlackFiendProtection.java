@@ -4,7 +4,6 @@ import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
-import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.helpers.ImageMaster;
 import com.megacrit.cardcrawl.localization.CardStrings;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
@@ -26,14 +25,14 @@ public class BlackFiendProtection extends AbstractFriendCard {
         super(ID, NAME, IMG_PATH, COST, DESCRIPTION,
                 CardType.POWER, AbstractCardEnum.NEARL_GOLD,
                 CardRarity.SPECIAL, CardTarget.SELF, "nearlmod:Shining");
-        this.bannerSmallRegion = ImageMaster.CARD_BANNER_RARE;
-        this.bannerLargeRegion = ImageMaster.CARD_BANNER_RARE_L;
+        bannerSmallRegion = ImageMaster.CARD_BANNER_RARE;
+        bannerLargeRegion = ImageMaster.CARD_BANNER_RARE_L;
     }
 
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
         Shining.uniqueUsed = true;
-        AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(p, p, new BFPPower(p), -1));
+        addToBot(new ApplyPowerAction(p, p, new BFPPower(p), -1));
         if (upgraded) addToBot(new WeakenAllAction(p));
     }
 
