@@ -49,7 +49,7 @@
   },
   "nearlmod:Poem'sLooks": {
     "NAME": "诗的容貌",
-    "DESCRIPTIONS": ["在你使用完 [#EFC851]光[] 后，获得等量的 [#EFC851]影[] 。 在你使用完 [#EFC851]影[] 后，获得等量的 [#EFC851]光[] 。"]
+    "DESCRIPTIONS": ["你使用 [#EFC851]光[] 后，获得等量的 [#EFC851]影[] ；使用 [#EFC851]影[] 后，获得等量的 [#EFC851]光[] 。"]
   },
   "nearlmod:LoseThornsPower": {
     "NAME": "蜕刺",

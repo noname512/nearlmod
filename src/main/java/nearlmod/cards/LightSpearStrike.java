@@ -12,8 +12,8 @@ import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import com.megacrit.cardcrawl.powers.AbstractPower;
 import nearlmod.patches.AbstractCardEnum;
 
-public class LightArrowStrike extends AbstractNearlCard {
-    public static final String ID = "nearlmod:LightArrowStrike";
+public class LightSpearStrike extends AbstractNearlCard {
+    public static final String ID = "nearlmod:LightSpearStrike";
     public static final CardStrings cardStrings = CardCrawlGame.languagePack.getCardStrings(ID);
     public static final String NAME = cardStrings.NAME;
     public static final String DESCRIPTION = cardStrings.DESCRIPTION;
@@ -22,7 +22,7 @@ public class LightArrowStrike extends AbstractNearlCard {
     private static final int COST = 1;
     private static final int UPGRADE_COST = 0;
 
-    public LightArrowStrike() {
+    public LightSpearStrike() {
         super(ID, NAME, IMG_PATH, COST, DESCRIPTION,
                 CardType.ATTACK, AbstractCardEnum.NEARL_GOLD,
                 CardRarity.UNCOMMON, CardTarget.ENEMY);
@@ -41,7 +41,7 @@ public class LightArrowStrike extends AbstractNearlCard {
 
     @Override
     public AbstractCard makeCopy() {
-        return new LightArrowStrike();
+        return new LightSpearStrike();
     }
 
     @Override
