@@ -24,17 +24,24 @@ public class CandleKnight extends AbstractMonster {
     private int candleDmg;
     private int flameDmg;
     private int swordDmg;
+    private int damageTimes = 2;
     private int said = 0;
 
     public CandleKnight() {
-        super(NAME, ID, 100, 0, 0, 150.0F, 320.0F, IMAGE);
+        super(NAME, ID, 50, 0, 0, 150.0F, 320.0F, IMAGE);
         this.type = EnemyType.ELITE;
         if (AbstractDungeon.ascensionLevel >= 8)
-            setHp(110);
-        if (AbstractDungeon.ascensionLevel >= 3) {
+            setHp(55);
+        if (AbstractDungeon.ascensionLevel >= 18) {
             candleDmg = 12;
-            flameDmg = 33;
-            swordDmg = 7;
+            flameDmg = 40;
+            swordDmg = 6;
+            damageTimes = 3;
+        } else if (AbstractDungeon.ascensionLevel >= 3) {
+            candleDmg = 11;
+            flameDmg = 30;
+            swordDmg = 6;
+            damageTimes = 3;
         } else {
             candleDmg = 10;
             flameDmg = 30;
@@ -91,8 +98,8 @@ public class CandleKnight extends AbstractMonster {
                 this.state.setAnimation(0, "Skill_End", false);
             } else if (this.nextMove == 5) {
                 addToBot(new AnimateFastAttackAction(this));
-                for (int i = 1; i <= 2; i++)
-                    addToBot(new DamageAction(AbstractDungeon.player, this.damage.get(2), AbstractGameAction.AttackEffect.SLASH_HORIZONTAL));
+                for (int i = 1; i <= damageTimes; i++)
+                    addToBot(new DamageAction(AbstractDungeon.player, this.damage.get(damageTimes), AbstractGameAction.AttackEffect.SLASH_HORIZONTAL));
             }
             if (this.nextMove == 1 || AbstractDungeon.aiRng.random(0, 4) == 0) {
                 setMove(MOVES[0], (byte) 2, Intent.UNKNOWN);
