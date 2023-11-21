@@ -29,7 +29,7 @@ public class LightsOut extends AbstractNearlCard {
     public LightsOut() {
         super(ID, NAME, IMG_PATH, COST, DESCRIPTION,
                 CardType.ATTACK, AbstractCardEnum.NEARL_GOLD,
-                CardRarity.BASIC, CardTarget.ENEMY);
+                CardRarity.COMMON, CardTarget.ENEMY);
         damage = baseDamage = ATTACK_DMG;
         magicNumber = baseMagicNumber = SHADOW_GAIN;
     }

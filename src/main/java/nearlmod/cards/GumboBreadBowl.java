@@ -37,7 +37,6 @@ public class GumboBreadBowl extends AbstractNearlCard {
         if (!p.stance.ID.equals(DefStance.STANCE_ID)) {
             addToBot(new ChangeStanceAction(new DefStance()));
         }
-        applyPowers();
         addToBot(new GainBlockAction(p, p, block));
         addToBot(new UseLightAction(p));
     }
