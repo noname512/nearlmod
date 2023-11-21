@@ -5,7 +5,6 @@ import com.megacrit.cardcrawl.actions.watcher.ChooseOneAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.core.AbstractCreature;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
-import com.megacrit.cardcrawl.core.Settings;
 import com.megacrit.cardcrawl.helpers.PowerTip;
 import com.megacrit.cardcrawl.helpers.TipHelper;
 import com.megacrit.cardcrawl.localization.PotionStrings;
@@ -13,8 +12,6 @@ import com.megacrit.cardcrawl.potions.AbstractPotion;
 import nearlmod.NLMOD;
 import nearlmod.cards.special.ToAtkStance;
 import nearlmod.cards.special.ToDefStance;
-import nearlmod.patches.AbstractCardEnum;
-import nearlmod.patches.NearlEnum;
 
 import java.util.ArrayList;
 

@@ -3,10 +3,8 @@ package nearlmod.patches;
 import com.evacipated.cardcrawl.modthespire.lib.*;
 import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
-import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.ui.panels.EnergyPanel;
 import javassist.CtBehavior;
-import nearlmod.actions.GainCostAction;
 import nearlmod.cards.friendcards.AbstractFriendCard;
 import nearlmod.util.CostReserves;
 import static java.lang.Math.min;
@@ -18,7 +16,7 @@ public class CostPatch {
         public static SpireReturn<?> bePlayable(AbstractCard __instance) {
             int found = CostReserves.reserveCount();
             if (__instance instanceof AbstractFriendCard) {
-                return SpireReturn.Return(EnergyPanel.totalCount + found >= __instance.cost);
+                return SpireReturn.Return(EnergyPanel.totalCount + found >= __instance.costForTurn);
             }
             return SpireReturn.Continue();
         }

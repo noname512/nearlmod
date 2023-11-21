@@ -13,6 +13,7 @@ public abstract class AbstractFriend extends CustomOrb {
     protected static float MY_Y_OFFSET = 20.0F * Settings.scale;
     public int trustAmount;
     private final String[] DESCRIPTION;
+    public boolean flipHorizontal;
     public AbstractFriend(String ID, String NAME, String[] DESCRIPTION, String imgPath, int amount) {
         super(ID, NAME, 0, 0, "", "", imgPath);
         trustAmount = amount;
@@ -20,6 +21,7 @@ public abstract class AbstractFriend extends CustomOrb {
         angle = MathUtils.random(360.0f);
         channelAnimTimer = 0.5f;
         this.DESCRIPTION = DESCRIPTION;
+        flipHorizontal = AbstractDungeon.player.flipHorizontal;
         updateDescription();
     }
 
@@ -67,6 +69,17 @@ public abstract class AbstractFriend extends CustomOrb {
     @Override
     protected void renderText(SpriteBatch sb) {
         FontHelper.renderFontCentered(sb, FontHelper.cardEnergyFont_L, Integer.toString(this.trustAmount), this.cX + MY_X_OFFSET, this.cY + this.bobEffect.y / 2.0F + MY_Y_OFFSET, this.c, this.fontScale);
+    }
+
+    @Override
+    public void render(SpriteBatch sb) {
+        if (this.img != null) {
+            sb.setColor(this.c);
+            sb.draw(this.img, this.cX - (float)this.img.getWidth() / 2.0F + this.bobEffect.y / 4.0F, this.cY - (float)this.img.getHeight() / 2.0F + this.bobEffect.y / 4.0F, (float)this.img.getWidth() / 2.0F, (float)this.img.getHeight() / 2.0F, (float)this.img.getWidth(), (float)this.img.getHeight(), this.scale, this.scale, 0.0F, 0, 0, this.img.getWidth(), this.img.getHeight(), this.flipHorizontal, false);
+        }
+
+        this.renderText(sb);
+        this.hb.render(sb);
     }
 
 //    @Override
