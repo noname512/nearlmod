@@ -36,7 +36,7 @@ public class CreedField extends AbstractFriendCard {
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
         AbstractDungeon.actionManager.addToBottom(new GainBlockAction(p, magicNumber));
-        AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(p, p, new CreedFieldPower(p, DAMAGE_DEC, secondMagicNumber)));
+        AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(p, p, new CreedFieldPower(p, secondMagicNumber, DAMAGE_DEC)));
     }
 
     @Override
