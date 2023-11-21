@@ -45,7 +45,12 @@ public class BraveTheDarkness extends AbstractNearlCard {
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
         if (extraTriggered()) {
-            addToBot(new DamageAllEnemiesAction(p, damage, damageTypeForTurn, AbstractGameAction.AttackEffect.SLASH_DIAGONAL));
+            for (AbstractMonster mo : AbstractDungeon.getMonsters().monsters) {
+                if (!mo.isDeadOrEscaped()) {
+                    calculateCardDamage(m);
+                    addToBot(new DamageAllEnemiesAction(p, damage, damageTypeForTurn, AbstractGameAction.AttackEffect.SLASH_DIAGONAL));
+                }
+            }
             for (AbstractMonster mo : AbstractDungeon.getMonsters().monsters) {
                 if (!mo.isDeadOrEscaped()) {
                     addToBot(new ApplyPowerAction(mo, p, new StrengthPower(mo, -DECREASE_STRENGTH), -DECREASE_STRENGTH));

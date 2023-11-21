@@ -28,7 +28,7 @@ public class ChargingWithShield extends AbstractNearlCard {
     public ChargingWithShield() {
         super(ID, NAME, IMG_PATH, COST, DESCRIPTION,
                 CardType.ATTACK, AbstractCardEnum.NEARL_GOLD,
-                CardRarity.BASIC, CardTarget.ENEMY);
+                CardRarity.COMMON, CardTarget.ENEMY);
         damage = baseDamage = ATTACK_DMG;
         block = baseBlock = BLOCK_AMT;
     }

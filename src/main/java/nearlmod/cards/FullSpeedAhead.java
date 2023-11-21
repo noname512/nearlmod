@@ -40,7 +40,7 @@ public class FullSpeedAhead extends AbstractNearlCard {
     }
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
-        applyPowers();
+        calculateCardDamage(m);
         if (extraTriggered()) {
             AbstractDungeon.actionManager.addToBottom(new ChangeStanceAction(new AtkStance()));
         }

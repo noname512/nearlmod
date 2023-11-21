@@ -50,18 +50,22 @@ public class FlameShadow extends AbstractFriendCard {
             light += power.amount;
             addToBot(new RemoveSpecificPowerAction(p, p, power));
         }
-        dmg += magicNumber;
+        baseMagicNumber += dmg;
         DamageInfo info = new DamageInfo(p, dmg);
         info.name = belongFriend + AbstractFriendCard.damageSuffix;
         for (AbstractMonster ms : AbstractDungeon.getMonsters().monsters) {
+            calculateCardDamage(ms);
+            info.base = damage;
             addToBot(new DamageAction(ms, info, AbstractGameAction.AttackEffect.LIGHTNING));
         }
+        baseMagicNumber -= dmg;
         Viviana.uniqueUsed = true;
         addToBot(new UseShadowAction(p));
         if (light != 0) {
             addToBot(new ApplyPowerAction(p, p, new ShadowPower(p, light)));
         }
         addToBot(new ApplyPowerAction(p, p, new PoemsLooksPower(p)));
+        applyPowers();
     }
 
     @Override

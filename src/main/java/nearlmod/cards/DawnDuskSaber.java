@@ -42,8 +42,11 @@ public class DawnDuskSaber extends AbstractNearlCard {
             ((BFPPower) p.getPower("nearlmod:BFPPower")).cardPlayed++;
         DamageInfo info = new DamageInfo(p, damage);
         info.name = AbstractFriendCard.damageSuffix;
-        for (AbstractMonster ms : AbstractDungeon.getMonsters().monsters)
+        for (AbstractMonster ms : AbstractDungeon.getMonsters().monsters) {
+            calculateCardDamage(ms);
+            info.base = damage;
             addToBot(new DamageAction(ms, info));
+        }
         if (upgraded) addToBot(new WeakenAllAction(p));
     }
 

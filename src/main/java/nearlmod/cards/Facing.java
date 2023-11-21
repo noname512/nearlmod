@@ -27,7 +27,7 @@ public class Facing extends AbstractNearlCard {
     public Facing() {
         super(ID, NAME, IMG_PATH, COST, DESCRIPTION,
                 CardType.SKILL, AbstractCardEnum.NEARL_GOLD,
-                CardRarity.BASIC, CardTarget.SELF);
+                CardRarity.COMMON, CardTarget.SELF);
         block = baseBlock = BLOCK_AMT;
         magicNumber = baseMagicNumber = STRENGTH_AMT;
     }

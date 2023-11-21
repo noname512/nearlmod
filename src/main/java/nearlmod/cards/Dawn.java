@@ -2,6 +2,7 @@ package nearlmod.cards;
 
 import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.cards.DamageInfo;
+import com.megacrit.cardcrawl.cards.red.Whirlwind;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.localization.CardStrings;
@@ -40,6 +41,7 @@ public class Dawn extends AbstractNearlCard {
 
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
+        // TODO
         addToBot(new DawnAction(new DamageInfo(p, damage, damageTypeForTurn), this));
     }
 

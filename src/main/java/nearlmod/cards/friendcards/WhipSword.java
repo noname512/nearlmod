@@ -33,6 +33,7 @@ public class WhipSword extends AbstractFriendCard {
 
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
+        //TODO
         int dmg = secondMagicNumber;
         if (p.hasPower("Strength"))
             dmg += p.getPower("Strength").amount;
