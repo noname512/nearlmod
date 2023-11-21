@@ -1,11 +1,14 @@
 package nearlmod.orbs;
 
 import basemod.abstracts.CustomOrb;
+import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.graphics.g2d.SpriteBatch;
+import com.badlogic.gdx.math.Interpolation;
 import com.badlogic.gdx.math.MathUtils;
 import com.megacrit.cardcrawl.core.Settings;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.helpers.FontHelper;
+import com.megacrit.cardcrawl.helpers.MathHelper;
 
 public abstract class AbstractFriend extends CustomOrb {
     public boolean upgraded;
@@ -82,8 +85,21 @@ public abstract class AbstractFriend extends CustomOrb {
         this.hb.render(sb);
     }
 
-//    @Override
-//    public void updateAnimation() {}
+    @Override
+    public void updateAnimation() {
+        this.bobEffect.update();
+        this.cX = MathHelper.orbLerpSnap(this.cX, this.tX);
+        this.cY = MathHelper.orbLerpSnap(this.cY, this.tY);
+        if (this.channelAnimTimer != 0.0F) {
+            this.channelAnimTimer -= Gdx.graphics.getDeltaTime();
+            if (this.channelAnimTimer < 0.0F) {
+                this.channelAnimTimer = 0.0F;
+            }
+        }
+
+        this.c.a = Interpolation.pow2In.apply(1.0F, 0.01F, this.channelAnimTimer / 0.5F);
+        this.scale = Interpolation.swingIn.apply(Settings.scale, 0.01F, this.channelAnimTimer / 0.5F);
+    }
 
     @Override
     public void playChannelSFX() {}
