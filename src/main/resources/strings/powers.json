@@ -25,7 +25,7 @@
   },
   "nearlmod:WFPPower": {
     "NAME": "白恶魔的庇护",
-    "DESCRIPTIONS": ["你不再被 脆弱 、 虚弱 、 易伤 。 NL 如果你同时拥有 [#EFC851]黑恶魔的庇护[] ，每回合开始时获得一层 人工制品 。"]
+    "DESCRIPTIONS": ["你不会再被 脆弱 、 虚弱 、 易伤 。 NL 如果你同时拥有 [#EFC851]黑恶魔的庇护[] ，每回合开始时获得一层 人工制品 。"]
   },
   "nearlmod:CreedFieldPower": {
     "NAME": "教条立场",

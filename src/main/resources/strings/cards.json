@@ -185,7 +185,7 @@
     },
     "nearlmod:FlameShadow": {
         "NAME": "烛燃影息",
-        "DESCRIPTION": " nearlmod:伙伴牌 ， nearlmod:唯一 。 NL 消耗所有的 nearlmod:光 ，转化为等量的 nearlmod:影 ，并对所有敌人造成其层数两倍的伤害。 获得 nearlmod:诗的容貌 。",
+        "DESCRIPTION": " nearlmod:伙伴牌 ， nearlmod:唯一 。 NL 获得 nearlmod:诗的容貌 。 NL 消耗所有的 nearlmod:光 ，对所有敌人造成其层数两倍的伤害。",
         "UPGRADE_DESCRIPTION": ""
     },
 
@@ -222,7 +222,7 @@
     "nearlmod:ToDefStance": {
         "NAME": "守护",
         "DESCRIPTION": "进入 nearlmod:守护 。",
-        "UPGRADE_DESCRIPTION": "进入 nearlmod:无畏 。 NL 本次切换 nearlmod:形态 获得的数值增加 !M! 点。"
+        "UPGRADE_DESCRIPTION": "进入 nearlmod:守护 。 NL 本次切换 nearlmod:形态 获得的数值增加 !M! 点。"
     },
 
     "nearlmod:DanceTogether": {
@@ -242,8 +242,8 @@
     },
     "nearlmod:WhiteFiendProtection": {
         "NAME": "白恶魔的庇护",
-        "DESCRIPTION": " nearlmod:伙伴牌 ， nearlmod:唯一 。 NL 你不会被 虚弱 、 脆弱 、 易伤 。如果你同时拥有 [#EFC851]黑恶魔的庇护[] ，每回 NL 合额外获得 1 层 人工制品 。",
-        "UPGRADE_DESCRIPTION": " nearlmod:伙伴牌 ， nearlmod:唯一 。 NL 你不会被 虚弱 、 脆弱 、 易伤 。如果你同时拥有 [#EFC851]黑恶魔的庇护[] ，每回 NL 合额外获得 1 层 人工制品 。所有负面效果立即失去 1 层。"
+        "DESCRIPTION": " nearlmod:伙伴牌 ， nearlmod:唯一 。 NL 获得 nearlmod:白恶魔的庇护 。",
+        "UPGRADE_DESCRIPTION": " nearlmod:伙伴牌 ， nearlmod:唯一 。 NL 获得 nearlmod:白恶魔的庇护 。 NL 所有负面效果立即失去 1 层。"
     },
     "nearlmod:ClosedHope": {
         "NAME": "封闭的希望",
@@ -268,8 +268,8 @@
     },
     "nearlmod:BlackFiendProtection": {
         "NAME": "黑恶魔的庇护",
-        "DESCRIPTION": " nearlmod:伙伴牌 ， nearlmod:唯一 。 NL 你每回合第一张非伙伴攻击牌会随机给予目标一层 易伤 或 虚弱 。如果你同时拥有 [#EFC851]白恶魔的庇护[] ， NL 改为给予目标一层 易伤 和 虚弱 。",
-        "UPGRADE_DESCRIPTION": " nearlmod:伙伴牌 ， nearlmod:唯一 。 NL 给予所有敌人一层 虚弱 。 NL 你每回合第一张非伙伴攻击牌会随机给予目标一层 易伤 或 虚弱 。如果你同时拥有 [#EFC851]白恶魔的庇护[] ， NL 改为给予目标一层 易伤 和 虚弱 。"
+        "DESCRIPTION": " nearlmod:伙伴牌 ， nearlmod:唯一 。 NL 获得 nearlmod:黑恶魔的庇护 。",
+        "UPGRADE_DESCRIPTION": " nearlmod:伙伴牌 ， nearlmod:唯一 。 NL 获得 nearlmod:黑恶魔的庇护 。 NL 给予所有敌人一层 虚弱 。"
     },
     "nearlmod:CreedField": {
         "NAME": "教条力场",
@@ -355,7 +355,7 @@
     },
     "nearlmod:BombardmentStudies": {
         "NAME": "炮术研习",
-        "DESCRIPTION": " nearlmod:伙伴牌 。 NL 使你的 [#EFC851]专注轰击[] 数值增加 !nearlmod:M2! 点，下回合开始时，将一张 [#EFC851]专注轰击[] 置入你的手牌。",
-        "UPGRADE_DESCRIPTION": " nearlmod:伙伴牌 。 NL 使你的 [#EFC851]专注轰击[] 数值增 NL 加 !nearlmod:M2! 点，下回合开始时，将一张 [#EFC851]专注轰击+[] 置 NL 入你的手牌。"
+        "DESCRIPTION": " nearlmod:伙伴牌 。 NL [#EFC851]专注轰击[] 数值 + !nearlmod:M2! 。 NL 下回合开始时，将一张 [#EFC851]专注轰击[] 置入你的手牌。",
+        "UPGRADE_DESCRIPTION": " nearlmod:伙伴牌 。 NL [#EFC851]专注轰击[] 数值 + !nearlmod:M2! 。 NL 下回合开始时，将一张 [#EFC851]专注轰击+[] 置 NL 入你的手牌。"
     }
 }
