@@ -16,7 +16,7 @@ public class AutoProtect extends AbstractFriendCard {
     public static final String NAME = cardStrings.NAME;
     public static final String DESCRIPTION = cardStrings.DESCRIPTION;
     public static final String UPGRADE_DESCRIPTION = cardStrings.UPGRADE_DESCRIPTION;
-    public static final String IMG_PATH = "images/cards/lsswiftsword.png";
+    public static final String IMG_PATH = "images/cards/autoprotect.png";
     private static final int COST = 1;
     private static final int BLOCK_DMT = 5;
     private static final int UPGRADE_PLUS_AMT = 3;

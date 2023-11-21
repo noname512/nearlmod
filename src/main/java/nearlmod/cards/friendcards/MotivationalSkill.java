@@ -18,7 +18,7 @@ public class MotivationalSkill extends AbstractFriendCard {
     public static final String NAME = cardStrings.NAME;
     public static final String DESCRIPTION = cardStrings.DESCRIPTION;
     public static final String UPGRADE_DESCRIPTION = cardStrings.UPGRADE_DESCRIPTION;
-    public static final String IMG_PATH = "images/cards/lsswiftsword.png";
+    public static final String IMG_PATH = "images/cards/motivationalskill.png";
     private static final int COST = 1;
     private static final int GAIN_STR = 2;
     private static final int UPGRADE_COST = 0;

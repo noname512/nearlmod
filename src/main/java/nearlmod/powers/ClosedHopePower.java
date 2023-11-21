@@ -29,8 +29,8 @@ public class ClosedHopePower extends AbstractPower {
         this.amount = amount;
         this.type = PowerType.BUFF;
         this.updateDescription();
-        region128 = new TextureAtlas.AtlasRegion(ImageMaster.loadImage("images/powers/light power 84.png"), 0, 0, 84, 84);
-        region48 = new TextureAtlas.AtlasRegion(ImageMaster.loadImage("images/powers/light power 32.png"), 0, 0, 32, 32);
+        region128 = new TextureAtlas.AtlasRegion(ImageMaster.loadImage("images/powers/closedhope power 84.png"), 0, 0, 84, 84);
+        region48 = new TextureAtlas.AtlasRegion(ImageMaster.loadImage("images/powers/closedhope power 32.png"), 0, 0, 32, 32);
     }
 
     public void updateDescription() {
