@@ -22,7 +22,7 @@ public class FullSpeedAhead extends AbstractNearlCard {
     public static final String DESCRIPTION = cardStrings.DESCRIPTION;
     public static final String UPGRADE_DESCRIPTION = cardStrings.UPGRADE_DESCRIPTION;
     public static final String ATKMODE_DESCRIPTION = "造成 !D! 点伤害。";
-    public static final String DEFMODE_DESCRIPTION = "造成 !D! 点伤害。 NL 切换至 nearlmod:剑枪形态 。";
+    public static final String DEFMODE_DESCRIPTION = "造成 !D! 点伤害。 NL 切换至 nearlmod:无畏 。";
     public static final String IMG_PATH = "images/cards/nearlstrike.png";
     private static final int COST = 1;
     private static final int UPGRADE_COST = 0;

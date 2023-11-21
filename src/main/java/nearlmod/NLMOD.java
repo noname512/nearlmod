@@ -94,8 +94,8 @@ public class NLMOD implements EditCardsSubscriber, EditCharactersSubscriber, Edi
         BaseMod.addEvent(new AddEventParams.Builder(LaughAllYouWantEvent.ID, LaughAllYouWantEvent.class).
                 eventType(EventUtils.EventType.ONE_TIME).
                 playerClass(NearlEnum.NEARL_CLASS).
-                dungeonID("Exordium").
-                bonusCondition(() -> (AbstractDungeon.floorNum > 6)).
+                dungeonID("TheCity").
+                //bonusCondition(() -> (AbstractDungeon.floorNum > 6)).
                 create());
     }
 
