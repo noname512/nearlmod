@@ -39,12 +39,12 @@ public class InvinciblePower extends AbstractPower implements CloneablePowerInte
 
     @Override
     public float atDamageFinalReceive(float damage, DamageInfo.DamageType damageType) {
-        flash();
         return 0;
     }
 
     @Override
     public int onAttackedToChangeDamage(DamageInfo info, int DamageAmount) {
+        flash();
         return 0;
     }
     public AbstractPower makeCopy() {

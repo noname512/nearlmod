@@ -99,7 +99,7 @@ public class CandleKnight extends AbstractMonster {
             } else if (this.nextMove == 5) {
                 addToBot(new AnimateFastAttackAction(this));
                 for (int i = 1; i <= damageTimes; i++)
-                    addToBot(new DamageAction(AbstractDungeon.player, this.damage.get(damageTimes), AbstractGameAction.AttackEffect.SLASH_HORIZONTAL));
+                    addToBot(new DamageAction(AbstractDungeon.player, this.damage.get(2), AbstractGameAction.AttackEffect.SLASH_HORIZONTAL));
             }
             if (this.nextMove == 1 || AbstractDungeon.aiRng.random(0, 4) == 0) {
                 setMove(MOVES[0], (byte) 2, Intent.UNKNOWN);
@@ -109,7 +109,7 @@ public class CandleKnight extends AbstractMonster {
             if (randInt == 0)
                 setMove((byte)4, Intent.ATTACK, this.damage.get(0).base);
             else
-                setMove((byte)5, Intent.ATTACK, this.damage.get(2).base, 2, true);
+                setMove((byte)5, Intent.ATTACK, this.damage.get(2).base, damageTimes, true);
         }
     }
 
