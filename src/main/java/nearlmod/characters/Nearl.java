@@ -18,21 +18,19 @@ import com.megacrit.cardcrawl.core.Settings;
 import com.megacrit.cardcrawl.helpers.CardHelper;
 import com.megacrit.cardcrawl.helpers.FontHelper;
 import com.megacrit.cardcrawl.helpers.ScreenShake;
+import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import com.megacrit.cardcrawl.screens.CharSelectInfo;
-import com.megacrit.cardcrawl.ui.panels.energyorb.EnergyOrbInterface;
 import com.megacrit.cardcrawl.unlock.UnlockTracker;
-import nearlmod.actions.GainCostAction;
 import nearlmod.cards.*;
 import nearlmod.cards.friendcards.*;
 import nearlmod.relics.*;
 import nearlmod.patches.AbstractCardEnum;
 import nearlmod.patches.NearlEnum;
+import nearlmod.patches.NearlTags;
 import nearlmod.stances.AtkStance;
 import nearlmod.stances.DefStance;
 import nearlmod.util.CostEnergyOrb;
 import nearlmod.util.CostReserves;
-
-import java.lang.reflect.Array;
 import java.util.ArrayList;
 
 public class Nearl extends CustomPlayer {
@@ -240,4 +238,18 @@ public class Nearl extends CustomPlayer {
         list.add(new BombardmentStudies());
         return list;
     }
+
+//    @Override
+//    public void useCard(AbstractCard c, AbstractMonster monster, int energyOnUse) {
+//        if (!c.hasTag(NearlTags.IS_FRIEND_CARD) && c.type == AbstractCard.CardType.ATTACK) {
+//            if (this.stance.ID.equals(AtkStance.STANCE_ID)) {
+//                this.state.setAnimation(0, "Skill_1_Begin", false);
+//                this.state.addAnimation(0, "Skill_1_Loop", false, 0.0F);
+//            } else {
+//                this.state.setAnimation(0, "Attack", false);
+//            }
+//            this.state.addAnimation(0, "Idle", true, 0.0F);
+//        }
+//        super.useCard(c, monster, energyOnUse);
+//    }
 }
