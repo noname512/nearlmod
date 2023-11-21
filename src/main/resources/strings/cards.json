@@ -116,6 +116,11 @@
         "DESCRIPTION": "造成 !D! 点伤害。如果瑕光在场，获得 !M! 层 nearlmod:光 。",
         "UPGRADE_DESCRIPTION": ""
     },
+    "nearlmod:DefensiveFormation": {
+        "NAME": "防御阵型",
+        "DESCRIPTION": "本回合内，你每打出一张牌后，进入 nearlmod:守护 。",
+        "UPGRADE_DESCRIPTION": ""
+    },
 
     "nearlmod:BraveTheDarkness": {
         "NAME": "不畏苦暗",

@@ -169,6 +169,7 @@ public class NLMOD implements EditCardsSubscriber, EditCharactersSubscriber, Edi
         BaseMod.addCard(new GloriousKazimierz()); // 光耀卡西米尔
         BaseMod.addCard(new ScarlyMartin()); // “恐怖马丁”
         BaseMod.addCard(new Cooperate()); // 协同战斗
+        BaseMod.addCard(new DefensiveFormation()); // 防御阵型
 
         // Rare.
         BaseMod.addCard(new BraveTheDarkness()); // 不畏苦暗

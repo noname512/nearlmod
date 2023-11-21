@@ -70,5 +70,9 @@
   "nearlmod:CostNextTurnPower": {
     "NAME": "部署费用提升",
     "DESCRIPTIONS": ["下一回合获得 #b", " 点 [#EFC851]部署费用[] 。"]
+  },
+  "nearlmod:DefensiveFormationPower": {
+    "NAME": "防御阵型",
+    "DESCRIPTIONS": ["本回合内，你每打出一张牌后，进入 [#EFC851]守护[] 。"]
   }
 }
