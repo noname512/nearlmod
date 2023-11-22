@@ -155,6 +155,7 @@ public class NLMOD implements EditCardsSubscriber, EditCharactersSubscriber, Edi
         BaseMod.addCard(new GlowingBlueBird()); // 发光的蓝色羽兽
         BaseMod.addCard(new Facing()); // 直面
         BaseMod.addCard(new ChargingWithShield()); // 持盾冲锋
+        BaseMod.addCard(new Unsheathed()); // 出鞘
 
         // Uncommon.
         BaseMod.addCard(new SecondSun()); // 第二轮太阳

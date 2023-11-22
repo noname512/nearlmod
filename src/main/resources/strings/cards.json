@@ -75,6 +75,16 @@
         "DESCRIPTION": "造成 !D! 点伤害。 NL nearlmod:守护 ：获得 !B! 点 格挡 。",
         "UPGRADED_DESCRIPTION": ""
     },
+    "nearlmod:Unsheathed": {
+        "NAME": "出鞘",
+        "DESCRIPTION": "进入 nearlmod:无畏 ，造成 !D! 点伤害。 NL 增加一张 *光！ 到你的手牌。",
+        "UPGRADED_DESCRIPTION": ""
+    },
+    "nearlmod:Light!": {
+        "NAME": "光！",
+        "DESCRIPTION": "保留 。 NL 消耗 。 NL 使用 nearlmod:光 。",
+        "UPGRADED_DESCRIPTION": "保留 。 NL 消耗 。 NL 获得 !M! 层 nearlmod:光 。 NL 使用 nearlmod:光 。"
+    },
 
     "nearlmod:SecondSun": {
         "NAME": "第二轮太阳",
@@ -368,7 +378,7 @@
     },
     "nearlmod:BombardmentStudies": {
         "NAME": "炮术研习",
-        "DESCRIPTION": " nearlmod:伙伴牌 。 NL [#EFC851]专注轰击[] 数值 + !nearlmod:M2! 。 NL 下回合开始时，将一张 [#EFC851]专注轰击[] 置入你的手牌。",
-        "UPGRADE_DESCRIPTION": " nearlmod:伙伴牌 。 NL [#EFC851]专注轰击[] 数值 + !nearlmod:M2! 。 NL 下回合开始时，将一张 [#EFC851]专注轰击+[] 置 NL 入你的手牌。"
+        "DESCRIPTION": " nearlmod:伙伴牌 。 NL [#EFC851]专注轰击[] 数值 + !nearlmod:M2! 。 NL 下回合开始时，增加一张 *专注轰击 到你的手牌。",
+        "UPGRADE_DESCRIPTION": " nearlmod:伙伴牌 。 NL [#EFC851]专注轰击[] 数值 + !nearlmod:M2! 。 NL 下回合开始时，增加一张 *专注轰击+ 到你的手牌。"
     }
 }
