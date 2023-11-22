@@ -41,7 +41,6 @@ public class Dawn extends AbstractNearlCard {
 
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
-        // TODO
         addToBot(new DawnAction(new DamageInfo(p, damage, damageTypeForTurn), this));
     }
 
