@@ -182,6 +182,7 @@ public class NLMOD implements EditCardsSubscriber, EditCharactersSubscriber, Edi
         BaseMod.addCard(new TheReturn()); // 归来
         BaseMod.addCard(new FullSpeedAhead()); // 全力冲锋
         BaseMod.addCard(new PersonalCharm()); // 个人魅力
+        BaseMod.addCard(new BlazingSunsObeisance()); // 耀阳颔首
 
         // Friend.
         BaseMod.addCard(new LSSwiftSword()); // 光影迅捷剑

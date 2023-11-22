@@ -23,6 +23,7 @@ import com.megacrit.cardcrawl.screens.CharSelectInfo;
 import com.megacrit.cardcrawl.unlock.UnlockTracker;
 import nearlmod.cards.*;
 import nearlmod.cards.friendcards.*;
+import nearlmod.powers.LightPower;
 import nearlmod.relics.*;
 import nearlmod.patches.AbstractCardEnum;
 import nearlmod.patches.NearlEnum;
@@ -208,6 +209,7 @@ public class Nearl extends CustomPlayer {
         DefStance.incNum = 1;
         AbstractDungeon.actionManager.addToBottom(new ChangeStanceAction(new DefStance()));
         CostReserves.resetReserves();
+        LightPower.amountForBattle = 0;
     }
 
     @Override

@@ -42,7 +42,7 @@ public class FullSpeedAhead extends AbstractNearlCard {
     public void use(AbstractPlayer p, AbstractMonster m) {
         calculateCardDamage(m);
         if (extraTriggered()) {
-            AbstractDungeon.actionManager.addToBottom(new ChangeStanceAction(new AtkStance()));
+            addToBot(new ChangeStanceAction(new AtkStance()));
         }
         addToBot(new DamageAction(m, new DamageInfo(p, damage, DamageInfo.DamageType.NORMAL), AbstractGameAction.AttackEffect.BLUNT_HEAVY));
         rawDescription = DESCRIPTION;

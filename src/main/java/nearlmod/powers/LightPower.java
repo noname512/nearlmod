@@ -6,21 +6,15 @@ import com.evacipated.cardcrawl.mod.stslib.actions.tempHp.AddTemporaryHPAction;
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
 import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
 import com.megacrit.cardcrawl.actions.common.DamageAction;
-import com.megacrit.cardcrawl.actions.common.GainBlockAction;
 import com.megacrit.cardcrawl.actions.common.RemoveSpecificPowerAction;
-import com.megacrit.cardcrawl.actions.utility.UseCardAction;
-import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.cards.DamageInfo;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.core.AbstractCreature;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
-import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.helpers.ImageMaster;
 import com.megacrit.cardcrawl.localization.PowerStrings;
-import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import com.megacrit.cardcrawl.powers.AbstractPower;
 import com.megacrit.cardcrawl.stances.AbstractStance;
-import nearlmod.patches.NearlTags;
 import nearlmod.stances.AtkStance;
 
 public class LightPower extends AbstractPower implements CloneablePowerInterface {
@@ -28,6 +22,7 @@ public class LightPower extends AbstractPower implements CloneablePowerInterface
     public static final PowerStrings powerStrings = CardCrawlGame.languagePack.getPowerStrings(POWER_ID);
     public static final String NAME = powerStrings.NAME;
     public static final String[] DESCRIPTIONS = powerStrings.DESCRIPTIONS;
+    public static int amountForBattle;
 
     public LightPower(AbstractCreature owner, int amount) {
         name = NAME;
@@ -49,14 +44,15 @@ public class LightPower extends AbstractPower implements CloneablePowerInterface
 
     public void useLight(AbstractPlayer p, AbstractCreature m) {
         if (p.getPower("nearlmod:Poem'sLooks") != null) {
-            AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(p, p, new ShadowPower(p, amount)));
+            addToBot(new ApplyPowerAction(p, p, new ShadowPower(p, amount)));
         }
+        amountForBattle += amount;
         if (p.stance.ID.equals(AtkStance.STANCE_ID)) {
-            AbstractDungeon.actionManager.addToBottom(new DamageAction(m, new DamageInfo(p, this.amount, DamageInfo.DamageType.THORNS), AbstractGameAction.AttackEffect.LIGHTNING));
+            addToBot(new DamageAction(m, new DamageInfo(p, amount, DamageInfo.DamageType.THORNS), AbstractGameAction.AttackEffect.LIGHTNING));
         } else {
-            AbstractDungeon.actionManager.addToBottom(new AddTemporaryHPAction(p, p, this.amount));
+            addToBot(new AddTemporaryHPAction(p, p, amount));
         }
-        this.amount = 0;
+        addToBot(new RemoveSpecificPowerAction(p, p, this));
     }
 
     @Override
