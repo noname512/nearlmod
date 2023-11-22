@@ -1,16 +1,14 @@
 package nearlmod.cards;
 
-import com.megacrit.cardcrawl.actions.common.DamageAction;
+import com.megacrit.cardcrawl.actions.AbstractGameAction;
+import com.megacrit.cardcrawl.actions.common.DamageAllEnemiesAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
-import com.megacrit.cardcrawl.cards.DamageInfo;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
-import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.localization.CardStrings;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import nearlmod.actions.SummonOrbAction;
 import nearlmod.actions.WeakenAllAction;
-import nearlmod.cards.friendcards.AbstractFriendCard;
 import nearlmod.orbs.Shining;
 import nearlmod.patches.AbstractCardEnum;
 import nearlmod.patches.NearlTags;
@@ -32,6 +30,7 @@ public class DawnDuskSaber extends AbstractNearlCard {
                 CardType.POWER, AbstractCardEnum.NEARL_GOLD,
                 CardRarity.UNCOMMON, CardTarget.SELF);
         damage = baseDamage = ATTACK_DMG;
+        isMultiDamage = true;
         tags.add(NearlTags.IS_SUMMON_CARD);
     }
 
@@ -40,13 +39,7 @@ public class DawnDuskSaber extends AbstractNearlCard {
         addToBot(new SummonOrbAction(new Shining()));
         if (p.hasPower("nearlmod:BFPPower"))
             ((BFPPower) p.getPower("nearlmod:BFPPower")).cardPlayed++;
-        DamageInfo info = new DamageInfo(p, damage);
-        info.name = AbstractFriendCard.damageSuffix;
-        for (AbstractMonster ms : AbstractDungeon.getMonsters().monsters) {
-            calculateCardDamage(ms);
-            info.base = damage;
-            addToBot(new DamageAction(ms, info));
-        }
+        addToBot(new DamageAllEnemiesAction(p, multiDamage, damageTypeForTurn, AbstractGameAction.AttackEffect.SLASH_HORIZONTAL));
         if (upgraded) addToBot(new WeakenAllAction(p));
     }
 

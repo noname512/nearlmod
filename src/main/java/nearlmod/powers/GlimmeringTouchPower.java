@@ -14,6 +14,7 @@ import com.megacrit.cardcrawl.helpers.ImageMaster;
 import com.megacrit.cardcrawl.localization.PowerStrings;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import com.megacrit.cardcrawl.powers.AbstractPower;
+import nearlmod.actions.PureDamageAllEnemiesAction;
 import nearlmod.cards.friendcards.AbstractFriendCard;
 import nearlmod.orbs.AbstractFriend;
 import nearlmod.orbs.Viviana;
@@ -48,13 +49,9 @@ public class GlimmeringTouchPower extends AbstractPower implements CloneablePowe
     public void atStartOfTurn() {
         amount--;
         if (amount == 0) {
-            DamageInfo info = new DamageInfo(owner, damage);
-            info.name = Viviana.ORB_ID + AbstractFriendCard.damageSuffix;
-            for (AbstractMonster ms : AbstractDungeon.getMonsters().monsters) {
-                addToBot(new DamageAction(ms, info, AbstractGameAction.AttackEffect.FIRE));
-            }
-            addToBot(new RemoveSpecificPowerAction(owner, owner, this));
-            addToBot(new ApplyPowerAction(owner, owner, new LightPower(owner, 10)));
+            addToTop(new PureDamageAllEnemiesAction(owner, damage, Viviana.ORB_ID + AbstractFriendCard.damageSuffix, AbstractGameAction.AttackEffect.FIRE));
+            addToTop(new RemoveSpecificPowerAction(owner, owner, this));
+            addToTop(new ApplyPowerAction(owner, owner, new LightPower(owner, 10)));
         }
         updateDescription();
     }

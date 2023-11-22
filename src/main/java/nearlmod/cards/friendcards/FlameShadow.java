@@ -1,11 +1,8 @@
 package nearlmod.cards.friendcards;
 
-import com.megacrit.cardcrawl.actions.AbstractGameAction;
 import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
-import com.megacrit.cardcrawl.actions.common.DamageAction;
 import com.megacrit.cardcrawl.actions.common.RemoveSpecificPowerAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
-import com.megacrit.cardcrawl.cards.DamageInfo;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
@@ -13,6 +10,7 @@ import com.megacrit.cardcrawl.helpers.ImageMaster;
 import com.megacrit.cardcrawl.localization.CardStrings;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import com.megacrit.cardcrawl.powers.AbstractPower;
+import nearlmod.actions.PureDamageAllEnemiesAction;
 import nearlmod.actions.UseShadowAction;
 import nearlmod.orbs.Viviana;
 import nearlmod.patches.AbstractCardEnum;
@@ -48,11 +46,7 @@ public class FlameShadow extends AbstractFriendCard {
             light += power.amount;
             addToBot(new RemoveSpecificPowerAction(p, p, power));
         }
-        for (AbstractMonster ms : AbstractDungeon.getMonsters().monsters) {
-            DamageInfo info = new DamageInfo(p, calculateSingleDamage(ms, dmg));
-            info.name = belongFriend + AbstractFriendCard.damageSuffix;
-            addToBot(new DamageAction(ms, info, AbstractGameAction.AttackEffect.LIGHTNING));
-        }
+        addToBot(new PureDamageAllEnemiesAction(p, dmg, belongFriend + damageSuffix));
         Viviana.uniqueUsed = true;
         addToBot(new UseShadowAction(p));
         if (light != 0) {

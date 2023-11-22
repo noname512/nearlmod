@@ -1,13 +1,12 @@
 package nearlmod.cards.friendcards;
 
-import com.megacrit.cardcrawl.actions.common.DamageAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
-import com.megacrit.cardcrawl.cards.DamageInfo;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.localization.CardStrings;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
+import nearlmod.actions.PureDamageAllEnemiesAction;
 import nearlmod.patches.AbstractCardEnum;
 
 import static nearlmod.patches.NearlTags.IS_KNIGHT_CARD;
@@ -35,12 +34,9 @@ public class FocusedBombardment extends AbstractFriendCard {
 
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
-        calculateCardDamage(m);
-        DamageInfo info = new DamageInfo(p, damage);
-        info.name = belongFriend + AbstractFriendCard.damageSuffix;
+        applyPowers();
         for (int i = 1; i <= secondMagicNumber; i++)
-            for (AbstractMonster ms : AbstractDungeon.getMonsters().monsters)
-                addToBot(new DamageAction(ms, info));
+            addToBot(new PureDamageAllEnemiesAction(p, magicNumber, belongFriend + damageSuffix));
     }
 
     @Override

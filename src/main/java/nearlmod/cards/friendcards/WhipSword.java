@@ -1,16 +1,15 @@
 package nearlmod.cards.friendcards;
 
-import com.badlogic.gdx.math.MathUtils;
-import com.megacrit.cardcrawl.actions.common.DamageAction;
+import com.megacrit.cardcrawl.actions.AbstractGameAction;
+import com.megacrit.cardcrawl.actions.common.DamageAllEnemiesAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.cards.DamageInfo;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
-import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.localization.CardStrings;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import com.megacrit.cardcrawl.orbs.AbstractOrb;
-import com.megacrit.cardcrawl.powers.AbstractPower;
+import nearlmod.actions.PureDamageAllEnemiesAction;
 import nearlmod.orbs.AbstractFriend;
 import nearlmod.patches.AbstractCardEnum;
 
@@ -35,32 +34,15 @@ public class WhipSword extends AbstractFriendCard {
 
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
-        float tmp = secondMagicNumber;
-        for (AbstractPower power : p.powers)
-            tmp = power.atDamageGive(tmp, DamageInfo.DamageType.NORMAL);
-        for (AbstractPower power : p.powers)
-            tmp = power.atDamageFinalGive(tmp, DamageInfo.DamageType.NORMAL);
-        int dmg = MathUtils.floor(tmp);
-        for (AbstractMonster ms : AbstractDungeon.getMonsters().monsters)
-            addToBot(new DamageAction(ms, new DamageInfo(p, calculateSingleDamage(ms, dmg))));
+        addToBot(new DamageAllEnemiesAction(p, secondMagicNumber, DamageInfo.DamageType.NORMAL, AbstractGameAction.AttackEffect.NONE));
 
-        DamageInfo info;
         if (upgraded) {
-            for (AbstractMonster ms : AbstractDungeon.getMonsters().monsters) {
-                info = new DamageInfo(p, calculateSingleDamage(ms, magicNumber));
-                info.name = belongFriend + AbstractFriendCard.damageSuffix;
-                addToBot(new DamageAction(ms, info));
-            }
+            addToBot(new PureDamageAllEnemiesAction(p, magicNumber, belongFriend + damageSuffix));
         }
 
         for (AbstractOrb orb : p.orbs)
             if (orb instanceof AbstractFriend) {
-                dmg = secondMagicNumber + ((AbstractFriend)orb).trustAmount;
-                for (AbstractMonster ms : AbstractDungeon.getMonsters().monsters) {
-                    info = new DamageInfo(p, calculateSingleDamage(ms, dmg));
-                    info.name = orb.ID + AbstractFriendCard.damageSuffix;
-                    addToBot(new DamageAction(ms, info));
-                }
+                addToBot(new PureDamageAllEnemiesAction(p, secondMagicNumber + ((AbstractFriend)orb).trustAmount, orb.ID + damageSuffix));
             }
     }
 

@@ -33,7 +33,7 @@ public class DawnAction extends AbstractGameAction {
         boolean canUpgrade = true;
         for (AbstractMonster mo : monsters) {
             if (!mo.isDeadOrEscaped()) {
-                DamageInfo actualInfo = new DamageInfo(info.owner, MathUtils.floor(AbstractNearlCard.staticCalcDmg(mo, info.base, DamageInfo.DamageType.NORMAL)));
+                DamageInfo actualInfo = new DamageInfo(info.owner, AbstractNearlCard.staticCalcDmg(mo, info.base, DamageInfo.DamageType.NORMAL));
                 mo.damage(actualInfo);
                 if ((mo.isDying || mo.currentHealth <= 0) && !mo.halfDead) {
                     canUpgrade = false;

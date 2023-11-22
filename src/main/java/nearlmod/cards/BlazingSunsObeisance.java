@@ -1,14 +1,12 @@
 package nearlmod.cards;
 
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
-import com.megacrit.cardcrawl.actions.common.DamageAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
-import com.megacrit.cardcrawl.cards.DamageInfo;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
-import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.localization.CardStrings;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
+import nearlmod.actions.PureDamageAllEnemiesAction;
 import nearlmod.patches.AbstractCardEnum;
 import nearlmod.powers.LightPower;
 
@@ -35,9 +33,7 @@ public class BlazingSunsObeisance extends AbstractNearlCard {
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
         applyPowers();
-        for (AbstractMonster ms : AbstractDungeon.getMonsters().monsters) {
-            addToBot(new DamageAction(ms, new DamageInfo(p, calculateSingleDamage(ms, damage + magicNumber), damageTypeForTurn), AbstractGameAction.AttackEffect.BLUNT_HEAVY));
-        }
+        addToBot(new PureDamageAllEnemiesAction(p, damage + magicNumber, AbstractGameAction.AttackEffect.BLUNT_HEAVY));
         rawDescription = baseDescription;
         initializeDescription();
     }
