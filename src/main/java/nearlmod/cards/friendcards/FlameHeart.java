@@ -30,7 +30,7 @@ public class FlameHeart extends AbstractFriendCard {
 
     public FlameHeart() {
         super(ID, NAME, IMG_PATH, COST, DESCRIPTION,
-                CardType.ATTACK, AbstractCardEnum.NEARL_GOLD,
+                CardType.ATTACK, AbstractCardEnum.FRIEND_BLUE,
                 CardRarity.SPECIAL, CardTarget.ENEMY, "nearlmod:Flametail");
         magicNumber = baseMagicNumber = ATTACK_DMG;
         secondMagicNumber = baseSecondMagicNumber = THORN_GAIN;

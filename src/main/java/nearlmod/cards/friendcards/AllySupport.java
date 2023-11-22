@@ -24,7 +24,7 @@ public class AllySupport extends AbstractFriendCard {
 
     public AllySupport() {
         super(ID, NAME, IMG_PATH, COST, DESCRIPTION,
-                CardType.POWER, AbstractCardEnum.NEARL_GOLD,
+                CardType.POWER, AbstractCardEnum.FRIEND_BLUE,
                 CardRarity.SPECIAL, CardTarget.SELF, "nearlmod:Fartooth");
         secondMagicNumber = baseSecondMagicNumber = ATTACK_DMG;
         tags.add(IS_KNIGHT_CARD);

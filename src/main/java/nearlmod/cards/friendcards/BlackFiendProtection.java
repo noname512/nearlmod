@@ -23,7 +23,7 @@ public class BlackFiendProtection extends AbstractFriendCard {
 
     public BlackFiendProtection() {
         super(ID, NAME, IMG_PATH, COST, DESCRIPTION,
-                CardType.POWER, AbstractCardEnum.NEARL_GOLD,
+                CardType.POWER, AbstractCardEnum.FRIEND_BLUE,
                 CardRarity.SPECIAL, CardTarget.SELF, "nearlmod:Shining");
         bannerSmallRegion = ImageMaster.CARD_BANNER_RARE;
         bannerLargeRegion = ImageMaster.CARD_BANNER_RARE_L;

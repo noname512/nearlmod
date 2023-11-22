@@ -28,7 +28,7 @@ public class PinusSylvestris extends AbstractFriendCard {
 
     public PinusSylvestris() {
         super(ID, NAME, IMG_PATH, COST, DESCRIPTION,
-                CardType.SKILL, AbstractCardEnum.NEARL_GOLD,
+                CardType.SKILL, AbstractCardEnum.FRIEND_BLUE,
                 CardRarity.SPECIAL, CardTarget.SELF, "nearlmod:Flametail");
         secondMagicNumber = baseSecondMagicNumber = COST_GAIN;
         tags.add(IS_KNIGHT_CARD);

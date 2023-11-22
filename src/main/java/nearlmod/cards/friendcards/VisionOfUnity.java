@@ -22,7 +22,7 @@ public class VisionOfUnity extends AbstractFriendCard {
 
     public VisionOfUnity() {
         super(ID, NAME, IMG_PATH, COST, DESCRIPTION,
-                CardType.SKILL, AbstractCardEnum.NEARL_GOLD,
+                CardType.SKILL, AbstractCardEnum.FRIEND_BLUE,
                 CardRarity.SPECIAL, CardTarget.SELF, "nearlmod:Whislash");
         secondMagicNumber = baseSecondMagicNumber = BUFFER_CNT;
     }

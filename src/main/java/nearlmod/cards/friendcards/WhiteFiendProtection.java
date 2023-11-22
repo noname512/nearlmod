@@ -1,6 +1,5 @@
 package nearlmod.cards.friendcards;
 
-import com.badlogic.gdx.math.MathUtils;
 import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
 import com.megacrit.cardcrawl.actions.common.RemoveSpecificPowerAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
@@ -26,7 +25,7 @@ public class WhiteFiendProtection extends AbstractFriendCard {
 
     public WhiteFiendProtection() {
         super(ID, NAME, IMG_PATH, COST, DESCRIPTION,
-                CardType.POWER, AbstractCardEnum.NEARL_GOLD,
+                CardType.POWER, AbstractCardEnum.FRIEND_BLUE,
                 CardRarity.SPECIAL, CardTarget.SELF, "nearlmod:Nightingale");
         this.bannerSmallRegion = ImageMaster.CARD_BANNER_RARE;
         this.bannerLargeRegion = ImageMaster.CARD_BANNER_RARE_L;

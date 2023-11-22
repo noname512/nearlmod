@@ -12,11 +12,6 @@ import nearlmod.orbs.AbstractFriend;
 import nearlmod.patches.NearlTags;
 
 public abstract class AbstractFriendCard extends AbstractNearlCard {
-    public static final String BG_512 = "images/512/";
-    public static final String BG_1024 = "images/1024/";
-    public static final String ATTACK_IMG = "bg_attack_friend.png";
-    public static final String SKILL_IMG = "bg_skill_friend.png";
-    public static final String POWER_IMG = "bg_power_friend.png";
     public String baseDescription;
     public boolean isSecondMagicNumberUseTrust = false;
     public static final String damageSuffix = "FriendDmg";
@@ -30,16 +25,6 @@ public abstract class AbstractFriendCard extends AbstractNearlCard {
         tags.add(NearlTags.IS_FRIEND_CARD);
         exhaust = true;
         isEthereal = true;
-        if (type == CardType.ATTACK) {
-            textureBackgroundSmallImg = BG_512 + ATTACK_IMG;
-            textureBackgroundLargeImg = BG_1024 + ATTACK_IMG;
-        } else if (type == CardType.SKILL) {
-            textureBackgroundSmallImg = BG_512 + SKILL_IMG;
-            textureBackgroundLargeImg = BG_1024 + SKILL_IMG;
-        } else if (type == CardType.POWER) {
-            textureBackgroundSmallImg = BG_512 + POWER_IMG;
-            textureBackgroundLargeImg = BG_1024 + POWER_IMG;
-        }
         this.belongFriend = belongFriend;
     }
 

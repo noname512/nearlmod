@@ -26,7 +26,7 @@ public class GlimmeringTouch extends AbstractFriendCard {
 
     public GlimmeringTouch() {
         super(ID, NAME, IMG_PATH, COST, DESCRIPTION,
-                CardType.SKILL, AbstractCardEnum.NEARL_GOLD,
+                CardType.SKILL, AbstractCardEnum.FRIEND_BLUE,
                 CardRarity.SPECIAL, CardTarget.SELF, "nearlmod:Viviana");
         magicNumber = baseMagicNumber = ATTACK_DMG;
         secondMagicNumber = baseSecondMagicNumber = LIGHT_GAIN;

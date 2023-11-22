@@ -25,7 +25,7 @@ public class BombardmentStudies extends AbstractFriendCard {
 
     public BombardmentStudies() {
         super(ID, NAME, IMG_PATH, COST, DESCRIPTION,
-                CardType.POWER, AbstractCardEnum.NEARL_GOLD,
+                CardType.POWER, AbstractCardEnum.FRIEND_BLUE,
                 CardRarity.SPECIAL, CardTarget.SELF, "nearlmod:Ashlock");
         secondMagicNumber = baseSecondMagicNumber = ADDITION_VAL;
         tags.add(IS_KNIGHT_CARD);

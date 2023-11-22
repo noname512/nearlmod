@@ -28,7 +28,7 @@ public class DeterringRadiance extends AbstractFriendCard {
 
     public DeterringRadiance() {
         super(ID, NAME, IMG_PATH, COST, DESCRIPTION,
-                CardType.SKILL, AbstractCardEnum.NEARL_GOLD,
+                CardType.SKILL, AbstractCardEnum.FRIEND_BLUE,
                 CardRarity.SPECIAL, CardTarget.ALL_ENEMY, "nearlmod:Blemishine");
         magicNumber = baseMagicNumber = LIGHT_INC;
         secondMagicNumber = baseSecondMagicNumber = WEAK_CNT;

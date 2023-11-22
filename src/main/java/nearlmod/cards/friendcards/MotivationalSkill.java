@@ -25,7 +25,7 @@ public class MotivationalSkill extends AbstractFriendCard {
 
     public MotivationalSkill() {
         super(ID, NAME, IMG_PATH, COST, DESCRIPTION,
-                CardType.SKILL, AbstractCardEnum.NEARL_GOLD,
+                CardType.SKILL, AbstractCardEnum.FRIEND_BLUE,
                 CardRarity.SPECIAL, CardTarget.SELF, "nearlmod:Whislash");
         secondMagicNumber = baseSecondMagicNumber = GAIN_STR;
     }

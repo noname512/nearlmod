@@ -24,7 +24,7 @@ public class Rebuke extends AbstractFriendCard {
 
     public Rebuke() {
         super(ID, NAME, IMG_PATH, COST, DESCRIPTION,
-                CardType.POWER, AbstractCardEnum.NEARL_GOLD,
+                CardType.POWER, AbstractCardEnum.FRIEND_BLUE,
                 CardRarity.SPECIAL, CardTarget.SELF, "nearlmod:Whislash");
         secondMagicNumber = baseSecondMagicNumber = CHANGE_CNT;
     }

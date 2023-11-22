@@ -29,7 +29,7 @@ public class FlameShadow extends AbstractFriendCard {
 
     public FlameShadow() {
         super(ID, NAME, IMG_PATH, COST, DESCRIPTION,
-                CardType.ATTACK, AbstractCardEnum.NEARL_GOLD,
+                CardType.ATTACK, AbstractCardEnum.FRIEND_BLUE,
                 CardRarity.SPECIAL, CardTarget.SELF, "nearlmod:Viviana");
         magicNumber = baseMagicNumber = 0;
         bannerSmallRegion = ImageMaster.CARD_BANNER_RARE;
