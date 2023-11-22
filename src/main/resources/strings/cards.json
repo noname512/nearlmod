@@ -58,32 +58,32 @@
     "nearlmod:LightsOut": {
         "NAME": "熄灯",
         "DESCRIPTION": "造成 !D! 点伤害。 NL 如果薇薇安娜在场，获得 !M! 层 nearlmod:影 。",
-        "UPGRADED_DESCRIPTION": ""
+        "UPGRADE_DESCRIPTION": ""
     },
     "nearlmod:GlowingBlueBird": {
         "NAME": "发光的蓝色羽兽",
         "DESCRIPTION": "获得 !B! 点 格挡 。 NL 如果夜莺在场，获得 !M! 点 stslib:临时生命 。",
-        "UPGRADED_DESCRIPTION": ""
+        "UPGRADE_DESCRIPTION": ""
     },
     "nearlmod:Facing": {
         "NAME": "直面",
         "DESCRIPTION": "获得 !B! 点 格挡 。 NL 所有敌人本回合获得 !M! 点 力量 。",
-        "UPGRADED_DESCRIPTION": ""
+        "UPGRADE_DESCRIPTION": ""
     },
     "nearlmod:ChargingWithShield": {
         "NAME": "持盾冲锋",
         "DESCRIPTION": "造成 !D! 点伤害。 NL nearlmod:守护 ：获得 !B! 点 格挡 。",
-        "UPGRADED_DESCRIPTION": ""
+        "UPGRADE_DESCRIPTION": ""
     },
     "nearlmod:Unsheathed": {
         "NAME": "出鞘",
         "DESCRIPTION": "进入 nearlmod:无畏 ，造成 !D! 点伤害。 NL 增加一张 *光！ 到你的手牌。",
-        "UPGRADED_DESCRIPTION": ""
+        "UPGRADE_DESCRIPTION": ""
     },
     "nearlmod:Light!": {
         "NAME": "光！",
         "DESCRIPTION": "保留 。 NL 消耗 。 NL 使用 nearlmod:光 。",
-        "UPGRADED_DESCRIPTION": "保留 。 NL 消耗 。 NL 获得 !M! 层 nearlmod:光 。 NL 使用 nearlmod:光 。"
+        "UPGRADE_DESCRIPTION": "保留 。 NL 消耗 。 NL 获得 !M! 层 nearlmod:光 。 NL 使用 nearlmod:光 。"
     },
 
     "nearlmod:SecondSun": {
