@@ -7,6 +7,8 @@ import com.megacrit.cardcrawl.orbs.AbstractOrb;
 import nearlmod.actions.AddFriendCardToHandAction;
 import nearlmod.cards.friendcards.*;
 
+import java.util.ArrayList;
+
 public class Flametail extends AbstractFriend {
 
     public static final String ORB_ID = "nearlmod:Flametail";
@@ -29,14 +31,10 @@ public class Flametail extends AbstractFriend {
     }
 
     public static AbstractFriendCard getRandomCard(boolean upgraded) {
-        int random = AbstractDungeon.cardRng.random(0, 1);
-        AbstractFriendCard card;
-        if (random == 0)
-            card = new PinusSylvestris();
-        else
-            card = new FlameHeart();
-        if (upgraded) card.upgrade();
-        return card;
+        ArrayList<AbstractFriendCard> cards = new ArrayList<>();
+        cards.add(new PinusSylvestris());
+        cards.add(new FlameHeart());
+        return getRandomCard(cards, upgraded);
     }
 
     @Override

@@ -9,6 +9,9 @@ import com.megacrit.cardcrawl.core.Settings;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.helpers.FontHelper;
 import com.megacrit.cardcrawl.helpers.MathHelper;
+import nearlmod.cards.friendcards.AbstractFriendCard;
+
+import java.util.ArrayList;
 
 public abstract class AbstractFriend extends CustomOrb {
     public boolean upgraded;
@@ -103,4 +106,12 @@ public abstract class AbstractFriend extends CustomOrb {
 
     @Override
     public void playChannelSFX() {}
+
+    protected static AbstractFriendCard getRandomCard(ArrayList<AbstractFriendCard> cards, boolean upgraded) {
+        int random = AbstractDungeon.cardRng.random(0, cards.size() - 1);
+        AbstractFriendCard c = cards.get(random);
+        if (upgraded)
+            c.upgrade();
+        return c;
+    }
 }

@@ -7,6 +7,8 @@ import com.megacrit.cardcrawl.orbs.AbstractOrb;
 import nearlmod.actions.AddFriendCardToHandAction;
 import nearlmod.cards.friendcards.*;
 
+import java.util.ArrayList;
+
 public class Shining extends AbstractFriend {
 
     public static final String ORB_ID = "nearlmod:Shining";
@@ -30,23 +32,13 @@ public class Shining extends AbstractFriend {
     }
 
     public static AbstractFriendCard getRandomCard(boolean upgraded, boolean notUnique) {
-        int random = AbstractDungeon.cardRng.random(notUnique? 1 : 0, 3);
-        AbstractFriendCard card;
-        switch (random) {
-            case 0:
-                card = new BlackFiendProtection();
-                break;
-            case 1:
-                card = new Creed();
-                break;
-            case 2:
-                card = new CreedField();
-                break;
-            default:
-                card = new AutoProtect();
-        }
-        if (upgraded) card.upgrade();
-        return card;
+        ArrayList<AbstractFriendCard> cards = new ArrayList<>();
+        if (!notUnique)
+            cards.add(new BlackFiendProtection());
+        cards.add(new Creed());
+        cards.add(new CreedField());
+        cards.add(new AutoProtect());
+        return getRandomCard(cards, upgraded);
     }
 
     @Override
