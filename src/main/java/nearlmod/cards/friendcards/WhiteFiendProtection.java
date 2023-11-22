@@ -1,5 +1,6 @@
 package nearlmod.cards.friendcards;
 
+import com.badlogic.gdx.math.MathUtils;
 import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
 import com.megacrit.cardcrawl.actions.common.RemoveSpecificPowerAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
@@ -38,10 +39,10 @@ public class WhiteFiendProtection extends AbstractFriendCard {
         if (upgraded) {
             for (AbstractPower power : p.powers)
                 if (power.type == AbstractPower.PowerType.DEBUFF) {
-                    if (power.amount > 1)
-                        power.reducePower(1);
-                    else
+                    if (((power.ID.equals("Strength") || power.ID.equals("Dexterity") || power.ID.equals("Focus")) && power.amount == -1) || power.amount == 1)
                         addToBot(new RemoveSpecificPowerAction(p, p, power));
+                    else
+                        power.reducePower(1);
                 }
         }
     }
