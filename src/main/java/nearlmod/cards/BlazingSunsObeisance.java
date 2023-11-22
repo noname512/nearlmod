@@ -36,7 +36,7 @@ public class BlazingSunsObeisance extends AbstractNearlCard {
     public void use(AbstractPlayer p, AbstractMonster m) {
         applyPowers();
         for (AbstractMonster ms : AbstractDungeon.getMonsters().monsters) {
-            addToBot(new DamageAction(ms, new DamageInfo(p, calculateSingleDamage(ms, damage), damageTypeForTurn), AbstractGameAction.AttackEffect.BLUNT_HEAVY));
+            addToBot(new DamageAction(ms, new DamageInfo(p, calculateSingleDamage(ms, damage + magicNumber), damageTypeForTurn), AbstractGameAction.AttackEffect.BLUNT_HEAVY));
         }
         rawDescription = baseDescription;
         initializeDescription();
