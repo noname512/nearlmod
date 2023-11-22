@@ -27,7 +27,7 @@ public class UseShadowAction extends AbstractGameAction {
             return;
         }
         l.useShadow(p, target);
-        AbstractDungeon.actionManager.addToTop(new RemoveSpecificPowerAction(p, p, l));
+        addToTop(new RemoveSpecificPowerAction(p, p, l));
         isDone = true;
     }
 }

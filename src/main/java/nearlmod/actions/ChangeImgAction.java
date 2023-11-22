@@ -6,7 +6,7 @@ import com.megacrit.cardcrawl.core.Settings;
 import nearlmod.monsters.CandleKnight;
 
 public class ChangeImgAction extends AbstractGameAction {
-    private String imgUrl;
+    private final String imgUrl;
 
     public ChangeImgAction(AbstractCreature source, String imgUrl) {
         actionType = ActionType.SPECIAL;

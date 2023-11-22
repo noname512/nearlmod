@@ -27,7 +27,7 @@ public class UseLightAction extends AbstractGameAction {
             return;
         }
         l.useLight(p, target);
-        AbstractDungeon.actionManager.addToTop(new RemoveSpecificPowerAction(p, p, l));
+        addToTop(new RemoveSpecificPowerAction(p, p, l));
         isDone = true;
     }
 }

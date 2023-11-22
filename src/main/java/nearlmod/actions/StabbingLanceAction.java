@@ -19,7 +19,7 @@ public class StabbingLanceAction extends AbstractGameAction {
             if (!ms.isDeadOrEscaped())
                 resMonster++;
         if (resMonster < amount)
-            addToBot(new GainCostAction(costInc * (amount - resMonster)));
+            addToTop(new GainCostAction(costInc * (amount - resMonster)));
         this.isDone = true;
     }
 }

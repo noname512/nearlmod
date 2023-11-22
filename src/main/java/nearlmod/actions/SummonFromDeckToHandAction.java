@@ -10,8 +10,6 @@ import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.localization.UIStrings;
 import nearlmod.patches.NearlTags;
 
-import static basemod.BaseMod.logger;
-
 public class SummonFromDeckToHandAction extends AbstractGameAction {
     private static final UIStrings uiStrings = CardCrawlGame.languagePack.getUIString("nearlmod:SummonFromDeckToHandAction");
     private static final String[] TEXT = uiStrings.TEXT;

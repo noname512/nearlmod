@@ -5,11 +5,10 @@ import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.core.AbstractCreature;
 import com.megacrit.cardcrawl.core.Settings;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
-import nearlmod.cards.friendcards.FocusedBombardment;
 
 public class AddCardToDeckTopAction extends AbstractGameAction {
 
-    private AbstractCard card;
+    private final AbstractCard card;
 
     public AddCardToDeckTopAction(AbstractCreature source, AbstractCard card) {
         actionType = ActionType.SPECIAL;

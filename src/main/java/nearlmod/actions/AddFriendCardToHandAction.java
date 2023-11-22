@@ -8,7 +8,7 @@ import nearlmod.cards.friendcards.AbstractFriendCard;
 
 public class AddFriendCardToHandAction extends AbstractGameAction {
 
-    private AbstractFriendCard card;
+    private final AbstractFriendCard card;
 
     public AddFriendCardToHandAction(AbstractFriendCard card) {
         actionType = ActionType.SPECIAL;
