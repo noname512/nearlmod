@@ -185,6 +185,11 @@
             " NL （当前额外造成 !M! 点伤害）"
         ]
     },
+    "nearlmod:ShadowOut": {
+        "NAME": "影灭",
+        "DESCRIPTION": "将你所有的 nearlmod:光 转化为等量的 nearlmod:影 。 NL 如果薇薇安娜在场，她对所有敌人造成 !M! 点伤害 !nearlmod:M2! 次。否则召唤薇薇安娜作为 nearlmod:伙伴 。",
+        "UPGRADE_DESCRIPTION": ""
+    },
 
     "nearlmod:SwallowLight": {
         "NAME": "侵吞光芒",
