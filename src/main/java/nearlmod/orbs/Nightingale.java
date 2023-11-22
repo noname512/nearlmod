@@ -18,7 +18,6 @@ public class Nightingale extends AbstractFriend {
 
     public Nightingale(int amount) {
         super(ORB_ID, NAME, DESCRIPTION, IMAGE, amount);
-        uniqueUsed = false;
     }
 
     public Nightingale() {

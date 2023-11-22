@@ -18,7 +18,6 @@ public class Shining extends AbstractFriend {
 
     public Shining(int amount) {
         super(ORB_ID, NAME, DESCRIPTION, IMAGE, amount);
-        uniqueUsed = false;
     }
 
     public Shining() {

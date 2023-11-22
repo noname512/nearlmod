@@ -5,11 +5,11 @@ import com.megacrit.cardcrawl.actions.defect.ChannelAction;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.orbs.AbstractOrb;
 import com.megacrit.cardcrawl.core.Settings;
-import nearlmod.orbs.AbstractFriend;
+import nearlmod.orbs.*;
 
 public class SummonOrbAction extends AbstractGameAction {
 
-    private AbstractOrb summon;
+    private final AbstractOrb summon;
 
     public SummonOrbAction(AbstractOrb summonOrb) {
         actionType = ActionType.SPECIAL;
@@ -31,7 +31,24 @@ public class SummonOrbAction extends AbstractGameAction {
                 break;
             }
         if (!isOrbExist) {
-            AbstractDungeon.actionManager.addToTop(new ChannelAction(summon, false));
+            switch (summon.ID) {
+                case Blemishine.ORB_ID:
+                    Blemishine.uniqueUsed = false;
+                    break;
+                case Nightingale.ORB_ID:
+                    Nightingale.uniqueUsed = false;
+                    break;
+                case Shining.ORB_ID:
+                    Shining.uniqueUsed = false;
+                    break;
+                case Viviana.ORB_ID:
+                    Viviana.uniqueUsed = false;
+                    break;
+                case Whislash.ORB_ID:
+                    Whislash.uniqueUsed = false;
+                    break;
+            }
+            addToTop(new ChannelAction(summon, false));
             AbstractDungeon.player.increaseMaxOrbSlots(1, false);
         }
         isDone = true;

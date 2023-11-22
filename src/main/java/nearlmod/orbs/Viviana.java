@@ -23,7 +23,6 @@ public class Viviana extends AbstractFriend {
     public Viviana(int amount) {
         super(ORB_ID, NAME, DESCRIPTION, IMAGE, amount);
         chargingTurn = 0;
-        uniqueUsed = false;
     }
 
     public Viviana() {

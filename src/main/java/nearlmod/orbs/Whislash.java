@@ -18,7 +18,6 @@ public class Whislash extends AbstractFriend {
 
     public Whislash(int amount) {
         super(ORB_ID, NAME, DESCRIPTION, IMAGE, amount);
-        uniqueUsed = false;
     }
 
     public Whislash() {

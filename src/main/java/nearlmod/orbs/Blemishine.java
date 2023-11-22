@@ -19,7 +19,6 @@ public class Blemishine extends AbstractFriend {
 
     public Blemishine(int amount) {
         super(ORB_ID, NAME, DESCRIPTION, IMAGE, amount);
-        uniqueUsed = false;
     }
 
     public Blemishine() {
