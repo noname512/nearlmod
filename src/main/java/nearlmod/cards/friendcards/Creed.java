@@ -33,6 +33,7 @@ public class Creed extends AbstractFriendCard {
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
         DamageInfo info = new DamageInfo(p, magicNumber);
+        info.applyEnemyPowersOnly(m);
         info.name = belongFriend + AbstractFriendCard.damageSuffix;
         addToBot(new DamageAction(m, info));
         if (p.stance.ID.equals(AtkStance.STANCE_ID)) {

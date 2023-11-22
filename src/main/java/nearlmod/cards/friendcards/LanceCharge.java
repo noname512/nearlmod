@@ -36,7 +36,8 @@ public class LanceCharge extends AbstractFriendCard {
 
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
-        DamageInfo info = new DamageInfo(p, damage);
+        DamageInfo info = new DamageInfo(p, magicNumber);
+        info.applyEnemyPowersOnly(m);
         info.name = belongFriend + AbstractFriendCard.damageSuffix;
         addToBot(new DamageAction(m, info));
         if (m.getIntentBaseDmg() >= 0) {

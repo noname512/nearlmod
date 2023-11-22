@@ -58,7 +58,8 @@ public class FlashFade extends AbstractFriendCard {
         if (!p.stance.ID.equals(AtkStance.STANCE_ID)) {
             addToBot(new ChangeStanceAction(new AtkStance()));
         }
-        DamageInfo info = new DamageInfo(p, damage);
+        DamageInfo info = new DamageInfo(p, magicNumber);
+        info.applyEnemyPowersOnly(m);
         info.name = belongFriend + AbstractFriendCard.damageSuffix;
         for (int i = 1; i <= secondMagicNumber; i++)
             addToBot(new DamageAction(m, info, AbstractGameAction.AttackEffect.SLASH_DIAGONAL));

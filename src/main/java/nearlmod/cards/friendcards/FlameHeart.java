@@ -40,7 +40,8 @@ public class FlameHeart extends AbstractFriendCard {
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
         addToBot(new GainCostAction(COST_GAIN));
-        DamageInfo info = new DamageInfo(p, damage);
+        DamageInfo info = new DamageInfo(p, magicNumber);
+        info.applyEnemyPowersOnly(m);
         info.name = belongFriend + AbstractFriendCard.damageSuffix;
         addToBot(new DamageAction(m, info));
         addToBot(new ApplyPowerAction(p, p, new ThornsPower(p, secondMagicNumber)));

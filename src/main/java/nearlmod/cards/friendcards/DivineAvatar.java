@@ -39,7 +39,8 @@ public class DivineAvatar extends AbstractFriendCard {
 
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
-        DamageInfo info = new DamageInfo(p, damage);
+        DamageInfo info = new DamageInfo(p, magicNumber);
+        info.applyEnemyPowersOnly(m);
         info.name = belongFriend + AbstractFriendCard.damageSuffix;
         addToBot(new DamageAction(m, info, AbstractGameAction.AttackEffect.SLASH_DIAGONAL));
         addToBot(new HealAction(p, p, secondMagicNumber));
