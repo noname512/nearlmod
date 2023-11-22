@@ -5,17 +5,15 @@ import com.megacrit.cardcrawl.actions.AbstractGameAction;
 import com.megacrit.cardcrawl.actions.utility.WaitAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.cards.DamageInfo;
-import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.core.Settings;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
-import com.megacrit.cardcrawl.powers.AbstractPower;
 import com.megacrit.cardcrawl.vfx.UpgradeShineEffect;
 import com.megacrit.cardcrawl.vfx.cardManip.ShowCardBrieflyEffect;
+import nearlmod.cards.AbstractNearlCard;
 import nearlmod.cards.Dawn;
 
 import java.util.ArrayList;
-import java.util.Iterator;
 
 public class DawnAction extends AbstractGameAction {
 
@@ -35,14 +33,7 @@ public class DawnAction extends AbstractGameAction {
         boolean canUpgrade = true;
         for (AbstractMonster mo : monsters) {
             if (!mo.isDeadOrEscaped()) {
-                float tmp = info.base;
-                for (AbstractPower power : mo.powers)
-                    tmp = power.atDamageReceive(tmp, info.type);
-                for (AbstractPower power : mo.powers)
-                    tmp = power.atDamageFinalReceive(tmp, info.type);
-                if (tmp < 0.0F)
-                    tmp = 0.0F;
-                DamageInfo actualInfo = new DamageInfo(info.owner, MathUtils.floor(tmp));
+                DamageInfo actualInfo = new DamageInfo(info.owner, MathUtils.floor(AbstractNearlCard.staticCalcDmg(mo, info.base, DamageInfo.DamageType.NORMAL)));
                 mo.damage(actualInfo);
                 if ((mo.isDying || mo.currentHealth <= 0) && !mo.halfDead) {
                     canUpgrade = false;
@@ -51,11 +42,7 @@ public class DawnAction extends AbstractGameAction {
         }
         if (canUpgrade) {
             sourceCard.upgrade();
-            Iterator var1 = AbstractDungeon.player.masterDeck.group.iterator();
-
-            AbstractCard c;
-            while(var1.hasNext()) {
-                c = (AbstractCard)var1.next();
+            for (AbstractCard c : AbstractDungeon.player.masterDeck.group) {
                 if (c == sourceCard.copiedFrom) {
                     sourceCard.copiedFrom.upgrade();
                     // Copied from 勤学精进

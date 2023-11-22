@@ -5,6 +5,7 @@ import basemod.abstracts.DynamicVariable;
 import basemod.helpers.TooltipInfo;
 import com.badlogic.gdx.math.MathUtils;
 import com.megacrit.cardcrawl.cards.AbstractCard;
+import com.megacrit.cardcrawl.cards.DamageInfo;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import com.megacrit.cardcrawl.powers.AbstractPower;
 
@@ -49,16 +50,20 @@ public abstract class AbstractNearlCard extends CustomCard {
             this.glowColor = AbstractCard.BLUE_BORDER_GLOW_COLOR.cpy();
     }
 
-    public int calculateSingleDamage(AbstractMonster m, int baseDmg) {
+    public static int staticCalcDmg(AbstractMonster m, int baseDmg, DamageInfo.DamageType type) {
         if (m == null) return baseDmg;
         float tmp = (float)baseDmg;
         for (AbstractPower power : m.powers)
-            tmp = power.atDamageReceive(tmp, damageTypeForTurn, this);
+            tmp = power.atDamageReceive(tmp, type);
         for (AbstractPower power : m.powers)
-            tmp = power.atDamageFinalReceive(tmp, damageTypeForTurn, this);
+            tmp = power.atDamageFinalReceive(tmp, type);
         if (tmp < 0.0F)
             tmp = 0.0F;
         return MathUtils.floor(tmp);
+    }
+
+    public int calculateSingleDamage(AbstractMonster m, int baseDmg) {
+        return staticCalcDmg(m, baseDmg, damageTypeForTurn);
     }
 
     public static class SecondMagicNumber extends DynamicVariable {
