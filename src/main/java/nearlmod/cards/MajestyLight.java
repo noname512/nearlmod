@@ -11,6 +11,7 @@ import nearlmod.actions.UseLightAction;
 import nearlmod.patches.AbstractCardEnum;
 import nearlmod.patches.NearlTags;
 import nearlmod.powers.LightPower;
+import nearlmod.stances.AtkStance;
 import nearlmod.stances.DefStance;
 
 public class MajestyLight extends AbstractNearlCard {
@@ -45,6 +46,12 @@ public class MajestyLight extends AbstractNearlCard {
     @Override
     public AbstractCard makeCopy() {
         return new MajestyLight();
+    }
+
+    @Override
+    public void applyPowers() {
+        switchedStance();
+        super.applyPowers();
     }
 
     @Override

@@ -25,7 +25,6 @@ public class LightCard extends AbstractNearlCard {
         super(ID, NAME, IMG_PATH, COST, DESCRIPTION,
                 CardType.SKILL, CardColor.COLORLESS,
                 CardRarity.SPECIAL, CardTarget.ENEMY);
-        switchedStance();
         selfRetain = true;
         exhaust = true;
         magicNumber = baseMagicNumber = EXTRA_LIGHT;
@@ -40,6 +39,12 @@ public class LightCard extends AbstractNearlCard {
         } else {
             addToBot(new UseLightAction(m));
         }
+    }
+
+    @Override
+    public void applyPowers() {
+        switchedStance();
+        super.applyPowers();
     }
 
     @Override
