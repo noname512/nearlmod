@@ -185,6 +185,7 @@ public class NLMOD implements EditCardsSubscriber, EditCharactersSubscriber, Edi
         BaseMod.addCard(new PersonalCharm()); // 个人魅力
         BaseMod.addCard(new BlazingSunsObeisance()); // 耀阳颔首
         BaseMod.addCard(new ShadowOut()); // 影灭
+        BaseMod.addCard(new BladeOfBlazingSun()); // 耀阳锋刃
 
         // Friend.
         BaseMod.addCard(new LSSwiftSword()); // 光影迅捷剑

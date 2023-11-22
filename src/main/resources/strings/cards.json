@@ -190,6 +190,11 @@
         "DESCRIPTION": "将你所有的 nearlmod:光 转化为等量的 nearlmod:影 。 NL 如果薇薇安娜在场，她对所有敌人造成 !M! 点伤害 !nearlmod:M2! 次。否则召唤薇薇安娜作为 nearlmod:伙伴 。",
         "UPGRADE_DESCRIPTION": ""
     },
+    "nearlmod:BladeOfBlazingSun": {
+        "NAME": "耀阳锋刃",
+        "DESCRIPTION": "如果瑕光在场，你处于 nearlmod:无畏 时每打出一张 *攻击牌 ，获得 2 层 nearlmod:光 。否则召唤瑕光作为 nearlmod:伙伴 。",
+        "UPGRADE_DESCRIPTION": "固有 。 NL 如果瑕光在场，你处于 nearlmod:无畏 时，每打出一张 *攻击牌 ，获得 2 层 nearlmod:光 。否则召唤瑕光作为 nearlmod:伙伴 。"
+    },
 
     "nearlmod:SwallowLight": {
         "NAME": "侵吞光芒",
