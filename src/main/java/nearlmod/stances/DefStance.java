@@ -6,6 +6,7 @@ import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.localization.StanceStrings;
 import com.megacrit.cardcrawl.powers.DexterityPower;
+import com.megacrit.cardcrawl.powers.LoseDexterityPower;
 import com.megacrit.cardcrawl.stances.AbstractStance;
 import nearlmod.actions.SpecialApplyPowerAction;
 
@@ -16,6 +17,7 @@ public class DefStance extends AbstractStance {
     public static final String[] DESCRIPTION = stanceString.DESCRIPTION;
     public static int defInc = 0;
     public static int incNum = 1;
+    public static boolean keepVal = false;
 
     public DefStance() {
         this.ID = "nearlmod:DefStance";
@@ -44,8 +46,14 @@ public class DefStance extends AbstractStance {
 
     @Override
     public void onExitStance() {
+        if (defInc == 0) {
+            keepVal = false;
+            return;
+        }
         AbstractPlayer p = AbstractDungeon.player;
-        if (defInc != 0) {
+        if (keepVal) {
+            AbstractDungeon.actionManager.addToTop(new ApplyPowerAction(p, p, new LoseDexterityPower(p, defInc)));
+        } else {
             AbstractDungeon.actionManager.addToTop(new SpecialApplyPowerAction(p, p, new DexterityPower(p, -defInc), -defInc));
         }
     }

@@ -77,13 +77,18 @@
     },
     "nearlmod:Unsheathed": {
         "NAME": "出鞘",
-        "DESCRIPTION": "进入 nearlmod:无畏 ，造成 !D! 点伤害。 NL 增加一张 *光！ 到你的手牌。",
+        "DESCRIPTION": "进入 nearlmod:无畏 ，造成 !D! 点伤害。 NL 将一张 *光！ 放入你的手牌。",
         "UPGRADE_DESCRIPTION": ""
     },
     "nearlmod:Light!": {
         "NAME": "光！",
         "DESCRIPTION": "保留 。 NL 消耗 。 NL 使用 nearlmod:光 。",
         "UPGRADE_DESCRIPTION": "保留 。 NL 消耗 。 NL 获得 !M! 层 nearlmod:光 。 NL 使用 nearlmod:光 。"
+    },
+    "nearlmod:Dreadnought": {
+        "NAME": "无畏者",
+        "DESCRIPTION": "造成 !D! 点伤害。 NL nearlmod:无畏 ：获得 !M! 层 nearlmod:光 。",
+        "UPGRADE_DESCRIPTION": ""
     },
 
     "nearlmod:SecondSun": {
@@ -134,6 +139,39 @@
     "nearlmod:Oaths": {
         "NAME": "誓言",
         "DESCRIPTION": "对所有敌人造成 !D! 点伤害，并给予 !M! 层虚弱。如果闪灵在场，本回合受到的伤害减少 6 点。",
+        "UPGRADE_DESCRIPTION": ""
+    },
+    "nearlmod:DefendHonor": {
+        "NAME": "捍卫荣耀",
+        "DESCRIPTION": "造成相当于目标攻击意图数值的伤害。",
+        "UPGRADE_DESCRIPTION": "造成相当于目标攻击意图数值+3的伤害。",
+        "EXTENDED_DESCRIPTION": [
+            " NL （当前造成 !D! 点）"
+        ]
+    },
+    "nearlmod:FlutteringWings": {
+        "NAME": "振翅欲飞",
+        "DESCRIPTION": "切换 nearlmod:形态 ，本回合内保留当前 nearlmod:形态 增加的属性。将一张 *攻防一体 放入你的手牌，并使其获得 消耗 和 虚无 。",
+        "UPGRADE_DESCRIPTION": "切换 nearlmod:形态 ，本回合内保留当前 nearlmod:形态 增加的属性。将一张 *攻防一体+ 放入你的手牌，并使其获得 消耗 和 虚无 。"
+    },
+    "nearlmod:ShieldAndShelter": {
+        "NAME": "盾与避难所",
+        "DESCRIPTION": "获得 3 点 格挡 ， 3 层 nearlmod:光 和 1 点 nearlmod:部署费用 X 次。",
+        "UPGRADE_DESCRIPTION": "获得 3 点 格挡 ， 3 层 nearlmod:光 和 1 点 nearlmod:部署费用 X+1 次。"
+    },
+    "nearlmod:BreakThroughFetters": {
+        "NAME": "冲破束缚",
+        "DESCRIPTION": "选择任意张未被 消耗 的 状态牌 或 诅咒 牌，使用 !M! 倍的 nearlmod:光 消耗 它们。",
+        "UPGRADE_DESCRIPTION": ""
+    },
+    "nearlmod:SalvationForSuffers": {
+        "NAME": "苦难者的救星",
+        "DESCRIPTION": "获得 !B! 点 格挡 。将一张 *伤口 放入你的手牌。",
+        "UPGRADE_DESCRIPTION": ""
+    },
+    "nearlmod:AweInspiringGlow": {
+        "NAME": "凛然辉光",
+        "DESCRIPTION": "固有 。 NL 消耗 。 NL 获得 !M! 层 nearlmod:光 。 将一张 *光！ 放入你的手牌。",
         "UPGRADE_DESCRIPTION": ""
     },
 
@@ -194,6 +232,16 @@
         "NAME": "耀阳锋刃",
         "DESCRIPTION": "如果瑕光在场，你处于 nearlmod:无畏 时每打出一张 *攻击牌 ，获得 2 层 nearlmod:光 。否则召唤瑕光作为 nearlmod:伙伴 。",
         "UPGRADE_DESCRIPTION": "固有 。 NL 如果瑕光在场，你处于 nearlmod:无畏 时，每打出一张 *攻击牌 ，获得 2 层 nearlmod:光 。否则召唤瑕光作为 nearlmod:伙伴 。"
+    },
+    "nearlmod:PathOfRadiant": {
+        "NAME": "循光道途",
+        "DESCRIPTION": "消耗 。 NL 进入 nearlmod:无畏 。 NL nearlmod:晋升 你的所有 nearlmod:伙伴 。如果有红松骑士团成员在场，你的所有 nearlmod:伙伴 获得 !M! 点 nearlmod:信赖 。",
+        "UPGRADE_DESCRIPTION": ""
+    },
+    "nearlmod:PegasusForm": {
+        "NAME": "天马形态",
+        "DESCRIPTION": "",
+        "UPGRADE_DESCRIPTION": ""
     },
 
     "nearlmod:SwallowLight": {
@@ -388,7 +436,7 @@
     },
     "nearlmod:BombardmentStudies": {
         "NAME": "炮术研习",
-        "DESCRIPTION": " nearlmod:伙伴牌 。 NL [#EFC851]专注轰击[] 数值 + !nearlmod:M2! 。 NL 下回合开始时，增加一张 *专注轰击 到你的手牌。",
-        "UPGRADE_DESCRIPTION": " nearlmod:伙伴牌 。 NL [#EFC851]专注轰击[] 数值 + !nearlmod:M2! 。 NL 下回合开始时，增加一张 *专注轰击+ 到你的手牌。"
+        "DESCRIPTION": " nearlmod:伙伴牌 。 NL [#EFC851]专注轰击[] 数值 + !nearlmod:M2! 。 NL 下回合开始时，将一张 *专注轰击 放入你的手牌。",
+        "UPGRADE_DESCRIPTION": " nearlmod:伙伴牌 。 NL [#EFC851]专注轰击[] 数值 + !nearlmod:M2! 。 NL 下回合开始时，将一张 *专注轰击+ 放入你的手牌。"
     }
 }

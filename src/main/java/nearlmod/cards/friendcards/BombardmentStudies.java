@@ -28,6 +28,7 @@ public class BombardmentStudies extends AbstractFriendCard {
                 CardType.POWER, AbstractCardEnum.FRIEND_BLUE,
                 CardRarity.SPECIAL, CardTarget.SELF, "nearlmod:Ashlock");
         secondMagicNumber = baseSecondMagicNumber = ADDITION_VAL;
+        cardsToPreview = new FocusedBombardment();
         tags.add(IS_KNIGHT_CARD);
     }
 
@@ -50,6 +51,7 @@ public class BombardmentStudies extends AbstractFriendCard {
         if (!upgraded) {
             upgradeName();
             upgradeSecondMagicNumber(UPGRADE_PLUS_VAL);
+            cardsToPreview.upgrade();
             rawDescription = UPGRADE_DESCRIPTION;
             initializeDescription();
         }

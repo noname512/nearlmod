@@ -172,6 +172,7 @@ public class NLMOD implements EditCardsSubscriber, EditCharactersSubscriber, Edi
         BaseMod.addCard(new Facing()); // 直面
         BaseMod.addCard(new ChargingWithShield()); // 持盾冲锋
         BaseMod.addCard(new Unsheathed()); // 出鞘
+        BaseMod.addCard(new Dreadnought()); // 无畏者
 
         // Uncommon.
         BaseMod.addCard(new SecondSun()); // 第二轮太阳
@@ -188,6 +189,11 @@ public class NLMOD implements EditCardsSubscriber, EditCharactersSubscriber, Edi
         BaseMod.addCard(new Cooperate()); // 协同战斗
         BaseMod.addCard(new DefensiveFormation()); // 防御阵型
         BaseMod.addCard(new Oaths()); // 誓言
+        BaseMod.addCard(new DefendHonor()); // 捍卫荣耀
+        BaseMod.addCard(new FlutteringWings()); // 振翅欲飞
+        BaseMod.addCard(new ShieldAndShelter()); // 盾与庇护所
+        BaseMod.addCard(new SalvationForSuffers()); // 苦难者的救星
+        BaseMod.addCard(new AweInspiringGlow()); // 凛然辉光
 
         // Rare.
         BaseMod.addCard(new BraveTheDarkness()); // 不畏苦暗
@@ -202,6 +208,7 @@ public class NLMOD implements EditCardsSubscriber, EditCharactersSubscriber, Edi
         BaseMod.addCard(new BlazingSunsObeisance()); // 耀阳颔首
         BaseMod.addCard(new ShadowOut()); // 影灭
         BaseMod.addCard(new BladeOfBlazingSun()); // 耀阳锋刃
+        BaseMod.addCard(new PathOfRadiant()); // 循光道途
 
         // Friend.
         BaseMod.addCard(new LSSwiftSword()); // 光影迅捷剑

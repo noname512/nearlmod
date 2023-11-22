@@ -11,9 +11,16 @@
     "NAMES": [
       "伙伴"
     ],
-    "DESCRIPTION": "可以与你并肩战斗，每回合会提供来自该伙伴的一张 [#EFC851]伙伴牌[] 。第二次及之后召唤伙伴时，改为使其升级并获得 #b2 点信赖。"
+    "DESCRIPTION": "可以与你并肩战斗，每回合会提供一张属于该伙伴的 [#EFC851]伙伴牌[] 。第二次及之后召唤伙伴时，改为使其 *晋升 并获得 #b2 点信赖。"
   },
-  "FRIENDCARD": {
+  "PROMOTE": {
+    "PROPER_NAME": "晋升",
+    "NAMES": [
+      "晋升"
+    ],
+    "DESCRIPTION": "伙伴晋升后，改为每回合提供一张属于该伙伴的升级后的 *伙伴牌 。"
+  },
+  "FRIEND_CARD": {
     "PROPER_NAME": "伙伴牌",
     "NAMES": [
       "伙伴牌",
@@ -22,14 +29,14 @@
     "DESCRIPTION": "[#EFC851]伙伴[] 专属牌，使用对应伙伴的属性加成，不占用手牌上限， [#EFC851]虚无[] 且离开手牌时 [#EFC851]消耗[] 。"
   },
   "TRUST": {
-    "PROPERT_NAME": "信赖",
+    "PROPER_NAME": "信赖",
     "NAMES": [
       "信赖",
       "trust"
     ],
     "DESCRIPTION": "[#EFC851]伙伴[] 的一种属性，增加 [#EFC851]伙伴牌[] 造成的伤害、提供的格挡和光。"
   },
-  "PLAYCOST": {
+  "PLAY_COST": {
     "PROPER_NAME": "部署费用",
     "NAMES": [
       "部署费用"
@@ -57,7 +64,7 @@
     ],
     "DESCRIPTION": " 力量 不能超过 0 。"
   },
-  "POEM'SLOOK": {
+  "POEM'S_LOOK": {
     "PROPER_NAME": "诗的容貌",
     "NAMES": [
       "诗的容貌"
