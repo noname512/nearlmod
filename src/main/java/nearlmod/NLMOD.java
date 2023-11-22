@@ -213,8 +213,6 @@ public class NLMOD implements EditCardsSubscriber, EditCharactersSubscriber, Edi
         BaseMod.addCard(new DeterringRadiance()); // 慑敌辉光
         BaseMod.addCard(new DivineAvatar()); // 先贤化身
         BaseMod.addCard(new CraftsmanEcho()); // 工匠团的回响
-        BaseMod.addCard(new ToAtkStance());
-        BaseMod.addCard(new ToDefStance());
 
         BaseMod.addCard(new ArtsShield()); // 法术护盾
         BaseMod.addCard(new Sanctuary()); // 圣域
