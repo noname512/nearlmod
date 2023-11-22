@@ -9,5 +9,10 @@
     "TEXT": [
       "选择一张召唤伙伴的能力牌放入你的手牌"
     ]
+  },
+  "nearlmod:FriendCardTab": {
+    "TEXT": [
+      "伙伴牌"
+    ]
   }
 }

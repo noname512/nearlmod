@@ -5,9 +5,9 @@ import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.localization.OrbStrings;
 import com.megacrit.cardcrawl.orbs.AbstractOrb;
 import nearlmod.actions.AddFriendCardToHandAction;
-import nearlmod.cards.friendcards.AbstractFriendCard;
-import nearlmod.cards.friendcards.AllySupport;
-import nearlmod.cards.friendcards.FeatherShineArrows;
+import nearlmod.cards.friendcards.*;
+
+import java.util.ArrayList;
 
 public class Fartooth extends AbstractFriend {
 
@@ -31,14 +31,10 @@ public class Fartooth extends AbstractFriend {
     }
 
     public static AbstractFriendCard getRandomCard(boolean upgraded) {
-        int random = AbstractDungeon.cardRng.random(0, 1);
-        AbstractFriendCard card;
-        if (random == 0)
-            card = new AllySupport();
-        else
-            card = new FeatherShineArrows();
-        if (upgraded) card.upgrade();
-        return card;
+        ArrayList<AbstractFriendCard> cards = new ArrayList<>();
+        cards.add(new AllySupport());
+        cards.add(new FeatherShineArrows());
+        return getRandomCard(cards, upgraded);
     }
 
     @Override

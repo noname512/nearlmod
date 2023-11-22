@@ -23,7 +23,7 @@ public class AutoProtect extends AbstractFriendCard {
 
     public AutoProtect() {
         super(ID, NAME, IMG_PATH, COST, DESCRIPTION,
-                CardType.SKILL, AbstractCardEnum.NEARL_GOLD,
+                CardType.SKILL, AbstractCardEnum.FRIEND_BLUE,
                 CardRarity.SPECIAL, CardTarget.SELF, "nearlmod:Shining");
         magicNumber = baseMagicNumber = BLOCK_DMT;
     }

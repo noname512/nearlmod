@@ -1,4 +1,4 @@
-package nearlmod.cards.friendcards;
+package nearlmod.cards;
 
 import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
@@ -6,45 +6,53 @@ import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.localization.CardStrings;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
+import nearlmod.NLMOD;
+import nearlmod.actions.SummonOrbAction;
+import nearlmod.orbs.Blemishine;
 import nearlmod.patches.AbstractCardEnum;
-import nearlmod.powers.AllySupportPower;
+import nearlmod.powers.BladeOfBlazingSunPower;
 
-import static nearlmod.patches.NearlTags.IS_KNIGHT_CARD;
-
-public class AllySupport extends AbstractFriendCard {
-    public static final String ID = "nearlmod:AllySupport";
+public class BladeOfBlazingSun extends AbstractNearlCard {
+    public static final String ID = "nearlmod:BladeOfBlazingSun";
     public static final CardStrings cardStrings = CardCrawlGame.languagePack.getCardStrings(ID);
     public static final String NAME = cardStrings.NAME;
     public static final String DESCRIPTION = cardStrings.DESCRIPTION;
     public static final String UPGRADE_DESCRIPTION = cardStrings.UPGRADE_DESCRIPTION;
-    public static final String IMG_PATH = "images/cards/allysupport.png";
+    public static final String IMG_PATH = "images/cards/gloriouskazimierz.png";
     private static final int COST = 1;
-    private static final int ATTACK_DMG = 2;
-    private static final int UPGRADE_PLUS_DMG = 1;
 
-    public AllySupport() {
+    public BladeOfBlazingSun() {
         super(ID, NAME, IMG_PATH, COST, DESCRIPTION,
-                CardType.POWER, AbstractCardEnum.FRIEND_BLUE,
-                CardRarity.SPECIAL, CardTarget.SELF, "nearlmod:Fartooth");
-        secondMagicNumber = baseSecondMagicNumber = ATTACK_DMG;
-        tags.add(IS_KNIGHT_CARD);
+                CardType.POWER, AbstractCardEnum.NEARL_GOLD,
+                CardRarity.RARE, CardTarget.SELF);
+    }
+
+    @Override
+    public boolean extraTriggered() {
+        return NLMOD.checkOrb(Blemishine.ORB_ID);
     }
 
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
-        addToBot(new ApplyPowerAction(p, p, new AllySupportPower(p, secondMagicNumber)));
+        if (extraTriggered()) {
+            addToBot(new ApplyPowerAction(p, p, new BladeOfBlazingSunPower(p)));
+        } else {
+            addToBot(new SummonOrbAction(new Blemishine()));
+        }
     }
 
     @Override
     public AbstractCard makeCopy() {
-        return new AllySupport();
+        return new BladeOfBlazingSun();
     }
 
     @Override
     public void upgrade() {
         if (!upgraded) {
             upgradeName();
-            upgradeSecondMagicNumber(UPGRADE_PLUS_DMG);
+            isInnate = true;
+            rawDescription = UPGRADE_DESCRIPTION;
+            initializeDescription();
         }
     }
 }

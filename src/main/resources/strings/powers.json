@@ -65,7 +65,7 @@
   },
   "nearlmod:ClosedHope": {
     "NAME": "封闭的希望",
-    "DESCRIPTIONS": ["你的回合开始时，如果你仍有 格挡 ，获得", " 层 [#EFC851]人工制品[] 。"]
+    "DESCRIPTIONS": ["你的回合开始时，如果你仍有 格挡 ，获得 #b", " 层 [#EFC851]人工制品[] 。"]
   },
   "nearlmod:CostNextTurnPower": {
     "NAME": "部署费用提升",
@@ -74,5 +74,9 @@
   "nearlmod:DefensiveFormationPower": {
     "NAME": "防御阵型",
     "DESCRIPTIONS": ["本回合内，你每打出一张牌后，进入 [#EFC851]守护[] 。"]
+  },
+  "nearlmod:BladeOfBlazingSunPower": {
+    "NAME": "耀阳锋刃",
+    "DESCRIPTIONS": ["你处于 [#EFC851]无畏[] 时，每打出一张攻击牌，获得 #b", " 层 [#EFC851]光[] 。"]
   }
 }

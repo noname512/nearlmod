@@ -4,6 +4,7 @@ import basemod.BaseMod;
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
 import com.megacrit.cardcrawl.core.Settings;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
+import com.megacrit.cardcrawl.unlock.UnlockTracker;
 import nearlmod.cards.friendcards.AbstractFriendCard;
 
 public class AddFriendCardToHandAction extends AbstractGameAction {
@@ -19,6 +20,7 @@ public class AddFriendCardToHandAction extends AbstractGameAction {
     @Override
     public void update() {
         BaseMod.MAX_HAND_SIZE++;
+        UnlockTracker.markCardAsSeen(card.cardID);
         AbstractDungeon.player.hand.addToHand(card);
         isDone = true;
     }

@@ -8,6 +8,8 @@ import com.megacrit.cardcrawl.orbs.AbstractOrb;
 import nearlmod.actions.AddFriendCardToHandAction;
 import nearlmod.cards.friendcards.*;
 
+import java.util.ArrayList;
+
 public class Wildmane extends AbstractFriend {
 
     public static final String ORB_ID = "nearlmod:Wildmane";
@@ -31,14 +33,10 @@ public class Wildmane extends AbstractFriend {
     }
 
     public static AbstractFriendCard getRandomCard(boolean upgraded) {
-        int random = AbstractDungeon.cardRng.random(0, 1);
-        AbstractFriendCard card;
-        if (random == 0)
-            card = new StabbingLance();
-        else
-            card = new LanceCharge();
-        if (upgraded) card.upgrade();
-        return card;
+        ArrayList<AbstractFriendCard> cards = new ArrayList<>();
+        cards.add(new StabbingLance());
+        cards.add(new LanceCharge());
+        return getRandomCard(cards, upgraded);
     }
 
     @Override

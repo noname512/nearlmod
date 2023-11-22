@@ -8,6 +8,8 @@ import com.megacrit.cardcrawl.orbs.AbstractOrb;
 import nearlmod.actions.AddFriendCardToHandAction;
 import nearlmod.cards.friendcards.*;
 
+import java.util.ArrayList;
+
 public class Viviana extends AbstractFriend {
 
     public static final String ORB_ID = "nearlmod:Viviana";
@@ -39,23 +41,13 @@ public class Viviana extends AbstractFriend {
     }
 
     public static AbstractFriendCard getRandomCard(boolean upgraded, boolean notUnique) {
-        int random = AbstractDungeon.cardRng.random(notUnique? 1 : 0, 3);
-        AbstractFriendCard card;
-        switch (random) {
-            case 0:
-                card = new FlameShadow();
-                break;
-            case 1:
-                card = new FlashFade();
-                break;
-            case 2:
-                card = new GlimmeringTouch();
-                break;
-            default:
-                card = new LSSwiftSword();
-        }
-        if (upgraded) card.upgrade();
-        return card;
+        ArrayList<AbstractFriendCard> cards = new ArrayList<>();
+        if (!notUnique)
+            cards.add(new FlameShadow());
+        cards.add(new FlashFade());
+        cards.add(new GlimmeringTouch());
+        cards.add(new LSSwiftSword());
+        return getRandomCard(cards, upgraded);
     }
 
     @Override

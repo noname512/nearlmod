@@ -26,7 +26,7 @@ public class CraftsmanEcho extends AbstractFriendCard {
 
     public CraftsmanEcho() {
         super(ID, NAME, IMG_PATH, COST, DESCRIPTION,
-                CardType.SKILL, AbstractCardEnum.NEARL_GOLD,
+                CardType.SKILL, AbstractCardEnum.FRIEND_BLUE,
                 CardRarity.SPECIAL, CardTarget.SELF, "nearlmod:Blemishine");
         secondMagicNumber = baseSecondMagicNumber = EXTRA_INC;
     }

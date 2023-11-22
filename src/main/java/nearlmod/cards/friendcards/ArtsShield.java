@@ -25,7 +25,7 @@ public class ArtsShield extends AbstractFriendCard {
 
     public ArtsShield() {
         super(ID, NAME, IMG_PATH, COST, DESCRIPTION,
-                CardType.SKILL, AbstractCardEnum.NEARL_GOLD,
+                CardType.SKILL, AbstractCardEnum.FRIEND_BLUE,
                 CardRarity.SPECIAL, CardTarget.SELF, "nearlmod:Nightingale");
         magicNumber = baseMagicNumber = BLOCK_AMT;
         secondMagicNumber = baseSecondMagicNumber = TEMP_HP;

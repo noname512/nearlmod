@@ -42,19 +42,28 @@ import nearlmod.characters.Nearl;
 import java.lang.reflect.Type;
 import java.nio.charset.StandardCharsets;
 import java.util.*;
+
+import static nearlmod.patches.AbstractCardEnum.FRIEND_BLUE;
 import static nearlmod.patches.AbstractCardEnum.NEARL_GOLD;
 
 @SpireInitializer
 public class NLMOD implements EditCardsSubscriber, EditCharactersSubscriber, EditKeywordsSubscriber, EditRelicsSubscriber, EditStringsSubscriber, PostBattleSubscriber, PostInitializeSubscriber, PostDungeonInitializeSubscriber, AddCustomModeModsSubscriber, OnStartBattleSubscriber, OnPlayerLoseBlockSubscriber, RelicGetSubscriber {
 
     public static final Color NearlGold = CardHelper.getColor(255, 236, 194);
+    public static final Color FriendBlue = CardHelper.getColor(202, 210, 255);
     private static final String attackCard = "images/512/bg_attack_nearl.png";
     private static final String skillCard = "images/512/bg_skill_nearl.png";
     private static final String powerCard = "images/512/bg_power_nearl.png";
+    private static final String attackFriendCard = "images/512/bg_attack_friend.png";
+    private static final String skillFriendCard = "images/512/bg_skill_friend.png";
+    private static final String powerFriendCard = "images/512/bg_power_friend.png";
     private static final String energyOrb = "images/512/card_mystic_orb.png";
     private static final String attackCardPortrait = "images/1024/bg_attack_nearl.png";
     private static final String skillCardPortrait = "images/1024/bg_skill_nearl.png";
     private static final String powerCardPortrait = "images/1024/bg_power_nearl.png";
+    private static final String attackFriendCardPortrait = "images/1024/bg_attack_friend.png";
+    private static final String skillFriendCardPortrait = "images/1024/bg_skill_friend.png";
+    private static final String powerFriendCardPortrait = "images/1024/bg_power_friend.png";
     private static final String energyOrbPortrait = "images/1024/card_mystic_orb.png";
     private static final String charButton = "images/charSelect/button.png";
     private static final String charPortrait = "images/charSelect/portrait.png";
@@ -69,6 +78,13 @@ public class NLMOD implements EditCardsSubscriber, EditCharactersSubscriber, Edi
                 NearlGold, NearlGold, NearlGold, NearlGold, NearlGold, NearlGold, NearlGold,   //Background color, back color, frame color, frame outline color, description box color, glow color
                 attackCard, skillCard, powerCard, energyOrb,                                   //attack background image, skill background image, power background image, energy orb image
                 attackCardPortrait, skillCardPortrait, powerCardPortrait, energyOrbPortrait,   //as above, but for card inspect view
+                miniManaSymbol);
+
+        logger.info("addColor FRIEND_BLUE");
+        BaseMod.addColor(FRIEND_BLUE,
+                FriendBlue, FriendBlue, FriendBlue, FriendBlue, FriendBlue, FriendBlue, FriendBlue,
+                attackFriendCard, skillFriendCard, powerFriendCard, energyOrb,
+                attackFriendCardPortrait, skillFriendCardPortrait, powerFriendCardPortrait, energyOrbPortrait,
                 miniManaSymbol);
     }
 
@@ -155,6 +171,7 @@ public class NLMOD implements EditCardsSubscriber, EditCharactersSubscriber, Edi
         BaseMod.addCard(new GlowingBlueBird()); // 发光的蓝色羽兽
         BaseMod.addCard(new Facing()); // 直面
         BaseMod.addCard(new ChargingWithShield()); // 持盾冲锋
+        BaseMod.addCard(new Unsheathed()); // 出鞘
 
         // Uncommon.
         BaseMod.addCard(new SecondSun()); // 第二轮太阳
@@ -183,6 +200,8 @@ public class NLMOD implements EditCardsSubscriber, EditCharactersSubscriber, Edi
         BaseMod.addCard(new FullSpeedAhead()); // 全力冲锋
         BaseMod.addCard(new PersonalCharm()); // 个人魅力
         BaseMod.addCard(new BlazingSunsObeisance()); // 耀阳颔首
+        BaseMod.addCard(new ShadowOut()); // 影灭
+        BaseMod.addCard(new BladeOfBlazingSun()); // 耀阳锋刃
 
         // Friend.
         BaseMod.addCard(new LSSwiftSword()); // 光影迅捷剑

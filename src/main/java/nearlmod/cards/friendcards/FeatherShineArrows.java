@@ -25,7 +25,7 @@ public class FeatherShineArrows extends AbstractFriendCard {
 
     public FeatherShineArrows() {
         super(ID, NAME, IMG_PATH, COST, DESCRIPTION,
-                CardType.ATTACK, AbstractCardEnum.NEARL_GOLD,
+                CardType.ATTACK, AbstractCardEnum.FRIEND_BLUE,
                 CardRarity.SPECIAL, CardTarget.ALL_ENEMY, "nearlmod:Fartooth");
         magicNumber = baseMagicNumber = ATTACK_DMG;
         tags.add(IS_KNIGHT_CARD);

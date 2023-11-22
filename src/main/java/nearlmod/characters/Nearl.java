@@ -1,7 +1,6 @@
 package nearlmod.characters;
 
 import com.badlogic.gdx.graphics.Texture;
-import com.esotericsoftware.spine.AnimationState;
 import com.megacrit.cardcrawl.actions.watcher.ChangeStanceAction;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.helpers.ImageMaster;
@@ -18,7 +17,6 @@ import com.megacrit.cardcrawl.core.Settings;
 import com.megacrit.cardcrawl.helpers.CardHelper;
 import com.megacrit.cardcrawl.helpers.FontHelper;
 import com.megacrit.cardcrawl.helpers.ScreenShake;
-import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import com.megacrit.cardcrawl.screens.CharSelectInfo;
 import com.megacrit.cardcrawl.unlock.UnlockTracker;
 import nearlmod.cards.*;
@@ -27,7 +25,6 @@ import nearlmod.powers.LightPower;
 import nearlmod.relics.*;
 import nearlmod.patches.AbstractCardEnum;
 import nearlmod.patches.NearlEnum;
-import nearlmod.patches.NearlTags;
 import nearlmod.stances.AtkStance;
 import nearlmod.stances.DefStance;
 import nearlmod.util.CostEnergyOrb;
@@ -76,7 +73,7 @@ public class Nearl extends CustomPlayer {
         initializeClass(SHIELD, SHOULDER, SHOULDER, SHIELDDIE, getLoadout(), 20.0F, -10.0F, 220.0F, 290.0F, new EnergyManager(3));
         loadAnimation("images/char/char_148_nearl.atlas", "images/char/char_148_nearl.json", 1.5F);
         this.stateData.setMix("Idle", "Die", 0.1F);
-        AnimationState.TrackEntry e = this.state.setAnimation(0, "Idle", true);
+        this.state.setAnimation(0, "Idle", true);
     }
 
     @Override
@@ -192,7 +189,7 @@ public class Nearl extends CustomPlayer {
         UnlockTracker.markRelicAsSeen(CureUp.ID);
         return ret;
     }
-    
+
     @Override
     public CharSelectInfo getLoadout() {
         return new CharSelectInfo("玛嘉烈·临光", "骑士临光，是防御与治疗并重的战场核心， NL 也是身披炙阳、踏碎迷障的天马。",
@@ -223,7 +220,7 @@ public class Nearl extends CustomPlayer {
             this.img = SHIELDIMG;
             this.corpseImg = SHIELDDIEIMG;
         }
-        AnimationState.TrackEntry e = this.state.setAnimation(0, "Idle", true);
+        this.state.setAnimation(0, "Idle", true);
     }
 
     public static ArrayList<AbstractCard> getUnuniqueFriendCard() {

@@ -7,6 +7,8 @@ import com.megacrit.cardcrawl.orbs.AbstractOrb;
 import nearlmod.actions.AddFriendCardToHandAction;
 import nearlmod.cards.friendcards.*;
 
+import java.util.ArrayList;
+
 public class Blemishine extends AbstractFriend {
 
     public static final String ORB_ID = "nearlmod:Blemishine";
@@ -30,23 +32,13 @@ public class Blemishine extends AbstractFriend {
     }
 
     public static AbstractFriendCard getRandomCard(boolean upgraded, boolean notUnique) {
-        int random = AbstractDungeon.cardRng.random(notUnique? 1 : 0, 3);
-        AbstractFriendCard card;
-        switch (random) {
-            case 0:
-                card = new DivineAvatar();
-                break;
-            case 1:
-                card = new SurgingBrilliance();
-                break;
-            case 2:
-                card = new DeterringRadiance();
-                break;
-            default:
-                card = new CraftsmanEcho();
-        }
-        if (upgraded) card.upgrade();
-        return card;
+        ArrayList<AbstractFriendCard> cards = new ArrayList<>();
+        if (!notUnique)
+            cards.add(new DivineAvatar());
+        cards.add(new SurgingBrilliance());
+        cards.add(new DeterringRadiance());
+        cards.add(new CraftsmanEcho());
+        return getRandomCard(cards, upgraded);
     }
 
     @Override
