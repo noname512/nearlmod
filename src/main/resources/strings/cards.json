@@ -121,6 +121,11 @@
         "DESCRIPTION": "本回合内，你每打出一张牌后，进入 nearlmod:守护 。",
         "UPGRADE_DESCRIPTION": ""
     },
+    "nearlmod:Oaths": {
+        "NAME": "誓言",
+        "DESCRIPTION": "对所有敌人造成 !D! 点伤害，并给予 !M! 层虚弱。如果闪灵在场，本回合受到的伤害减少 6 点。",
+        "UPGRADE_DESCRIPTION": ""
+    },
 
     "nearlmod:BraveTheDarkness": {
         "NAME": "不畏苦暗",

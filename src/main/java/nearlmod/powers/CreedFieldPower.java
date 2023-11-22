@@ -16,13 +16,12 @@ public class CreedFieldPower extends AbstractPower implements CloneablePowerInte
     public static final PowerStrings powerStrings = CardCrawlGame.languagePack.getPowerStrings(POWER_ID);
     public static final String NAME = powerStrings.NAME;
     public static final String[] DESCRIPTIONS = powerStrings.DESCRIPTIONS;
-    private int dmgDec;
+    private static final int DAMAGE_DEC = 6;
 
-    public CreedFieldPower(AbstractCreature owner, int amount, int dmgDec) {
+    public CreedFieldPower(AbstractCreature owner, int amount) {
         name = NAME;
         ID = POWER_ID;
         this.owner = owner;
-        this.dmgDec = dmgDec;
         region128 = new TextureAtlas.AtlasRegion(ImageMaster.loadImage("images/powers/creedfield power 84.png"), 0, 0, 84, 84);
         region48 = new TextureAtlas.AtlasRegion(ImageMaster.loadImage("images/powers/creedfield power 32.png"), 0, 0, 32, 32);
         type = PowerType.BUFF;
@@ -33,7 +32,7 @@ public class CreedFieldPower extends AbstractPower implements CloneablePowerInte
 
     @Override
     public void updateDescription() {
-        description = amount + DESCRIPTIONS[0] + dmgDec + DESCRIPTIONS[1];
+        description = amount + DESCRIPTIONS[0] + DAMAGE_DEC + DESCRIPTIONS[1];
     }
 
     @Override
@@ -47,14 +46,14 @@ public class CreedFieldPower extends AbstractPower implements CloneablePowerInte
 
     @Override
     public float atDamageFinalReceive(float damage, DamageInfo.DamageType damageType) {
-        if (damage > dmgDec)
-            return damage - dmgDec;
+        if (damage > DAMAGE_DEC)
+            return damage - DAMAGE_DEC;
         else
             return 0;
     }
 
     @Override
     public AbstractPower makeCopy() {
-        return new CreedFieldPower(owner, amount, dmgDec);
+        return new CreedFieldPower(owner, amount);
     }
 }

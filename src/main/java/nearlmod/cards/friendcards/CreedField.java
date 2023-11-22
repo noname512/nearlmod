@@ -20,7 +20,6 @@ public class CreedField extends AbstractFriendCard {
     public static final String IMG_PATH = "images/cards/creedfield.png";
     private static final int COST = 3;
     private static final int BLOCK_AMT = 18;
-    private static final int DAMAGE_DEC = 6;
     private static final int TURNS = 2;
     private static final int UPGRADE_PLUS_BLOCK = 6;
     private static final int UPGRADE_TURNS = 1;
@@ -36,7 +35,7 @@ public class CreedField extends AbstractFriendCard {
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
         AbstractDungeon.actionManager.addToBottom(new GainBlockAction(p, magicNumber));
-        AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(p, p, new CreedFieldPower(p, secondMagicNumber, DAMAGE_DEC)));
+        AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(p, p, new CreedFieldPower(p, secondMagicNumber)));
     }
 
     @Override
