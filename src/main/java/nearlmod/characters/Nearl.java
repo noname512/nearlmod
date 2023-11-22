@@ -131,7 +131,7 @@ public class Nearl extends CustomPlayer {
 
     @Override
     public AbstractCard getStartCardForEvent() {
-        return new NearlStrike();
+        return new MajestyLight();
     }
 
     @Override
