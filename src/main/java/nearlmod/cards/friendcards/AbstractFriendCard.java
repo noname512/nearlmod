@@ -9,13 +9,9 @@ import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import com.megacrit.cardcrawl.orbs.AbstractOrb;
 import com.megacrit.cardcrawl.powers.AbstractPower;
-import com.megacrit.cardcrawl.relics.AbstractRelic;
 import nearlmod.cards.AbstractNearlCard;
 import nearlmod.orbs.AbstractFriend;
 import nearlmod.patches.NearlTags;
-import nearlmod.stances.AtkStance;
-
-import java.util.Iterator;
 
 public abstract class AbstractFriendCard extends AbstractNearlCard {
     public static final String BG_512 = "images/512/";
@@ -53,6 +49,7 @@ public abstract class AbstractFriendCard extends AbstractNearlCard {
     public void applyPowers() {
         applyFriendPower();
     }
+
     public void applyFriendPower() {
         magicNumber = baseMagicNumber;
         AbstractPlayer p = AbstractDungeon.player;
@@ -67,31 +64,11 @@ public abstract class AbstractFriendCard extends AbstractNearlCard {
         isMagicNumberModified = (magicNumber != baseMagicNumber);
         isSecondMagicNumberUseTrust = (secondMagicNumber != baseSecondMagicNumber);
     }
+
     @Override
     public void calculateCardDamage(AbstractMonster mo) {
         applyFriendPower();
-        this.isDamageModified = false;
-        float tmp = (float)this.magicNumber;
-        Iterator var9;
-        AbstractPower p;
-        for(var9 = mo.powers.iterator(); var9.hasNext(); tmp = p.atDamageReceive(tmp, this.damageTypeForTurn, this)) {
-            p = (AbstractPower)var9.next();
-        }
-
-        for(var9 = mo.powers.iterator(); var9.hasNext(); tmp = p.atDamageFinalReceive(tmp, this.damageTypeForTurn, this)) {
-            p = (AbstractPower)var9.next();
-        }
-
-        if (tmp < 0.0F) {
-            tmp = 0.0F;
-        }
-
-        if (this.baseDamage != MathUtils.floor(tmp)) {
-            this.isDamageModified = true;
-        }
-
-        this.damage = MathUtils.floor(tmp);
-        magicNumber = damage;
+        magicNumber = calculateSingleDamage(mo, magicNumber);
         isMagicNumberModified = (magicNumber != baseMagicNumber);
     }
 

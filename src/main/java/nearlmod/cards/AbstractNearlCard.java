@@ -3,7 +3,10 @@ package nearlmod.cards;
 import basemod.abstracts.CustomCard;
 import basemod.abstracts.DynamicVariable;
 import basemod.helpers.TooltipInfo;
+import com.badlogic.gdx.math.MathUtils;
 import com.megacrit.cardcrawl.cards.AbstractCard;
+import com.megacrit.cardcrawl.monsters.AbstractMonster;
+import com.megacrit.cardcrawl.powers.AbstractPower;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -44,6 +47,18 @@ public abstract class AbstractNearlCard extends CustomCard {
             this.glowColor = AbstractCard.GOLD_BORDER_GLOW_COLOR.cpy();
         else
             this.glowColor = AbstractCard.BLUE_BORDER_GLOW_COLOR.cpy();
+    }
+
+    public int calculateSingleDamage(AbstractMonster m, int baseDmg) {
+        if (m == null) return baseDmg;
+        float tmp = (float)baseDmg;
+        for (AbstractPower power : m.powers)
+            tmp = power.atDamageReceive(tmp, damageTypeForTurn, this);
+        for (AbstractPower power : m.powers)
+            tmp = power.atDamageFinalReceive(tmp, damageTypeForTurn, this);
+        if (tmp < 0.0F)
+            tmp = 0.0F;
+        return MathUtils.floor(tmp);
     }
 
     public static class SecondMagicNumber extends DynamicVariable {

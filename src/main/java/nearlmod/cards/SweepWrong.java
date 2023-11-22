@@ -34,13 +34,12 @@ public class SweepWrong extends AbstractNearlCard {
 
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
-        // TODO
         for (AbstractMonster mo : AbstractDungeon.getMonsters().monsters) {
             if (!mo.isDeadOrEscaped()) {
                 if (mo.getIntentBaseDmg() >= 0) {
-                    addToBot(new DamageAction(mo, new DamageInfo(p, damage + magicNumber, damageTypeForTurn), AbstractGameAction.AttackEffect.BLUNT_HEAVY));
+                    addToBot(new DamageAction(mo, new DamageInfo(p, calculateSingleDamage(mo, damage + magicNumber), damageTypeForTurn), AbstractGameAction.AttackEffect.BLUNT_HEAVY));
                 } else {
-                    addToBot(new DamageAction(mo, new DamageInfo(p, damage, damageTypeForTurn), AbstractGameAction.AttackEffect.BLUNT_LIGHT));
+                    addToBot(new DamageAction(mo, new DamageInfo(p, calculateSingleDamage(mo, damage), damageTypeForTurn), AbstractGameAction.AttackEffect.BLUNT_LIGHT));
                 }
             }
         }
