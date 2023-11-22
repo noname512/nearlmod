@@ -19,8 +19,6 @@ import nearlmod.patches.AbstractCardEnum;
 import nearlmod.powers.PoemsLooksPower;
 import nearlmod.powers.ShadowPower;
 
-import java.util.ArrayList;
-
 public class FlameShadow extends AbstractFriendCard {
     public static final String ID = "nearlmod:FlameShadow";
     public static final CardStrings cardStrings = CardCrawlGame.languagePack.getCardStrings(ID);
@@ -43,22 +41,18 @@ public class FlameShadow extends AbstractFriendCard {
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
         AbstractPower power = p.getPower("nearlmod:LightPower");
-        int dmg = 0;
+        int dmg = baseMagicNumber;
         int light = 0;
         if (power != null) {
             dmg += power.amount * 2;
             light += power.amount;
             addToBot(new RemoveSpecificPowerAction(p, p, power));
         }
-        baseMagicNumber += dmg;
-        DamageInfo info = new DamageInfo(p, dmg);
-        info.name = belongFriend + AbstractFriendCard.damageSuffix;
         for (AbstractMonster ms : AbstractDungeon.getMonsters().monsters) {
-            calculateCardDamage(ms);
-            info.base = damage;
+            DamageInfo info = new DamageInfo(p, calculateSingleDamage(ms, dmg));
+            info.name = belongFriend + AbstractFriendCard.damageSuffix;
             addToBot(new DamageAction(ms, info, AbstractGameAction.AttackEffect.LIGHTNING));
         }
-        baseMagicNumber -= dmg;
         Viviana.uniqueUsed = true;
         addToBot(new UseShadowAction(p));
         if (light != 0) {
