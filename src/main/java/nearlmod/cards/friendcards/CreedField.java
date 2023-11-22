@@ -26,7 +26,7 @@ public class CreedField extends AbstractFriendCard {
 
     public CreedField() {
         super(ID, NAME, IMG_PATH, COST, DESCRIPTION,
-                CardType.POWER, AbstractCardEnum.FRIEND_BLUE,
+                CardType.SKILL, AbstractCardEnum.FRIEND_BLUE,
                 CardRarity.SPECIAL, CardTarget.SELF, "nearlmod:Shining");
         magicNumber = baseMagicNumber = BLOCK_AMT;
         secondMagicNumber = baseSecondMagicNumber = TURNS;
