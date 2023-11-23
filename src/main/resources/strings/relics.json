@@ -1,22 +1,32 @@
 {
   "nearlmod:CureUp": {
     "NAME": "治疗效果大提升",
-    "FLAVOR": "治疗效果……大提升！//TODO",
-    "DESCRIPTIONS": ["你每回合获得的前 #b5 点格挡转化为 [#EFC851]临时生命[] 。"]
+    "FLAVOR": "只要她还守在队伍的前列，她的队友就不会受伤。",
+    "DESCRIPTIONS": ["你每回合获得的前 #b5 点格挡转化为 #y临时生命 。"]
   },
   "nearlmod:PegasusHalo": {
     "NAME": "天马光环",
-    "FLAVOR": "流淌着金色血液的天马。",
-    "DESCRIPTIONS": ["失去你的初始遗物。你获得的格挡转化为 [#EFC851]临时生命[] 。"]
+    "FLAVOR": "只要她还屹立在战场上，就没有敌人能夺走我们的胜利。",
+    "DESCRIPTIONS": ["替换 #r治疗效果大提升 。你获得格挡时也获得其数值 #b25% 的 #y临时生命 。"]
   },
   "nearlmod:Marigold": {
     "NAME": "金盏花",
     "FLAVOR": "或许你不是那光芒，但你亦曾，为守护它而拔剑。",
-    "DESCRIPTIONS": ["对战开始时，召唤薇薇安娜作为 [#EFC851]伙伴[] 。"]
+    "DESCRIPTIONS": ["对战开始时，召唤薇薇安娜作为 #y伙伴 。"]
   },
   "nearlmod:EmergencyCallBook": {
     "NAME": "应急通讯指南",
     "FLAVOR": "所有的基站都被毁了，你就是最后一台。",
-    "DESCRIPTIONS": ["回合开始时，获得 #b1 点 [#EFC851]部署费用[] 。"]
+    "DESCRIPTIONS": ["回合开始时，获得 #b1 点 #y部署费用 。"]
+  },
+  "nearlmod:FirstAidMode": {
+    "NAME": "急救模式",
+    "FLAVOR": "骑士还没有习惯无法战胜的对手，但愿意出手保护他人就已经足够了。",
+    "DESCRIPTIONS": ["对战开始时，将一张 #y急救 放入你的手牌，并使其获得 #y保留 和 #y消耗 。"]
+  },
+  "nearlmod:KnightFamily": {
+    "NAME": "“骑士家族”",
+    "FLAVOR": "我们都身在阴影中，一如既往。",
+    "DESCRIPTIONS": ["你每场战斗第一次要被杀死时，免疫本次伤害，最大生命值减少 #b60% ，回复全部的生命值，获得 #b3 点力量，本回合不再受到伤害。"]
   }
 }
