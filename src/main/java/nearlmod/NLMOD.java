@@ -29,10 +29,7 @@ import nearlmod.monsters.Roy;
 import nearlmod.patches.NearlEnum;
 import nearlmod.potions.ChangeStancePotion;
 import nearlmod.potions.FriendPotion;
-import nearlmod.relics.CureUp;
-import nearlmod.relics.EmergencyCallBook;
-import nearlmod.relics.Marigold;
-import nearlmod.relics.PegasusHalo;
+import nearlmod.relics.*;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 import nearlmod.cards.*;
@@ -274,8 +271,12 @@ public class NLMOD implements EditCardsSubscriber, EditCharactersSubscriber, Edi
         // starter.
         BaseMod.addRelicToCustomPool(new CureUp(), NEARL_GOLD);
 
+        // uncommon.
+        BaseMod.addRelicToCustomPool(new FirstAidMode(), NEARL_GOLD);
+
         // rare.
         BaseMod.addRelicToCustomPool(new EmergencyCallBook(), NEARL_GOLD);
+        BaseMod.addRelicToCustomPool(new KnightFamily(), NEARL_GOLD);
 
         // boss.
         BaseMod.addRelicToCustomPool(new PegasusHalo(), NEARL_GOLD);
