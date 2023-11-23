@@ -160,7 +160,7 @@
         "UPGRADE_DESCRIPTION": "获得 3 点 格挡 ， 3 层 nearlmod:光 和 1 点 nearlmod:部署费用 X+1 次。"
     },
     "nearlmod:BreakThroughFetters": {
-        "NAME": "冲破束缚",
+        "NAME": "冲破桎梏",
         "DESCRIPTION": "选择任意张未被 消耗 的 状态牌 或 诅咒 牌，使用 !M! 倍的 nearlmod:光 消耗 它们。",
         "UPGRADE_DESCRIPTION": ""
     },

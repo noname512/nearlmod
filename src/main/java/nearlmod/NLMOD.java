@@ -194,6 +194,7 @@ public class NLMOD implements EditCardsSubscriber, EditCharactersSubscriber, Edi
         BaseMod.addCard(new ShieldAndShelter()); // 盾与庇护所
         BaseMod.addCard(new SalvationForSuffers()); // 苦难者的救星
         BaseMod.addCard(new AweInspiringGlow()); // 凛然辉光
+        BaseMod.addCard(new BreakThroughFetters()); // 冲破桎梏
 
         // Rare.
         BaseMod.addCard(new BraveTheDarkness()); // 不畏苦暗

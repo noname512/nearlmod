@@ -14,5 +14,11 @@
     "TEXT": [
       "伙伴牌"
     ]
+  },
+  "nearlmod:BreakThroughFettersAction": {
+    "TEXT": [
+      "选择至多",
+      "张牌消耗"
+    ]
   }
 }
