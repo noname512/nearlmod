@@ -19,7 +19,7 @@ public class GumboBreadBowl extends AbstractNearlCard {
     public static final String NAME = cardStrings.NAME;
     public static final String DESCRIPTION = cardStrings.DESCRIPTION;
     public static final String UPGRADE_DESCRIPTION = cardStrings.UPGRADE_DESCRIPTION;
-    public static final String IMG_PATH = "images/cards/gumbobreadbowl.jpg";
+    public static final String IMG_PATH = "images/cards/gumbobreadbowl.png";
     private static final int COST = 0;
     private static final int BLOCK_AMT = 2;
     private static final int UPGRADE_PLUS_BLOCK = 2;
@@ -41,18 +41,26 @@ public class GumboBreadBowl extends AbstractNearlCard {
         addToBot(new UseLightAction(p));
     }
 
-    @Override
-    public void applyPowers() {
+    private void preUpd() {
         if (!AbstractDungeon.player.stance.ID.equals(DefStance.STANCE_ID)) {
             baseBlock += DefStance.incNum;
             baseBlock += DefStance.defInc;
         }
-        super.applyPowers();
+    }
+
+    private void postUpd() {
         if (!AbstractDungeon.player.stance.ID.equals(DefStance.STANCE_ID)) {
             baseBlock -= DefStance.incNum;
             baseBlock -= DefStance.defInc;
             isBlockModified = (block != baseBlock);
         }
+    }
+
+    @Override
+    public void applyPowers() {
+        preUpd();
+        super.applyPowers();
+        postUpd();
     }
 
     @Override
@@ -62,16 +70,9 @@ public class GumboBreadBowl extends AbstractNearlCard {
 
     @Override
     public void calculateCardDamage(AbstractMonster mo) {
-        if (!AbstractDungeon.player.stance.ID.equals(DefStance.STANCE_ID)) {
-            this.baseBlock += DefStance.incNum;
-            this.baseBlock += DefStance.defInc;
-        }
+        preUpd();
         super.calculateCardDamage(mo);
-        if (!AbstractDungeon.player.stance.ID.equals(DefStance.STANCE_ID)) {
-            this.baseBlock -= DefStance.incNum;
-            this.baseBlock -= DefStance.defInc;
-            isBlockModified = (baseBlock != block);
-        }
+        postUpd();
     }
 
     @Override

@@ -43,31 +43,32 @@ public class KnightCrest extends AbstractNearlCard {
         addToBot(new UseLightAction(m));
     }
 
-    @Override
-    public void applyPowers() {
+    private void preUpd() {
         if (!AbstractDungeon.player.stance.ID.equals(AtkStance.STANCE_ID)) {
             this.baseDamage += AtkStance.incNum;
             this.baseDamage += AtkStance.atkInc;
         }
-        super.applyPowers();
+    }
+
+    private void postUpd() {
         if (!AbstractDungeon.player.stance.ID.equals(AtkStance.STANCE_ID)) {
             this.baseDamage -= AtkStance.incNum;
             this.baseDamage -= AtkStance.atkInc;
             isDamageModified = (baseDamage != damage);
         }
     }
+
+    @Override
+    public void applyPowers() {
+        preUpd();
+        super.applyPowers();
+        postUpd();
+    }
     @Override
     public void calculateCardDamage(AbstractMonster mo) {
-        if (!AbstractDungeon.player.stance.ID.equals(AtkStance.STANCE_ID)) {
-            this.baseDamage += AtkStance.incNum;
-            this.baseDamage += AtkStance.atkInc;
-        }
+        preUpd();
         super.calculateCardDamage(mo);
-        if (!AbstractDungeon.player.stance.ID.equals(AtkStance.STANCE_ID)) {
-            this.baseDamage -= AtkStance.incNum;
-            this.baseDamage -= AtkStance.atkInc;
-            isDamageModified = (baseDamage != damage);
-        }
+        postUpd();
     }
     @Override
     public AbstractCard makeCopy() {

@@ -37,7 +37,6 @@ import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 import nearlmod.cards.*;
 import nearlmod.cards.friendcards.*;
-import nearlmod.cards.special.*;
 import nearlmod.characters.Nearl;
 import java.lang.reflect.Type;
 import java.nio.charset.StandardCharsets;
@@ -262,7 +261,7 @@ public class NLMOD implements EditCardsSubscriber, EditCharactersSubscriber, Edi
         String keywordStrings = Gdx.files.internal("strings/keywords.json").readString(String.valueOf(StandardCharsets.UTF_8));
         Type typeToken = new TypeToken<Map<String, Keyword>>() {}.getType();
 
-        Map<String, Keyword> keywords = (Map)gson.fromJson(keywordStrings, typeToken);
+        Map<String, Keyword> keywords = gson.fromJson(keywordStrings, typeToken);
 
         keywords.forEach((k,v)->{
             logger.info("Adding Keyword - " + v.NAMES[0]);
