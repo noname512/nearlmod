@@ -36,7 +36,7 @@ public class Whislash extends AbstractFriend {
         if (!notUnique)
             cards.add(new Rebuke());
         cards.add(new VisionOfUnity());
-        cards.add(new MotivationalSkill());
+        cards.add(new MotivationalSkills());
         cards.add(new WhipSword());
         return getRandomCard(cards, upgraded);
     }

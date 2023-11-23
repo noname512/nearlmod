@@ -373,7 +373,7 @@
         "DESCRIPTION": " nearlmod:伙伴牌 ， nearlmod:唯一 。 NL 切换 nearlmod:形态 获得的数值额外增加 !nearlmod:M2! 点。切换你的 nearlmod:形态 。",
         "UPGRADE_DESCRIPTION": ""
     },
-    "nearlmod:MotivationalSkill": {
+    "nearlmod:MotivationalSkills": {
         "NAME": "激励艺术",
         "DESCRIPTION": " nearlmod:伙伴牌 。 NL 进入 nearlmod:无畏 ，如果已经处于 nearlmod:无畏 ，获得 !nearlmod:M2! 点 力量 。",
         "UPGRADE_DESCRIPTION": ""

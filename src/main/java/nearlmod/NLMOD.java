@@ -234,7 +234,7 @@ public class NLMOD implements EditCardsSubscriber, EditCharactersSubscriber, Edi
         BaseMod.addCard(new WayToHome()); // 归乡之路
         BaseMod.addCard(new VisionOfUnity()); // 比肩的愿景
         BaseMod.addCard(new Rebuke()); // 责骂
-        BaseMod.addCard(new MotivationalSkill()); // 激励艺术
+        BaseMod.addCard(new MotivationalSkills()); // 激励艺术
         BaseMod.addCard(new WhipSword()); // 鞭刃
 
         BaseMod.addCard(new PinusSylvestris()); // “红松林”

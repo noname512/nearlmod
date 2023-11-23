@@ -12,18 +12,18 @@ import nearlmod.patches.AbstractCardEnum;
 import nearlmod.stances.AtkStance;
 import nearlmod.stances.DefStance;
 
-public class MotivationalSkill extends AbstractFriendCard {
-    public static final String ID = "nearlmod:MotivationalSkill";
+public class MotivationalSkills extends AbstractFriendCard {
+    public static final String ID = "nearlmod:MotivationalSkills";
     public static final CardStrings cardStrings = CardCrawlGame.languagePack.getCardStrings(ID);
     public static final String NAME = cardStrings.NAME;
     public static final String DESCRIPTION = cardStrings.DESCRIPTION;
     public static final String UPGRADE_DESCRIPTION = cardStrings.UPGRADE_DESCRIPTION;
-    public static final String IMG_PATH = "images/cards/motivationalskill.png";
+    public static final String IMG_PATH = "images/cards/motivationalskills.png";
     private static final int COST = 1;
     private static final int GAIN_STR = 2;
     private static final int UPGRADE_COST = 0;
 
-    public MotivationalSkill() {
+    public MotivationalSkills() {
         super(ID, NAME, IMG_PATH, COST, DESCRIPTION,
                 CardType.SKILL, AbstractCardEnum.FRIEND_BLUE,
                 CardRarity.SPECIAL, CardTarget.SELF, "nearlmod:Whislash");
@@ -40,7 +40,7 @@ public class MotivationalSkill extends AbstractFriendCard {
 
     @Override
     public AbstractCard makeCopy() {
-        return new MotivationalSkill();
+        return new MotivationalSkills();
     }
 
     @Override
