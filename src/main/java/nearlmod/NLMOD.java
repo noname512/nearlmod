@@ -193,6 +193,12 @@ public class NLMOD implements EditCardsSubscriber, EditCharactersSubscriber, Edi
         BaseMod.addCard(new SalvationForSuffers()); // 苦难者的救星
         BaseMod.addCard(new AweInspiringGlow()); // 凛然辉光
         BaseMod.addCard(new BreakThroughFetters()); // 冲破桎梏
+        BaseMod.addCard(new SilverlancePegasus()); // 银枪天马
+        BaseMod.addCard(new SurgeBack()); // 回涌
+        BaseMod.addCard(new Duel()); // 对决
+        BaseMod.addCard(new KnightCompetition()); // 骑士竞技
+        BaseMod.addCard(new RadianceConverging()); // 光耀积聚
+        BaseMod.addCard(new Sacrifice()); // 牺牲
 
         // Rare.
         BaseMod.addCard(new BraveTheDarkness()); // 不畏苦暗

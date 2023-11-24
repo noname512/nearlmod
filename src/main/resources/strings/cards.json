@@ -184,6 +184,40 @@
         "DESCRIPTION": "固有 。 NL 消耗 。 NL 获得 !M! 层 nearlmod:光 。 将一张 *光！ 放入你的手牌。",
         "UPGRADE_DESCRIPTION": ""
     },
+    "nearlmod:SilverlancePegasus": {
+        "NAME": "银枪天马",
+        "DESCRIPTION": "对攻击意图数值最高的敌人造成 !D! 点伤害，获得 !B! 点 格挡 。",
+        "UPGRADE_DESCRIPTION": ""
+    },
+    "nearlmod:SurgeBack": {
+        "NAME": "回涌",
+        "DESCRIPTION": "造成 !D! 点伤害，获得与所造成的未被格挡的伤害相等的 nearlmod:光 。",
+        "UPGRADE_DESCRIPTION": ""
+    },
+    "nearlmod:Duel": {
+        "NAME": "对决",
+        "DESCRIPTION": "所有敌人获得 1 点 力量 。 NL nearlmod:守护 ：获得 !M! 点 敏捷 。 NL nearlmod:无畏 ：获得 !M! 点 力量 。",
+        "UPGRADE_DESCRIPTION": ""
+    },
+    "nearlmod:KnightCompetition": {
+        "NAME": "骑士竞技",
+        "DESCRIPTION": "进入 nearlmod:无畏 。 NL 对随机一名敌人使用 nearlmod:光 。 斩杀 时，获得 !M! 金币。",
+        "UPGRADE_DESCRIPTION": ""
+    },
+    "nearlmod:RadianceConverging": {
+        "NAME": "光耀积聚",
+        "DESCRIPTION": "获得 !M! 层 nearlmod:光 。你在这个回合内每打出过一张牌，就额外获得 !nearlmod:M2! 层 nearlmod:光 。",
+        "UPGRADE_DESCRIPTION": "",
+        "EXTENDED_DESCRIPTION": [
+            "NL （你本回合打出过",
+            " 张牌。）"
+        ]
+    },
+    "nearlmod:Sacrifice": {
+        "NAME": "牺牲",
+        "DESCRIPTION": "造成 !D! 点伤害。给予目标 疼痛戳刺 和 !M! 点 力量 。",
+        "UPGRADE_DESCRIPTION": ""
+    },
 
     "nearlmod:BraveTheDarkness": {
         "NAME": "不畏苦暗",
