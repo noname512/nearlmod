@@ -28,7 +28,9 @@ import nearlmod.monsters.Platinum;
 import nearlmod.monsters.Roy;
 import nearlmod.patches.NearlEnum;
 import nearlmod.potions.ChangeStancePotion;
+import nearlmod.potions.EssenceOfLight;
 import nearlmod.potions.FriendPotion;
+import nearlmod.potions.FriendshipDrink;
 import nearlmod.relics.*;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
@@ -121,6 +123,8 @@ public class NLMOD implements EditCardsSubscriber, EditCharactersSubscriber, Edi
     private void initializePotions() {
         BaseMod.addPotion(ChangeStancePotion.class, Color.GOLD, Color.CYAN, null, ChangeStancePotion.ID, NearlEnum.NEARL_CLASS);
         BaseMod.addPotion(FriendPotion.class, Color.GOLD, Color.CYAN, null, FriendPotion.ID, NearlEnum.NEARL_CLASS);
+        BaseMod.addPotion(EssenceOfLight.class, Color.GOLD, null, null, EssenceOfLight.ID, NearlEnum.NEARL_CLASS);
+        BaseMod.addPotion(FriendshipDrink.class, Color.NAVY, Color.SKY, null, FriendshipDrink.ID, NearlEnum.NEARL_CLASS);
     }
 
     @Override

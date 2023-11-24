@@ -1,10 +1,18 @@
 {
   "nearlmod:ChangeStancePotion": {
     "NAME": "形态药水",
-    "DESCRIPTIONS": ["进入 #y守护 或 #y无畏 。本次切换形态获得的数值增加 1 点。"]
+    "DESCRIPTIONS": ["进入 #y守护 或 #y无畏 。本次切换形态获得的数值增加 #b1 点。"]
   },
   "nearlmod:FriendPotion": {
     "NAME": "伙伴药水",
     "DESCRIPTIONS": ["从 #b3 张随机非唯一伙伴牌中选择 #b1 张加入你的手牌。这张牌在本回合耗能变为 #b0 。"]
+  },
+  "nearlmod:EssenceOfLight": {
+    "NAME": "光之精华",
+    "DESCRIPTIONS": ["获得 #b10 层 #y光 。将一张 #y光！ 放入你的手牌。"]
+  },
+  "nearlmod:FriendshipDrink": {
+    "NAME": "友谊甘露",
+    "DESCRIPTIONS": ["使你的 #y伙伴 获得 #b1 点 #y信赖 。"]
   }
 }
