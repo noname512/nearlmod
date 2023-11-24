@@ -1,8 +1,6 @@
 package nearlmod.potions;
 
 import basemod.BaseMod;
-import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
-import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.core.AbstractCreature;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
@@ -13,7 +11,6 @@ import com.megacrit.cardcrawl.orbs.AbstractOrb;
 import com.megacrit.cardcrawl.potions.AbstractPotion;
 import nearlmod.NLMOD;
 import nearlmod.orbs.AbstractFriend;
-import nearlmod.powers.LightPower;
 
 public class FriendshipDrink extends AbstractPotion {
     public static String ID = "nearlmod:FriendshipDrink";
