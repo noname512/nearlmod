@@ -9,6 +9,7 @@ import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.localization.CardStrings;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import nearlmod.patches.AbstractCardEnum;
+import nearlmod.patches.NearlTags;
 import nearlmod.powers.LightPower;
 import nearlmod.stances.DefStance;
 
@@ -31,6 +32,7 @@ public class Guardian extends AbstractNearlCard {
                 CardRarity.COMMON, CardTarget.SELF);
         block = baseBlock = BLOCK_AMT;
         magicNumber = baseMagicNumber = LIGHT_GET;
+        tags.add(NearlTags.IS_GAIN_LIGHT);
     }
 
     @Override

@@ -10,6 +10,7 @@ import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.localization.CardStrings;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import nearlmod.patches.AbstractCardEnum;
+import nearlmod.patches.NearlTags;
 import nearlmod.powers.LightPower;
 import nearlmod.stances.AtkStance;
 
@@ -32,6 +33,7 @@ public class Dreadnought extends AbstractNearlCard {
                 CardRarity.COMMON, CardTarget.ENEMY);
         damage = baseDamage = ATTACK_DMG;
         magicNumber = baseMagicNumber = LIGHT_AMT;
+        tags.add(NearlTags.IS_GAIN_LIGHT);
     }
     
     @Override

@@ -7,6 +7,7 @@ import com.megacrit.cardcrawl.localization.CardStrings;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import nearlmod.actions.KnightCompetitionAction;
 import nearlmod.patches.AbstractCardEnum;
+import nearlmod.patches.NearlTags;
 
 public class KnightCompetition extends AbstractNearlCard {
     public static final String ID = "nearlmod:KnightCompetition";
@@ -24,6 +25,7 @@ public class KnightCompetition extends AbstractNearlCard {
                 CardType.ATTACK, AbstractCardEnum.NEARL_GOLD,
                 CardRarity.UNCOMMON, CardTarget.ALL_ENEMY);
         magicNumber = baseMagicNumber = COIN_AMT;
+        tags.add(NearlTags.IS_USE_LIGHT);
     }
 
     @Override

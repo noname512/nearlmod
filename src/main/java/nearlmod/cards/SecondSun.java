@@ -9,6 +9,7 @@ import com.megacrit.cardcrawl.localization.CardStrings;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import com.megacrit.cardcrawl.powers.AbstractPower;
 import nearlmod.patches.AbstractCardEnum;
+import nearlmod.patches.NearlTags;
 import nearlmod.powers.LightPower;
 
 public class SecondSun extends AbstractNearlCard {
@@ -26,6 +27,7 @@ public class SecondSun extends AbstractNearlCard {
                 CardType.SKILL, AbstractCardEnum.NEARL_GOLD,
                 CardRarity.UNCOMMON, CardTarget.SELF);
         exhaust = true;
+        tags.add(NearlTags.IS_GAIN_LIGHT);
     }
 
     @Override

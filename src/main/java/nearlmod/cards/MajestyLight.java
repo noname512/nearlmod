@@ -30,7 +30,6 @@ public class MajestyLight extends AbstractNearlCard {
                 AbstractCard.CardType.SKILL, AbstractCardEnum.NEARL_GOLD,
                 AbstractCard.CardRarity.BASIC, CardTarget.SELF);
         magicNumber = baseMagicNumber = LIGHT_ADD;
-        tags.add(NearlTags.IS_USE_LIGHT_BEFORE);
     }
 
     @Override

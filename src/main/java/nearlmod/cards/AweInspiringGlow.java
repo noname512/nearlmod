@@ -8,6 +8,7 @@ import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.localization.CardStrings;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import nearlmod.patches.AbstractCardEnum;
+import nearlmod.patches.NearlTags;
 import nearlmod.powers.LightPower;
 
 public class AweInspiringGlow extends AbstractNearlCard {
@@ -29,6 +30,7 @@ public class AweInspiringGlow extends AbstractNearlCard {
         cardsToPreview = new LightCard();
         isInnate = true;
         exhaust = true;
+        tags.add(NearlTags.IS_GAIN_LIGHT);
     }
 
     @Override

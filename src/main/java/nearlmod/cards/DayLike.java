@@ -7,6 +7,7 @@ import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.localization.CardStrings;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import nearlmod.patches.AbstractCardEnum;
+import nearlmod.patches.NearlTags;
 import nearlmod.powers.LightPower;
 
 public class DayLike extends AbstractNearlCard {
@@ -25,6 +26,7 @@ public class DayLike extends AbstractNearlCard {
                 CardType.SKILL, AbstractCardEnum.NEARL_GOLD,
                 CardRarity.COMMON, CardTarget.SELF);
         magicNumber = baseMagicNumber = LIGHT_AMT;
+        tags.add(NearlTags.IS_GAIN_LIGHT);
     }
 
     @Override

@@ -10,6 +10,7 @@ import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import nearlmod.NLMOD;
 import nearlmod.orbs.Blemishine;
 import nearlmod.patches.AbstractCardEnum;
+import nearlmod.patches.NearlTags;
 import nearlmod.powers.LightPower;
 import nearlmod.stances.AtkStance;
 import nearlmod.stances.DefStance;
@@ -33,6 +34,7 @@ public class SwordShield extends AbstractNearlCard {
                 CardRarity.COMMON, CardTarget.SELF);
         magicNumber = baseMagicNumber = LIGHT_ADD;
         secondMagicNumber = baseSecondMagicNumber = EXTRA_INC;
+        tags.add(NearlTags.IS_GAIN_LIGHT);
     }
 
     @Override

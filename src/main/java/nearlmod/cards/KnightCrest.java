@@ -31,7 +31,7 @@ public class KnightCrest extends AbstractNearlCard {
                 CardType.ATTACK, AbstractCardEnum.NEARL_GOLD,
                 CardRarity.COMMON, CardTarget.ENEMY);
         damage = baseDamage = ATTACK_DMG;
-        tags.add(NearlTags.IS_USE_LIGHT_AFTER);
+        tags.add(NearlTags.IS_USE_LIGHT);
     }
 
     @Override

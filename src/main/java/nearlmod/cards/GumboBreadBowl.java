@@ -29,7 +29,7 @@ public class GumboBreadBowl extends AbstractNearlCard {
                 CardType.SKILL, AbstractCardEnum.NEARL_GOLD,
                 CardRarity.COMMON, CardTarget.SELF);
         block = baseBlock = BLOCK_AMT;
-        tags.add(NearlTags.IS_USE_LIGHT_AFTER);
+        tags.add(NearlTags.IS_USE_LIGHT);
     }
 
     @Override

@@ -14,5 +14,9 @@
   "nearlmod:FriendshipDrink": {
     "NAME": "友谊甘露",
     "DESCRIPTIONS": ["使你的 #y伙伴 获得 #b1 点 #y信赖 。"]
+  },
+  "nearlmod:BrilliantLights": {
+    "NAME": "流光溢彩",
+    "DESCRIPTIONS": ["从 #b3 张随机获得 #y光 或使用 #y光 的牌中选择 #b1 张加入你的手牌。这张牌在本回合耗能变为 #b0 。"]
   }
 }

@@ -8,6 +8,7 @@ import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.localization.CardStrings;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import nearlmod.patches.AbstractCardEnum;
+import nearlmod.patches.NearlTags;
 import nearlmod.powers.LightPower;
 
 public class RadianceConverging extends AbstractNearlCard {
@@ -29,6 +30,7 @@ public class RadianceConverging extends AbstractNearlCard {
                 CardRarity.UNCOMMON, CardTarget.SELF);
         magicNumber = baseMagicNumber = LIGHT_AMT;
         secondMagicNumber = baseSecondMagicNumber = LIGHT_EX;
+        tags.add(NearlTags.IS_GAIN_LIGHT);
     }
 
     @Override

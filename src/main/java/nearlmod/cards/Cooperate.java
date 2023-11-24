@@ -12,6 +12,7 @@ import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import nearlmod.NLMOD;
 import nearlmod.orbs.Blemishine;
 import nearlmod.patches.AbstractCardEnum;
+import nearlmod.patches.NearlTags;
 import nearlmod.powers.LightPower;
 
 public class Cooperate extends AbstractNearlCard {
@@ -33,6 +34,7 @@ public class Cooperate extends AbstractNearlCard {
                 CardRarity.UNCOMMON, CardTarget.ENEMY);
         damage = baseDamage = ATTACK_DMG;
         magicNumber = baseMagicNumber = LIGHT_GAIN;
+        tags.add(NearlTags.IS_GAIN_LIGHT);
     }
 
     @Override

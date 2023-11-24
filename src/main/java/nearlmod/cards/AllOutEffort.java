@@ -36,6 +36,7 @@ public class AllOutEffort extends AbstractNearlCard {
         magicNumber = baseMagicNumber = LIGHT_GAIN;
         block = baseBlock = BLOCK_AMT;
         tags.add(NearlTags.IS_SUMMON_CARD);
+        tags.add(NearlTags.IS_GAIN_LIGHT);
     }
 
     @Override

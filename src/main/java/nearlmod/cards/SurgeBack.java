@@ -8,6 +8,7 @@ import com.megacrit.cardcrawl.localization.CardStrings;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import nearlmod.actions.SurgeBackAction;
 import nearlmod.patches.AbstractCardEnum;
+import nearlmod.patches.NearlTags;
 
 public class SurgeBack extends AbstractNearlCard {
     public static final String ID = "nearlmod:SurgeBack";
@@ -25,6 +26,7 @@ public class SurgeBack extends AbstractNearlCard {
                 CardType.ATTACK, AbstractCardEnum.NEARL_GOLD,
                 CardRarity.UNCOMMON, CardTarget.ENEMY);
         damage = baseDamage = ATTACK_DMG;
+        tags.add(NearlTags.IS_GAIN_LIGHT);
     }
 
     @Override
