@@ -90,6 +90,16 @@
         "DESCRIPTION": "造成 !D! 点伤害。 NL nearlmod:无畏 ：获得 !M! 层 nearlmod:光 。",
         "UPGRADE_DESCRIPTION": ""
     },
+    "nearlmod:DayLike": {
+        "NAME": "如昼",
+        "DESCRIPTION": "获得 !M! 层 nearlmod:光 。",
+        "UPGRADE_DESCRIPTION": ""
+    },
+    "nearlmod:OverflowingLight": {
+        "NAME": "溢光",
+        "DESCRIPTION": "将 !M! 张 *光！ 放入你的手牌。",
+        "UPGRADE_DESCRIPTION": ""
+    },
 
     "nearlmod:SecondSun": {
         "NAME": "第二轮太阳",
@@ -113,8 +123,8 @@
     },
     "nearlmod:SightImpairingShowdown": {
         "NAME": "有损视力的对决",
-        "DESCRIPTION": "随机将一张非 nearlmod:唯一 的薇薇安娜的 nearlmod:伙伴牌 加入手牌。如果薇薇安娜在场，她获得 !nearlmod:M2! 点 nearlmod:信赖 。",
-        "UPGRADE_DESCRIPTION": "选择一张非 nearlmod:唯一 的薇薇安娜的 nearlmod:伙伴牌 加入手牌。如果薇薇安娜在场，她获得 !nearlmod:M2! 点 nearlmod:信赖 。"
+        "DESCRIPTION": "随机将一张非 nearlmod:唯一 的薇薇安娜的 nearlmod:伙伴牌 放入你的手牌。如果薇薇安娜在场，她获得 !nearlmod:M2! 点 nearlmod:信赖 。",
+        "UPGRADE_DESCRIPTION": "选择一张非 nearlmod:唯一 的薇薇安娜的 nearlmod:伙伴牌 放入你的手牌。如果薇薇安娜在场，她获得 !nearlmod:M2! 点 nearlmod:信赖 。"
     },
     "nearlmod:GloriousKazimierz": {
         "NAME": "光耀卡西米尔",

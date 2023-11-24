@@ -169,6 +169,8 @@ public class NLMOD implements EditCardsSubscriber, EditCharactersSubscriber, Edi
         BaseMod.addCard(new ChargingWithShield()); // 持盾冲锋
         BaseMod.addCard(new Unsheathed()); // 出鞘
         BaseMod.addCard(new Dreadnought()); // 无畏者
+        BaseMod.addCard(new DayLike()); // 如昼
+        BaseMod.addCard(new OverflowingLight()); // 溢光
 
         // Uncommon.
         BaseMod.addCard(new SecondSun()); // 第二轮太阳
