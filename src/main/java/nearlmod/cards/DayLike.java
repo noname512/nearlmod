@@ -16,7 +16,7 @@ public class DayLike extends AbstractNearlCard {
     public static final String DESCRIPTION = cardStrings.DESCRIPTION;
     public static final String UPGRADE_DESCRIPTION = cardStrings.UPGRADE_DESCRIPTION;
     public static final String IMG_PATH = "images/cards/nearlstrike.png";
-    private static final int COST = 0;
+    private static final int COST = 1;
     private static final int LIGHT_AMT = 9;
     private static final int UPGRADE_PLUS_LIGHT = 3;
 

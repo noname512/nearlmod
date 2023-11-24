@@ -209,7 +209,7 @@
         "DESCRIPTION": "获得 !M! 层 nearlmod:光 。你在这个回合内每打出过一张牌，就额外获得 !nearlmod:M2! 层 nearlmod:光 。",
         "UPGRADE_DESCRIPTION": "",
         "EXTENDED_DESCRIPTION": [
-            "NL （你本回合打出过",
+            " NL （你本回合打出过",
             " 张牌。）"
         ]
     },
