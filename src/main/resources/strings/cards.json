@@ -218,6 +218,11 @@
         "DESCRIPTION": "造成 !D! 点伤害。给予目标 疼痛戳刺 和 !M! 点 力量 。",
         "UPGRADE_DESCRIPTION": ""
     },
+    "nearlmod:LightCascade": {
+        "NAME": "光瀑",
+        "DESCRIPTION": "进入 nearlmod:无畏 。 NL 对所有敌人使用 nearlmod:光 。",
+        "UPGRADE_DESCRIPTION": ""
+    },
 
     "nearlmod:BraveTheDarkness": {
         "NAME": "不畏苦暗",

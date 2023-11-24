@@ -201,6 +201,7 @@ public class NLMOD implements EditCardsSubscriber, EditCharactersSubscriber, Edi
         BaseMod.addCard(new KnightCompetition()); // 骑士竞技
         BaseMod.addCard(new RadianceConverging()); // 光耀积聚
         BaseMod.addCard(new Sacrifice()); // 牺牲
+        BaseMod.addCard(new LightCascade()); // 光瀑
 
         // Rare.
         BaseMod.addCard(new BraveTheDarkness()); // 不畏苦暗
