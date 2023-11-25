@@ -37,7 +37,7 @@ public class SwallowLight extends AbstractNearlCard {
         int amount = 0;
         if (power != null) {
             amount = power.amount;
-            AbstractDungeon.actionManager.addToBottom(new RemoveSpecificPowerAction(p, p, power));
+            addToBot(new RemoveSpecificPowerAction(p, p, power));
             if (!upgraded) amount = (amount + 2) / 3;
             else amount = (amount + 1) / 2;
         }

@@ -1,17 +1,13 @@
 package nearlmod.actions;
 
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
-import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
-import com.megacrit.cardcrawl.actions.common.RemoveSpecificPowerAction;
 import com.megacrit.cardcrawl.cards.DamageInfo;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.core.Settings;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
-import com.megacrit.cardcrawl.powers.AbstractPower;
 import com.megacrit.cardcrawl.vfx.GainPennyEffect;
 import nearlmod.powers.LightPower;
-import nearlmod.powers.ShadowPower;
 
 public class KnightCompetitionAction extends AbstractGameAction {
     private final int increaseGold;
@@ -29,18 +25,13 @@ public class KnightCompetitionAction extends AbstractGameAction {
             return;
         }
         AbstractPlayer p = AbstractDungeon.player;
-        AbstractPower power = p.getPower("nearlmod:LightPower");
-        if (power == null) {
+        amount = LightPower.getAmount();
+        LightPower.changeToShadow(true);
+        if (amount == 0) {
             isDone = true;
             return;
         }
-        amount = power.amount;
         ms.damage(new DamageInfo(p, amount, DamageInfo.DamageType.THORNS));
-        if (p.getPower("nearlmod:Poem'sLooks") != null) {
-            addToTop(new ApplyPowerAction(p, p, new ShadowPower(p, amount)));
-        }
-        LightPower.amountForBattle += amount;
-        addToTop(new RemoveSpecificPowerAction(p, p, power));
         if ((ms.isDying || ms.currentHealth <= 0) && !ms.halfDead && !ms.hasPower("Minion")) {
             p.gainGold(increaseGold);
             for (int i = 0; i < increaseGold; i++) {

@@ -11,10 +11,12 @@ import com.megacrit.cardcrawl.cards.DamageInfo;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.core.AbstractCreature;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
+import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.helpers.ImageMaster;
 import com.megacrit.cardcrawl.localization.PowerStrings;
 import com.megacrit.cardcrawl.powers.AbstractPower;
 import com.megacrit.cardcrawl.stances.AbstractStance;
+import nearlmod.relics.UpgradedCoreCaster;
 import nearlmod.stances.AtkStance;
 
 public class LightPower extends AbstractPower implements CloneablePowerInterface {
@@ -42,17 +44,41 @@ public class LightPower extends AbstractPower implements CloneablePowerInterface
         else description = DESCRIPTIONS[2] + amount + DESCRIPTIONS[3];
     }
 
+    public static int getAmount() {
+        int amount = 0;
+        AbstractPlayer p = AbstractDungeon.player;
+        if (p.hasPower(LightPower.POWER_ID))
+            amount = p.getPower(LightPower.POWER_ID).amount;
+        if (p.hasRelic(UpgradedCoreCaster.ID)) {
+            amount += UpgradedCoreCaster.EXTRA_VAL;
+            p.getRelic(UpgradedCoreCaster.ID).flash();
+        }
+        return amount;
+    }
+
+    public static void changeToShadow(boolean isUse) {
+        AbstractPlayer p = AbstractDungeon.player;
+        if (!p.hasPower(LightPower.POWER_ID)) return;
+        AbstractPower power = p.getPower(LightPower.POWER_ID);
+        if (isUse) {
+            amountForBattle += power.amount;
+            if (p.hasPower(PoemsLooksPower.POWER_ID))
+                AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(p, p, new ShadowPower(p, power.amount)));
+        }
+        AbstractDungeon.actionManager.addToBottom(new RemoveSpecificPowerAction(p, p, power));
+    }
+
     public void useLight(AbstractPlayer p, AbstractCreature m) {
-        if (p.getPower("nearlmod:Poem'sLooks") != null) {
-            addToBot(new ApplyPowerAction(p, p, new ShadowPower(p, amount)));
-        }
         amountForBattle += amount;
+        int realAmount = amount;
+        changeToShadow(true);
+        if (AbstractDungeon.player.hasRelic(UpgradedCoreCaster.ID))
+            realAmount += UpgradedCoreCaster.EXTRA_VAL;
         if (p.stance.ID.equals(AtkStance.STANCE_ID)) {
-            addToBot(new DamageAction(m, new DamageInfo(p, amount, DamageInfo.DamageType.THORNS), AbstractGameAction.AttackEffect.LIGHTNING));
+            addToBot(new DamageAction(m, new DamageInfo(p, realAmount, DamageInfo.DamageType.THORNS), AbstractGameAction.AttackEffect.LIGHTNING));
         } else {
-            addToBot(new AddTemporaryHPAction(p, p, amount));
+            addToBot(new AddTemporaryHPAction(p, p, realAmount));
         }
-        addToBot(new RemoveSpecificPowerAction(p, p, this));
     }
 
     @Override

@@ -284,6 +284,7 @@ public class NLMOD implements EditCardsSubscriber, EditCharactersSubscriber, Edi
 
         // uncommon.
         BaseMod.addRelicToCustomPool(new FirstAidMode(), NEARL_GOLD);
+        BaseMod.addRelicToCustomPool(new UpgradedCoreCaster(), NEARL_GOLD);
 
         // rare.
         BaseMod.addRelicToCustomPool(new EmergencyCallBook(), NEARL_GOLD);
