@@ -24,6 +24,7 @@ public class DoubleBossPower extends AbstractPower implements CloneablePowerInte
         type = PowerType.BUFF;
         updateDescription();
         this.loadRegion("curiosity");
+        priority = 100;
     }
 
     public void onSpecificTrigger() {
