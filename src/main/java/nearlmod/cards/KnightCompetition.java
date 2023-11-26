@@ -1,5 +1,6 @@
 package nearlmod.cards;
 
+import com.megacrit.cardcrawl.actions.watcher.ChangeStanceAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
@@ -8,6 +9,8 @@ import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import nearlmod.actions.KnightCompetitionAction;
 import nearlmod.patches.AbstractCardEnum;
 import nearlmod.patches.NearlTags;
+import nearlmod.stances.AtkStance;
+import nearlmod.stances.DefStance;
 
 public class KnightCompetition extends AbstractNearlCard {
     public static final String ID = "nearlmod:KnightCompetition";
@@ -30,6 +33,8 @@ public class KnightCompetition extends AbstractNearlCard {
 
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
+        if (p.stance.ID.equals(DefStance.STANCE_ID))
+            addToBot(new ChangeStanceAction(new AtkStance()));
         addToBot(new KnightCompetitionAction(magicNumber));
     }
 

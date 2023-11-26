@@ -200,6 +200,7 @@ public class NLMOD implements EditCardsSubscriber, EditCharactersSubscriber, Edi
         BaseMod.addCard(new KnightCompetition()); // 骑士竞技
         BaseMod.addCard(new RadianceConverging()); // 光耀积聚
         BaseMod.addCard(new Sacrifice()); // 牺牲
+        BaseMod.addCard(new LightCascade()); // 光瀑
 
         // Rare.
         BaseMod.addCard(new BraveTheDarkness()); // 不畏苦暗
@@ -282,6 +283,7 @@ public class NLMOD implements EditCardsSubscriber, EditCharactersSubscriber, Edi
 
         // uncommon.
         BaseMod.addRelicToCustomPool(new FirstAidMode(), NEARL_GOLD);
+        BaseMod.addRelicToCustomPool(new UpgradedCoreCaster(), NEARL_GOLD);
 
         // rare.
         BaseMod.addRelicToCustomPool(new EmergencyCallBook(), NEARL_GOLD);
