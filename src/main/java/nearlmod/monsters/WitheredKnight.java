@@ -75,8 +75,8 @@ public class WitheredKnight extends AbstractMonster {
         super.die();
         for (AbstractMonster ms : AbstractDungeon.getMonsters().monsters)
             if (ms instanceof CorruptKnight && !ms.isDeadOrEscaped()) {
-                ((CorruptKnight) ms).WhitheredDead();
                 ms.getPower("nearlmod:DoubleBoss").onSpecificTrigger();
+                ((CorruptKnight) ms).WhitheredDead();
             }
     }
 
