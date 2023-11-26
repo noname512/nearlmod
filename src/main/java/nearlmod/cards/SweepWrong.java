@@ -34,6 +34,7 @@ public class SweepWrong extends AbstractNearlCard {
 
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
+        applyPowers();
         for (AbstractMonster mo : AbstractDungeon.getMonsters().monsters) {
             if (!mo.isDeadOrEscaped()) {
                 if (mo.getIntentBaseDmg() >= 0) {

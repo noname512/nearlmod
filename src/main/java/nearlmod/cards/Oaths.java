@@ -31,6 +31,7 @@ public class Oaths extends AbstractNearlCard {
         super(ID, NAME, IMG_PATH, COST, DESCRIPTION,
                 CardType.ATTACK, AbstractCardEnum.NEARL_GOLD,
                 CardRarity.UNCOMMON, CardTarget.ALL_ENEMY);
+        isMultiDamage = true;
         damage = baseDamage = ATTACK_DMG;
         magicNumber = baseMagicNumber = WEAKNESS_AMT;
     }
@@ -42,7 +43,7 @@ public class Oaths extends AbstractNearlCard {
 
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
-        addToBot(new DamageAllEnemiesAction(p, damage, damageTypeForTurn, AbstractGameAction.AttackEffect.SLASH_HORIZONTAL));
+        addToBot(new DamageAllEnemiesAction(p, multiDamage, damageTypeForTurn, AbstractGameAction.AttackEffect.SLASH_HORIZONTAL));
         addToBot(new WeakenAllAction(p, magicNumber));
         if (extraTriggered())
             addToBot(new ApplyPowerAction(p, p, new CreedFieldPower(p, 1)));
