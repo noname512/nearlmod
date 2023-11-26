@@ -114,6 +114,7 @@ public class NLMOD implements EditCardsSubscriber, EditCharactersSubscriber, Edi
         BaseMod.addMonster(Monique.ID, Monique.NAME, () -> new MonsterGroup(new AbstractMonster[] {new Monique(0.0F, 0.0F)}));
         BaseMod.addMonster(CorruptKnight.ID, CorruptKnight.NAME, () -> new MonsterGroup(new AbstractMonster [] {new CorruptKnight(0.0F, 0.0F)}));
         BaseMod.addMonster(WitheredKnight.ID, WitheredKnight.NAME, () -> new MonsterGroup(new AbstractMonster [] {new WitheredKnight(0.0F, 0.0F)}));
+        BaseMod.addMonster(LeftHandTytusTopola.ID, LeftHandTytusTopola.NAME, () -> new MonsterGroup(new AbstractMonster [] {new LeftHandTytusTopola(0.0F, 0.0F)}));
     }
 
     private void initializePotions() {
