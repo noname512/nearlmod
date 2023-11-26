@@ -4,6 +4,8 @@ import com.megacrit.cardcrawl.actions.animations.TalkAction;
 import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
 import com.megacrit.cardcrawl.actions.common.DamageAction;
 import com.megacrit.cardcrawl.actions.common.EscapeAction;
+import com.megacrit.cardcrawl.actions.common.SetMoveAction;
+import com.megacrit.cardcrawl.actions.utility.TextAboveCreatureAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.cards.DamageInfo;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
@@ -16,6 +18,7 @@ import nearlmod.actions.SummonOrbAction;
 import nearlmod.cards.BraveTheDarkness;
 import nearlmod.cards.NightScouringGleam;
 import nearlmod.orbs.Blemishine;
+import nearlmod.powers.DoubleBossPower;
 
 public class CorruptKnight extends AbstractMonster {
     public static final String ID = "nearlmod:CorruptKnight";
@@ -46,17 +49,24 @@ public class CorruptKnight extends AbstractMonster {
 
     @Override
     public void usePreBattleAction() {
+        addToBot(new ApplyPowerAction(this, this, new DoubleBossPower(this)));
         AbstractPlayer p = AbstractDungeon.player;
-        addToBot(new ApplyPowerAction(p, this, new ArtifactPower(p, 2)));
+        if (AbstractDungeon.ascensionLevel < 15) {
+            addToBot(new ApplyPowerAction(p, this, new ArtifactPower(p, 2)));
+        }
+        else {
+            addToBot(new ApplyPowerAction(p, this, new ArtifactPower(p, 1)));
+        }
         addToBot(new SummonOrbAction(new Blemishine()));
         addToBot(new SummonOrbAction(new Blemishine()));
         AbstractCard card = new NightScouringGleam();
         card.upgrade();
-        card.initializeDescription();
         p.hand.addToHand(card);
-        card = card.makeCopy();
-        card.upgrade();
-        p.hand.addToHand(card);
+        if (AbstractDungeon.ascensionLevel < 15) {
+            card = card.makeCopy();
+            card.upgrade();
+            p.hand.addToHand(card);
+        }
         card = new BraveTheDarkness();
         card.upgrade();
         card.rawDescription += " NL 保留 。";
@@ -73,7 +83,7 @@ public class CorruptKnight extends AbstractMonster {
             for (int i = 0; i < attTimes; i++) {
                 addToBot(new DamageAction(AbstractDungeon.player, this.damage.get(1)));
             }
-            setMove((byte) 3, Intent.ATTACK, this.damage.get(0).base);
+            setMove((byte) 3, Intent.ATTACK, this.damage.get(0).base, attTimes, (attTimes > 1));
         } else {
             for (int i = 0; i < attTimes; i++) {
                 addToBot(new DamageAction(AbstractDungeon.player, this.damage.get(0)));
@@ -91,15 +101,25 @@ public class CorruptKnight extends AbstractMonster {
         setMove((byte) 1, Intent.ATTACK, this.damage.get(0).base);
     }
 
+    public void die() {
+        super.die();
+        for (AbstractMonster ms : AbstractDungeon.getMonsters().monsters)
+            if (ms instanceof WitheredKnight && !ms.isDeadOrEscaped()) {
+                ((WitheredKnight) ms).CorruptedDead();
+                ms.getPower("nearlmod:DoubleBoss").onSpecificTrigger();
+            }
+    }
+
     public void WhitheredDead() {
         isWhitheredDead = true;
         if (this.nextMove == 2) {
             setMove(MOVES[0], (byte) 2, Intent.ATTACK, this.damage.get(1).base, 2, true);
+            this.createIntent();
         }
         else {
             setMove(this.nextMove, Intent.ATTACK, this.damage.get(0).base, 2, true);
+            this.createIntent();
         }
-        update();
-        flashIntent();
+        // TODO: 让腐败骑士说点什么
     }
 }

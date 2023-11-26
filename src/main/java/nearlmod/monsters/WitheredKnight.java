@@ -1,11 +1,18 @@
 package nearlmod.monsters;
 
 import com.megacrit.cardcrawl.actions.animations.TalkAction;
+import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
+import com.megacrit.cardcrawl.actions.common.DamageAction;
 import com.megacrit.cardcrawl.actions.common.EscapeAction;
+import com.megacrit.cardcrawl.actions.common.SetMoveAction;
+import com.megacrit.cardcrawl.cards.DamageInfo;
+import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.localization.MonsterStrings;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
+import com.megacrit.cardcrawl.powers.FrailPower;
+import nearlmod.powers.DoubleBossPower;
 
 public class WitheredKnight extends AbstractMonster {
     public static final String ID = "nearlmod:WitheredKnight";
@@ -15,20 +22,52 @@ public class WitheredKnight extends AbstractMonster {
     public static final String[] DIALOG = monsterStrings.DIALOG;
     public static final String IMAGE = "images/monsters/platinum.png";
 
+    public boolean isCorruptedDead = false;
+    public int SkillTimes = 3;
+
     public WitheredKnight(float x, float y) {
-        super(NAME, ID, 100, 0, 0, 150.0F, 320.0F, IMAGE, x, y);
-        this.type = EnemyType.NORMAL;
-        if (AbstractDungeon.ascensionLevel >= 7)
-            setHp(110);
+        super(NAME, ID, 130, 0, 0, 150.0F, 320.0F, IMAGE, x, y);
+        this.type = EnemyType.BOSS;
+        if (AbstractDungeon.ascensionLevel >= 9)
+            setHp(145);
+        if (AbstractDungeon.ascensionLevel >= 19) {
+            this.damage.add(new DamageInfo(this, 10));
+            this.damage.add(new DamageInfo(this, 16));
+            SkillTimes = 4;
+        } else if (AbstractDungeon.ascensionLevel >= 4) {
+            this.damage.add(new DamageInfo(this, 9));
+            this.damage.add(new DamageInfo(this, 14));
+        } else {
+            this.damage.add(new DamageInfo(this, 8));
+            this.damage.add(new DamageInfo(this, 12));
+        }
     }
 
     @Override
     public void usePreBattleAction() {
+        addToBot(new ApplyPowerAction(this, this, new DoubleBossPower(this)));
     }
 
     @Override
     public void takeTurn() {
-        addToBot(new EscapeAction(this));
+        addToBot(new ApplyPowerAction(AbstractDungeon.player, this, new FrailPower(AbstractDungeon.player, 1, true)));
+        int attTimes = 1;
+        if (isCorruptedDead) attTimes++;
+        if (this.nextMove == 2) {
+            for (int i = 0; i < SkillTimes * attTimes; i++) {
+                addToBot(new DamageAction(AbstractDungeon.player, this.damage.get(1)));
+            }
+            setMove((byte) 3, Intent.ATTACK_DEBUFF, this.damage.get(0).base, attTimes, (attTimes > 1));
+        } else {
+            for (int i = 0; i < attTimes; i++) {
+                addToBot(new DamageAction(AbstractDungeon.player, this.damage.get(0)));
+            }
+            if ((this.nextMove != 7) && (this.nextMove != 1)) {
+                setMove((byte) (this.nextMove + 1), Intent.ATTACK_DEBUFF, this.damage.get(0).base, attTimes, (attTimes > 1));
+            } else {
+                setMove(MOVES[0], (byte) 2, Intent.ATTACK_DEBUFF, this.damage.get(1).base, SkillTimes * attTimes, true);
+            }
+        }
     }
 
     public void die() {
@@ -36,11 +75,25 @@ public class WitheredKnight extends AbstractMonster {
         for (AbstractMonster ms : AbstractDungeon.getMonsters().monsters)
             if (ms instanceof CorruptKnight && !ms.isDeadOrEscaped()) {
                 ((CorruptKnight) ms).WhitheredDead();
+                ms.getPower("nearlmod:DoubleBoss").onSpecificTrigger();
             }
+    }
+
+    public void CorruptedDead() {
+        isCorruptedDead = true;
+        if (this.nextMove == 2) {
+            setMove(MOVES[0], (byte) 2, Intent.ATTACK_DEBUFF, this.damage.get(1).base, SkillTimes * 2, true);
+            this.createIntent();
+        }
+        else {
+            setMove(this.nextMove, Intent.ATTACK_DEBUFF, this.damage.get(0).base, 2, true);
+            this.createIntent();
+        }
+        // TODO: 让凋零骑士说点什么
     }
 
     @Override
     protected void getMove(int i) {
-        setMove((byte)99, Intent.ESCAPE);
+        setMove((byte) 1, Intent.ATTACK_DEBUFF, this.damage.get(0).base);
     }
 }
