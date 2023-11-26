@@ -3,9 +3,6 @@ package nearlmod.monsters;
 import com.megacrit.cardcrawl.actions.animations.TalkAction;
 import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
 import com.megacrit.cardcrawl.actions.common.DamageAction;
-import com.megacrit.cardcrawl.actions.common.EscapeAction;
-import com.megacrit.cardcrawl.actions.common.SetMoveAction;
-import com.megacrit.cardcrawl.actions.utility.TextAboveCreatureAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.cards.DamageInfo;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
@@ -26,11 +23,11 @@ public class CorruptKnight extends AbstractMonster {
     public static final String NAME = monsterStrings.NAME;
     public static final String[] MOVES = monsterStrings.MOVES;
     public static final String[] DIALOG = monsterStrings.DIALOG;
-    public static final String IMAGE = "images/monsters/platinum.png";
+    public static final String IMAGE = "images/monsters/corruptknight.png";
     public boolean isWhitheredDead = false;
 
     public CorruptKnight(float x, float y) {
-        super(NAME, ID, 130, 0, 0, 150.0F, 320.0F, IMAGE, x, y);
+        super(NAME, ID, 130, 25.0F, 0, 150.0F, 320.0F, IMAGE, x, y);
         this.type = EnemyType.BOSS;
         if (AbstractDungeon.ascensionLevel >= 9)
             setHp(145);

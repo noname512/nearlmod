@@ -6,6 +6,7 @@ import com.evacipated.cardcrawl.modthespire.lib.SpirePostfixPatch;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.localization.UIStrings;
+import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import com.megacrit.cardcrawl.monsters.MonsterGroup;
 import com.megacrit.cardcrawl.monsters.exordium.AcidSlime_S;
 import com.megacrit.cardcrawl.rooms.AbstractRoom;
@@ -14,6 +15,7 @@ import nearlmod.monsters.CorruptKnight;
 
 import java.util.ArrayList;
 
+import nearlmod.monsters.WitheredKnight;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
@@ -41,7 +43,7 @@ public class ArenaRoom extends AbstractRoom {
         switch (enterTimes) {
             case 1:
                 AbstractDungeon.lastCombatMetricKey = "nearlmod:Corrupted & Withered";
-                AbstractDungeon.getCurrRoom().monsters = new MonsterGroup(new CorruptKnight(-200.0F, 0.0F));
+                AbstractDungeon.getCurrRoom().monsters = new MonsterGroup(new AbstractMonster[] { new CorruptKnight(-200.0F, 0.0F), new WitheredKnight(80.0F, 0.0F) });
                 break;
             case 2:
                 AbstractDungeon.lastCombatMetricKey = "nearlmod:Left-hand";
