@@ -1,5 +1,6 @@
 package nearlmod.orbs;
 
+import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
@@ -8,6 +9,7 @@ import com.megacrit.cardcrawl.localization.OrbStrings;
 import com.megacrit.cardcrawl.orbs.AbstractOrb;
 import nearlmod.actions.AddFriendCardToHandAction;
 import nearlmod.cards.friendcards.*;
+import org.apache.logging.log4j.LogManager;
 
 import java.util.ArrayList;
 
@@ -25,8 +27,8 @@ public class Viviana extends AbstractFriend {
     public Viviana(int amount) {
         super(ORB_ID, NAME, DESCRIPTION, IMAGE, amount);
         chargingTurn = 0;
-        if (AbstractDungeon.player.hasPower("GlimmeringTouchPower")) {
-            startCharging(AbstractDungeon.player.getPower("GlimmeringTouchPower").amount);
+        if (AbstractDungeon.player.hasPower("nearlmod:GlimmeringTouchPower")) {
+            startCharging(AbstractDungeon.player.getPower("nearlmod:GlimmeringTouchPower").amount);
         }
     }
 

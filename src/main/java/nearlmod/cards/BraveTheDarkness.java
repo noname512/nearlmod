@@ -15,6 +15,7 @@ import com.megacrit.cardcrawl.powers.GainStrengthPower;
 import com.megacrit.cardcrawl.powers.StrengthPower;
 import nearlmod.patches.AbstractCardEnum;
 import nearlmod.stances.AtkStance;
+import org.apache.logging.log4j.LogManager;
 
 public class BraveTheDarkness extends AbstractNearlCard {
     public static final String ID = "nearlmod:BraveTheDarkness";
@@ -35,22 +36,29 @@ public class BraveTheDarkness extends AbstractNearlCard {
         
         damage = baseDamage = ATTACK_DMG;
         exhaust = true;
+        if (AbstractDungeon.player != null && extraTriggered()) {
+            LogManager.getLogger(AbstractCard.class.getName()).info("extraTriggered!");
+            this.target = CardTarget.ALL_ENEMY;
+            isMultiDamage = true;
+        }
     }
 
     @Override
     public boolean extraTriggered() {
-        return AbstractDungeon.player.stance.ID.equals(AtkStance.STANCE_ID);
+        return AbstractDungeon.player.stance != null && AbstractDungeon.player.stance.ID.equals(AtkStance.STANCE_ID);
     }
 
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
-        if (extraTriggered()) {
-            for (AbstractMonster mo : AbstractDungeon.getMonsters().monsters) {
-                if (!mo.isDeadOrEscaped()) {
-                    calculateCardDamage(m);
-                    addToBot(new DamageAction(m, new DamageInfo(p, damage, damageTypeForTurn), AbstractGameAction.AttackEffect.SLASH_DIAGONAL));
-                }
+        if (this.target == CardTarget.ENEMY) {
+            LogManager.getLogger(AbstractCard.class.getName()).info("???");
+            if (isMultiDamage) {
+                LogManager.getLogger(AbstractCard.class.getName()).info("??????");
             }
+        }
+
+        if (extraTriggered()) {
+            addToBot(new DamageAllEnemiesAction(p, multiDamage, damageTypeForTurn, AbstractGameAction.AttackEffect.SLASH_DIAGONAL));
             for (AbstractMonster mo : AbstractDungeon.getMonsters().monsters) {
                 if (!mo.isDeadOrEscaped()) {
                     addToBot(new ApplyPowerAction(mo, p, new StrengthPower(mo, -DECREASE_STRENGTH), -DECREASE_STRENGTH));
@@ -75,8 +83,14 @@ public class BraveTheDarkness extends AbstractNearlCard {
 
     @Override
     public void switchedStance() {
-        if (extraTriggered()) this.target = CardTarget.ALL_ENEMY;
-        else this.target = CardTarget.ENEMY;
+        if (extraTriggered()) {
+            this.target = CardTarget.ALL_ENEMY;
+            isMultiDamage = true;
+        }
+        else {
+            this.target = CardTarget.ENEMY;
+            isMultiDamage = false;
+        }
     }
 
     @Override
