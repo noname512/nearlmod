@@ -12,7 +12,7 @@ import com.megacrit.cardcrawl.helpers.TipHelper;
 import com.megacrit.cardcrawl.localization.PotionStrings;
 import com.megacrit.cardcrawl.potions.AbstractPotion;
 import nearlmod.NLMOD;
-import nearlmod.cards.LightCard;
+import nearlmod.cards.special.LightCard;
 import nearlmod.powers.LightPower;
 
 public class EssenceOfLight extends AbstractPotion {

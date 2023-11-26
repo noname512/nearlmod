@@ -11,8 +11,8 @@ import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.localization.CardStrings;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
+import nearlmod.cards.special.LightCard;
 import nearlmod.patches.AbstractCardEnum;
-import nearlmod.patches.NearlTags;
 import nearlmod.stances.AtkStance;
 
 public class Unsheathed extends AbstractNearlCard {

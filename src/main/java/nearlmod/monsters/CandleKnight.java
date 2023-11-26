@@ -109,7 +109,7 @@ public class CandleKnight extends AbstractMonster {
             if (randInt == 0)
                 setMove((byte)4, Intent.ATTACK, this.damage.get(0).base);
             else
-                setMove((byte)5, Intent.ATTACK, this.damage.get(2).base, damageTimes, true);
+                setMove(MOVES[2], (byte)5, Intent.ATTACK, this.damage.get(2).base, damageTimes, true);
         }
     }
 

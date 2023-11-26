@@ -47,7 +47,11 @@ public class Roy extends AbstractMonster {
                 return;
             }
         }
-        if (AbstractDungeon.aiRng.random(0, 3) == 0)
+        int num = 4;
+        if (AbstractDungeon.ascensionLevel >= 17) {
+            num = 3;
+        }
+        if (AbstractDungeon.aiRng.random(0, num) == 0)
             setMove((byte)2, Intent.ATTACK_DEBUFF, this.damage.get(0).base);
         else
             setMove(MOVES[0], (byte)1, Intent.UNKNOWN);

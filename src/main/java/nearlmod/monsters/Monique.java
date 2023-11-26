@@ -51,7 +51,7 @@ public class Monique extends AbstractMonster {
     @Override
     public void die() {
         for (AbstractMonster ms : AbstractDungeon.getMonsters().monsters)
-            if (ms instanceof Roy) {
+            if (ms instanceof Roy && !ms.isDeadOrEscaped()) {
                 addToBot(new EscapeAction(ms));
             }
         super.die();

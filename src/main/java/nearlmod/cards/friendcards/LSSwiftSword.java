@@ -53,6 +53,15 @@ public class LSSwiftSword extends AbstractFriendCard {
     }
 
     @Override
+    public boolean canUse(AbstractPlayer p, AbstractMonster m) {
+        if (p.hasPower("nearlmod:GlimmeringTouchPower")) {
+            this.cantUseMessage = "薇薇安娜正在蓄力中";
+            return false;
+        }
+        return true;
+    }
+
+    @Override
     public AbstractCard makeCopy() {
         return new LSSwiftSword();
     }

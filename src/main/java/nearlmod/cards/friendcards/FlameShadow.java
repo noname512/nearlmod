@@ -14,6 +14,7 @@ import nearlmod.actions.PureDamageAllEnemiesAction;
 import nearlmod.actions.UseShadowAction;
 import nearlmod.orbs.Viviana;
 import nearlmod.patches.AbstractCardEnum;
+import nearlmod.patches.NearlTags;
 import nearlmod.powers.PoemsLooksPower;
 import nearlmod.powers.ShadowPower;
 
@@ -54,6 +55,15 @@ public class FlameShadow extends AbstractFriendCard {
         }
         addToBot(new ApplyPowerAction(p, p, new PoemsLooksPower(p)));
         applyPowers();
+    }
+
+    @Override
+    public boolean canUse(AbstractPlayer p, AbstractMonster m) {
+        if (p.hasPower("nearlmod:GlimmeringTouchPower")) {
+            this.cantUseMessage = "薇薇安娜正在蓄力中";
+            return false;
+        }
+        return true;
     }
 
     @Override

@@ -22,10 +22,7 @@ import com.megacrit.cardcrawl.rooms.AbstractRoom;
 import com.megacrit.cardcrawl.screens.custom.CustomMod;
 import nearlmod.events.LaughAllYouWantEvent;
 import nearlmod.events.PoemLooksEvent;
-import nearlmod.monsters.CandleKnight;
-import nearlmod.monsters.Monique;
-import nearlmod.monsters.Platinum;
-import nearlmod.monsters.Roy;
+import nearlmod.monsters.*;
 import nearlmod.patches.NearlEnum;
 import nearlmod.potions.*;
 import nearlmod.relics.*;
@@ -115,6 +112,8 @@ public class NLMOD implements EditCardsSubscriber, EditCharactersSubscriber, Edi
         BaseMod.addMonster(Platinum.ID, Platinum.NAME, () -> new MonsterGroup(new AbstractMonster[] {new Platinum(0.0F, 0.0F)}));
         BaseMod.addMonster(Roy.ID, Roy.NAME, () -> new MonsterGroup(new AbstractMonster[] {new Roy(0.0F, 0.0F)}));
         BaseMod.addMonster(Monique.ID, Monique.NAME, () -> new MonsterGroup(new AbstractMonster[] {new Monique(0.0F, 0.0F)}));
+        BaseMod.addMonster(CorruptKnight.ID, CorruptKnight.NAME, () -> new MonsterGroup(new AbstractMonster [] {new CorruptKnight(0.0F, 0.0F)}));
+        BaseMod.addMonster(WitheredKnight.ID, WitheredKnight.NAME, () -> new MonsterGroup(new AbstractMonster [] {new WitheredKnight(0.0F, 0.0F)}));
     }
 
     private void initializePotions() {
