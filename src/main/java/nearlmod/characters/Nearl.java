@@ -25,6 +25,7 @@ import nearlmod.powers.LightPower;
 import nearlmod.relics.*;
 import nearlmod.patches.AbstractCardEnum;
 import nearlmod.patches.NearlEnum;
+import nearlmod.rooms.ArenaRoom;
 import nearlmod.stances.AtkStance;
 import nearlmod.stances.DefStance;
 import nearlmod.util.CostEnergyOrb;
@@ -74,6 +75,7 @@ public class Nearl extends CustomPlayer {
         loadAnimation("images/char/char_148_nearl.atlas", "images/char/char_148_nearl.json", 1.5F);
         this.stateData.setMix("Idle", "Die", 0.1F);
         this.state.setAnimation(0, "Idle", true);
+        ArenaRoom.enterTimes = 0;
     }
 
     @Override

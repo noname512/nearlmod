@@ -1,33 +1,25 @@
 package nearlmod.rooms;
 
 import com.badlogic.gdx.graphics.Texture;
-import com.evacipated.cardcrawl.modthespire.lib.SpirePatch;
-import com.evacipated.cardcrawl.modthespire.lib.SpirePostfixPatch;
-import com.megacrit.cardcrawl.core.CardCrawlGame;
+import com.badlogic.gdx.graphics.g2d.SpriteBatch;
+import com.evacipated.cardcrawl.modthespire.lib.*;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
-import com.megacrit.cardcrawl.localization.UIStrings;
-import com.megacrit.cardcrawl.monsters.AbstractMonster;
-import com.megacrit.cardcrawl.monsters.MonsterGroup;
-import com.megacrit.cardcrawl.monsters.exordium.AcidSlime_S;
 import com.megacrit.cardcrawl.rooms.AbstractRoom;
-import nearlmod.monsters.CandleKnight;
-import nearlmod.monsters.CorruptKnight;
-
+import nearlmod.arenaevents.CorruptedWitheredBattle;
+import nearlmod.arenaevents.LeftHandBattle;
+import nearlmod.events.LaughAllYouWantEvent;
+import nearlmod.events.PoemLooksEvent;
 import java.util.ArrayList;
 
-import nearlmod.monsters.WitheredKnight;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
 public class ArenaRoom extends AbstractRoom {
     protected static final Logger logger = LogManager.getLogger(ArenaRoom.class.getName());
     public static final String ID = "nearlmod:ArenaRoom";
-    public static final UIStrings uiStrings = CardCrawlGame.languagePack.getUIString(ID);
-    public static final String[] TEXT = uiStrings.TEXT;
     public static int enterTimes;
 
     public ArenaRoom() {
-        phase = RoomPhase.COMBAT;
         mapSymbol = "A";
         mapImg = new Texture("images/ui/arena.png");
         mapImgOutline = new Texture("images/ui/arenaoutline.png");
@@ -36,38 +28,44 @@ public class ArenaRoom extends AbstractRoom {
 
     @Override
     public void onPlayerEntry() {
+        phase = RoomPhase.EVENT;
+        AbstractDungeon.overlayMenu.proceedButton.hide();
         //TODO 播放bgm：长夜临光活动主题曲
         enterTimes++;
-        // 防crash用
-        AbstractDungeon.getCurrRoom().monsters = new MonsterGroup(new AcidSlime_S(0.0F, 0.0F, 0));
-        switch (enterTimes) {
-            case 1:
-                AbstractDungeon.lastCombatMetricKey = "nearlmod:Corrupted & Withered";
-                AbstractDungeon.getCurrRoom().monsters = new MonsterGroup(new AbstractMonster[] { new CorruptKnight(-200.0F, 0.0F), new WitheredKnight(80.0F, 0.0F) });
-                break;
-            case 2:
-                AbstractDungeon.lastCombatMetricKey = "nearlmod:Left-hand";
-                //TODO 左手
-                break;
-            case 3:
-                AbstractDungeon.lastCombatMetricKey = CandleKnight.ID;
-                AbstractDungeon.getCurrRoom().monsters = new MonsterGroup(new CandleKnight());
-                break;
-            case 4:
-                AbstractDungeon.lastCombatMetricKey = "nearlmod:The Last Kheshig";
-                //TODO 拓拉
-                break;
-            case 5:
-                AbstractDungeon.lastCombatMetricKey = "nearlmod:The Blood Knight";
-                //TODO 血骑士
-                break;
-            default:
-                AbstractDungeon.lastCombatMetricKey = "nearlmod:Armorless Union";
-                //TODO 无胄盟小队
+        logger.info("enterTimes = " + enterTimes);
+        event = new LaughAllYouWantEvent(); // 防crash
+        if (enterTimes == 1) event = new CorruptedWitheredBattle();
+        else if (enterTimes == 2) event = new LeftHandBattle();
+        else if (enterTimes == 3) event = new PoemLooksEvent();
+        event.onEnterRoom();
+    }
+    public void update() {
+        super.update();
+        if (this.event == null) return;
+        if (!AbstractDungeon.isScreenUp) {
+            this.event.update();
         }
-        AbstractDungeon.getCurrRoom().monsters.init();
-        waitTimer = 0.1F;
-        AbstractDungeon.player.preBattlePrep();
+
+        if (this.event.waitTimer == 0.0F && !this.event.hasFocus && this.phase != RoomPhase.COMBAT) {
+            this.phase = RoomPhase.COMPLETE;
+            this.event.reopen();
+        }
+
+    }
+
+    public void render(SpriteBatch sb) {
+        if (this.event != null) {
+            this.event.render(sb);
+        }
+        super.render(sb);
+    }
+
+    public void renderAboveTopPanel(SpriteBatch sb) {
+        super.renderAboveTopPanel(sb);
+        if (this.event != null) {
+            this.event.renderAboveTopPanel(sb);
+        }
+
     }
 
     @SpirePatch(clz = AbstractDungeon.class, method = "generateRoomTypes")
@@ -80,4 +78,40 @@ public class ArenaRoom extends AbstractRoom {
                 roomList.add(new ArenaRoom());
         }
     }
+
+    @SpirePatch(clz = AbstractDungeon.class, method = "render")
+    public static class RenderPatch {
+        @SpireInsertPatch(rloc = 36)
+        public static void Insert(AbstractDungeon __instance, SpriteBatch sb) {
+            if (AbstractDungeon.getCurrRoom() instanceof ArenaRoom) {
+                AbstractDungeon.getCurrRoom().renderEventTexts(sb);
+            }
+        }
+    }
+
+//    @SpirePatch(clz = AbstractScene.class, method = "renderEventRoom")
+//    public static class BackgroundPatch {
+//        @SpirePrefixPatch
+//        public static SpireReturn<?> Prefix(AbstractScene __instance, SpriteBatch sb) {
+//            if (AbstractDungeon.getCurrRoom() instanceof ArenaRoom) {
+//                sb.draw(new Texture("images/ui/arenascene.png"), 0.0F, 0.0F, 0.0F, 0.0F, 1920, 1080, Settings.xScale, Settings.xScale, 0.0F, 0, 0, 3840, 2160, false, false);
+//                return SpireReturn.Return();
+//            }
+//            return SpireReturn.Continue();
+//        }
+//    }
+//
+//    @SpirePatch(clz = TheBottomScene.class, method = "renderCombatRoomBg")
+//    public static class BottomBackgroundPatch {
+//        @SpirePrefixPatch
+//        public static SpireReturn<?> Prefix(TheBottomScene __instance, SpriteBatch sb) {
+//            if (AbstractDungeon.getCurrRoom() instanceof ArenaRoom) {
+//                sb.draw(new Texture("images/ui/arenascene.png"), 0.0F, 0.0F, 0.0F, 0.0F, 1920, 1080, Settings.xScale, Settings.xScale, 0.0F, 0, 0, 3840, 2160, false, false);
+//                return SpireReturn.Return();
+//            }
+//            return SpireReturn.Continue();
+//        }
+//    }
+
+    // TODO nextRoomTransition可能需要patch
 }
