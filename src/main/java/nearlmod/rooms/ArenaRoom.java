@@ -5,10 +5,11 @@ import com.badlogic.gdx.graphics.g2d.SpriteBatch;
 import com.evacipated.cardcrawl.modthespire.lib.*;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.rooms.AbstractRoom;
+import nearlmod.arenaevents.CandleKnightBattle;
 import nearlmod.arenaevents.CorruptedWitheredBattle;
 import nearlmod.arenaevents.LeftHandBattle;
 import nearlmod.events.LaughAllYouWantEvent;
-import nearlmod.events.PoemLooksEvent;
+
 import java.util.ArrayList;
 
 import org.apache.logging.log4j.LogManager;
@@ -36,7 +37,7 @@ public class ArenaRoom extends AbstractRoom {
         event = new LaughAllYouWantEvent(); // 防crash
         if (enterTimes == 1) event = new CorruptedWitheredBattle();
         else if (enterTimes == 2) event = new LeftHandBattle();
-        else if (enterTimes == 3) event = new PoemLooksEvent();
+        else if (enterTimes == 3) event = new CandleKnightBattle();
         event.onEnterRoom();
     }
     public void update() {

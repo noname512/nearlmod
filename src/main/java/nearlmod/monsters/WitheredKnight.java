@@ -44,8 +44,8 @@ public class WitheredKnight extends AbstractMonster {
     public void usePreBattleAction() {
         AbstractMonster ms = AbstractDungeon.getMonsters().getMonster("nearlmod:CorruptKnight");
         if (ms != null)
-            addToBot(new TalkAction(ms, DIALOG[1], 0.3F, 0.3F));
-        addToBot(new TalkAction(this, DIALOG[0], 0.3F, 0.3F));
+            addToBot(new TalkAction(ms, DIALOG[1], 0.3F, 3.0F));
+        addToBot(new TalkAction(this, DIALOG[0], 0.3F, 3.0F));
         addToBot(new ApplyPowerAction(this, this, new DoubleBossPower(this)));
     }
 
@@ -82,6 +82,7 @@ public class WitheredKnight extends AbstractMonster {
 
     public void CorruptedDead() {
         isCorruptedDead = true;
+        addToBot(new TalkAction(this, DIALOG[2], 0.3F, 3.0F));
         if (this.nextMove == 2) {
             setMove(MOVES[0], (byte) 2, Intent.ATTACK_DEBUFF, this.damage.get(1).base, SkillTimes * 2, true);
             this.createIntent();
@@ -90,7 +91,6 @@ public class WitheredKnight extends AbstractMonster {
             setMove(this.nextMove, Intent.ATTACK_DEBUFF, this.damage.get(0).base, 2, true);
             this.createIntent();
         }
-        // TODO: 让凋零骑士说点什么
     }
 
     @Override

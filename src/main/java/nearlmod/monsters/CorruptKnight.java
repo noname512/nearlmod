@@ -91,6 +91,12 @@ public class CorruptKnight extends AbstractMonster {
                 setMove(MOVES[0], (byte) 2, Intent.ATTACK, this.damage.get(1).base, attTimes, (attTimes > 1));
             }
         }
+        if (this.nextMove == 1) {
+            addToBot(new TalkAction(this, DIALOG[0], 0.3F, 3.0F));
+            AbstractMonster ms = AbstractDungeon.getMonsters().getMonster("nearlmod:WitheredKnight");
+            if (ms != null)
+                addToBot(new TalkAction(ms, DIALOG[0], 0.3F, 3.0F));
+        }
     }
 
     @Override
@@ -109,6 +115,7 @@ public class CorruptKnight extends AbstractMonster {
 
     public void WhitheredDead() {
         isWhitheredDead = true;
+        addToBot(new TalkAction(this, DIALOG[2], 0.3F, 3.0F));
         if (this.nextMove == 2) {
             setMove(MOVES[0], (byte) 2, Intent.ATTACK, this.damage.get(1).base, 2, true);
             this.createIntent();
@@ -117,6 +124,5 @@ public class CorruptKnight extends AbstractMonster {
             setMove(this.nextMove, Intent.ATTACK, this.damage.get(0).base, 2, true);
             this.createIntent();
         }
-        // TODO: 让腐败骑士说点什么
     }
 }

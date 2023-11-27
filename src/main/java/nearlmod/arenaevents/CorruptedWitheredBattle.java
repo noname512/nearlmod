@@ -1,12 +1,16 @@
 package nearlmod.arenaevents;
 
+import com.megacrit.cardcrawl.cards.curses.Regret;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
+import com.megacrit.cardcrawl.core.Settings;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.events.AbstractImageEvent;
+import com.megacrit.cardcrawl.helpers.CardLibrary;
 import com.megacrit.cardcrawl.localization.EventStrings;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import com.megacrit.cardcrawl.monsters.MonsterGroup;
 import com.megacrit.cardcrawl.rooms.AbstractRoom;
+import com.megacrit.cardcrawl.vfx.cardManip.ShowCardAndObtainEffect;
 import nearlmod.monsters.*;
 
 public class CorruptedWitheredBattle extends AbstractImageEvent {
@@ -18,7 +22,7 @@ public class CorruptedWitheredBattle extends AbstractImageEvent {
     public CorruptedWitheredBattle() {
         super(NAME, DESCRIPTIONS[0], "images/events/laughallyouwant.png");
         this.imageEventText.setDialogOption(OPTIONS[0]);
-        this.imageEventText.setDialogOption(OPTIONS[1]);
+        this.imageEventText.setDialogOption(OPTIONS[1], CardLibrary.getCopy("Regret"));
     }
 
     @Override
@@ -33,9 +37,10 @@ public class CorruptedWitheredBattle extends AbstractImageEvent {
                 return;
             case 1:
                 logMetric(ID, "Leave");
-                this.imageEventText.updateBodyText(DESCRIPTIONS[1]);
-                this.imageEventText.clearRemainingOptions();
-                this.imageEventText.setDialogOption(OPTIONS[2]);
+                imageEventText.updateBodyText(DESCRIPTIONS[1]);
+                imageEventText.clearRemainingOptions();
+                imageEventText.setDialogOption(OPTIONS[2]);
+                AbstractDungeon.effectList.add(new ShowCardAndObtainEffect(new Regret(), Settings.WIDTH / 2.0F, Settings.HEIGHT / 2.0F));
                 openMap();
                 return;
         }

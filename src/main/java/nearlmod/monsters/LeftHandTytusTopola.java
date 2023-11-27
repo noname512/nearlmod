@@ -1,29 +1,17 @@
 package nearlmod.monsters;
 
 import com.megacrit.cardcrawl.actions.ClearCardQueueAction;
-import com.megacrit.cardcrawl.actions.GameActionManager;
-import com.megacrit.cardcrawl.actions.animations.ShoutAction;
+import com.megacrit.cardcrawl.actions.animations.TalkAction;
 import com.megacrit.cardcrawl.actions.common.*;
 import com.megacrit.cardcrawl.actions.unique.CanLoseAction;
-import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.cards.DamageInfo;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.localization.MonsterStrings;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
-import com.megacrit.cardcrawl.monsters.exordium.Cultist;
 import com.megacrit.cardcrawl.powers.AbstractPower;
-import com.megacrit.cardcrawl.powers.ArtifactPower;
-import com.megacrit.cardcrawl.powers.FrailPower;
 import com.megacrit.cardcrawl.relics.AbstractRelic;
-import com.megacrit.cardcrawl.unlock.UnlockTracker;
-import com.megacrit.cardcrawl.vfx.SpeechBubble;
-import nearlmod.actions.SummonOrbAction;
-import nearlmod.cards.BraveTheDarkness;
-import nearlmod.cards.NightScouringGleam;
-import nearlmod.orbs.Blemishine;
-import nearlmod.powers.DoubleBossPower;
 import nearlmod.powers.LeftHandPower;
 import nearlmod.powers.SuperWeakPower;
 
@@ -54,6 +42,7 @@ public class LeftHandTytusTopola extends AbstractMonster {
 
     @Override
     public void usePreBattleAction() {
+        addToBot(new TalkAction(this, DIALOG[0], 0.3F, 3.0F));
         AbstractDungeon.getCurrRoom().cannotLose = true;
         addToBot(new ApplyPowerAction(this, this, new LeftHandPower(this)));
     }
@@ -94,7 +83,7 @@ public class LeftHandTytusTopola extends AbstractMonster {
             AbstractDungeon.actionManager.addToBottom(new HealAction(this, this, this.maxHealth));
             AbstractDungeon.actionManager.addToBottom(new CanLoseAction());
             AbstractDungeon.actionManager.addToBottom(new RemoveSpecificPowerAction(this, this, "nearlmod:LeftHand"));
-            setMove((byte) 2, Intent.STRONG_DEBUFF);
+            setMove(MOVES[0], (byte) 2, Intent.STRONG_DEBUFF);
         } else if (this.nextMove == 2) {
             addToBot(new ApplyPowerAction(p, this, new SuperWeakPower(p, 3)));
             setMove((byte) 3, Intent.ATTACK, this.damage.get(0).base);

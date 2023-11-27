@@ -21,7 +21,6 @@ import com.megacrit.cardcrawl.relics.AbstractRelic;
 import com.megacrit.cardcrawl.rooms.AbstractRoom;
 import com.megacrit.cardcrawl.screens.custom.CustomMod;
 import nearlmod.events.LaughAllYouWantEvent;
-import nearlmod.events.PoemLooksEvent;
 import nearlmod.monsters.*;
 import nearlmod.patches.NearlEnum;
 import nearlmod.potions.*;
@@ -93,12 +92,6 @@ public class NLMOD implements EditCardsSubscriber, EditCharactersSubscriber, Edi
     }
 
     private void initializeEvents() {
-        BaseMod.addEvent(new AddEventParams.Builder(PoemLooksEvent.ID, PoemLooksEvent.class).
-                eventType(EventUtils.EventType.ONE_TIME).
-                playerClass(NearlEnum.NEARL_CLASS).
-                dungeonID("Exordium").
-                bonusCondition(() -> (AbstractDungeon.floorNum > 6)).
-                create());
         BaseMod.addEvent(new AddEventParams.Builder(LaughAllYouWantEvent.ID, LaughAllYouWantEvent.class).
                 eventType(EventUtils.EventType.ONE_TIME).
                 playerClass(NearlEnum.NEARL_CLASS).
