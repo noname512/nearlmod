@@ -1,6 +1,5 @@
 package nearlmod.cards;
 
-import com.megacrit.cardcrawl.actions.common.MakeTempCardInHandAction;
 import com.megacrit.cardcrawl.actions.watcher.ChangeStanceAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
@@ -39,9 +38,9 @@ public class FlutteringWings extends AbstractNearlCard {
         AbstractCard c = new AllinOne();
         c.isEthereal = true;
         c.exhaust = true;
-        if (upgraded)
+        if (upgraded || p.hasPower("MasterRealityPower"))
             c.upgrade();
-        addToBot(new MakeTempCardInHandAction(c, 1));
+        p.hand.addToHand(c);
     }
 
     @Override
