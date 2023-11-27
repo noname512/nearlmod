@@ -63,8 +63,8 @@ public class CandleKnightBattle extends AbstractImageEvent {
         logMetric(ID, "Leave");
         this.screen = CurScreen.LEAVE;
         this.imageEventText.updateBodyText(DESCRIPTIONS[2]);
-        this.imageEventText.clearRemainingOptions();
-        this.imageEventText.setDialogOption(OPTIONS[3]);
+        imageEventText.updateDialogOption(0, OPTIONS[3]);
+        imageEventText.clearRemainingOptions();
         AbstractDungeon.effectList.add(new ShowCardAndObtainEffect(new Normality(), Settings.WIDTH / 2.0F, Settings.HEIGHT / 2.0F));
         openMap();
     }

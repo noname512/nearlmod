@@ -38,8 +38,8 @@ public class CorruptedWitheredBattle extends AbstractImageEvent {
             case 1:
                 logMetric(ID, "Leave");
                 imageEventText.updateBodyText(DESCRIPTIONS[1]);
+                imageEventText.updateDialogOption(0, OPTIONS[2]);
                 imageEventText.clearRemainingOptions();
-                imageEventText.setDialogOption(OPTIONS[2]);
                 AbstractDungeon.effectList.add(new ShowCardAndObtainEffect(new Regret(), Settings.WIDTH / 2.0F, Settings.HEIGHT / 2.0F));
                 openMap();
                 return;

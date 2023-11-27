@@ -37,8 +37,8 @@ public class LeftHandBattle extends AbstractImageEvent {
             case 1:
                 logMetric(ID, "Leave");
                 this.imageEventText.updateBodyText(DESCRIPTIONS[1]);
-                this.imageEventText.clearRemainingOptions();
-                this.imageEventText.setDialogOption(OPTIONS[2]);
+                imageEventText.updateDialogOption(0, OPTIONS[2]);
+                imageEventText.clearRemainingOptions();
                 AbstractDungeon.effectList.add(new ShowCardAndObtainEffect(new Injury(), Settings.WIDTH / 2.0F, Settings.HEIGHT / 2.0F));
                 openMap();
                 return;
