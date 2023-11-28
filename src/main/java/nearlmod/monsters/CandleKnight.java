@@ -1,17 +1,17 @@
 package nearlmod.monsters;
 
 import com.badlogic.gdx.graphics.Texture;
-import com.esotericsoftware.spine.AnimationState;
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
 import com.megacrit.cardcrawl.actions.animations.AnimateFastAttackAction;
 import com.megacrit.cardcrawl.actions.animations.TalkAction;
 import com.megacrit.cardcrawl.actions.common.DamageAction;
+import com.megacrit.cardcrawl.actions.utility.WaitAction;
 import com.megacrit.cardcrawl.cards.DamageInfo;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.localization.MonsterStrings;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
-import nearlmod.actions.ChangeImgAction;
+import nearlmod.actions.TrueDieAction;
 
 public class CandleKnight extends AbstractMonster {
     public static final String ID = "nearlmod:CandleKnight";
@@ -20,18 +20,15 @@ public class CandleKnight extends AbstractMonster {
     public static final String[] MOVES = monsterStrings.MOVES;
     public static final String[] DIALOG = monsterStrings.DIALOG;
     public static final String IMAGE = "images/monsters/candleknight.png";
-    public static final String CHARGING_IMAGE = "images/monsters/candleknight_charging.png";
-    private int candleDmg;
-    private int flameDmg;
-    private int swordDmg;
-    private int damageTimes = 2;
+    private final int damageTimes;
     private int said = 0;
 
     public CandleKnight() {
-        super(NAME, ID, 50, 0, 0, 150.0F, 320.0F, IMAGE);
+        super(NAME, ID, 120, 0, 0, 150.0F, 320.0F, IMAGE);
         this.type = EnemyType.ELITE;
         if (AbstractDungeon.ascensionLevel >= 8)
-            setHp(55);
+            setHp(140);
+        int candleDmg, flameDmg, swordDmg;
         if (AbstractDungeon.ascensionLevel >= 18) {
             candleDmg = 12;
             flameDmg = 40;
@@ -46,6 +43,7 @@ public class CandleKnight extends AbstractMonster {
             candleDmg = 10;
             flameDmg = 30;
             swordDmg = 6;
+            damageTimes = 2;
         }
         this.damage.add(new DamageInfo(this, candleDmg));
         this.damage.add(new DamageInfo(this, flameDmg));
@@ -54,7 +52,7 @@ public class CandleKnight extends AbstractMonster {
         this.flipHorizontal = true;
         this.stateData.setMix("Idle", "Die", 0.1F);
         this.stateData.setMix("Skill_Loop", "Skill_End", 0.1F);
-        AnimationState.TrackEntry e = this.state.setAnimation(0, "Idle", true);
+        this.state.setAnimation(0, "Idle", true);
     }
 
     @Override
@@ -81,7 +79,6 @@ public class CandleKnight extends AbstractMonster {
         if (this.nextMove == 2) {
             this.state.setAnimation(0, "Skill_Begin", false);
             this.state.addAnimation(0, "Skill_Loop", true, 0.0F);
-//            addToBot(new ChangeImgAction(this, CHARGING_IMAGE));
             setMove(MOVES[1], (byte) 3, Intent.ATTACK, this.damage.get(1).base);
         } else {
             if (this.nextMove == 1) {
@@ -94,7 +91,6 @@ public class CandleKnight extends AbstractMonster {
                 addToBot(new DamageAction(AbstractDungeon.player, this.damage.get(0), AbstractGameAction.AttackEffect.FIRE));
             } else if (this.nextMove == 3) {
                 addToBot(new DamageAction(AbstractDungeon.player, this.damage.get(1)));
-//                addToBot(new ChangeImgAction(this, IMAGE));
                 this.state.setAnimation(0, "Skill_End", false);
             } else if (this.nextMove == 5) {
                 addToBot(new AnimateFastAttackAction(this));
@@ -116,8 +112,12 @@ public class CandleKnight extends AbstractMonster {
     @Override
     public void die() {
         this.state.setAnimation(0, "Die", false);
-        // TODO 如果要死亡前说话可能需要额外写一个dieAction，保证super.die()在对话完成后再执行
         addToBot(new TalkAction(this, DIALOG[7], 0.3F, 3.0F));
+        addToBot(new WaitAction(3.0F));
+        addToBot(new TrueDieAction(this));
+    }
+
+    public void trueDie() {
         super.die();
     }
 
