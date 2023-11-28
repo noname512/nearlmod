@@ -43,11 +43,21 @@
   "nearlmod:Revenge": {
     "NAME": "复仇",
     "FLAVOR": "左手骑士实现了他的“复仇”，不光彩的胜利对他来说没有区别。",
-    "DESCRIPTIONS": ["#r诅咒遗物 ：每场战斗开始时，你获得 #g2 层 #y左手印记"]
+    "DESCRIPTIONS": ["#r诅咒遗物 ：每场战斗开始时，你获得 #g2 层 #y左手印记 。"]
   },
   "nearlmod:NormalPerson": {
     "NAME": "平庸之人",
     "FLAVOR": "薇薇安娜没有找到她理想中的骑士。",
     "DESCRIPTIONS": ["#r诅咒遗物 ：你无法再召唤薇薇安娜作为 #y伙伴 。"]
+  },
+  "nearlmod:ImaginaryFear": {
+    "NAME": "恐惧幻象",
+    "FLAVOR": "年轻的梦魇并没有亲历过尸山血海。 NL 但他的血统令他先天懂得支配恐惧。",
+    "DESCRIPTIONS": ["#r诅咒遗物 ：每场战斗第一个回合结束后，受到 #g8 点伤害。"]
+  },
+  "nearlmod:BloodEntangle": {
+    "NAME": "凝血缠身",
+    "FLAVOR": "仿佛血液的液体连成粘稠的丝线，缠上四肢，流淌在体内的鲜血仿佛与同胞呼应，产生刺痛。",
+    "DESCRIPTIONS": ["#r诅咒遗物 ：每场战斗开始时，额外召唤一个凝血之刃作为敌人。"]
   }
 }
