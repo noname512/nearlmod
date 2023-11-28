@@ -10,6 +10,7 @@ import com.evacipated.cardcrawl.mod.stslib.Keyword;
 import com.evacipated.cardcrawl.modthespire.lib.SpireInitializer;
 import com.google.gson.Gson;
 import com.google.gson.reflect.TypeToken;
+import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.helpers.*;
@@ -288,6 +289,9 @@ public class NLMOD implements EditCardsSubscriber, EditCharactersSubscriber, Edi
 
         // event.
         BaseMod.addRelicToCustomPool(new Marigold(), NEARL_GOLD);
+        BaseMod.addRelicToCustomPool(new LateLight(), AbstractCard.CardColor.CURSE);
+        BaseMod.addRelicToCustomPool(new Revenge(), AbstractCard.CardColor.CURSE);
+        BaseMod.addRelicToCustomPool(new NormalPerson(), AbstractCard.CardColor.CURSE);
     }
 
     @Override

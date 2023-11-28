@@ -10,6 +10,7 @@ import com.megacrit.cardcrawl.monsters.MonsterGroup;
 import com.megacrit.cardcrawl.rooms.AbstractRoom;
 import com.megacrit.cardcrawl.vfx.cardManip.ShowCardAndObtainEffect;
 import nearlmod.monsters.CandleKnight;
+import nearlmod.relics.NormalPerson;
 
 public class CandleKnightBattle extends AbstractImageEvent {
     public static final String ID = "nearlmod:CandleKnightBattle";
@@ -66,6 +67,7 @@ public class CandleKnightBattle extends AbstractImageEvent {
         imageEventText.updateDialogOption(0, OPTIONS[3]);
         imageEventText.clearRemainingOptions();
         AbstractDungeon.effectList.add(new ShowCardAndObtainEffect(new Normality(), Settings.WIDTH / 2.0F, Settings.HEIGHT / 2.0F));
+        AbstractDungeon.getCurrRoom().spawnRelicAndObtain(Settings.WIDTH / 2.0F, Settings.HEIGHT / 2.0F, new NormalPerson());
         openMap();
     }
 }

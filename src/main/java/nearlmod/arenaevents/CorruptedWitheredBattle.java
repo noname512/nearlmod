@@ -12,6 +12,7 @@ import com.megacrit.cardcrawl.monsters.MonsterGroup;
 import com.megacrit.cardcrawl.rooms.AbstractRoom;
 import com.megacrit.cardcrawl.vfx.cardManip.ShowCardAndObtainEffect;
 import nearlmod.monsters.*;
+import nearlmod.relics.LateLight;
 
 public class CorruptedWitheredBattle extends AbstractImageEvent {
     public static final String ID = "nearlmod:CorruptedWitheredBattle";
@@ -41,6 +42,7 @@ public class CorruptedWitheredBattle extends AbstractImageEvent {
                 imageEventText.updateDialogOption(0, OPTIONS[2]);
                 imageEventText.clearRemainingOptions();
                 AbstractDungeon.effectList.add(new ShowCardAndObtainEffect(new Regret(), Settings.WIDTH / 2.0F, Settings.HEIGHT / 2.0F));
+                AbstractDungeon.getCurrRoom().spawnRelicAndObtain(Settings.WIDTH / 2.0F, Settings.HEIGHT / 2.0F, new LateLight());
                 openMap();
                 return;
         }
