@@ -23,7 +23,7 @@ public class LeftHandTytusTopola extends AbstractMonster {
     public static final String NAME = monsterStrings.NAME;
     public static final String[] MOVES = monsterStrings.MOVES;
     public static final String[] DIALOG = monsterStrings.DIALOG;
-    public static final String IMAGE = "images/monsters/corruptknight.png";
+    public static final String IMAGE = "images/monsters/lefthand.png";
 
     public LeftHandTytusTopola(float x, float y) {
         super(NAME, ID, 55, 25.0F, 0, 150.0F, 320.0F, IMAGE, x, y);
