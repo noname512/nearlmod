@@ -7,6 +7,7 @@ import com.megacrit.cardcrawl.core.AbstractCreature;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.core.Settings;
 import nearlmod.powers.LightPower;
+import nearlmod.relics.UpgradedCoreCaster;
 
 public class UseLightAction extends AbstractGameAction {
     public UseLightAction(AbstractCreature Target) {
@@ -23,6 +24,10 @@ public class UseLightAction extends AbstractGameAction {
         AbstractPlayer p = AbstractDungeon.player;
         LightPower l = (LightPower) p.getPower("nearlmod:LightPower");
         if (l == null) {
+            if (p.hasRelic(UpgradedCoreCaster.ID)) {
+                l = new LightPower(p, 0);
+                l.useLight(p, target);
+            }
             isDone = true;
             return;
         }

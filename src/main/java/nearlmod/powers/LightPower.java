@@ -69,7 +69,6 @@ public class LightPower extends AbstractPower implements CloneablePowerInterface
     }
 
     public void useLight(AbstractPlayer p, AbstractCreature m) {
-        amountForBattle += amount;
         int realAmount = amount;
         changeToShadow(true);
         if (AbstractDungeon.player.hasRelic(UpgradedCoreCaster.ID))
