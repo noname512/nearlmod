@@ -123,8 +123,8 @@
     },
     "nearlmod:SightImpairingShowdown": {
         "NAME": "有损视力的对决",
-        "DESCRIPTION": "随机将一张非 nearlmod:唯一 的薇薇安娜的 nearlmod:伙伴牌 放入你的手牌。如果薇薇安娜在场，她获得 !nearlmod:M2! 点 nearlmod:信赖 。",
-        "UPGRADE_DESCRIPTION": "选择一张非 nearlmod:唯一 的薇薇安娜的 nearlmod:伙伴牌 放入你的手牌。如果薇薇安娜在场，她获得 !nearlmod:M2! 点 nearlmod:信赖 。"
+        "DESCRIPTION": "随机将一张非 nearlmod:唯一 的薇薇安娜的 nearlmod:伙伴牌 放入你的手牌。如果薇薇安娜在场，她获得 !M! 点 nearlmod:信赖 。",
+        "UPGRADE_DESCRIPTION": "选择一张非 nearlmod:唯一 的薇薇安娜的 nearlmod:伙伴牌 放入你的手牌。如果薇薇安娜在场，她获得 !M! 点 nearlmod:信赖 。"
     },
     "nearlmod:GloriousKazimierz": {
         "NAME": "光耀卡西米尔",

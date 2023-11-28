@@ -95,7 +95,7 @@ public class CorruptKnight extends AbstractMonster {
             addToBot(new TalkAction(this, DIALOG[0], 0.3F, 3.0F));
             AbstractMonster ms = AbstractDungeon.getMonsters().getMonster("nearlmod:WitheredKnight");
             if (ms != null)
-                addToBot(new TalkAction(ms, DIALOG[0], 0.3F, 3.0F));
+                addToBot(new TalkAction(ms, DIALOG[1], 0.3F, 3.0F));
         }
     }
 
