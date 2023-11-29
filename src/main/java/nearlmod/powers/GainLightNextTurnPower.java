@@ -2,25 +2,22 @@ package nearlmod.powers;
 
 import basemod.interfaces.CloneablePowerInterface;
 import com.badlogic.gdx.graphics.g2d.TextureAtlas;
-import com.megacrit.cardcrawl.actions.AbstractGameAction;
-import com.megacrit.cardcrawl.actions.common.DamageAllEnemiesAction;
+import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
 import com.megacrit.cardcrawl.actions.common.RemoveSpecificPowerAction;
-import com.megacrit.cardcrawl.cards.DamageInfo;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.helpers.ImageMaster;
 import com.megacrit.cardcrawl.localization.PowerStrings;
 import com.megacrit.cardcrawl.powers.AbstractPower;
-import nearlmod.actions.PureDamageAllEnemiesAction;
 
-public class StormCounterAttackPower extends AbstractPower implements CloneablePowerInterface {
-    public static final String POWER_ID = "nearlmod:StormCounterAttackPower";
+public class GainLightNextTurnPower extends AbstractPower implements CloneablePowerInterface {
+    public static final String POWER_ID = "nearlmod:GainLightNextTurnPower";
     public static final PowerStrings powerStrings = CardCrawlGame.languagePack.getPowerStrings(POWER_ID);
     public static final String NAME = powerStrings.NAME;
     public static final String[] DESCRIPTIONS = powerStrings.DESCRIPTIONS;
     public final AbstractPlayer p;
 
-    public StormCounterAttackPower(AbstractPlayer player, int amount) {
+    public GainLightNextTurnPower(AbstractPlayer player, int amount) {
         name = NAME;
         ID = POWER_ID;
         this.owner = player;
@@ -38,16 +35,13 @@ public class StormCounterAttackPower extends AbstractPower implements CloneableP
     }
 
     @Override
-    public void atStartOfTurn() {
-        if (p.currentBlock > 0) {
-            int dmg = p.currentBlock * amount;
-            addToBot(new PureDamageAllEnemiesAction(p, dmg, "", AbstractGameAction.AttackEffect.NONE, DamageInfo.DamageType.THORNS));
-        }
+    public void atStartOfTurnPostDraw() {
+        addToBot(new ApplyPowerAction(p, p, new LightPower(p, amount)));
         addToBot(new RemoveSpecificPowerAction(p, p, this));
     }
 
     @Override
     public AbstractPower makeCopy() {
-        return new StormCounterAttackPower(p, amount);
+        return new GainLightNextTurnPower(p, amount);
     }
 }

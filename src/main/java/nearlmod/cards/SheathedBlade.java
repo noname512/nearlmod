@@ -1,49 +1,62 @@
 package nearlmod.cards;
 
 import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
-import com.megacrit.cardcrawl.actions.watcher.PressEndTurnButtonAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.localization.CardStrings;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
+import com.megacrit.cardcrawl.powers.AbstractPower;
+import nearlmod.cards.special.LightCard;
 import nearlmod.patches.AbstractCardEnum;
-import nearlmod.powers.StormCounterAttackPower;
+import nearlmod.powers.GainLightNextTurnPower;
+import nearlmod.powers.LightPower;
 
-public class StormCounterAttack extends AbstractNearlCard {
-    public static final String ID = "nearlmod:StormCounterAttack";
+public class SheathedBlade extends AbstractNearlCard {
+    public static final String ID = "nearlmod:SheathedBlade";
     public static final CardStrings cardStrings = CardCrawlGame.languagePack.getCardStrings(ID);
     public static final String NAME = cardStrings.NAME;
     public static final String DESCRIPTION = cardStrings.DESCRIPTION;
     public static final String UPGRADE_DESCRIPTION = cardStrings.UPGRADE_DESCRIPTION;
     public static final String IMG_PATH = "images/cards/majestylight.png";
-    private static final int COST = 1;
-    private static final int ATTACK_MUL = 2;
-    private static final int UPGRADE_PLUS_MUL = 1;
+    private static final int COST = 0;
 
-    public StormCounterAttack() {
+    public SheathedBlade() {
         super(ID, NAME, IMG_PATH, COST, DESCRIPTION,
                 CardType.SKILL, AbstractCardEnum.NEARL_GOLD,
                 CardRarity.UNCOMMON, CardTarget.SELF);
-        magicNumber = baseMagicNumber = ATTACK_MUL;
+        cardsToPreview = new LightCard();
     }
 
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
-        addToBot(new ApplyPowerAction(p, p, new StormCounterAttackPower(p, magicNumber)));
-        addToBot(new PressEndTurnButtonAction());
+        if (p.hasPower(LightPower.POWER_ID)) {
+            AbstractPower power = p.getPower(LightPower.POWER_ID);
+            int saveAmt = power.amount / 2;
+            power.stackPower(-saveAmt);
+            addToBot(new ApplyPowerAction(p, p, new GainLightNextTurnPower(p, saveAmt)));
+        }
+        p.hand.addToHand(new LightCard());
+        if (upgraded) {
+            AbstractCard card = new SwitchType();
+            card.upgrade();
+            card.exhaust = true;
+            card.isEthereal = true;
+            p.hand.addToHand(card);
+        }
     }
 
     @Override
     public AbstractCard makeCopy() {
-        return new StormCounterAttack();
+        return new SheathedBlade();
     }
 
     @Override
     public void upgrade() {
         if (!upgraded) {
             upgradeName();
-            upgradeMagicNumber(UPGRADE_PLUS_MUL);
+            rawDescription = UPGRADE_DESCRIPTION;
+            initializeDescription();
         }
     }
 }

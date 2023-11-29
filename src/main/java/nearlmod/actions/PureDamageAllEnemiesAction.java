@@ -29,10 +29,15 @@ public class PureDamageAllEnemiesAction extends AbstractGameAction {
     }
 
     public PureDamageAllEnemiesAction(AbstractCreature source, int baseDamage, String name, AttackEffect effect) {
+        this(source, baseDamage, name, effect, DamageInfo.DamageType.NORMAL);
+    }
+
+    public PureDamageAllEnemiesAction(AbstractCreature source, int baseDamage, String name, AttackEffect effect, DamageInfo.DamageType type) {
         actionType = ActionType.DAMAGE;
         duration = Settings.ACTION_DUR_FAST;
         this.source = source;
         this.baseDamage = baseDamage;
+        this.damageType = type;
         this.name = name;
         attackEffect = effect;
     }
@@ -64,7 +69,7 @@ public class PureDamageAllEnemiesAction extends AbstractGameAction {
                         ms.tint.color.set(Color.RED);
                         ms.tint.changeColor(Color.WHITE.cpy());
                     }
-                    DamageInfo info = new DamageInfo(source, baseDamage);
+                    DamageInfo info = new DamageInfo(source, baseDamage, damageType);
                     info.applyEnemyPowersOnly(ms);
                     info.name = this.name;
                     ms.damage(info);

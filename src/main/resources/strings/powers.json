@@ -94,5 +94,13 @@
   "nearlmod:StormCounterAttackPower": {
     "NAME": "风暴反击",
     "DESCRIPTIONS": ["下回合开始时，如果你还有 格挡 ，对所有敌人造成等同于你剩余 格挡 #b", " 倍的伤害。"]
+  },
+  "nearlmod:GainLightNextTurnPower": {
+    "NAME": "光芒暂存",
+    "DESCRIPTIONS": ["下回合开始时，获得 #b", " 层 #y光 。"]
+  },
+  "nearlmod:PegasusFormPower": {
+    "NAME": "天马形态",
+    "DESCRIPTIONS": ["你每次使用 #y光 后，下回合开始时获得等于其 #b", " 倍的 #y光 。"]
   }
 }
