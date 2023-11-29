@@ -105,12 +105,20 @@ public class NLMOD implements EditCardsSubscriber, EditCharactersSubscriber, Edi
 
     private void initializeMonsters() {
         BaseMod.addMonster(CandleKnight.ID, CandleKnight.NAME, () -> new MonsterGroup(new AbstractMonster[] {new CandleKnight()}));
+        // TODO: 真的不是把罗伊、莫妮克、白金放在一组？
         BaseMod.addMonster(Platinum.ID, Platinum.NAME, () -> new MonsterGroup(new AbstractMonster[] {new Platinum(0.0F, 0.0F)}));
         BaseMod.addMonster(Roy.ID, Roy.NAME, () -> new MonsterGroup(new AbstractMonster[] {new Roy(0.0F, 0.0F)}));
         BaseMod.addMonster(Monique.ID, Monique.NAME, () -> new MonsterGroup(new AbstractMonster[] {new Monique(0.0F, 0.0F)}));
         BaseMod.addMonster(CorruptKnight.ID, CorruptKnight.NAME, () -> new MonsterGroup(new AbstractMonster [] {new CorruptKnight(0.0F, 0.0F)}));
         BaseMod.addMonster(WitheredKnight.ID, WitheredKnight.NAME, () -> new MonsterGroup(new AbstractMonster [] {new WitheredKnight(0.0F, 0.0F)}));
         BaseMod.addMonster(LeftHandTytusTopola.ID, LeftHandTytusTopola.NAME, () -> new MonsterGroup(new AbstractMonster [] {new LeftHandTytusTopola(0.0F, 0.0F)}));
+        /*
+        为啥我不加这个也能正常运行，甚至能成功的把可汗调出来……
+        我怀疑这个是加给常规的敌人池的？你血刃也没加感觉完全没问题
+        查看完代码，确认是和这个有关系，这里面有获取敌人池的东西，如果不想加入常规池子的话，就不用加这些
+        BaseMod.addMonster(LastKheshig.ID,LastKheshig.NAME, () -> new MonsterGroup(new AbstractMonster [] {new LastKheshig(0.0F, 0.0F)}));
+        BaseMod.addMonster(NightzmoraImitator.ID,NightzmoraImitator.NAME, () -> new MonsterGroup(new AbstractMonster [] {new NightzmoraImitator(0.0F, 0.0F)}));
+        */
     }
 
     private void initializePotions() {
