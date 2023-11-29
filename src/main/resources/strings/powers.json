@@ -90,5 +90,9 @@
   "nearlmod:SuperWeakPower": {
     "NAME": "左手印记",
     "DESCRIPTIONS": ["你攻击造成的伤害减少 #b50% 。"]
+  },
+  "nearlmod:StormCounterAttackPower": {
+    "NAME": "风暴反击",
+    "DESCRIPTIONS": ["下回合开始时，如果你还有 格挡 ，对所有敌人造成等同于你剩余 格挡 #b", " 倍的伤害。"]
   }
 }

@@ -223,6 +223,11 @@
         "DESCRIPTION": "进入 nearlmod:无畏 。 NL 对所有敌人使用 nearlmod:光 。",
         "UPGRADE_DESCRIPTION": ""
     },
+    "nearlmod:StormCounterAttack": {
+        "NAME": "风暴反击",
+        "DESCRIPTION": "结束你的回合。 NL 下回合开始时，如果你还有 格挡 ，对所有敌人造成等同于你剩余 格挡 !M! 倍的伤害。",
+        "UPGRADE_DESCRIPTION": ""
+    },
 
     "nearlmod:BraveTheDarkness": {
         "NAME": "不畏苦暗",
