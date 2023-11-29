@@ -61,7 +61,7 @@ public class BloodKnight extends AbstractMonster {
             BladeStrength = 2;
         }
         if (AbstractDungeon.ascensionLevel >= 9)
-            maxHealth = 340;
+            setHp(340);
         currentTurn = 0;
         isStage2 = false;
     }
