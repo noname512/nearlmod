@@ -223,6 +223,16 @@
         "DESCRIPTION": "进入 nearlmod:无畏 。 NL 对所有敌人使用 nearlmod:光 。",
         "UPGRADE_DESCRIPTION": ""
     },
+    "nearlmod:StormCounterAttack": {
+        "NAME": "风暴反击",
+        "DESCRIPTION": "结束你的回合。 NL 下回合开始时，如果你还有 格挡 ，对所有敌人造成等同于你剩余 格挡 !M! 倍的伤害。",
+        "UPGRADE_DESCRIPTION": ""
+    },
+    "nearlmod:SheathedBlade": {
+        "NAME": "收敛锋芒",
+        "DESCRIPTION": "将一半的 nearlmod:光 转化为下回合获得的 nearlmod:光 。 NL 将一张 #y光！ 置入你的手牌。",
+        "UPGRADE_DESCRIPTION": "将一半的 nearlmod:光 转化为下回合获得的 nearlmod:光 。 NL 将一张 #y光！ 和一张带有 消耗 和 虚无 的 #y切换形态+ 置入你的手牌。"
+    },
 
     "nearlmod:BraveTheDarkness": {
         "NAME": "不畏苦暗",
@@ -289,8 +299,8 @@
     },
     "nearlmod:PegasusForm": {
         "NAME": "天马形态",
-        "DESCRIPTION": "",
-        "UPGRADE_DESCRIPTION": ""
+        "DESCRIPTION": "你每次使用 nearlmod:光 后，下回合开始时获得等于其 2/3 倍的 nearlmod:光 。",
+        "UPGRADE_DESCRIPTION": "你每次使用 nearlmod:光 后，下回合开始时获得等于其 1 倍的 nearlmod:光 。"
     },
 
     "nearlmod:SwallowLight": {

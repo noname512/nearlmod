@@ -64,6 +64,11 @@ public class LightPower extends AbstractPower implements CloneablePowerInterface
             amountForBattle += power.amount;
             if (p.hasPower(PoemsLooksPower.POWER_ID))
                 AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(p, p, new ShadowPower(p, power.amount)));
+            if (p.hasPower(PegasusFormPower.POWER_ID)) {
+                int val = p.getPower(PegasusFormPower.POWER_ID).amount;
+                val = power.amount * val / 3;
+                AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(p, p, new GainLightNextTurnPower(p, val)));
+            }
         }
         AbstractDungeon.actionManager.addToBottom(new RemoveSpecificPowerAction(p, p, power));
     }
