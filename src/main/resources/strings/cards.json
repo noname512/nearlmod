@@ -494,7 +494,7 @@
         "DESCRIPTION": "召唤瑕光作为 nearlmod:伙伴 。",
         "UPGRADE_DESCRIPTION": ""
     },
-    "nearlmod:Blemishine‘sFaintLight": {
+    "nearlmod:Blemishine'sFaintLight": {
         "NAME": "瑕光微明",
         "DESCRIPTION": " 保留 。 NL 消耗 。 获得 nearlmod:伙伴们的庇护 。",
         "UPGRADE_DESCRIPTION": ""
@@ -503,5 +503,13 @@
         "NAME": "个人魅力SP",
         "DESCRIPTION": "选择一个红松骑士团的 nearlmod:伙伴 并召唤。",
         "UPGRADE_DESCRIPTION": "选择两个红松骑士团的 nearlmod:伙伴 并召唤。"
+    },
+    "nearlmod:SummonPinusFriend": {
+        "NAME": "",
+        "DESCRIPTION": "",
+        "EXTENDED_DESCRIPTION": [
+            "召唤",
+            "作为 nearlmod:伙伴 。"
+        ]
     }
 }

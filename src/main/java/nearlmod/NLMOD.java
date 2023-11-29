@@ -255,6 +255,7 @@ public class NLMOD implements EditCardsSubscriber, EditCharactersSubscriber, Edi
         // Special
         BaseMod.addCard(new Beginning()); // 起点
         BaseMod.addCard(new BlemishinesFaintLight()); // 瑕光微明
+        BaseMod.addCard(new PersonalCharmSp()); // 个人魅力SP
     }
 
     @Override

@@ -56,7 +56,6 @@ public class LeftHandBattle extends AbstractImageEvent {
                     }
             }
             if (card != null) {
-                card.upgrade(); // TODO 确定是否固定升级
                 list.add(card);
             }
         }
