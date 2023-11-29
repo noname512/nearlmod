@@ -299,6 +299,8 @@ public class NLMOD implements EditCardsSubscriber, EditCharactersSubscriber, Edi
         BaseMod.addRelicToCustomPool(new LateLight(), AbstractCard.CardColor.CURSE);
         BaseMod.addRelicToCustomPool(new Revenge(), AbstractCard.CardColor.CURSE);
         BaseMod.addRelicToCustomPool(new NormalPerson(), AbstractCard.CardColor.CURSE);
+        BaseMod.addRelicToCustomPool(new ImaginaryFear(), AbstractCard.CardColor.CURSE);
+        BaseMod.addRelicToCustomPool(new BloodEntangle(), AbstractCard.CardColor.CURSE);
     }
 
     @Override
