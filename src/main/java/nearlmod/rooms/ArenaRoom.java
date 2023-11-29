@@ -3,12 +3,18 @@ package nearlmod.rooms;
 import com.badlogic.gdx.graphics.Texture;
 import com.badlogic.gdx.graphics.g2d.SpriteBatch;
 import com.evacipated.cardcrawl.modthespire.lib.*;
+import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
+import com.megacrit.cardcrawl.helpers.ImageMaster;
+import com.megacrit.cardcrawl.localization.UIStrings;
+import com.megacrit.cardcrawl.map.Legend;
+import com.megacrit.cardcrawl.map.LegendItem;
 import com.megacrit.cardcrawl.rooms.AbstractRoom;
+import nearlmod.arenaevents.CandleKnightBattle;
 import nearlmod.arenaevents.CorruptedWitheredBattle;
 import nearlmod.arenaevents.LeftHandBattle;
 import nearlmod.events.LaughAllYouWantEvent;
-import nearlmod.events.PoemLooksEvent;
+
 import java.util.ArrayList;
 
 import org.apache.logging.log4j.LogManager;
@@ -17,13 +23,15 @@ import org.apache.logging.log4j.Logger;
 public class ArenaRoom extends AbstractRoom {
     protected static final Logger logger = LogManager.getLogger(ArenaRoom.class.getName());
     public static final String ID = "nearlmod:ArenaRoom";
+    public static final UIStrings uiStrings = CardCrawlGame.languagePack.getUIString(ID);
+    public static final String[] TEXT = uiStrings.TEXT;
+    public static final Texture MAP_IMG = new Texture("images/ui/arena.png");
     public static int enterTimes;
 
     public ArenaRoom() {
         mapSymbol = "A";
-        mapImg = new Texture("images/ui/arena.png");
+        mapImg = MAP_IMG;
         mapImgOutline = new Texture("images/ui/arenaoutline.png");
-        rewards.clear();
     }
 
     @Override
@@ -36,7 +44,7 @@ public class ArenaRoom extends AbstractRoom {
         event = new LaughAllYouWantEvent(); // 防crash
         if (enterTimes == 1) event = new CorruptedWitheredBattle();
         else if (enterTimes == 2) event = new LeftHandBattle();
-        else if (enterTimes == 3) event = new PoemLooksEvent();
+        else if (enterTimes == 3) event = new CandleKnightBattle();
         event.onEnterRoom();
     }
     public void update() {
@@ -76,6 +84,29 @@ public class ArenaRoom extends AbstractRoom {
             logger.info(" ARENA (7%): " + arenaCount);
             for (int i = 1; i <= arenaCount; i++)
                 roomList.add(new ArenaRoom());
+        }
+    }
+
+    @SpirePatch(clz = Legend.class, method = "<ctor>")
+    public static class LogoRenderPatch {
+        @SpirePostfixPatch
+        public static void Postfix(Legend __instance) {
+            __instance.items.add(new LegendItem(ArenaRoom.TEXT[0], ArenaRoom.MAP_IMG, ArenaRoom.TEXT[1], ArenaRoom.TEXT[2], 6));
+            ImageMaster.MAP_LEGEND = new Texture("images/ui/legend.png");
+        }
+    }
+
+    @SpirePatch(clz = Legend.class, method = "isIconHovered")
+    public static class IconHoveredPatch {
+        @SpirePrefixPatch
+        public static SpireReturn<?> Prefix(Legend __instance, String nodeHovered) {
+            if (nodeHovered.equals("A")) {
+                if (__instance.items.get(6).hb.hovered)
+                    return SpireReturn.Return(true);
+                else
+                    return SpireReturn.Return(false);
+            }
+            return SpireReturn.Continue();
         }
     }
 

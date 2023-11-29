@@ -12,6 +12,7 @@ import nearlmod.orbs.Blemishine;
 import nearlmod.patches.AbstractCardEnum;
 import nearlmod.patches.NearlTags;
 import nearlmod.powers.BladeOfBlazingSunPower;
+import nearlmod.relics.LateLight;
 
 public class BladeOfBlazingSun extends AbstractNearlCard {
     public static final String ID = "nearlmod:BladeOfBlazingSun";
@@ -19,6 +20,7 @@ public class BladeOfBlazingSun extends AbstractNearlCard {
     public static final String NAME = cardStrings.NAME;
     public static final String DESCRIPTION = cardStrings.DESCRIPTION;
     public static final String UPGRADE_DESCRIPTION = cardStrings.UPGRADE_DESCRIPTION;
+    public static final String[] EXTENDED_DESCRIPTION = cardStrings.EXTENDED_DESCRIPTION;
     public static final String IMG_PATH = "images/cards/gloriouskazimierz.png";
     private static final int COST = 1;
 
@@ -39,7 +41,10 @@ public class BladeOfBlazingSun extends AbstractNearlCard {
         if (extraTriggered()) {
             addToBot(new ApplyPowerAction(p, p, new BladeOfBlazingSunPower(p)));
         } else {
-            addToBot(new SummonOrbAction(new Blemishine()));
+            if (!p.hasRelic(LateLight.ID))
+                addToBot(new SummonOrbAction(new Blemishine()));
+            else
+                p.getRelic(LateLight.ID).flash();
         }
     }
 

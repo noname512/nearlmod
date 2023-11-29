@@ -10,6 +10,7 @@ import com.evacipated.cardcrawl.mod.stslib.Keyword;
 import com.evacipated.cardcrawl.modthespire.lib.SpireInitializer;
 import com.google.gson.Gson;
 import com.google.gson.reflect.TypeToken;
+import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.helpers.*;
@@ -20,8 +21,9 @@ import com.megacrit.cardcrawl.orbs.AbstractOrb;
 import com.megacrit.cardcrawl.relics.AbstractRelic;
 import com.megacrit.cardcrawl.rooms.AbstractRoom;
 import com.megacrit.cardcrawl.screens.custom.CustomMod;
+import nearlmod.cards.special.Beginning;
+import nearlmod.cards.special.BlemishinesFaintLight;
 import nearlmod.events.LaughAllYouWantEvent;
-import nearlmod.events.PoemLooksEvent;
 import nearlmod.monsters.*;
 import nearlmod.patches.NearlEnum;
 import nearlmod.potions.*;
@@ -93,12 +95,6 @@ public class NLMOD implements EditCardsSubscriber, EditCharactersSubscriber, Edi
     }
 
     private void initializeEvents() {
-        BaseMod.addEvent(new AddEventParams.Builder(PoemLooksEvent.ID, PoemLooksEvent.class).
-                eventType(EventUtils.EventType.ONE_TIME).
-                playerClass(NearlEnum.NEARL_CLASS).
-                dungeonID("Exordium").
-                bonusCondition(() -> (AbstractDungeon.floorNum > 6)).
-                create());
         BaseMod.addEvent(new AddEventParams.Builder(LaughAllYouWantEvent.ID, LaughAllYouWantEvent.class).
                 eventType(EventUtils.EventType.ONE_TIME).
                 playerClass(NearlEnum.NEARL_CLASS).
@@ -255,6 +251,11 @@ public class NLMOD implements EditCardsSubscriber, EditCharactersSubscriber, Edi
         BaseMod.addCard(new LanceCharge()); // 夹枪冲锋
         BaseMod.addCard(new JusticeDrive()); // 正义助威
         BaseMod.addCard(new BeepActivate()); // “滴滴，启动！”
+
+        // Special
+        BaseMod.addCard(new Beginning()); // 起点
+        BaseMod.addCard(new BlemishinesFaintLight()); // 瑕光微明
+        BaseMod.addCard(new PersonalCharmSp()); // 个人魅力SP
     }
 
     @Override
@@ -295,6 +296,9 @@ public class NLMOD implements EditCardsSubscriber, EditCharactersSubscriber, Edi
 
         // event.
         BaseMod.addRelicToCustomPool(new Marigold(), NEARL_GOLD);
+        BaseMod.addRelicToCustomPool(new LateLight(), AbstractCard.CardColor.CURSE);
+        BaseMod.addRelicToCustomPool(new Revenge(), AbstractCard.CardColor.CURSE);
+        BaseMod.addRelicToCustomPool(new NormalPerson(), AbstractCard.CardColor.CURSE);
     }
 
     @Override

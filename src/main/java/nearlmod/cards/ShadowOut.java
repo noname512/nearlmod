@@ -18,6 +18,7 @@ import nearlmod.cards.friendcards.AbstractFriendCard;
 import nearlmod.orbs.Viviana;
 import nearlmod.patches.AbstractCardEnum;
 import nearlmod.powers.ShadowPower;
+import nearlmod.relics.NormalPerson;
 
 public class ShadowOut extends AbstractNearlCard {
     public static final String ID = "nearlmod:ShadowOut";
@@ -59,7 +60,10 @@ public class ShadowOut extends AbstractNearlCard {
                 addToBot(new PureDamageAllEnemiesAction(p, magicNumber + extraDmg, Viviana.ORB_ID + AbstractFriendCard.damageSuffix));
             addToBot(new UseShadowAction(p));
         } else {
-            addToBot(new SummonOrbAction(new Viviana()));
+            if (!p.hasRelic(NormalPerson.ID))
+                addToBot(new SummonOrbAction(new Viviana()));
+            else
+                p.getRelic(NormalPerson.ID).flash();
         }
     }
 

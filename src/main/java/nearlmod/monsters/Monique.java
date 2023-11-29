@@ -30,7 +30,6 @@ public class Monique extends AbstractMonster {
             this.damage.add(new DamageInfo(this, 10));
             this.damage.add(new DamageInfo(this, 15));
         }
-        this.flipHorizontal = true;
     }
 
     @Override

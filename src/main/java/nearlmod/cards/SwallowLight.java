@@ -13,6 +13,7 @@ import com.megacrit.cardcrawl.powers.AbstractPower;
 import nearlmod.orbs.Viviana;
 import nearlmod.patches.AbstractCardEnum;
 import nearlmod.patches.NearlTags;
+import nearlmod.relics.NormalPerson;
 
 public class SwallowLight extends AbstractNearlCard {
     public static final String ID = "nearlmod:SwallowLight";
@@ -40,6 +41,10 @@ public class SwallowLight extends AbstractNearlCard {
             addToBot(new RemoveSpecificPowerAction(p, p, power));
             if (!upgraded) amount = (amount + 2) / 3;
             else amount = (amount + 1) / 2;
+        }
+        if (p.hasRelic(NormalPerson.ID)) {
+            p.getRelic(NormalPerson.ID).flash();
+            return;
         }
         for (AbstractOrb orb : AbstractDungeon.player.orbs)
             if (orb instanceof Viviana) {

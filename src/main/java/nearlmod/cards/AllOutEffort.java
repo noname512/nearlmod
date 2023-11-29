@@ -14,6 +14,7 @@ import nearlmod.orbs.Blemishine;
 import nearlmod.patches.AbstractCardEnum;
 import nearlmod.patches.NearlTags;
 import nearlmod.powers.LightPower;
+import nearlmod.relics.LateLight;
 import nearlmod.stances.AtkStance;
 import nearlmod.stances.DefStance;
 
@@ -48,7 +49,11 @@ public class AllOutEffort extends AbstractNearlCard {
         if (p.stance.ID.equals(DefStance.STANCE_ID)) {
             AbstractDungeon.actionManager.addToBottom(new ChangeStanceAction(new AtkStance()));
         }
-        addToBot(new SummonOrbAction(new Blemishine()));
+
+        if (!p.hasRelic(LateLight.ID))
+            addToBot(new SummonOrbAction(new Blemishine()));
+        else
+            p.getRelic(LateLight.ID).flash();
     }
 
     @Override

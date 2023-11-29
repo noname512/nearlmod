@@ -1,13 +1,21 @@
 package nearlmod.arenaevents;
 
+import com.megacrit.cardcrawl.cards.curses.Regret;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
+import com.megacrit.cardcrawl.core.Settings;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.events.AbstractImageEvent;
+import com.megacrit.cardcrawl.helpers.CardLibrary;
 import com.megacrit.cardcrawl.localization.EventStrings;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import com.megacrit.cardcrawl.monsters.MonsterGroup;
+import com.megacrit.cardcrawl.relics.AbstractRelic;
 import com.megacrit.cardcrawl.rooms.AbstractRoom;
+import com.megacrit.cardcrawl.vfx.cardManip.ShowCardAndObtainEffect;
+import nearlmod.cards.AbstractNearlCard;
+import nearlmod.cards.special.Beginning;
 import nearlmod.monsters.*;
+import nearlmod.relics.LateLight;
 
 public class CorruptedWitheredBattle extends AbstractImageEvent {
     public static final String ID = "nearlmod:CorruptedWitheredBattle";
@@ -18,7 +26,7 @@ public class CorruptedWitheredBattle extends AbstractImageEvent {
     public CorruptedWitheredBattle() {
         super(NAME, DESCRIPTIONS[0], "images/events/laughallyouwant.png");
         this.imageEventText.setDialogOption(OPTIONS[0]);
-        this.imageEventText.setDialogOption(OPTIONS[1]);
+        this.imageEventText.setDialogOption(OPTIONS[1], CardLibrary.getCopy("Regret"));
     }
 
     @Override
@@ -26,16 +34,22 @@ public class CorruptedWitheredBattle extends AbstractImageEvent {
         switch (buttonPressed) {
             case 0:
                 logMetric(ID, "Fight");
+                AbstractDungeon.getCurrRoom().rewards.clear();
+                AbstractNearlCard.addSpecificCardsToReward(new Beginning());
+                AbstractDungeon.getCurrRoom().addRelicToRewards(AbstractRelic.RelicTier.COMMON);
+                AbstractDungeon.getCurrRoom().addGoldToRewards(50); // TODO 确定金币数量
                 AbstractDungeon.lastCombatMetricKey = ID;
-                (AbstractDungeon.getCurrRoom()).phase = AbstractRoom.RoomPhase.COMBAT;
-                (AbstractDungeon.getCurrRoom()).monsters = new MonsterGroup(new AbstractMonster[] { new CorruptKnight(-200.0F, 0.0F), new WitheredKnight(80.0F, 0.0F) });
+                AbstractDungeon.getCurrRoom().phase = AbstractRoom.RoomPhase.COMBAT;
+                AbstractDungeon.getCurrRoom().monsters = new MonsterGroup(new AbstractMonster[] { new CorruptKnight(-200.0F, 0.0F), new WitheredKnight(80.0F, 0.0F) });
                 enterCombatFromImage();
                 return;
             case 1:
                 logMetric(ID, "Leave");
-                this.imageEventText.updateBodyText(DESCRIPTIONS[1]);
-                this.imageEventText.clearRemainingOptions();
-                this.imageEventText.setDialogOption(OPTIONS[2]);
+                imageEventText.updateBodyText(DESCRIPTIONS[1]);
+                imageEventText.updateDialogOption(0, OPTIONS[2]);
+                imageEventText.clearRemainingOptions();
+                AbstractDungeon.effectList.add(new ShowCardAndObtainEffect(new Regret(), Settings.WIDTH / 2.0F, Settings.HEIGHT / 2.0F));
+                AbstractDungeon.getCurrRoom().spawnRelicAndObtain(Settings.WIDTH / 2.0F, Settings.HEIGHT / 2.0F, new LateLight());
                 openMap();
                 return;
         }
