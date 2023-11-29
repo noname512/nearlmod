@@ -13,9 +13,7 @@ import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.localization.MonsterStrings;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import com.megacrit.cardcrawl.monsters.exordium.Cultist;
-import com.megacrit.cardcrawl.powers.AbstractPower;
-import com.megacrit.cardcrawl.powers.ArtifactPower;
-import com.megacrit.cardcrawl.powers.FrailPower;
+import com.megacrit.cardcrawl.powers.*;
 import com.megacrit.cardcrawl.relics.AbstractRelic;
 import com.megacrit.cardcrawl.unlock.UnlockTracker;
 import com.megacrit.cardcrawl.vfx.SpeechBubble;
@@ -37,6 +35,8 @@ public class LeftHandTytusTopola extends AbstractMonster {
     public static final String[] DIALOG = monsterStrings.DIALOG;
     public static final String IMAGE = "images/monsters/corruptknight.png";
 
+    private int weakTimes = 3;
+
     public LeftHandTytusTopola(float x, float y) {
         super(NAME, ID, 55, 25.0F, 0, 150.0F, 320.0F, IMAGE, x, y);
         this.type = EnemyType.ELITE;
@@ -44,6 +44,7 @@ public class LeftHandTytusTopola extends AbstractMonster {
             setHp(60);
         if (AbstractDungeon.ascensionLevel >= 18) {
             this.damage.add(new DamageInfo(this, 11));
+            weakTimes = 4;
         } else if (AbstractDungeon.ascensionLevel >= 3) {
             this.damage.add(new DamageInfo(this, 11));
         } else {
@@ -81,6 +82,7 @@ public class LeftHandTytusTopola extends AbstractMonster {
             }
 
             this.addToTop(new ClearCardQueueAction());
+            AbstractDungeon.actionManager.addToBottom(new RemoveSpecificPowerAction(this, this, "nearlmod:LeftHand"));
             this.setMove((byte)99, Intent.UNKNOWN);
             this.createIntent();
             this.applyPowers();
@@ -93,10 +95,13 @@ public class LeftHandTytusTopola extends AbstractMonster {
             this.halfDead = false;
             AbstractDungeon.actionManager.addToBottom(new HealAction(this, this, this.maxHealth));
             AbstractDungeon.actionManager.addToBottom(new CanLoseAction());
-            AbstractDungeon.actionManager.addToBottom(new RemoveSpecificPowerAction(this, this, "nearlmod:LeftHand"));
+            if (AbstractDungeon.ascensionLevel >= 15) {
+                AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(this, this , new StrengthPower(this, 3)));
+                AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(this, this , new PainfulStabsPower(this)));
+            }
             setMove((byte) 2, Intent.STRONG_DEBUFF);
         } else if (this.nextMove == 2) {
-            addToBot(new ApplyPowerAction(p, this, new SuperWeakPower(p, 3)));
+            addToBot(new ApplyPowerAction(p, this, new SuperWeakPower(p, weakTimes)));
             setMove((byte) 3, Intent.ATTACK, this.damage.get(0).base);
         } else {
             addToBot(new DamageAction(AbstractDungeon.player, this.damage.get(0)));
