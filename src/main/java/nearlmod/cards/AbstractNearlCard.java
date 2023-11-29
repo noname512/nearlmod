@@ -6,8 +6,11 @@ import basemod.helpers.TooltipInfo;
 import com.badlogic.gdx.math.MathUtils;
 import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.cards.DamageInfo;
+import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import com.megacrit.cardcrawl.powers.AbstractPower;
+import com.megacrit.cardcrawl.relics.AbstractRelic;
+import com.megacrit.cardcrawl.rewards.RewardItem;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -64,6 +67,23 @@ public abstract class AbstractNearlCard extends CustomCard {
 
     public int calculateSingleDamage(AbstractMonster m, int baseDmg) {
         return staticCalcDmg(m, baseDmg, damageTypeForTurn);
+    }
+
+    public static void addSpecificCardsToReward(AbstractCard card) {
+        ArrayList<AbstractCard> cards = new ArrayList<>();
+        cards.add(card);
+        addSpecificCardsToReward(cards);
+    }
+
+    public static void addSpecificCardsToReward(ArrayList<AbstractCard> cards) {
+        for (AbstractCard card : cards) {
+            if (!card.canUpgrade()) continue;
+            for (AbstractRelic r : AbstractDungeon.player.relics)
+                r.onPreviewObtainCard(card);
+        }
+        RewardItem item = new RewardItem();
+        item.cards = cards;
+        AbstractDungeon.getCurrRoom().addCardReward(item);
     }
 
     public static class SecondMagicNumber extends DynamicVariable {

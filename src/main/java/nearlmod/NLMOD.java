@@ -21,6 +21,8 @@ import com.megacrit.cardcrawl.orbs.AbstractOrb;
 import com.megacrit.cardcrawl.relics.AbstractRelic;
 import com.megacrit.cardcrawl.rooms.AbstractRoom;
 import com.megacrit.cardcrawl.screens.custom.CustomMod;
+import nearlmod.cards.special.Beginning;
+import nearlmod.cards.special.BlemishinesFaintLight;
 import nearlmod.events.LaughAllYouWantEvent;
 import nearlmod.monsters.*;
 import nearlmod.patches.NearlEnum;
@@ -249,6 +251,10 @@ public class NLMOD implements EditCardsSubscriber, EditCharactersSubscriber, Edi
         BaseMod.addCard(new LanceCharge()); // 夹枪冲锋
         BaseMod.addCard(new JusticeDrive()); // 正义助威
         BaseMod.addCard(new BeepActivate()); // “滴滴，启动！”
+
+        // Special
+        BaseMod.addCard(new Beginning()); // 起点
+        BaseMod.addCard(new BlemishinesFaintLight()); // 瑕光微明
     }
 
     @Override

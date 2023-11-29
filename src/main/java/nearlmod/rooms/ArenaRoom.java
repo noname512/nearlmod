@@ -32,7 +32,6 @@ public class ArenaRoom extends AbstractRoom {
         mapSymbol = "A";
         mapImg = MAP_IMG;
         mapImgOutline = new Texture("images/ui/arenaoutline.png");
-        rewards.clear();
     }
 
     @Override

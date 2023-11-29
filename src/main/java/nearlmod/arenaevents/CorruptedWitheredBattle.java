@@ -9,8 +9,11 @@ import com.megacrit.cardcrawl.helpers.CardLibrary;
 import com.megacrit.cardcrawl.localization.EventStrings;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import com.megacrit.cardcrawl.monsters.MonsterGroup;
+import com.megacrit.cardcrawl.relics.AbstractRelic;
 import com.megacrit.cardcrawl.rooms.AbstractRoom;
 import com.megacrit.cardcrawl.vfx.cardManip.ShowCardAndObtainEffect;
+import nearlmod.cards.AbstractNearlCard;
+import nearlmod.cards.special.Beginning;
 import nearlmod.monsters.*;
 import nearlmod.relics.LateLight;
 
@@ -31,9 +34,13 @@ public class CorruptedWitheredBattle extends AbstractImageEvent {
         switch (buttonPressed) {
             case 0:
                 logMetric(ID, "Fight");
+                AbstractDungeon.getCurrRoom().rewards.clear();
+                AbstractNearlCard.addSpecificCardsToReward(new Beginning());
+                AbstractDungeon.getCurrRoom().addRelicToRewards(AbstractRelic.RelicTier.COMMON);
+                AbstractDungeon.getCurrRoom().addGoldToRewards(50); // TODO 确定金币数量
                 AbstractDungeon.lastCombatMetricKey = ID;
-                (AbstractDungeon.getCurrRoom()).phase = AbstractRoom.RoomPhase.COMBAT;
-                (AbstractDungeon.getCurrRoom()).monsters = new MonsterGroup(new AbstractMonster[] { new CorruptKnight(-200.0F, 0.0F), new WitheredKnight(80.0F, 0.0F) });
+                AbstractDungeon.getCurrRoom().phase = AbstractRoom.RoomPhase.COMBAT;
+                AbstractDungeon.getCurrRoom().monsters = new MonsterGroup(new AbstractMonster[] { new CorruptKnight(-200.0F, 0.0F), new WitheredKnight(80.0F, 0.0F) });
                 enterCombatFromImage();
                 return;
             case 1:

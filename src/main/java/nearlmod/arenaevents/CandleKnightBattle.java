@@ -1,4 +1,5 @@
 package nearlmod.arenaevents;
+import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.cards.curses.Normality;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.core.Settings;
@@ -9,7 +10,10 @@ import com.megacrit.cardcrawl.localization.EventStrings;
 import com.megacrit.cardcrawl.monsters.MonsterGroup;
 import com.megacrit.cardcrawl.rooms.AbstractRoom;
 import com.megacrit.cardcrawl.vfx.cardManip.ShowCardAndObtainEffect;
+import nearlmod.cards.AbstractNearlCard;
+import nearlmod.cards.SwallowLight;
 import nearlmod.monsters.CandleKnight;
+import nearlmod.relics.Marigold;
 import nearlmod.relics.NormalPerson;
 
 public class CandleKnightBattle extends AbstractImageEvent {
@@ -47,8 +51,15 @@ public class CandleKnightBattle extends AbstractImageEvent {
                 switch (buttonPressed) {
                     case 0:
                         logMetric(ID, "Fight");
+                        AbstractCard card = new SwallowLight();
+                        if (AbstractDungeon.ascensionLevel < 12)
+                            card.upgrade();
+                        AbstractDungeon.getCurrRoom().rewards.clear();
+                        AbstractNearlCard.addSpecificCardsToReward(card);
+                        AbstractDungeon.getCurrRoom().addRelicToRewards(new Marigold());
+                        AbstractDungeon.getCurrRoom().addGoldToRewards(99);
                         AbstractDungeon.lastCombatMetricKey = ID;
-                        (AbstractDungeon.getCurrRoom()).phase = AbstractRoom.RoomPhase.COMBAT;
+                        AbstractDungeon.getCurrRoom().phase = AbstractRoom.RoomPhase.COMBAT;
                         AbstractDungeon.getCurrRoom().monsters = new MonsterGroup(new CandleKnight());
                         enterCombatFromImage();
                         return;
