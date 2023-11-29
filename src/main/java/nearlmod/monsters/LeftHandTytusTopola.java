@@ -13,7 +13,7 @@ import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import com.megacrit.cardcrawl.powers.*;
 import com.megacrit.cardcrawl.powers.AbstractPower;
 import com.megacrit.cardcrawl.relics.AbstractRelic;
-import nearlmod.powers.LeftHandPower;
+import nearlmod.powers.RebornPower;
 import nearlmod.powers.SuperWeakPower;
 
 import java.util.Iterator;
@@ -48,7 +48,7 @@ public class LeftHandTytusTopola extends AbstractMonster {
     public void usePreBattleAction() {
         addToBot(new TalkAction(this, DIALOG[0], 0.3F, 3.0F));
         AbstractDungeon.getCurrRoom().cannotLose = true;
-        addToBot(new ApplyPowerAction(this, this, new LeftHandPower(this)));
+        addToBot(new ApplyPowerAction(this, this, new RebornPower(this)));
     }
 
     public void damage(DamageInfo info) {
@@ -74,7 +74,7 @@ public class LeftHandTytusTopola extends AbstractMonster {
             }
 
             this.addToTop(new ClearCardQueueAction());
-            AbstractDungeon.actionManager.addToBottom(new RemoveSpecificPowerAction(this, this, "nearlmod:LeftHand"));
+            AbstractDungeon.actionManager.addToBottom(new RemoveSpecificPowerAction(this, this, "nearlmod:Reborn"));
             this.setMove((byte)99, Intent.UNKNOWN);
             this.createIntent();
             this.applyPowers();

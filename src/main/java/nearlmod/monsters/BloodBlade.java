@@ -3,6 +3,8 @@ package nearlmod.monsters;
 import com.badlogic.gdx.math.MathUtils;
 import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
 import com.megacrit.cardcrawl.actions.common.DamageAction;
+import com.megacrit.cardcrawl.actions.common.HealAction;
+import com.megacrit.cardcrawl.actions.common.LoseHPAction;
 import com.megacrit.cardcrawl.cards.DamageInfo;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
@@ -20,7 +22,7 @@ public class BloodBlade extends AbstractMonster {
     public BloodBlade(float x, float y) {
         super(NAME, ID, AbstractDungeon.monsterHpRng.random(23, 28), 0, 0, 150.0F, 320.0F, IMAGE, x, y);
         type = EnemyType.NORMAL;
-        if (AbstractDungeon.ascensionLevel >= 18)
+        if (AbstractDungeon.ascensionLevel >= 17)
             damage.add(new DamageInfo(this, 10));
         else if (AbstractDungeon.ascensionLevel >= 2)
             damage.add(new DamageInfo(this, 9));
@@ -32,14 +34,27 @@ public class BloodBlade extends AbstractMonster {
             setHp(23, 28);
     }
 
+    public BloodBlade(float x, float y, int str) {
+        this(x,y);
+        if (str != 0) {
+            addToBot(new ApplyPowerAction(this,this, new StrengthPower(this, str)));
+        }
+    }
+
     @Override
     public void takeTurn() {
         if (this.nextMove == 2) {
             for (AbstractMonster ms : AbstractDungeon.getCurrRoom().monsters.monsters)
                 if (ms.id.equals("nearlmod:BloodKnight")) {
-                    ms.heal(MathUtils.floor(ms.maxHealth * 0.1F), true);
+                    if (AbstractDungeon.ascensionLevel < 17) {
+                        AbstractDungeon.actionManager.addToBottom(new HealAction(ms, this, MathUtils.floor(ms.maxHealth * 0.1F)));
+                    }
+                    else {
+                        AbstractDungeon.actionManager.addToBottom(new HealAction(ms, this, MathUtils.floor(ms.maxHealth * 0.15F)));
+                    }
+                    // TODO: halfdead的血骑士无法吃到这个buff（要不就考虑成这么设计？）
                     addToTop(new ApplyPowerAction(ms, this, new StrengthPower(ms, 3)));
-                    die(false);
+                    AbstractDungeon.actionManager.addToBottom(new LoseHPAction(this, this, this.currentHealth));
                     return;
                 }
         }

@@ -2,10 +2,7 @@ package nearlmod.monsters;
 
 import com.evacipated.cardcrawl.mod.stslib.patches.core.AbstractCreature.TempHPField;
 import com.megacrit.cardcrawl.actions.animations.TalkAction;
-import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
-import com.megacrit.cardcrawl.actions.common.DamageAction;
-import com.megacrit.cardcrawl.actions.common.EscapeAction;
-import com.megacrit.cardcrawl.actions.common.SpawnMonsterAction;
+import com.megacrit.cardcrawl.actions.common.*;
 import com.megacrit.cardcrawl.actions.defect.DecreaseMaxOrbAction;
 import com.megacrit.cardcrawl.cards.DamageInfo;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
@@ -59,8 +56,18 @@ public class LastKheshig extends AbstractMonster {
         if (this.nextMove <= 1) {
             addToBot(new DamageAction(AbstractDungeon.player, this.damage.get(0)));
         } else if (this.nextMove == 2) {
-            AbstractDungeon.actionManager.addToBottom(new SpawnMonsterAction(new NightzmoraImitator(-300.0F, 200.0F), true));
             // TODO: 调位置
+            AbstractDungeon.actionManager.addToBottom(new SpawnMonsterAction(new NightzmoraImitator(-300.0F, 200.0F), true));
+            if (AbstractDungeon.ascensionLevel >= 18) {
+                Iterator var2 = AbstractDungeon.getMonsters().monsters.iterator();
+
+                while (var2.hasNext()) {
+                    AbstractMonster m = (AbstractMonster) var2.next();
+                    if (m != null && !m.isDying) {
+                        AbstractDungeon.actionManager.addToBottom(new GainBlockAction(m, 6));
+                    }
+                }
+            }
         } else {
             int def_val = AbstractDungeon.player.currentBlock + TempHPField.tempHp.get(AbstractDungeon.player);
             if (this.damage.get(1).output > def_val) {
