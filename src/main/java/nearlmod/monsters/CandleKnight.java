@@ -1,17 +1,23 @@
 package nearlmod.monsters;
 
 import com.badlogic.gdx.graphics.Texture;
+import com.badlogic.gdx.math.MathUtils;
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
 import com.megacrit.cardcrawl.actions.animations.AnimateFastAttackAction;
 import com.megacrit.cardcrawl.actions.animations.TalkAction;
+import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
 import com.megacrit.cardcrawl.actions.common.DamageAction;
+import com.megacrit.cardcrawl.actions.common.RemoveSpecificPowerAction;
 import com.megacrit.cardcrawl.actions.utility.WaitAction;
 import com.megacrit.cardcrawl.cards.DamageInfo;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.localization.MonsterStrings;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
+import com.megacrit.cardcrawl.powers.AbstractPower;
+import com.megacrit.cardcrawl.powers.StrengthPower;
 import nearlmod.actions.TrueDieAction;
+import nearlmod.powers.LightPower;
 
 public class CandleKnight extends AbstractMonster {
     public static final String ID = "nearlmod:CandleKnight";
@@ -96,9 +102,24 @@ public class CandleKnight extends AbstractMonster {
                 addToBot(new AnimateFastAttackAction(this));
                 for (int i = 1; i <= damageTimes; i++)
                     addToBot(new DamageAction(AbstractDungeon.player, this.damage.get(2), AbstractGameAction.AttackEffect.SLASH_HORIZONTAL));
+            } else if (this.nextMove == 6) {
+                AbstractPower power = AbstractDungeon.player.getPower(LightPower.POWER_ID);
+                if (power != null) {
+                    int amount = power.amount;
+                    if (AbstractDungeon.ascensionLevel >= 18) amount = MathUtils.ceil(amount / 2.0F);
+                    else amount = MathUtils.ceil(amount / 3.0F);
+                    addToBot(new ApplyPowerAction(this, this, new StrengthPower(this, amount)));
+                    addToBot(new RemoveSpecificPowerAction(AbstractDungeon.player, this, power));
+                }
             }
-            if (this.nextMove == 1 || AbstractDungeon.aiRng.random(0, 4) == 0) {
+            if (this.nextMove == 1 || AbstractDungeon.aiRng.random(0, 5) == 0) {
                 setMove(MOVES[0], (byte) 2, Intent.UNKNOWN);
+                return;
+            }
+            if (AbstractDungeon.ascensionLevel >= 15 &&
+                AbstractDungeon.player.hasPower(LightPower.POWER_ID) &&
+                AbstractDungeon.aiRng.random(0, 5) == 0) {
+                setMove(MOVES[3], (byte)6, Intent.BUFF);
                 return;
             }
             int randInt = AbstractDungeon.aiRng.random(0, 1);
