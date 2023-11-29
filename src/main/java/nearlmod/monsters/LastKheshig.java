@@ -2,20 +2,21 @@ package nearlmod.monsters;
 
 import com.evacipated.cardcrawl.mod.stslib.patches.core.AbstractCreature.TempHPField;
 import com.megacrit.cardcrawl.actions.animations.TalkAction;
+import com.megacrit.cardcrawl.actions.animations.VFXAction;
 import com.megacrit.cardcrawl.actions.common.*;
 import com.megacrit.cardcrawl.actions.defect.DecreaseMaxOrbAction;
+import com.megacrit.cardcrawl.actions.utility.HideHealthBarAction;
 import com.megacrit.cardcrawl.cards.DamageInfo;
-import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.localization.MonsterStrings;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
-import com.megacrit.cardcrawl.monsters.city.BronzeOrb;
+import com.megacrit.cardcrawl.vfx.combat.InflameEffect;
 import nearlmod.actions.SummonOrbAction;
+import nearlmod.cards.AbstractNearlCard;
+import nearlmod.cards.special.BlemishinesFaintLight;
 import nearlmod.orbs.Blemishine;
 import nearlmod.powers.HintPower;
-
-import java.util.Iterator;
 
 public class LastKheshig extends AbstractMonster {
     public static final String ID = "nearlmod:LastKheshig";
@@ -25,10 +26,14 @@ public class LastKheshig extends AbstractMonster {
     public static final String[] DIALOG = monsterStrings.DIALOG;
     public static final String IMAGE = "images/monsters/lastkheshig.png";
 
-    public boolean isBlemishineSurvive;
+    public static final float[] POSX = new float[] { 195.0F, -235.0F };
+    public static final float[] POSY = new float[] { 0.0F, 0.0F };
+    private final AbstractMonster[] imitators = new AbstractMonster[2];
+    private boolean talked;
+    public static boolean isBlemishineSurvive;
 
     public LastKheshig(float x, float y) {
-        super(NAME, ID, 160, 0, 0, 150.0F, 320.0F, IMAGE, x, y);
+        super(NAME, ID, 160, 25.0F, 0, 150.0F, 320.0F, IMAGE, x, y);
         this.type = EnemyType.ELITE;
         if (AbstractDungeon.ascensionLevel >= 8)
             setHp(180);
@@ -43,12 +48,16 @@ public class LastKheshig extends AbstractMonster {
             this.damage.add(new DamageInfo(this, 16));
         }
         isBlemishineSurvive = true;
+        talked = false;
     }
 
     @Override
     public void usePreBattleAction() {
-        AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(this, this, new HintPower(this, 0)));
-        AbstractDungeon.actionManager.addToBottom(new SummonOrbAction(new Blemishine()));
+        addToBot(new TalkAction(this, DIALOG[0], 0.3F, 3.0F));
+        addToBot(new ApplyPowerAction(this, this, new HintPower(this, 0)));
+        addToBot(new SummonOrbAction(new Blemishine()));
+        if (AbstractDungeon.ascensionLevel >= 15)
+            spawnImitator();
     }
 
     @Override
@@ -56,27 +65,25 @@ public class LastKheshig extends AbstractMonster {
         if (this.nextMove <= 1) {
             addToBot(new DamageAction(AbstractDungeon.player, this.damage.get(0)));
         } else if (this.nextMove == 2) {
-            // TODO: 调位置
-            AbstractDungeon.actionManager.addToBottom(new SpawnMonsterAction(new NightzmoraImitator(-300.0F, 200.0F), true));
+            if (!talked) {
+                addToBot(new TalkAction(this, DIALOG[1], 0.3F, 3.0F));
+                talked = true;
+            }
+            spawnImitator();
             if (AbstractDungeon.ascensionLevel >= 18) {
-                Iterator var2 = AbstractDungeon.getMonsters().monsters.iterator();
-
-                while (var2.hasNext()) {
-                    AbstractMonster m = (AbstractMonster) var2.next();
+                for (AbstractMonster m : AbstractDungeon.getMonsters().monsters)
                     if (m != null && !m.isDying) {
-                        AbstractDungeon.actionManager.addToBottom(new GainBlockAction(m, 6));
+                        addToBot(new GainBlockAction(m, 6));
                     }
-                }
             }
         } else {
             int def_val = AbstractDungeon.player.currentBlock + TempHPField.tempHp.get(AbstractDungeon.player);
             if (this.damage.get(1).output > def_val) {
                 // TODO: 背刺动画，攻击在最后一个伙伴上
                 addToBot(new DamageAction(AbstractDungeon.player, new DamageInfo(AbstractDungeon.player, def_val)));
-                this.addToBot(new DecreaseMaxOrbAction(1));
-                if (!AbstractDungeon.player.hasOrb()) {
+                if (AbstractDungeon.player.orbs.size() <= 1)
                     isBlemishineSurvive = false;
-                }
+                this.addToBot(new DecreaseMaxOrbAction(1));
             } else {
                 addToBot(new DamageAction(AbstractDungeon.player, this.damage.get(1)));
             }
@@ -90,9 +97,7 @@ public class LastKheshig extends AbstractMonster {
             if (nextIntent <= 1) {
                 setMove(nextIntent, Intent.ATTACK, this.damage.get(0).base);
             } else if (nextIntent == 2) {
-                if (numAliveImitaor() >= 2) {
-                    continue;
-                }
+                if (fullImitator()) continue;
                 setMove(nextIntent, Intent.UNKNOWN);
             } else {
                 if (!AbstractDungeon.player.hasOrb()) {
@@ -104,18 +109,21 @@ public class LastKheshig extends AbstractMonster {
         }
     }
 
-    private int numAliveImitaor() {
-        int count = 0;
-        Iterator var2 = AbstractDungeon.getMonsters().monsters.iterator();
-
-        while (var2.hasNext()) {
-            AbstractMonster m = (AbstractMonster) var2.next();
-            if (m != null && m != this && !m.isDying) {
-                ++count;
+    private void spawnImitator() {
+        for (int i = 0; i < imitators.length; i++)
+            if (imitators[i] == null || imitators[i].isDeadOrEscaped()) {
+                NightzmoraImitator imitator = new NightzmoraImitator(POSX[i], POSY[i]);
+                imitators[i] = imitator;
+                addToBot(new SpawnMonsterAction(imitator, true));
+                break;
             }
-        }
+    }
 
-        return count;
+    private boolean fullImitator() {
+        for (int i = 1; i < imitators.length; i++)
+            if (imitators[i] == null || imitators[i].isDeadOrEscaped())
+                return false;
+        return true;
     }
 
     @Override
@@ -130,8 +138,14 @@ public class LastKheshig extends AbstractMonster {
     @Override
     public void die() {
         if (isBlemishineSurvive) {
-            //TODO: 加奖励
+            AbstractNearlCard.addSpecificCardsToReward(new BlemishinesFaintLight());
         }
+        for (AbstractMonster m : AbstractDungeon.getMonsters().monsters)
+            if (!m.isDeadOrEscaped()) {
+                addToTop(new HideHealthBarAction(m));
+                addToTop(new SuicideAction(m));
+                addToTop(new VFXAction(m, new InflameEffect(m), 0.2F));
+            }
         super.die();
     }
 }

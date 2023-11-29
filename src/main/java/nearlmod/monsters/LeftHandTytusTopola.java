@@ -16,8 +16,6 @@ import com.megacrit.cardcrawl.relics.AbstractRelic;
 import nearlmod.powers.RebornPower;
 import nearlmod.powers.SuperWeakPower;
 
-import java.util.Iterator;
-
 public class LeftHandTytusTopola extends AbstractMonster {
     public static final String ID = "nearlmod:LeftHandTytusTopola";
     public static final MonsterStrings monsterStrings = CardCrawlGame.languagePack.getMonsterStrings(ID);
@@ -58,20 +56,10 @@ public class LeftHandTytusTopola extends AbstractMonster {
                 this.halfDead = true;
             }
 
-            Iterator s = this.powers.iterator();
-
-            AbstractPower p;
-            while(s.hasNext()) {
-                p = (AbstractPower)s.next();
+            for (AbstractPower p : powers)
                 p.onDeath();
-            }
-
-            s = AbstractDungeon.player.relics.iterator();
-
-            while(s.hasNext()) {
-                AbstractRelic r = (AbstractRelic)s.next();
+            for (AbstractRelic r : AbstractDungeon.player.relics)
                 r.onMonsterDeath(this);
-            }
 
             this.addToTop(new ClearCardQueueAction());
             AbstractDungeon.actionManager.addToBottom(new RemoveSpecificPowerAction(this, this, "nearlmod:Reborn"));

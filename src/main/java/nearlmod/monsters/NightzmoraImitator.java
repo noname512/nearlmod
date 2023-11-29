@@ -3,19 +3,15 @@ package nearlmod.monsters;
 import com.evacipated.cardcrawl.mod.stslib.patches.core.AbstractCreature.TempHPField;
 import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
 import com.megacrit.cardcrawl.actions.common.DamageAction;
-import com.megacrit.cardcrawl.actions.common.SpawnMonsterAction;
 import com.megacrit.cardcrawl.actions.defect.DecreaseMaxOrbAction;
 import com.megacrit.cardcrawl.cards.DamageInfo;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.localization.MonsterStrings;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
-import com.megacrit.cardcrawl.monsters.city.BronzeOrb;
 import nearlmod.actions.SummonOrbAction;
 import nearlmod.orbs.Blemishine;
 import nearlmod.powers.HintPower;
-
-import java.util.Iterator;
 
 public class NightzmoraImitator extends AbstractMonster {
     public static final String ID = "nearlmod:NightzmoraImitator";
@@ -26,7 +22,7 @@ public class NightzmoraImitator extends AbstractMonster {
     public static final String IMAGE = "images/monsters/nightzmoraimitator.png";
 
     public NightzmoraImitator(float x, float y) {
-        super(NAME, ID, 30, 0, 0, 150.0F, 320.0F, IMAGE, x, y);
+        super(NAME, ID, 30, 25.0F, 0, 150.0F, 320.0F, IMAGE, x, y);
         this.type = EnemyType.ELITE;
         if (AbstractDungeon.ascensionLevel >= 7)
             setHp(35);
@@ -44,8 +40,8 @@ public class NightzmoraImitator extends AbstractMonster {
 
     @Override
     public void usePreBattleAction() {
-        AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(this, this, new HintPower(this, 0)));
-        AbstractDungeon.actionManager.addToBottom(new SummonOrbAction(new Blemishine()));
+        addToBot(new ApplyPowerAction(this, this, new HintPower(this, 0)));
+        addToBot(new SummonOrbAction(new Blemishine()));
     }
 
     @Override
@@ -58,6 +54,8 @@ public class NightzmoraImitator extends AbstractMonster {
             if (this.damage.get(1).output > def_val) {
                 // TODO: 背刺动画，攻击在最后一个伙伴上
                 addToBot(new DamageAction(AbstractDungeon.player, new DamageInfo(AbstractDungeon.player, def_val)));
+                if (AbstractDungeon.player.orbs.size() <= 1)
+                    LastKheshig.isBlemishineSurvive = false;
                 this.addToBot(new DecreaseMaxOrbAction(1));
             }
             else {

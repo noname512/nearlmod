@@ -10,9 +10,8 @@ import com.megacrit.cardcrawl.localization.UIStrings;
 import com.megacrit.cardcrawl.map.Legend;
 import com.megacrit.cardcrawl.map.LegendItem;
 import com.megacrit.cardcrawl.rooms.AbstractRoom;
-import nearlmod.arenaevents.CandleKnightBattle;
-import nearlmod.arenaevents.CorruptedWitheredBattle;
-import nearlmod.arenaevents.LeftHandBattle;
+import nearlmod.arenaevents.*;
+import nearlmod.characters.Nearl;
 import nearlmod.events.LaughAllYouWantEvent;
 
 import java.util.ArrayList;
@@ -45,6 +44,8 @@ public class ArenaRoom extends AbstractRoom {
         if (enterTimes == 1) event = new CorruptedWitheredBattle();
         else if (enterTimes == 2) event = new LeftHandBattle();
         else if (enterTimes == 3) event = new CandleKnightBattle();
+        else if (enterTimes == 4) event = new LastKheshigBattle();
+        else if (enterTimes == 5) event = new BloodKnightBattle();
         event.onEnterRoom();
     }
     public void update() {
@@ -80,6 +81,7 @@ public class ArenaRoom extends AbstractRoom {
     public static class MapGeneratePatch {
         @SpirePostfixPatch
         public static void Postfix(ArrayList<AbstractRoom> roomList, int availableRoomCount) {
+            if (!(AbstractDungeon.player instanceof Nearl)) return;
             int arenaCount = Math.round((float)availableRoomCount * 0.07F);
             logger.info(" ARENA (7%): " + arenaCount);
             for (int i = 1; i <= arenaCount; i++)

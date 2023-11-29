@@ -2,8 +2,11 @@ package nearlmod.monsters;
 
 import com.badlogic.gdx.math.MathUtils;
 import com.megacrit.cardcrawl.actions.ClearCardQueueAction;
+import com.megacrit.cardcrawl.actions.animations.TalkAction;
+import com.megacrit.cardcrawl.actions.animations.VFXAction;
 import com.megacrit.cardcrawl.actions.common.*;
 import com.megacrit.cardcrawl.actions.unique.CanLoseAction;
+import com.megacrit.cardcrawl.actions.utility.HideHealthBarAction;
 import com.megacrit.cardcrawl.cards.DamageInfo;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
@@ -15,12 +18,11 @@ import com.megacrit.cardcrawl.powers.StrengthPower;
 import com.megacrit.cardcrawl.powers.VulnerablePower;
 import com.megacrit.cardcrawl.powers.WeakPower;
 import com.megacrit.cardcrawl.relics.AbstractRelic;
+import com.megacrit.cardcrawl.vfx.combat.InflameEffect;
 import nearlmod.powers.AttackUpPower;
 import nearlmod.powers.DuelPower;
 import nearlmod.powers.ExsanguinationPower;
 import nearlmod.powers.RebornPower;
-
-import java.util.Iterator;
 
 public class BloodKnight extends AbstractMonster {
     public static final String ID = "nearlmod:BloodKnight";
@@ -29,18 +31,15 @@ public class BloodKnight extends AbstractMonster {
     public static final String[] MOVES = monsterStrings.MOVES;
     public static final String IMAGE = "images/monsters/bloodknight.png";
 
-    public int debuffTimes = 2;
-    public int ExsanguinationTurn = 3;
-    public int BladeStrength = 0;
-    public int currentTurn = 0;
-    public boolean isStage2 = false;
-
-    @Override
-    public void usePreBattleAction() {
-        addToBot(new ApplyPowerAction(this, this, new DuelPower(this, 25)));
-        addToBot(new ApplyPowerAction(this, this, new RebornPower(this)));
-        AbstractDungeon.getCurrRoom().cannotLose = true;
-    }
+    public static final float[] POSX = new float[] { 195.0F, -235.0F, 165.0F, -265.0F, 225.0F, -205.0F };
+    public static final float[] POSY = new float[] { 85.0F, 75.0F, 225.0F, 215.0F, 345.0F, 335.0F };
+    private int debuffTimes = 2;
+    private int bladeStrength = 0;
+    private int currentTurn;
+    private boolean isStage2;
+    private final AbstractMonster[] blades = new AbstractMonster[6];
+    private final int bladesPerSpawn;
+    private boolean talked;
     public BloodKnight(float x, float y) {
         super(NAME, ID, 300, 0, 0, 150.0F, 320.0F, IMAGE, x, y);
         type = EnemyType.BOSS;
@@ -58,47 +57,48 @@ public class BloodKnight extends AbstractMonster {
             damage.add(new DamageInfo(this, 12));
         }
         if (AbstractDungeon.ascensionLevel >= 15) {
-            BladeStrength = 2;
+            bladeStrength = 2;
         }
         if (AbstractDungeon.ascensionLevel >= 9)
             setHp(340);
+        if (AbstractDungeon.ascensionLevel >= 19)
+            bladesPerSpawn = 2;
+        else
+            bladesPerSpawn = 1;
         currentTurn = 0;
         isStage2 = false;
+        talked = false;
+    }
+
+    @Override
+    public void usePreBattleAction() {
+        addToBot(new TalkAction(this, DIALOG[0], 0.3F, 3.0F));
+        addToBot(new ApplyPowerAction(this, this, new DuelPower(this, 25)));
+        addToBot(new ApplyPowerAction(this, this, new RebornPower(this)));
+        AbstractDungeon.getCurrRoom().cannotLose = true;
     }
 
     public void damage(DamageInfo info) {
         super.damage(info);
         if (currentHealth <= 0 && !this.halfDead) {
-
-            Iterator s = this.powers.iterator();
-
-            AbstractPower p;
-            while(s.hasNext()) {
-                p = (AbstractPower)s.next();
+            for (AbstractPower p : this.powers)
                 p.onDeath();
-            }
-
-            s = AbstractDungeon.player.relics.iterator();
-
-            while(s.hasNext()) {
-                AbstractRelic r = (AbstractRelic)s.next();
+            for (AbstractRelic r : AbstractDungeon.player.relics)
                 r.onMonsterDeath(this);
-            }
 
             if (AbstractDungeon.getCurrRoom().cannotLose) {
-                this.halfDead = true;
+                halfDead = true;
                 AbstractDungeon.actionManager.addToBottom(new HealAction(this, this, MathUtils.floor(this.maxHealth * 0.4F)));
             }
-            this.addToTop(new ClearCardQueueAction());
-            this.setMove((byte)50, Intent.UNKNOWN);
-            this.createIntent();
-            this.applyPowers();
+            addToTop(new ClearCardQueueAction());
+            setMove((byte)50, Intent.UNKNOWN);
+            createIntent();
+            applyPowers();
         }
     }
 
     @Override
     public void takeTurn() {
-        // TODO
         AbstractPlayer p = AbstractDungeon.player;
         if (this.nextMove == 1) {
             addToBot(new DamageAction(p, damage.get(0)));
@@ -114,13 +114,13 @@ public class BloodKnight extends AbstractMonster {
         }
         else if (this.nextMove == 4) {
             cleanDebuff();
-            // TODO：调位置！
-            addToBot(new SpawnMonsterAction(new BloodBlade(0.0F, 0.0F, BladeStrength), true));
-            if (AbstractDungeon.ascensionLevel >= 19) {
-                addToBot(new SpawnMonsterAction(new BloodBlade(0.0F, 0.0F, BladeStrength), true));
-            }
+            spawnBlade(bladesPerSpawn);
         }
-        else if(this.nextMove == 99) {
+        else if (this.nextMove == 99) {
+            if (!talked) {
+                addToBot(new TalkAction(this, DIALOG[1], 0.3F, 3.0F));
+                talked = true;
+            }
             addToBot(new ApplyPowerAction(p, this, new ExsanguinationPower(p)));
         }
         else if (this.currentHealth == this.maxHealth) {
@@ -134,18 +134,14 @@ public class BloodKnight extends AbstractMonster {
             currentTurn = -1;
             isStage2 = true;
             AbstractDungeon.actionManager.addToBottom(new CanLoseAction());
+            addToBot(new TalkAction(this, DIALOG[2], 0.3F, 3.0F));
             addToBot(new RemoveSpecificPowerAction(this, this, "nearlmod:Reborn"));
             addToBot(new ApplyPowerAction(this, this, new DuelPower(this, 25)));
             addToBot(new ApplyPowerAction(this, this, new AttackUpPower(this, 50)));
         }
         else {
-            // TODO: 这里也得调位置！
-            addToBot(new SpawnMonsterAction(new BloodBlade(0.0F, 0.0F, BladeStrength), true));
-            addToBot(new SpawnMonsterAction(new BloodBlade(0.0F, 0.0F, BladeStrength), true));
-            if (AbstractDungeon.ascensionLevel >= 19) {
-                addToBot(new SpawnMonsterAction(new BloodBlade(0.0F, 0.0F, BladeStrength), true));
-            }
-            setMove((byte)(this.nextMove+1), Intent.UNKNOWN);
+            spawnBlade(bladesPerSpawn + 1);
+            setMove((byte)(this.nextMove + 1), Intent.UNKNOWN);
             return;
         }
         currentTurn ++;
@@ -177,16 +173,24 @@ public class BloodKnight extends AbstractMonster {
         }
     }
 
-    void cleanDebuff() {
-        Iterator var2 = this.powers.iterator();
+    private void spawnBlade(int spawnCnt) {
+        int spawned = 0;
+        for (int i = 0; spawned < spawnCnt && i < blades.length; i++)
+            if (blades[i] == null || blades[i].isDeadOrEscaped()) {
+                BloodBlade bloodBlade = new BloodBlade(POSX[i], POSY[i], bladeStrength);
+                blades[i] = bloodBlade;
+                addToBot(new SpawnMonsterAction(bloodBlade, true));
+                spawned++;
+            }
+    }
 
-        while (var2.hasNext()) {
-            AbstractPower pow = (AbstractPower) var2.next();
+    private void cleanDebuff() {
+        for (AbstractPower pow : powers)
             if (pow != null && pow.type == AbstractPower.PowerType.DEBUFF) {
                 addToBot(new RemoveSpecificPowerAction(this, this, pow));
             }
-        }
     }
+
     @Override
     protected void getMove(int i) {
         byte next = (byte)AbstractDungeon.aiRng.random(0, 2);
@@ -203,6 +207,12 @@ public class BloodKnight extends AbstractMonster {
 
     public void die() {
         if (!AbstractDungeon.getCurrRoom().cannotLose) {
+            for (AbstractMonster m : AbstractDungeon.getMonsters().monsters)
+                if (!m.isDeadOrEscaped()) {
+                    addToTop(new HideHealthBarAction(m));
+                    addToTop(new SuicideAction(m));
+                    addToTop(new VFXAction(m, new InflameEffect(m), 0.2F));
+                }
             super.die();
         }
     }
