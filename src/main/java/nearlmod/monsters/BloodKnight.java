@@ -58,7 +58,7 @@ public class BloodKnight extends AbstractMonster {
             damage.add(new DamageInfo(this, 12));
         }
         if (AbstractDungeon.ascensionLevel >= 15) {
-            BladeStrength = 3;
+            BladeStrength = 2;
         }
         if (AbstractDungeon.ascensionLevel >= 9)
             maxHealth = 340;
