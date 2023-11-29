@@ -90,5 +90,9 @@
   "nearlmod:SuperWeakPower": {
     "NAME": "左手印记",
     "DESCRIPTIONS": ["你攻击造成的伤害减少 #b50% 。"]
+  },
+  "nearlmod:Hint": {
+    "NAME": "警告！",
+    "DESCRIPTIONS": ["这名敌人的技能 恐惧凝集 如果没有被格挡住，会击穿你的伙伴！"]
   }
 }
