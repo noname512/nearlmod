@@ -1,5 +1,6 @@
 package nearlmod.characters;
 
+import basemod.BaseMod;
 import com.badlogic.gdx.graphics.Texture;
 import com.megacrit.cardcrawl.actions.watcher.ChangeStanceAction;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
@@ -206,6 +207,7 @@ public class Nearl extends CustomPlayer {
         DefStance.defInc = -1;
         AtkStance.incNum = 1;
         DefStance.incNum = 1;
+        BaseMod.MAX_HAND_SIZE = 10;
         AbstractDungeon.actionManager.addToBottom(new ChangeStanceAction(new DefStance()));
         CostReserves.resetReserves();
         LightPower.amountForBattle = 0;
