@@ -110,5 +110,9 @@
   "nearlmod:Duel": {
     "NAME": "决战",
     "DESCRIPTIONS": ["受到来自伙伴牌的伤害减少 ", " % 。"]
+  },
+  "nearlmod:AttackUp": {
+    "NAME": "攻击力上升",
+    "DESCRIPTIONS": ["造成的伤害提高 ", " % 。"]
   }
 }

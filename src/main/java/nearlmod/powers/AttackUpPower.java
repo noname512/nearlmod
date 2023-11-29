@@ -27,7 +27,7 @@ public class AttackUpPower extends AbstractPower implements CloneablePowerInterf
     }
     @Override
     public void updateDescription() {
-        description = DESCRIPTIONS[0];
+        description = DESCRIPTIONS[0] + amount + DESCRIPTIONS[1];
     }
 
     @Override
