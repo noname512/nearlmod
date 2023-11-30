@@ -17,6 +17,11 @@ public class ArmorlessSquadBattle extends AbstractImageEvent {
     public static final String[] DESCRIPTIONS = eventStrings.DESCRIPTIONS;
     public static final String[] OPTIONS = eventStrings.OPTIONS;
     private final int monsterLevel;
+
+    private CurScreen screen = CurScreen.INTRO;
+    private enum CurScreen {
+        INTRO, FIGHT, LEAVE
+    }
     public ArmorlessSquadBattle(int monsterLevel) {
         super(NAME, DESCRIPTIONS[0], "images/events/laughallyouwant.png");
         imageEventText.setDialogOption(OPTIONS[0]);
@@ -26,9 +31,14 @@ public class ArmorlessSquadBattle extends AbstractImageEvent {
 
     @Override
     protected void buttonEffect(int buttonPressed) {
+        if (screen != CurScreen.INTRO) {
+            openMap();
+            return;
+        }
         switch (buttonPressed) {
             case 0:
                 logMetric(ID, "Fight");
+                screen = CurScreen.FIGHT;
                 AbstractDungeon.lastCombatMetricKey = ID;
                 AbstractDungeon.getCurrRoom().phase = AbstractRoom.RoomPhase.COMBAT;
                 if (AbstractDungeon.ascensionLevel >= 15)
@@ -44,6 +54,7 @@ public class ArmorlessSquadBattle extends AbstractImageEvent {
                 return;
             case 1:
                 logMetric(ID, "Leave");
+                screen = CurScreen.LEAVE;
                 imageEventText.updateBodyText(DESCRIPTIONS[1]);
                 imageEventText.updateDialogOption(0, OPTIONS[2]);
                 imageEventText.clearRemainingOptions();

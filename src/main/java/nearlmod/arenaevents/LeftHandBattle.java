@@ -26,6 +26,11 @@ public class LeftHandBattle extends AbstractImageEvent {
     public static final String NAME = eventStrings.NAME;
     public static final String[] DESCRIPTIONS = eventStrings.DESCRIPTIONS;
     public static final String[] OPTIONS = eventStrings.OPTIONS;
+
+    private CurScreen screen = CurScreen.INTRO;
+    private enum CurScreen {
+        INTRO, FIGHT, LEAVE
+    }
     public LeftHandBattle() {
         super(NAME, DESCRIPTIONS[0], "images/events/laughallyouwant.png");
         this.imageEventText.setDialogOption(OPTIONS[0]);
@@ -65,13 +70,18 @@ public class LeftHandBattle extends AbstractImageEvent {
 
     @Override
     protected void buttonEffect(int buttonPressed) {
+        if (screen != CurScreen.INTRO) {
+            openMap();
+            return;
+        }
         switch (buttonPressed) {
             case 0:
                 logMetric(ID, "Fight");
+                screen = CurScreen.FIGHT;
                 AbstractDungeon.getCurrRoom().rewards.clear();
                 AbstractNearlCard.addSpecificCardsToReward(getCardsWithRarity(AbstractCard.CardRarity.UNCOMMON));
                 AbstractDungeon.getCurrRoom().addRelicToRewards(AbstractRelic.RelicTier.RARE);
-                AbstractDungeon.getCurrRoom().addGoldToRewards(50); // TODO 确定金币数量
+                AbstractDungeon.getCurrRoom().addGoldToRewards(50);
                 AbstractDungeon.lastCombatMetricKey = ID;
                 AbstractDungeon.getCurrRoom().phase = AbstractRoom.RoomPhase.COMBAT;
                 AbstractDungeon.getCurrRoom().monsters = new MonsterGroup(new LeftHandTytusTopola(0.0F, 0.0F));
@@ -79,6 +89,7 @@ public class LeftHandBattle extends AbstractImageEvent {
                 return;
             case 1:
                 logMetric(ID, "Leave");
+                screen = CurScreen.LEAVE;
                 this.imageEventText.updateBodyText(DESCRIPTIONS[1]);
                 imageEventText.updateDialogOption(0, OPTIONS[2]);
                 imageEventText.clearRemainingOptions();

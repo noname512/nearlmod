@@ -18,7 +18,7 @@ public class LaughAllYouWantEvent extends AbstractImageEvent {
 
     private CurScreen screen = CurScreen.INTRO;
     private enum CurScreen {
-        INTRO, FIGHT, LEAVE;
+        INTRO, FIGHT, LEAVE
     }
     public LaughAllYouWantEvent() {
         super(NAME, DESCRIPTIONS[0], "images/events/laughallyouwant.png");
@@ -28,26 +28,25 @@ public class LaughAllYouWantEvent extends AbstractImageEvent {
 
     @Override
     protected void buttonEffect(int buttonPressed) {
-        switch (this.screen) {
-            case INTRO:
-                switch (buttonPressed) {
-                    case 0:
-                        this.imageEventText.updateBodyText(DESCRIPTIONS[1]);
-                        this.screen = CurScreen.FIGHT;
-                        logMetric(ID, "Fight");
-                        (AbstractDungeon.getCurrRoom()).monsters = new MonsterGroup(new AbstractMonster[]{new Platinum(-350.0F, 0.0F), new Monique(-125.0F, 0.0F), new Roy(80.0F, 0.0F)});
-                        enterCombatFromImage();
-                        AbstractDungeon.lastCombatMetricKey = "Laugh All You Want Battle";
-                        break;
-                    case 1:
-                        this.imageEventText.updateBodyText(DESCRIPTIONS[2]);
-                        this.screen = CurScreen.LEAVE;
-                        logMetric(ID, "Leave");
-                        openMap();
-                        break;
-                }
-                this.imageEventText.clearRemainingOptions();
-                return;
+        if (screen == CurScreen.INTRO) {
+            switch (buttonPressed) {
+                case 0:
+                    imageEventText.updateBodyText(DESCRIPTIONS[1]);
+                    screen = CurScreen.FIGHT;
+                    logMetric(ID, "Fight");
+                    (AbstractDungeon.getCurrRoom()).monsters = new MonsterGroup(new AbstractMonster[]{new Platinum(-350.0F, 0.0F), new Monique(-125.0F, 0.0F), new Roy(80.0F, 0.0F)});
+                    enterCombatFromImage();
+                    AbstractDungeon.lastCombatMetricKey = "Laugh All You Want Battle";
+                    break;
+                case 1:
+                    imageEventText.updateBodyText(DESCRIPTIONS[2]);
+                    screen = CurScreen.LEAVE;
+                    logMetric(ID, "Leave");
+                    openMap();
+                    break;
+            }
+            imageEventText.clearRemainingOptions();
+            return;
         }
         openMap();
     }

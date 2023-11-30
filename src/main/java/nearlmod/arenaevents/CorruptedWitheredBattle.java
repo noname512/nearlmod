@@ -23,6 +23,11 @@ public class CorruptedWitheredBattle extends AbstractImageEvent {
     public static final String NAME = eventStrings.NAME;
     public static final String[] DESCRIPTIONS = eventStrings.DESCRIPTIONS;
     public static final String[] OPTIONS = eventStrings.OPTIONS;
+
+    private CurScreen screen = CurScreen.INTRO;
+    private enum CurScreen {
+        INTRO, FIGHT, LEAVE
+    }
     public CorruptedWitheredBattle() {
         super(NAME, DESCRIPTIONS[0], "images/events/laughallyouwant.png");
         this.imageEventText.setDialogOption(OPTIONS[0]);
@@ -32,9 +37,14 @@ public class CorruptedWitheredBattle extends AbstractImageEvent {
 
     @Override
     protected void buttonEffect(int buttonPressed) {
+        if (screen != CurScreen.INTRO) {
+            openMap();
+            return;
+        }
         switch (buttonPressed) {
             case 0:
                 logMetric(ID, "Fight");
+                screen = CurScreen.FIGHT;
                 AbstractDungeon.getCurrRoom().rewards.clear();
                 AbstractNearlCard.addSpecificCardsToReward(new Beginning());
                 AbstractDungeon.getCurrRoom().addRelicToRewards(AbstractRelic.RelicTier.COMMON);
@@ -48,6 +58,7 @@ public class CorruptedWitheredBattle extends AbstractImageEvent {
                 return;
             case 1:
                 logMetric(ID, "Leave");
+                screen = CurScreen.LEAVE;
                 imageEventText.updateBodyText(DESCRIPTIONS[1]);
                 imageEventText.updateDialogOption(0, OPTIONS[2]);
                 imageEventText.clearRemainingOptions();

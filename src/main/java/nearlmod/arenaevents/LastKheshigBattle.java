@@ -20,6 +20,11 @@ public class LastKheshigBattle extends AbstractImageEvent {
     public static final String NAME = eventStrings.NAME;
     public static final String[] DESCRIPTIONS = eventStrings.DESCRIPTIONS;
     public static final String[] OPTIONS = eventStrings.OPTIONS;
+
+    private CurScreen screen = CurScreen.INTRO;
+    private enum CurScreen {
+        INTRO, FIGHT, LEAVE
+    }
     public LastKheshigBattle() {
         super(NAME, DESCRIPTIONS[0], "images/events/laughallyouwant.png");
         this.imageEventText.setDialogOption(OPTIONS[0]);
@@ -29,9 +34,14 @@ public class LastKheshigBattle extends AbstractImageEvent {
 
     @Override
     protected void buttonEffect(int buttonPressed) {
+        if (screen != CurScreen.INTRO) {
+            openMap();
+            return;
+        }
         switch (buttonPressed) {
             case 0:
                 logMetric(ID, "Fight");
+                screen = CurScreen.FIGHT;
                 AbstractDungeon.getCurrRoom().rewards.clear();
                 AbstractDungeon.getCurrRoom().addRelicToRewards(AbstractRelic.RelicTier.UNCOMMON);
                 AbstractDungeon.getCurrRoom().addGoldToRewards(70);
@@ -42,6 +52,7 @@ public class LastKheshigBattle extends AbstractImageEvent {
                 return;
             case 1:
                 logMetric(ID, "Leave");
+                screen = CurScreen.LEAVE;
                 this.imageEventText.updateBodyText(DESCRIPTIONS[1]);
                 imageEventText.updateDialogOption(0, OPTIONS[2]);
                 imageEventText.clearRemainingOptions();
