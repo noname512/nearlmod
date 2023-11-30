@@ -24,6 +24,7 @@ public class LastKheshigBattle extends AbstractImageEvent {
         super(NAME, DESCRIPTIONS[0], "images/events/laughallyouwant.png");
         this.imageEventText.setDialogOption(OPTIONS[0]);
         this.imageEventText.setDialogOption(OPTIONS[1], CardLibrary.getCopy("Injury"));
+        noCardsInRewards = true;
     }
 
     @Override
