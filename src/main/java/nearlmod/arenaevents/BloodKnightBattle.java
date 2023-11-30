@@ -37,8 +37,8 @@ public class BloodKnightBattle extends AbstractImageEvent {
                 if (AbstractDungeon.ascensionLevel < 12) c.upgrade();
                 AbstractNearlCard.addSpecificCardsToReward(c);
                 AbstractDungeon.getCurrRoom().addRelicToRewards(AbstractRelic.RelicTier.BOSS);
-                int gold = 100;
-                if (AbstractDungeon.ascensionLevel >= 13) gold = 75;
+                int gold = 160;
+                if (AbstractDungeon.ascensionLevel >= 13) gold = 120;
                 AbstractDungeon.getCurrRoom().addGoldToRewards(gold);
                 AbstractDungeon.lastCombatMetricKey = ID;
                 AbstractDungeon.getCurrRoom().phase = AbstractRoom.RoomPhase.COMBAT;
