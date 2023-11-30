@@ -96,6 +96,42 @@
     "NAME": "凝血之刃",
     "MOVES": [
       "吸收"
-    ]
+    ],
+    "DIALOG": []
+  },
+  "nearlmod:ArmorlessThirdSquad": {
+    "NAME": "无胄盟第三小队",
+    "MOVES": [],
+    "DIALOG": []
+  },
+  "nearlmod:ArmorlessCleanupSquad": {
+    "NAME": "无胄盟清扫小队",
+    "MOVES": [],
+    "DIALOG": []
+  },
+  "nearlmod:ArmorlessAssassin": {
+    "NAME": "无胄盟刺客",
+    "MOVES": [],
+    "DIALOG": []
+  },
+  "nearlmod:ArmorlessCrossbowman": {
+    "NAME": "无胄盟弩手",
+    "MOVES": [],
+    "DIALOG": []
+  },
+  "nearlmod:KnightTerritoryHibernator": {
+    "NAME": "骑士领蛰伏者",
+    "MOVES": [],
+    "DIALOG": []
+  },
+  "nearlmod:UndertideGloompincer": {
+    "NAME": "暗潮钳兽",
+    "MOVES": [],
+    "DIALOG": []
+  },
+  "nearlmod:KnightShielder": {
+    "NAME": "持盾独立骑士",
+    "MOVES": [],
+    "DIALOG": []
   }
 }

@@ -23,7 +23,7 @@ public class NightzmoraImitator extends AbstractMonster {
 
     public NightzmoraImitator(float x, float y) {
         super(NAME, ID, 30, 25.0F, 0, 150.0F, 320.0F, IMAGE, x, y);
-        this.type = EnemyType.ELITE;
+        this.type = EnemyType.NORMAL;
         if (AbstractDungeon.ascensionLevel >= 7)
             setHp(35);
         if (AbstractDungeon.ascensionLevel >= 17) {
@@ -40,7 +40,7 @@ public class NightzmoraImitator extends AbstractMonster {
 
     @Override
     public void usePreBattleAction() {
-        addToBot(new ApplyPowerAction(this, this, new HintPower(this, 0)));
+        addToBot(new ApplyPowerAction(this, this, new HintPower(this)));
         addToBot(new SummonOrbAction(new Blemishine()));
     }
 

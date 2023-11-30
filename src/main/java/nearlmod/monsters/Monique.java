@@ -20,10 +20,10 @@ public class Monique extends AbstractMonster {
 
     public Monique(float x, float y) {
         super(NAME, ID, 100, 0, 0, 150.0F, 320.0F, IMAGE, x, y);
-        this.type = EnemyType.NORMAL;
-        if (AbstractDungeon.ascensionLevel >= 7)
+        this.type = EnemyType.ELITE;
+        if (AbstractDungeon.ascensionLevel >= 8)
             setHp(110);
-        if (AbstractDungeon.ascensionLevel >= 2) {
+        if (AbstractDungeon.ascensionLevel >= 3) {
             this.damage.add(new DamageInfo(this, 11));
             this.damage.add(new DamageInfo(this, 17));
         } else {

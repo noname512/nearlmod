@@ -93,11 +93,11 @@
   },
   "nearlmod:Hint": {
     "NAME": "警告！",
-    "DESCRIPTIONS": ["这名敌人的技能 恐惧凝集 如果没有被格挡住，会击穿你的伙伴！"]
+    "DESCRIPTIONS": ["这名敌人的技能 #y恐惧凝集 造成的伤害如果没有被完全 #y格挡 ，会击穿你的伙伴！"]
   },
   "nearlmod:StormCounterAttackPower": {
     "NAME": "风暴反击",
-    "DESCRIPTIONS": ["下回合开始时，如果你还有 格挡 ，对所有敌人造成等同于你剩余 格挡 #b", " 倍的伤害。"]
+    "DESCRIPTIONS": ["下回合开始时，如果你还有 #y格挡 ，对所有敌人造成等同于你剩余 #y格挡 #b", " 倍的伤害。"]
   },
   "nearlmod:GainLightNextTurnPower": {
     "NAME": "光芒暂存",
@@ -109,10 +109,26 @@
   },
   "nearlmod:Duel": {
     "NAME": "决战",
-    "DESCRIPTIONS": ["受到来自伙伴牌的伤害减少 ", " % 。"]
+    "DESCRIPTIONS": ["受到来自 #y伙伴牌 的伤害减少 #b", " % 。"]
   },
   "nearlmod:AttackUp": {
     "NAME": "攻击力上升",
-    "DESCRIPTIONS": ["造成的伤害提高 ", " % 。"]
+    "DESCRIPTIONS": ["造成的伤害提高 #b", " % 。"]
+  },
+  "nearlmod:CorrosionDamagePower": {
+    "NAME": "侵蚀损伤",
+    "DESCRIPTIONS": [
+      "累积至 #b1000 时，进入元素爆发：清空累积值，一回合内免疫 #y侵蚀损伤 ，受到 #b16 点伤害并失去 #b2 点敏捷。",
+      "当前累积 #b",
+      " 点。",
+      "当前处于元素爆发。"
+    ]
+  },
+  "nearlmod:DealCorrosionPower": {
+    "NAME": "侵蚀",
+    "DESCRIPTIONS": [
+      "每次攻击时造成相当于攻击意图数值 #b",
+      " 倍的 #y侵蚀损伤 。"
+    ]
   }
 }

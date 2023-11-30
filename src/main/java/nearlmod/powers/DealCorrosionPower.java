@@ -6,28 +6,28 @@ import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.localization.PowerStrings;
 import com.megacrit.cardcrawl.powers.AbstractPower;
 
-public class HintPower extends AbstractPower implements CloneablePowerInterface {
-    public static final String POWER_ID = "nearlmod:Hint";
+public class DealCorrosionPower extends AbstractPower implements CloneablePowerInterface {
+    public static final String POWER_ID = "nearlmod:DealCorrosionPower";
     public static final PowerStrings powerStrings = CardCrawlGame.languagePack.getPowerStrings(POWER_ID);
     public static final String NAME = powerStrings.NAME;
     public static final String[] DESCRIPTIONS = powerStrings.DESCRIPTIONS;
 
-    public HintPower(AbstractCreature owner) {
+    public DealCorrosionPower(AbstractCreature owner, int amount) {
         name = NAME;
         ID = POWER_ID;
         this.owner = owner;
         type = PowerType.BUFF;
-        updateDescription();
         this.loadRegion("curiosity");
-        priority = 0;
+        this.amount = amount;
+        updateDescription();
     }
     @Override
     public void updateDescription() {
-        description = DESCRIPTIONS[0];
+        description = DESCRIPTIONS[0] + amount + DESCRIPTIONS[1];
     }
 
     @Override
     public AbstractPower makeCopy() {
-        return new HintPower(owner);
+        return new DealCorrosionPower(owner, amount);
     }
 }

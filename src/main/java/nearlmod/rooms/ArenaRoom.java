@@ -46,6 +46,12 @@ public class ArenaRoom extends AbstractRoom {
         else if (enterTimes == 3) event = new CandleKnightBattle();
         else if (enterTimes == 4) event = new LastKheshigBattle();
         else if (enterTimes == 5) event = new BloodKnightBattle();
+        else {
+            int rand = AbstractDungeon.eventRng.random(0, 4);
+            if (rand <= 1) event = new LazuriteSquadBattle(enterTimes - 1);
+            else if (rand <= 3) event = new ArmorlessSquadBattle(enterTimes - 1);
+            else event = new WanderingKnightBattle(enterTimes - 1);
+        }
         event.onEnterRoom();
     }
     public void update() {

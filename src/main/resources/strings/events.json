@@ -73,5 +73,38 @@
       "[弃权] #r每场战斗开始时，召唤一个凝血之刃作为敌人。",
       "[离开]"
     ]
+  },
+  "nearlmod:LazuriteSquadBattle": {
+    "NAME": "遭遇青金小队",
+    "DESCRIPTIONS": [
+      "#g@咻！！@ 随着几支箭，无胄盟第三小队和清扫小队拦住了你的去路。",
+      "你跑路了。"
+    ],
+    "OPTIONS": [
+      "[战斗]",
+      "[离开]"
+    ]
+  },
+  "nearlmod:ArmorlessSquadBattle": {
+    "NAME": "遭遇无胄盟小队",
+    "DESCRIPTIONS": [
+      "无胄盟弩手出现在前方的拐角，黑暗中还有刺客在 ~蠢蠢欲动~ 。",
+      "你跑路了。"
+    ],
+    "OPTIONS": [
+      "[战斗]",
+      "[离开]"
+    ]
+  },
+  "nearlmod:WanderingKnightBattle": {
+    "NAME": "遭遇游荡骑士",
+    "DESCRIPTIONS": [
+      "你遇到了几位游荡在大骑士领的无名骑士，不对，他们之中怎么还有钳兽？",
+      "你跑路了。"
+    ],
+    "OPTIONS": [
+      "[战斗]",
+      "[离开]"
+    ]
   }
 }

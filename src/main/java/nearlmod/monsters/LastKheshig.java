@@ -54,7 +54,7 @@ public class LastKheshig extends AbstractMonster {
     @Override
     public void usePreBattleAction() {
         addToBot(new TalkAction(this, DIALOG[0], 0.3F, 3.0F));
-        addToBot(new ApplyPowerAction(this, this, new HintPower(this, 0)));
+        addToBot(new ApplyPowerAction(this, this, new HintPower(this)));
         addToBot(new SummonOrbAction(new Blemishine()));
         if (AbstractDungeon.ascensionLevel >= 15)
             spawnImitator();

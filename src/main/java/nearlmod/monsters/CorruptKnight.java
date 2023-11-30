@@ -28,13 +28,13 @@ public class CorruptKnight extends AbstractMonster {
 
     public CorruptKnight(float x, float y) {
         super(NAME, ID, 130, 25.0F, 0, 150.0F, 320.0F, IMAGE, x, y);
-        this.type = EnemyType.BOSS;
-        if (AbstractDungeon.ascensionLevel >= 9)
+        this.type = EnemyType.ELITE;
+        if (AbstractDungeon.ascensionLevel >= 8)
             setHp(145);
-        if (AbstractDungeon.ascensionLevel >= 19) {
+        if (AbstractDungeon.ascensionLevel >= 18) {
             this.damage.add(new DamageInfo(this, 20));
             this.damage.add(new DamageInfo(this, 99));
-        } else if (AbstractDungeon.ascensionLevel >= 4) {
+        } else if (AbstractDungeon.ascensionLevel >= 3) {
             this.damage.add(new DamageInfo(this, 20));
             this.damage.add(new DamageInfo(this, 90));
         } else {

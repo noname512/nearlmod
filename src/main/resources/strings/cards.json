@@ -230,8 +230,8 @@
     },
     "nearlmod:SheathedBlade": {
         "NAME": "收敛锋芒",
-        "DESCRIPTION": "将一半的 nearlmod:光 转化为下回合获得的 nearlmod:光 。 NL 将一张 #y光！ 置入你的手牌。",
-        "UPGRADE_DESCRIPTION": "将一半的 nearlmod:光 转化为下回合获得的 nearlmod:光 。 NL 将一张 #y光！ 和一张带有 消耗 和 虚无 的 #y切换形态+ 置入你的手牌。"
+        "DESCRIPTION": "将一半的 nearlmod:光 转化为下回合获得的 nearlmod:光 。 NL 将一张 *光！ 置入你的手牌。",
+        "UPGRADE_DESCRIPTION": "将一半的 nearlmod:光 转化为下回合获得的 nearlmod:光 。 NL 将一张 *光！ 和一张带有 消耗 和 虚无 的 *切换形态+ 置入你的手牌。"
     },
 
     "nearlmod:BraveTheDarkness": {

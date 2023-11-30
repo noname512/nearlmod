@@ -3,7 +3,6 @@ package nearlmod.monsters;
 import com.megacrit.cardcrawl.actions.animations.TalkAction;
 import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
 import com.megacrit.cardcrawl.actions.common.DamageAction;
-import com.megacrit.cardcrawl.actions.common.EscapeAction;
 import com.megacrit.cardcrawl.cards.DamageInfo;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
@@ -22,10 +21,10 @@ public class Roy extends AbstractMonster {
 
     public Roy(float x, float y) {
         super(NAME, ID, 100, 0, 0, 150.0F, 320.0F, IMAGE, x, y);
-        this.type = EnemyType.NORMAL;
-        if (AbstractDungeon.ascensionLevel >= 7)
+        this.type = EnemyType.ELITE;
+        if (AbstractDungeon.ascensionLevel >= 8)
             setHp(110);
-        if (AbstractDungeon.ascensionLevel >= 2)
+        if (AbstractDungeon.ascensionLevel >= 3)
             this.damage.add(new DamageInfo(this, 19));
         else
             this.damage.add(new DamageInfo(this, 17));
