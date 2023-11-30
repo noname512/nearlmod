@@ -24,6 +24,7 @@ import com.megacrit.cardcrawl.screens.custom.CustomMod;
 import nearlmod.cards.special.Beginning;
 import nearlmod.cards.special.BlemishinesFaintLight;
 import nearlmod.events.LaughAllYouWantEvent;
+import nearlmod.events.TheSurroundedEvent;
 import nearlmod.monsters.*;
 import nearlmod.patches.NearlEnum;
 import nearlmod.potions.*;
@@ -99,6 +100,11 @@ public class NLMOD implements EditCardsSubscriber, EditCharactersSubscriber, Edi
                 playerClass(NearlEnum.NEARL_CLASS).
                 dungeonID("TheCity").
                 //bonusCondition(() -> (AbstractDungeon.floorNum > 6)).
+                create());
+        BaseMod.addEvent(new AddEventParams.Builder(TheSurroundedEvent.ID, TheSurroundedEvent.class).
+                eventType(EventUtils.EventType.ONE_TIME).
+                playerClass(NearlEnum.NEARL_CLASS).
+                dungeonID("TheCity").
                 create());
     }
 
