@@ -19,7 +19,7 @@ public class BlazingSunsObeisance extends AbstractNearlCard {
     public static final String EXTENDED_DESCRIPTION = cardStrings.EXTENDED_DESCRIPTION[0];
     public static final String IMG_PATH = "images/cards/blazingsunsobeisance.png";
     private String baseDescription;
-    private static final int COST = 3;
+    private static final int COST = 2;
     private static final int BASE_DMG = 19;
 
     public BlazingSunsObeisance() {
@@ -27,6 +27,7 @@ public class BlazingSunsObeisance extends AbstractNearlCard {
                 CardType.ATTACK, AbstractCardEnum.NEARL_GOLD,
                 CardRarity.RARE, CardTarget.ALL_ENEMY);
         damage = baseDamage = BASE_DMG;
+        magicNumber = baseMagicNumber = 0;
         baseDescription = DESCRIPTION;
     }
 
@@ -38,16 +39,15 @@ public class BlazingSunsObeisance extends AbstractNearlCard {
         initializeDescription();
     }
 
-    @Override
-    public void applyPowers() {
-        super.applyPowers();
-        int formerDamage = damage;
+    private void preUpd() {
         if (upgraded)
             baseMagicNumber = (LightPower.amountForBattle + 1) / 2;
         else
             baseMagicNumber = (LightPower.amountForBattle + 2) / 3;
         baseDamage += magicNumber;
-        super.applyPowers();
+    }
+
+    private void postUpd(int formerDamage) {
         baseDamage -= magicNumber;
         magicNumber = damage - formerDamage;
         isMagicNumberModified = (magicNumber != baseMagicNumber);
@@ -55,6 +55,24 @@ public class BlazingSunsObeisance extends AbstractNearlCard {
         damage = formerDamage;
         rawDescription = baseDescription + EXTENDED_DESCRIPTION;
         initializeDescription();
+    }
+
+    @Override
+    public void applyPowers() {
+        super.applyPowers();
+        int formerDamage = damage;
+        preUpd();
+        super.applyPowers();
+        postUpd(formerDamage);
+    }
+
+    @Override
+    public void calculateCardDamage(AbstractMonster mo) {
+        super.calculateCardDamage(mo);
+        int formerDamage = damage;
+        preUpd();
+        super.calculateCardDamage(mo);
+        postUpd(formerDamage);
     }
 
     @Override

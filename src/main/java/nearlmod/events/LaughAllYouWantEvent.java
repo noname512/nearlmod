@@ -5,7 +5,6 @@ import com.megacrit.cardcrawl.events.AbstractImageEvent;
 import com.megacrit.cardcrawl.localization.EventStrings;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import com.megacrit.cardcrawl.monsters.MonsterGroup;
-import com.megacrit.cardcrawl.relics.AbstractRelic;
 import nearlmod.monsters.Monique;
 import nearlmod.monsters.Platinum;
 import nearlmod.monsters.Roy;
@@ -45,6 +44,7 @@ public class LaughAllYouWantEvent extends AbstractImageEvent {
                 case 1:
                     imageEventText.updateBodyText(DESCRIPTIONS[2]);
                     screen = CurScreen.LEAVE;
+                    imageEventText.removeDialogOption(0);
                     logMetric(ID, "Leave");
                     openMap();
                     break;
