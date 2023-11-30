@@ -58,7 +58,7 @@ public class CandleKnightBattle extends AbstractImageEvent {
                         AbstractDungeon.getCurrRoom().rewards.clear();
                         AbstractNearlCard.addSpecificCardsToReward(card);
                         AbstractDungeon.getCurrRoom().addRelicToRewards(new Marigold());
-                        AbstractDungeon.getCurrRoom().addGoldToRewards(99);
+                        AbstractDungeon.getCurrRoom().addGoldToRewards(65);
                         AbstractDungeon.lastCombatMetricKey = ID;
                         AbstractDungeon.getCurrRoom().phase = AbstractRoom.RoomPhase.COMBAT;
                         AbstractDungeon.getCurrRoom().monsters = new MonsterGroup(new CandleKnight());

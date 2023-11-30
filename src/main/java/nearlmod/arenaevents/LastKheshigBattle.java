@@ -34,7 +34,7 @@ public class LastKheshigBattle extends AbstractImageEvent {
                 logMetric(ID, "Fight");
                 AbstractDungeon.getCurrRoom().rewards.clear();
                 AbstractDungeon.getCurrRoom().addRelicToRewards(AbstractRelic.RelicTier.UNCOMMON);
-                AbstractDungeon.getCurrRoom().addGoldToRewards(50); // TODO 确定金币数量
+                AbstractDungeon.getCurrRoom().addGoldToRewards(70);
                 AbstractDungeon.lastCombatMetricKey = ID;
                 AbstractDungeon.getCurrRoom().phase = AbstractRoom.RoomPhase.COMBAT;
                 AbstractDungeon.getCurrRoom().monsters = new MonsterGroup(new LastKheshig(0.0F, 0.0F));

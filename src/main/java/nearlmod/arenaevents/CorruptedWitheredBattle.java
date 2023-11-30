@@ -38,7 +38,9 @@ public class CorruptedWitheredBattle extends AbstractImageEvent {
                 AbstractDungeon.getCurrRoom().rewards.clear();
                 AbstractNearlCard.addSpecificCardsToReward(new Beginning());
                 AbstractDungeon.getCurrRoom().addRelicToRewards(AbstractRelic.RelicTier.COMMON);
-                AbstractDungeon.getCurrRoom().addGoldToRewards(50); // TODO 确定金币数量
+                int gold = 48;
+                if (AbstractDungeon.ascensionLevel >= 13) gold = 36;
+                AbstractDungeon.getCurrRoom().addGoldToRewards(gold);
                 AbstractDungeon.lastCombatMetricKey = ID;
                 AbstractDungeon.getCurrRoom().phase = AbstractRoom.RoomPhase.COMBAT;
                 AbstractDungeon.getCurrRoom().monsters = new MonsterGroup(new AbstractMonster[] { new CorruptKnight(-200.0F, 0.0F), new WitheredKnight(80.0F, 0.0F) });
