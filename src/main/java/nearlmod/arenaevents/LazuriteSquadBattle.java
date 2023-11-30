@@ -43,6 +43,9 @@ public class LazuriteSquadBattle extends AbstractImageEvent {
                 AbstractDungeon.lastCombatMetricKey = ID;
                 AbstractDungeon.getCurrRoom().phase = AbstractRoom.RoomPhase.COMBAT;
                 AbstractDungeon.getCurrRoom().monsters = new MonsterGroup(new AbstractMonster[] { new ArmorlessThirdSquad(-200.0F, 0.0F, monsterLevel), new ArmorlessCleanupSquad(80.0F, 0.0F, monsterLevel) });
+                AbstractDungeon.getCurrRoom().rewards.clear();
+                AbstractDungeon.getCurrRoom().addGoldToRewards(AbstractDungeon.miscRng.random(30, 40));
+                AbstractDungeon.getCurrRoom().addRelicToRewards(AbstractDungeon.returnRandomRelicTier());
                 enterCombatFromImage();
                 return;
             case 1:

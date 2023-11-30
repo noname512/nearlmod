@@ -44,6 +44,9 @@ public class WanderingKnightBattle extends AbstractImageEvent {
                         new KnightShielder(-360.0F, 0.0F, monsterLevel),
                         new UndertideGloompincer(-130.0F, 0.0F, monsterLevel),
                         new KnightTerritoryHibernator(100.0F, 0.0F, monsterLevel)});
+                AbstractDungeon.getCurrRoom().rewards.clear();
+                AbstractDungeon.getCurrRoom().addGoldToRewards(AbstractDungeon.miscRng.random(30, 40));
+                AbstractDungeon.getCurrRoom().addRelicToRewards(AbstractDungeon.returnRandomRelicTier());
                 enterCombatFromImage();
                 return;
             case 1:

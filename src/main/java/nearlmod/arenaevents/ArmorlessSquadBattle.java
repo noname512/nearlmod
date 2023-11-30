@@ -51,6 +51,9 @@ public class ArmorlessSquadBattle extends AbstractImageEvent {
                             new ArmorlessAssassin(-200.0F, 0.0F, monsterLevel),
                             new ArmorlessCrossbowman(80.0F, 0.0F, monsterLevel) });
                 enterCombatFromImage();
+                AbstractDungeon.getCurrRoom().rewards.clear();
+                AbstractDungeon.getCurrRoom().addGoldToRewards(AbstractDungeon.miscRng.random(30, 40));
+                AbstractDungeon.getCurrRoom().addRelicToRewards(AbstractDungeon.returnRandomRelicTier());
                 return;
             case 1:
                 logMetric(ID, "Leave");
