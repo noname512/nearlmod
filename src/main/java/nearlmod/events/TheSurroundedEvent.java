@@ -40,7 +40,7 @@ public class TheSurroundedEvent extends AbstractImageEvent {
                         this.imageEventText.updateBodyText(DESCRIPTIONS[1]);
                         this.screen = CurScreen.FIGHT;
                         logMetric(ID, "Fight");
-                        (AbstractDungeon.getCurrRoom()).monsters = new MonsterGroup(new AbstractMonster[]{new ArmorlessAssassin(-350.0F, 0.0F, 0), new ArmorlessThirdSquad(-125.0F, 0.0F, 0), new UndertideGloompincer(80.0F, 0.0F, 0)});
+                        (AbstractDungeon.getCurrRoom()).monsters = new MonsterGroup(new AbstractMonster[]{new ArmorlessAssassin(-350.0F, 0.0F, 0), new ArmorlessThirdSquad(-125.0F, 0.0F, 0), new KnightTerritoryHibernator(80.0F, 0.0F, 0)});
                         AbstractDungeon.lastCombatMetricKey = "The Surrounded Battle";
                         AbstractDungeon.getCurrRoom().rewards.clear();
                         AbstractNearlCard.addSpecificCardsToReward(new PersonalCharmSp());
