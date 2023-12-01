@@ -51,6 +51,6 @@ public class KnightShielder extends AbstractMonster {
         if (AbstractDungeon.aiRng.randomBoolean())
             setMove((byte)1, Intent.ATTACK, damage.get(0).base);
         else
-            setMove((byte)2, Intent.BUFF);
+            setMove((byte)2, Intent.DEFEND);
     }
 }

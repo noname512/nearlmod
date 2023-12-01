@@ -7,7 +7,7 @@
   "nearlmod:PegasusHalo": {
     "NAME": "天马光环",
     "FLAVOR": "只要她还屹立在战场上，就没有敌人能夺走我们的胜利。",
-    "DESCRIPTIONS": ["替换 #r治疗效果大提升 。你获得格挡时也获得其数值 #b25% 的 #y临时生命 。"]
+    "DESCRIPTIONS": ["替换 #r治疗效果大提升 。你每获得 #b4 点格挡，就获得 #b1 点 #y临时生命 。"]
   },
   "nearlmod:Marigold": {
     "NAME": "金盏花",

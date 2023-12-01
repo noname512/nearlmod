@@ -20,6 +20,7 @@ public class PegasusHalo extends CustomRelic {
     public static final Texture IMG_OUTLINE = new Texture("images/relics/cureup_p.png");
     public PegasusHalo() {
         super(ID, IMG, IMG_OUTLINE, RelicTier.BOSS, LandingSound.FLAT);
+        this.counter = 0;
     }
 
     @Override
@@ -31,7 +32,9 @@ public class PegasusHalo extends CustomRelic {
     public int onPlayerGainedBlock(float blockAmount) {
         flash();
         AbstractPlayer p = AbstractDungeon.player;
-        addToBot(new AddTemporaryHPAction(p, p, MathUtils.floor(blockAmount / 4)));
+        int sumBlock = this.counter + MathUtils.floor(blockAmount);
+        addToBot(new AddTemporaryHPAction(p, p, sumBlock / 4));
+        this.counter = sumBlock % 4;
         return MathUtils.floor(blockAmount);
     }
 

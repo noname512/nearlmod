@@ -35,20 +35,20 @@ public class KnightTerritoryHibernator extends AbstractMonster {
 
     @Override
     public void usePreBattleAction() {
-        addToBot(new ApplyPowerAction(this, this, new MetallicizePower(this, 8)));
     }
 
     @Override
     public void takeTurn() {
         if (nextMove == 1)
             addToBot(new DamageAction(AbstractDungeon.player, damage.get(0)));
+        // 真的不考虑写一个 if 没有队友 && 自己还睡着 then 直接获取奖励吗（x）
         getMove(0);
     }
 
     @Override
     protected void getMove(int i) {
         if (asleep)
-            setMove((byte)2, Intent.UNKNOWN);
+            setMove((byte)2, Intent.SLEEP);
         else
             setMove((byte)1, Intent.ATTACK, damage.get(0).base);
     }
@@ -58,7 +58,7 @@ public class KnightTerritoryHibernator extends AbstractMonster {
         super.damage(info);
         if (asleep && currentHealth < maxHealth) {
             asleep = false;
-            setMove((byte)1, Intent.ATTACK, damage.get(0).base);
+            setMove((byte)3, Intent.STUN);
             createIntent();
         }
     }
