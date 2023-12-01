@@ -56,6 +56,9 @@ public class LastKheshig extends AbstractMonster {
         addToBot(new TalkAction(this, DIALOG[0], 0.3F, 3.0F));
         addToBot(new ApplyPowerAction(this, this, new HintPower(this)));
         addToBot(new SummonOrbAction(new Blemishine()));
+        if (AbstractDungeon.player.hasRelic("nearlmod:LateLight")) {
+            isBlemishineSurvive = false;
+        }
         if (AbstractDungeon.ascensionLevel >= 15)
             spawnImitator();
     }
@@ -131,7 +134,7 @@ public class LastKheshig extends AbstractMonster {
         if (AbstractDungeon.aiRng.random(0, 1) == 0) {
             setMove((byte) 1, Intent.ATTACK, this.damage.get(0).base);
         } else {
-            setMove((byte) 3, Intent.ATTACK_DEBUFF, this.damage.get(1).base);
+            setMove((byte) 2, Intent.UNKNOWN);  // 如果已经迟来的光了会有问题，改成召唤算了
         }
     }
 
