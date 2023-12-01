@@ -166,8 +166,8 @@
     },
     "nearlmod:ShieldAndShelter": {
         "NAME": "盾与避难所",
-        "DESCRIPTION": "获得 3 点 格挡 ， 3 层 nearlmod:光 和 1 点 nearlmod:部署费用 X 次。",
-        "UPGRADE_DESCRIPTION": "获得 3 点 格挡 ， 3 层 nearlmod:光 和 1 点 nearlmod:部署费用 X+1 次。"
+        "DESCRIPTION": "获得 !B! 点 格挡 ， 3 层 nearlmod:光 和 1 点 nearlmod:部署费用 X 次。",
+        "UPGRADE_DESCRIPTION": "获得 !B! 点 格挡 ， 3 层 nearlmod:光 和 1 点 nearlmod:部署费用 X+1 次。"
     },
     "nearlmod:BreakThroughFetters": {
         "NAME": "冲破桎梏",
@@ -272,12 +272,16 @@
     "nearlmod:FullSpeedAhead": {
         "NAME" : "全力冲锋",
         "DESCRIPTION": " 造成你当前 格挡 值的伤害。 NL nearlmod:守护 ：进入 nearlmod:无畏 并额外造成你当前 stslib:临时生命 值的伤害。",
-        "UPGRADE_DESCRIPTION": "（当前造成 !D! 点）"
+        "UPGRADE_DESCRIPTION": "（当前造成 !D! 点）",
+        "EXTENDED_DESCRIPTION": [
+            "造成 !D! 点伤害。",
+            "造成 !D! 点伤害。 NL 切换至 nearlmod:无畏 。"
+        ]
     },
     "nearlmod:BlazingSun'sObeisance": {
         "NAME": "耀阳颔首",
-        "DESCRIPTION": "对所有敌人造成 !D! 加上本场战斗中使用过的 nearlmod:光 层数三分之一的伤害。",
-        "UPGRADE_DESCRIPTION": "对所有敌人造成 !D! 加上本场战斗中使用过的 nearlmod:光 层数一半的伤害。",
+        "DESCRIPTION": "对所有敌人造成 !D! 点伤害。 NL 额外造成本场战斗中使用过的 nearlmod:光 层数三分之一的伤害。",
+        "UPGRADE_DESCRIPTION": "对所有敌人造成 !D! 点伤害。 NL 额外造成本场战斗中使用过的 nearlmod:光 层数一半的伤害。",
         "EXTENDED_DESCRIPTION": [
             " NL （当前额外造成 !M! 点伤害）"
         ]
