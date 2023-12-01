@@ -1,4 +1,4 @@
-package nearlmod.cards;
+package nearlmod.cards.special;
 
 import com.megacrit.cardcrawl.actions.watcher.ChooseOneAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
@@ -6,7 +6,7 @@ import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.localization.CardStrings;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
-import nearlmod.cards.special.SummonPinusFriend;
+import nearlmod.cards.AbstractNearlCard;
 import nearlmod.orbs.*;
 import nearlmod.patches.NearlTags;
 

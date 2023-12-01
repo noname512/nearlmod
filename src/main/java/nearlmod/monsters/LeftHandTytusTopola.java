@@ -62,7 +62,6 @@ public class LeftHandTytusTopola extends AbstractMonster {
                 r.onMonsterDeath(this);
 
             this.addToTop(new ClearCardQueueAction());
-            AbstractDungeon.actionManager.addToBottom(new RemoveSpecificPowerAction(this, this, "nearlmod:Reborn"));
             this.setMove((byte)99, Intent.UNKNOWN);
             this.createIntent();
             this.applyPowers();
@@ -73,6 +72,7 @@ public class LeftHandTytusTopola extends AbstractMonster {
         AbstractPlayer p = AbstractDungeon.player;
         if (this.nextMove == 99) {
             this.halfDead = false;
+            AbstractDungeon.actionManager.addToBottom(new RemoveSpecificPowerAction(this, this, "nearlmod:Reborn"));
             AbstractDungeon.actionManager.addToBottom(new HealAction(this, this, this.maxHealth));
             AbstractDungeon.actionManager.addToBottom(new CanLoseAction());
             if (AbstractDungeon.ascensionLevel >= 15) {

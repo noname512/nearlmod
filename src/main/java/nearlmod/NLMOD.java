@@ -15,17 +15,15 @@ import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.helpers.*;
 import com.megacrit.cardcrawl.localization.*;
-import com.megacrit.cardcrawl.monsters.AbstractMonster;
-import com.megacrit.cardcrawl.monsters.MonsterGroup;
 import com.megacrit.cardcrawl.orbs.AbstractOrb;
 import com.megacrit.cardcrawl.relics.AbstractRelic;
 import com.megacrit.cardcrawl.rooms.AbstractRoom;
 import com.megacrit.cardcrawl.screens.custom.CustomMod;
 import nearlmod.cards.special.Beginning;
 import nearlmod.cards.special.BlemishinesFaintLight;
+import nearlmod.cards.special.PersonalCharmSp;
 import nearlmod.events.LaughAllYouWantEvent;
 import nearlmod.events.TheSurroundedEvent;
-import nearlmod.monsters.*;
 import nearlmod.patches.NearlEnum;
 import nearlmod.potions.*;
 import nearlmod.relics.*;
@@ -105,6 +103,8 @@ public class NLMOD implements EditCardsSubscriber, EditCharactersSubscriber, Edi
                 eventType(EventUtils.EventType.ONE_TIME).
                 playerClass(NearlEnum.NEARL_CLASS).
                 dungeonID("TheCity").
+                dungeonID("TheBeyond").
+                bonusCondition(() -> (AbstractDungeon.floorNum <= 40)).
                 create());
     }
 

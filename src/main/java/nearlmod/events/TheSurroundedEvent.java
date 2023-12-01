@@ -7,11 +7,10 @@ import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import com.megacrit.cardcrawl.monsters.MonsterGroup;
 import nearlmod.actions.SummonOrbAction;
 import nearlmod.cards.AbstractNearlCard;
-import nearlmod.cards.PersonalCharmSp;
+import nearlmod.cards.special.PersonalCharmSp;
 import nearlmod.monsters.*;
 import nearlmod.orbs.Flametail;
 import nearlmod.orbs.Wildmane;
-import nearlmod.relics.Marigold;
 
 public class TheSurroundedEvent extends AbstractImageEvent {
     public static final String ID = "nearlmod:TheSurroundedEvent";

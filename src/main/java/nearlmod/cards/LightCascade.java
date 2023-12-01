@@ -9,6 +9,7 @@ import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.localization.CardStrings;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
+import nearlmod.actions.PureDamageAllEnemiesAction;
 import nearlmod.patches.AbstractCardEnum;
 import nearlmod.patches.NearlTags;
 import nearlmod.powers.LightPower;
@@ -38,7 +39,7 @@ public class LightCascade extends AbstractNearlCard {
         LightPower.changeToShadow(true);
         if (p.stance.ID.equals(DefStance.STANCE_ID))
             addToBot(new ChangeStanceAction(new AtkStance()));
-        addToBot(new DamageAllEnemiesAction(p, amount, DamageInfo.DamageType.THORNS, AbstractGameAction.AttackEffect.NONE));
+        addToBot(new PureDamageAllEnemiesAction(p, amount, this.name, AbstractGameAction.AttackEffect.NONE, DamageInfo.DamageType.THORNS));
     }
 
     @Override
