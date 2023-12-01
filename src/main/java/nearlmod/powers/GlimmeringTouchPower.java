@@ -49,7 +49,7 @@ public class GlimmeringTouchPower extends AbstractPower implements CloneablePowe
     public void atStartOfTurn() {
         amount--;
         if (amount == 0) {
-            addToTop(new PureDamageAllEnemiesAction(owner, damage, Viviana.ORB_ID + AbstractFriendCard.damageSuffix, AbstractGameAction.AttackEffect.FIRE));
+            addToTop(new PureDamageAllEnemiesAction(owner, damage, Viviana.ORB_ID + AbstractFriendCard.damageSuffix, AbstractGameAction.AttackEffect.FIRE, DamageInfo.DamageType.THORNS));
             addToTop(new RemoveSpecificPowerAction(owner, owner, this));
             addToTop(new ApplyPowerAction(owner, owner, new LightPower(owner, 10)));
         }

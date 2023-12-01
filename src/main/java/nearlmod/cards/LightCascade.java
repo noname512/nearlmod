@@ -4,6 +4,7 @@ import com.megacrit.cardcrawl.actions.AbstractGameAction;
 import com.megacrit.cardcrawl.actions.common.DamageAllEnemiesAction;
 import com.megacrit.cardcrawl.actions.watcher.ChangeStanceAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
+import com.megacrit.cardcrawl.cards.DamageInfo;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.localization.CardStrings;
@@ -26,7 +27,7 @@ public class LightCascade extends AbstractNearlCard {
 
     public LightCascade() {
         super(ID, NAME, IMG_PATH, COST, DESCRIPTION,
-                CardType.ATTACK, AbstractCardEnum.NEARL_GOLD,
+                CardType.SKILL, AbstractCardEnum.NEARL_GOLD,
                 CardRarity.UNCOMMON, CardTarget.ALL_ENEMY);
         tags.add(NearlTags.IS_USE_LIGHT);
     }
@@ -37,7 +38,7 @@ public class LightCascade extends AbstractNearlCard {
         LightPower.changeToShadow(true);
         if (p.stance.ID.equals(DefStance.STANCE_ID))
             addToBot(new ChangeStanceAction(new AtkStance()));
-        addToBot(new DamageAllEnemiesAction(p, amount, damageTypeForTurn, AbstractGameAction.AttackEffect.NONE));
+        addToBot(new DamageAllEnemiesAction(p, amount, DamageInfo.DamageType.THORNS, AbstractGameAction.AttackEffect.NONE));
     }
 
     @Override

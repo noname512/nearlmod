@@ -45,12 +45,12 @@ public abstract class AbstractFriendCard extends AbstractNearlCard {
         if (isSecondMagicNumberUseTrust)
             secondMagicNumber = baseSecondMagicNumber + (magicNumber - baseMagicNumber);
         isMagicNumberModified = (magicNumber != baseMagicNumber);
-        isSecondMagicNumberUseTrust = (secondMagicNumber != baseSecondMagicNumber);
+        isSecondMagicNumberModified = (secondMagicNumber != baseSecondMagicNumber);
     }
 
     @Override
     public void calculateCardDamage(AbstractMonster mo) {
-        applyFriendPower();
+        applyPowers();
         magicNumber = calculateSingleDamage(mo, magicNumber);
         isMagicNumberModified = (magicNumber != baseMagicNumber);
     }
