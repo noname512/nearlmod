@@ -59,14 +59,13 @@ public class TheSurroundedEvent extends AbstractImageEvent {
                         imageEventText.updateDialogOption(0, OPTIONS[2]);
                         imageEventText.clearRemainingOptions();
                         break;
-                    case 2:
-                        logMetric(ID, "Leave");
-                        openMap();
-                        break;
                 }
                 this.imageEventText.clearRemainingOptions();
                 return;
+            default:
+                openMap();
         }
         openMap();
     }
 }
+
