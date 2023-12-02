@@ -7,6 +7,8 @@ import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.localization.CardStrings;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
+import com.megacrit.cardcrawl.relics.ChemicalX;
+import com.megacrit.cardcrawl.ui.panels.EnergyPanel;
 import nearlmod.actions.GainCostAction;
 import nearlmod.patches.AbstractCardEnum;
 import nearlmod.patches.NearlTags;
@@ -28,6 +30,7 @@ public class ShieldAndShelter extends AbstractNearlCard {
         super(ID, NAME, IMG_PATH, COST, DESCRIPTION,
                 CardType.SKILL, AbstractCardEnum.NEARL_GOLD,
                 CardRarity.UNCOMMON, CardTarget.SELF);
+        block = baseBlock = BLOCK_AMT;
         tags.add(NearlTags.IS_GAIN_LIGHT);
     }
 
@@ -36,9 +39,19 @@ public class ShieldAndShelter extends AbstractNearlCard {
         int amount = energyOnUse;
         if (upgraded)
             amount++;
-        addToBot(new GainBlockAction(p, amount * BLOCK_AMT));
-        addToBot(new ApplyPowerAction(p, p, new LightPower(p, amount * LIGHT_AMT)));
-        addToBot(new GainCostAction(amount * COST_AMT));
+        if (p.hasRelic(ChemicalX.ID)) {
+            amount += 2;
+            p.getRelic(ChemicalX.ID).flash();
+        }
+        if (amount > 0) {
+            for (int i = 1; i <= amount; i++) {
+                addToBot(new GainBlockAction(p, block));
+                addToBot(new ApplyPowerAction(p, p, new LightPower(p, LIGHT_AMT)));
+                addToBot(new GainCostAction(COST_AMT));
+            }
+            if (!freeToPlayOnce)
+                p.energy.use(EnergyPanel.totalCount);
+        }
     }
 
     @Override
