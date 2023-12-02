@@ -38,7 +38,7 @@ public class GlimmeringTouch extends AbstractFriendCard {
         for (AbstractOrb orb : p.orbs)
             if (orb instanceof Viviana)
                 ((Viviana)orb).startCharging(upgraded? 1 : 2);
-        addToBot(new ApplyPowerAction(p, p, new GlimmeringTouchPower(p, upgraded? 1 : 2, magicNumber)));
+        addToBot(new ApplyPowerAction(p, p, new GlimmeringTouchPower(p, upgraded? 1 : 2, magicNumber, secondMagicNumber)));
         addToBot(new UseShadowAction(p));
     }
 

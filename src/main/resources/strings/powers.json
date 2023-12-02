@@ -1,43 +1,43 @@
 {
   "nearlmod:LightPower": {
     "NAME": "光",
-    "DESCRIPTIONS": ["使用时对敌人造成", "点伤害。", "使用时获得", "点 临时生命 。"]
+    "DESCRIPTIONS": ["使用时对敌人造成 #b", " 点伤害。", "使用时获得 #b", " 点 #y临时生命 。"]
   },
   "nearlmod:AtkMode": {
     "NAME": "无畏",
-    "DESCRIPTIONS": ["处于此形态时，获得", "点 力量 。"]
+    "DESCRIPTIONS": ["处于此形态时，获得 #b", " 点 #y力量 。"]
   },
   "nearlmod:DefMode": {
     "NAME": "守护",
-    "DESCRIPTIONS": ["处于此形态时，获得", "点 敏捷 。"]
+    "DESCRIPTIONS": ["处于此形态时，获得 #b", " 点 #y敏捷 。"]
   },
   "nearlmod:FlamingEdgePower": {
     "NAME": "灿焰长刀",
-    "DESCRIPTIONS": ["每当你进入 [#EFC851]无畏[] 时，获得", "层 光 。"]
+    "DESCRIPTIONS": ["每当你进入 #y无畏 时，获得 #b", " 层 #y光 。"]
   },
   "nearlmod:GlimmeringTouchPower": {
     "NAME": "微光之触",
-    "DESCRIPTIONS": ["回合后，对所有敌人造成", "点伤害。"]
+    "DESCRIPTIONS": ["回合后，对所有敌人造成 #b", " 点伤害，并获得 #b", " 层 #y光 。"]
   },
   "nearlmod:SanctuaryPower": {
     "NAME": "圣域",
-    "DESCRIPTIONS": ["回合内受到的伤害减半。"]
+    "DESCRIPTIONS": ["#b"," 回合内受到的伤害减半。"]
   },
   "nearlmod:WFPPower": {
     "NAME": "白恶魔的庇护",
-    "DESCRIPTIONS": ["你不会再被 脆弱 、 虚弱 、 易伤 。 NL 如果你同时拥有 [#EFC851]黑恶魔的庇护[] ，每回合开始时获得一层 人工制品 。"]
+    "DESCRIPTIONS": ["你不会再被 #y脆弱 、 #y虚弱 、 #y易伤 。 NL 如果你同时拥有 #y黑恶魔的庇护 ，每回合开始时获得一层 #y人工制品 。"]
   },
   "nearlmod:CreedFieldPower": {
     "NAME": "教条立场",
-    "DESCRIPTIONS": ["回合内每次受到的伤害减少", "点。"]
+    "DESCRIPTIONS": ["回合内每次受到的伤害减少 #b", " 点。"]
   },
   "nearlmod:BFPPower": {
     "NAME": "黑恶魔的庇护",
-    "DESCRIPTIONS": ["你每回合第一张非伙伴攻击牌会随机给予目标一层 易伤 或 虚弱 。如果你同时拥有 [#EFC851]白恶魔的庇护[] ，改为给予目标一层 易伤 和 虚弱 。"]
+    "DESCRIPTIONS": ["你每回合第一张非伙伴攻击牌会随机给予目标一层 #y易伤 或 #y虚弱 。如果你同时拥有 #y白恶魔的庇护 ，改为给予目标一层 易伤 和 虚弱 。"]
   },
   "nearlmod:Exsanguination": {
     "NAME": "血归",
-    "DESCRIPTIONS": ["你的 力量 无法超过 0 。"]
+    "DESCRIPTIONS": ["你的 #y力量 无法超过 #b0 。"]
   },
   "nearlmod:Invincible": {
     "NAME": "伙伴们的庇护",
@@ -49,39 +49,39 @@
   },
   "nearlmod:Poem'sLooks": {
     "NAME": "诗的容貌",
-    "DESCRIPTIONS": ["你使用 [#EFC851]光[] 后，获得等量的 [#EFC851]影[] ；使用 [#EFC851]影[] 后，获得等量的 [#EFC851]光[] 。"]
+    "DESCRIPTIONS": ["你使用 #y光 后，获得等量的 #y影 ；使用 #y影 后，获得等量的 #y光 。"]
   },
   "nearlmod:LoseThornsPower": {
     "NAME": "蜕刺",
-    "DESCRIPTIONS": ["下回合开始时，失去 #b", " 层 荆棘 。"]
+    "DESCRIPTIONS": ["下回合开始时，失去 #b", " 层 #y荆棘 。"]
   },
   "nearlmod:AllySupportPower": {
     "NAME": "同盟支援",
-    "DESCRIPTIONS": ["你或者其他 [#EFC851]伙伴[] 对敌人造成伤害时，远牙对其造成 #b", " 点伤害。"]
+    "DESCRIPTIONS": ["你或者其他 #y伙伴 对敌人造成伤害时，远牙对其造成 #b", " 点伤害。"]
   },
   "nearlmod:BombardmentStudiesPower": {
     "NAME": "炮术研习",
-    "DESCRIPTIONS": ["你的 [#EFC851]专注轰击[] 数值增加 #b", " 点。"]
+    "DESCRIPTIONS": ["你的 #y专注轰击 数值增加 #b", " 点。"]
   },
   "nearlmod:ClosedHope": {
     "NAME": "封闭的希望",
-    "DESCRIPTIONS": ["你的回合开始时，如果你仍有 格挡 ，获得 #b", " 层 [#EFC851]人工制品[] 。"]
+    "DESCRIPTIONS": ["你的回合开始时，如果你仍有 #y格挡 ，获得 #b", " 层 #y人工制品 。"]
   },
   "nearlmod:CostNextTurnPower": {
     "NAME": "部署费用提升",
-    "DESCRIPTIONS": ["下一回合获得 #b", " 点 [#EFC851]部署费用[] 。"]
+    "DESCRIPTIONS": ["下一回合获得 #b", " 点 #y部署费用 。"]
   },
   "nearlmod:DefensiveFormationPower": {
     "NAME": "防御阵型",
-    "DESCRIPTIONS": ["本回合内，你每打出一张牌后，进入 [#EFC851]守护[] 。"]
+    "DESCRIPTIONS": ["本回合内，你每打出一张牌后，进入 #y守护 。"]
   },
   "nearlmod:BladeOfBlazingSunPower": {
     "NAME": "耀阳锋刃",
-    "DESCRIPTIONS": ["你处于 [#EFC851]无畏[] 时，每打出一张攻击牌，获得 #b", " 层 [#EFC851]光[] 。"]
+    "DESCRIPTIONS": ["你处于 #y无畏 时，每打出一张攻击牌，获得 #b", " 层 #y光 。"]
   },
   "nearlmod:DoubleBoss": {
     "NAME": "双子骑士",
-    "DESCRIPTIONS": ["这名敌人和凋零骑士是双子骑士，你击败其中任何一个，另一个就会狂暴！", "这名敌人已狂暴！攻击增加 80% ，攻击段数翻倍。","这名敌人和腐败骑士是双子骑士，你击败其中任何一个，另一个就会狂暴！"]
+    "DESCRIPTIONS": ["这名敌人和凋零骑士是双子骑士，你击败其中任何一个，另一个就会狂暴！", "这名敌人已狂暴！攻击增加 #b80% ，攻击段数翻倍。","这名敌人和腐败骑士是双子骑士，你击败其中任何一个，另一个就会狂暴！"]
   },
   "nearlmod:Reborn": {
     "NAME": "复活",
@@ -109,11 +109,11 @@
   },
   "nearlmod:Duel": {
     "NAME": "决战",
-    "DESCRIPTIONS": ["受到来自 #y伙伴牌 的伤害减少 #b", " % 。"]
+    "DESCRIPTIONS": ["受到来自 #y伙伴牌 的伤害减少 #b", "% 。"]
   },
   "nearlmod:AttackUp": {
     "NAME": "攻击力上升",
-    "DESCRIPTIONS": ["造成的伤害提高 #b", " % 。"]
+    "DESCRIPTIONS": ["造成的伤害提高 #b", "% 。"]
   },
   "nearlmod:CorrosionDamagePower": {
     "NAME": "侵蚀损伤",
