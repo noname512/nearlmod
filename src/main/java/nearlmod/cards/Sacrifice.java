@@ -22,7 +22,7 @@ public class Sacrifice extends AbstractNearlCard {
     private static final int COST = 1;
     private static final int ATTACK_DMG = 19;
     private static final int POWER_AMT = 3;
-    private static final int UPGRADE_PLUS_DMG = 4;
+    private static final int UPGRADE_PLUS_DMG = 6;
 
     public Sacrifice() {
         super(ID, NAME, IMG_PATH, COST, DESCRIPTION,
