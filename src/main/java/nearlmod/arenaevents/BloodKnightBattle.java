@@ -1,6 +1,7 @@
 package nearlmod.arenaevents;
 
 import com.megacrit.cardcrawl.cards.AbstractCard;
+import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.core.Settings;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
@@ -11,8 +12,9 @@ import com.megacrit.cardcrawl.relics.AbstractRelic;
 import com.megacrit.cardcrawl.rooms.AbstractRoom;
 import nearlmod.cards.AbstractNearlCard;
 import nearlmod.cards.WayToChampion;
+import nearlmod.cards.special.MedalOfChampion;
 import nearlmod.monsters.BloodKnight;
-import nearlmod.relics.BloodEntangle;
+import nearlmod.relics.*;
 
 public class BloodKnightBattle extends AbstractImageEvent {
     public static final String ID = "nearlmod:BloodKnightBattle";
@@ -50,6 +52,9 @@ public class BloodKnightBattle extends AbstractImageEvent {
                 int gold = 160;
                 if (AbstractDungeon.ascensionLevel >= 13) gold = 120;
                 AbstractDungeon.getCurrRoom().addGoldToRewards(gold);
+                AbstractPlayer p = AbstractDungeon.player;
+                if (!p.hasRelic(LateLight.ID) && !p.hasRelic(Revenge.ID) && !p.hasRelic(NormalPerson.ID) && !p.hasRelic(ImaginaryFear.ID))
+                    AbstractNearlCard.addSpecificCardsToReward(new MedalOfChampion());
                 AbstractDungeon.lastCombatMetricKey = ID;
                 AbstractDungeon.getCurrRoom().phase = AbstractRoom.RoomPhase.COMBAT;
                 AbstractDungeon.getCurrRoom().monsters = new MonsterGroup(new BloodKnight(0.0F, 0.0F));

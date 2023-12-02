@@ -19,11 +19,7 @@ import com.megacrit.cardcrawl.orbs.AbstractOrb;
 import com.megacrit.cardcrawl.relics.AbstractRelic;
 import com.megacrit.cardcrawl.rooms.AbstractRoom;
 import com.megacrit.cardcrawl.screens.custom.CustomMod;
-import nearlmod.cards.special.Beginning;
-import nearlmod.cards.special.BlemishinesFaintLight;
-import nearlmod.cards.special.PersonalCharmSp;
-import nearlmod.events.LaughAllYouWantEvent;
-import nearlmod.events.TheSurroundedEvent;
+import nearlmod.events.*;
 import nearlmod.patches.NearlEnum;
 import nearlmod.potions.*;
 import nearlmod.relics.*;
@@ -31,6 +27,7 @@ import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 import nearlmod.cards.*;
 import nearlmod.cards.friendcards.*;
+import nearlmod.cards.special.*;
 import nearlmod.characters.Nearl;
 import java.lang.reflect.Type;
 import java.nio.charset.StandardCharsets;
@@ -254,6 +251,7 @@ public class NLMOD implements EditCardsSubscriber, EditCharactersSubscriber, Edi
         BaseMod.addCard(new Beginning()); // 起点
         BaseMod.addCard(new BlemishinesFaintLight()); // 瑕光微明
         BaseMod.addCard(new PersonalCharmSp()); // 个人魅力SP
+        BaseMod.addCard(new MedalOfChampion()); // 冠军奖章
     }
 
     @Override

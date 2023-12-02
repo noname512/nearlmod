@@ -521,9 +521,15 @@
     "nearlmod:SummonPinusFriend": {
         "NAME": "",
         "DESCRIPTION": "",
+        "UPGRADE_DESCRIPTION": "",
         "EXTENDED_DESCRIPTION": [
             "召唤",
             "作为 nearlmod:伙伴 。"
         ]
+    },
+    "nearlmod:MedalOfChampion": {
+        "NAME": "冠军奖章",
+        "DESCRIPTION": "消耗 。 NL 获得 !M! 金币。",
+        "UPGRADE_DESCRIPTION": ""
     }
 }
