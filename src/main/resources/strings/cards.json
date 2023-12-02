@@ -100,6 +100,15 @@
         "DESCRIPTION": "将 !M! 张 *光！ 放入你的手牌。",
         "UPGRADE_DESCRIPTION": ""
     },
+    "nearlmod:ReverseForce": {
+        "NAME": "后备力量",
+        "DESCRIPTION": "造成 !D! 点伤害。 NL 如果鞭刃在场，根据你的 nearlmod:状态 将一张随机的非 nearlmod:唯一 nearlmod:伙伴牌 放入你的手牌。（nearlmod:无畏 ：攻击牌， nearlmod:守护 ：技能牌）",
+        "UPGRADE_DESCRIPTION": ""
+    },
+    "nearlmod:ArmorProtection": {
+        "NAME": "盔甲防护",
+        "DESCRIPTION": "获得 !B! 点 nearlmod:格挡 。 NL nearlmod:守护 ：额外获得 !M! 点 nearlmod:格挡 。"
+    },
 
     "nearlmod:SecondSun": {
         "NAME": "第二轮太阳",
