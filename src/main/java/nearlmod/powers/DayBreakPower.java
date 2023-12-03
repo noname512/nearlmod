@@ -42,8 +42,9 @@ public class DayBreakPower extends AbstractPower implements CloneablePowerInterf
     public static class DayBreakHasBlockPatch {
         @SpirePrefixPatch
         public static SpireReturn<?> Prefix(AbstractCreature __instance, DamageInfo info, int damageAmount) {
-            if (info.owner.hasPower("nearlmod:DayBreakPower") && (info.name == null || !info.name.endsWith(AbstractFriendCard.damageSuffix)))
-                return SpireReturn.Return(damageAmount);
+            if (info.owner != null && info.owner.hasPower("nearlmod:DayBreakPower"))
+                if (info.name == null || !info.name.endsWith(AbstractFriendCard.damageSuffix))
+                    return SpireReturn.Return(damageAmount);
             return SpireReturn.Continue();
         }
     }
@@ -52,8 +53,10 @@ public class DayBreakPower extends AbstractPower implements CloneablePowerInterf
     public static class DayBreakNoBlockPatch {
         @SpireInsertPatch(rloc = 4, localvars = "damageAmount")
         public static void Insert(AbstractMonster __instance, DamageInfo info, @ByRef int[] damageAmount) {
-            if (__instance.currentBlock == 0 && info.owner.hasPower("nearlmod:DayBreakPower") && (info.name == null || !info.name.endsWith(AbstractFriendCard.damageSuffix)))
-                damageAmount[0] += 3;
+            if (__instance.currentBlock == 0)
+                if (info.owner != null && info.owner.hasPower("nearlmod:DayBreakPower"))
+                    if (info.name == null || !info.name.endsWith(AbstractFriendCard.damageSuffix))
+                        damageAmount[0] += 3;
         }
     }
 }
