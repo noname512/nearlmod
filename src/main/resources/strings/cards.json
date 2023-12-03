@@ -518,7 +518,7 @@
     },
     "nearlmod:BeepActivate": {
         "NAME": "“滴滴，启动！”",
-        "DESCRIPTION": " nearlmod:伙伴牌 。 NL 获得 !nearlmod:M2! 层 多层护甲 与 !M! 点格挡。",
+        "DESCRIPTION": " nearlmod:伙伴牌 。 NL 获得 !nearlmod:M2! 层 多层护甲 与 !M! 点 格挡 。",
         "UPGRADE_DESCRIPTION": ""
     },
     "nearlmod:AllySupport": {
