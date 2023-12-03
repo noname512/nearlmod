@@ -446,7 +446,7 @@
     },
     "nearlmod:AutoProtect": {
         "NAME": "自动掩护",
-        "DESCRIPTION": " nearlmod:伙伴牌 。 NL 获得 !M! 点 格挡 ，下回合获得 !M! 点 格挡 。",
+        "DESCRIPTION": " nearlmod:伙伴牌 。 NL 不能被打出。 NL 加入手牌时立即获得 !M! 点 格挡 ，下回合获得 !M! 点 格挡 。",
         "UPGRADE_DESCRIPTION": ""
     },
     "nearlmod:BlackFiendProtection": {

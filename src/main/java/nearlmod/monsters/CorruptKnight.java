@@ -3,14 +3,17 @@ package nearlmod.monsters;
 import com.megacrit.cardcrawl.actions.animations.TalkAction;
 import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
 import com.megacrit.cardcrawl.actions.common.DamageAction;
+import com.megacrit.cardcrawl.actions.common.MakeTempCardInHandAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.cards.DamageInfo;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
+import com.megacrit.cardcrawl.core.Settings;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.localization.MonsterStrings;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import com.megacrit.cardcrawl.powers.ArtifactPower;
+import com.megacrit.cardcrawl.vfx.cardManip.ShowCardAndAddToHandEffect;
 import nearlmod.actions.SummonOrbAction;
 import nearlmod.cards.BraveTheDarkness;
 import nearlmod.cards.NightScouringGleam;
@@ -58,18 +61,15 @@ public class CorruptKnight extends AbstractMonster {
         addToBot(new SummonOrbAction(new Blemishine()));
         AbstractCard card = new NightScouringGleam();
         card.upgrade();
-        p.hand.addToHand(card);
-        if (AbstractDungeon.ascensionLevel < 15) {
-            card = card.makeCopy();
-            card.upgrade();
-            p.hand.addToHand(card);
-        }
+        int amount = 1;
+        if (AbstractDungeon.ascensionLevel < 15) amount = 2;
+        addToBot(new MakeTempCardInHandAction(card, amount));
         card = new BraveTheDarkness();
         card.upgrade();
         card.rawDescription += " NL 保留 。";
         card.selfRetain = true;
         card.initializeDescription();
-        p.hand.addToHand(card);
+        AbstractDungeon.effectList.add(new ShowCardAndAddToHandEffect(card, Settings.WIDTH * 0.5F, Settings.HEIGHT * 0.5F));
     }
 
     @Override

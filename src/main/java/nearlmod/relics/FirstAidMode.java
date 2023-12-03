@@ -5,9 +5,11 @@ import com.badlogic.gdx.graphics.Texture;
 import com.megacrit.cardcrawl.actions.common.RelicAboveCreatureAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
+import com.megacrit.cardcrawl.core.Settings;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.localization.RelicStrings;
 import com.megacrit.cardcrawl.relics.AbstractRelic;
+import com.megacrit.cardcrawl.vfx.cardManip.ShowCardAndAddToHandEffect;
 import nearlmod.cards.FirstAid;
 
 public class FirstAidMode extends CustomRelic {
@@ -33,7 +35,7 @@ public class FirstAidMode extends CustomRelic {
         AbstractCard c = new FirstAid();
         c.exhaust = true;
         c.selfRetain = true;
-        AbstractDungeon.player.hand.addToHand(c);
+        AbstractDungeon.effectList.add(new ShowCardAndAddToHandEffect(c, Settings.WIDTH * 0.5F, Settings.HEIGHT * 0.5F));
     }
 
     @Override

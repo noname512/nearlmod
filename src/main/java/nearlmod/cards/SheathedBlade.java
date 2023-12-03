@@ -1,12 +1,16 @@
 package nearlmod.cards;
 
 import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
+import com.megacrit.cardcrawl.actions.common.MakeTempCardInHandAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
+import com.megacrit.cardcrawl.core.Settings;
+import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.localization.CardStrings;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import com.megacrit.cardcrawl.powers.AbstractPower;
+import com.megacrit.cardcrawl.vfx.cardManip.ShowCardAndAddToHandEffect;
 import nearlmod.cards.special.LightCard;
 import nearlmod.patches.AbstractCardEnum;
 import nearlmod.powers.GainLightNextTurnPower;
@@ -36,13 +40,13 @@ public class SheathedBlade extends AbstractNearlCard {
             power.stackPower(-saveAmt);
             addToBot(new ApplyPowerAction(p, p, new GainLightNextTurnPower(p, saveAmt)));
         }
-        p.hand.addToHand(new LightCard());
+        addToBot(new MakeTempCardInHandAction(new LightCard()));
         if (upgraded) {
             AbstractCard card = new SwitchType();
             card.upgrade();
             card.exhaust = true;
             card.isEthereal = true;
-            p.hand.addToHand(card);
+            AbstractDungeon.effectList.add(new ShowCardAndAddToHandEffect(card, Settings.WIDTH * 0.5F, Settings.HEIGHT * 0.5F));
         }
     }
 
