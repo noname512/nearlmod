@@ -25,8 +25,8 @@ public class MedalOfHonorPower extends AbstractPower implements CloneablePowerIn
         name = NAME;
         ID = POWER_ID;
         this.owner = owner;
-        region128 = new TextureAtlas.AtlasRegion(ImageMaster.loadImage("images/powers/light power 84.png"), 0, 0, 84, 84);
-        region48 = new TextureAtlas.AtlasRegion(ImageMaster.loadImage("images/powers/light power 32.png"), 0, 0, 32, 32);
+        region128 = new TextureAtlas.AtlasRegion(ImageMaster.loadImage("images/powers/medalofhonor power 128.png"), 0, 0, 128, 128);
+        region48 = new TextureAtlas.AtlasRegion(ImageMaster.loadImage("images/powers/medalofhonor power 48.png"), 0, 0, 48, 48);
         type = PowerType.BUFF;
         updateDescription();
     }

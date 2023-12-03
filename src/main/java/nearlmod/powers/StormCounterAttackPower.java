@@ -3,7 +3,6 @@ package nearlmod.powers;
 import basemod.interfaces.CloneablePowerInterface;
 import com.badlogic.gdx.graphics.g2d.TextureAtlas;
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
-import com.megacrit.cardcrawl.actions.common.DamageAllEnemiesAction;
 import com.megacrit.cardcrawl.actions.common.RemoveSpecificPowerAction;
 import com.megacrit.cardcrawl.cards.DamageInfo;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
@@ -25,8 +24,8 @@ public class StormCounterAttackPower extends AbstractPower implements CloneableP
         ID = POWER_ID;
         this.owner = player;
         this.p = player;
-        region128 = new TextureAtlas.AtlasRegion(ImageMaster.loadImage("images/powers/light power 84.png"), 0, 0, 84, 84);
-        region48 = new TextureAtlas.AtlasRegion(ImageMaster.loadImage("images/powers/light power 32.png"), 0, 0, 32, 32);
+        region128 = new TextureAtlas.AtlasRegion(ImageMaster.loadImage("images/powers/stormcounterattack power 128.png"), 0, 0, 128, 128);
+        region48 = new TextureAtlas.AtlasRegion(ImageMaster.loadImage("images/powers/stormcounterattack power 48.png"), 0, 0, 48, 48);
         type = PowerType.BUFF;
         this.amount = amount;
         updateDescription();
