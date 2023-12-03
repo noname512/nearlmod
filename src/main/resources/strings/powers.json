@@ -130,5 +130,25 @@
       "每次攻击时造成相当于攻击意图数值 #b",
       " 倍的 #y侵蚀损伤 。"
     ]
+  },
+  "nearlmod:MedalOfHonorPower": {
+    "NAME": "荣誉之证",
+    "DESCRIPTIONS": ["可以打出原本 不能被打出 的 #y状态牌 。 打出 #y状态牌 会将其 #y消耗 并抽一张牌。"]
+  },
+  "nearlmod:FanClubPower": {
+    "NAME": "后援团",
+    "DESCRIPTIONS": [
+      "你每打出一张 #y伙伴牌 ，对应 #y伙伴 获得 #b",
+      " 点 #y信赖 。如果打出鞭刃的 #y伙伴牌 ，则改为所有 #y伙伴 获得 #b",
+      " 点 #y信赖 。"
+    ]
+  },
+  "nearlmod:LoseVulnerablePower": {
+    "NAME": "破绽",
+    "DESCRIPTIONS": ["回合结束时，失去 #b", " 层 #y易伤"]
+  },
+  "nearlmod:DayBreakPower": {
+    "NAME": "破晓",
+    "DESCRIPTIONS": ["你对敌人造成伤害时无视其 #y格挡 ，如果敌人没有 #y格挡 ，则额外造成 #b3 点伤害。"]
   }
 }

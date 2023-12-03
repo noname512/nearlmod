@@ -36,7 +36,7 @@ public class AllySupportPower extends AbstractPower implements CloneablePowerInt
         if (info.type != DamageInfo.DamageType.NORMAL) return;
         for (AbstractOrb orb : ((AbstractPlayer)this.owner).orbs)
             if (orb instanceof Fartooth) {
-                addToBot(new DamageAction(target, new DamageInfo(null, amount + ((Fartooth) orb).trustAmount, DamageInfo.DamageType.THORNS)));
+                addToBot(new DamageAction(target, new DamageInfo(null, amount + ((Fartooth) orb).getTrustAmount(), DamageInfo.DamageType.THORNS)));
                 break;
             }
     }

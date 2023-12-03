@@ -34,6 +34,7 @@ public class BreakThroughFetters extends AbstractNearlCard {
 
     @Override
     public boolean canUse(AbstractPlayer p, AbstractMonster m) {
+        if (!super.canUse(p, m)) return false;
         if (getLightAmount() < magicNumber) return false;
         for (AbstractCard c : p.drawPile.group)
             if (c.type == AbstractCard.CardType.CURSE || c.type == AbstractCard.CardType.STATUS)

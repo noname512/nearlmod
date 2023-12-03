@@ -17,7 +17,7 @@ public abstract class AbstractFriend extends CustomOrb {
     public boolean upgraded;
     protected static float MY_X_OFFSET = 50.0F * Settings.scale;
     protected static float MY_Y_OFFSET = 20.0F * Settings.scale;
-    public int trustAmount;
+    protected int trustAmount;
     private final String[] DESCRIPTION;
     public boolean flipHorizontal;
     public AbstractFriend(String ID, String NAME, String[] DESCRIPTION, String imgPath, int amount) {
@@ -40,6 +40,8 @@ public abstract class AbstractFriend extends CustomOrb {
         upgraded = true;
         applyStrength(2);
     }
+
+    public int getTrustAmount() {return trustAmount;}
 
     @Override
     public void onEvoke() {}

@@ -194,6 +194,10 @@ public class NLMOD implements EditCardsSubscriber, EditCharactersSubscriber, Edi
         BaseMod.addCard(new LightCascade()); // 光瀑
         BaseMod.addCard(new StormCounterAttack()); // 风暴反击
         BaseMod.addCard(new SheathedBlade()); // 收敛锋芒
+        BaseMod.addCard(new MedalOfHonor()); // 荣誉之证
+        BaseMod.addCard(new FanClub()); // 后援团
+        BaseMod.addCard(new UpgradedKnightShield()); // 改良骑士盾牌
+        BaseMod.addCard(new Flaw()); // 破绽
 
         // Rare.
         BaseMod.addCard(new BraveTheDarkness()); // 不畏苦暗
@@ -210,6 +214,8 @@ public class NLMOD implements EditCardsSubscriber, EditCharactersSubscriber, Edi
         BaseMod.addCard(new BladeOfBlazingSun()); // 耀阳锋刃
         BaseMod.addCard(new PathOfRadiant()); // 循光道途
         BaseMod.addCard(new PegasusForm()); // 天马形态
+        BaseMod.addCard(new DayBreak()); // 破晓
+        BaseMod.addCard(new UnitedAsOne()); // 万众一心
 
         // Friend.
         BaseMod.addCard(new LSSwiftSword()); // 光影迅捷剑

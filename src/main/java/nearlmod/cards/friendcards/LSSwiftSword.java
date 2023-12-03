@@ -54,6 +54,7 @@ public class LSSwiftSword extends AbstractFriendCard {
 
     @Override
     public boolean canUse(AbstractPlayer p, AbstractMonster m) {
+        if (!super.canUse(p, m)) return false;
         if (p.hasPower("nearlmod:GlimmeringTouchPower")) {
             this.cantUseMessage = "薇薇安娜正在蓄力中";
             return false;

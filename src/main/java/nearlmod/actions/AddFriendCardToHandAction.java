@@ -12,8 +12,13 @@ public class AddFriendCardToHandAction extends AbstractGameAction {
     private final AbstractFriendCard card;
 
     public AddFriendCardToHandAction(AbstractFriendCard card) {
+        this(card, false);
+    }
+
+    public AddFriendCardToHandAction(AbstractFriendCard card, boolean needUpgrade) {
         actionType = ActionType.SPECIAL;
         duration = Settings.ACTION_DUR_FAST;
+        if (needUpgrade) card.upgrade();
         this.card = card;
     }
 

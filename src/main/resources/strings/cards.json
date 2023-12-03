@@ -102,12 +102,12 @@
     },
     "nearlmod:ReverseForce": {
         "NAME": "后备力量",
-        "DESCRIPTION": "造成 !D! 点伤害。 NL 如果鞭刃在场，根据你的 nearlmod:状态 将一张随机的非 nearlmod:唯一 nearlmod:伙伴牌 放入你的手牌。（nearlmod:无畏 ：攻击牌， nearlmod:守护 ：技能牌）",
+        "DESCRIPTION": "造成 !D! 点伤害。 NL 如果鞭刃在场，根据你的 nearlmod:形态 将一张随机的非 nearlmod:唯一 nearlmod:伙伴牌 放入你的手牌。（ nearlmod:无畏 ：攻击牌， nearlmod:守护 ：技能牌）",
         "UPGRADE_DESCRIPTION": ""
     },
     "nearlmod:ArmorProtection": {
         "NAME": "盔甲防护",
-        "DESCRIPTION": "获得 !B! 点 nearlmod:格挡 。 NL nearlmod:守护 ：额外获得 !M! 点 nearlmod:格挡 。"
+        "DESCRIPTION": "获得 !B! 点 格挡 。 NL nearlmod:守护 ：额外获得 !M! 点 格挡 。"
     },
 
     "nearlmod:SecondSun": {
@@ -242,6 +242,26 @@
         "DESCRIPTION": "将一半的 nearlmod:光 转化为下回合获得的 nearlmod:光 。 NL 将一张 *光！ 置入你的手牌。",
         "UPGRADE_DESCRIPTION": "将一半的 nearlmod:光 转化为下回合获得的 nearlmod:光 。 NL 将一张 *光！ 和一张带有 消耗 和 虚无 的 *切换形态+ 置入你的手牌。"
     },
+    "nearlmod:MedalOfHonor": {
+        "NAME": "荣誉之证",
+        "DESCRIPTION": "可以打出原本 不能被打出 的 状态牌 。 打出 状态牌 会将其 消耗 并抽一张牌。",
+        "UPGRADE_DESCRIPTION": ""
+    },
+    "nearlmod:FanClub": {
+        "NAME": "后援团",
+        "DESCRIPTION": "你每打出一张 nearlmod:伙伴牌 ，对应 nearlmod:伙伴 获得 !M! 点 nearlmod:信赖 。如果打出鞭刃的 nearlmod:伙伴牌 ，则改为所有 nearlmod:伙伴 获得 !M! 点 nearlmod:信赖 。",
+        "UPGRADE_DESCRIPTION": ""
+    },
+    "nearlmod:UpgradedKnightShield": {
+        "NAME": "改良骑士盾牌",
+        "DESCRIPTION": "获得 !B! 点 格挡 。 NL 如果夜莺在场，本回合你受到的伤害减半。",
+        "UPGRADE_DESCRIPTION": ""
+    },
+    "nearlmod:Flaw": {
+        "NAME": "破绽",
+        "DESCRIPTION": "给予所有角色 !M! 层 易伤 。 NL 回合结束时，你失去 !M! 层 易伤 。",
+        "UPGRADE_DESCRIPTION": ""
+    },
 
     "nearlmod:BraveTheDarkness": {
         "NAME": "不畏苦暗",
@@ -314,6 +334,16 @@
         "NAME": "天马形态",
         "DESCRIPTION": "你每次使用 nearlmod:光 后，下回合开始时获得等于其 2/3 倍的 nearlmod:光 。",
         "UPGRADE_DESCRIPTION": "你每次使用 nearlmod:光 后，下回合开始时获得等于其 1 倍的 nearlmod:光 。"
+    },
+    "nearlmod:DayBreak": {
+        "NAME": "破晓",
+        "DESCRIPTION": "你对敌人造成伤害时无视其 格挡 ，如果敌人没有 格挡 ，则额外造成 !M! 点伤害。",
+        "UPGRADE_DESCRIPTION": "固有 。 NL 你对敌人造成伤害时无视其 格挡 ，如果敌人没有 格挡 ，则额外造成 !M! 点伤害。"
+    },
+    "nearlmod:UnitedAsOne": {
+        "NAME": "万众一心",
+        "DESCRIPTION": "消耗 。所有在场且 nearlmod:唯一 牌未被使用的 nearlmod:伙伴 给予你其 nearlmod:唯一 nearlmod:伙伴牌 。",
+        "UPGRADE_DESCRIPTION": "消耗 。所有在场且 nearlmod:唯一 牌未被使用的 nearlmod:伙伴 给予你其升级后的 nearlmod:唯一 nearlmod:伙伴牌 。"
     },
 
     "nearlmod:SwallowLight": {

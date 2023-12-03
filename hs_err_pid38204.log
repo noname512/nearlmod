@@ -1,0 +1,1833 @@
+#
+# There is insufficient memory for the Java Runtime Environment to continue.
+# Native memory allocation (mmap) failed to map 1048576 bytes for G1 virtual space
+# Possible reasons:
+#   The system is out of physical RAM or swap space
+#   The process is running with CompressedOops enabled, and the Java Heap may be blocking the growth of the native heap
+# Possible solutions:
+#   Reduce memory load on the system
+#   Increase physical memory or swap space
+#   Check if swap backing store is full
+#   Decrease Java heap size (-Xmx/-Xms)
+#   Decrease number of Java threads
+#   Decrease Java thread stack sizes (-Xss)
+#   Set larger code cache with -XX:ReservedCodeCacheSize=
+#   JVM is running with Unscaled Compressed Oops mode in which the Java heap is
+#     placed in the first 4GB address space. The Java Heap base address is the
+#     maximum limit for the native heap growth. Please use -XX:HeapBaseMinAddress
+#     to set the Java Heap base and to place the Java Heap above 4GB virtual address.
+# This output file may be truncated or incomplete.
+#
+#  Out of Memory Error (os_windows.cpp:3600), pid=38204, tid=1668
+#
+# JRE version: OpenJDK Runtime Environment (21.0.1+12) (build 21.0.1+12-29)
+# Java VM: OpenJDK 64-Bit Server VM (21.0.1+12-29, mixed mode, sharing, tiered, compressed oops, compressed class ptrs, g1 gc, windows-amd64)
+# No core dump will be written. Minidumps are not enabled by default on client versions of Windows
+#
+
+---------------  S U M M A R Y ------------
+
+Command Line: -Dmaven.multiModuleProjectDirectory=D:\nearlmod -Djansi.passthrough=true -Dmaven.home=C:\Program Files\JetBrains\IntelliJ IDEA 2023.2.5\plugins\maven\lib\maven3 -Dclassworlds.conf=C:\Program Files\JetBrains\IntelliJ IDEA 2023.2.5\plugins\maven\lib\maven3\bin\m2.conf -Dmaven.ext.class.path=C:\Program Files\JetBrains\IntelliJ IDEA 2023.2.5\plugins\maven\lib\maven-event-listener.jar -javaagent:C:\Program Files\JetBrains\IntelliJ IDEA 2023.2.5\lib\idea_rt.jar=60393:C:\Program Files\JetBrains\IntelliJ IDEA 2023.2.5\bin -Dfile.encoding=UTF-8 -Dsun.stdout.encoding=UTF-8 -Dsun.stderr.encoding=UTF-8 org.codehaus.classworlds.Launcher -Didea.version=2023.2.5 package
+
+Host: 12th Gen Intel(R) Core(TM) i5-1235U, 12 cores, 7G,  Windows 11 , 64 bit Build 22621 (10.0.22621.2506)
+Time: Sat Dec  2 22:31:55 2023 Eastern Standard Time elapsed time: 22.816147 seconds (0d 0h 0m 22s)
+
+---------------  T H R E A D  ---------------
+
+Current thread (0x0000020c51d8b5b0):  JavaThread "pool-2-thread-5"        [_thread_in_vm, id=1668, stack(0x0000006af1600000,0x0000006af1700000) (1024K)]
+
+Stack: [0x0000006af1600000,0x0000006af1700000]
+Native frames: (J=compiled Java code, j=interpreted, Vv=VM code, C=native code)
+V  [jvm.dll+0x6c9029]
+V  [jvm.dll+0x854b81]
+V  [jvm.dll+0x856e5e]
+V  [jvm.dll+0x857543]
+V  [jvm.dll+0x280c06]
+V  [jvm.dll+0x6c5715]
+V  [jvm.dll+0x6ba10a]
+V  [jvm.dll+0x3557ea]
+V  [jvm.dll+0x35d436]
+V  [jvm.dll+0x3adebb]
+V  [jvm.dll+0x3ae554]
+V  [jvm.dll+0x3ae0c6]
+V  [jvm.dll+0x32962e]
+V  [jvm.dll+0x32785f]
+V  [jvm.dll+0x65b3d0]
+V  [jvm.dll+0x240be2]
+V  [jvm.dll+0x819ce7]
+V  [jvm.dll+0x3d5ada]
+C  0x0000020c435ca909
+
+The last pc belongs to newarray (printed below).
+Java frames: (J=compiled Java code, j=interpreted, Vv=VM code)
+j  org.codehaus.plexus.archiver.zip.ByteArrayOutputStream.needNewBuffer(I)V+125
+J 9690 c2 org.apache.commons.compress.archivers.zip.StreamCompressor.deflate()V (33 bytes) @ 0x0000020c43f812ac [0x0000020c43f80f00+0x00000000000003ac]
+J 9590 c1 org.apache.commons.compress.archivers.zip.StreamCompressor.writeDeflated([BII)V (119 bytes) @ 0x0000020c3d2a8cac [0x0000020c3d2a89c0+0x00000000000002ec]
+J 9591 c1 org.apache.commons.compress.archivers.zip.StreamCompressor.write([BIII)J (59 bytes) @ 0x0000020c3d2a9d94 [0x0000020c3d2a9be0+0x00000000000001b4]
+J 9658 c1 org.apache.commons.compress.archivers.zip.StreamCompressor.deflate(Ljava/io/InputStream;I)V (49 bytes) @ 0x0000020c3d2d4f94 [0x0000020c3d2d4c60+0x0000000000000334]
+j  org.apache.commons.compress.archivers.zip.ScatterZipOutputStream.addArchiveEntry(Lorg/apache/commons/compress/archivers/zip/ZipArchiveEntryRequest;)V+16
+j  org.apache.commons.compress.archivers.zip.ParallelScatterZipCreator.lambda$createCallable$2(Lorg/apache/commons/compress/archivers/zip/ZipArchiveEntryRequestSupplier;)Lorg/apache/commons/compress/archivers/zip/ScatterZipOutputStream;+18
+j  org.apache.commons.compress.archivers.zip.ParallelScatterZipCreator$$Lambda+0x0000020c533abdc0.call()Ljava/lang/Object;+8
+j  java.util.concurrent.FutureTask.run()V+39 java.base@21.0.1
+j  java.util.concurrent.ThreadPoolExecutor.runWorker(Ljava/util/concurrent/ThreadPoolExecutor$Worker;)V+92 java.base@21.0.1
+j  java.util.concurrent.ThreadPoolExecutor$Worker.run()V+5 java.base@21.0.1
+j  java.lang.Thread.runWith(Ljava/lang/Object;Ljava/lang/Runnable;)V+5 java.base@21.0.1
+j  java.lang.Thread.run()V+19 java.base@21.0.1
+v  ~StubRoutines::call_stub 0x0000020c435b100d
+newarray  188 newarray  [0x0000020c435ca8a0, 0x0000020c435ca978]  216 bytes
+[MachCode]
+  0x0000020c435ca8a0: 8b04 2448 | 83c4 0841 | 0fb6 5501 | e805 0000 | 00e9 ab00 | 0000 4c8b | c048 8d44 | 2408 4c89 
+  0x0000020c435ca8c0: 6dc0 498b | cfc5 f877 | 4989 afa8 | 0300 0049 | 8987 9803 | 0000 4883 | ec20 40f6 | c40f 0f84 
+  0x0000020c435ca8e0: 1900 0000 | 4883 ec08 | 48b8 b05a | 83e6 fd7f | 0000 ffd0 | 4883 c408 | e90c 0000 | 0048 b8b0 
+  0x0000020c435ca900: 5a83 e6fd | 7f00 00ff | d048 83c4 | 2049 c787 | 9803 0000 | 0000 0000 | 49c7 87a8 | 0300 0000 
+  0x0000020c435ca920: 0000 0049 | c787 a003 | 0000 0000 | 0000 c5f8 | 7749 837f | 0800 0f84 | 0500 0000 | e9bf 65fe 
+  0x0000020c435ca940: ff49 8b87 | f003 0000 | 49c7 87f0 | 0300 0000 | 0000 004c | 8b6d c04c | 8b75 c84e | 8d74 f500 
+  0x0000020c435ca960: c341 0fb6 | 5d02 4983 | c502 49ba | 80df 0ae7 | fd7f 0000 | 41ff 24da 
+[/MachCode]
+
+Compiled method (c2)   22883 9690       4       org.apache.commons.compress.archivers.zip.StreamCompressor::deflate (33 bytes)
+ total in heap  [0x0000020c43f80d10,0x0000020c43f81cf0] = 4064
+ relocation     [0x0000020c43f80e70,0x0000020c43f80ef8] = 136
+ main code      [0x0000020c43f80f00,0x0000020c43f816e0] = 2016
+ stub code      [0x0000020c43f816e0,0x0000020c43f81718] = 56
+ oops           [0x0000020c43f81718,0x0000020c43f81720] = 8
+ metadata       [0x0000020c43f81720,0x0000020c43f817b0] = 144
+ scopes data    [0x0000020c43f817b0,0x0000020c43f81b18] = 872
+ scopes pcs     [0x0000020c43f81b18,0x0000020c43f81c68] = 336
+ dependencies   [0x0000020c43f81c68,0x0000020c43f81c88] = 32
+ handler table  [0x0000020c43f81c88,0x0000020c43f81cb8] = 48
+ nul chk table  [0x0000020c43f81cb8,0x0000020c43f81cf0] = 56
+
+[Constant Pool (empty)]
+
+[MachCode]
+[Entry Point]
+  # {method} {0x0000020c94cd4c30} 'deflate' '()V' in 'org/apache/commons/compress/archivers/zip/StreamCompressor'
+  #           [sp+0xa0]  (sp of caller)
+  0x0000020c43f80f00: 448b 5208 | 49bb 0000 | 0052 0c02 | 0000 4d03 | d349 3bc2 
+
+  0x0000020c43f80f14: ;   {runtime_call ic_miss_stub}
+  0x0000020c43f80f14: 0f85 66d8 | 67ff 6690 | 0f1f 4000 
+[Verified Entry Point]
+  0x0000020c43f80f20: 8984 2400 | 80ff ff55 | 4881 ec90 | 0000 0090 | 4181 7f20 | 0700 0000 | 0f85 9307 | 0000 4889 
+  0x0000020c43f80f40: 5424 288b | 6a2c 8b7d | 0c44 8b5a | 0c45 85db | 0f84 f403 | 0000 4c8b | c549 8bd3 | 4533 c933 
+  0x0000020c43f80f60: f666 6690 
+
+  0x0000020c43f80f64: ;   {optimized virtual_call}
+  0x0000020c43f80f64: c5f8 77e8 
+
+  0x0000020c43f80f68: ; ImmutableOopMap {[40]=Oop }
+                      ;*invokevirtual deflate {reexecute=0 rethrow=0 return_oop=0}
+                      ; - java.util.zip.Deflater::deflate@5 (line 464)
+                      ; - org.apache.commons.compress.archivers.zip.StreamCompressor::deflate@14 (line 262)
+  0x0000020c43f80f68: f4ea ffff 
+
+  0x0000020c43f80f6c: ;   {other}
+  0x0000020c43f80f6c: 0f1f 8400 | 5c02 0000 | 448b d085 | c00f 8efd | 0200 004c | 8b5c 2428 | 458b 5b2c | 4489 5c24 
+  0x0000020c43f80f8c: 584c 8b5c | 2428 458b 
+
+  0x0000020c43f80f94: ;   {metadata('org/apache/commons/compress/archivers/zip/StreamCompressor$ScatterGatherBackingStoreCompressor')}
+  0x0000020c43f80f94: 5b08 4181 | fb40 643a | 010f 85c1 | 0300 004c | 8b5c 2428 | 4c89 5c24 | 6041 8b6b | 3444 8b5d 
+  0x0000020c43f80fb4: ;   {metadata('org/codehaus/plexus/archiver/zip/DeferredScatterOutputStream')}
+  0x0000020c43f80fb4: 0841 81fb | 4872 3a01 | 0f85 be03 | 0000 4c8b | dd45 8b5b | 0c41 0fb6 | 6b18 85ed | 0f85 a704 
+  0x0000020c43f80fd4: 0000 4d63 | 430c 4c63 | c84c 894c | 2428 4d03 | 4b10 4d3b | c80f 8fad | 0400 0041 | 8b6b 2844 
+  0x0000020c43f80ff4: ;   {metadata('org/codehaus/plexus/archiver/zip/ByteArrayOutputStream')}
+  0x0000020c43f80ff4: 8b45 0841 | 81f8 087a | 3a01 0f85 | 9803 0000 | 488b cd44 | 8b44 2458 
+
+  0x0000020c43f8100c: ; implicit exception: dispatches to 0x0000020c43f815b4
+  0x0000020c43f8100c: 418b 680c | 448d 4d01 | 413b c10f | 83af 0400 | 0085 c00f | 84cf 0400 | 004d 8beb | 498b d048 
+  0x0000020c43f8102c: 8d9c 2480 | 0000 0048 | 8b01 a802 | 0f85 2300 | 0000 4883 | c801 4889 | 03f0 480f | b119 0f84 
+  0x0000020c43f8104c: 3700 0000 | 482b c448 | 2507 f0ff | ff48 8903 | e924 0000 | 004c 8bc0 | 4833 c0f0 | 4d0f b178 
+  0x0000020c43f8106c: 3e48 c703 | 0300 0000 | 7411 4c3b | f875 1549 | ff80 8600 | 0000 4833 | c075 0949 | ff87 5005 
+  0x0000020c43f8108c: 0000 33c0 | 0f85 2a03 | 0000 448b | 4114 418b | d82b 5910 | 438d 3c02 | 458b caeb | 290f 1f80 
+  0x0000020c43f810ac: 0000 0000 | 448b d544 | 8b5c 2420 | 488b 4c24 | 308b 6c24 | 244c 8b6c | 2438 488b | 5424 408b 
+  0x0000020c43f810cc: 7c24 4845 | 8bce 448b | 7120 418b | 460c 895c | 2450 8bf0 | 2bf3 458b | c245 2bc1 | 413b f141 
+  0x0000020c43f810ec: 0f4f f145 | 85c0 0f8c 
+
+  0x0000020c43f810f4: ;   {no_reloc}
+  0x0000020c43f810f4: d701 0000 | 85db 0f8c | cf01 0000 | 418b d844 | 894c 244c | 897c 2448 | 4889 5424 | 404c 896c 
+  0x0000020c43f81114: 2438 896c | 2424 4889 | 4c24 3044 | 895c 2420 | 418b ea46 | 8d14 0644 | 8b44 2424 | 453b c20f 
+  0x0000020c43f81134: 8290 0100 | 0044 8b5c | 2450 4403 | de41 3bc3 | 0f82 e601 | 0000 85f6 | 0f8c eb01 | 0000 85f6 
+  0x0000020c43f81154: 0f84 6601 | 0000 448b | 5c24 5849 | 8d4c 1b10 | 4c63 c64d | 8bd6 8b5c | 2450 498d | 541e 10c5 
+  0x0000020c43f81174: f877 49ba | a02d 5e43 | 0c02 0000 
+
+  0x0000020c43f81180: ;   {other}
+  0x0000020c43f81180: 41ff d20f | 1f84 0000 | 0000 0044 | 8b74 244c | 442b f645 | 85f6 0f8f | f900 0000 | 4d8b 9758 
+  0x0000020c43f811a0: ; ImmutableOopMap {[32]=NarrowOop [48]=Oop [56]=Oop [64]=Oop [88]=NarrowOop [96]=Oop }
+                      ;*goto {reexecute=1 rethrow=0 return_oop=0}
+                      ; - (reexecute) org.codehaus.plexus.archiver.zip.ByteArrayOutputStream::write@127 (line 195)
+                      ; - org.apache.commons.io.output.ThresholdingOutputStream::write@12 (line 232)
+                      ; - org.codehaus.plexus.archiver.zip.DeferredScatterOutputStream::writeOut@7 (line 44)
+                      ; - org.apache.commons.compress.archivers.zip.StreamCompressor$ScatterGatherBackingStoreCompressor::writeOut@7 (line 291)
+                      ; - org.apache.commons.compress.archivers.zip.StreamCompressor::writeCounted@4 (line 273)
+                      ; - org.apache.commons.compress.archivers.zip.StreamCompressor::deflate@29 (line 264)
+                      ;   {poll}
+  0x0000020c43f811a0: 0400 0041 | 8502 4585 | f60f 8f01 | ffff ff4c | 8b5c 2430 | 448b 4424 | 4845 8943 | 1448 8d84 
+  0x0000020c43f811c0: 2480 0000 | 0048 8338 | 000f 8479 | 0000 004d | 8b13 41f6 | c202 0f84 | 6200 0000 | 4983 ba86 
+  0x0000020c43f811e0: 0000 0000 | 7409 49ff | 8a86 0000 | 00eb 4b49 | 8b82 9600 | 0000 490b | 828e 0000 | 0075 0a49 
+  0x0000020c43f81200: c742 3e00 | 0000 00eb | 3d49 83ba | 9e00 0000 | 0074 2248 | 33c0 49c7 | 423e 0000 | 0000 f083 
+  0x0000020c43f81220: 0424 0049 | 83ba 9e00 | 0000 0075 | 0df0 4d0f | b17a 3e75 | 0583 c801 | eb0c a800 | eb08 4c8b 
+  0x0000020c43f81240: 10f0 4d0f | b113 750a | 49ff 8f50 | 0500 0045 | 33d2 0f85 | fa01 0000 | 4c8b 5424 | 604c 8b5c 
+  0x0000020c43f81260: 2428 4d01 | 5a20 4d01 | 5a10 448b | 4424 204d | 8b50 104c | 0354 2428 | 4d89 5010 | c5f8 7748 
+  0x0000020c43f81280: 81c4 9000 
+
+  0x0000020c43f81284: ;   {poll_return}
+  0x0000020c43f81284: 0000 5d49 | 3ba7 5004 | 0000 0f87 | 2704 0000 | c344 8974 | 244c 488b | 5424 3044 | 8b44 2448 
+  0x0000020c43f812a4: ;   {optimized virtual_call}
+  0x0000020c43f812a4: c5f8 77e8 
+
+  0x0000020c43f812a8: ; ImmutableOopMap {[32]=NarrowOop [48]=Oop [56]=Oop [64]=Oop [88]=NarrowOop [96]=Oop }
+                      ;*invokespecial needNewBuffer {reexecute=0 rethrow=0 return_oop=0}
+                      ; - org.codehaus.plexus.archiver.zip.ByteArrayOutputStream::write@121 (line 192)
+                      ; - org.apache.commons.io.output.ThresholdingOutputStream::write@12 (line 232)
+                      ; - org.codehaus.plexus.archiver.zip.DeferredScatterOutputStream::writeOut@7 (line 44)
+                      ; - org.apache.commons.compress.archivers.zip.StreamCompressor$ScatterGatherBackingStoreCompressor::writeOut@7 (line 291)
+                      ; - org.apache.commons.compress.archivers.zip.StreamCompressor::writeCounted@4 (line 273)
+                      ; - org.apache.commons.compress.archivers.zip.StreamCompressor::deflate@29 (line 264)
+  0x0000020c43f812a8: 4304 0000 
+
+  0x0000020c43f812ac: ;   {other}
+  0x0000020c43f812ac: 0f1f 8400 | 9c05 0002 | 448b 7424 | 4c33 dbe9 | dcfe ffff | 8b5c 2450 | e9c2 feff | ff44 8bd5 
+  0x0000020c43f812cc: 448b c3ba | ccff ffff | 4489 5424 | 2044 8954 | 2424 4889 | 4c24 3044 | 894c 2438 | 4889 4424 
+  0x0000020c43f812ec: f88b 4424 | 5089 4424 | 3c48 8b44 | 24f8 4489 | 7424 4048 | 894c 2448 | 4c8b 5424 | 604c 8954 
+  0x0000020c43f8130c: 2450 4489 | 5c24 5c89 | 7c24 6044 | 8944 246c | 8974 2470 
+
+  0x0000020c43f81320: ;   {runtime_call UncommonTrapBlob}
+  0x0000020c43f81320: c5f8 77e8 
+
+  0x0000020c43f81324: ; ImmutableOopMap {[48]=Oop [64]=NarrowOop [72]=Oop [80]=Oop [88]=NarrowOop [92]=NarrowOop }
+                      ;*invokestatic arraycopy {reexecute=0 rethrow=0 return_oop=0}
+                      ; - org.codehaus.plexus.archiver.zip.ByteArrayOutputStream::write@103 (line 188)
+                      ; - org.apache.commons.io.output.ThresholdingOutputStream::write@12 (line 232)
+                      ; - org.codehaus.plexus.archiver.zip.DeferredScatterOutputStream::writeOut@7 (line 44)
+                      ; - org.apache.commons.compress.archivers.zip.StreamCompressor$ScatterGatherBackingStoreCompressor::writeOut@7 (line 291)
+                      ; - org.apache.commons.compress.archivers.zip.StreamCompressor::writeCounted@4 (line 273)
+                      ; - org.apache.commons.compress.archivers.zip.StreamCompressor::deflate@29 (line 264)
+  0x0000020c43f81324: d832 68ff 
+
+  0x0000020c43f81328: ;   {other}
+  0x0000020c43f81328: 0f1f 8400 | 1806 0003 | 448b d544 | 8b5c 2420 | 448b c3eb | 9244 8bd5 | 448b 5c24 | 2044 8bc3 
+  0x0000020c43f81348: eb85 baf6 | ffff ff89 | 7c24 2090 
+
+  0x0000020c43f81354: ;   {runtime_call UncommonTrapBlob}
+  0x0000020c43f81354: c5f8 77e8 
+
+  0x0000020c43f81358: ; ImmutableOopMap {rbp=NarrowOop }
+                      ;*invokevirtual deflate {reexecute=0 rethrow=0 return_oop=0}
+                      ; - org.apache.commons.compress.archivers.zip.StreamCompressor::deflate@14 (line 262)
+  0x0000020c43f81358: a432 68ff 
+
+  0x0000020c43f8135c: ;   {other}
+  0x0000020c43f8135c: 0f1f 8400 | 4c06 0004 | ba66 ffff | ff89 4424 | 2066 6690 
+
+  0x0000020c43f81370: ;   {runtime_call UncommonTrapBlob}
+  0x0000020c43f81370: c5f8 77e8 
+
+  0x0000020c43f81374: ; ImmutableOopMap {[40]=Oop [88]=NarrowOop }
+                      ;*invokevirtual writeOut {reexecute=0 rethrow=0 return_oop=0}
+                      ; - org.apache.commons.compress.archivers.zip.StreamCompressor::writeCounted@4 (line 273)
+                      ; - org.apache.commons.compress.archivers.zip.StreamCompressor::deflate@29 (line 264)
+  0x0000020c43f81374: 8832 68ff 
+
+  0x0000020c43f81378: ;   {other}
+  0x0000020c43f81378: 0f1f 8400 | 6806 0005 | bade ffff | ff89 4424 | 2466 6690 
+
+  0x0000020c43f8138c: ;   {runtime_call UncommonTrapBlob}
+  0x0000020c43f8138c: c5f8 77e8 
+
+  0x0000020c43f81390: ; ImmutableOopMap {rbp=NarrowOop [88]=NarrowOop [96]=Oop }
+                      ;*invokeinterface writeOut {reexecute=0 rethrow=0 return_oop=0}
+                      ; - org.apache.commons.compress.archivers.zip.StreamCompressor$ScatterGatherBackingStoreCompressor::writeOut@7 (line 291)
+                      ; - org.apache.commons.compress.archivers.zip.StreamCompressor::writeCounted@4 (line 273)
+                      ; - org.apache.commons.compress.archivers.zip.StreamCompressor::deflate@29 (line 264)
+  0x0000020c43f81390: 6c32 68ff 
+
+  0x0000020c43f81394: ;   {other}
+  0x0000020c43f81394: 0f1f 8400 | 8406 0006 | bade ffff | ff89 4424 | 2489 4424 | 2844 895c | 242c 6690 
+
+  0x0000020c43f813b0: ;   {runtime_call UncommonTrapBlob}
+  0x0000020c43f813b0: c5f8 77e8 
+
+  0x0000020c43f813b4: ; ImmutableOopMap {rbp=NarrowOop [44]=NarrowOop [88]=NarrowOop [96]=Oop }
+                      ;*invokevirtual write {reexecute=0 rethrow=0 return_oop=0}
+                      ; - org.apache.commons.io.output.ThresholdingOutputStream::write@12 (line 232)
+                      ; - org.codehaus.plexus.archiver.zip.DeferredScatterOutputStream::writeOut@7 (line 44)
+                      ; - org.apache.commons.compress.archivers.zip.StreamCompressor$ScatterGatherBackingStoreCompressor::writeOut@7 (line 291)
+                      ; - org.apache.commons.compress.archivers.zip.StreamCompressor::writeCounted@4 (line 273)
+                      ; - org.apache.commons.compress.archivers.zip.StreamCompressor::deflate@29 (line 264)
+  0x0000020c43f813b4: 4832 68ff 
+
+  0x0000020c43f813b8: ;   {other}
+  0x0000020c43f813b8: 0f1f 8400 | a806 0007 | 4889 5424 | 504c 896c | 2448 896c | 2440 4889 | 4c24 3848 | ff74 2428 
+  0x0000020c43f813d8: 488f 4424 | 3044 895c | 2424 4c8b | 5c24 604c | 895c 2428 | 448b 5c24 | 5844 895c | 2420 418b 
+  0x0000020c43f813f8: ea48 8bd1 | 4c8d 8424 | 8000 0000 
+
+  0x0000020c43f81404: ;   {runtime_call _complete_monitor_locking_Java}
+  0x0000020c43f81404: c5f8 77e8 
+
+  0x0000020c43f81408: ; ImmutableOopMap {[32]=NarrowOop [36]=NarrowOop [40]=Oop [56]=Oop [72]=Oop [80]=Oop }
+                      ;*monitorenter {reexecute=0 rethrow=0 return_oop=0}
+                      ; - org.codehaus.plexus.archiver.zip.ByteArrayOutputStream::write@45 (line 180)
+                      ; - org.apache.commons.io.output.ThresholdingOutputStream::write@12 (line 232)
+                      ; - org.codehaus.plexus.archiver.zip.DeferredScatterOutputStream::writeOut@7 (line 44)
+                      ; - org.apache.commons.compress.archivers.zip.StreamCompressor$ScatterGatherBackingStoreCompressor::writeOut@7 (line 291)
+                      ; - org.apache.commons.compress.archivers.zip.StreamCompressor::writeCounted@4 (line 273)
+                      ; - org.apache.commons.compress.archivers.zip.StreamCompressor::deflate@29 (line 264)
+  0x0000020c43f81408: f460 76ff 
+
+  0x0000020c43f8140c: ;   {other}
+  0x0000020c43f8140c: 0f1f 8400 | fc06 0008 | 448b d544 | 8b44 2420 | 4489 4424 | 584c 8b5c | 2428 4c89 | 5c24 6044 
+  0x0000020c43f8142c: 8b5c 2424 | 48ff 7424 | 3048 8f44 | 2428 488b | 4c24 388b | 6c24 404c | 8b6c 2448 | 488b 5424 
+  0x0000020c43f8144c: 50e9 44fc | ffff 498b | cb48 8d94 | 2480 0000 | 004d 8bc7 | c5f8 7749 | ba50 d9b8 | e6fd 7f00 
+  0x0000020c43f8146c: 0041 ffd2 
+
+  0x0000020c43f81470: ;   {other}
+  0x0000020c43f81470: 0f1f 8400 | 0000 0000 | e9db fdff | ffba 45ff | ffff 8944 | 2424 4489 | 5c24 3090 
+
+  0x0000020c43f8148c: ;   {runtime_call UncommonTrapBlob}
+  0x0000020c43f8148c: c5f8 77e8 
+
+  0x0000020c43f81490: ; ImmutableOopMap {[48]=NarrowOop [88]=NarrowOop [96]=Oop }
+                      ;*ifne {reexecute=1 rethrow=0 return_oop=0}
+                      ; - (reexecute) org.apache.commons.io.output.ThresholdingOutputStream::checkThreshold@4 (line 103)
+                      ; - org.apache.commons.io.output.ThresholdingOutputStream::write@2 (line 231)
+                      ; - org.codehaus.plexus.archiver.zip.DeferredScatterOutputStream::writeOut@7 (line 44)
+                      ; - org.apache.commons.compress.archivers.zip.StreamCompressor$ScatterGatherBackingStoreCompressor::writeOut@7 (line 291)
+                      ; - org.apache.commons.compress.archivers.zip.StreamCompressor::writeCounted@4 (line 273)
+                      ; - org.apache.commons.compress.archivers.zip.StreamCompressor::deflate@29 (line 264)
+  0x0000020c43f81490: 6c31 68ff 
+
+  0x0000020c43f81494: ;   {other}
+  0x0000020c43f81494: 0f1f 8400 | 8407 0009 | 4d3b c8bd | ffff ffff | 7c08 400f | 95c5 400f | b6ed ba45 | ffff ff89 
+  0x0000020c43f814b4: 4424 2444 | 895c 2438 
+
+  0x0000020c43f814bc: ;   {runtime_call UncommonTrapBlob}
+  0x0000020c43f814bc: c5f8 77e8 
+
+  0x0000020c43f814c0: ; ImmutableOopMap {[56]=NarrowOop [88]=NarrowOop [96]=Oop }
+                      ;*ifle {reexecute=1 rethrow=0 return_oop=0}
+                      ; - (reexecute) org.apache.commons.io.output.ThresholdingOutputStream::checkThreshold@20 (line 103)
+                      ; - org.apache.commons.io.output.ThresholdingOutputStream::write@2 (line 231)
+                      ; - org.codehaus.plexus.archiver.zip.DeferredScatterOutputStream::writeOut@7 (line 44)
+                      ; - org.apache.commons.compress.archivers.zip.StreamCompressor$ScatterGatherBackingStoreCompressor::writeOut@7 (line 291)
+                      ; - org.apache.commons.compress.archivers.zip.StreamCompressor::writeCounted@4 (line 273)
+                      ; - org.apache.commons.compress.archivers.zip.StreamCompressor::deflate@29 (line 264)
+  0x0000020c43f814c0: 3c31 68ff 
+
+  0x0000020c43f814c4: ;   {other}
+  0x0000020c43f814c4: 0f1f 8400 | b407 000a | ba3d ffff | ff89 4424 | 2048 894c | 2428 8944 | 2424 4489 | 5c24 3490 
+  0x0000020c43f814e4: ;   {runtime_call UncommonTrapBlob}
+  0x0000020c43f814e4: c5f8 77e8 
+
+  0x0000020c43f814e8: ; ImmutableOopMap {[40]=Oop [52]=NarrowOop [88]=NarrowOop [96]=Oop }
+                      ;*iflt {reexecute=1 rethrow=0 return_oop=0}
+                      ; - (reexecute) org.codehaus.plexus.archiver.zip.ByteArrayOutputStream::write@11 (line 168)
+                      ; - org.apache.commons.io.output.ThresholdingOutputStream::write@12 (line 232)
+                      ; - org.codehaus.plexus.archiver.zip.DeferredScatterOutputStream::writeOut@7 (line 44)
+                      ; - org.apache.commons.compress.archivers.zip.StreamCompressor$ScatterGatherBackingStoreCompressor::writeOut@7 (line 291)
+                      ; - org.apache.commons.compress.archivers.zip.StreamCompressor::writeCounted@4 (line 273)
+                      ; - org.apache.commons.compress.archivers.zip.StreamCompressor::deflate@29 (line 264)
+  0x0000020c43f814e8: 1431 68ff 
+
+  0x0000020c43f814ec: ;   {other}
+  0x0000020c43f814ec: 0f1f 8400 | dc07 000b | ba45 ffff | ff89 4424 | 2089 4424 | 2444 895c | 2430 6690 
+
+  0x0000020c43f81508: ;   {runtime_call UncommonTrapBlob}
+  0x0000020c43f81508: c5f8 77e8 
+
+  0x0000020c43f8150c: ; ImmutableOopMap {[48]=NarrowOop [96]=Oop }
+                      ;*ifne {reexecute=1 rethrow=0 return_oop=0}
+                      ; - (reexecute) org.codehaus.plexus.archiver.zip.ByteArrayOutputStream::write@37 (line 176)
+                      ; - org.apache.commons.io.output.ThresholdingOutputStream::write@12 (line 232)
+                      ; - org.codehaus.plexus.archiver.zip.DeferredScatterOutputStream::writeOut@7 (line 44)
+                      ; - org.apache.commons.compress.archivers.zip.StreamCompressor$ScatterGatherBackingStoreCompressor::writeOut@7 (line 291)
+                      ; - org.apache.commons.compress.archivers.zip.StreamCompressor::writeCounted@4 (line 273)
+                      ; - org.apache.commons.compress.archivers.zip.StreamCompressor::deflate@29 (line 264)
+  0x0000020c43f8150c: f030 68ff 
+
+  0x0000020c43f81510: ;   {other}
+  0x0000020c43f81510: 0f1f 8400 | 0008 000c | baf6 ffff | ff44 8954 | 2420 4489 | 5424 2448 | 894c 2430 | 895c 243c 
+  0x0000020c43f81530: 4489 4c24 | 4048 894c | 2448 4489 | 5c24 4489 | 7c24 5c90 
+
+  0x0000020c43f81544: ;   {runtime_call UncommonTrapBlob}
+  0x0000020c43f81544: c5f8 77e8 
+
+  0x0000020c43f81548: ; ImmutableOopMap {[48]=Oop [68]=NarrowOop [72]=Oop [88]=NarrowOop [96]=Oop }
+                      ;*arraylength {reexecute=0 rethrow=0 return_oop=0}
+                      ; - org.codehaus.plexus.archiver.zip.ByteArrayOutputStream::write@79 (line 187)
+                      ; - org.apache.commons.io.output.ThresholdingOutputStream::write@12 (line 232)
+                      ; - org.codehaus.plexus.archiver.zip.DeferredScatterOutputStream::writeOut@7 (line 44)
+                      ; - org.apache.commons.compress.archivers.zip.StreamCompressor$ScatterGatherBackingStoreCompressor::writeOut@7 (line 291)
+                      ; - org.apache.commons.compress.archivers.zip.StreamCompressor::writeCounted@4 (line 273)
+                      ; - org.apache.commons.compress.archivers.zip.StreamCompressor::deflate@29 (line 264)
+  0x0000020c43f81548: b430 68ff 
+
+  0x0000020c43f8154c: ;   {other}
+  0x0000020c43f8154c: 0f1f 8400 | 3c08 000d | baf6 ffff | ff66 6690 
+
+  0x0000020c43f8155c: ;   {runtime_call UncommonTrapBlob}
+  0x0000020c43f8155c: c5f8 77e8 
+
+  0x0000020c43f81560: ; ImmutableOopMap {}
+                      ;*arraylength {reexecute=0 rethrow=0 return_oop=0}
+                      ; - org.apache.commons.compress.archivers.zip.StreamCompressor::deflate@13 (line 262)
+  0x0000020c43f81560: 9c30 68ff 
+
+  0x0000020c43f81564: ;   {other}
+  0x0000020c43f81564: 0f1f 8400 | 5408 000e | baf6 ffff | ff8b e890 
+
+  0x0000020c43f81574: ;   {runtime_call UncommonTrapBlob}
+  0x0000020c43f81574: c5f8 77e8 
+
+  0x0000020c43f81578: ; ImmutableOopMap {[88]=NarrowOop }
+                      ;*invokeinterface writeOut {reexecute=0 rethrow=0 return_oop=0}
+                      ; - org.apache.commons.compress.archivers.zip.StreamCompressor$ScatterGatherBackingStoreCompressor::writeOut@7 (line 291)
+                      ; - org.apache.commons.compress.archivers.zip.StreamCompressor::writeCounted@4 (line 273)
+                      ; - org.apache.commons.compress.archivers.zip.StreamCompressor::deflate@29 (line 264)
+  0x0000020c43f81578: 8430 68ff 
+
+  0x0000020c43f8157c: ;   {other}
+  0x0000020c43f8157c: 0f1f 8400 | 6c08 000f | baf6 ffff | ff8b e890 
+
+  0x0000020c43f8158c: ;   {runtime_call UncommonTrapBlob}
+  0x0000020c43f8158c: c5f8 77e8 
+
+  0x0000020c43f81590: ; ImmutableOopMap {[88]=NarrowOop }
+                      ;*invokevirtual write {reexecute=0 rethrow=0 return_oop=0}
+                      ; - org.codehaus.plexus.archiver.zip.DeferredScatterOutputStream::writeOut@7 (line 44)
+                      ; - org.apache.commons.compress.archivers.zip.StreamCompressor$ScatterGatherBackingStoreCompressor::writeOut@7 (line 291)
+                      ; - org.apache.commons.compress.archivers.zip.StreamCompressor::writeCounted@4 (line 273)
+                      ; - org.apache.commons.compress.archivers.zip.StreamCompressor::deflate@29 (line 264)
+  0x0000020c43f81590: 6c30 68ff 
+
+  0x0000020c43f81594: ;   {other}
+  0x0000020c43f81594: 0f1f 8400 | 8408 0010 | baf6 ffff | ff8b e890 
+
+  0x0000020c43f815a4: ;   {runtime_call UncommonTrapBlob}
+  0x0000020c43f815a4: c5f8 77e8 
+
+  0x0000020c43f815a8: ; ImmutableOopMap {[88]=NarrowOop }
+                      ;*invokevirtual write {reexecute=0 rethrow=0 return_oop=0}
+                      ; - org.apache.commons.io.output.ThresholdingOutputStream::write@12 (line 232)
+                      ; - org.codehaus.plexus.archiver.zip.DeferredScatterOutputStream::writeOut@7 (line 44)
+                      ; - org.apache.commons.compress.archivers.zip.StreamCompressor$ScatterGatherBackingStoreCompressor::writeOut@7 (line 291)
+                      ; - org.apache.commons.compress.archivers.zip.StreamCompressor::writeCounted@4 (line 273)
+                      ; - org.apache.commons.compress.archivers.zip.StreamCompressor::deflate@29 (line 264)
+  0x0000020c43f815a8: 5430 68ff 
+
+  0x0000020c43f815ac: ;   {other}
+  0x0000020c43f815ac: 0f1f 8400 | 9c08 0011 | baf6 ffff | ff89 4424 | 2048 894c | 2428 8944 | 2424 4489 | 5c24 3890 
+  0x0000020c43f815cc: ;   {runtime_call UncommonTrapBlob}
+  0x0000020c43f815cc: c5f8 77e8 
+
+  0x0000020c43f815d0: ; ImmutableOopMap {[40]=Oop [56]=NarrowOop [96]=Oop }
+                      ;*arraylength {reexecute=0 rethrow=0 return_oop=0}
+                      ; - org.codehaus.plexus.archiver.zip.ByteArrayOutputStream::write@6 (line 168)
+                      ; - org.apache.commons.io.output.ThresholdingOutputStream::write@12 (line 232)
+                      ; - org.codehaus.plexus.archiver.zip.DeferredScatterOutputStream::writeOut@7 (line 44)
+                      ; - org.apache.commons.compress.archivers.zip.StreamCompressor$ScatterGatherBackingStoreCompressor::writeOut@7 (line 291)
+                      ; - org.apache.commons.compress.archivers.zip.StreamCompressor::writeCounted@4 (line 273)
+                      ; - org.apache.commons.compress.archivers.zip.StreamCompressor::deflate@29 (line 264)
+  0x0000020c43f815d0: 2c30 68ff 
+
+  0x0000020c43f815d4: ;   {other}
+  0x0000020c43f815d4: 0f1f 8400 | c408 0012 | 488b d84c | 8b5c 2430 | 488d 8424 | 8000 0000 | 4883 3800 | 0f84 7900 
+  0x0000020c43f815f4: 0000 4d8b | 1341 f6c2 | 020f 8462 | 0000 0049 | 83ba 8600 | 0000 0074 | 0949 ff8a | 8600 0000 
+  0x0000020c43f81614: eb4b 498b | 8296 0000 | 0049 0b82 | 8e00 0000 | 750a 49c7 | 423e 0000 | 0000 eb3d | 4983 ba9e 
+  0x0000020c43f81634: 0000 0000 | 7422 4833 | c049 c742 | 3e00 0000 | 00f0 8304 | 2400 4983 | ba9e 0000 | 0000 750d 
+  0x0000020c43f81654: f04d 0fb1 | 7a3e 7505 | 83c8 01eb | 0ca8 00eb | 084c 8b10 | f04d 0fb1 | 1375 0a49 | ff8f 5005 
+  0x0000020c43f81674: 0000 4533 | d275 1848 | 8bd3 eb03 | 488b d0c5 | f877 4881 | c490 0000 
+
+  0x0000020c43f8168c: ;   {runtime_call _rethrow_Java}
+  0x0000020c43f8168c: 005d e96d | 6776 ff49 | 8bcb 488d | 9424 8000 | 0000 4d8b | c7c5 f877 | 49ba 50d9 | b8e6 fd7f 
+  0x0000020c43f816ac: 0000 41ff 
+
+  0x0000020c43f816b0: ;   {other}
+  0x0000020c43f816b0: d20f 1f84 | 0000 0000 
+
+  0x0000020c43f816b8: ;   {internal_word}
+  0x0000020c43f816b8: 00eb c049 | ba87 12f8 | 430c 0200 | 004d 8997 | 6804 0000 
+
+  0x0000020c43f816cc: ;   {runtime_call SafepointBlob}
+  0x0000020c43f816cc: e92f 4068 
+
+  0x0000020c43f816d0: ;   {runtime_call StubRoutines (final stubs)}
+  0x0000020c43f816d0: ffe8 8a36 | 66ff e963 | f8ff fff4 | f4f4 f4f4 
+[Stub Code]
+  0x0000020c43f816e0: ;   {no_reloc}
+  0x0000020c43f816e0: 48bb 0000 | 0000 0000 
+
+  0x0000020c43f816e8: ;   {runtime_call}
+  0x0000020c43f816e8: 0000 e9fb 
+
+  0x0000020c43f816ec: ;   {static_stub}
+  0x0000020c43f816ec: ffff ff48 | bbb0 a1cd | 940c 0200 
+
+  0x0000020c43f816f8: ;   {runtime_call I2C/C2I adapters}
+  0x0000020c43f816f8: 00e9 6926 
+
+  0x0000020c43f816fc: ;   {runtime_call ExceptionBlob}
+  0x0000020c43f816fc: 68ff e97d | cf74 ffe8 | 0000 0000 | 4883 2c24 
+
+  0x0000020c43f8170c: ;   {runtime_call DeoptimizationBlob}
+  0x0000020c43f8170c: 05e9 8e32 | 68ff f4f4 | f4f4 f4f4 
+[/MachCode]
+
+
+Compiled method (c1)   22916 9590       3       org.apache.commons.compress.archivers.zip.StreamCompressor::writeDeflated (119 bytes)
+ total in heap  [0x0000020c3d2a8710,0x0000020c3d2a9990] = 4736
+ relocation     [0x0000020c3d2a8870,0x0000020c3d2a89a8] = 312
+ main code      [0x0000020c3d2a89c0,0x0000020c3d2a94b8] = 2808
+ stub code      [0x0000020c3d2a94b8,0x0000020c3d2a9580] = 200
+ oops           [0x0000020c3d2a9580,0x0000020c3d2a9588] = 8
+ metadata       [0x0000020c3d2a9588,0x0000020c3d2a95b8] = 48
+ scopes data    [0x0000020c3d2a95b8,0x0000020c3d2a9718] = 352
+ scopes pcs     [0x0000020c3d2a9718,0x0000020c3d2a9938] = 544
+ dependencies   [0x0000020c3d2a9938,0x0000020c3d2a9940] = 8
+ nul chk table  [0x0000020c3d2a9940,0x0000020c3d2a9990] = 80
+
+[Constant Pool (empty)]
+
+[MachCode]
+[Entry Point]
+  # {method} {0x0000020c94cd4a70} 'writeDeflated' '([BII)V' in 'org/apache/commons/compress/archivers/zip/StreamCompressor'
+  # this:     rdx:rdx   = 'org/apache/commons/compress/archivers/zip/StreamCompressor'
+  # parm0:    r8:r8     = '[B'
+  # parm1:    r9        = int
+  # parm2:    rdi       = int
+  #           [sp+0x90]  (sp of caller)
+  0x0000020c3d2a89c0: 448b 5208 | 49bb 0000 | 0052 0c02 | 0000 4d03 | d34c 3bd0 
+
+  0x0000020c3d2a89d4: ;   {runtime_call ic_miss_stub}
+  0x0000020c3d2a89d4: 0f85 a65d | 3506 660f | 1f44 0000 
+[Verified Entry Point]
+  0x0000020c3d2a89e0: e99b ec30 | 06ff ff55 | 4881 ec80 | 0000 0090 | 4181 7f20 | 0700 0000 
+
+  0x0000020c3d2a89f8: ;   {runtime_call StubRoutines (final stubs)}
+  0x0000020c3d2a89f8: 7405 e861 | c333 0648 | 8954 2448 | 4c89 4424 | 5844 894c | 2454 897c 
+
+  0x0000020c3d2a8a10: ;   {metadata(method data for {method} {0x0000020c94cd4a70} 'writeDeflated' '([BII)V' in 'org/apache/commons/compress/archivers/zip/StreamCompressor')}
+  0x0000020c3d2a8a10: 2464 48b8 | 004a cf94 | 0c02 0000 | 8bb0 cc00 | 0000 83c6 | 0289 b0cc | 0000 0081 | e6fe 0700 
+  0x0000020c3d2a8a30: 0083 fe00 | 0f84 ab08 | 0000 83ff 
+
+  0x0000020c3d2a8a3c: ;   {metadata(method data for {method} {0x0000020c94cd4a70} 'writeDeflated' '([BII)V' in 'org/apache/commons/compress/archivers/zip/StreamCompressor')}
+  0x0000020c3d2a8a3c: 0048 b800 | 4acf 940c | 0200 0048 | be10 0100 | 0000 0000 | 000f 8e0a | 0000 0048 | be20 0100 
+  0x0000020c3d2a8a5c: 0000 0000 | 0048 8b1c | 3048 8d5b | 0148 891c | 300f 8e0f | 0800 008b | 720c 483b | 0648 8bc6 
+  0x0000020c3d2a8a7c: ;   {metadata(method data for {method} {0x0000020c94cd4a70} 'writeDeflated' '([BII)V' in 'org/apache/commons/compress/archivers/zip/StreamCompressor')}
+  0x0000020c3d2a8a7c: 48bb 004a | cf94 0c02 | 0000 4883 | 8348 0100 
+
+  0x0000020c3d2a8a8c: ;   {metadata(method data for {method} {0x0000020c947c4718} 'finished' '()Z' in 'java/util/zip/Deflater')}
+  0x0000020c3d2a8a8c: 0001 48b8 | 385a 7d94 | 0c02 0000 | 8b98 cc00 | 0000 83c3 | 0289 98cc | 0000 0081 | e3fe ff1f 
+  0x0000020c3d2a8aac: 0083 fb00 | 0f84 5508 | 0000 8b5e | 3048 8d4c | 2468 4889 | 5908 488b | 0348 83c8 | 0148 8901 
+  0x0000020c3d2a8acc: f048 0fb1 | 0b0f 8412 | 0000 0048 | 2bc4 4825 | 07f0 ffff | 4889 010f | 8548 0800 | 0049 ff87 
+  0x0000020c3d2a8aec: 5005 0000 | 0fbe 762e | 488d 4424 | 6848 8b18 | 4885 db0f | 840f 0000 | 0048 8b48 | 08f0 480f 
+  0x0000020c3d2a8b0c: b119 0f85 | 3008 0000 | 49ff 8f50 | 0500 0083 | e601 83fe 
+
+  0x0000020c3d2a8b20: ;   {metadata(method data for {method} {0x0000020c94cd4a70} 'writeDeflated' '([BII)V' in 'org/apache/commons/compress/archivers/zip/StreamCompressor')}
+  0x0000020c3d2a8b20: 0048 be00 | 4acf 940c | 0200 0048 | bb68 0100 | 0000 0000 | 000f 850a | 0000 0048 | bb78 0100 
+  0x0000020c3d2a8b40: 0000 0000 | 0048 8b04 | 1e48 8d40 | 0148 8904 | 1e0f 852b | 0700 0081 | ff00 2000 
+
+  0x0000020c3d2a8b5c: ;   {metadata(method data for {method} {0x0000020c94cd4a70} 'writeDeflated' '([BII)V' in 'org/apache/commons/compress/archivers/zip/StreamCompressor')}
+  0x0000020c3d2a8b5c: 0048 be00 | 4acf 940c | 0200 0048 | bb88 0100 | 0000 0000 | 000f 8f0a | 0000 0048 | bb98 0100 
+  0x0000020c3d2a8b7c: 0000 0000 | 0048 8b04 | 1e48 8d40 | 0148 8904 | 1e0f 8fd7 | 0100 008b | 720c 483b | 0648 8bde 
+  0x0000020c3d2a8b9c: ;   {metadata(method data for {method} {0x0000020c94cd4a70} 'writeDeflated' '([BII)V' in 'org/apache/commons/compress/archivers/zip/StreamCompressor')}
+  0x0000020c3d2a8b9c: 48b8 004a | cf94 0c02 | 0000 4883 | 80c0 0100 | 0001 488b | d666 0f1f 
+
+  0x0000020c3d2a8bb4: ;   {optimized virtual_call}
+  0x0000020c3d2a8bb4: 4400 00e8 
+
+  0x0000020c3d2a8bb8: ; ImmutableOopMap {[72]=Oop }
+                      ;*invokevirtual setInput {reexecute=0 rethrow=0 return_oop=0}
+                      ; - org.apache.commons.compress.archivers.zip.StreamCompressor::writeDeflated@28 (line 237)
+  0x0000020c3d2a8bb8: 049f cd06 
+
+  0x0000020c3d2a8bbc: ;   {other}
+  0x0000020c3d2a8bbc: 0f1f 8400 | ac04 0000 | 488b 5424 
+
+  0x0000020c3d2a8bc8: ;   {metadata(method data for {method} {0x0000020c94cd4a70} 'writeDeflated' '([BII)V' in 'org/apache/commons/compress/archivers/zip/StreamCompressor')}
+  0x0000020c3d2a8bc8: 4848 be00 | 4acf 940c | 0200 0048 | 8386 e001 
+
+  0x0000020c3d2a8bd8: ;   {metadata(method data for {method} {0x0000020c94cd4b48} 'deflateUntilInputIsNeeded' '()V' in 'org/apache/commons/compress/archivers/zip/StreamCompressor')}
+  0x0000020c3d2a8bd8: 0000 0148 | ba48 4dcf | 940c 0200 | 008b b2cc | 0000 0083 | c602 89b2 | cc00 0000 | 81e6 feff 
+  0x0000020c3d2a8bf8: 1f00 83fe | 000f 8459 | 0700 00e9 | ee00 0000 | 488b 5424 
+
+  0x0000020c3d2a8c0c: ;   {metadata(method data for {method} {0x0000020c94cd4b48} 'deflateUntilInputIsNeeded' '()V' in 'org/apache/commons/compress/archivers/zip/StreamCompressor')}
+  0x0000020c3d2a8c0c: 4848 be48 | 4dcf 940c | 0200 008b | 5208 49ba | 0000 0052 | 0c02 0000 | 4903 d248 | 3b96 7801 
+  0x0000020c3d2a8c2c: 0000 750d | 4883 8680 | 0100 0001 | e960 0000 | 0048 3b96 | 8801 0000 | 750d 4883 | 8690 0100 
+  0x0000020c3d2a8c4c: 0001 e94a | 0000 0048 | 83be 7801 | 0000 0075 | 1748 8996 | 7801 0000 | 48c7 8680 | 0100 0001 
+  0x0000020c3d2a8c6c: 0000 00e9 | 2900 0000 | 4883 be88 | 0100 0000 | 7517 4889 | 9688 0100 | 0048 c786 | 9001 0000 
+  0x0000020c3d2a8c8c: 0100 0000 | e908 0000 | 0048 8386 | 6801 0000 | 0148 8b54 | 2448 0f1f 
+
+  0x0000020c3d2a8ca4: ;   {optimized virtual_call}
+  0x0000020c3d2a8ca4: 4400 00e8 
+
+  0x0000020c3d2a8ca8: ; ImmutableOopMap {[72]=Oop }
+                      ;*invokevirtual deflate {reexecute=0 rethrow=0 return_oop=0}
+                      ; - org.apache.commons.compress.archivers.zip.StreamCompressor::deflateUntilInputIsNeeded@11 (line 257)
+                      ; - org.apache.commons.compress.archivers.zip.StreamCompressor::writeDeflated@32 (line 238)
+  0x0000020c3d2a8ca8: 7482 cd06 
+
+  0x0000020c3d2a8cac: ;   {other}
+  0x0000020c3d2a8cac: 0f1f 8400 | 9c05 0001 
+
+  0x0000020c3d2a8cb4: ;   {metadata(method data for {method} {0x0000020c94cd4b48} 'deflateUntilInputIsNeeded' '()V' in 'org/apache/commons/compress/archivers/zip/StreamCompressor')}
+  0x0000020c3d2a8cb4: 48b8 484d | cf94 0c02 | 0000 8b90 | d000 0000 | 83c2 0289 | 90d0 0000 | 0081 e2fe | 3f00 0083 
+  0x0000020c3d2a8cd4: fa00 0f84 | a106 0000 | 4d8b 9758 
+
+  0x0000020c3d2a8ce0: ; ImmutableOopMap {[72]=Oop }
+                      ;*goto {reexecute=1 rethrow=0 return_oop=0}
+                      ; - (reexecute) org.apache.commons.compress.archivers.zip.StreamCompressor::deflateUntilInputIsNeeded@14 (line 257)
+                      ; - org.apache.commons.compress.archivers.zip.StreamCompressor::writeDeflated@32 (line 238)
+                      ;   {poll}
+  0x0000020c3d2a8ce0: 0400 0041 
+
+  0x0000020c3d2a8ce4: ;   {metadata(method data for {method} {0x0000020c94cd4b48} 'deflateUntilInputIsNeeded' '()V' in 'org/apache/commons/compress/archivers/zip/StreamCompressor')}
+  0x0000020c3d2a8ce4: 8502 48b8 | 484d cf94 | 0c02 0000 | ff80 a001 | 0000 488b | 5424 488b | 720c 483b | 0648 8bfe 
+  0x0000020c3d2a8d04: ;   {metadata(method data for {method} {0x0000020c94cd4b48} 'deflateUntilInputIsNeeded' '()V' in 'org/apache/commons/compress/archivers/zip/StreamCompressor')}
+  0x0000020c3d2a8d04: 48bb 484d | cf94 0c02 | 0000 4883 | 8328 0100 | 0001 488b | d666 0f1f 
+
+  0x0000020c3d2a8d1c: ;   {optimized virtual_call}
+  0x0000020c3d2a8d1c: 4400 00e8 
+
+  0x0000020c3d2a8d20: ; ImmutableOopMap {[72]=Oop }
+                      ;*invokevirtual needsInput {reexecute=0 rethrow=0 return_oop=0}
+                      ; - org.apache.commons.compress.archivers.zip.StreamCompressor::deflateUntilInputIsNeeded@4 (line 256)
+                      ; - org.apache.commons.compress.archivers.zip.StreamCompressor::writeDeflated@32 (line 238)
+  0x0000020c3d2a8d20: 1c5e cd06 
+
+  0x0000020c3d2a8d24: ;   {other}
+  0x0000020c3d2a8d24: 0f1f 8400 | 1406 0003 
+
+  0x0000020c3d2a8d2c: ;   {metadata(method data for {method} {0x0000020c94cd4b48} 'deflateUntilInputIsNeeded' '()V' in 'org/apache/commons/compress/archivers/zip/StreamCompressor')}
+  0x0000020c3d2a8d2c: 83f8 0048 | ba48 4dcf | 940c 0200 | 0048 be48 | 0100 0000 | 0000 000f | 850a 0000 | 0048 be58 
+  0x0000020c3d2a8d4c: 0100 0000 | 0000 0048 | 8b3c 3248 | 8d7f 0148 | 893c 320f | 850d 0500 | 00e9 9efe | ffff 488b 
+  0x0000020c3d2a8d6c: c7be 0020 | 0000 3d00 | 0000 800f | 850b 0000 | 0033 d283 | feff 0f84 | 0300 0000 | 99f7 fe89 
+  0x0000020c3d2a8d8c: 4424 60be | 0000 0000 | 0f1f 4000 | 488b 5424 
+
+  0x0000020c3d2a8d9c: ;   {metadata(method data for {method} {0x0000020c94cd4a70} 'writeDeflated' '([BII)V' in 'org/apache/commons/compress/archivers/zip/StreamCompressor')}
+  0x0000020c3d2a8d9c: 483b f048 | bb00 4acf | 940c 0200 | 0048 b908 | 0200 0000 | 0000 000f | 8d0a 0000 | 0048 b918 
+  0x0000020c3d2a8dbc: 0200 0000 | 0000 004c | 8b1c 0b4d | 8d5b 014c | 891c 0b0f | 8d59 0200 | 008b 5a0c 
+
+  0x0000020c3d2a8dd8: ; implicit exception: dispatches to 0x0000020c3d2a93a8
+  0x0000020c3d2a8dd8: 483b 0348 
+
+  0x0000020c3d2a8ddc: ;   {metadata(method data for {method} {0x0000020c94cd4a70} 'writeDeflated' '([BII)V' in 'org/apache/commons/compress/archivers/zip/StreamCompressor')}
+  0x0000020c3d2a8ddc: 8bcb 49bb | 004a cf94 | 0c02 0000 
+
+  0x0000020c3d2a8de8: ;   {metadata('java/util/zip/Deflater')}
+  0x0000020c3d2a8de8: 49ba 188f | 1753 0c02 | 0000 4d89 | 9338 0200 | 0049 8383 | 4002 0000 | 0148 8bce | c1e1 0d41 
+  0x0000020c3d2a8e08: 03c9 4d8b | d84d 8bc3 | 4c8b c9bf | 0020 0000 | 488b d389 
+
+  0x0000020c3d2a8e1c: ;   {optimized virtual_call}
+  0x0000020c3d2a8e1c: 7424 50e8 
+
+  0x0000020c3d2a8e20: ; ImmutableOopMap {[72]=Oop [88]=Oop }
+                      ;*invokevirtual setInput {reexecute=0 rethrow=0 return_oop=0}
+                      ; - org.apache.commons.compress.archivers.zip.StreamCompressor::writeDeflated@71 (line 242)
+  0x0000020c3d2a8e20: 5c5c 3506 
+
+  0x0000020c3d2a8e24: ;   {other}
+  0x0000020c3d2a8e24: 0f1f 8400 | 1407 0004 | 488b 5424 
+
+  0x0000020c3d2a8e30: ;   {metadata(method data for {method} {0x0000020c94cd4a70} 'writeDeflated' '([BII)V' in 'org/apache/commons/compress/archivers/zip/StreamCompressor')}
+  0x0000020c3d2a8e30: 4848 be00 | 4acf 940c | 0200 0048 | 8386 6002 
+
+  0x0000020c3d2a8e40: ;   {metadata(method data for {method} {0x0000020c94cd4b48} 'deflateUntilInputIsNeeded' '()V' in 'org/apache/commons/compress/archivers/zip/StreamCompressor')}
+  0x0000020c3d2a8e40: 0000 0148 | ba48 4dcf | 940c 0200 | 008b b2cc | 0000 0083 | c602 89b2 | cc00 0000 | 81e6 feff 
+  0x0000020c3d2a8e60: 1f00 83fe | 000f 8442 | 0500 00e9 | f400 0000 | 488b 5424 
+
+  0x0000020c3d2a8e74: ;   {metadata(method data for {method} {0x0000020c94cd4b48} 'deflateUntilInputIsNeeded' '()V' in 'org/apache/commons/compress/archivers/zip/StreamCompressor')}
+  0x0000020c3d2a8e74: 4848 be48 | 4dcf 940c | 0200 008b | 5208 49ba | 0000 0052 | 0c02 0000 | 4903 d248 | 3b96 7801 
+  0x0000020c3d2a8e94: 0000 750d | 4883 8680 | 0100 0001 | e960 0000 | 0048 3b96 | 8801 0000 | 750d 4883 | 8690 0100 
+  0x0000020c3d2a8eb4: 0001 e94a | 0000 0048 | 83be 7801 | 0000 0075 | 1748 8996 | 7801 0000 | 48c7 8680 | 0100 0001 
+  0x0000020c3d2a8ed4: 0000 00e9 | 2900 0000 | 4883 be88 | 0100 0000 | 7517 4889 | 9688 0100 | 0048 c786 | 9001 0000 
+  0x0000020c3d2a8ef4: 0100 0000 | e908 0000 | 0048 8386 | 6801 0000 | 0148 8b54 | 2448 0f1f 
+
+  0x0000020c3d2a8f0c: ;   {optimized virtual_call}
+  0x0000020c3d2a8f0c: 4400 00e8 
+
+  0x0000020c3d2a8f10: ; ImmutableOopMap {[72]=Oop [88]=Oop }
+                      ;*invokevirtual deflate {reexecute=0 rethrow=0 return_oop=0}
+                      ; - org.apache.commons.compress.archivers.zip.StreamCompressor::deflateUntilInputIsNeeded@11 (line 257)
+                      ; - org.apache.commons.compress.archivers.zip.StreamCompressor::writeDeflated@75 (line 244)
+  0x0000020c3d2a8f10: 6c5b 3506 
+
+  0x0000020c3d2a8f14: ;   {other}
+  0x0000020c3d2a8f14: 0f1f 8400 | 0408 0005 
+
+  0x0000020c3d2a8f1c: ;   {metadata(method data for {method} {0x0000020c94cd4b48} 'deflateUntilInputIsNeeded' '()V' in 'org/apache/commons/compress/archivers/zip/StreamCompressor')}
+  0x0000020c3d2a8f1c: 49b8 484d | cf94 0c02 | 0000 458b | 88d0 0000 | 0041 83c1 | 0245 8988 | d000 0000 | 4181 e1fe 
+  0x0000020c3d2a8f3c: 3f00 0041 | 83f9 000f | 8485 0400 | 004d 8b97 
+
+  0x0000020c3d2a8f4c: ; ImmutableOopMap {[72]=Oop [88]=Oop }
+                      ;*goto {reexecute=1 rethrow=0 return_oop=0}
+                      ; - (reexecute) org.apache.commons.compress.archivers.zip.StreamCompressor::deflateUntilInputIsNeeded@14 (line 257)
+                      ; - org.apache.commons.compress.archivers.zip.StreamCompressor::writeDeflated@75 (line 244)
+  0x0000020c3d2a8f4c: 5804 0000 
+
+  0x0000020c3d2a8f50: ;   {poll}
+  0x0000020c3d2a8f50: 4185 0249 | b848 4dcf | 940c 0200 | 0041 ff80 | a001 0000 | 488b 5424 | 488b 720c 
+
+  0x0000020c3d2a8f6c: ; implicit exception: dispatches to 0x0000020c3d2a93ef
+  0x0000020c3d2a8f6c: 483b 0648 
+
+  0x0000020c3d2a8f70: ;   {metadata(method data for {method} {0x0000020c94cd4b48} 'deflateUntilInputIsNeeded' '()V' in 'org/apache/commons/compress/archivers/zip/StreamCompressor')}
+  0x0000020c3d2a8f70: 8bfe 48bb | 484d cf94 | 0c02 0000 | 4883 8328 | 0100 0001 
+
+  0x0000020c3d2a8f84: ;   {optimized virtual_call}
+  0x0000020c3d2a8f84: 488b d6e8 
+
+  0x0000020c3d2a8f88: ; ImmutableOopMap {[72]=Oop [88]=Oop }
+                      ;*invokevirtual needsInput {reexecute=0 rethrow=0 return_oop=0}
+                      ; - org.apache.commons.compress.archivers.zip.StreamCompressor::deflateUntilInputIsNeeded@4 (line 256)
+                      ; - org.apache.commons.compress.archivers.zip.StreamCompressor::writeDeflated@75 (line 244)
+  0x0000020c3d2a8f88: f45a 3506 
+
+  0x0000020c3d2a8f8c: ;   {other}
+  0x0000020c3d2a8f8c: 0f1f 8400 | 7c08 0007 
+
+  0x0000020c3d2a8f94: ;   {metadata(method data for {method} {0x0000020c94cd4b48} 'deflateUntilInputIsNeeded' '()V' in 'org/apache/commons/compress/archivers/zip/StreamCompressor')}
+  0x0000020c3d2a8f94: 83f8 0048 | ba48 4dcf | 940c 0200 | 0048 be58 | 0100 0000 | 0000 000f | 840a 0000 | 0048 be48 
+  0x0000020c3d2a8fb4: 0100 0000 | 0000 0048 | 8b3c 3248 | 8d7f 0148 | 893c 320f | 84a3 feff | ff8b 7424 
+
+  0x0000020c3d2a8fd0: ;   {metadata(method data for {method} {0x0000020c94cd4a70} 'writeDeflated' '([BII)V' in 'org/apache/commons/compress/archivers/zip/StreamCompressor')}
+  0x0000020c3d2a8fd0: 50ff c649 | b800 4acf | 940c 0200 | 0045 8b88 | d000 0000 | 4183 c102 | 4589 88d0 | 0000 0041 
+  0x0000020c3d2a8ff0: 81e1 fe3f | 0000 4183 | f900 0f84 | f403 0000 | 4d8b 9758 
+
+  0x0000020c3d2a9004: ; ImmutableOopMap {[72]=Oop [88]=Oop }
+                      ;*goto {reexecute=1 rethrow=0 return_oop=0}
+                      ; - (reexecute) org.apache.commons.compress.archivers.zip.StreamCompressor::writeDeflated@81 (line 241)
+                      ;   {poll}
+  0x0000020c3d2a9004: 0400 0041 
+
+  0x0000020c3d2a9008: ;   {metadata(method data for {method} {0x0000020c94cd4a70} 'writeDeflated' '([BII)V' in 'org/apache/commons/compress/archivers/zip/StreamCompressor')}
+  0x0000020c3d2a9008: 8502 49b8 | 004a cf94 | 0c02 0000 | 41ff 8070 | 0200 008b | 4424 6044 | 8b4c 2454 | 4c8b 4424 
+  0x0000020c3d2a9028: 58e9 6afd | ffff c1e0 | 0d3b 4424 
+
+  0x0000020c3d2a9034: ;   {metadata(method data for {method} {0x0000020c94cd4a70} 'writeDeflated' '([BII)V' in 'org/apache/commons/compress/archivers/zip/StreamCompressor')}
+  0x0000020c3d2a9034: 6449 b800 | 4acf 940c | 0200 0049 | b988 0200 | 0000 0000 | 000f 8d0a | 0000 0049 | b998 0200 
+  0x0000020c3d2a9054: 0000 0000 | 004b 8b3c | 0848 8d7f | 014b 893c | 080f 8d17 | 0200 008b | 7c24 6444 | 8b4c 2454 
+  0x0000020c3d2a9074: 4c8b 4424 | 5848 8b54 | 2448 8b72 | 0c48 3b06 
+
+  0x0000020c3d2a9084: ;   {metadata(method data for {method} {0x0000020c94cd4a70} 'writeDeflated' '([BII)V' in 'org/apache/commons/compress/archivers/zip/StreamCompressor')}
+  0x0000020c3d2a9084: 488b de48 | b900 4acf | 940c 0200 
+
+  0x0000020c3d2a9090: ;   {metadata('java/util/zip/Deflater')}
+  0x0000020c3d2a9090: 0049 ba18 | 8f17 530c | 0200 004c | 8991 b802 | 0000 4883 | 81c0 0200 | 0001 488b | d841 03d9 
+  0x0000020c3d2a90b0: 2bf8 4c8b | cb48 8bd6 | 0f1f 8000 
+
+  0x0000020c3d2a90bc: ;   {optimized virtual_call}
+  0x0000020c3d2a90bc: 0000 00e8 
+
+  0x0000020c3d2a90c0: ; ImmutableOopMap {[72]=Oop }
+                      ;*invokevirtual setInput {reexecute=0 rethrow=0 return_oop=0}
+                      ; - org.apache.commons.compress.archivers.zip.StreamCompressor::writeDeflated@111 (line 248)
+  0x0000020c3d2a90c0: bc59 3506 
+
+  0x0000020c3d2a90c4: ;   {other}
+  0x0000020c3d2a90c4: 0f1f 8400 | b409 0009 | 488b 5424 
+
+  0x0000020c3d2a90d0: ;   {metadata(method data for {method} {0x0000020c94cd4a70} 'writeDeflated' '([BII)V' in 'org/apache/commons/compress/archivers/zip/StreamCompressor')}
+  0x0000020c3d2a90d0: 4848 be00 | 4acf 940c | 0200 0048 | 8386 e002 
+
+  0x0000020c3d2a90e0: ;   {metadata(method data for {method} {0x0000020c94cd4b48} 'deflateUntilInputIsNeeded' '()V' in 'org/apache/commons/compress/archivers/zip/StreamCompressor')}
+  0x0000020c3d2a90e0: 0000 0148 | ba48 4dcf | 940c 0200 | 008b b2cc | 0000 0083 | c602 89b2 | cc00 0000 | 81e6 feff 
+  0x0000020c3d2a9100: 1f00 83fe | 000f 840f | 0300 00e9 | ee00 0000 | 488b 5424 
+
+  0x0000020c3d2a9114: ;   {metadata(method data for {method} {0x0000020c94cd4b48} 'deflateUntilInputIsNeeded' '()V' in 'org/apache/commons/compress/archivers/zip/StreamCompressor')}
+  0x0000020c3d2a9114: 4848 be48 | 4dcf 940c | 0200 008b | 5208 49ba | 0000 0052 | 0c02 0000 | 4903 d248 | 3b96 7801 
+  0x0000020c3d2a9134: 0000 750d | 4883 8680 | 0100 0001 | e960 0000 | 0048 3b96 | 8801 0000 | 750d 4883 | 8690 0100 
+  0x0000020c3d2a9154: 0001 e94a | 0000 0048 | 83be 7801 | 0000 0075 | 1748 8996 | 7801 0000 | 48c7 8680 | 0100 0001 
+  0x0000020c3d2a9174: 0000 00e9 | 2900 0000 | 4883 be88 | 0100 0000 | 7517 4889 | 9688 0100 | 0048 c786 | 9001 0000 
+  0x0000020c3d2a9194: 0100 0000 | e908 0000 | 0048 8386 | 6801 0000 | 0148 8b54 | 2448 0f1f 
+
+  0x0000020c3d2a91ac: ;   {optimized virtual_call}
+  0x0000020c3d2a91ac: 4400 00e8 
+
+  0x0000020c3d2a91b0: ; ImmutableOopMap {[72]=Oop }
+                      ;*invokevirtual deflate {reexecute=0 rethrow=0 return_oop=0}
+                      ; - org.apache.commons.compress.archivers.zip.StreamCompressor::deflateUntilInputIsNeeded@11 (line 257)
+                      ; - org.apache.commons.compress.archivers.zip.StreamCompressor::writeDeflated@115 (line 249)
+  0x0000020c3d2a91b0: cc58 3506 
+
+  0x0000020c3d2a91b4: ;   {other}
+  0x0000020c3d2a91b4: 0f1f 8400 | a40a 000a 
+
+  0x0000020c3d2a91bc: ;   {metadata(method data for {method} {0x0000020c94cd4b48} 'deflateUntilInputIsNeeded' '()V' in 'org/apache/commons/compress/archivers/zip/StreamCompressor')}
+  0x0000020c3d2a91bc: 48b8 484d | cf94 0c02 | 0000 8bb0 | d000 0000 | 83c6 0289 | b0d0 0000 | 0081 e6fe | 3f00 0083 
+  0x0000020c3d2a91dc: fe00 0f84 | 5702 0000 | 4d8b 9758 
+
+  0x0000020c3d2a91e8: ; ImmutableOopMap {[72]=Oop }
+                      ;*goto {reexecute=1 rethrow=0 return_oop=0}
+                      ; - (reexecute) org.apache.commons.compress.archivers.zip.StreamCompressor::deflateUntilInputIsNeeded@14 (line 257)
+                      ; - org.apache.commons.compress.archivers.zip.StreamCompressor::writeDeflated@115 (line 249)
+                      ;   {poll}
+  0x0000020c3d2a91e8: 0400 0041 
+
+  0x0000020c3d2a91ec: ;   {metadata(method data for {method} {0x0000020c94cd4b48} 'deflateUntilInputIsNeeded' '()V' in 'org/apache/commons/compress/archivers/zip/StreamCompressor')}
+  0x0000020c3d2a91ec: 8502 48b8 | 484d cf94 | 0c02 0000 | ff80 a001 | 0000 488b | 5424 488b | 720c 483b | 0648 8bfe 
+  0x0000020c3d2a920c: ;   {metadata(method data for {method} {0x0000020c94cd4b48} 'deflateUntilInputIsNeeded' '()V' in 'org/apache/commons/compress/archivers/zip/StreamCompressor')}
+  0x0000020c3d2a920c: 48bb 484d | cf94 0c02 | 0000 4883 | 8328 0100 | 0001 488b | d666 0f1f 
+
+  0x0000020c3d2a9224: ;   {optimized virtual_call}
+  0x0000020c3d2a9224: 4400 00e8 
+
+  0x0000020c3d2a9228: ; ImmutableOopMap {[72]=Oop }
+                      ;*invokevirtual needsInput {reexecute=0 rethrow=0 return_oop=0}
+                      ; - org.apache.commons.compress.archivers.zip.StreamCompressor::deflateUntilInputIsNeeded@4 (line 256)
+                      ; - org.apache.commons.compress.archivers.zip.StreamCompressor::writeDeflated@115 (line 249)
+  0x0000020c3d2a9228: 5458 3506 
+
+  0x0000020c3d2a922c: ;   {other}
+  0x0000020c3d2a922c: 0f1f 8400 | 1c0b 000c 
+
+  0x0000020c3d2a9234: ;   {metadata(method data for {method} {0x0000020c94cd4b48} 'deflateUntilInputIsNeeded' '()V' in 'org/apache/commons/compress/archivers/zip/StreamCompressor')}
+  0x0000020c3d2a9234: 83f8 0048 | ba48 4dcf | 940c 0200 | 0048 be48 | 0100 0000 | 0000 000f | 850a 0000 | 0048 be58 
+  0x0000020c3d2a9254: 0100 0000 | 0000 0048 | 8b3c 3248 | 8d7f 0148 | 893c 320f | 8515 0000 | 00e9 9efe 
+
+  0x0000020c3d2a9270: ;   {metadata(method data for {method} {0x0000020c94cd4a70} 'writeDeflated' '([BII)V' in 'org/apache/commons/compress/archivers/zip/StreamCompressor')}
+  0x0000020c3d2a9270: ffff 48b8 | 004a cf94 | 0c02 0000 | ff80 f001 | 0000 4881 | c480 0000 
+
+  0x0000020c3d2a9288: ;   {poll_return}
+  0x0000020c3d2a9288: 005d 493b | a750 0400 | 000f 87ca | 0100 00c3 | 498b 8700 | 0500 004d | 33d2 4d89 | 9700 0500 
+  0x0000020c3d2a92a8: 004d 33d2 | 4d89 9708 | 0500 0048 | 8bf0 488d | 4424 6848 | 8b38 4885 | ff0f 840f | 0000 0048 
+  0x0000020c3d2a92c8: 8b58 08f0 | 480f b13b | 0f85 a101 | 0000 49ff | 8f50 0500 | 0048 8bc6 | e9c2 0100 
+
+  0x0000020c3d2a92e4: ;   {metadata({method} {0x0000020c94cd4a70} 'writeDeflated' '([BII)V' in 'org/apache/commons/compress/archivers/zip/StreamCompressor')}
+  0x0000020c3d2a92e4: 0049 ba68 | 4acd 940c | 0200 004c | 8954 2408 | 48c7 0424 | ffff ffff 
+
+  0x0000020c3d2a92fc: ;   {runtime_call counter_overflow Runtime1 stub}
+  0x0000020c3d2a92fc: e8ff f541 
+
+  0x0000020c3d2a9300: ; ImmutableOopMap {rdx=Oop r8=Oop [72]=Oop [88]=Oop }
+                      ;*synchronization entry
+                      ; - org.apache.commons.compress.archivers.zip.StreamCompressor::writeDeflated@-1 (line 235)
+  0x0000020c3d2a9300: 06e9 34f7 
+
+  0x0000020c3d2a9304: ;   {runtime_call throw_null_pointer_exception Runtime1 stub}
+  0x0000020c3d2a9304: ffff e875 
+
+  0x0000020c3d2a9308: ; ImmutableOopMap {r8=Oop rdx=Oop rsi=Oop [72]=Oop [88]=Oop }
+                      ;*invokevirtual finished {reexecute=0 rethrow=0 return_oop=0}
+                      ; - org.apache.commons.compress.archivers.zip.StreamCompressor::writeDeflated@8 (line 235)
+                      ;   {metadata({method} {0x0000020c947c4718} 'finished' '()Z' in 'java/util/zip/Deflater')}
+  0x0000020c3d2a9308: 9a41 0649 | ba10 477c | 940c 0200 | 004c 8954 | 2408 48c7 | 0424 ffff 
+
+  0x0000020c3d2a9320: ;   {runtime_call counter_overflow Runtime1 stub}
+  0x0000020c3d2a9320: ffff e8d9 
+
+  0x0000020c3d2a9324: ; ImmutableOopMap {r8=Oop rdx=Oop rsi=Oop [72]=Oop [88]=Oop }
+                      ;*synchronization entry
+                      ; - java.util.zip.Deflater::finished@-1 (line 441)
+                      ; - org.apache.commons.compress.archivers.zip.StreamCompressor::writeDeflated@8 (line 235)
+  0x0000020c3d2a9324: f541 06e9 | 8af7 ffff 
+
+  0x0000020c3d2a932c: ;   {runtime_call throw_null_pointer_exception Runtime1 stub}
+  0x0000020c3d2a932c: e84f 9a41 
+
+  0x0000020c3d2a9330: ; ImmutableOopMap {r8=Oop rdx=Oop rsi=Oop rbx=Oop [72]=Oop [88]=Oop }
+                      ;*monitorenter {reexecute=0 rethrow=0 return_oop=0}
+                      ; - java.util.zip.Deflater::finished@6 (line 441)
+                      ; - org.apache.commons.compress.archivers.zip.StreamCompressor::writeDeflated@8 (line 235)
+  0x0000020c3d2a9330: 0648 895c | 2408 4889 
+
+  0x0000020c3d2a9338: ;   {runtime_call monitorenter_nofpu Runtime1 stub}
+  0x0000020c3d2a9338: 0c24 e8c1 
+
+  0x0000020c3d2a933c: ; ImmutableOopMap {r8=Oop rdx=Oop rsi=Oop rbx=Oop [72]=Oop [88]=Oop [112]=Oop }
+                      ;*monitorenter {reexecute=0 rethrow=0 return_oop=0}
+                      ; - java.util.zip.Deflater::finished@6 (line 441)
+                      ; - org.apache.commons.compress.archivers.zip.StreamCompressor::writeDeflated@8 (line 235)
+  0x0000020c3d2a933c: d441 06e9 | acf7 ffff | 488d 4424 | 6848 8904 
+
+  0x0000020c3d2a934c: ;   {runtime_call monitorexit_nofpu Runtime1 stub}
+  0x0000020c3d2a934c: 24e8 aeda | 4106 e9c4 
+
+  0x0000020c3d2a9354: ;   {runtime_call throw_null_pointer_exception Runtime1 stub}
+  0x0000020c3d2a9354: f7ff ffe8 
+
+  0x0000020c3d2a9358: ; ImmutableOopMap {rdx=Oop r8=Oop rsi=Oop [72]=Oop [88]=Oop }
+                      ;*invokevirtual setInput {reexecute=0 rethrow=0 return_oop=0}
+                      ; - org.apache.commons.compress.archivers.zip.StreamCompressor::writeDeflated@28 (line 237)
+  0x0000020c3d2a9358: 249a 4106 
+
+  0x0000020c3d2a935c: ;   {metadata({method} {0x0000020c94cd4b48} 'deflateUntilInputIsNeeded' '()V' in 'org/apache/commons/compress/archivers/zip/StreamCompressor')}
+  0x0000020c3d2a935c: 49ba 404b | cd94 0c02 | 0000 4c89 | 5424 0848 | c704 24ff 
+
+  0x0000020c3d2a9370: ;   {runtime_call counter_overflow Runtime1 stub}
+  0x0000020c3d2a9370: ffff ffe8 
+
+  0x0000020c3d2a9374: ; ImmutableOopMap {[72]=Oop }
+                      ;*synchronization entry
+                      ; - org.apache.commons.compress.archivers.zip.StreamCompressor::deflateUntilInputIsNeeded@-1 (line 256)
+                      ; - org.apache.commons.compress.archivers.zip.StreamCompressor::writeDeflated@32 (line 238)
+  0x0000020c3d2a9374: 88f5 4106 | e986 f8ff 
+
+  0x0000020c3d2a937c: ;   {metadata({method} {0x0000020c94cd4b48} 'deflateUntilInputIsNeeded' '()V' in 'org/apache/commons/compress/archivers/zip/StreamCompressor')}
+  0x0000020c3d2a937c: ff49 ba40 | 4bcd 940c | 0200 004c | 8954 2408 | 48c7 0424 | 0e00 0000 
+
+  0x0000020c3d2a9394: ;   {runtime_call counter_overflow Runtime1 stub}
+  0x0000020c3d2a9394: e867 f541 
+
+  0x0000020c3d2a9398: ; ImmutableOopMap {[72]=Oop }
+                      ;*goto {reexecute=1 rethrow=0 return_oop=0}
+                      ; - (reexecute) org.apache.commons.compress.archivers.zip.StreamCompressor::deflateUntilInputIsNeeded@14 (line 257)
+                      ; - org.apache.commons.compress.archivers.zip.StreamCompressor::writeDeflated@32 (line 238)
+  0x0000020c3d2a9398: 06e9 3ef9 
+
+  0x0000020c3d2a939c: ;   {runtime_call throw_null_pointer_exception Runtime1 stub}
+  0x0000020c3d2a939c: ffff e8dd 
+
+  0x0000020c3d2a93a0: ; ImmutableOopMap {rdx=Oop rsi=Oop [72]=Oop }
+                      ;*invokevirtual needsInput {reexecute=0 rethrow=0 return_oop=0}
+                      ; - org.apache.commons.compress.archivers.zip.StreamCompressor::deflateUntilInputIsNeeded@4 (line 256)
+                      ; - org.apache.commons.compress.archivers.zip.StreamCompressor::writeDeflated@32 (line 238)
+                      ;   {runtime_call throw_div0_exception Runtime1 stub}
+  0x0000020c3d2a93a0: 9941 06e8 
+
+  0x0000020c3d2a93a4: ; ImmutableOopMap {r8=Oop [72]=Oop [88]=Oop }
+                      ;*idiv {reexecute=0 rethrow=0 return_oop=0}
+                      ; - org.apache.commons.compress.archivers.zip.StreamCompressor::writeDeflated@42 (line 240)
+  0x0000020c3d2a93a4: d896 4106 
+
+  0x0000020c3d2a93a8: ;   {runtime_call throw_null_pointer_exception Runtime1 stub}
+  0x0000020c3d2a93a8: e8d3 9941 
+
+  0x0000020c3d2a93ac: ; ImmutableOopMap {r8=Oop rdx=Oop rbx=Oop [72]=Oop [88]=Oop }
+                      ;*invokevirtual setInput {reexecute=0 rethrow=0 return_oop=0}
+                      ; - org.apache.commons.compress.archivers.zip.StreamCompressor::writeDeflated@71 (line 242)
+                      ;   {metadata({method} {0x0000020c94cd4b48} 'deflateUntilInputIsNeeded' '()V' in 'org/apache/commons/compress/archivers/zip/StreamCompressor')}
+  0x0000020c3d2a93ac: 0649 ba40 | 4bcd 940c | 0200 004c | 8954 2408 | 48c7 0424 | ffff ffff 
+
+  0x0000020c3d2a93c4: ;   {runtime_call counter_overflow Runtime1 stub}
+  0x0000020c3d2a93c4: e837 f541 
+
+  0x0000020c3d2a93c8: ; ImmutableOopMap {[72]=Oop [88]=Oop }
+                      ;*synchronization entry
+                      ; - org.apache.commons.compress.archivers.zip.StreamCompressor::deflateUntilInputIsNeeded@-1 (line 256)
+                      ; - org.apache.commons.compress.archivers.zip.StreamCompressor::writeDeflated@75 (line 244)
+  0x0000020c3d2a93c8: 06e9 9dfa 
+
+  0x0000020c3d2a93cc: ;   {metadata({method} {0x0000020c94cd4b48} 'deflateUntilInputIsNeeded' '()V' in 'org/apache/commons/compress/archivers/zip/StreamCompressor')}
+  0x0000020c3d2a93cc: ffff 49ba | 404b cd94 | 0c02 0000 | 4c89 5424 | 0848 c704 | 240e 0000 
+
+  0x0000020c3d2a93e4: ;   {runtime_call counter_overflow Runtime1 stub}
+  0x0000020c3d2a93e4: 00e8 16f5 
+
+  0x0000020c3d2a93e8: ; ImmutableOopMap {[72]=Oop [88]=Oop }
+                      ;*goto {reexecute=1 rethrow=0 return_oop=0}
+                      ; - (reexecute) org.apache.commons.compress.archivers.zip.StreamCompressor::deflateUntilInputIsNeeded@14 (line 257)
+                      ; - org.apache.commons.compress.archivers.zip.StreamCompressor::writeDeflated@75 (line 244)
+  0x0000020c3d2a93e8: 4106 e95a 
+
+  0x0000020c3d2a93ec: ;   {runtime_call throw_null_pointer_exception Runtime1 stub}
+  0x0000020c3d2a93ec: fbff ffe8 
+
+  0x0000020c3d2a93f0: ; ImmutableOopMap {rdx=Oop rsi=Oop [72]=Oop [88]=Oop }
+                      ;*invokevirtual needsInput {reexecute=0 rethrow=0 return_oop=0}
+                      ; - org.apache.commons.compress.archivers.zip.StreamCompressor::deflateUntilInputIsNeeded@4 (line 256)
+                      ; - org.apache.commons.compress.archivers.zip.StreamCompressor::writeDeflated@75 (line 244)
+  0x0000020c3d2a93f0: 8c99 4106 
+
+  0x0000020c3d2a93f4: ;   {metadata({method} {0x0000020c94cd4a70} 'writeDeflated' '([BII)V' in 'org/apache/commons/compress/archivers/zip/StreamCompressor')}
+  0x0000020c3d2a93f4: 49ba 684a | cd94 0c02 | 0000 4c89 | 5424 0848 | c704 2451 
+
+  0x0000020c3d2a9408: ;   {runtime_call counter_overflow Runtime1 stub}
+  0x0000020c3d2a9408: 0000 00e8 
+
+  0x0000020c3d2a940c: ; ImmutableOopMap {[72]=Oop [88]=Oop }
+                      ;*goto {reexecute=1 rethrow=0 return_oop=0}
+                      ; - (reexecute) org.apache.commons.compress.archivers.zip.StreamCompressor::writeDeflated@81 (line 241)
+  0x0000020c3d2a940c: f0f4 4106 | e9eb fbff 
+
+  0x0000020c3d2a9414: ;   {runtime_call throw_null_pointer_exception Runtime1 stub}
+  0x0000020c3d2a9414: ffe8 6699 
+
+  0x0000020c3d2a9418: ; ImmutableOopMap {rdx=Oop r8=Oop rsi=Oop [72]=Oop [88]=Oop }
+                      ;*invokevirtual setInput {reexecute=0 rethrow=0 return_oop=0}
+                      ; - org.apache.commons.compress.archivers.zip.StreamCompressor::writeDeflated@111 (line 248)
+                      ;   {metadata({method} {0x0000020c94cd4b48} 'deflateUntilInputIsNeeded' '()V' in 'org/apache/commons/compress/archivers/zip/StreamCompressor')}
+  0x0000020c3d2a9418: 4106 49ba | 404b cd94 | 0c02 0000 | 4c89 5424 | 0848 c704 | 24ff ffff 
+
+  0x0000020c3d2a9430: ;   {runtime_call counter_overflow Runtime1 stub}
+  0x0000020c3d2a9430: ffe8 caf4 
+
+  0x0000020c3d2a9434: ; ImmutableOopMap {[72]=Oop }
+                      ;*synchronization entry
+                      ; - org.apache.commons.compress.archivers.zip.StreamCompressor::deflateUntilInputIsNeeded@-1 (line 256)
+                      ; - org.apache.commons.compress.archivers.zip.StreamCompressor::writeDeflated@115 (line 249)
+  0x0000020c3d2a9434: 4106 e9d0 
+
+  0x0000020c3d2a9438: ;   {metadata({method} {0x0000020c94cd4b48} 'deflateUntilInputIsNeeded' '()V' in 'org/apache/commons/compress/archivers/zip/StreamCompressor')}
+  0x0000020c3d2a9438: fcff ff49 | ba40 4bcd | 940c 0200 | 004c 8954 | 2408 48c7 | 0424 0e00 
+
+  0x0000020c3d2a9450: ;   {runtime_call counter_overflow Runtime1 stub}
+  0x0000020c3d2a9450: 0000 e8a9 
+
+  0x0000020c3d2a9454: ; ImmutableOopMap {[72]=Oop }
+                      ;*goto {reexecute=1 rethrow=0 return_oop=0}
+                      ; - (reexecute) org.apache.commons.compress.archivers.zip.StreamCompressor::deflateUntilInputIsNeeded@14 (line 257)
+                      ; - org.apache.commons.compress.archivers.zip.StreamCompressor::writeDeflated@115 (line 249)
+  0x0000020c3d2a9454: f441 06e9 | 88fd ffff 
+
+  0x0000020c3d2a945c: ;   {runtime_call throw_null_pointer_exception Runtime1 stub}
+  0x0000020c3d2a945c: e81f 9941 
+
+  0x0000020c3d2a9460: ; ImmutableOopMap {rdx=Oop rsi=Oop [72]=Oop }
+                      ;*invokevirtual needsInput {reexecute=0 rethrow=0 return_oop=0}
+                      ; - org.apache.commons.compress.archivers.zip.StreamCompressor::deflateUntilInputIsNeeded@4 (line 256)
+                      ; - org.apache.commons.compress.archivers.zip.StreamCompressor::writeDeflated@115 (line 249)
+                      ;   {internal_word}
+  0x0000020c3d2a9460: 0649 ba8a | 922a 3d0c | 0200 004d | 8997 6804 
+
+  0x0000020c3d2a9470: ;   {runtime_call SafepointBlob}
+  0x0000020c3d2a9470: 0000 e989 | c235 0648 | 8d44 2468 | 4889 0424 
+
+  0x0000020c3d2a9480: ;   {runtime_call monitorexit_nofpu Runtime1 stub}
+  0x0000020c3d2a9480: e87b d941 | 06e9 53fe | ffff 498b | 8700 0500 | 0049 c787 | 0005 0000 | 0000 0000 | 49c7 8708 
+  0x0000020c3d2a94a0: 0500 0000 | 0000 0048 | 81c4 8000 
+
+  0x0000020c3d2a94ac: ;   {runtime_call unwind_exception Runtime1 stub}
+  0x0000020c3d2a94ac: 0000 5de9 | 4c85 4106 | f4f4 f4f4 
+[Stub Code]
+  0x0000020c3d2a94b8: ;   {no_reloc}
+  0x0000020c3d2a94b8: 0f1f 4400 
+
+  0x0000020c3d2a94bc: ;   {static_stub}
+  0x0000020c3d2a94bc: 0048 bbe8 | 3b7c 940c 
+
+  0x0000020c3d2a94c4: ;   {runtime_call I2C/C2I adapters}
+  0x0000020c3d2a94c4: 0200 00e9 | 2281 3406 
+
+  0x0000020c3d2a94cc: ;   {static_stub}
+  0x0000020c3d2a94cc: 9048 bb00 | 0000 0000 
+
+  0x0000020c3d2a94d4: ;   {runtime_call}
+  0x0000020c3d2a94d4: 0000 00e9 | fbff ffff 
+
+  0x0000020c3d2a94dc: ;   {static_stub}
+  0x0000020c3d2a94dc: 9048 bb00 | 0000 0000 
+
+  0x0000020c3d2a94e4: ;   {runtime_call}
+  0x0000020c3d2a94e4: 0000 00e9 | fbff ffff 
+
+  0x0000020c3d2a94ec: ;   {static_stub}
+  0x0000020c3d2a94ec: 9048 bb00 | 0000 0000 
+
+  0x0000020c3d2a94f4: ;   {runtime_call}
+  0x0000020c3d2a94f4: 0000 00e9 | fbff ffff 
+
+  0x0000020c3d2a94fc: ;   {static_stub}
+  0x0000020c3d2a94fc: 9048 bb00 | 0000 0000 
+
+  0x0000020c3d2a9504: ;   {runtime_call}
+  0x0000020c3d2a9504: 0000 00e9 | fbff ffff 
+
+  0x0000020c3d2a950c: ;   {static_stub}
+  0x0000020c3d2a950c: 9048 bb00 | 0000 0000 
+
+  0x0000020c3d2a9514: ;   {runtime_call}
+  0x0000020c3d2a9514: 0000 00e9 | fbff ffff 
+
+  0x0000020c3d2a951c: ;   {static_stub}
+  0x0000020c3d2a951c: 9048 bb00 | 0000 0000 
+
+  0x0000020c3d2a9524: ;   {runtime_call}
+  0x0000020c3d2a9524: 0000 00e9 | fbff ffff 
+
+  0x0000020c3d2a952c: ;   {static_stub}
+  0x0000020c3d2a952c: 9048 bb00 | 0000 0000 
+
+  0x0000020c3d2a9534: ;   {runtime_call}
+  0x0000020c3d2a9534: 0000 00e9 | fbff ffff 
+
+  0x0000020c3d2a953c: ;   {static_stub}
+  0x0000020c3d2a953c: 9048 bb00 | 0000 0000 
+
+  0x0000020c3d2a9544: ;   {runtime_call}
+  0x0000020c3d2a9544: 0000 00e9 | fbff ffff 
+[Exception Handler]
+  0x0000020c3d2a954c: ;   {runtime_call handle_exception_from_callee Runtime1 stub}
+  0x0000020c3d2a954c: e82f b641 
+
+  0x0000020c3d2a9550: ;   {external_word}
+  0x0000020c3d2a9550: 0648 b9e0 | 27e0 e6fd | 7f00 0048 
+
+  0x0000020c3d2a955c: ;   {runtime_call}
+  0x0000020c3d2a955c: 83e4 f048 | b8e0 0fa8 | e6fd 7f00 | 00ff d0f4 
+[Deopt Handler Code]
+  0x0000020c3d2a956c: ;   {section_word}
+  0x0000020c3d2a956c: 49ba 6c95 | 2a3d 0c02 | 0000 4152 
+
+  0x0000020c3d2a9578: ;   {runtime_call DeoptimizationBlob}
+  0x0000020c3d2a9578: e923 b435 | 06f4 f4f4 
+[/MachCode]
+
+
+---------------  P R O C E S S  ---------------
+
+Threads class SMR info:
+_java_thread_list=0x0000020c985a0820, length=26, elements={
+0x0000020c32292e50, 0x0000020c5107ecd0, 0x0000020c5107f8e0, 0x0000020c51081630,
+0x0000020c51083320, 0x0000020c510840e0, 0x0000020c5108dd10, 0x0000020c51094fc0,
+0x0000020c51097a70, 0x0000020c512a0f20, 0x0000020c512a2960, 0x0000020c512a15b0,
+0x0000020c512a0200, 0x0000020c512a0890, 0x0000020c51d87aa0, 0x0000020c51d8c960,
+0x0000020c51d8b5b0, 0x0000020c51d8bc40, 0x0000020c51d8a200, 0x0000020c51d88130,
+0x0000020c51d89b70, 0x0000020c51d88e50, 0x0000020c51d86d80, 0x0000020c51d8c2d0,
+0x0000020c97c9fdd0, 0x0000020c9897ba50
+}
+
+Java Threads: ( => current thread )
+  0x0000020c32292e50 JavaThread "main"                              [_thread_blocked, id=13752, stack(0x0000006aef400000,0x0000006aef500000) (1024K)]
+  0x0000020c5107ecd0 JavaThread "Reference Handler"          daemon [_thread_blocked, id=36096, stack(0x0000006aefc00000,0x0000006aefd00000) (1024K)]
+  0x0000020c5107f8e0 JavaThread "Finalizer"                  daemon [_thread_blocked, id=37660, stack(0x0000006aefd00000,0x0000006aefe00000) (1024K)]
+  0x0000020c51081630 JavaThread "Signal Dispatcher"          daemon [_thread_blocked, id=8768, stack(0x0000006aefe00000,0x0000006aeff00000) (1024K)]
+  0x0000020c51083320 JavaThread "Attach Listener"            daemon [_thread_blocked, id=38496, stack(0x0000006aeff00000,0x0000006af0000000) (1024K)]
+  0x0000020c510840e0 JavaThread "Service Thread"             daemon [_thread_blocked, id=37484, stack(0x0000006af0000000,0x0000006af0100000) (1024K)]
+  0x0000020c5108dd10 JavaThread "Monitor Deflation Thread"   daemon [_thread_blocked, id=2016, stack(0x0000006af0100000,0x0000006af0200000) (1024K)]
+  0x0000020c51094fc0 JavaThread "C2 CompilerThread0"         daemon [_thread_in_native, id=10500, stack(0x0000006af0200000,0x0000006af0300000) (1024K)]
+  0x0000020c51097a70 JavaThread "C1 CompilerThread0"         daemon [_thread_blocked, id=38500, stack(0x0000006af0300000,0x0000006af0400000) (1024K)]
+  0x0000020c512a0f20 JavaThread "Common-Cleaner"             daemon [_thread_blocked, id=12404, stack(0x0000006af0400000,0x0000006af0500000) (1024K)]
+  0x0000020c512a2960 JavaThread "Monitor Ctrl-Break"         daemon [_thread_in_native, id=39952, stack(0x0000006af0500000,0x0000006af0600000) (1024K)]
+  0x0000020c512a15b0 JavaThread "Notification Thread"        daemon [_thread_blocked, id=39224, stack(0x0000006af0600000,0x0000006af0700000) (1024K)]
+  0x0000020c512a0200 JavaThread "pool-2-thread-1"                   [_thread_blocked, id=8772, stack(0x0000006af1200000,0x0000006af1300000) (1024K)]
+  0x0000020c512a0890 JavaThread "pool-2-thread-2"                   [_thread_in_native, id=10108, stack(0x0000006af1300000,0x0000006af1400000) (1024K)]
+  0x0000020c51d87aa0 JavaThread "pool-2-thread-3"                   [_thread_blocked, id=30664, stack(0x0000006af1400000,0x0000006af1500000) (1024K)]
+  0x0000020c51d8c960 JavaThread "pool-2-thread-4"                   [_thread_in_native, id=2024, stack(0x0000006af1500000,0x0000006af1600000) (1024K)]
+=>0x0000020c51d8b5b0 JavaThread "pool-2-thread-5"                   [_thread_in_vm, id=1668, stack(0x0000006af1600000,0x0000006af1700000) (1024K)]
+  0x0000020c51d8bc40 JavaThread "pool-2-thread-6"                   [_thread_in_native, id=23300, stack(0x0000006af1700000,0x0000006af1800000) (1024K)]
+  0x0000020c51d8a200 JavaThread "pool-2-thread-7"                   [_thread_in_native, id=21316, stack(0x0000006af1800000,0x0000006af1900000) (1024K)]
+  0x0000020c51d88130 JavaThread "pool-2-thread-8"                   [_thread_blocked, id=24424, stack(0x0000006af1900000,0x0000006af1a00000) (1024K)]
+  0x0000020c51d89b70 JavaThread "pool-2-thread-9"                   [_thread_in_native, id=40296, stack(0x0000006af1a00000,0x0000006af1b00000) (1024K)]
+  0x0000020c51d88e50 JavaThread "pool-2-thread-10"                  [_thread_blocked, id=39612, stack(0x0000006af1b00000,0x0000006af1c00000) (1024K)]
+  0x0000020c51d86d80 JavaThread "pool-2-thread-11"                  [_thread_blocked, id=30480, stack(0x0000006af1c00000,0x0000006af1d00000) (1024K)]
+  0x0000020c51d8c2d0 JavaThread "pool-2-thread-12"                  [_thread_blocked, id=32016, stack(0x0000006af1d00000,0x0000006af1e00000) (1024K)]
+  0x0000020c97c9fdd0 JavaThread "C2 CompilerThread1"         daemon [_thread_blocked, id=8656, stack(0x0000006af1e00000,0x0000006af1f00000) (1024K)]
+  0x0000020c9897ba50 JavaThread "C2 CompilerThread2"         daemon [_thread_blocked, id=20096, stack(0x0000006af1f00000,0x0000006af2000000) (1024K)]
+Total: 26
+
+Other Threads:
+  0x0000020c510622e0 VMThread "VM Thread"                           [id=24632, stack(0x0000006aefb00000,0x0000006aefc00000) (1024K)]
+  0x0000020c51048fc0 WatcherThread "VM Periodic Task Thread"        [id=4528, stack(0x0000006aefa00000,0x0000006aefb00000) (1024K)]
+  0x0000020c324bb140 WorkerThread "GC Thread#0"                     [id=39500, stack(0x0000006aef500000,0x0000006aef600000) (1024K)]
+  0x0000020c51de9930 WorkerThread "GC Thread#1"                     [id=26932, stack(0x0000006af0700000,0x0000006af0800000) (1024K)]
+  0x0000020c97101be0 WorkerThread "GC Thread#2"                     [id=39980, stack(0x0000006af0800000,0x0000006af0900000) (1024K)]
+  0x0000020c51dd6010 WorkerThread "GC Thread#3"                     [id=39812, stack(0x0000006af0900000,0x0000006af0a00000) (1024K)]
+  0x0000020c51dd63b0 WorkerThread "GC Thread#4"                     [id=38480, stack(0x0000006af0a00000,0x0000006af0b00000) (1024K)]
+  0x0000020c51dd6750 WorkerThread "GC Thread#5"                     [id=34452, stack(0x0000006af0b00000,0x0000006af0c00000) (1024K)]
+  0x0000020c51dd6d00 WorkerThread "GC Thread#6"                     [id=34012, stack(0x0000006af0c00000,0x0000006af0d00000) (1024K)]
+  0x0000020c51dd8790 WorkerThread "GC Thread#7"                     [id=10588, stack(0x0000006af0d00000,0x0000006af0e00000) (1024K)]
+  0x0000020c51dd83f0 WorkerThread "GC Thread#8"                     [id=31428, stack(0x0000006af0e00000,0x0000006af0f00000) (1024K)]
+  0x0000020c51dd7570 WorkerThread "GC Thread#9"                     [id=39328, stack(0x0000006af0f00000,0x0000006af1000000) (1024K)]
+  0x0000020c324cd090 ConcurrentGCThread "G1 Main Marker"            [id=30192, stack(0x0000006aef600000,0x0000006aef700000) (1024K)]
+  0x0000020c324cdaa0 WorkerThread "G1 Conc#0"                       [id=40580, stack(0x0000006aef700000,0x0000006aef800000) (1024K)]
+  0x0000020c51dd8050 WorkerThread "G1 Conc#1"                       [id=17468, stack(0x0000006af1000000,0x0000006af1100000) (1024K)]
+  0x0000020c97cabec0 WorkerThread "G1 Conc#2"                       [id=15168, stack(0x0000006af1100000,0x0000006af1200000) (1024K)]
+  0x0000020c3252dfe0 ConcurrentGCThread "G1 Refine#0"               [id=30148, stack(0x0000006aef800000,0x0000006aef900000) (1024K)]
+  0x0000020c3252e960 ConcurrentGCThread "G1 Service"                [id=32420, stack(0x0000006aef900000,0x0000006aefa00000) (1024K)]
+Total: 18
+
+Threads with active compile tasks:
+C2 CompilerThread0    22945 9511       4       org.codehaus.plexus.classworlds.realm.ClassRealm::loadClass (7 bytes)
+Total: 1
+
+VM state: not at safepoint (normal execution)
+
+VM Mutex/Monitor currently owned by a thread:  ([mutex/lock_event])
+[0x00007ffde709a6f8] Heap_lock - owner thread: 0x0000020c51d8b5b0
+
+Heap address: 0x0000000084800000, size: 1976 MB, Compressed Oops mode: 32-bit
+
+CDS archive(s) mapped at: [0x0000020c52000000-0x0000020c52c90000-0x0000020c52c90000), size 13172736, SharedBaseAddress: 0x0000020c52000000, ArchiveRelocationMode: 1.
+Compressed class space mapped at: 0x0000020c53000000-0x0000020c93000000, reserved size: 1073741824
+Narrow klass base: 0x0000020c52000000, Narrow klass shift: 0, Narrow klass range: 0x100000000
+
+GC Precious Log:
+ CardTable entry size: 512
+ Card Set container configuration: InlinePtr #cards 5 size 8 Array Of Cards #cards 12 size 40 Howl #buckets 4 coarsen threshold 1843 Howl Bitmap #cards 512 size 80 coarsen threshold 460 Card regions per heap region 1 cards per card region 2048
+ CPUs: 12 total, 12 available
+ Memory: 7903M
+ Large Page Support: Disabled
+ NUMA Support: Disabled
+ Compressed Oops: Enabled (32-bit)
+ Heap Region Size: 1M
+ Heap Min Capacity: 8M
+ Heap Initial Capacity: 124M
+ Heap Max Capacity: 1976M
+ Pre-touch: Disabled
+ Parallel Workers: 10
+ Concurrent Workers: 3
+ Concurrent Refinement Workers: 10
+ Periodic GC: Disabled
+
+Heap:
+ garbage-first heap   total 142336K, used 139423K [0x0000000084800000, 0x0000000100000000)
+  region size 1024K, 37 young (37888K), 6 survivors (6144K)
+ Metaspace       used 33142K, committed 33600K, reserved 1114112K
+  class space    used 3628K, committed 3840K, reserved 1048576K
+
+Heap Regions: E=young(eden), S=young(survivor), O=old, HS=humongous(starts), HC=humongous(continues), CS=collection set, F=free, TAMS=top-at-mark-start, PB=parsable bottom
+|   0|0x0000000084800000, 0x0000000084900000, 0x0000000084900000|100%| O|  |TAMS 0x0000000084800000| PB 0x0000000084800000| Untracked 
+|   1|0x0000000084900000, 0x0000000084a00000, 0x0000000084a00000|100%| O|  |TAMS 0x0000000084900000| PB 0x0000000084900000| Untracked 
+|   2|0x0000000084a00000, 0x0000000084b00000, 0x0000000084b00000|100%| O|  |TAMS 0x0000000084a00000| PB 0x0000000084a00000| Untracked 
+|   3|0x0000000084b00000, 0x0000000084c00000, 0x0000000084c00000|100%| O|  |TAMS 0x0000000084b00000| PB 0x0000000084b00000| Untracked 
+|   4|0x0000000084c00000, 0x0000000084d00000, 0x0000000084d00000|100%|HS|  |TAMS 0x0000000084c00000| PB 0x0000000084c00000| Complete 
+|   5|0x0000000084d00000, 0x0000000084e00000, 0x0000000084e00000|100%|HS|  |TAMS 0x0000000084d00000| PB 0x0000000084d00000| Complete 
+|   6|0x0000000084e00000, 0x0000000084f00000, 0x0000000084f00000|100%|HS|  |TAMS 0x0000000084e00000| PB 0x0000000084e00000| Complete 
+|   7|0x0000000084f00000, 0x0000000085000000, 0x0000000085000000|100%|HC|  |TAMS 0x0000000084f00000| PB 0x0000000084f00000| Complete 
+|   8|0x0000000085000000, 0x0000000085100000, 0x0000000085100000|100%| O|  |TAMS 0x0000000085000000| PB 0x0000000085000000| Untracked 
+|   9|0x0000000085100000, 0x0000000085200000, 0x0000000085200000|100%| O|  |TAMS 0x0000000085100000| PB 0x0000000085100000| Untracked 
+|  10|0x0000000085200000, 0x0000000085300000, 0x0000000085300000|100%| O|  |TAMS 0x0000000085200000| PB 0x0000000085200000| Untracked 
+|  11|0x0000000085300000, 0x0000000085400000, 0x0000000085400000|100%| O|  |TAMS 0x0000000085300000| PB 0x0000000085300000| Untracked 
+|  12|0x0000000085400000, 0x0000000085500000, 0x0000000085500000|100%| O|  |TAMS 0x0000000085400000| PB 0x0000000085400000| Untracked 
+|  13|0x0000000085500000, 0x0000000085600000, 0x0000000085600000|100%| O|  |TAMS 0x0000000085500000| PB 0x0000000085500000| Untracked 
+|  14|0x0000000085600000, 0x0000000085700000, 0x0000000085700000|100%| O|  |TAMS 0x0000000085600000| PB 0x0000000085600000| Untracked 
+|  15|0x0000000085700000, 0x0000000085800000, 0x0000000085800000|100%| O|  |TAMS 0x0000000085700000| PB 0x0000000085700000| Untracked 
+|  16|0x0000000085800000, 0x0000000085900000, 0x0000000085900000|100%| O|  |TAMS 0x0000000085800000| PB 0x0000000085800000| Untracked 
+|  17|0x0000000085900000, 0x0000000085a00000, 0x0000000085a00000|100%| O|Cm|TAMS 0x0000000085900000| PB 0x0000000085900000| Complete 
+|  18|0x0000000085a00000, 0x0000000085b00000, 0x0000000085b00000|100%| O|  |TAMS 0x0000000085a00000| PB 0x0000000085a00000| Untracked 
+|  19|0x0000000085b00000, 0x0000000085c00000, 0x0000000085c00000|100%| O|  |TAMS 0x0000000085b00000| PB 0x0000000085b00000| Untracked 
+|  20|0x0000000085c00000, 0x0000000085d00000, 0x0000000085d00000|100%| O|  |TAMS 0x0000000085c00000| PB 0x0000000085c00000| Untracked 
+|  21|0x0000000085d00000, 0x0000000085e00000, 0x0000000085e00000|100%| O|  |TAMS 0x0000000085d00000| PB 0x0000000085d00000| Untracked 
+|  22|0x0000000085e00000, 0x0000000085f00000, 0x0000000085f00000|100%| O|  |TAMS 0x0000000085e00000| PB 0x0000000085e00000| Untracked 
+|  23|0x0000000085f00000, 0x0000000086000000, 0x0000000086000000|100%| O|  |TAMS 0x0000000085f00000| PB 0x0000000085f00000| Untracked 
+|  24|0x0000000086000000, 0x0000000086100000, 0x0000000086100000|100%| O|Cm|TAMS 0x0000000086000000| PB 0x0000000086000000| Complete 
+|  25|0x0000000086100000, 0x0000000086200000, 0x0000000086200000|100%| O|  |TAMS 0x0000000086100000| PB 0x0000000086100000| Untracked 
+|  26|0x0000000086200000, 0x0000000086300000, 0x0000000086300000|100%| O|  |TAMS 0x0000000086200000| PB 0x0000000086200000| Untracked 
+|  27|0x0000000086300000, 0x0000000086400000, 0x0000000086400000|100%|HS|  |TAMS 0x0000000086300000| PB 0x0000000086300000| Complete 
+|  28|0x0000000086400000, 0x0000000086500000, 0x0000000086500000|100%|HC|  |TAMS 0x0000000086400000| PB 0x0000000086400000| Complete 
+|  29|0x0000000086500000, 0x0000000086600000, 0x0000000086600000|100%| O|  |TAMS 0x0000000086500000| PB 0x0000000086500000| Untracked 
+|  30|0x0000000086600000, 0x0000000086700000, 0x0000000086700000|100%| O|  |TAMS 0x0000000086600000| PB 0x0000000086600000| Untracked 
+|  31|0x0000000086700000, 0x0000000086766280, 0x0000000086800000| 39%| O|  |TAMS 0x0000000086700000| PB 0x0000000086700000| Untracked 
+|  32|0x0000000086800000, 0x0000000086900000, 0x0000000086900000|100%|HS|  |TAMS 0x0000000086800000| PB 0x0000000086800000| Complete 
+|  33|0x0000000086900000, 0x0000000086a00000, 0x0000000086a00000|100%|HS|  |TAMS 0x0000000086900000| PB 0x0000000086900000| Complete 
+|  34|0x0000000086a00000, 0x0000000086b00000, 0x0000000086b00000|100%|HS|  |TAMS 0x0000000086a00000| PB 0x0000000086a00000| Complete 
+|  35|0x0000000086b00000, 0x0000000086c00000, 0x0000000086c00000|100%|HS|  |TAMS 0x0000000086b00000| PB 0x0000000086b00000| Complete 
+|  36|0x0000000086c00000, 0x0000000086d00000, 0x0000000086d00000|100%|HS|  |TAMS 0x0000000086c00000| PB 0x0000000086c00000| Complete 
+|  37|0x0000000086d00000, 0x0000000086e00000, 0x0000000086e00000|100%|HS|  |TAMS 0x0000000086d00000| PB 0x0000000086d00000| Complete 
+|  38|0x0000000086e00000, 0x0000000086f00000, 0x0000000086f00000|100%|HS|  |TAMS 0x0000000086e00000| PB 0x0000000086e00000| Complete 
+|  39|0x0000000086f00000, 0x0000000087000000, 0x0000000087000000|100%|HS|  |TAMS 0x0000000086f00000| PB 0x0000000086f00000| Complete 
+|  40|0x0000000087000000, 0x00000000870c1b40, 0x0000000087100000| 75%| S|CS|TAMS 0x0000000087000000| PB 0x0000000087000000| Complete 
+|  41|0x0000000087100000, 0x0000000087200000, 0x0000000087200000|100%|HS|  |TAMS 0x0000000087100000| PB 0x0000000087100000| Complete 
+|  42|0x0000000087200000, 0x0000000087300000, 0x0000000087300000|100%| S|CS|TAMS 0x0000000087200000| PB 0x0000000087200000| Complete 
+|  43|0x0000000087300000, 0x0000000087400000, 0x0000000087400000|100%| S|CS|TAMS 0x0000000087300000| PB 0x0000000087300000| Complete 
+|  44|0x0000000087400000, 0x0000000087500000, 0x0000000087500000|100%| S|CS|TAMS 0x0000000087400000| PB 0x0000000087400000| Complete 
+|  45|0x0000000087500000, 0x0000000087600000, 0x0000000087600000|100%| S|CS|TAMS 0x0000000087500000| PB 0x0000000087500000| Complete 
+|  46|0x0000000087600000, 0x0000000087700000, 0x0000000087700000|100%| S|CS|TAMS 0x0000000087600000| PB 0x0000000087600000| Complete 
+|  47|0x0000000087700000, 0x0000000087800000, 0x0000000087800000|100%|HS|  |TAMS 0x0000000087700000| PB 0x0000000087700000| Complete 
+|  48|0x0000000087800000, 0x0000000087900000, 0x0000000087900000|100%|HS|  |TAMS 0x0000000087800000| PB 0x0000000087800000| Complete 
+|  49|0x0000000087900000, 0x0000000087a00000, 0x0000000087a00000|100%|HS|  |TAMS 0x0000000087900000| PB 0x0000000087900000| Complete 
+|  50|0x0000000087a00000, 0x0000000087b00000, 0x0000000087b00000|100%|HS|  |TAMS 0x0000000087a00000| PB 0x0000000087a00000| Complete 
+|  51|0x0000000087b00000, 0x0000000087c00000, 0x0000000087c00000|100%|HS|  |TAMS 0x0000000087b00000| PB 0x0000000087b00000| Complete 
+|  52|0x0000000087c00000, 0x0000000087d00000, 0x0000000087d00000|100%|HS|  |TAMS 0x0000000087c00000| PB 0x0000000087c00000| Complete 
+|  53|0x0000000087d00000, 0x0000000087e00000, 0x0000000087e00000|100%|HC|  |TAMS 0x0000000087d00000| PB 0x0000000087d00000| Complete 
+|  54|0x0000000087e00000, 0x0000000087f00000, 0x0000000087f00000|100%|HS|  |TAMS 0x0000000087e00000| PB 0x0000000087e00000| Complete 
+|  55|0x0000000087f00000, 0x0000000088000000, 0x0000000088000000|100%|HC|  |TAMS 0x0000000087f00000| PB 0x0000000087f00000| Complete 
+|  56|0x0000000088000000, 0x0000000088100000, 0x0000000088100000|100%|HS|  |TAMS 0x0000000088000000| PB 0x0000000088000000| Complete 
+|  57|0x0000000088100000, 0x0000000088200000, 0x0000000088200000|100%|HC|  |TAMS 0x0000000088100000| PB 0x0000000088100000| Complete 
+|  58|0x0000000088200000, 0x0000000088300000, 0x0000000088300000|100%|HS|  |TAMS 0x0000000088200000| PB 0x0000000088200000| Complete 
+|  59|0x0000000088300000, 0x0000000088400000, 0x0000000088400000|100%|HC|  |TAMS 0x0000000088300000| PB 0x0000000088300000| Complete 
+|  60|0x0000000088400000, 0x0000000088500000, 0x0000000088500000|100%|HS|  |TAMS 0x0000000088400000| PB 0x0000000088400000| Complete 
+|  61|0x0000000088500000, 0x0000000088600000, 0x0000000088600000|100%|HC|  |TAMS 0x0000000088500000| PB 0x0000000088500000| Complete 
+|  62|0x0000000088600000, 0x0000000088700000, 0x0000000088700000|100%|HS|  |TAMS 0x0000000088600000| PB 0x0000000088600000| Complete 
+|  63|0x0000000088700000, 0x0000000088800000, 0x0000000088800000|100%|HC|  |TAMS 0x0000000088700000| PB 0x0000000088700000| Complete 
+|  64|0x0000000088800000, 0x0000000088800000, 0x0000000088900000|  0%| F|  |TAMS 0x0000000088800000| PB 0x0000000088800000| Untracked 
+|  65|0x0000000088900000, 0x0000000088a00000, 0x0000000088a00000|100%| E|  |TAMS 0x0000000088900000| PB 0x0000000088900000| Complete 
+|  66|0x0000000088a00000, 0x0000000088b00000, 0x0000000088b00000|100%| E|CS|TAMS 0x0000000088a00000| PB 0x0000000088a00000| Complete 
+|  67|0x0000000088b00000, 0x0000000088c00000, 0x0000000088c00000|100%| E|CS|TAMS 0x0000000088b00000| PB 0x0000000088b00000| Complete 
+|  68|0x0000000088c00000, 0x0000000088d00000, 0x0000000088d00000|100%| E|CS|TAMS 0x0000000088c00000| PB 0x0000000088c00000| Complete 
+|  69|0x0000000088d00000, 0x0000000088e00000, 0x0000000088e00000|100%| E|CS|TAMS 0x0000000088d00000| PB 0x0000000088d00000| Complete 
+|  70|0x0000000088e00000, 0x0000000088f00000, 0x0000000088f00000|100%| E|CS|TAMS 0x0000000088e00000| PB 0x0000000088e00000| Complete 
+|  71|0x0000000088f00000, 0x0000000089000000, 0x0000000089000000|100%| E|CS|TAMS 0x0000000088f00000| PB 0x0000000088f00000| Complete 
+|  72|0x0000000089000000, 0x0000000089100000, 0x0000000089100000|100%| E|CS|TAMS 0x0000000089000000| PB 0x0000000089000000| Complete 
+|  73|0x0000000089100000, 0x0000000089200000, 0x0000000089200000|100%| E|CS|TAMS 0x0000000089100000| PB 0x0000000089100000| Complete 
+|  74|0x0000000089200000, 0x0000000089300000, 0x0000000089300000|100%| E|CS|TAMS 0x0000000089200000| PB 0x0000000089200000| Complete 
+|  75|0x0000000089300000, 0x0000000089400000, 0x0000000089400000|100%| E|CS|TAMS 0x0000000089300000| PB 0x0000000089300000| Complete 
+|  76|0x0000000089400000, 0x0000000089500000, 0x0000000089500000|100%| E|CS|TAMS 0x0000000089400000| PB 0x0000000089400000| Complete 
+|  77|0x0000000089500000, 0x0000000089600000, 0x0000000089600000|100%| E|CS|TAMS 0x0000000089500000| PB 0x0000000089500000| Complete 
+|  78|0x0000000089600000, 0x0000000089700000, 0x0000000089700000|100%| E|CS|TAMS 0x0000000089600000| PB 0x0000000089600000| Complete 
+|  79|0x0000000089700000, 0x0000000089800000, 0x0000000089800000|100%| E|CS|TAMS 0x0000000089700000| PB 0x0000000089700000| Complete 
+|  80|0x0000000089800000, 0x0000000089900000, 0x0000000089900000|100%| E|CS|TAMS 0x0000000089800000| PB 0x0000000089800000| Complete 
+|  81|0x0000000089900000, 0x0000000089a00000, 0x0000000089a00000|100%| E|CS|TAMS 0x0000000089900000| PB 0x0000000089900000| Complete 
+|  82|0x0000000089a00000, 0x0000000089b00000, 0x0000000089b00000|100%| E|CS|TAMS 0x0000000089a00000| PB 0x0000000089a00000| Complete 
+|  83|0x0000000089b00000, 0x0000000089c00000, 0x0000000089c00000|100%| E|CS|TAMS 0x0000000089b00000| PB 0x0000000089b00000| Complete 
+|  84|0x0000000089c00000, 0x0000000089d00000, 0x0000000089d00000|100%| E|CS|TAMS 0x0000000089c00000| PB 0x0000000089c00000| Complete 
+|  85|0x0000000089d00000, 0x0000000089e00000, 0x0000000089e00000|100%| E|CS|TAMS 0x0000000089d00000| PB 0x0000000089d00000| Complete 
+|  86|0x0000000089e00000, 0x0000000089f00000, 0x0000000089f00000|100%| E|CS|TAMS 0x0000000089e00000| PB 0x0000000089e00000| Complete 
+|  87|0x0000000089f00000, 0x000000008a000000, 0x000000008a000000|100%| E|CS|TAMS 0x0000000089f00000| PB 0x0000000089f00000| Complete 
+|  88|0x000000008a000000, 0x000000008a100000, 0x000000008a100000|100%| E|CS|TAMS 0x000000008a000000| PB 0x000000008a000000| Complete 
+|  89|0x000000008a100000, 0x000000008a200000, 0x000000008a200000|100%| E|CS|TAMS 0x000000008a100000| PB 0x000000008a100000| Complete 
+|  90|0x000000008a200000, 0x000000008a300000, 0x000000008a300000|100%| E|CS|TAMS 0x000000008a200000| PB 0x000000008a200000| Complete 
+|  91|0x000000008a300000, 0x000000008a400000, 0x000000008a400000|100%| E|CS|TAMS 0x000000008a300000| PB 0x000000008a300000| Complete 
+|  92|0x000000008a400000, 0x000000008a500000, 0x000000008a500000|100%| E|CS|TAMS 0x000000008a400000| PB 0x000000008a400000| Complete 
+|  93|0x000000008a500000, 0x000000008a600000, 0x000000008a600000|100%| E|CS|TAMS 0x000000008a500000| PB 0x000000008a500000| Complete 
+|  94|0x000000008a600000, 0x000000008a700000, 0x000000008a700000|100%|HS|  |TAMS 0x000000008a600000| PB 0x000000008a600000| Complete 
+|  95|0x000000008a700000, 0x000000008a800000, 0x000000008a800000|100%|HC|  |TAMS 0x000000008a700000| PB 0x000000008a700000| Complete 
+|  96|0x000000008a800000, 0x000000008a900000, 0x000000008a900000|100%|HS|  |TAMS 0x000000008a800000| PB 0x000000008a800000| Complete 
+|  97|0x000000008a900000, 0x000000008aa00000, 0x000000008aa00000|100%|HC|  |TAMS 0x000000008a900000| PB 0x000000008a900000| Complete 
+|  98|0x000000008aa00000, 0x000000008ab00000, 0x000000008ab00000|100%|HS|  |TAMS 0x000000008aa00000| PB 0x000000008aa00000| Complete 
+|  99|0x000000008ab00000, 0x000000008ac00000, 0x000000008ac00000|100%|HC|  |TAMS 0x000000008ab00000| PB 0x000000008ab00000| Complete 
+| 100|0x000000008ac00000, 0x000000008ad00000, 0x000000008ad00000|100%|HS|  |TAMS 0x000000008ac00000| PB 0x000000008ac00000| Complete 
+| 101|0x000000008ad00000, 0x000000008ae00000, 0x000000008ae00000|100%|HC|  |TAMS 0x000000008ad00000| PB 0x000000008ad00000| Complete 
+| 102|0x000000008ae00000, 0x000000008af00000, 0x000000008af00000|100%|HS|  |TAMS 0x000000008ae00000| PB 0x000000008ae00000| Complete 
+| 103|0x000000008af00000, 0x000000008b000000, 0x000000008b000000|100%|HC|  |TAMS 0x000000008af00000| PB 0x000000008af00000| Complete 
+| 104|0x000000008b000000, 0x000000008b100000, 0x000000008b100000|100%|HS|  |TAMS 0x000000008b000000| PB 0x000000008b000000| Complete 
+| 105|0x000000008b100000, 0x000000008b200000, 0x000000008b200000|100%|HC|  |TAMS 0x000000008b100000| PB 0x000000008b100000| Complete 
+| 106|0x000000008b200000, 0x000000008b300000, 0x000000008b300000|100%|HS|  |TAMS 0x000000008b200000| PB 0x000000008b200000| Complete 
+| 107|0x000000008b300000, 0x000000008b400000, 0x000000008b400000|100%|HC|  |TAMS 0x000000008b300000| PB 0x000000008b300000| Complete 
+| 108|0x000000008b400000, 0x000000008b500000, 0x000000008b500000|100%|HC|  |TAMS 0x000000008b400000| PB 0x000000008b400000| Complete 
+| 109|0x000000008b500000, 0x000000008b600000, 0x000000008b600000|100%|HC|  |TAMS 0x000000008b500000| PB 0x000000008b500000| Complete 
+| 110|0x000000008b600000, 0x000000008b700000, 0x000000008b700000|100%|HS|  |TAMS 0x000000008b600000| PB 0x000000008b600000| Complete 
+| 111|0x000000008b700000, 0x000000008b800000, 0x000000008b800000|100%|HC|  |TAMS 0x000000008b700000| PB 0x000000008b700000| Complete 
+| 112|0x000000008b800000, 0x000000008b900000, 0x000000008b900000|100%|HC|  |TAMS 0x000000008b800000| PB 0x000000008b800000| Complete 
+| 113|0x000000008b900000, 0x000000008ba00000, 0x000000008ba00000|100%|HC|  |TAMS 0x000000008b900000| PB 0x000000008b900000| Complete 
+| 114|0x000000008ba00000, 0x000000008bb00000, 0x000000008bb00000|100%|HS|  |TAMS 0x000000008ba00000| PB 0x000000008ba00000| Complete 
+| 115|0x000000008bb00000, 0x000000008bc00000, 0x000000008bc00000|100%|HC|  |TAMS 0x000000008bb00000| PB 0x000000008bb00000| Complete 
+| 116|0x000000008bc00000, 0x000000008bd00000, 0x000000008bd00000|100%|HC|  |TAMS 0x000000008bc00000| PB 0x000000008bc00000| Complete 
+| 117|0x000000008bd00000, 0x000000008be00000, 0x000000008be00000|100%|HC|  |TAMS 0x000000008bd00000| PB 0x000000008bd00000| Complete 
+| 118|0x000000008be00000, 0x000000008bf00000, 0x000000008bf00000|100%|HS|  |TAMS 0x000000008be00000| PB 0x000000008be00000| Complete 
+| 119|0x000000008bf00000, 0x000000008c000000, 0x000000008c000000|100%|HC|  |TAMS 0x000000008bf00000| PB 0x000000008bf00000| Complete 
+| 120|0x000000008c000000, 0x000000008c100000, 0x000000008c100000|100%|HC|  |TAMS 0x000000008c000000| PB 0x000000008c000000| Complete 
+| 121|0x000000008c100000, 0x000000008c200000, 0x000000008c200000|100%|HC|  |TAMS 0x000000008c100000| PB 0x000000008c100000| Complete 
+| 123|0x000000008c300000, 0x000000008c400000, 0x000000008c400000|100%| E|CS|TAMS 0x000000008c300000| PB 0x000000008c300000| Complete 
+| 124|0x000000008c400000, 0x000000008c500000, 0x000000008c500000|100%|HS|  |TAMS 0x000000008c400000| PB 0x000000008c400000| Complete 
+| 125|0x000000008c500000, 0x000000008c600000, 0x000000008c600000|100%|HC|  |TAMS 0x000000008c500000| PB 0x000000008c500000| Complete 
+| 126|0x000000008c600000, 0x000000008c700000, 0x000000008c700000|100%|HC|  |TAMS 0x000000008c600000| PB 0x000000008c600000| Complete 
+| 127|0x000000008c700000, 0x000000008c800000, 0x000000008c800000|100%|HC|  |TAMS 0x000000008c700000| PB 0x000000008c700000| Complete 
+| 128|0x000000008c800000, 0x000000008c800000, 0x000000008c900000|  0%| F|  |TAMS 0x000000008c800000| PB 0x000000008c800000| Untracked 
+|1965|0x00000000ff500000, 0x00000000ff600000, 0x00000000ff600000|100%| O|  |TAMS 0x00000000ff500000| PB 0x00000000ff500000| Untracked 
+|1966|0x00000000ff600000, 0x00000000ff700000, 0x00000000ff700000|100%| E|CS|TAMS 0x00000000ff600000| PB 0x00000000ff600000| Complete 
+|1967|0x00000000ff700000, 0x00000000ff800000, 0x00000000ff800000|100%| O|  |TAMS 0x00000000ff700000| PB 0x00000000ff700000| Untracked 
+|1968|0x00000000ff800000, 0x00000000ff900000, 0x00000000ff900000|100%| O|  |TAMS 0x00000000ff800000| PB 0x00000000ff800000| Untracked 
+|1969|0x00000000ff900000, 0x00000000ffa00000, 0x00000000ffa00000|100%| O|  |TAMS 0x00000000ff900000| PB 0x00000000ff900000| Untracked 
+|1970|0x00000000ffa00000, 0x00000000ffb00000, 0x00000000ffb00000|100%| O|  |TAMS 0x00000000ffa00000| PB 0x00000000ffa00000| Untracked 
+|1971|0x00000000ffb00000, 0x00000000ffc00000, 0x00000000ffc00000|100%| O|  |TAMS 0x00000000ffb00000| PB 0x00000000ffb00000| Untracked 
+|1972|0x00000000ffc00000, 0x00000000ffd00000, 0x00000000ffd00000|100%| O|  |TAMS 0x00000000ffc00000| PB 0x00000000ffc00000| Untracked 
+|1973|0x00000000ffd00000, 0x00000000ffe00000, 0x00000000ffe00000|100%| O|  |TAMS 0x00000000ffd00000| PB 0x00000000ffd00000| Untracked 
+|1974|0x00000000ffe00000, 0x00000000fff00000, 0x00000000fff00000|100%| O|  |TAMS 0x00000000ffe00000| PB 0x00000000ffe00000| Untracked 
+|1975|0x00000000fff00000, 0x0000000100000000, 0x0000000100000000|100%| O|  |TAMS 0x00000000fff00000| PB 0x00000000fff00000| Untracked 
+
+Card table byte_map: [0x0000020c4c0f0000,0x0000020c4c4d0000] _byte_map_base: 0x0000020c4bccc000
+
+Marking Bits: (CMBitMap*) 0x0000020c324bb750
+ Bits: [0x0000020c4c4d0000, 0x0000020c4e3b0000)
+
+Polling page: 0x0000020c32530000
+
+Metaspace:
+
+Usage:
+  Non-class:     28.82 MB used.
+      Class:      3.54 MB used.
+       Both:     32.37 MB used.
+
+Virtual space:
+  Non-class space:       64.00 MB reserved,      29.06 MB ( 45%) committed,  1 nodes.
+      Class space:        1.00 GB reserved,       3.75 MB ( <1%) committed,  1 nodes.
+             Both:        1.06 GB reserved,      32.81 MB (  3%) committed. 
+
+Chunk freelists:
+   Non-Class:  2.89 MB
+       Class:  12.30 MB
+        Both:  15.19 MB
+
+MaxMetaspaceSize: unlimited
+CompressedClassSpaceSize: 1.00 GB
+Initial GC threshold: 21.00 MB
+Current GC threshold: 49.19 MB
+CDS: on
+ - commit_granule_bytes: 65536.
+ - commit_granule_words: 8192.
+ - virtual_space_node_default_size: 8388608.
+ - enlarge_chunks_in_place: 1.
+ - use_allocation_guard: 0.
+
+
+Internal statistics:
+
+num_allocs_failed_limit: 3.
+num_arena_births: 346.
+num_arena_deaths: 0.
+num_vsnodes_births: 2.
+num_vsnodes_deaths: 0.
+num_space_committed: 525.
+num_space_uncommitted: 0.
+num_chunks_returned_to_freelist: 3.
+num_chunks_taken_from_freelist: 1489.
+num_chunk_merges: 3.
+num_chunk_splits: 1070.
+num_chunks_enlarged: 855.
+num_inconsistent_stats: 0.
+
+CodeHeap 'non-profiled nmethods': size=120000Kb used=4320Kb max_used=4320Kb free=115679Kb
+ bounds [0x0000020c43b50000, 0x0000020c43f90000, 0x0000020c4b080000]
+CodeHeap 'profiled nmethods': size=120000Kb used=18908Kb max_used=18908Kb free=101091Kb
+ bounds [0x0000020c3c080000, 0x0000020c3d300000, 0x0000020c435b0000]
+CodeHeap 'non-nmethods': size=5760Kb used=1491Kb max_used=1534Kb free=4268Kb
+ bounds [0x0000020c435b0000, 0x0000020c43820000, 0x0000020c43b50000]
+ total_blobs=9299 nmethods=8728 adapters=474
+ compilation: enabled
+              stopped_count=0, restarted_count=0
+ full_count=0
+
+Compilation events (20 events):
+Event: 22.754 Thread 0x0000020c51097a70 9706       3       org.apache.commons.compress.archivers.zip.StreamCompressor::getCrc32 (8 bytes)
+Event: 22.754 Thread 0x0000020c51097a70 nmethod 9706 0x0000020c3d2dde10 code [0x0000020c3d2ddfc0, 0x0000020c3d2de1c8]
+Event: 22.754 Thread 0x0000020c51097a70 9707       3       org.apache.commons.compress.archivers.zip.ScatterZipOutputStream$CompressedEntry::<init> (27 bytes)
+Event: 22.754 Thread 0x0000020c51097a70 nmethod 9707 0x0000020c3d2de290 code [0x0000020c3d2de440, 0x0000020c3d2de610]
+Event: 22.755 Thread 0x0000020c51097a70 9708   !   3       java.util.zip.Deflater::reset (64 bytes)
+Event: 22.755 Thread 0x0000020c51097a70 nmethod 9708 0x0000020c3d2de710 code [0x0000020c3d2de8e0, 0x0000020c3d2dec60]
+Event: 22.775 Thread 0x0000020c9897ba50 9709       4       org.apache.commons.compress.archivers.zip.StreamCompressor::write (59 bytes)
+Event: 22.775 Thread 0x0000020c97c9fdd0 9710       4       org.apache.commons.compress.archivers.zip.StreamCompressor::writeDeflated (119 bytes)
+Event: 22.794 Thread 0x0000020c51097a70 9712  s!   3       java.io.FileDescriptor::closeAll (163 bytes)
+Event: 22.795 Thread 0x0000020c9897ba50 nmethod 9709 0x0000020c43f83810 code [0x0000020c43f83a80, 0x0000020c43f85138]
+Event: 22.795 Thread 0x0000020c51097a70 nmethod 9712 0x0000020c3d2dee10 code [0x0000020c3d2df0a0, 0x0000020c3d2dff48]
+Event: 22.795 Thread 0x0000020c97c9fdd0 nmethod 9710 0x0000020c43f86090 code [0x0000020c43f862e0, 0x0000020c43f87538]
+Event: 22.795 Thread 0x0000020c51097a70 9713   !   3       java.util.concurrent.FutureTask::run (123 bytes)
+Event: 22.796 Thread 0x0000020c9897ba50 9711       4       jdk.internal.misc.Unsafe::weakCompareAndSetInt (11 bytes)
+Event: 22.796 Thread 0x0000020c9897ba50 nmethod 9711 0x0000020c43f87f90 code [0x0000020c43f88120, 0x0000020c43f881b8]
+Event: 22.798 Thread 0x0000020c51097a70 nmethod 9713 0x0000020c3d2e0590 code [0x0000020c3d2e0b80, 0x0000020c3d2e41e0]
+Event: 22.798 Thread 0x0000020c51097a70 9716       3       org.codehaus.plexus.components.io.resources.PlexusIoFileResource::getContents (58 bytes)
+Event: 22.799 Thread 0x0000020c51097a70 nmethod 9716 0x0000020c3d2e5090 code [0x0000020c3d2e52c0, 0x0000020c3d2e5ae0]
+Event: 22.799 Thread 0x0000020c51097a70 9715       3       java.util.concurrent.ThreadPoolExecutor$Worker::unlock (7 bytes)
+Event: 22.799 Thread 0x0000020c51097a70 nmethod 9715 0x0000020c3d2e5d90 code [0x0000020c3d2e5f60, 0x0000020c3d2e61d0]
+
+GC Heap History (20 events):
+Event: 9.127 GC heap before
+{Heap before GC invocations=4 (full 0):
+ garbage-first heap   total 45056K, used 44742K [0x0000000084800000, 0x0000000100000000)
+  region size 1024K, 38 young (38912K), 8 survivors (8192K)
+ Metaspace       used 25668K, committed 26048K, reserved 1114112K
+  class space    used 2915K, committed 3072K, reserved 1048576K
+}
+Event: 9.150 GC heap after
+{Heap after GC invocations=5 (full 0):
+ garbage-first heap   total 61440K, used 21912K [0x0000000084800000, 0x0000000100000000)
+  region size 1024K, 8 young (8192K), 8 survivors (8192K)
+ Metaspace       used 25668K, committed 26048K, reserved 1114112K
+  class space    used 2915K, committed 3072K, reserved 1048576K
+}
+Event: 9.506 GC heap before
+{Heap before GC invocations=5 (full 0):
+ garbage-first heap   total 61440K, used 49560K [0x0000000084800000, 0x0000000100000000)
+  region size 1024K, 33 young (33792K), 8 survivors (8192K)
+ Metaspace       used 26439K, committed 26752K, reserved 1114112K
+  class space    used 2983K, committed 3136K, reserved 1048576K
+}
+Event: 9.522 GC heap after
+{Heap after GC invocations=6 (full 0):
+ garbage-first heap   total 64512K, used 29696K [0x0000000084800000, 0x0000000100000000)
+  region size 1024K, 5 young (5120K), 5 survivors (5120K)
+ Metaspace       used 26439K, committed 26752K, reserved 1114112K
+  class space    used 2983K, committed 3136K, reserved 1048576K
+}
+Event: 9.739 GC heap before
+{Heap before GC invocations=6 (full 0):
+ garbage-first heap   total 64512K, used 53248K [0x0000000084800000, 0x0000000100000000)
+  region size 1024K, 27 young (27648K), 5 survivors (5120K)
+ Metaspace       used 26655K, committed 26944K, reserved 1114112K
+  class space    used 2988K, committed 3136K, reserved 1048576K
+}
+Event: 9.752 GC heap after
+{Heap after GC invocations=7 (full 0):
+ garbage-first heap   total 64512K, used 34304K [0x0000000084800000, 0x0000000100000000)
+  region size 1024K, 4 young (4096K), 4 survivors (4096K)
+ Metaspace       used 26655K, committed 26944K, reserved 1114112K
+  class space    used 2988K, committed 3136K, reserved 1048576K
+}
+Event: 9.906 GC heap before
+{Heap before GC invocations=7 (full 0):
+ garbage-first heap   total 64512K, used 53760K [0x0000000084800000, 0x0000000100000000)
+  region size 1024K, 23 young (23552K), 4 survivors (4096K)
+ Metaspace       used 26731K, committed 27008K, reserved 1114112K
+  class space    used 2988K, committed 3136K, reserved 1048576K
+}
+Event: 9.915 GC heap after
+{Heap after GC invocations=8 (full 0):
+ garbage-first heap   total 64512K, used 37243K [0x0000000084800000, 0x0000000100000000)
+  region size 1024K, 3 young (3072K), 3 survivors (3072K)
+ Metaspace       used 26731K, committed 27008K, reserved 1114112K
+  class space    used 2988K, committed 3136K, reserved 1048576K
+}
+Event: 10.142 GC heap before
+{Heap before GC invocations=9 (full 0):
+ garbage-first heap   total 66560K, used 55675K [0x0000000084800000, 0x0000000100000000)
+  region size 1024K, 21 young (21504K), 3 survivors (3072K)
+ Metaspace       used 27179K, committed 27520K, reserved 1114112K
+  class space    used 3021K, committed 3136K, reserved 1048576K
+}
+Event: 10.151 GC heap after
+{Heap after GC invocations=10 (full 0):
+ garbage-first heap   total 90112K, used 39244K [0x0000000084800000, 0x0000000100000000)
+  region size 1024K, 2 young (2048K), 2 survivors (2048K)
+ Metaspace       used 27179K, committed 27520K, reserved 1114112K
+  class space    used 3021K, committed 3136K, reserved 1048576K
+}
+Event: 10.377 GC heap before
+{Heap before GC invocations=10 (full 0):
+ garbage-first heap   total 90112K, used 76108K [0x0000000084800000, 0x0000000100000000)
+  region size 1024K, 38 young (38912K), 2 survivors (2048K)
+ Metaspace       used 27265K, committed 27584K, reserved 1114112K
+  class space    used 3021K, committed 3136K, reserved 1048576K
+}
+Event: 10.384 GC heap after
+{Heap after GC invocations=11 (full 0):
+ garbage-first heap   total 90112K, used 39343K [0x0000000084800000, 0x0000000100000000)
+  region size 1024K, 3 young (3072K), 3 survivors (3072K)
+ Metaspace       used 27265K, committed 27584K, reserved 1114112K
+  class space    used 3021K, committed 3136K, reserved 1048576K
+}
+Event: 11.119 GC heap before
+{Heap before GC invocations=11 (full 0):
+ garbage-first heap   total 90112K, used 78255K [0x0000000084800000, 0x0000000100000000)
+  region size 1024K, 39 young (39936K), 3 survivors (3072K)
+ Metaspace       used 29036K, committed 29376K, reserved 1114112K
+  class space    used 3236K, committed 3392K, reserved 1048576K
+}
+Event: 11.130 GC heap after
+{Heap after GC invocations=12 (full 0):
+ garbage-first heap   total 90112K, used 42616K [0x0000000084800000, 0x0000000100000000)
+  region size 1024K, 5 young (5120K), 5 survivors (5120K)
+ Metaspace       used 29036K, committed 29376K, reserved 1114112K
+  class space    used 3236K, committed 3392K, reserved 1048576K
+}
+Event: 11.993 GC heap before
+{Heap before GC invocations=12 (full 0):
+ garbage-first heap   total 90112K, used 78456K [0x0000000084800000, 0x0000000100000000)
+  region size 1024K, 40 young (40960K), 5 survivors (5120K)
+ Metaspace       used 29624K, committed 29952K, reserved 1114112K
+  class space    used 3245K, committed 3392K, reserved 1048576K
+}
+Event: 12.005 GC heap after
+{Heap after GC invocations=13 (full 0):
+ garbage-first heap   total 90112K, used 44173K [0x0000000084800000, 0x0000000100000000)
+  region size 1024K, 2 young (2048K), 2 survivors (2048K)
+ Metaspace       used 29624K, committed 29952K, reserved 1114112K
+  class space    used 3245K, committed 3392K, reserved 1048576K
+}
+Event: 12.649 GC heap before
+{Heap before GC invocations=13 (full 0):
+ garbage-first heap   total 90112K, used 80013K [0x0000000084800000, 0x0000000100000000)
+  region size 1024K, 37 young (37888K), 2 survivors (2048K)
+ Metaspace       used 29859K, committed 30208K, reserved 1114112K
+  class space    used 3254K, committed 3392K, reserved 1048576K
+}
+Event: 12.658 GC heap after
+{Heap after GC invocations=14 (full 0):
+ garbage-first heap   total 108544K, used 45867K [0x0000000084800000, 0x0000000100000000)
+  region size 1024K, 4 young (4096K), 4 survivors (4096K)
+ Metaspace       used 29859K, committed 30208K, reserved 1114112K
+  class space    used 3254K, committed 3392K, reserved 1048576K
+}
+Event: 20.602 GC heap before
+{Heap before GC invocations=15 (full 0):
+ garbage-first heap   total 108544K, used 96043K [0x0000000084800000, 0x0000000100000000)
+  region size 1024K, 53 young (54272K), 4 survivors (4096K)
+ Metaspace       used 32018K, committed 32512K, reserved 1114112K
+  class space    used 3501K, committed 3712K, reserved 1048576K
+}
+Event: 20.611 GC heap after
+{Heap after GC invocations=16 (full 0):
+ garbage-first heap   total 108544K, used 46239K [0x0000000084800000, 0x0000000100000000)
+  region size 1024K, 6 young (6144K), 6 survivors (6144K)
+ Metaspace       used 32018K, committed 32512K, reserved 1114112K
+  class space    used 3501K, committed 3712K, reserved 1048576K
+}
+
+Dll operation events (12 events):
+Event: 0.098 Loaded shared library C:\Users\zxono\.jdks\openjdk-21.0.1\bin\java.dll
+Event: 0.254 Loaded shared library C:\Users\zxono\.jdks\openjdk-21.0.1\bin\jsvml.dll
+Event: 0.334 Loaded shared library C:\Users\zxono\.jdks\openjdk-21.0.1\bin\zip.dll
+Event: 0.350 Loaded shared library C:\Users\zxono\.jdks\openjdk-21.0.1\bin\instrument.dll
+Event: 0.367 Loaded shared library C:\Users\zxono\.jdks\openjdk-21.0.1\bin\net.dll
+Event: 0.376 Loaded shared library C:\Users\zxono\.jdks\openjdk-21.0.1\bin\nio.dll
+Event: 0.396 Loaded shared library C:\Users\zxono\.jdks\openjdk-21.0.1\bin\zip.dll
+Event: 0.439 Loaded shared library C:\Program Files\JetBrains\IntelliJ IDEA 2023.2.5\bin\breakgen64.dll
+Event: 0.487 Loaded shared library C:\Users\zxono\.jdks\openjdk-21.0.1\bin\extnet.dll
+Event: 0.880 Loaded shared library C:\Users\zxono\.jdks\openjdk-21.0.1\bin\jimage.dll
+Event: 1.201 Loaded shared library C:\Users\zxono\AppData\Local\Temp\jansi-2.4.0-85ab4f4d65f80a7b-jansi.dll
+Event: 1.233 Loaded shared library C:\Users\zxono\.jdks\openjdk-21.0.1\bin\verify.dll
+
+Deoptimization events (20 events):
+Event: 20.898 Thread 0x0000020c32292e50 Uncommon trap: trap_request=0xffffff45 fr.pc=0x0000020c43f356d0 relative=0x0000000000000630
+Event: 20.898 Thread 0x0000020c32292e50 Uncommon trap: reason=unstable_if action=reinterpret pc=0x0000020c43f356d0 method=org.codehaus.plexus.util.SelectorUtils.matchAntPathPattern([[C[[CZ)Z @ 27 c2
+Event: 20.898 Thread 0x0000020c32292e50 DEOPT PACKING pc=0x0000020c43f356d0 sp=0x0000006aef4fde80
+Event: 20.898 Thread 0x0000020c32292e50 DEOPT UNPACKING pc=0x0000020c436046a2 sp=0x0000006aef4fddd0 mode 2
+Event: 22.589 Thread 0x0000020c512a0200 Uncommon trap: trap_request=0xffffffc6 fr.pc=0x0000020c43d60308 relative=0x0000000000000228
+Event: 22.589 Thread 0x0000020c512a0200 Uncommon trap: reason=bimorphic_or_optimized_type_check action=maybe_recompile pc=0x0000020c43d60308 method=java.util.concurrent.locks.AbstractQueuedSynchronizer.release(I)Z @ 2 c2
+Event: 22.589 Thread 0x0000020c512a0200 DEOPT PACKING pc=0x0000020c43d60308 sp=0x0000006af12ff200
+Event: 22.589 Thread 0x0000020c512a0200 DEOPT UNPACKING pc=0x0000020c436046a2 sp=0x0000006af12ff1c8 mode 2
+Event: 22.589 Thread 0x0000020c512a0890 Uncommon trap: trap_request=0xffffffc6 fr.pc=0x0000020c43d60308 relative=0x0000000000000228
+Event: 22.589 Thread 0x0000020c512a0890 Uncommon trap: reason=bimorphic_or_optimized_type_check action=maybe_recompile pc=0x0000020c43d60308 method=java.util.concurrent.locks.AbstractQueuedSynchronizer.release(I)Z @ 2 c2
+Event: 22.589 Thread 0x0000020c512a0890 DEOPT PACKING pc=0x0000020c43d60308 sp=0x0000006af13fef00
+Event: 22.590 Thread 0x0000020c512a0890 DEOPT UNPACKING pc=0x0000020c436046a2 sp=0x0000006af13feec8 mode 2
+Event: 22.590 Thread 0x0000020c51d87aa0 Uncommon trap: trap_request=0xffffffc6 fr.pc=0x0000020c43d60308 relative=0x0000000000000228
+Event: 22.590 Thread 0x0000020c51d87aa0 Uncommon trap: reason=bimorphic_or_optimized_type_check action=maybe_recompile pc=0x0000020c43d60308 method=java.util.concurrent.locks.AbstractQueuedSynchronizer.release(I)Z @ 2 c2
+Event: 22.590 Thread 0x0000020c51d8c960 Uncommon trap: trap_request=0xffffffc6 fr.pc=0x0000020c43d60308 relative=0x0000000000000228
+Event: 22.590 Thread 0x0000020c51d8c960 Uncommon trap: reason=bimorphic_or_optimized_type_check action=maybe_recompile pc=0x0000020c43d60308 method=java.util.concurrent.locks.AbstractQueuedSynchronizer.release(I)Z @ 2 c2
+Event: 22.590 Thread 0x0000020c51d8c960 DEOPT PACKING pc=0x0000020c43d60308 sp=0x0000006af15ff500
+Event: 22.590 Thread 0x0000020c51d87aa0 DEOPT PACKING pc=0x0000020c43d60308 sp=0x0000006af14ff330
+Event: 22.590 Thread 0x0000020c51d87aa0 DEOPT UNPACKING pc=0x0000020c436046a2 sp=0x0000006af14ff2f8 mode 2
+Event: 22.590 Thread 0x0000020c51d8c960 DEOPT UNPACKING pc=0x0000020c436046a2 sp=0x0000006af15ff4c8 mode 2
+
+Classes loaded (20 events):
+Event: 22.571 Loading class java/util/zip/Deflater$DeflaterZStreamRef
+Event: 22.571 Loading class java/util/zip/Deflater$DeflaterZStreamRef done
+Event: 22.573 Loading class java/io/SequenceInputStream
+Event: 22.573 Loading class java/io/SequenceInputStream done
+Event: 22.579 Loading class java/util/concurrent/ConcurrentLinkedDeque
+Event: 22.579 Loading class java/util/concurrent/ConcurrentLinkedDeque done
+Event: 22.580 Loading class java/util/concurrent/ConcurrentLinkedDeque$Node
+Event: 22.580 Loading class java/util/concurrent/ConcurrentLinkedDeque$Node done
+Event: 22.580 Loading class java/util/Vector$1
+Event: 22.580 Loading class java/util/Vector$1 done
+Event: 22.588 Loading class java/util/concurrent/ThreadPoolExecutor$Worker
+Event: 22.589 Loading class java/util/concurrent/ThreadPoolExecutor$Worker done
+Event: 22.627 Loading class java/util/concurrent/ConcurrentLinkedQueue$Itr
+Event: 22.628 Loading class java/util/concurrent/ConcurrentLinkedQueue$Itr done
+Event: 22.647 Loading class java/nio/StringCharBuffer
+Event: 22.648 Loading class java/nio/StringCharBuffer done
+Event: 22.665 Loading class java/util/concurrent/ConcurrentLinkedDeque$Itr
+Event: 22.665 Loading class java/util/concurrent/ConcurrentLinkedDeque$AbstractItr
+Event: 22.666 Loading class java/util/concurrent/ConcurrentLinkedDeque$AbstractItr done
+Event: 22.666 Loading class java/util/concurrent/ConcurrentLinkedDeque$Itr done
+
+Classes unloaded (0 events):
+No events
+
+Classes redefined (0 events):
+No events
+
+Internal exceptions (20 events):
+Event: 12.752 Thread 0x0000020c32292e50 Exception <a 'sun/nio/fs/WindowsException'{0x00000000ff6fa750}> (0x00000000ff6fa750) 
+thrown [s\open\src\hotspot\share\prims\jni.cpp, line 520]
+Event: 12.788 Thread 0x0000020c32292e50 Exception <a 'sun/nio/fs/WindowsException'{0x000000008c3402d0}> (0x000000008c3402d0) 
+thrown [s\open\src\hotspot\share\prims\jni.cpp, line 520]
+Event: 12.791 Thread 0x0000020c32292e50 Exception <a 'sun/nio/fs/WindowsException'{0x000000008c3675e8}> (0x000000008c3675e8) 
+thrown [s\open\src\hotspot\share\prims\jni.cpp, line 520]
+Event: 12.799 Thread 0x0000020c32292e50 Exception <a 'sun/nio/fs/WindowsException'{0x000000008c3974d0}> (0x000000008c3974d0) 
+thrown [s\open\src\hotspot\share\prims\jni.cpp, line 520]
+Event: 12.802 Thread 0x0000020c32292e50 Exception <a 'sun/nio/fs/WindowsException'{0x000000008c3d4508}> (0x000000008c3d4508) 
+thrown [s\open\src\hotspot\share\prims\jni.cpp, line 520]
+Event: 12.808 Thread 0x0000020c32292e50 Exception <a 'sun/nio/fs/WindowsException'{0x000000008a528918}> (0x000000008a528918) 
+thrown [s\open\src\hotspot\share\prims\jni.cpp, line 520]
+Event: 12.812 Thread 0x0000020c32292e50 Exception <a 'sun/nio/fs/WindowsException'{0x000000008a539da0}> (0x000000008a539da0) 
+thrown [s\open\src\hotspot\share\prims\jni.cpp, line 520]
+Event: 12.818 Thread 0x0000020c32292e50 Exception <a 'sun/nio/fs/WindowsException'{0x000000008a56a190}> (0x000000008a56a190) 
+thrown [s\open\src\hotspot\share\prims\jni.cpp, line 520]
+Event: 12.821 Thread 0x0000020c32292e50 Exception <a 'sun/nio/fs/WindowsException'{0x000000008a5a94c8}> (0x000000008a5a94c8) 
+thrown [s\open\src\hotspot\share\prims\jni.cpp, line 520]
+Event: 12.828 Thread 0x0000020c32292e50 Exception <a 'sun/nio/fs/WindowsException'{0x000000008a5f1f98}> (0x000000008a5f1f98) 
+thrown [s\open\src\hotspot\share\prims\jni.cpp, line 520]
+Event: 12.839 Thread 0x0000020c32292e50 Exception <a 'sun/nio/fs/WindowsException'{0x000000008a42d368}> (0x000000008a42d368) 
+thrown [s\open\src\hotspot\share\prims\jni.cpp, line 520]
+Event: 12.851 Thread 0x0000020c32292e50 Exception <a 'sun/nio/fs/WindowsException'{0x000000008a482168}> (0x000000008a482168) 
+thrown [s\open\src\hotspot\share\prims\jni.cpp, line 520]
+Event: 12.881 Thread 0x0000020c32292e50 Exception <a 'sun/nio/fs/WindowsException'{0x000000008a4c85d8}> (0x000000008a4c85d8) 
+thrown [s\open\src\hotspot\share\prims\jni.cpp, line 520]
+Event: 12.915 Thread 0x0000020c32292e50 Exception <a 'sun/nio/fs/WindowsException'{0x000000008a301e30}> (0x000000008a301e30) 
+thrown [s\open\src\hotspot\share\prims\jni.cpp, line 520]
+Event: 18.653 Thread 0x0000020c512a0200 Exception <a 'java/lang/NoSuchMethodError'{0x0000000088634b70}: 'java.lang.Object java.lang.invoke.DirectMethodHandle$Holder.invokeStatic(java.lang.Object, long, java.lang.Object)'> (0x0000000088634b70) 
+thrown [s\open\src\hotspot\share\interpreter\linkResolver.cpp, line 773]
+Event: 18.654 Thread 0x0000020c512a0200 Exception <a 'java/lang/NoSuchMethodError'{0x0000000088638048}: 'java.lang.Object java.lang.invoke.DirectMethodHandle$Holder.invokeStaticInit(java.lang.Object, long, java.lang.Object)'> (0x0000000088638048) 
+thrown [s\open\src\hotspot\share\interpreter\linkResolver.cpp, line 773]
+Event: 18.654 Thread 0x0000020c512a0200 Exception <a 'java/lang/NoSuchMethodError'{0x000000008863d440}: 'java.lang.Object java.lang.invoke.DirectMethodHandle$Holder.newInvokeSpecial(java.lang.Object, long)'> (0x000000008863d440) 
+thrown [s\open\src\hotspot\share\interpreter\linkResolver.cpp, line 773]
+Event: 18.672 Thread 0x0000020c512a0200 Exception <a 'java/lang/NoSuchMethodError'{0x0000000088641880}: 'long java.lang.invoke.DirectMethodHandle$Holder.invokeInterface(java.lang.Object, java.lang.Object)'> (0x0000000088641880) 
+thrown [s\open\src\hotspot\share\interpreter\linkResolver.cpp, line 773]
+Event: 18.673 Thread 0x0000020c512a0200 Exception <a 'java/lang/NoSuchMethodError'{0x0000000088644d38}: 'long java.lang.invoke.DelegatingMethodHandle$Holder.reinvoke_L(java.lang.Object, java.lang.Object)'> (0x0000000088644d38) 
+thrown [s\open\src\hotspot\share\interpreter\linkResolver.cpp, line 773]
+Event: 22.575 Thread 0x0000020c32292e50 Exception <a 'java/lang/NoSuchMethodError'{0x0000000088fd2890}: 'void java.lang.invoke.DirectMethodHandle$Holder.invokeStaticInit(java.lang.Object, java.lang.Object)'> (0x0000000088fd2890) 
+thrown [s\open\src\hotspot\share\interpreter\linkResolver.cpp, line 773]
+
+ZGC Phase Switch (0 events):
+No events
+
+VM Operations (20 events):
+Event: 20.383 Executing VM operation: HandshakeAllThreads (Deoptimize)
+Event: 20.383 Executing VM operation: HandshakeAllThreads (Deoptimize) done
+Event: 20.554 Executing VM operation: HandshakeAllThreads (Deoptimize)
+Event: 20.554 Executing VM operation: HandshakeAllThreads (Deoptimize) done
+Event: 20.602 Executing VM operation: G1CollectForAllocation (G1 Evacuation Pause)
+Event: 20.611 Executing VM operation: G1CollectForAllocation (G1 Evacuation Pause) done
+Event: 20.763 Executing VM operation: HandshakeAllThreads (Deoptimize)
+Event: 20.763 Executing VM operation: HandshakeAllThreads (Deoptimize) done
+Event: 20.813 Executing VM operation: HandshakeAllThreads (Deoptimize)
+Event: 20.813 Executing VM operation: HandshakeAllThreads (Deoptimize) done
+Event: 21.817 Executing VM operation: Cleanup
+Event: 21.818 Executing VM operation: Cleanup done
+Event: 22.583 Executing VM operation: HandshakeAllThreads (Deoptimize)
+Event: 22.583 Executing VM operation: HandshakeAllThreads (Deoptimize) done
+Event: 22.626 Executing VM operation: HandshakeAllThreads (Deoptimize)
+Event: 22.626 Executing VM operation: HandshakeAllThreads (Deoptimize) done
+Event: 22.649 Executing VM operation: HandshakeAllThreads (Deoptimize)
+Event: 22.649 Executing VM operation: HandshakeAllThreads (Deoptimize) done
+Event: 22.651 Executing VM operation: HandshakeAllThreads (Deoptimize)
+Event: 22.651 Executing VM operation: HandshakeAllThreads (Deoptimize) done
+
+Events (20 events):
+Event: 19.935 Thread 0x0000020c97990360 Thread added: 0x0000020c97990360
+Event: 20.150 Thread 0x0000020c97990360 Thread exited: 0x0000020c97990360
+Event: 20.503 Thread 0x0000020c51660010 Thread added: 0x0000020c51660010
+Event: 20.503 Thread 0x0000020c516606c0 Thread added: 0x0000020c516606c0
+Event: 21.191 Thread 0x0000020c516606c0 Thread exited: 0x0000020c516606c0
+Event: 21.191 Thread 0x0000020c51660010 Thread exited: 0x0000020c51660010
+Event: 22.589 Thread 0x0000020c512a0200 Thread added: 0x0000020c512a0200
+Event: 22.589 Thread 0x0000020c512a0890 Thread added: 0x0000020c512a0890
+Event: 22.589 Thread 0x0000020c51d87aa0 Thread added: 0x0000020c51d87aa0
+Event: 22.590 Thread 0x0000020c51d8c960 Thread added: 0x0000020c51d8c960
+Event: 22.590 Thread 0x0000020c51d8b5b0 Thread added: 0x0000020c51d8b5b0
+Event: 22.590 Thread 0x0000020c51d8bc40 Thread added: 0x0000020c51d8bc40
+Event: 22.590 Thread 0x0000020c51d8a200 Thread added: 0x0000020c51d8a200
+Event: 22.590 Thread 0x0000020c51d88130 Thread added: 0x0000020c51d88130
+Event: 22.591 Thread 0x0000020c51d89b70 Thread added: 0x0000020c51d89b70
+Event: 22.591 Thread 0x0000020c51d88e50 Thread added: 0x0000020c51d88e50
+Event: 22.591 Thread 0x0000020c51d86d80 Thread added: 0x0000020c51d86d80
+Event: 22.591 Thread 0x0000020c51d8c2d0 Thread added: 0x0000020c51d8c2d0
+Event: 22.597 Thread 0x0000020c97c9fdd0 Thread added: 0x0000020c97c9fdd0
+Event: 22.662 Thread 0x0000020c9897ba50 Thread added: 0x0000020c9897ba50
+
+
+Dynamic libraries:
+0x00007ff7a0130000 - 0x00007ff7a013e000 	C:\Users\zxono\.jdks\openjdk-21.0.1\bin\java.exe
+0x00007ffea88d0000 - 0x00007ffea8ae7000 	C:\windows\SYSTEM32\ntdll.dll
+0x00007ffea86c0000 - 0x00007ffea8784000 	C:\windows\System32\KERNEL32.DLL
+0x00007ffea6270000 - 0x00007ffea6615000 	C:\windows\System32\KERNELBASE.dll
+0x00007ffea6060000 - 0x00007ffea6171000 	C:\windows\System32\ucrtbase.dll
+0x00007ffe7c8b0000 - 0x00007ffe7c8c8000 	C:\Users\zxono\.jdks\openjdk-21.0.1\bin\jli.dll
+0x00007ffe8aad0000 - 0x00007ffe8aaeb000 	C:\Users\zxono\.jdks\openjdk-21.0.1\bin\VCRUNTIME140.dll
+0x00007ffea7850000 - 0x00007ffea79fe000 	C:\windows\System32\USER32.dll
+0x00007ffea5f90000 - 0x00007ffea5fb6000 	C:\windows\System32\win32u.dll
+0x00007ffe831a0000 - 0x00007ffe83433000 	C:\windows\WinSxS\amd64_microsoft.windows.common-controls_6595b64144ccf1df_6.0.22621.2506_none_270c5ae97388e100\COMCTL32.dll
+0x00007ffea80c0000 - 0x00007ffea80e9000 	C:\windows\System32\GDI32.dll
+0x00007ffea5c40000 - 0x00007ffea5d59000 	C:\windows\System32\gdi32full.dll
+0x00007ffea5fc0000 - 0x00007ffea605a000 	C:\windows\System32\msvcp_win.dll
+0x00007ffea6b00000 - 0x00007ffea6ba7000 	C:\windows\System32\msvcrt.dll
+0x00007ffea8140000 - 0x00007ffea8171000 	C:\windows\System32\IMM32.DLL
+0x00007ffe8aac0000 - 0x00007ffe8aacc000 	C:\Users\zxono\.jdks\openjdk-21.0.1\bin\vcruntime140_1.dll
+0x00007ffe3e720000 - 0x00007ffe3e7ae000 	C:\Users\zxono\.jdks\openjdk-21.0.1\bin\msvcp140.dll
+0x00007ffde6460000 - 0x00007ffde7175000 	C:\Users\zxono\.jdks\openjdk-21.0.1\bin\server\jvm.dll
+0x00007ffea6620000 - 0x00007ffea66d1000 	C:\windows\System32\ADVAPI32.dll
+0x00007ffea75e0000 - 0x00007ffea7686000 	C:\windows\System32\sechost.dll
+0x00007ffea84c0000 - 0x00007ffea85d7000 	C:\windows\System32\RPCRT4.dll
+0x00007ffea8790000 - 0x00007ffea8801000 	C:\windows\System32\WS2_32.dll
+0x00007ffe97780000 - 0x00007ffe9778a000 	C:\windows\SYSTEM32\VERSION.dll
+0x00007ffe99cc0000 - 0x00007ffe99cf4000 	C:\windows\SYSTEM32\WINMM.dll
+0x00007ffea5a60000 - 0x00007ffea5aad000 	C:\windows\SYSTEM32\POWRPROF.dll
+0x00007ffea5940000 - 0x00007ffea5953000 	C:\windows\SYSTEM32\UMPDC.dll
+0x00007ffea4ba0000 - 0x00007ffea4bb8000 	C:\windows\SYSTEM32\kernel.appcore.dll
+0x00007ffe8a8f0000 - 0x00007ffe8a8fa000 	C:\Users\zxono\.jdks\openjdk-21.0.1\bin\jimage.dll
+0x00007ffea33a0000 - 0x00007ffea35d3000 	C:\windows\SYSTEM32\DBGHELP.DLL
+0x00007ffea66f0000 - 0x00007ffea6a79000 	C:\windows\System32\combase.dll
+0x00007ffea85e0000 - 0x00007ffea86b7000 	C:\windows\System32\OLEAUT32.dll
+0x00007ffe70d00000 - 0x00007ffe70d32000 	C:\windows\SYSTEM32\dbgcore.DLL
+0x00007ffea61f0000 - 0x00007ffea626a000 	C:\windows\System32\bcryptPrimitives.dll
+0x00007ffe9b430000 - 0x00007ffe9b43f000 	C:\Users\zxono\.jdks\openjdk-21.0.1\bin\instrument.dll
+0x00007ffe7b1b0000 - 0x00007ffe7b1cf000 	C:\Users\zxono\.jdks\openjdk-21.0.1\bin\java.dll
+0x00007ffea6d80000 - 0x00007ffea75d9000 	C:\windows\System32\SHELL32.dll
+0x00007ffea3b10000 - 0x00007ffea4404000 	C:\windows\SYSTEM32\windows.storage.dll
+0x00007ffea39d0000 - 0x00007ffea3b0e000 	C:\windows\SYSTEM32\wintypes.dll
+0x00007ffea7a40000 - 0x00007ffea7b33000 	C:\windows\System32\SHCORE.dll
+0x00007ffea6d20000 - 0x00007ffea6d7e000 	C:\windows\System32\shlwapi.dll
+0x00007ffea5b70000 - 0x00007ffea5b96000 	C:\windows\SYSTEM32\profapi.dll
+0x00007ffe2d4f0000 - 0x00007ffe2d5c7000 	C:\Users\zxono\.jdks\openjdk-21.0.1\bin\jsvml.dll
+0x00007ffe714a0000 - 0x00007ffe714b8000 	C:\Users\zxono\.jdks\openjdk-21.0.1\bin\zip.dll
+0x00007ffe86610000 - 0x00007ffe86620000 	C:\Users\zxono\.jdks\openjdk-21.0.1\bin\net.dll
+0x00007ffe9e190000 - 0x00007ffe9e2c7000 	C:\windows\SYSTEM32\WINHTTP.dll
+0x00007ffea5070000 - 0x00007ffea50d9000 	C:\windows\system32\mswsock.dll
+0x00007ffe7a930000 - 0x00007ffe7a946000 	C:\Users\zxono\.jdks\openjdk-21.0.1\bin\nio.dll
+0x00007ffe99dc0000 - 0x00007ffe99dda000 	C:\Program Files\JetBrains\IntelliJ IDEA 2023.2.5\bin\breakgen64.dll
+0x00007ffe83580000 - 0x00007ffe83587000 	C:\Users\zxono\.jdks\openjdk-21.0.1\bin\extnet.dll
+0x0000000069ac0000 - 0x0000000069ae4000 	C:\Users\zxono\AppData\Local\Temp\jansi-2.4.0-85ab4f4d65f80a7b-jansi.dll
+0x00007ffe830e0000 - 0x00007ffe830f0000 	C:\Users\zxono\.jdks\openjdk-21.0.1\bin\verify.dll
+
+dbghelp: loaded successfully - version: 4.0.5 - missing functions: none
+symbol engine: initialized successfully - sym options: 0x614 - pdb path: .;C:\Users\zxono\.jdks\openjdk-21.0.1\bin;C:\windows\SYSTEM32;C:\windows\WinSxS\amd64_microsoft.windows.common-controls_6595b64144ccf1df_6.0.22621.2506_none_270c5ae97388e100;C:\Users\zxono\.jdks\openjdk-21.0.1\bin\server;C:\Program Files\JetBrains\IntelliJ IDEA 2023.2.5\bin;C:\Users\zxono\AppData\Local\Temp
+
+VM Arguments:
+jvm_args: -Dmaven.multiModuleProjectDirectory=D:\nearlmod -Djansi.passthrough=true -Dmaven.home=C:\Program Files\JetBrains\IntelliJ IDEA 2023.2.5\plugins\maven\lib\maven3 -Dclassworlds.conf=C:\Program Files\JetBrains\IntelliJ IDEA 2023.2.5\plugins\maven\lib\maven3\bin\m2.conf -Dmaven.ext.class.path=C:\Program Files\JetBrains\IntelliJ IDEA 2023.2.5\plugins\maven\lib\maven-event-listener.jar -javaagent:C:\Program Files\JetBrains\IntelliJ IDEA 2023.2.5\lib\idea_rt.jar=60393:C:\Program Files\JetBrains\IntelliJ IDEA 2023.2.5\bin -Dfile.encoding=UTF-8 -Dsun.stdout.encoding=UTF-8 -Dsun.stderr.encoding=UTF-8 
+java_command: org.codehaus.classworlds.Launcher -Didea.version=2023.2.5 package
+java_class_path (initial): C:\Program Files\JetBrains\IntelliJ IDEA 2023.2.5\plugins\maven\lib\maven3\boot\plexus-classworlds-2.7.0.jar;C:\Program Files\JetBrains\IntelliJ IDEA 2023.2.5\plugins\maven\lib\maven3\boot\plexus-classworlds.license
+Launcher Type: SUN_STANDARD
+
+[Global flags]
+     intx CICompilerCount                          = 4                                         {product} {ergonomic}
+     uint ConcGCThreads                            = 3                                         {product} {ergonomic}
+     uint G1ConcRefinementThreads                  = 10                                        {product} {ergonomic}
+   size_t G1HeapRegionSize                         = 1048576                                   {product} {ergonomic}
+    uintx GCDrainStackTargetSize                   = 64                                        {product} {ergonomic}
+   size_t InitialHeapSize                          = 130023424                                 {product} {ergonomic}
+   size_t MarkStackSize                            = 4194304                                   {product} {ergonomic}
+   size_t MaxHeapSize                              = 2071986176                                {product} {ergonomic}
+   size_t MaxNewSize                               = 1242562560                                {product} {ergonomic}
+   size_t MinHeapDeltaBytes                        = 1048576                                   {product} {ergonomic}
+   size_t MinHeapSize                              = 8388608                                   {product} {ergonomic}
+    uintx NonNMethodCodeHeapSize                   = 5839372                                {pd product} {ergonomic}
+    uintx NonProfiledCodeHeapSize                  = 122909434                              {pd product} {ergonomic}
+    uintx ProfiledCodeHeapSize                     = 122909434                              {pd product} {ergonomic}
+    uintx ReservedCodeCacheSize                    = 251658240                              {pd product} {ergonomic}
+     bool SegmentedCodeCache                       = true                                      {product} {ergonomic}
+   size_t SoftMaxHeapSize                          = 2071986176                             {manageable} {ergonomic}
+     bool UseCompressedOops                        = true                           {product lp64_product} {ergonomic}
+     bool UseG1GC                                  = true                                      {product} {ergonomic}
+     bool UseLargePagesIndividualAllocation        = false                                  {pd product} {ergonomic}
+
+Logging:
+Log output configuration:
+ #0: stdout all=warning uptime,level,tags foldmultilines=false
+ #1: stderr all=off uptime,level,tags foldmultilines=false
+
+Environment Variables:
+PATH=C:\Program Files (x86)\Common Files\Oracle\Java\javapath;C:\Program Files (x86)\VMware\VMware Player\bin\;C:\windows\system32;C:\windows;C:\windows\System32\Wbem;C:\windows\System32\WindowsPowerShell\v1.0\;C:\windows\System32\OpenSSH\;C:\Program Files\Git\cmd;C:\Users\zxono\.cargo\bin;C:\Users\zxono\miniconda3;C:\Users\zxono\miniconda3\Library\mingw-w64\bin;C:\Users\zxono\miniconda3\Library\usr\bin;C:\Users\zxono\miniconda3\Library\bin;C:\Users\zxono\miniconda3\Scripts;C:\Users\zxono\AppData\Local\Programs\Python\Python311\Scripts\;C:\Users\zxono\AppData\Local\Programs\Python\Python311\;C:\Users\zxono\AppData\Local\Microsoft\WindowsApps;C:\Users\zxono\AppData\Local\Programs\Microsoft VS Code\bin;C:\Program Files (x86)\Dev-Cpp\MinGW64\bin\;C:\Program Files (x86)\swigwin-4.1.1\;C:\Program Files (x86)\Microsoft Visual Studio\Installer\;C:\Users\zxono\AppData\Local\GitHubDesktop\bin;C:\Program Files\JetBrains\IntelliJ IDEA 2023.2.5\bin;
+USERNAME=zxono
+OS=Windows_NT
+PROCESSOR_IDENTIFIER=Intel64 Family 6 Model 154 Stepping 4, GenuineIntel
+TMP=C:\Users\zxono\AppData\Local\Temp
+TEMP=C:\Users\zxono\AppData\Local\Temp
+
+
+
+
+Periodic native trim disabled
+
+---------------  S Y S T E M  ---------------
+
+OS:
+ Windows 11 , 64 bit Build 22621 (10.0.22621.2506)
+OS uptime: 3 days 0:45 hours
+Hyper-V role detected
+
+CPU: total 12 (initial active 12) (6 cores per cpu, 2 threads per core) family 6 model 154 stepping 4 microcode 0x429, cx8, cmov, fxsr, ht, mmx, 3dnowpref, sse, sse2, sse3, ssse3, sse4.1, sse4.2, popcnt, lzcnt, tsc, tscinvbit, avx, avx2, aes, erms, clmul, bmi1, bmi2, adx, sha, fma, vzeroupper, clflush, clflushopt, clwb, hv, serialize, rdtscp, rdpid, fsrm, f16c, cet_ibt, cet_ss
+Processor Information for processor 0
+  Max Mhz: 1300, Current Mhz: 1300, Mhz Limit: 1300
+Processor Information for processor 1
+  Max Mhz: 1300, Current Mhz: 1300, Mhz Limit: 1300
+Processor Information for processor 2
+  Max Mhz: 1300, Current Mhz: 1300, Mhz Limit: 1300
+Processor Information for processor 3
+  Max Mhz: 1300, Current Mhz: 1300, Mhz Limit: 1300
+Processor Information for processor 4
+  Max Mhz: 1300, Current Mhz: 900, Mhz Limit: 897
+Processor Information for processor 5
+  Max Mhz: 1300, Current Mhz: 900, Mhz Limit: 897
+Processor Information for processor 6
+  Max Mhz: 1300, Current Mhz: 900, Mhz Limit: 897
+Processor Information for processor 7
+  Max Mhz: 1300, Current Mhz: 900, Mhz Limit: 897
+Processor Information for processor 8
+  Max Mhz: 1300, Current Mhz: 900, Mhz Limit: 897
+Processor Information for processor 9
+  Max Mhz: 1300, Current Mhz: 900, Mhz Limit: 897
+Processor Information for processor 10
+  Max Mhz: 1300, Current Mhz: 900, Mhz Limit: 897
+Processor Information for processor 11
+  Max Mhz: 1300, Current Mhz: 900, Mhz Limit: 897
+
+Memory: 4k page, system-wide physical 7903M (787M free)
+TotalPageFile size 32479M (AvailPageFile size 1M)
+current process WorkingSet (physical memory assigned to process): 273M, peak: 273M
+current process commit charge ("private bytes"): 327M, peak: 329M
+
+vm_info: OpenJDK 64-Bit Server VM (21.0.1+12-29) for windows-amd64 JRE (21.0.1+12-29), built on 2023-10-05T13:27:09Z by "mach5one" with MS VC++ 17.1 (VS2022)
+
+END.

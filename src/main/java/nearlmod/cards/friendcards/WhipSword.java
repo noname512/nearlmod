@@ -42,7 +42,7 @@ public class WhipSword extends AbstractFriendCard {
 
         for (AbstractOrb orb : p.orbs)
             if (orb instanceof AbstractFriend) {
-                addToBot(new PureDamageAllEnemiesAction(p, secondMagicNumber + ((AbstractFriend)orb).trustAmount, orb.ID + damageSuffix));
+                addToBot(new PureDamageAllEnemiesAction(p, secondMagicNumber + ((AbstractFriend)orb).getTrustAmount(), orb.ID + damageSuffix));
             }
     }
 

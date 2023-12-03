@@ -49,7 +49,7 @@ public class PathOfRadiant extends AbstractNearlCard {
         for (AbstractOrb orb : AbstractDungeon.player.orbs)
             if (orb instanceof AbstractFriend) {
                 ((AbstractFriend) orb).upgraded = true;
-                if (extra) ((AbstractFriend) orb).trustAmount += magicNumber;
+                if (extra) ((AbstractFriend) orb).applyStrength(magicNumber);
                 orb.updateDescription();
             }
     }

@@ -1,7 +1,5 @@
 package nearlmod.orbs;
 
-import com.megacrit.cardcrawl.cards.AbstractCard;
-import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.helpers.ImageMaster;
@@ -9,7 +7,6 @@ import com.megacrit.cardcrawl.localization.OrbStrings;
 import com.megacrit.cardcrawl.orbs.AbstractOrb;
 import nearlmod.actions.AddFriendCardToHandAction;
 import nearlmod.cards.friendcards.*;
-import org.apache.logging.log4j.LogManager;
 
 import java.util.ArrayList;
 

@@ -73,7 +73,7 @@ public class ShadowOut extends AbstractNearlCard {
         magicNumber = baseMagicNumber;
         for (AbstractOrb orb : AbstractDungeon.player.orbs)
             if (orb instanceof Viviana) {
-                magicNumber += ((Viviana)orb).trustAmount;
+                magicNumber += ((Viviana)orb).getTrustAmount();
                 if (AbstractDungeon.player.getPower("nearlmod:Shadow") != null) {
                     magicNumber += AbstractDungeon.player.getPower("nearlmod:Shadow").amount;
                 }

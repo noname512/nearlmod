@@ -9,6 +9,7 @@ import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.localization.CardStrings;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import nearlmod.NLMOD;
+import nearlmod.actions.AddFriendCardToHandAction;
 import nearlmod.cards.friendcards.*;
 import nearlmod.orbs.Whislash;
 import nearlmod.patches.AbstractCardEnum;
@@ -43,7 +44,7 @@ public class ReverseForce extends AbstractNearlCard {
     public void use(AbstractPlayer p, AbstractMonster m) {
         addToBot(new DamageAction(m, new DamageInfo(p, damage, damageTypeForTurn)));
         if (extraTriggered()) {
-            ArrayList<AbstractCard> list = new ArrayList<>();
+            ArrayList<AbstractFriendCard> list = new ArrayList<>();
             if (p.stance.ID.equals(AtkStance.STANCE_ID)) {
                 list.add(new LSSwiftSword());
                 list.add(new FlashFade());
@@ -69,7 +70,7 @@ public class ReverseForce extends AbstractNearlCard {
                 list.add(new PinusSylvestris());
                 list.add(new JusticeDrive());
             }
-            p.hand.addToHand(list.get(AbstractDungeon.cardRng.random(0, list.size() - 1)));
+            addToBot(new AddFriendCardToHandAction(list.get(AbstractDungeon.cardRng.random(0, list.size() - 1))));
         }
     }
 

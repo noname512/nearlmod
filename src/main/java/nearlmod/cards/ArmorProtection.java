@@ -53,6 +53,7 @@ public class ArmorProtection extends AbstractNearlCard {
         super.applyPowers();
         magicNumber = block - basicBlock;
         isMagicNumberModified = magicNumber != baseMagicNumber;
+        baseBlock -= baseMagicNumber;
         block = basicBlock;
     }
 

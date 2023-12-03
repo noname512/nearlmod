@@ -14,6 +14,7 @@ import com.megacrit.cardcrawl.localization.PowerStrings;
 import com.megacrit.cardcrawl.powers.AbstractPower;
 import com.megacrit.cardcrawl.powers.VulnerablePower;
 import com.megacrit.cardcrawl.powers.WeakPower;
+import nearlmod.cards.friendcards.AbstractFriendCard;
 import nearlmod.patches.NearlTags;
 
 public class BFPPower extends AbstractPower implements CloneablePowerInterface {
@@ -48,7 +49,7 @@ public class BFPPower extends AbstractPower implements CloneablePowerInterface {
     public void onAttack(DamageInfo info, int damageAmount, AbstractCreature target) {
         if (cardPlayed > 1) return;
         if (info.type != DamageInfo.DamageType.NORMAL) return;
-        if (info.name != null && info.name.endsWith("FriendDmg")) return;
+        if (info.name != null && info.name.endsWith(AbstractFriendCard.damageSuffix)) return;
         int effectType = AbstractDungeon.cardRandomRng.random(1, 2);
         if (owner.hasPower("nearlmod:WFPPower")) effectType = 3;
         if ((effectType & 1) != 0)
