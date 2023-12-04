@@ -38,8 +38,7 @@ public class ArenaRoom extends AbstractRoom {
         phase = RoomPhase.EVENT;
         AbstractDungeon.overlayMenu.proceedButton.hide();
         //TODO 播放bgm：长夜临光活动主题曲
-//        enterTimes++;
-        enterTimes = 5;
+        enterTimes++;
         logger.info("enterTimes = " + enterTimes);
         event = new LaughAllYouWantEvent(); // 防crash
         if (enterTimes == 1) event = new CorruptedWitheredBattle();
