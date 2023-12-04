@@ -9,7 +9,6 @@ import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.localization.MonsterStrings;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
-import nearlmod.powers.CorrosionDamagePower;
 import nearlmod.powers.DealCorrosionPower;
 
 public class ArmorlessCleanupSquad extends AbstractMonster {
@@ -52,7 +51,6 @@ public class ArmorlessCleanupSquad extends AbstractMonster {
         setMove((byte)(nextMove % 4 + 1), Intent.ATTACK_DEBUFF, info.base);
         AbstractPlayer p = AbstractDungeon.player;
         addToBot(new DamageAction(p, info));
-        addToBot(new ApplyPowerAction(p, this, new CorrosionDamagePower(p, info.output * corrosionAmount)));
     }
 
     @Override

@@ -9,6 +9,7 @@ import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.localization.MonsterStrings;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import com.megacrit.cardcrawl.powers.FrailPower;
+import nearlmod.powers.DealCorrosionPower;
 
 public class Roy extends AbstractMonster {
     public static final String ID = "nearlmod:Roy";
@@ -18,6 +19,7 @@ public class Roy extends AbstractMonster {
     public static final String[] DIALOG = monsterStrings.DIALOG;
     public static final String IMAGE = "images/monsters/roy.png";
     private boolean said;
+    private final int corrosionAmount;
 
     public Roy(float x, float y) {
         super(NAME, ID, 100, 0, 0, 150.0F, 320.0F, IMAGE, x, y);
@@ -29,6 +31,15 @@ public class Roy extends AbstractMonster {
         else
             this.damage.add(new DamageInfo(this, 17));
         said = false;
+        if (AbstractDungeon.ascensionLevel >= 18)
+            corrosionAmount = 40;
+        else
+            corrosionAmount = 30;
+    }
+
+    @Override
+    public void usePreBattleAction() {
+        addToTop(new ApplyPowerAction(this, this, new DealCorrosionPower(this, corrosionAmount)));
     }
 
     @Override

@@ -9,6 +9,7 @@ import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.localization.MonsterStrings;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import com.megacrit.cardcrawl.powers.FrailPower;
+import nearlmod.powers.DealCorrosionPower;
 
 public class Monique extends AbstractMonster {
     public static final String ID = "nearlmod:Monique";
@@ -17,6 +18,7 @@ public class Monique extends AbstractMonster {
     public static final String[] MOVES = monsterStrings.MOVES;
     public static final String[] DIALOG = monsterStrings.DIALOG;
     public static final String IMAGE = "images/monsters/monique.png";
+    private final int corrosionAmount;
 
     public Monique(float x, float y) {
         super(NAME, ID, 100, 0, 0, 150.0F, 320.0F, IMAGE, x, y);
@@ -30,6 +32,15 @@ public class Monique extends AbstractMonster {
             this.damage.add(new DamageInfo(this, 10));
             this.damage.add(new DamageInfo(this, 15));
         }
+        if (AbstractDungeon.ascensionLevel >= 18)
+            corrosionAmount = 20;
+        else
+            corrosionAmount = 15;
+    }
+
+    @Override
+    public void usePreBattleAction() {
+        addToTop(new ApplyPowerAction(this, this, new DealCorrosionPower(this, corrosionAmount)));
     }
 
     @Override

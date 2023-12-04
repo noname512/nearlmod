@@ -1,6 +1,8 @@
 package nearlmod.powers;
 
 import basemod.interfaces.CloneablePowerInterface;
+import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
+import com.megacrit.cardcrawl.cards.DamageInfo;
 import com.megacrit.cardcrawl.core.AbstractCreature;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.localization.PowerStrings;
@@ -21,9 +23,16 @@ public class DealCorrosionPower extends AbstractPower implements CloneablePowerI
         this.amount = amount;
         updateDescription();
     }
+
     @Override
     public void updateDescription() {
         description = DESCRIPTIONS[0] + amount + DESCRIPTIONS[1];
+    }
+
+    @Override
+    public void onAttack(DamageInfo info, int damageAmount, AbstractCreature target) {
+        if (damageAmount > 0)
+            addToBot(new ApplyPowerAction(target, owner, new CorrosionDamagePower(target, damageAmount * amount)));
     }
 
     @Override
