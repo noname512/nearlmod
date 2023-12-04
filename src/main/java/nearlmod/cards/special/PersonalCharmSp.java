@@ -20,6 +20,8 @@ public class PersonalCharmSp extends AbstractNearlCard {
     public static final String UPGRADE_DESCRIPTION = cardStrings.UPGRADE_DESCRIPTION;
     public static final String IMG_PATH = "images/cards/personalcharm.png";
     private static final int COST = 2;
+    public static ArrayList<AbstractCard> choice;
+    public static boolean chooseAgain;
 
     public PersonalCharmSp() {
         super(ID, NAME, IMG_PATH, COST, DESCRIPTION,
@@ -30,15 +32,14 @@ public class PersonalCharmSp extends AbstractNearlCard {
 
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
-        ArrayList<AbstractCard> choice = new ArrayList<>();
+        choice = new ArrayList<>();
         choice.add(new SummonPinusFriend(Flametail.ORB_ID));
         choice.add(new SummonPinusFriend(Ashlock.ORB_ID));
         choice.add(new SummonPinusFriend(Fartooth.ORB_ID));
         choice.add(new SummonPinusFriend(Wildmane.ORB_ID));
         choice.add(new SummonPinusFriend(JusticeKnight.ORB_ID));
+        chooseAgain = upgraded;
         addToBot(new ChooseOneAction(choice));
-        if (upgraded)
-            addToBot(new ChooseOneAction(choice));
     }
 
     @Override

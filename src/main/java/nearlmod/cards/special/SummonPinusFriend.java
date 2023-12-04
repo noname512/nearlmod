@@ -1,5 +1,6 @@
 package nearlmod.cards.special;
 
+import com.megacrit.cardcrawl.actions.watcher.ChooseOneAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
@@ -37,6 +38,11 @@ public class SummonPinusFriend extends AbstractNearlCard {
 
     @Override
     public void onChoseThisOption() {
+        if (PersonalCharmSp.chooseAgain) {
+            PersonalCharmSp.choice.removeIf(c -> c.uuid.equals(this.uuid));
+            PersonalCharmSp.chooseAgain = false;
+            addToTop(new ChooseOneAction(PersonalCharmSp.choice));
+        }
         AbstractFriend o;
         switch (friendID) {
             case Flametail.ORB_ID:
