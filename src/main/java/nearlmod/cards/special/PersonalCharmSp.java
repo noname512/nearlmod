@@ -24,7 +24,7 @@ public class PersonalCharmSp extends AbstractNearlCard {
     public PersonalCharmSp() {
         super(ID, NAME, IMG_PATH, COST, DESCRIPTION,
                 CardType.POWER, CardColor.COLORLESS,
-                CardRarity.RARE, CardTarget.SELF);
+                CardRarity.SPECIAL, CardTarget.SELF);
         tags.add(NearlTags.IS_SUMMON_CARD);
     }
 
