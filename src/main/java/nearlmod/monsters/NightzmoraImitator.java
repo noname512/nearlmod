@@ -1,7 +1,6 @@
 package nearlmod.monsters;
 
 import com.evacipated.cardcrawl.mod.stslib.patches.core.AbstractCreature.TempHPField;
-import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
 import com.megacrit.cardcrawl.actions.common.DamageAction;
 import com.megacrit.cardcrawl.actions.defect.DecreaseMaxOrbAction;
 import com.megacrit.cardcrawl.cards.DamageInfo;
@@ -9,9 +8,6 @@ import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.localization.MonsterStrings;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
-import nearlmod.actions.SummonOrbAction;
-import nearlmod.orbs.Blemishine;
-import nearlmod.powers.HintPower;
 
 public class NightzmoraImitator extends AbstractMonster {
     public static final String ID = "nearlmod:NightzmoraImitator";
@@ -36,12 +32,6 @@ public class NightzmoraImitator extends AbstractMonster {
             this.damage.add(new DamageInfo(this, 8));
             this.damage.add(new DamageInfo(this, 6));
         }
-    }
-
-    @Override
-    public void usePreBattleAction() {
-        addToBot(new ApplyPowerAction(this, this, new HintPower(this)));
-        addToBot(new SummonOrbAction(new Blemishine()));
     }
 
     @Override

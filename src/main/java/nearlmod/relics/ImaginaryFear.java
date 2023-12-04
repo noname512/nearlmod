@@ -7,6 +7,7 @@ import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.localization.RelicStrings;
 import com.megacrit.cardcrawl.relics.AbstractRelic;
+import nearlmod.patches.CurseRelicPatch;
 
 public class ImaginaryFear extends CustomRelic {
 
@@ -18,7 +19,7 @@ public class ImaginaryFear extends CustomRelic {
     public static final Texture IMG_OUTLINE = new Texture("images/relics/cureup_p.png");
     public boolean isFirstTurn;
     public ImaginaryFear() {
-        super(ID, IMG, IMG_OUTLINE, RelicTier.SPECIAL, LandingSound.FLAT);
+        super(ID, IMG, IMG_OUTLINE, CurseRelicPatch.CURSE, LandingSound.FLAT);
     }
 
     @Override

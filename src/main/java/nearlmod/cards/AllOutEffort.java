@@ -50,10 +50,7 @@ public class AllOutEffort extends AbstractNearlCard {
             AbstractDungeon.actionManager.addToBottom(new ChangeStanceAction(new AtkStance()));
         }
 
-        if (!p.hasRelic(LateLight.ID))
-            addToBot(new SummonOrbAction(new Blemishine()));
-        else
-            p.getRelic(LateLight.ID).flash();
+        addToBot(new SummonOrbAction(new Blemishine()));
     }
 
     @Override

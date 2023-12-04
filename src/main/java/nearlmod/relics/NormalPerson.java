@@ -5,6 +5,7 @@ import com.badlogic.gdx.graphics.Texture;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.localization.RelicStrings;
 import com.megacrit.cardcrawl.relics.AbstractRelic;
+import nearlmod.patches.CurseRelicPatch;
 
 public class NormalPerson extends CustomRelic {
 
@@ -15,7 +16,7 @@ public class NormalPerson extends CustomRelic {
     public static final Texture IMG = new Texture("images/relics/cureup.png");
     public static final Texture IMG_OUTLINE = new Texture("images/relics/cureup_p.png");
     public NormalPerson() {
-        super(ID, IMG, IMG_OUTLINE, RelicTier.SPECIAL, LandingSound.FLAT);
+        super(ID, IMG, IMG_OUTLINE, CurseRelicPatch.CURSE, LandingSound.FLAT);
     }
 
     @Override

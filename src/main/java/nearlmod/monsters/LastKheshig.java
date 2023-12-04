@@ -12,6 +12,7 @@ import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.localization.MonsterStrings;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import com.megacrit.cardcrawl.vfx.combat.InflameEffect;
+import nearlmod.NLMOD;
 import nearlmod.actions.SummonOrbAction;
 import nearlmod.cards.AbstractNearlCard;
 import nearlmod.cards.special.BlemishinesFaintLight;
@@ -56,9 +57,6 @@ public class LastKheshig extends AbstractMonster {
         addToBot(new TalkAction(this, DIALOG[0], 0.3F, 3.0F));
         addToBot(new ApplyPowerAction(this, this, new HintPower(this)));
         addToBot(new SummonOrbAction(new Blemishine()));
-        if (AbstractDungeon.player.hasRelic("nearlmod:LateLight")) {
-            isBlemishineSurvive = false;
-        }
         if (AbstractDungeon.ascensionLevel >= 15)
             spawnImitator();
     }
@@ -118,6 +116,7 @@ public class LastKheshig extends AbstractMonster {
                 NightzmoraImitator imitator = new NightzmoraImitator(POSX[i], POSY[i]);
                 imitators[i] = imitator;
                 addToBot(new SpawnMonsterAction(imitator, true));
+                addToBot(new ApplyPowerAction(imitator, this, new HintPower(imitator)));
                 break;
             }
     }
@@ -134,13 +133,13 @@ public class LastKheshig extends AbstractMonster {
         if (AbstractDungeon.aiRng.random(0, 1) == 0) {
             setMove((byte) 1, Intent.ATTACK, this.damage.get(0).base);
         } else {
-            setMove((byte) 2, Intent.UNKNOWN);  // 如果已经迟来的光了会有问题，改成召唤算了
+            setMove((byte) 2, Intent.UNKNOWN);
         }
     }
 
     @Override
     public void die() {
-        if (isBlemishineSurvive) {
+        if (isBlemishineSurvive && NLMOD.checkOrb(Blemishine.ORB_ID)) {
             AbstractNearlCard.addSpecificCardsToReward(new BlemishinesFaintLight());
         }
         for (AbstractMonster m : AbstractDungeon.getMonsters().monsters)

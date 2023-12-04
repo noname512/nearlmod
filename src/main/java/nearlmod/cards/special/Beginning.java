@@ -9,7 +9,6 @@ import nearlmod.actions.SummonOrbAction;
 import nearlmod.cards.AbstractNearlCard;
 import nearlmod.orbs.Blemishine;
 import nearlmod.patches.NearlTags;
-import nearlmod.relics.LateLight;
 
 public class Beginning extends AbstractNearlCard {
     public static final String ID = "nearlmod:Beginning";
@@ -30,10 +29,7 @@ public class Beginning extends AbstractNearlCard {
 
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
-        if (!p.hasRelic(LateLight.ID))
-            addToBot(new SummonOrbAction(new Blemishine()));
-        else
-            p.getRelic(LateLight.ID).flash();
+        addToBot(new SummonOrbAction(new Blemishine()));
     }
 
     @Override

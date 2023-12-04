@@ -1,15 +1,13 @@
 package nearlmod.cards;
 
 import com.megacrit.cardcrawl.actions.common.RemoveSpecificPowerAction;
-import com.megacrit.cardcrawl.actions.defect.ChannelAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
-import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.localization.CardStrings;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
-import com.megacrit.cardcrawl.orbs.AbstractOrb;
 import com.megacrit.cardcrawl.powers.AbstractPower;
+import nearlmod.actions.SummonOrbAction;
 import nearlmod.orbs.Viviana;
 import nearlmod.patches.AbstractCardEnum;
 import nearlmod.patches.NearlTags;
@@ -46,14 +44,7 @@ public class SwallowLight extends AbstractNearlCard {
             p.getRelic(NormalPerson.ID).flash();
             return;
         }
-        for (AbstractOrb orb : AbstractDungeon.player.orbs)
-            if (orb instanceof Viviana) {
-                ((Viviana) orb).applyStrength(amount);
-                ((Viviana) orb).upgrade();
-                return;
-            }
-        addToTop(new ChannelAction(new Viviana(amount), false));
-        AbstractDungeon.player.increaseMaxOrbSlots(1, false);
+        addToBot(new SummonOrbAction(new Viviana(amount)));
     }
 
     @Override
