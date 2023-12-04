@@ -4,6 +4,7 @@ import basemod.BaseMod;
 import com.badlogic.gdx.graphics.Texture;
 import com.megacrit.cardcrawl.actions.watcher.ChangeStanceAction;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
+import com.megacrit.cardcrawl.events.city.Vampires;
 import com.megacrit.cardcrawl.helpers.ImageMaster;
 import basemod.abstracts.CustomPlayer;
 import com.badlogic.gdx.graphics.Color;
@@ -18,6 +19,7 @@ import com.megacrit.cardcrawl.core.Settings;
 import com.megacrit.cardcrawl.helpers.CardHelper;
 import com.megacrit.cardcrawl.helpers.FontHelper;
 import com.megacrit.cardcrawl.helpers.ScreenShake;
+import com.megacrit.cardcrawl.localization.CharacterStrings;
 import com.megacrit.cardcrawl.screens.CharSelectInfo;
 import com.megacrit.cardcrawl.unlock.UnlockTracker;
 import nearlmod.cards.*;
@@ -34,6 +36,10 @@ import nearlmod.util.CostReserves;
 import java.util.ArrayList;
 
 public class Nearl extends CustomPlayer {
+
+    private static final CharacterStrings characterStrings = CardCrawlGame.languagePack.getCharacterString("nearlmod:NearlCharacter");
+    public static final String NAME = characterStrings.NAMES[0];
+    public static final String[] TEXT = characterStrings.TEXT;
     private static final Color NearlGold = CardHelper.getColor(255, 236, 194);
     public static final String SWORD = "images/char/atkidle.png";
     public static final Texture SWORDIMG = ImageMaster.loadImage(SWORD);
@@ -106,22 +112,22 @@ public class Nearl extends CustomPlayer {
 
     @Override
     public String getSpireHeartText() {
-        return "你握紧了手中的剑枪和骑士盾……";
+        return TEXT[1];
     }
 
     @Override
     public String getTitle(PlayerClass playerClass) {
-        return "玛嘉烈·临光";
+        return NAME;
     }
 
     @Override
     public String getLocalizedCharacterName() {
-        return "玛嘉烈·临光";
+        return NAME;
     }
 
     @Override
     public String getVampireText() {
-        return "";
+        return Vampires.DESCRIPTIONS[1];
     }
 
     @Override
@@ -195,7 +201,7 @@ public class Nearl extends CustomPlayer {
 
     @Override
     public CharSelectInfo getLoadout() {
-        return new CharSelectInfo("玛嘉烈·临光", "骑士临光，是防御与治疗并重的战场核心， NL 也是身披炙阳、踏碎迷障的天马。",
+        return new CharSelectInfo(NAME, TEXT[0],
                 77, 77, 0, 99, 5, //starting hp, max hp, max orbs, starting gold, starting hand size
                 this, getStartingRelics(), getStartingDeck(), false);
     }
