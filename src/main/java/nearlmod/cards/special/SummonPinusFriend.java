@@ -17,11 +17,12 @@ public class SummonPinusFriend extends AbstractNearlCard {
     public static final String NAME = cardStrings.NAME;
     public static final String DESCRIPTION = cardStrings.DESCRIPTION;
     public static final String[] EXTENDED_DESCRIPTION = cardStrings.EXTENDED_DESCRIPTION;
-    public static final String IMG_PATH = "images/cards/nearlstrike.png";
+    public static final String IMG_PATH_PREFIX = "images/cards/";
+    public static final String IMG_PATH_POSTFIX = ".png";
     private final String friendID;
 
     public SummonPinusFriend(String friendID) {
-        super(ID, NAME, IMG_PATH, -2, DESCRIPTION,
+        super(ID, NAME, IMG_PATH_PREFIX + friendID.substring(9).toLowerCase() + IMG_PATH_POSTFIX, -2, DESCRIPTION,
                 CardType.POWER, CardColor.COLORLESS,
                 CardRarity.SPECIAL, CardTarget.NONE);
         this.friendID = friendID;
