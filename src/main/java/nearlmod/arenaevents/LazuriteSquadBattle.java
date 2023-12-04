@@ -30,6 +30,10 @@ public class LazuriteSquadBattle extends AbstractImageEvent {
         this.monsterLevel = monsterLevel;
     }
 
+    public LazuriteSquadBattle() {
+        this(0);
+    }
+
     @Override
     protected void buttonEffect(int buttonPressed) {
         if (screen != CurScreen.INTRO) {

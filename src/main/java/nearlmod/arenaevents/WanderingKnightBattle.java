@@ -28,6 +28,10 @@ public class WanderingKnightBattle extends AbstractImageEvent {
         this.monsterLevel = monsterLevel;
     }
 
+    public WanderingKnightBattle() {
+        this(0);
+    }
+
     @Override
     protected void buttonEffect(int buttonPressed) {
         if (screen != CurScreen.INTRO) {

@@ -105,7 +105,7 @@ public class NLMOD implements EditCardsSubscriber, EditCharactersSubscriber, Edi
                 dungeonID("TheBeyond").
                 bonusCondition(() -> (AbstractDungeon.floorNum <= 40)).
                 create());
-        
+
         // For loadout Mod to test
         BaseMod.addEvent(CorruptedWitheredBattle.ID, CorruptedWitheredBattle.class, "Special");
         BaseMod.addEvent(LeftHandBattle.ID, LeftHandBattle.class, "Special");
