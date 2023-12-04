@@ -122,7 +122,7 @@
   "nearlmod:KnightTerritoryHibernator": {
     "NAME": "骑士领蛰伏者",
     "MOVES": [],
-    "DIALOG": []
+    "DIALOG": ["？？？？？ NL ？？？？？", "我们走，不要吵醒他。"]
   },
   "nearlmod:UndertideGloompincer": {
     "NAME": "暗潮钳兽",
