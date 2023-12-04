@@ -50,10 +50,7 @@ public class ArmorlessAssassin extends AbstractMonster {
     @Override
     protected void getMove(int i) {
         if (AbstractDungeon.aiRng.random(0, 2) == 0) {
-            int dmg = damage.get(0).base;
-            if (hasPower(AttackUpPower.POWER_ID))
-                dmg = MathUtils.floor(dmg * (1 + 0.01F * getPower(AttackUpPower.POWER_ID).amount));
-            setMove((byte) 1, Intent.ATTACK, dmg);
+            setMove((byte) 1, Intent.ATTACK, damage.get(0).base);
         } else {
             setMove((byte) 2, Intent.BUFF);
         }
