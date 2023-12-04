@@ -6,10 +6,12 @@ import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.events.shrines.Nloth;
 import com.megacrit.cardcrawl.helpers.ImageMaster;
+import com.megacrit.cardcrawl.helpers.RelicLibrary;
 import com.megacrit.cardcrawl.localization.UIStrings;
 import com.megacrit.cardcrawl.random.Random;
 import com.megacrit.cardcrawl.relics.AbstractRelic;
 import com.megacrit.cardcrawl.screens.SingleRelicViewPopup;
+import com.megacrit.cardcrawl.screens.compendium.RelicViewScreen;
 import javassist.CtBehavior;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
@@ -83,6 +85,18 @@ public class CurseRelicPatch {
         public static SpireReturn<?> Insert(SingleRelicViewPopup __instance, AbstractRelic relic, @ByRef Texture[] relicFrameImg) {
             if (relic.isSeen && relic.tier == CurseRelicPatch.CURSE) {
                 relicFrameImg[0] = ImageMaster.loadImage("images/ui/relicFrameCurse.png");
+                return SpireReturn.Return();
+            }
+            return SpireReturn.Continue();
+        }
+    }
+
+    @SpirePatch(clz = RelicLibrary.class, method = "addToTierList")
+    public static class addToTierListPatch {
+        @SpirePrefixPatch
+        public static SpireReturn<?> Prefix(AbstractRelic relic) {
+            if (relic.tier == CurseRelicPatch.CURSE) {
+                RelicLibrary.specialList.add(relic);
                 return SpireReturn.Return();
             }
             return SpireReturn.Continue();

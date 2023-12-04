@@ -35,8 +35,7 @@ import java.lang.reflect.Type;
 import java.nio.charset.StandardCharsets;
 import java.util.*;
 
-import static nearlmod.patches.AbstractCardEnum.FRIEND_BLUE;
-import static nearlmod.patches.AbstractCardEnum.NEARL_GOLD;
+import static nearlmod.patches.AbstractCardEnum.*;
 
 @SpireInitializer
 public class NLMOD implements EditCardsSubscriber, EditCharactersSubscriber, EditKeywordsSubscriber, EditRelicsSubscriber, EditStringsSubscriber, PostBattleSubscriber, PostInitializeSubscriber, PostDungeonInitializeSubscriber, AddCustomModeModsSubscriber, OnStartBattleSubscriber, OnPlayerLoseBlockSubscriber, RelicGetSubscriber {
@@ -75,6 +74,13 @@ public class NLMOD implements EditCardsSubscriber, EditCharactersSubscriber, Edi
         logger.info("addColor FRIEND_BLUE");
         BaseMod.addColor(FRIEND_BLUE,
                 FriendBlue, FriendBlue, FriendBlue, FriendBlue, FriendBlue, FriendBlue, FriendBlue,
+                attackFriendCard, skillFriendCard, powerFriendCard, energyOrb,
+                attackFriendCardPortrait, skillFriendCardPortrait, powerFriendCardPortrait, energyOrbPortrait,
+                miniManaSymbol);
+
+        logger.info("addColor NEARL_CURSE");
+        BaseMod.addColor(NEARL_CURSE,
+                Color.BLACK, Color.BLACK, Color.BLACK, Color.BLACK, Color.BLACK, Color.BLACK, Color.BLACK,
                 attackFriendCard, skillFriendCard, powerFriendCard, energyOrb,
                 attackFriendCardPortrait, skillFriendCardPortrait, powerFriendCardPortrait, energyOrbPortrait,
                 miniManaSymbol);
@@ -312,11 +318,11 @@ public class NLMOD implements EditCardsSubscriber, EditCharactersSubscriber, Edi
 
         // event.
         BaseMod.addRelicToCustomPool(new Marigold(), NEARL_GOLD);
-        BaseMod.addRelicToCustomPool(new LateLight(), AbstractCard.CardColor.CURSE);
-        BaseMod.addRelicToCustomPool(new Revenge(), AbstractCard.CardColor.CURSE);
-        BaseMod.addRelicToCustomPool(new NormalPerson(), AbstractCard.CardColor.CURSE);
-        BaseMod.addRelicToCustomPool(new ImaginaryFear(), AbstractCard.CardColor.CURSE);
-        BaseMod.addRelicToCustomPool(new BloodEntangle(), AbstractCard.CardColor.CURSE);
+        BaseMod.addRelicToCustomPool(new LateLight(), NEARL_CURSE);
+        BaseMod.addRelicToCustomPool(new Revenge(), NEARL_CURSE);
+        BaseMod.addRelicToCustomPool(new NormalPerson(), NEARL_CURSE);
+        BaseMod.addRelicToCustomPool(new ImaginaryFear(), NEARL_CURSE);
+        BaseMod.addRelicToCustomPool(new BloodEntangle(), NEARL_CURSE);
     }
 
     @Override
