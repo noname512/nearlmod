@@ -32,7 +32,7 @@ public class FriendPotion extends AbstractPotion {
     }
     @Override
     public void use(AbstractCreature abstractCreature) {
-        ArrayList<AbstractCard> list = Nearl.getUnuniqueFriendCard();
+        ArrayList<AbstractCard> list = Nearl.getUnuniqueFriendCard(false);
         Collections.shuffle(list);
         ArrayList<AbstractCard> chooseList = new ArrayList<>(list.subList(0, 3));
         addToBot(new ChooseSpecificCardAction(chooseList, true));

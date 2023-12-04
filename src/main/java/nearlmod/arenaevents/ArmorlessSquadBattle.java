@@ -29,6 +29,10 @@ public class ArmorlessSquadBattle extends AbstractImageEvent {
         this.monsterLevel = monsterLevel;
     }
 
+    public ArmorlessSquadBattle () {
+        this(0);
+    }
+
     @Override
     protected void buttonEffect(int buttonPressed) {
         if (screen != CurScreen.INTRO) {

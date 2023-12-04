@@ -227,7 +227,7 @@ public class Nearl extends CustomPlayer {
         this.state.setAnimation(0, "Idle", true);
     }
 
-    public static ArrayList<AbstractCard> getUnuniqueFriendCard() {
+    public static ArrayList<AbstractCard> getUnuniqueFriendCard(boolean isPinusSylvestris) {
         ArrayList<AbstractCard> list = new ArrayList<>();
         list.add(new PinusSylvestris());
         list.add(new FlameHeart());
@@ -239,6 +239,27 @@ public class Nearl extends CustomPlayer {
         list.add(new FeatherShineArrows());
         list.add(new FocusedBombardment());
         list.add(new BombardmentStudies());
+        if (!isPinusSylvestris) {
+            list.add(new GlimmeringTouch());
+            list.add(new FlashFade());
+            list.add(new LSSwiftSword());
+
+            list.add(new ArtsShield());
+            list.add(new Sanctuary());
+            list.add(new ClosedHope());
+
+            list.add(new Creed());
+            list.add(new CreedField());
+            list.add(new AutoProtect());
+
+            list.add(new CraftsmanEcho());
+            list.add(new DeterringRadiance());
+            list.add(new SurgingBrilliance());
+
+            list.add(new WhipSword());
+            list.add(new VisionOfUnity());
+            list.add(new MotivationalSkills());
+        }
         return list;
     }
 

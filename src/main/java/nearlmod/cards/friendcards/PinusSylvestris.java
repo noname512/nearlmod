@@ -37,7 +37,7 @@ public class PinusSylvestris extends AbstractFriendCard {
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
         addToBot(new GainCostAction(secondMagicNumber));
-        ArrayList<AbstractCard> list = Nearl.getUnuniqueFriendCard();
+        ArrayList<AbstractCard> list = Nearl.getUnuniqueFriendCard(true);
         int random = AbstractDungeon.cardRng.random(0, list.size() - 1);
         AbstractFriendCard card = (AbstractFriendCard) list.get(random);
         if (upgraded) card.upgrade();

@@ -6,6 +6,7 @@ import basemod.eventUtil.EventUtils;
 import basemod.interfaces.*;
 import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.graphics.Color;
+import com.badlogic.gdx.utils.compression.lzma.Base;
 import com.evacipated.cardcrawl.mod.stslib.Keyword;
 import com.evacipated.cardcrawl.modthespire.lib.SpireInitializer;
 import com.google.gson.Gson;
@@ -19,6 +20,7 @@ import com.megacrit.cardcrawl.orbs.AbstractOrb;
 import com.megacrit.cardcrawl.relics.AbstractRelic;
 import com.megacrit.cardcrawl.rooms.AbstractRoom;
 import com.megacrit.cardcrawl.screens.custom.CustomMod;
+import nearlmod.arenaevents.*;
 import nearlmod.events.*;
 import nearlmod.patches.NearlEnum;
 import nearlmod.potions.*;
@@ -103,6 +105,16 @@ public class NLMOD implements EditCardsSubscriber, EditCharactersSubscriber, Edi
                 dungeonID("TheBeyond").
                 bonusCondition(() -> (AbstractDungeon.floorNum <= 40)).
                 create());
+
+        // For loadout Mod to test
+        BaseMod.addEvent(CorruptedWitheredBattle.ID, CorruptedWitheredBattle.class, "Special");
+        BaseMod.addEvent(LeftHandBattle.ID, LeftHandBattle.class, "Special");
+        BaseMod.addEvent(CandleKnightBattle.ID, CandleKnightBattle.class, "Special");
+        BaseMod.addEvent(LastKheshigBattle.ID, LastKheshigBattle.class, "Special");
+        BaseMod.addEvent(BloodKnightBattle.ID, BloodKnightBattle.class, "Special");
+        BaseMod.addEvent(ArmorlessSquadBattle.ID, ArmorlessSquadBattle.class, "Special");
+        BaseMod.addEvent(LazuriteSquadBattle.ID, LazuriteSquadBattle.class, "Special");
+        BaseMod.addEvent(WanderingKnightBattle.ID, WanderingKnightBattle.class, "Special");
     }
 
     private void initializePotions() {
