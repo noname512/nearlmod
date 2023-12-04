@@ -29,12 +29,22 @@ public class PureDamageAllEnemiesAction extends AbstractGameAction {
     }
 
     public PureDamageAllEnemiesAction(AbstractCreature source, int baseDamage, String name, AttackEffect effect) {
-        this(source, baseDamage, name, effect, DamageInfo.DamageType.NORMAL);
+        this(source, baseDamage, name, effect, DamageInfo.DamageType.NORMAL, false);
     }
 
     public PureDamageAllEnemiesAction(AbstractCreature source, int baseDamage, String name, AttackEffect effect, DamageInfo.DamageType type) {
+        this(source, baseDamage, name, effect, type, false);
+    }
+
+    public PureDamageAllEnemiesAction(AbstractCreature source, int baseDamage, String name, AttackEffect effect, boolean isFast) {
+        this(source, baseDamage, name, effect, DamageInfo.DamageType.NORMAL, isFast);
+    }
+
+    public PureDamageAllEnemiesAction(AbstractCreature source, int baseDamage, String name, AttackEffect effect, DamageInfo.DamageType type, boolean isFast) {
         actionType = ActionType.DAMAGE;
-        duration = Settings.ACTION_DUR_FAST;
+        if (isFast) duration = Settings.ACTION_DUR_XFAST;
+        else duration = Settings.ACTION_DUR_FAST;
+        startDuration = duration;
         this.source = source;
         this.baseDamage = baseDamage;
         this.damageType = type;
@@ -44,7 +54,7 @@ public class PureDamageAllEnemiesAction extends AbstractGameAction {
 
     @Override
     public void update() {
-        if (duration == Settings.ACTION_DUR_FAST) {
+        if (duration == startDuration) {
             boolean playedMusic = false;
             for (AbstractMonster ms : AbstractDungeon.getCurrRoom().monsters.monsters) {
                 if (!ms.isDeadOrEscaped()) {

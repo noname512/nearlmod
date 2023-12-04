@@ -11,10 +11,8 @@ import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import com.megacrit.cardcrawl.orbs.AbstractOrb;
 import com.megacrit.cardcrawl.powers.AbstractPower;
 import nearlmod.NLMOD;
-import nearlmod.actions.PureDamageAllEnemiesAction;
+import nearlmod.actions.ShadowOutAction;
 import nearlmod.actions.SummonOrbAction;
-import nearlmod.actions.UseShadowAction;
-import nearlmod.cards.friendcards.AbstractFriendCard;
 import nearlmod.orbs.Viviana;
 import nearlmod.patches.AbstractCardEnum;
 import nearlmod.powers.ShadowPower;
@@ -55,9 +53,7 @@ public class ShadowOut extends AbstractNearlCard {
             addToBot(new ApplyPowerAction(p, p, new ShadowPower(p, extraDmg)));
         }
         if (extraTriggered()) {
-            for (int i = 0; i < secondMagicNumber; i++)
-                addToBot(new PureDamageAllEnemiesAction(p, magicNumber + extraDmg, Viviana.ORB_ID + AbstractFriendCard.damageSuffix));
-            addToBot(new UseShadowAction(p));
+            addToBot(new ShadowOutAction(p, magicNumber + extraDmg, secondMagicNumber));
         } else {
             addToBot(new SummonOrbAction(new Viviana()));
         }
