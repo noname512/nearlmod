@@ -3,24 +3,41 @@ package nearlmod.patches;
 import com.evacipated.cardcrawl.modthespire.lib.*;
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
+import com.megacrit.cardcrawl.cards.AbstractCard;
+import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
+import com.megacrit.cardcrawl.rewards.RewardItem;
 import com.megacrit.cardcrawl.saveAndContinue.SaveAndContinue;
 import com.megacrit.cardcrawl.saveAndContinue.SaveFile;
 import javassist.CtBehavior;
+import nearlmod.NLMOD;
+import nearlmod.cards.AbstractNearlCard;
+import nearlmod.cards.special.Beginning;
+import nearlmod.cards.special.BlemishinesFaintLight;
+import nearlmod.cards.special.PersonalCharmSp;
 import nearlmod.rooms.ArenaRoom;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
 import java.util.HashMap;
+import java.util.Objects;
 
 public class SaveData {
     private static final Logger logger = LogManager.getLogger(SaveData.class);
     private static int arenaEnterTimes;
+    private static String specialRewardCard;
     @SpirePatch(clz = SaveFile.class, method = "<ctor>", paramtypez = {SaveFile.SaveType.class})
     public static class SaveTheSaveData {
         @SpirePostfixPatch
-        public static void saveAllTheSaveData(SaveFile __instance, SaveFile.SaveType type) {
+        public static void Postfix(SaveFile __instance, SaveFile.SaveType type) {
             SaveData.arenaEnterTimes = ArenaRoom.enterTimes;
+            if (type == SaveFile.SaveType.POST_COMBAT) {
+                for (RewardItem item : AbstractDungeon.getCurrRoom().rewards)
+                    if (item.type == RewardItem.RewardType.CARD && item.cards.size() == 1) {
+                        if (item.cards.get(0) instanceof AbstractNearlCard)
+                            SaveData.specialRewardCard = item.cards.get(0).cardID;
+                    }
+            }
             SaveData.logger.info("Saved arena enter times: " + SaveData.arenaEnterTimes);
         }
     }
@@ -28,8 +45,9 @@ public class SaveData {
     @SpirePatch(clz = SaveAndContinue.class, method = "save", paramtypez = {SaveFile.class})
     public static class SaveDataToFile {
         @SpireInsertPatch(locator = Locator.class, localvars = {"params"})
-        public static void addCustomSaveData(SaveFile save, HashMap<Object, Object> params) {
+        public static void Insert(SaveFile save, HashMap<Object, Object> params) {
             params.put("ARENA_ENTER_TIMES", SaveData.arenaEnterTimes);
+            params.put("SPECIAL_REWARD_CARD", SaveData.specialRewardCard);
         }
 
         private static class Locator extends SpireInsertLocator {
@@ -43,11 +61,12 @@ public class SaveData {
     @SpirePatch(clz = SaveAndContinue.class, method = "loadSaveFile", paramtypez = {String.class})
     public static class LoadDataFromFile {
         @SpireInsertPatch(locator = Locator.class, localvars = {"gson", "savestr"})
-        public static void loadCustomSaveData(String path, Gson gson, String savestr) {
+        public static void Insert(String path, Gson gson, String savestr) {
             try {
                 NearlData data = gson.fromJson(savestr, NearlData.class);
                 SaveData.arenaEnterTimes = data.ARENA_ENTER_TIMES;
-                SaveData.logger.info("Loaded nearlmod save data successfully, arena enter times = " + SaveData.arenaEnterTimes);
+                SaveData.specialRewardCard = data.SPECIAL_REWARD_CARD;
+                SaveData.logger.info("Loaded nearlmod save data successfully, arena enter times = " + SaveData.arenaEnterTimes + ", special reward card = " + SaveData.specialRewardCard);
             } catch (Exception e) {
                 SaveData.logger.error("Fail to load nearlmod save data.");
                 e.printStackTrace();
@@ -65,9 +84,30 @@ public class SaveData {
     @SpirePatch(clz = AbstractDungeon.class, method = "loadSave")
     public static class loadSavePatch {
         @SpirePostfixPatch
-        public static void loadSave(AbstractDungeon __instance, SaveFile file) {
+        public static void Postfix(AbstractDungeon __instance, SaveFile file) {
             ArenaRoom.enterTimes = SaveData.arenaEnterTimes;
             SaveData.logger.info("Save loaded.");
+        }
+    }
+
+    @SpirePatch(clz = CardCrawlGame.class, method = "loadPostCombat")
+    public static class LoadPostCombatPatch {
+        @SpirePrefixPatch
+        public static void Prefix(CardCrawlGame __instance, SaveFile saveFile) {
+            if (saveFile.post_combat && !saveFile.smoked && !SaveData.specialRewardCard.isEmpty()) {
+                switch (SaveData.specialRewardCard) {
+                    case Beginning.ID:
+                        AbstractNearlCard.addSpecificCardsToReward(new Beginning());
+                        break;
+                    case BlemishinesFaintLight.ID:
+                        AbstractNearlCard.addSpecificCardsToReward(new BlemishinesFaintLight());
+                        break;
+                    case PersonalCharmSp.ID:
+                        AbstractNearlCard.addSpecificCardsToReward(new PersonalCharmSp());
+                        break;
+                }
+                SaveData.logger.info("Special reward loaded.");
+            }
         }
     }
 }
