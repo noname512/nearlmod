@@ -49,7 +49,7 @@ public class ArmorlessThirdSquad extends AbstractMonster {
         DamageInfo info;
         if (nextMove == 4) info = damage.get(1);
         else info = damage.get(0);
-        setMove((byte)(nextMove % 4 + 1), Intent.ATTACK_DEBUFF, info.base);
+        setMove((byte)(nextMove % 4 + 1), Intent.ATTACK_DEBUFF, info.base, 2, true);
         AbstractPlayer p = AbstractDungeon.player;
         for (int i = 1; i <= 2; i++) {
             addToBot(new DamageAction(p, info));
@@ -59,6 +59,6 @@ public class ArmorlessThirdSquad extends AbstractMonster {
 
     @Override
     protected void getMove(int i) {
-        setMove((byte)1, Intent.ATTACK_DEBUFF, damage.get(0).base);
+        setMove((byte)1, Intent.ATTACK_DEBUFF, damage.get(0).base, 2, true);
     }
 }
