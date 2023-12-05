@@ -570,5 +570,14 @@
         "NAME": "冠军奖章",
         "DESCRIPTION": "消耗 。 NL 获得 !M! 金币。",
         "UPGRADE_DESCRIPTION": ""
+    },
+
+    "nearlmod:StartWithAtkStance": {
+        "NAME": "无畏",
+        "DESCRIPTION": "本次对战开始时处于 nearlmod:无畏 。"
+    },
+    "nearlmod:StartWithDefStance": {
+        "NAME": "守护",
+        "DESCRIPTION": "本次对战开始时处于 nearlmod:守护 。"
     }
 }

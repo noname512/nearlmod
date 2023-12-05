@@ -10,6 +10,7 @@ import com.evacipated.cardcrawl.mod.stslib.Keyword;
 import com.evacipated.cardcrawl.modthespire.lib.SpireInitializer;
 import com.google.gson.Gson;
 import com.google.gson.reflect.TypeToken;
+import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.helpers.*;
@@ -303,9 +304,13 @@ public class NLMOD implements EditCardsSubscriber, EditCharactersSubscriber, Edi
         // starter.
         BaseMod.addRelicToCustomPool(new CureUp(), NEARL_GOLD);
 
+        // common.
+        BaseMod.addRelicToCustomPool(new BackupEquipment(), NEARL_GOLD);
+
         // uncommon.
         BaseMod.addRelicToCustomPool(new FirstAidMode(), NEARL_GOLD);
         BaseMod.addRelicToCustomPool(new UpgradedCoreCaster(), NEARL_GOLD);
+        BaseMod.addRelicToCustomPool(new HandOfConqueror(), NEARL_GOLD);
 
         // rare.
         BaseMod.addRelicToCustomPool(new EmergencyCallBook(), NEARL_GOLD);
