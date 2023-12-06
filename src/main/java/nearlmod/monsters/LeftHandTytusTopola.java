@@ -4,6 +4,7 @@ import com.megacrit.cardcrawl.actions.ClearCardQueueAction;
 import com.megacrit.cardcrawl.actions.animations.TalkAction;
 import com.megacrit.cardcrawl.actions.common.*;
 import com.megacrit.cardcrawl.actions.unique.CanLoseAction;
+import com.megacrit.cardcrawl.actions.utility.WaitAction;
 import com.megacrit.cardcrawl.cards.DamageInfo;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
@@ -39,6 +40,10 @@ public class LeftHandTytusTopola extends AbstractMonster {
         } else {
             this.damage.add(new DamageInfo(this, 9));
         }
+        loadAnimation("images/monsters/enemy_1104_lfkght_3/enemy_1104_lfkght_3.atlas", "images/monsters/enemy_1104_lfkght_3/enemy_1104_lfkght_333.json", 1.5F);
+        this.flipHorizontal = true;
+        this.stateData.setMix("Idle", "Die", 0.1F);
+        this.state.setAnimation(0, "Idle", true);
     }
 
 
@@ -81,9 +86,14 @@ public class LeftHandTytusTopola extends AbstractMonster {
             }
             setMove(MOVES[0], (byte) 2, Intent.STRONG_DEBUFF);
         } else if (this.nextMove == 2) {
+            this.state.setAnimation(0, "Skill_1", false);
+            this.state.addAnimation(0, "Idle", true, 0);
             addToBot(new ApplyPowerAction(p, this, new SuperWeakPower(p, weakTimes)));
             setMove((byte) 3, Intent.ATTACK, this.damage.get(0).base);
         } else {
+            addToBot(new WaitAction(0.5F));
+            this.state.setAnimation(0, "Attack", false);
+            this.state.addAnimation(0, "Idle", true, 0);
             addToBot(new DamageAction(AbstractDungeon.player, this.damage.get(0)));
             if ((this.nextMove != 4) && (this.nextMove != 1)) {
                 setMove((byte) (this.nextMove + 1), Intent.ATTACK, this.damage.get(0).base);
@@ -106,6 +116,9 @@ public class LeftHandTytusTopola extends AbstractMonster {
     public void die() {
         if (!AbstractDungeon.getCurrRoom().cannotLose) {
             super.die();
+        } else {
+            this.state.setAnimation(0, "Skill_2", false);
+            this.state.addAnimation(0, "Idle", true, 0);
         }
     }
 }
