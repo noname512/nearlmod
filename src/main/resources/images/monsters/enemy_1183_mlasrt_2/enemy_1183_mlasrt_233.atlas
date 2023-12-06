@@ -277,12 +277,12 @@ F_R_Ear
   orig: 19, 37
   offset: 0, 0
   index: -1
-Spark_1
+Spark_2
   rotate: false
-  xy: 382, 47
-  size: 32, 18
+  xy: 360, 28
+  size: 36, 17
   orig: 51, 63
-  offset: 17, 9
+  offset: 12, 10
   index: -1
 Spark_3
   rotate: false
@@ -291,10 +291,10 @@ Spark_3
   orig: 51, 63
   offset: 21, 10
   index: -1
-Spark_2
+Spark_1
   rotate: false
-  xy: 360, 28
-  size: 36, 17
+  xy: 382, 47
+  size: 32, 18
   orig: 51, 63
-  offset: 12, 10
+  offset: 17, 9
   index: -1

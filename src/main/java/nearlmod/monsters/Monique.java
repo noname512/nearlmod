@@ -36,6 +36,10 @@ public class Monique extends AbstractMonster {
             corrosionAmount = 20;
         else
             corrosionAmount = 15;
+        loadAnimation("images/monsters/enemy_1182_flasrt_3/enemy_1182_flasrt_333.atlas", "images/monsters/enemy_1182_flasrt_3/enemy_1182_flasrt_333.json", 1.5F);
+        this.flipHorizontal = true;
+        this.stateData.setMix("Idle", "Die", 0.1F);
+        this.state.setAnimation(0, "Idle", true);
     }
 
     @Override
@@ -45,6 +49,8 @@ public class Monique extends AbstractMonster {
 
     @Override
     public void takeTurn() {
+        this.state.setAnimation(0, "Attack", false);
+        this.state.addAnimation(0, "Idle", true, 0);
         if (this.nextMove == 4) {
             addToBot(new DamageAction(AbstractDungeon.player, this.damage.get(1)));
             addToBot(new ApplyPowerAction(AbstractDungeon.player, this, new FrailPower(AbstractDungeon.player, 1, true)));
