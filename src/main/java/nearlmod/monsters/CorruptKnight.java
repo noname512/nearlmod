@@ -1,9 +1,11 @@
 package nearlmod.monsters;
 
+import com.megacrit.cardcrawl.actions.AbstractGameAction;
 import com.megacrit.cardcrawl.actions.animations.TalkAction;
 import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
 import com.megacrit.cardcrawl.actions.common.DamageAction;
 import com.megacrit.cardcrawl.actions.common.MakeTempCardInHandAction;
+import com.megacrit.cardcrawl.actions.utility.WaitAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.cards.DamageInfo;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
@@ -44,6 +46,10 @@ public class CorruptKnight extends AbstractMonster {
             this.damage.add(new DamageInfo(this, 18));
             this.damage.add(new DamageInfo(this, 90));
         }
+        loadAnimation("images/monsters/enemy_1513_dekght/enemy_1513_dekght.atlas", "images/monsters/enemy_1513_dekght/enemy_1513_dekght37.json", 1.5F);
+        this.flipHorizontal = true;
+        this.stateData.setMix("Idle", "Die", 0.1F);
+        this.state.setAnimation(0, "Idle", true);
     }
 
 
@@ -77,11 +83,17 @@ public class CorruptKnight extends AbstractMonster {
         int attTimes = 1;
         if (isWhitheredDead) attTimes++;
         if (this.nextMove == 2) {
+            addToBot(new WaitAction(2.5F));
+            this.state.setAnimation(0, "Skill_End", false);
+            this.state.addAnimation(0, "Idle", true, 0);
             for (int i = 0; i < attTimes; i++) {
-                addToBot(new DamageAction(AbstractDungeon.player, this.damage.get(1)));
+                addToBot(new DamageAction(AbstractDungeon.player, this.damage.get(1), AbstractGameAction.AttackEffect.BLUNT_HEAVY));
             }
             setMove((byte) 3, Intent.ATTACK, this.damage.get(0).base, attTimes, (attTimes > 1));
         } else {
+            addToBot(new WaitAction(1.0F));
+            this.state.setAnimation(0, "Attack", false);
+            this.state.addAnimation(0, "Idle", true, 0);
             for (int i = 0; i < attTimes; i++) {
                 addToBot(new DamageAction(AbstractDungeon.player, this.damage.get(0)));
             }
@@ -89,6 +101,8 @@ public class CorruptKnight extends AbstractMonster {
                 setMove((byte) (this.nextMove + 1), Intent.ATTACK, this.damage.get(0).base, attTimes, (attTimes > 1));
             } else {
                 setMove(MOVES[0], (byte) 2, Intent.ATTACK, this.damage.get(1).base, attTimes, (attTimes > 1));
+                this.state.setAnimation(0, "Skill_Start", false);
+                this.state.addAnimation(0, "Skill_Loop", true, 0);
             }
         }
         if (this.nextMove == 1) {
