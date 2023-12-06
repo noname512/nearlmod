@@ -1,6 +1,7 @@
 package nearlmod.monsters;
 
 import com.badlogic.gdx.math.MathUtils;
+import com.megacrit.cardcrawl.actions.animations.TalkAction;
 import com.megacrit.cardcrawl.actions.common.DamageAction;
 import com.megacrit.cardcrawl.actions.common.GainBlockAction;
 import com.megacrit.cardcrawl.cards.DamageInfo;
@@ -14,6 +15,7 @@ public class KnightShielder extends AbstractMonster {
     public static final MonsterStrings monsterStrings = CardCrawlGame.languagePack.getMonsterStrings(ID);
     public static final String NAME = monsterStrings.NAME;
     public static final String[] MOVES = monsterStrings.MOVES;
+    public static final String[] DIALOG = monsterStrings.DIALOG;
     public static final String IMAGE = "images/monsters/knightshielder.png";
     private int blockAmount;
 
@@ -45,9 +47,14 @@ public class KnightShielder extends AbstractMonster {
             this.state.addAnimation(0, "Idle", true, 0);
             addToBot(new DamageAction(AbstractDungeon.player, damage.get(0)));
         } else {
-            for (AbstractMonster m : AbstractDungeon.getMonsters().monsters)
+            for (AbstractMonster m : AbstractDungeon.getMonsters().monsters) {
                 if (!m.isDeadOrEscaped())
                     addToBot(new GainBlockAction(m, blockAmount));
+                if (m instanceof KnightTerritoryHibernator && ((KnightTerritoryHibernator) m).asleep) {
+                    addToBot(new TalkAction(this, DIALOG[0]));
+                    addToBot(new DamageAction(m, new DamageInfo(this, 2, DamageInfo.DamageType.HP_LOSS)));
+                }
+            }
         }
         getMove(0);
     }
