@@ -3,6 +3,7 @@ package nearlmod.monsters;
 import com.megacrit.cardcrawl.actions.animations.TalkAction;
 import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
 import com.megacrit.cardcrawl.actions.common.DamageAction;
+import com.megacrit.cardcrawl.actions.utility.WaitAction;
 import com.megacrit.cardcrawl.cards.DamageInfo;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
@@ -38,6 +39,10 @@ public class WitheredKnight extends AbstractMonster {
             this.damage.add(new DamageInfo(this, 8));
             this.damage.add(new DamageInfo(this, 12));
         }
+        loadAnimation("images/monsters/enemy_1513_dekght_2/enemy_1513_dekght_2.atlas", "images/monsters/enemy_1513_dekght_2/enemy_1513_dekght_237.json", 1.5F);
+        this.flipHorizontal = true;
+        this.stateData.setMix("Idle", "Die", 0.1F);
+        this.state.setAnimation(0, "Idle", true);
     }
 
     @Override
@@ -55,11 +60,17 @@ public class WitheredKnight extends AbstractMonster {
         int attTimes = 1;
         if (isCorruptedDead) attTimes++;
         if (this.nextMove == 2) {
+            addToBot(new WaitAction(2.0F));
+            this.state.setAnimation(0, "Skill", false);
+            this.state.addAnimation(0, "Idle", true, 0);
             for (int i = 0; i < SkillTimes * attTimes; i++) {
                 addToBot(new DamageAction(AbstractDungeon.player, this.damage.get(1)));
             }
             setMove((byte) 3, Intent.ATTACK_DEBUFF, this.damage.get(0).base, attTimes, (attTimes > 1));
         } else {
+            addToBot(new WaitAction(1.0F));
+            this.state.setAnimation(0, "Attack", false);
+            this.state.addAnimation(0, "Idle", true, 0);
             for (int i = 0; i < attTimes; i++) {
                 addToBot(new DamageAction(AbstractDungeon.player, this.damage.get(0)));
             }
