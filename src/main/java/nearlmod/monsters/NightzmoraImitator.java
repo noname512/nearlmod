@@ -32,14 +32,22 @@ public class NightzmoraImitator extends AbstractMonster {
             this.damage.add(new DamageInfo(this, 8));
             this.damage.add(new DamageInfo(this, 6));
         }
+        loadAnimation("images/monsters/enemy_1185_nmekgt/enemy_1185_nmekgt.atlas", "images/monsters/enemy_1185_nmekgt/enemy_1185_nmekgt37.json", 1.5F);
+        this.flipHorizontal = true;
+        this.stateData.setMix("Idle", "Die", 0.1F);
+        this.state.setAnimation(0, "Idle", true);
     }
 
     @Override
     public void takeTurn() {
         if (this.nextMove <= 1) {
+            this.state.setAnimation(0, "Attack", false);
+            this.state.addAnimation(0, "Idle", true, 0);
             addToBot(new DamageAction(AbstractDungeon.player, this.damage.get(0)));
         }
         else {
+            this.state.setAnimation(0, "Skill", false);
+            this.state.addAnimation(0, "Idle", true, 0);
             int def_val = AbstractDungeon.player.currentBlock + TempHPField.tempHp.get(AbstractDungeon.player);
             if (this.damage.get(1).output > def_val) {
                 // TODO: 背刺动画，攻击在最后一个伙伴上
