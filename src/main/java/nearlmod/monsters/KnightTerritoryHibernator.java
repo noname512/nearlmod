@@ -49,7 +49,7 @@ public class KnightTerritoryHibernator extends AbstractMonster {
             this.state.setAnimation(0, "Attack", false);
             this.state.addAnimation(0, "Idle", true, 0);
             addToBot(new DamageAction(AbstractDungeon.player, damage.get(0)));
-        } if (asleep && noOtherEnemy() && level == 0) {
+        } if (asleep && noOtherEnemy()) {
             addToBot(new TalkAction(AbstractDungeon.player, DIALOG[1]));
             AbstractDungeon.actionManager.cleanCardQueue();
             AbstractDungeon.effectList.add(new DeckPoofEffect(64.0F * Settings.scale, 64.0F * Settings.scale, true));
