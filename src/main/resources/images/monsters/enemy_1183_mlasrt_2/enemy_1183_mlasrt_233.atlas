@@ -1,0 +1,300 @@
+
+enemy_1183_mlasrt_233.png
+size: 512,256
+format: RGBA8888
+filter: Linear,Linear
+repeat: none
+F_Arrow
+  rotate: false
+  xy: 306, 1
+  size: 18, 128
+  orig: 18, 128
+  offset: 0, 0
+  index: -1
+F_Arrow_IV
+  rotate: false
+  xy: 234, 1
+  size: 70, 70
+  orig: 70, 70
+  offset: 0, 0
+  index: -1
+F_Arrow_III
+  rotate: false
+  xy: 163, 74
+  size: 70, 70
+  orig: 70, 70
+  offset: 0, 0
+  index: -1
+F_Arrow_II
+  rotate: false
+  xy: 163, 146
+  size: 70, 70
+  orig: 70, 70
+  offset: 0, 0
+  index: -1
+F_Arrowbag
+  rotate: false
+  xy: 78, 109
+  size: 83, 84
+  orig: 83, 84
+  offset: 0, 0
+  index: -1
+F_Cloak
+  rotate: false
+  xy: 78, 1
+  size: 71, 106
+  orig: 71, 106
+  offset: 0, 0
+  index: -1
+F_Tape_II
+  rotate: false
+  xy: 151, 1
+  size: 81, 71
+  orig: 81, 71
+  offset: 0, 0
+  index: -1
+F_Tail
+  rotate: false
+  xy: 87, 195
+  size: 65, 43
+  orig: 65, 43
+  offset: 0, 0
+  index: -1
+F_L_Hand_II
+  rotate: false
+  xy: 396, 67
+  size: 26, 21
+  orig: 26, 21
+  offset: 0, 0
+  index: -1
+F_Bow
+  rotate: false
+  xy: 1, 1
+  size: 75, 193
+  orig: 75, 193
+  offset: 0, 0
+  index: -1
+F_Bow_III
+  rotate: false
+  xy: 396, 152
+  size: 23, 19
+  orig: 24, 20
+  offset: 1, 0
+  index: -1
+F_Bow_II
+  rotate: false
+  xy: 154, 218
+  size: 74, 35
+  orig: 74, 35
+  offset: 0, 0
+  index: -1
+F_L_Hand_I
+  rotate: false
+  xy: 396, 128
+  size: 24, 22
+  orig: 24, 22
+  offset: 0, 0
+  index: -1
+F_L_Forearm
+  rotate: false
+  xy: 385, 221
+  size: 25, 27
+  orig: 25, 28
+  offset: 0, 1
+  index: -1
+F_L_Arm
+  rotate: false
+  xy: 345, 187
+  size: 28, 37
+  orig: 28, 37
+  offset: 0, 0
+  index: -1
+F_Bowstring
+  rotate: false
+  xy: 436, 1
+  size: 2, 170
+  orig: 2, 170
+  offset: 0, 0
+  index: -1
+F_Gun
+  rotate: false
+  xy: 416, 44
+  size: 17, 18
+  orig: 17, 18
+  offset: 0, 0
+  index: -1
+F_L_Leg
+  rotate: false
+  xy: 326, 75
+  size: 32, 41
+  orig: 32, 41
+  offset: 0, 0
+  index: -1
+F_L_Calf
+  rotate: false
+  xy: 326, 28
+  size: 32, 45
+  orig: 32, 45
+  offset: 0, 0
+  index: -1
+F_L_Foot
+  rotate: false
+  xy: 476, 221
+  size: 33, 20
+  orig: 33, 20
+  offset: 0, 0
+  index: -1
+F_Peluis
+  rotate: false
+  xy: 334, 118
+  size: 45, 27
+  orig: 45, 27
+  offset: 0, 0
+  index: -1
+F_R_Leg
+  rotate: false
+  xy: 334, 147
+  size: 31, 38
+  orig: 31, 38
+  offset: 0, 0
+  index: -1
+F_R_Calf
+  rotate: false
+  xy: 235, 205
+  size: 37, 46
+  orig: 37, 46
+  offset: 0, 0
+  index: -1
+F_R_Foot
+  rotate: false
+  xy: 441, 221
+  size: 33, 20
+  orig: 33, 20
+  offset: 0, 0
+  index: -1
+F_Belt
+  rotate: false
+  xy: 345, 226
+  size: 38, 21
+  orig: 38, 21
+  offset: 0, 0
+  index: -1
+F_R_Knee
+  rotate: false
+  xy: 398, 19
+  size: 24, 23
+  orig: 25, 23
+  offset: 0, 0
+  index: -1
+F_Chest
+  rotate: false
+  xy: 290, 141
+  size: 42, 60
+  orig: 42, 60
+  offset: 0, 0
+  index: -1
+F_R_Hand
+  rotate: false
+  xy: 412, 221
+  size: 27, 25
+  orig: 27, 25
+  offset: 0, 0
+  index: -1
+F_R_Arm
+  rotate: false
+  xy: 367, 147
+  size: 27, 33
+  orig: 27, 33
+  offset: 0, 0
+  index: -1
+F_R_Forearm
+  rotate: false
+  xy: 381, 103
+  size: 24, 23
+  orig: 24, 23
+  offset: 0, 0
+  index: -1
+F_R_shoulder
+  rotate: false
+  xy: 360, 79
+  size: 27, 22
+  orig: 27, 22
+  offset: 0, 0
+  index: -1
+F_Tape
+  rotate: false
+  xy: 290, 203
+  size: 53, 42
+  orig: 53, 42
+  offset: 0, 0
+  index: -1
+F_Scarf
+  rotate: false
+  xy: 326, 1
+  size: 60, 25
+  orig: 60, 25
+  offset: 0, 0
+  index: -1
+F_L_Ear
+  rotate: false
+  xy: 360, 47
+  size: 20, 30
+  orig: 20, 30
+  offset: 0, 0
+  index: -1
+F_Head
+  rotate: false
+  xy: 235, 73
+  size: 66, 66
+  orig: 66, 66
+  offset: 0, 0
+  index: -1
+F_Glass
+  rotate: false
+  xy: 396, 1
+  size: 38, 16
+  orig: 38, 16
+  offset: 0, 0
+  index: -1
+F_Hat
+  rotate: false
+  xy: 1, 196
+  size: 84, 42
+  orig: 85, 42
+  offset: 1, 0
+  index: -1
+F_Earphone
+  rotate: false
+  xy: 235, 141
+  size: 53, 62
+  orig: 54, 63
+  offset: 1, 1
+  index: -1
+F_R_Ear
+  rotate: false
+  xy: 375, 182
+  size: 19, 37
+  orig: 19, 37
+  offset: 0, 0
+  index: -1
+Spark_2
+  rotate: false
+  xy: 360, 28
+  size: 36, 17
+  orig: 51, 63
+  offset: 12, 10
+  index: -1
+Spark_3
+  rotate: false
+  xy: 407, 90
+  size: 27, 18
+  orig: 51, 63
+  offset: 21, 10
+  index: -1
+Spark_1
+  rotate: false
+  xy: 382, 47
+  size: 32, 18
+  orig: 51, 63
+  offset: 17, 9
+  index: -1
