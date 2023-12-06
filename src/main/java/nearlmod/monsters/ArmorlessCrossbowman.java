@@ -36,11 +36,17 @@ public class ArmorlessCrossbowman extends AbstractMonster {
             frailAmount = 2;
         else
             frailAmount = 1;
+        loadAnimation("images/monsters/enemy_1179_aruarw_2/enemy_1179_aruarw_2.atlas", "images/monsters/enemy_1179_aruarw_2/enemy_1179_aruarw_237.json", 1.5F);
+        this.flipHorizontal = true;
+        this.stateData.setMix("Idle", "Die", 0.1F);
+        this.state.setAnimation(0, "Idle", true);
     }
 
     @Override
     public void takeTurn() {
         AbstractPlayer p = AbstractDungeon.player;
+        this.state.setAnimation(0, "Attack", false);
+        this.state.addAnimation(0, "Idle", true, 0);
         if (nextMove == 1) {
             addToBot(new DamageAction(p, damage.get(0)));
         } else {

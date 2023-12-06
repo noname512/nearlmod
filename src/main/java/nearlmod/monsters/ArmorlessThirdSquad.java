@@ -36,6 +36,10 @@ public class ArmorlessThirdSquad extends AbstractMonster {
             corrosionAmount = 20;
         else
             corrosionAmount = 15;
+        loadAnimation("images/monsters/enemy_1182_flasrt_2/enemy_1182_flasrt_233.atlas", "images/monsters/enemy_1182_flasrt_2/enemy_1182_flasrt_233.json", 1.5F);
+        this.flipHorizontal = true;
+        this.stateData.setMix("Idle", "Die", 0.1F);
+        this.state.setAnimation(0, "Idle", true);
     }
 
     @Override
@@ -45,6 +49,8 @@ public class ArmorlessThirdSquad extends AbstractMonster {
 
     @Override
     public void takeTurn() {
+        this.state.setAnimation(0, "Attack", false);
+        this.state.addAnimation(0, "Idle", true, 0);
         DamageInfo info;
         if (nextMove == 4) info = damage.get(1);
         else info = damage.get(0);

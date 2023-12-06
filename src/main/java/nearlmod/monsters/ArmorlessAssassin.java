@@ -34,11 +34,17 @@ public class ArmorlessAssassin extends AbstractMonster {
             attackUpAmount = 80;
         else
             attackUpAmount = 50;
+        loadAnimation("images/monsters/enemy_1180_aruass_2/enemy_1180_aruass_2.atlas", "images/monsters/enemy_1180_aruass_2/enemy_1180_aruass_237.json", 1.5F);
+        this.flipHorizontal = true;
+        this.stateData.setMix("Idle", "Die", 0.1F);
+        this.state.setAnimation(0, "Idle", true);
     }
 
     @Override
     public void takeTurn() {
         if (nextMove == 1) {
+            this.state.setAnimation(0, "Attack", false);
+            this.state.addAnimation(0, "Idle", true, 0);
             addToBot(new DamageAction(AbstractDungeon.player, damage.get(0)));
             addToBot(new RemoveSpecificPowerAction(this, this, AttackUpPower.POWER_ID));
         } else {
