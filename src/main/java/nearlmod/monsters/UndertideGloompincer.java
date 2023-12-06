@@ -29,6 +29,10 @@ public class UndertideGloompincer extends AbstractMonster {
         if (AbstractDungeon.ascensionLevel >= 7) hp = 65;
         else hp = 60;
         setHp(MathUtils.floor(hp * (1 + 0.1F * level)));
+        loadAnimation("images/monsters/enemy_1178_dscorp_2/enemy_1178_dscorp_233.atlas", "images/monsters/enemy_1178_dscorp_2/enemy_1178_dscorp_233.json", 2.0F);
+        this.flipHorizontal = true;
+        this.stateData.setMix("Idle", "Die", 0.1F);
+        this.state.setAnimation(0, "Idle", true);
     }
 
     @Override
@@ -38,6 +42,8 @@ public class UndertideGloompincer extends AbstractMonster {
 
     @Override
     public void takeTurn() {
+        this.state.setAnimation(0, "Attack", false);
+        this.state.addAnimation(0, "Idle", true, 0);
         addToBot(new DamageAction(AbstractDungeon.player, damage.get(0)));
         getMove(0);
     }

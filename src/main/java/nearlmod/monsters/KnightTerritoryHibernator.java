@@ -1,10 +1,8 @@
 package nearlmod.monsters;
 
-import basemod.patches.com.megacrit.cardcrawl.rooms.AbstractRoom.EndBattleHook;
 import com.badlogic.gdx.math.MathUtils;
 import com.megacrit.cardcrawl.actions.animations.ShoutAction;
 import com.megacrit.cardcrawl.actions.animations.TalkAction;
-import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
 import com.megacrit.cardcrawl.actions.common.DamageAction;
 import com.megacrit.cardcrawl.cards.DamageInfo;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
@@ -12,9 +10,6 @@ import com.megacrit.cardcrawl.core.Settings;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.localization.MonsterStrings;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
-import com.megacrit.cardcrawl.powers.MetallicizePower;
-import com.megacrit.cardcrawl.rewards.RewardSave;
-import com.megacrit.cardcrawl.rooms.AbstractRoom;
 import com.megacrit.cardcrawl.vfx.combat.DeckPoofEffect;
 import nearlmod.actions.EndBattleAction;
 
@@ -26,7 +21,7 @@ public class KnightTerritoryHibernator extends AbstractMonster {
     public static final String[] DIALOG = monsterStrings.DIALOG;
     public static final String IMAGE = "images/monsters/knightterritoryhibernator.png";
     public boolean asleep;
-    private int level;
+    private final int level;
 
     public KnightTerritoryHibernator(float x, float y, int level) {
         super(NAME, ID, 180, 0, 0, 150.0F, 320.0F, IMAGE, x, y);
@@ -42,17 +37,19 @@ public class KnightTerritoryHibernator extends AbstractMonster {
         else hp = 180;
         setHp(MathUtils.floor(hp * (1 + 0.1F * level)));
         asleep = true;
-    }
-
-    @Override
-    public void usePreBattleAction() {
+        loadAnimation("images/monsters/enemy_1181_napkgt_2/enemy_1181_napkgt_233.atlas", "images/monsters/enemy_1181_napkgt_2/enemy_1181_napkgt_233.json", 1.5F);
+        this.flipHorizontal = true;
+        this.stateData.setMix("Idle", "Die", 0.1F);
+        this.state.setAnimation(0, "Idle_Sleep", true);
     }
 
     @Override
     public void takeTurn() {
-        if (nextMove == 1)
+        if (nextMove == 1) {
+            this.state.setAnimation(0, "Attack", false);
+            this.state.addAnimation(0, "Idle", true, 0);
             addToBot(new DamageAction(AbstractDungeon.player, damage.get(0)));
-        if (asleep && noOtherEnemy() && level == 0) {
+        } if (asleep && noOtherEnemy() && level == 0) {
             addToBot(new TalkAction(AbstractDungeon.player, DIALOG[1]));
             AbstractDungeon.actionManager.cleanCardQueue();
             AbstractDungeon.effectList.add(new DeckPoofEffect(64.0F * Settings.scale, 64.0F * Settings.scale, true));
@@ -84,6 +81,7 @@ public class KnightTerritoryHibernator extends AbstractMonster {
     public void damage(DamageInfo info) {
         super.damage(info);
         if (asleep && currentHealth < maxHealth) {
+            this.state.setAnimation(0, "Idle", true);
             AbstractDungeon.actionManager.addToBottom(new ShoutAction(this, DIALOG[0]));
             asleep = false;
             setMove((byte)3, Intent.STUN);
