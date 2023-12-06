@@ -69,6 +69,11 @@ public class BloodKnight extends AbstractMonster {
         currentTurn = 0;
         isStage2 = false;
         talked = false;
+        loadAnimation("images/monsters/enemy_1524_bldkgt/enemy_1524_bldkgt33.atlas", "images/monsters/enemy_1524_bldkgt/enemy_1524_bldkgt33.json", 1.5F);
+        this.flipHorizontal = true;
+        this.stateData.setMix("A_Idle", "A_Die_Start", 0.1F);
+        this.stateData.setMix("B_Idle", "B_Die", 0.1F);
+        this.state.setAnimation(0, "A_Idle", true);
     }
 
     @Override
@@ -98,13 +103,25 @@ public class BloodKnight extends AbstractMonster {
         }
     }
 
+    private void setAttackAnim() {
+        if (isStage2) {
+            this.state.setAnimation(0, "B_Attack", false);
+            this.state.addAnimation(0, "B_Idle", true, 0);
+        } else {
+            this.state.setAnimation(0, "A_Attack", false);
+            this.state.addAnimation(0, "A_Idle", true, 0);
+        }
+    }
+
     @Override
     public void takeTurn() {
         AbstractPlayer p = AbstractDungeon.player;
         if (this.nextMove == 1) {
+            setAttackAnim();
             addToBot(new DamageAction(p, damage.get(0)));
         }
         else if (this.nextMove == 2) {
+            setAttackAnim();
             addToBot(new DamageAction(p, damage.get(1)));
             addToBot(new ApplyPowerAction(p, this, new WeakPower(p, debuffTimes, true)));
             addToBot(new ApplyPowerAction(p, this, new VulnerablePower(p, debuffTimes, true)));
@@ -118,6 +135,13 @@ public class BloodKnight extends AbstractMonster {
             spawnBlade(bladesPerSpawn);
         }
         else if (this.nextMove == 99) {
+            if (isStage2) {
+                this.state.setAnimation(0, "B_Skill", false);
+                this.state.addAnimation(0, "B_Idle", true, 0);
+            } else {
+                this.state.setAnimation(0, "A_Skill", false);
+                this.state.addAnimation(0, "A_Idle", true, 0);
+            }
             if (!talked) {
                 addToBot(new TalkAction(this, DIALOG[1], 0.3F, 3.0F));
                 talked = true;
@@ -125,11 +149,15 @@ public class BloodKnight extends AbstractMonster {
             addToBot(new ApplyPowerAction(p, this, new ExsanguinationPower(p)));
         }
         else if (this.currentHealth == this.maxHealth) {
+            this.state.setAnimation(0, "A_Die_End", false);
+            this.state.addAnimation(0, "A_Idle", true, 0);
             this.halfDead = false;
             cleanDebuff();
             currentTurn = -1;
         }
         else if (this.nextMove == 55) {
+            this.state.setAnimation(0, "A_Die_End_2", false);
+            this.state.addAnimation(0, "B_Idle", true, 0);
             this.halfDead = false;
             cleanDebuff();
             currentTurn = -1;
@@ -208,6 +236,7 @@ public class BloodKnight extends AbstractMonster {
 
     public void die() {
         if (!AbstractDungeon.getCurrRoom().cannotLose) {
+            this.state.setAnimation(0, "B_Die", false);
             for (AbstractMonster m : AbstractDungeon.getMonsters().monsters)
                 if (!m.isDeadOrEscaped()) {
                     addToTop(new HideHealthBarAction(m));
@@ -215,6 +244,9 @@ public class BloodKnight extends AbstractMonster {
                     addToTop(new VFXAction(m, new InflameEffect(m), 0.2F));
                 }
             super.die();
+        } else {
+            this.state.setAnimation(0, "A_Die_Start", false);
+            this.state.addAnimation(0, "A_Die_Loop", true, 0);
         }
     }
 }

@@ -32,6 +32,10 @@ public class BloodBlade extends AbstractMonster {
             setHp(28, 33);
         else
             setHp(23, 28);
+        loadAnimation("images/monsters/enemy_1186_bldbld/enemy_1186_bldbld.atlas", "images/monsters/enemy_1186_bldbld/enemy_1186_bldbld37.json", 1.5F);
+        this.flipHorizontal = true;
+        this.stateData.setMix("Idle", "Die", 0.1F);
+        this.state.setAnimation(0, "Idle", true);
     }
 
     public BloodBlade(float x, float y, int str) {
@@ -58,6 +62,8 @@ public class BloodBlade extends AbstractMonster {
                     return;
                 }
         }
+        this.state.setAnimation(0, "Attack", false);
+        this.state.addAnimation(0, "Idle", true, 0);
         addToBot(new DamageAction(AbstractDungeon.player, damage.get(0)));
         if (AbstractDungeon.ascensionLevel >= 17)
             addToBot(new ApplyPowerAction(this, this, new StrengthPower(this, 1)));
