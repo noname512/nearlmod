@@ -13,7 +13,7 @@ F_Hair_braid
   index: -1
 F_R_Palm
   rotate: false
-  xy: 319, 195
+  xy: 293, 195
   size: 24, 24
   orig: 24, 24
   offset: 0, 0
@@ -104,7 +104,7 @@ F_R_Arm
   index: -1
 F_R_Fist
   rotate: false
-  xy: 293, 195
+  xy: 319, 195
   size: 24, 24
   orig: 24, 24
   offset: 0, 0
@@ -181,7 +181,7 @@ F_R_Calf_a
   index: -1
 F_R_Foot
   rotate: false
-  xy: 460, 195
+  xy: 460, 173
   size: 34, 20
   orig: 34, 20
   offset: 0, 0
@@ -230,7 +230,7 @@ F_L_Leg_armer
   index: -1
 F_L_Foot
   rotate: false
-  xy: 460, 173
+  xy: 460, 217
   size: 34, 20
   orig: 34, 20
   offset: 0, 0
@@ -391,7 +391,7 @@ F_Neck
   index: -1
 F_Head
   rotate: false
-  xy: 302, 64
+  xy: 366, 64
   size: 62, 63
   orig: 62, 63
   offset: 0, 0
@@ -468,7 +468,7 @@ F_L_Eye_cry
   index: -1
 F_Face_CloseEye
   rotate: false
-  xy: 366, 64
+  xy: 302, 64
   size: 62, 63
   orig: 62, 63
   offset: 0, 0
@@ -545,7 +545,7 @@ F_L_Eyeclose
   index: -1
 F_L_Fist
   rotate: false
-  xy: 483, 239
+  xy: 457, 239
   size: 24, 27
   orig: 24, 27
   offset: 0, 0
@@ -559,7 +559,7 @@ F_L_Finger_a
   index: -1
 F_L_Palm
   rotate: false
-  xy: 457, 239
+  xy: 483, 239
   size: 24, 27
   orig: 24, 27
   offset: 0, 0
@@ -643,7 +643,7 @@ F_L_Cloak
   index: -1
 F_Collar_L
   rotate: false
-  xy: 460, 217
+  xy: 460, 195
   size: 34, 20
   orig: 34, 20
   offset: 0, 0

@@ -2,6 +2,7 @@ package nearlmod.characters;
 
 import basemod.BaseMod;
 import com.badlogic.gdx.graphics.Texture;
+import com.megacrit.cardcrawl.actions.utility.WaitAction;
 import com.megacrit.cardcrawl.actions.watcher.ChangeStanceAction;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.events.city.Vampires;
@@ -20,10 +21,12 @@ import com.megacrit.cardcrawl.helpers.CardHelper;
 import com.megacrit.cardcrawl.helpers.FontHelper;
 import com.megacrit.cardcrawl.helpers.ScreenShake;
 import com.megacrit.cardcrawl.localization.CharacterStrings;
+import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import com.megacrit.cardcrawl.screens.CharSelectInfo;
 import com.megacrit.cardcrawl.unlock.UnlockTracker;
 import nearlmod.cards.*;
 import nearlmod.cards.friendcards.*;
+import nearlmod.patches.NearlTags;
 import nearlmod.powers.LightPower;
 import nearlmod.relics.*;
 import nearlmod.patches.AbstractCardEnum;
@@ -222,14 +225,16 @@ public class Nearl extends CustomPlayer {
     @Override
     public void onStanceChange(String id) {
         if (id.equals(AtkStance.STANCE_ID)) {
-            loadAnimation("images/char/char_1014_nearl2.atlas", "images/char/char_1014_nearl237.json", 1.5F);
+            loadAnimation("images/char/char_1014_nearl2/char_1014_nearl233.atlas", "images/char/char_1014_nearl2/char_1014_nearl233.json", 1.5F);
+            this.stateData.setMix("Gain_Light", "Idle", 0.5F);
             this.img = SWORDIMG;
             this.corpseImg = SWORDDIEIMG;
         } else {
-            loadAnimation("images/char/char_148_nearl.atlas", "images/char/char_148_nearl.json", 1.5F);
+            loadAnimation("images/char/char_148_nearl/char_148_nearl.atlas", "images/char/char_148_nearl/char_148_nearl37.json", 1.5F);
             this.img = SHIELDIMG;
             this.corpseImg = SHIELDDIEIMG;
         }
+        this.stateData.setMix("Idle", "Die", 0.1F);
         this.state.setAnimation(0, "Idle", true);
     }
 
@@ -269,17 +274,21 @@ public class Nearl extends CustomPlayer {
         return list;
     }
 
-//    @Override
-//    public void useCard(AbstractCard c, AbstractMonster monster, int energyOnUse) {
-//        if (!c.hasTag(NearlTags.IS_FRIEND_CARD) && c.type == AbstractCard.CardType.ATTACK) {
-//            if (this.stance.ID.equals(AtkStance.STANCE_ID)) {
-//                this.state.setAnimation(0, "Skill_1_Begin", false);
-//                this.state.addAnimation(0, "Skill_1_Loop", false, 0.0F);
-//            } else {
-//                this.state.setAnimation(0, "Attack", false);
-//            }
-//            this.state.addAnimation(0, "Idle", true, 0.0F);
-//        }
-//        super.useCard(c, monster, energyOnUse);
-//    }
+    @Override
+    public void useCard(AbstractCard c, AbstractMonster monster, int energyOnUse) {
+        if (!Settings.FAST_MODE) {
+            if (!c.hasTag(NearlTags.IS_FRIEND_CARD) && c.type == AbstractCard.CardType.ATTACK) {
+                if (this.stance.ID.equals(AtkStance.STANCE_ID)) {
+                    this.state.setAnimation(0, "Skill_1_Begin", false);
+                    this.state.addAnimation(0, "Skill_1_Loop", false, 0.0F);
+                    this.state.addAnimation(0, "Skill_1_End", false, 0.0F);
+                } else {
+                    this.state.setAnimation(0, "Attack", false);
+                }
+                this.state.addAnimation(0, "Idle", true, 0.0F);
+            }
+            AbstractDungeon.actionManager.addToTop(new WaitAction(1.0F));
+        }
+        super.useCard(c, monster, energyOnUse);
+    }
 }

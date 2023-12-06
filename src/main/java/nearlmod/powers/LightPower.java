@@ -35,6 +35,11 @@ public class LightPower extends AbstractPower implements CloneablePowerInterface
         type = PowerType.BUFF;
         this.amount = amount;
         updateDescription();
+        AbstractPlayer p = AbstractDungeon.player;
+        if (p.stance.ID.equals(AtkStance.STANCE_ID)) {
+            p.state.setAnimation(1, "Gain_Light", false);
+//            p.state.addAnimation(0, "Idle", true, 0.0F);
+        }
     }
 
     @Override

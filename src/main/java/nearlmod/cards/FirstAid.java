@@ -44,6 +44,10 @@ public class FirstAid extends AbstractNearlCard {
         AbstractDungeon.actionManager.addToBottom(new GainBlockAction(p, p, block));
         if (extraTriggered()) {
             AbstractDungeon.actionManager.addToBottom((new AddTemporaryHPAction(p, p, block)));
+            if (p.stance.ID.equals(DefStance.STANCE_ID)) {
+                p.state.setAnimation(0, "Skill", false);
+                p.state.addAnimation(0, "Idle", true, 0);
+            }
         }
     }
 
