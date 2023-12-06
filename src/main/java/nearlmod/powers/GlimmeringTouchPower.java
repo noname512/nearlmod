@@ -8,12 +8,14 @@ import com.megacrit.cardcrawl.actions.common.RemoveSpecificPowerAction;
 import com.megacrit.cardcrawl.cards.DamageInfo;
 import com.megacrit.cardcrawl.core.AbstractCreature;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
+import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.helpers.ImageMaster;
 import com.megacrit.cardcrawl.localization.PowerStrings;
 import com.megacrit.cardcrawl.powers.AbstractPower;
 import nearlmod.actions.PureDamageAllEnemiesAction;
 import nearlmod.cards.friendcards.AbstractFriendCard;
 import nearlmod.orbs.Viviana;
+import nearlmod.vfx.GlimmeringTouchEffect;
 
 public class GlimmeringTouchPower extends AbstractPower implements CloneablePowerInterface {
     public static final String POWER_ID = "nearlmod:GlimmeringTouchPower";
@@ -45,6 +47,7 @@ public class GlimmeringTouchPower extends AbstractPower implements CloneablePowe
     public void atStartOfTurn() {
         amount--;
         if (amount == 0) {
+            AbstractDungeon.effectList.add(new GlimmeringTouchEffect());
             addToTop(new PureDamageAllEnemiesAction(owner, damage, Viviana.ORB_ID + AbstractFriendCard.damageSuffix, AbstractGameAction.AttackEffect.FIRE, DamageInfo.DamageType.THORNS));
             addToTop(new RemoveSpecificPowerAction(owner, owner, this));
             addToTop(new ApplyPowerAction(owner, owner, new LightPower(owner, lightAmt)));
