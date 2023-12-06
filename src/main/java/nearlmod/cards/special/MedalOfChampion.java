@@ -9,7 +9,7 @@ import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import nearlmod.cards.AbstractNearlCard;
 
 public class MedalOfChampion extends AbstractNearlCard {
-    public static final String ID = "nearlmod:Beginning";
+    public static final String ID = "nearlmod:MedalOfChampion";
     public static final CardStrings cardStrings = CardCrawlGame.languagePack.getCardStrings(ID);
     public static final String NAME = cardStrings.NAME;
     public static final String DESCRIPTION = cardStrings.DESCRIPTION;
