@@ -31,6 +31,7 @@ public class SaveData {
         @SpirePostfixPatch
         public static void Postfix(SaveFile __instance, SaveFile.SaveType type) {
             SaveData.arenaEnterTimes = ArenaRoom.enterTimes;
+            SaveData.specialRewardCard = "";
             if (type == SaveFile.SaveType.POST_COMBAT) {
                 for (RewardItem item : AbstractDungeon.getCurrRoom().rewards)
                     if (item.type == RewardItem.RewardType.CARD && item.cards.size() == 1) {
