@@ -1,5 +1,6 @@
 package nearlmod.monsters;
 
+import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.math.MathUtils;
 import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
 import com.megacrit.cardcrawl.actions.common.DamageAction;
@@ -18,6 +19,10 @@ public class BloodBlade extends AbstractMonster {
     public static final String NAME = monsterStrings.NAME;
     public static final String[] MOVES = monsterStrings.MOVES;
     public static final String IMAGE = "images/monsters/bloodblade.png";
+    private float absorbTimer;
+    private boolean isAbsorbing;
+    private float vx;
+    private float vy;
 
     public BloodBlade(float x, float y) {
         super(NAME, ID, AbstractDungeon.monsterHpRng.random(23, 28), 0, 0, 150.0F, 320.0F, IMAGE, x, y);
@@ -32,7 +37,8 @@ public class BloodBlade extends AbstractMonster {
             setHp(28, 33);
         else
             setHp(23, 28);
-        loadAnimation("images/monsters/enemy_1186_bldbld/enemy_1186_bldbld.atlas", "images/monsters/enemy_1186_bldbld/enemy_1186_bldbld37.json", 1.5F);
+        isAbsorbing = false;
+        loadAnimation("images/monsters/enemy_1186_bldbld/enemy_1186_bldbld.atlas", "images/monsters/enemy_1186_bldbld/enemy_1186_bldbld37.json", 2.0F);
         this.flipHorizontal = true;
         this.stateData.setMix("Idle", "Die", 0.1F);
         this.state.setAnimation(0, "Idle", true);
@@ -52,11 +58,15 @@ public class BloodBlade extends AbstractMonster {
                 if (ms.id.equals("nearlmod:BloodKnight")) {
                     if (AbstractDungeon.ascensionLevel < 17) {
                         AbstractDungeon.actionManager.addToBottom(new HealAction(ms, this, MathUtils.floor(ms.maxHealth * 0.1F)));
-                    }
-                    else {
+                    } else {
                         AbstractDungeon.actionManager.addToBottom(new HealAction(ms, this, MathUtils.floor(ms.maxHealth * 0.15F)));
                     }
-                    // TODO: halfdead的血骑士无法吃到这个buff（要不就考虑成这么设计？）
+                    isAbsorbing = true;
+                    absorbTimer = 1.5F;
+                    vx = (ms.drawX - drawX) / (absorbTimer / Gdx.graphics.getDeltaTime());
+                    vy = (ms.drawY - drawY) / (absorbTimer / Gdx.graphics.getDeltaTime());
+                    if (ms.drawX > drawX) flipHorizontal = !flipHorizontal;
+                    hideHealthBar();
                     addToTop(new ApplyPowerAction(ms, this, new StrengthPower(ms, 3)));
                     AbstractDungeon.actionManager.addToBottom(new LoseHPAction(this, this, this.currentHealth));
                     return;
@@ -78,5 +88,21 @@ public class BloodBlade extends AbstractMonster {
     @Override
     protected void getMove(int i) {
         setMove((byte)1, Intent.ATTACK, damage.get(0).base);
+    }
+
+    @Override
+    public void updateAnimations() {
+        super.updateAnimations();
+        if (isAbsorbing) {
+            if (absorbTimer != 0.0F) {
+                absorbTimer -= Gdx.graphics.getDeltaTime();
+                drawX += vx;
+                drawY += vy;
+            }
+            if (absorbTimer <= 0.0F) {
+                currentHealth = 0;
+                die();
+            }
+        }
     }
 }
