@@ -133,7 +133,7 @@
   },
   "nearlmod:MedalOfHonorPower": {
     "NAME": "荣誉之证",
-    "DESCRIPTIONS": ["可以打出原本 不能被打出 的 #y状态牌 。 打出 #y状态牌 会将其 #y消耗 并抽一张牌。"]
+    "DESCRIPTIONS": ["可以打出原本 不能被打出 的 #y状态牌 。 打出 #y状态牌 会将其 #y消耗 。 每 #y消耗 一张 #y状态牌 ，抽一张牌。"]
   },
   "nearlmod:FanClubPower": {
     "NAME": "后援团",

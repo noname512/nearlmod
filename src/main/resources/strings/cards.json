@@ -244,7 +244,7 @@
     },
     "nearlmod:MedalOfHonor": {
         "NAME": "荣誉之证",
-        "DESCRIPTION": "可以打出原本 不能被打出 的 状态牌 。 打出 状态牌 会将其 消耗 并抽一张牌。",
+        "DESCRIPTION": "可以打出原本 不能被打出 的 状态牌 。 打出 状态牌 会将其 消耗 。 每 消耗 一张 状态牌 ，抽一张牌。",
         "UPGRADE_DESCRIPTION": ""
     },
     "nearlmod:FanClub": {
@@ -341,7 +341,7 @@
         "UPGRADE_DESCRIPTION": "固有 。 NL 你对敌人造成伤害时无视其 格挡 ，如果敌人没有 格挡 ，则额外造成 !M! 点伤害。"
     },
     "nearlmod:UnitedAsOne": {
-        "NAME": "万众一心",
+        "NAME": "众志成城",
         "DESCRIPTION": "消耗 。所有在场且 nearlmod:唯一 牌未被使用的 nearlmod:伙伴 给予你其 nearlmod:唯一 nearlmod:伙伴牌 。",
         "UPGRADE_DESCRIPTION": "消耗 。所有在场且 nearlmod:唯一 牌未被使用的 nearlmod:伙伴 给予你其升级后的 nearlmod:唯一 nearlmod:伙伴牌 。"
     },
