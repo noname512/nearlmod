@@ -59,12 +59,11 @@ public class LeftHandTytusTopola extends AbstractMonster {
         if (currentHealth <= 0 && !this.halfDead) {
             if (AbstractDungeon.getCurrRoom().cannotLose) {
                 this.halfDead = true;
+                for (AbstractPower p : powers)
+                    p.onDeath();
+                for (AbstractRelic r : AbstractDungeon.player.relics)
+                    r.onMonsterDeath(this);
             }
-
-            for (AbstractPower p : powers)
-                p.onDeath();
-            for (AbstractRelic r : AbstractDungeon.player.relics)
-                r.onMonsterDeath(this);
 
             this.addToTop(new ClearCardQueueAction());
             this.setMove((byte)99, Intent.UNKNOWN);

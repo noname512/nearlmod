@@ -86,15 +86,15 @@ public class BloodKnight extends AbstractMonster {
     public void damage(DamageInfo info) {
         super.damage(info);
         if (currentHealth <= 0 && !this.halfDead) {
-            for (AbstractPower p : this.powers)
-                p.onDeath();
-            for (AbstractRelic r : AbstractDungeon.player.relics)
-                r.onMonsterDeath(this);
-
             if (AbstractDungeon.getCurrRoom().cannotLose) {
                 halfDead = true;
                 AbstractDungeon.actionManager.addToBottom(new HealAction(this, this, MathUtils.floor(this.maxHealth * 0.4F)));
+                for (AbstractPower p : this.powers)
+                    p.onDeath();
+                for (AbstractRelic r : AbstractDungeon.player.relics)
+                    r.onMonsterDeath(this);
             }
+
             addToTop(new ClearCardQueueAction());
             setMove((byte)50, Intent.UNKNOWN);
             createIntent();
@@ -157,7 +157,7 @@ public class BloodKnight extends AbstractMonster {
             cleanDebuff();
             currentTurn = -1;
         }
-        else if (this.nextMove == 51) {
+        else if (this.nextMove == 55) {
             CardCrawlGame.sound.play("BLOOD_KNIGHT_REBORN_NXT");
             loadAnimation("images/monsters/enemy_1524_bldkgt/enemy_1524_bldkgt33.atlas", "images/monsters/enemy_1524_bldkgt/enemy_1524_bldkgt33.json", 1.5F);
             this.stateData.setMix("B_Idle", "B_Die", 0.1F);

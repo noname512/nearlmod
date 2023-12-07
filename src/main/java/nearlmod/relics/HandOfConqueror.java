@@ -8,6 +8,7 @@ import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.localization.RelicStrings;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
+import com.megacrit.cardcrawl.monsters.beyond.AwakenedOne;
 import com.megacrit.cardcrawl.powers.MinionPower;
 import com.megacrit.cardcrawl.relics.AbstractRelic;
 import nearlmod.actions.SummonOrbAction;
@@ -22,6 +23,7 @@ public class HandOfConqueror extends CustomRelic {
     public static final String[] DESCRIPTIONS = relicStrings.DESCRIPTIONS;
     public static final Texture IMG = new Texture("images/relics/handofconqueror.png");
     public static final Texture IMG_OUTLINE = new Texture("images/relics/handofconqueror_p.png");
+    public int AwakenPatch = 0;
     public HandOfConqueror() {
         super(ID, IMG, IMG_OUTLINE, RelicTier.UNCOMMON, LandingSound.FLAT);
         counter = 0;
@@ -39,13 +41,24 @@ public class HandOfConqueror extends CustomRelic {
             AbstractPlayer p = AbstractDungeon.player;
             addToBot(new ApplyPowerAction(p, p, new AttackUpPower(p, counter)));
         }
+        AwakenPatch = 0;
     }
 
     @Override
     public void onMonsterDeath(AbstractMonster m) {
         if (!m.halfDead && !m.hasPower(MinionPower.POWER_ID)) {
+            if (m instanceof AwakenedOne) {
+                if (AwakenPatch == 1) {
+                    return;
+                }
+                else {
+                    AwakenPatch = 1;
+                }
+            }
             flash();
             counter++;
+            AbstractPlayer p = AbstractDungeon.player;
+            addToBot(new ApplyPowerAction(p, p, new AttackUpPower(p, 1)));
         }
     }
 
