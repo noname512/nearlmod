@@ -36,7 +36,6 @@ public class LSSwiftSword extends AbstractFriendCard {
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
         DamageInfo info = new DamageInfo(p, magicNumber);
-        info.output = AbstractNearlCard.staticCalcDmg(m, info.base, info.type);
         info.name = belongFriend + AbstractFriendCard.damageSuffix;
         for (int i = 1; i <= secondMagicNumber; i++)
             addToBot(new DamageAction(m, info, AbstractGameAction.AttackEffect.SLASH_HORIZONTAL));
