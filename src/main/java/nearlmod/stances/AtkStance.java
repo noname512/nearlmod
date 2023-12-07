@@ -38,13 +38,19 @@ public class AtkStance extends AbstractStance {
     public void onEnterStance() {
         atkInc += incNum;
         AbstractPlayer p = AbstractDungeon.player;
-        AbstractDungeon.actionManager.addToTop(new ApplyPowerAction(p, p, new StrengthPower(p, atkInc), atkInc));
+        if (atkInc != 0) {
+            AbstractDungeon.actionManager.addToTop(new ApplyPowerAction(p, p, new StrengthPower(p, atkInc), atkInc));
+        }
         updateDescription();
     }
 
     @Override
     public void onExitStance() {
         AbstractPlayer p = AbstractDungeon.player;
+        if (atkInc == 0) {
+            keepVal = false;
+            return;
+        }
         if (keepVal) {
             AbstractDungeon.actionManager.addToTop(new ApplyPowerAction(p, p, new LoseStrengthPower(p, atkInc)));
             keepVal = false;

@@ -12,6 +12,8 @@ import com.megacrit.cardcrawl.vfx.combat.FlashAtkImgEffect;
 
 import java.util.Iterator;
 
+import static basemod.BaseMod.logger;
+
 public class PureDamageAllEnemiesAction extends AbstractGameAction {
     private final int baseDamage;
     private final String name;
@@ -81,6 +83,7 @@ public class PureDamageAllEnemiesAction extends AbstractGameAction {
                     }
                     DamageInfo info = new DamageInfo(source, baseDamage, damageType);
                     info.applyEnemyPowersOnly(ms);
+                    logger.info("Hello world!" + ms.name + " " + info.base + " " + info.output);
                     info.name = this.name;
                     ms.damage(info);
                 }

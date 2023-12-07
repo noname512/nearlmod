@@ -48,12 +48,12 @@ public class KnightShielder extends AbstractMonster {
             addToBot(new DamageAction(AbstractDungeon.player, damage.get(0)));
         } else {
             for (AbstractMonster m : AbstractDungeon.getMonsters().monsters) {
-                if (!m.isDeadOrEscaped())
-                    addToBot(new GainBlockAction(m, blockAmount));
                 if (m instanceof KnightTerritoryHibernator && ((KnightTerritoryHibernator) m).asleep) {
                     addToBot(new TalkAction(this, DIALOG[0]));
                     addToBot(new DamageAction(m, new DamageInfo(this, 2, DamageInfo.DamageType.HP_LOSS)));
                 }
+                if (!m.isDeadOrEscaped())
+                    addToBot(new GainBlockAction(m, blockAmount));
             }
         }
         getMove(0);
