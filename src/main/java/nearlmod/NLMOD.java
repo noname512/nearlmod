@@ -47,14 +47,14 @@ public class NLMOD implements EditCardsSubscriber, EditCharactersSubscriber, Edi
     private static final String attackFriendCard = "images/512/bg_attack_friend.png";
     private static final String skillFriendCard = "images/512/bg_skill_friend.png";
     private static final String powerFriendCard = "images/512/bg_power_friend.png";
-    private static final String energyOrb = "images/512/card_mystic_orb.png";
+    private static final String energyOrb = "images/512/card_nearl_orb.png";
     private static final String attackCardPortrait = "images/1024/bg_attack_nearl.png";
     private static final String skillCardPortrait = "images/1024/bg_skill_nearl.png";
     private static final String powerCardPortrait = "images/1024/bg_power_nearl.png";
     private static final String attackFriendCardPortrait = "images/1024/bg_attack_friend.png";
     private static final String skillFriendCardPortrait = "images/1024/bg_skill_friend.png";
     private static final String powerFriendCardPortrait = "images/1024/bg_power_friend.png";
-    private static final String energyOrbPortrait = "images/1024/card_mystic_orb.png";
+    private static final String energyOrbPortrait = "images/1024/card_nearl_orb.png";
     private static final String charButton = "images/charSelect/button.png";
     private static final String charPortrait = "images/charSelect/portrait.png";
     private static final String miniManaSymbol = "images/manaSymbol.png";
