@@ -38,7 +38,6 @@ public class SurgingBrilliance extends AbstractFriendCard {
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
         DamageInfo info = new DamageInfo(p, magicNumber);
-        info.output = AbstractNearlCard.staticCalcDmg(m, info.base, info.type);
         info.name = belongFriend + AbstractFriendCard.damageSuffix;
         addToBot(new DamageAction(m, info, AbstractGameAction.AttackEffect.SLASH_DIAGONAL));
         addToBot(new ApplyPowerAction(p, p, new LightPower(p, secondMagicNumber), secondMagicNumber));

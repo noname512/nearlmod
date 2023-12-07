@@ -40,7 +40,6 @@ public class FeatherShineArrows extends AbstractFriendCard {
                 target = ms;
         if (target != null) {
             DamageInfo info = new DamageInfo(p, magicNumber);
-            info.output = AbstractNearlCard.staticCalcDmg(target, info.base, info.type);
             info.name = belongFriend + AbstractFriendCard.damageSuffix;
             addToBot(new DamageAction(target, info));
         }
@@ -49,6 +48,19 @@ public class FeatherShineArrows extends AbstractFriendCard {
     @Override
     public AbstractCard makeCopy() {
         return new FeatherShineArrows();
+    }
+
+    @Override
+    public void calculateCardDamage(AbstractMonster mo) {
+        applyPowers();
+        AbstractMonster target = null;
+        for (AbstractMonster ms : AbstractDungeon.getMonsters().monsters)
+            if (!ms.isDeadOrEscaped() && (target == null || ms.currentHealth < target.currentHealth))
+                target = ms;
+        if (target != null) {
+            magicNumber = calculateSingleDamage(mo, magicNumber);
+        }
+        isMagicNumberModified = (magicNumber != baseMagicNumber);
     }
 
     @Override

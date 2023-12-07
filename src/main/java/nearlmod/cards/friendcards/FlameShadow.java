@@ -38,8 +38,9 @@ public class FlameShadow extends AbstractFriendCard {
 
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
+        applyPowers();
         AbstractPower power = p.getPower("nearlmod:LightPower");
-        int dmg = baseMagicNumber;
+        int dmg = magicNumber;
         int light = 0;
         if (power != null) {
             dmg += power.amount * 2;
@@ -53,7 +54,6 @@ public class FlameShadow extends AbstractFriendCard {
             addToBot(new ApplyPowerAction(p, p, new ShadowPower(p, light)));
         }
         addToBot(new ApplyPowerAction(p, p, new PoemsLooksPower(p)));
-        applyPowers();
     }
 
     @Override
