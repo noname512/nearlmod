@@ -8,6 +8,7 @@ import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.localization.CardStrings;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
+import nearlmod.cards.AbstractNearlCard;
 import nearlmod.patches.AbstractCardEnum;
 
 import static nearlmod.patches.NearlTags.IS_KNIGHT_CARD;
@@ -39,7 +40,7 @@ public class FeatherShineArrows extends AbstractFriendCard {
                 target = ms;
         if (target != null) {
             DamageInfo info = new DamageInfo(p, magicNumber);
-            info.applyEnemyPowersOnly(target);
+            info.output = AbstractNearlCard.staticCalcDmg(target, info.base, info.type);
             info.name = belongFriend + AbstractFriendCard.damageSuffix;
             addToBot(new DamageAction(target, info));
         }

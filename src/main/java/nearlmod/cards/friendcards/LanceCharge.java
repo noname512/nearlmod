@@ -10,6 +10,7 @@ import com.megacrit.cardcrawl.localization.CardStrings;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import com.megacrit.cardcrawl.powers.GainStrengthPower;
 import com.megacrit.cardcrawl.powers.StrengthPower;
+import nearlmod.cards.AbstractNearlCard;
 import nearlmod.patches.AbstractCardEnum;
 
 import static nearlmod.patches.NearlTags.IS_KNIGHT_CARD;
@@ -37,7 +38,7 @@ public class LanceCharge extends AbstractFriendCard {
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
         DamageInfo info = new DamageInfo(p, magicNumber);
-        info.applyEnemyPowersOnly(m);
+        info.output = AbstractNearlCard.staticCalcDmg(m, info.base, info.type);
         info.name = belongFriend + AbstractFriendCard.damageSuffix;
         addToBot(new DamageAction(m, info));
         if (m.getIntentBaseDmg() >= 0) {

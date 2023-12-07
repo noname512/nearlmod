@@ -4,8 +4,11 @@ import com.megacrit.cardcrawl.actions.common.GainGoldAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
+import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.localization.CardStrings;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
+import com.megacrit.cardcrawl.vfx.RainingGoldEffect;
+import com.megacrit.cardcrawl.vfx.SpotlightPlayerEffect;
 import nearlmod.cards.AbstractNearlCard;
 
 public class MedalOfChampion extends AbstractNearlCard {
@@ -29,6 +32,8 @@ public class MedalOfChampion extends AbstractNearlCard {
 
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
+        AbstractDungeon.effectList.add(new RainingGoldEffect(this.magicNumber * 2, true));
+        AbstractDungeon.effectsQueue.add(new SpotlightPlayerEffect());
         addToBot(new GainGoldAction(magicNumber));
     }
 

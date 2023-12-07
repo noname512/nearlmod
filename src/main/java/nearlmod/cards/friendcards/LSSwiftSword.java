@@ -10,6 +10,7 @@ import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.localization.CardStrings;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import nearlmod.actions.UseShadowAction;
+import nearlmod.cards.AbstractNearlCard;
 import nearlmod.patches.AbstractCardEnum;
 
 public class LSSwiftSword extends AbstractFriendCard {
@@ -35,7 +36,7 @@ public class LSSwiftSword extends AbstractFriendCard {
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
         DamageInfo info = new DamageInfo(p, magicNumber);
-        info.applyEnemyPowersOnly(m);
+        info.output = AbstractNearlCard.staticCalcDmg(m, info.base, info.type);
         info.name = belongFriend + AbstractFriendCard.damageSuffix;
         for (int i = 1; i <= secondMagicNumber; i++)
             addToBot(new DamageAction(m, info, AbstractGameAction.AttackEffect.SLASH_HORIZONTAL));

@@ -118,7 +118,7 @@
     "nearlmod:LightSpearStrike": {
         "NAME": "光枪打击",
         "DESCRIPTION": "造成等同于你的 nearlmod:光 的层数的伤害。",
-        "UPGRADE_DESCRIPTION": ""
+        "UPGRADE_DESCRIPTION": " NL （造成 !D! 点伤害）"
     },
     "nearlmod:SweepWrong": {
         "NAME": "扫尽恶行",

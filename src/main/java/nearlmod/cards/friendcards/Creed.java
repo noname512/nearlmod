@@ -8,6 +8,7 @@ import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.localization.CardStrings;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
+import nearlmod.cards.AbstractNearlCard;
 import nearlmod.patches.AbstractCardEnum;
 import nearlmod.stances.AtkStance;
 import nearlmod.stances.DefStance;
@@ -33,7 +34,7 @@ public class Creed extends AbstractFriendCard {
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
         DamageInfo info = new DamageInfo(p, magicNumber);
-        info.applyEnemyPowersOnly(m);
+        info.output = AbstractNearlCard.staticCalcDmg(m, info.base, info.type);
         info.name = belongFriend + AbstractFriendCard.damageSuffix;
         addToBot(new DamageAction(m, info));
         if (p.stance.ID.equals(AtkStance.STANCE_ID)) {

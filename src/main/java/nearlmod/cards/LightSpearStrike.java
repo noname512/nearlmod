@@ -11,6 +11,7 @@ import com.megacrit.cardcrawl.localization.CardStrings;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import com.megacrit.cardcrawl.powers.AbstractPower;
 import nearlmod.patches.AbstractCardEnum;
+import nearlmod.stances.AtkStance;
 
 public class LightSpearStrike extends AbstractNearlCard {
     public static final String ID = "nearlmod:LightSpearStrike";
@@ -31,17 +32,38 @@ public class LightSpearStrike extends AbstractNearlCard {
 
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
-        int damage = 0;
-        AbstractPower power = AbstractDungeon.player.getPower("nearlmod:LightPower");
-        if (power != null) damage += power.amount;
-        power = AbstractDungeon.player.getPower("Strength");
-        if (power != null) damage += power.amount;
         addToBot(new DamageAction(m, new DamageInfo(p, damage, damageTypeForTurn), AbstractGameAction.AttackEffect.SLASH_DIAGONAL));
+    }
+
+    @Override
+    public void applyPowers() {
+        baseDamage = 0;
+        AbstractPower power = AbstractDungeon.player.getPower("nearlmod:LightPower");
+        if (power != null) baseDamage += power.amount;
+        super.applyPowers();
+        rawDescription = DESCRIPTION + UPGRADE_DESCRIPTION;
+        initializeDescription();
     }
 
     @Override
     public AbstractCard makeCopy() {
         return new LightSpearStrike();
+    }
+
+    @Override
+    public void onMoveToDiscard() {
+        rawDescription = DESCRIPTION;
+        initializeDescription();
+    }
+
+    @Override
+    public void calculateCardDamage(AbstractMonster mo) {
+        baseDamage = 0;
+        AbstractPower power = AbstractDungeon.player.getPower("nearlmod:LightPower");
+        if (power != null) baseDamage += power.amount;
+        super.calculateCardDamage(mo);
+        rawDescription = DESCRIPTION + UPGRADE_DESCRIPTION;
+        initializeDescription();
     }
 
     @Override

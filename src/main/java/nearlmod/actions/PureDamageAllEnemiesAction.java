@@ -9,6 +9,7 @@ import com.megacrit.cardcrawl.core.Settings;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import com.megacrit.cardcrawl.vfx.combat.FlashAtkImgEffect;
+import nearlmod.cards.AbstractNearlCard;
 
 import java.util.Iterator;
 
@@ -82,8 +83,7 @@ public class PureDamageAllEnemiesAction extends AbstractGameAction {
                         ms.tint.changeColor(Color.WHITE.cpy());
                     }
                     DamageInfo info = new DamageInfo(source, baseDamage, damageType);
-                    info.applyEnemyPowersOnly(ms);
-                    logger.info("Hello world!" + ms.name + " " + info.base + " " + info.output);
+                    info.output = AbstractNearlCard.staticCalcDmg(ms, info.base, info.type);
                     info.name = this.name;
                     ms.damage(info);
                 }

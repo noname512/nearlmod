@@ -78,6 +78,25 @@ public class ShadowOut extends AbstractNearlCard {
     }
 
     @Override
+    public void calculateCardDamage(AbstractMonster mo) {
+        applyPowers();
+        int ms_count = 0;
+        for (AbstractMonster m:AbstractDungeon.getCurrRoom().monsters.monsters) {
+            if (!m.isDeadOrEscaped()) {
+                ms_count ++;
+            }
+        }
+        if (ms_count == 1) {
+            for (AbstractMonster m:AbstractDungeon.getCurrRoom().monsters.monsters) {
+                if (!m.isDeadOrEscaped()) {
+                    magicNumber = AbstractNearlCard.staticCalcDmg(m, magicNumber, damageTypeForTurn);
+                    isMagicNumberModified = (magicNumber != baseMagicNumber);
+                }
+            }
+        }
+    }
+
+    @Override
     public AbstractCard makeCopy() {
         return new ShadowOut();
     }

@@ -11,6 +11,7 @@ import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import com.megacrit.cardcrawl.powers.IntangiblePlayerPower;
 import com.megacrit.cardcrawl.powers.ThornsPower;
 import nearlmod.actions.GainCostAction;
+import nearlmod.cards.AbstractNearlCard;
 import nearlmod.patches.AbstractCardEnum;
 import nearlmod.powers.LoseThornsPower;
 
@@ -41,7 +42,7 @@ public class FlameHeart extends AbstractFriendCard {
     public void use(AbstractPlayer p, AbstractMonster m) {
         addToBot(new GainCostAction(COST_GAIN));
         DamageInfo info = new DamageInfo(p, magicNumber);
-        info.applyEnemyPowersOnly(m);
+        info.output = AbstractNearlCard.staticCalcDmg(m, info.base, info.type);
         info.name = belongFriend + AbstractFriendCard.damageSuffix;
         addToBot(new DamageAction(m, info));
         addToBot(new ApplyPowerAction(p, p, new ThornsPower(p, secondMagicNumber)));

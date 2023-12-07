@@ -40,8 +40,8 @@ public class DefendHonor extends AbstractNearlCard {
     public void calculateCardDamage(AbstractMonster mo) {
         baseDamage += mo.getIntentDmg();
         super.calculateCardDamage(mo);
-        baseDamage -= mo.getIntentDmg();
         isDamageModified = (damage != baseDamage);
+        baseDamage -= mo.getIntentDmg();
         rawDescription = actualDescription + cardStrings.EXTENDED_DESCRIPTION[0];
         initializeDescription();
     }
