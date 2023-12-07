@@ -28,7 +28,7 @@ public class CandleKnightBattle extends AbstractImageEvent {
         INTRO, FIGHT, LEAVE
     }
     public CandleKnightBattle() {
-        super(NAME, DESCRIPTIONS[0], "images/events/laughallyouwant.png");
+        super(NAME, DESCRIPTIONS[0], "images/events/candleknightbattle.png");
         this.imageEventText.setDialogOption(OPTIONS[0]);
         this.imageEventText.setDialogOption(OPTIONS[2], CardLibrary.getCopy("Normality"));
         noCardsInRewards = true;
@@ -52,6 +52,7 @@ public class CandleKnightBattle extends AbstractImageEvent {
                 switch (buttonPressed) {
                     case 0:
                         logMetric(ID, "Fight");
+                        CardCrawlGame.music.playTempBgmInstantly("m_bat_kazimierz2_1_combine.mp3", true);
                         AbstractCard card = new SwallowLight();
                         if (AbstractDungeon.ascensionLevel < 12)
                             card.upgrade();

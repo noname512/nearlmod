@@ -111,6 +111,7 @@ public class BloodKnight extends AbstractMonster {
             this.state.setAnimation(0, "A_Attack", false);
             this.state.addAnimation(0, "A_Idle", true, 0);
         }
+        CardCrawlGame.sound.play("BLOOD_KNIGHT_ATTACK");
     }
 
     @Override
@@ -135,6 +136,7 @@ public class BloodKnight extends AbstractMonster {
             spawnBlade(bladesPerSpawn);
         }
         else if (this.nextMove == 99) {
+            CardCrawlGame.sound.play("BLOOD_KNIGHT_SKILL");
             if (isStage2) {
                 this.state.setAnimation(0, "B_Skill", false);
                 this.state.addAnimation(0, "B_Idle", true, 0);
@@ -149,6 +151,7 @@ public class BloodKnight extends AbstractMonster {
             addToBot(new ApplyPowerAction(p, this, new ExsanguinationPower(p)));
         }
         else if (this.currentHealth == this.maxHealth) {
+            CardCrawlGame.sound.play("BLOOD_KNIGHT_REBORN_LAS");
             this.state.setAnimation(0, "A_Die_End", false);
             this.state.addAnimation(0, "A_Idle", true, 0);
             this.halfDead = false;
@@ -156,6 +159,7 @@ public class BloodKnight extends AbstractMonster {
             currentTurn = -1;
         }
         else if (this.nextMove == 55) {
+            CardCrawlGame.sound.play("BLOOD_KNIGHT_REBORN_NXT");
             this.state.setAnimation(0, "A_Die_End_2", false);
             this.state.addAnimation(0, "B_Idle", true, 0);
             this.halfDead = false;

@@ -86,6 +86,7 @@ public class LastKheshig extends AbstractMonster {
         } else {
             this.state.setAnimation(0, "Skill", false);
             this.state.addAnimation(0, "Idle", true, 0);
+            CardCrawlGame.sound.play("LAST_KHESHIG_SKILL");
             int def_val = AbstractDungeon.player.currentBlock + TempHPField.tempHp.get(AbstractDungeon.player);
             if (this.damage.get(1).output > def_val) {
                 // TODO: 背刺动画，攻击在最后一个伙伴上

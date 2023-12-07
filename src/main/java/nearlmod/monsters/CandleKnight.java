@@ -85,6 +85,7 @@ public class CandleKnight extends AbstractMonster {
         if (this.nextMove == 2) {
             this.state.setAnimation(0, "Skill_Begin", false);
             this.state.addAnimation(0, "Skill_Loop", true, 0.0F);
+            CardCrawlGame.sound.playAndLoop("CANDLE_KNIGHT_CHARGE");
             setMove(MOVES[1], (byte) 3, Intent.ATTACK, this.damage.get(1).base);
         } else {
             if (this.nextMove == 1) {
@@ -97,7 +98,10 @@ public class CandleKnight extends AbstractMonster {
                 addToBot(new DamageAction(AbstractDungeon.player, this.damage.get(0), AbstractGameAction.AttackEffect.FIRE));
             } else if (this.nextMove == 3) {
                 addToBot(new DamageAction(AbstractDungeon.player, this.damage.get(1)));
+                CardCrawlGame.sound.stop("CANDLE_KNIGHT_CHARGE");
+                CardCrawlGame.sound.play("CANDLE_KNIGHT_ATTACK");
                 this.state.setAnimation(0, "Skill_End", false);
+                this.state.addAnimation(0, "Idle", true, 0.0F);
             } else if (this.nextMove == 5) {
                 addToBot(new AnimateFastAttackAction(this));
                 for (int i = 1; i <= damageTimes; i++)

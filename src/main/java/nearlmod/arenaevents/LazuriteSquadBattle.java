@@ -3,7 +3,6 @@ package nearlmod.arenaevents;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.events.AbstractImageEvent;
-import com.megacrit.cardcrawl.helpers.CardLibrary;
 import com.megacrit.cardcrawl.localization.EventStrings;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import com.megacrit.cardcrawl.monsters.MonsterGroup;
@@ -24,7 +23,7 @@ public class LazuriteSquadBattle extends AbstractImageEvent {
         INTRO, FIGHT, LEAVE
     }
     public LazuriteSquadBattle(int monsterLevel) {
-        super(NAME, DESCRIPTIONS[0], "images/events/laughallyouwant.png");
+        super(NAME, DESCRIPTIONS[0], "images/events/lazuritesquad.png");
         imageEventText.setDialogOption(OPTIONS[0]);
         imageEventText.setDialogOption(OPTIONS[1]);
         this.monsterLevel = monsterLevel;
@@ -43,6 +42,7 @@ public class LazuriteSquadBattle extends AbstractImageEvent {
         switch (buttonPressed) {
             case 0:
                 logMetric(ID, "Fight");
+                CardCrawlGame.music.playTempBgmInstantly("m_bat_kazimierz2_2_loop.mp3", true);
                 screen = CurScreen.FIGHT;
                 AbstractDungeon.lastCombatMetricKey = ID;
                 AbstractDungeon.getCurrRoom().phase = AbstractRoom.RoomPhase.COMBAT;

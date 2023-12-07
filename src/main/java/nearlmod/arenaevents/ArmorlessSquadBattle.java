@@ -23,7 +23,7 @@ public class ArmorlessSquadBattle extends AbstractImageEvent {
         INTRO, FIGHT, LEAVE
     }
     public ArmorlessSquadBattle(int monsterLevel) {
-        super(NAME, DESCRIPTIONS[0], "images/events/laughallyouwant.png");
+        super(NAME, DESCRIPTIONS[0], "images/events/armorlesssquad.png");
         imageEventText.setDialogOption(OPTIONS[0]);
         imageEventText.setDialogOption(OPTIONS[1]);
         this.monsterLevel = monsterLevel;
@@ -42,6 +42,7 @@ public class ArmorlessSquadBattle extends AbstractImageEvent {
         switch (buttonPressed) {
             case 0:
                 logMetric(ID, "Fight");
+                CardCrawlGame.music.playTempBgmInstantly("m_bat_kazimierz2_2_loop.mp3", true);
                 screen = CurScreen.FIGHT;
                 AbstractDungeon.lastCombatMetricKey = ID;
                 AbstractDungeon.getCurrRoom().phase = AbstractRoom.RoomPhase.COMBAT;

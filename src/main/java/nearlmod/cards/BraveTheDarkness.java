@@ -15,7 +15,6 @@ import com.megacrit.cardcrawl.powers.GainStrengthPower;
 import com.megacrit.cardcrawl.powers.StrengthPower;
 import nearlmod.patches.AbstractCardEnum;
 import nearlmod.stances.AtkStance;
-import org.apache.logging.log4j.LogManager;
 
 public class BraveTheDarkness extends AbstractNearlCard {
     public static final String ID = "nearlmod:BraveTheDarkness";
@@ -37,7 +36,6 @@ public class BraveTheDarkness extends AbstractNearlCard {
         damage = baseDamage = ATTACK_DMG;
         exhaust = true;
         if (AbstractDungeon.player != null && extraTriggered()) {
-            LogManager.getLogger(AbstractCard.class.getName()).info("extraTriggered!");
             this.target = CardTarget.ALL_ENEMY;
             isMultiDamage = true;
         }
@@ -50,14 +48,8 @@ public class BraveTheDarkness extends AbstractNearlCard {
 
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
-        if (this.target == CardTarget.ENEMY) {
-            LogManager.getLogger(AbstractCard.class.getName()).info("???");
-            if (isMultiDamage) {
-                LogManager.getLogger(AbstractCard.class.getName()).info("??????");
-            }
-        }
-
         if (extraTriggered()) {
+            CardCrawlGame.sound.play("BRAVE_THE_DARKNESS");
             addToBot(new DamageAllEnemiesAction(p, multiDamage, damageTypeForTurn, AbstractGameAction.AttackEffect.SLASH_DIAGONAL));
             for (AbstractMonster mo : AbstractDungeon.getMonsters().monsters) {
                 if (!mo.isDeadOrEscaped()) {
