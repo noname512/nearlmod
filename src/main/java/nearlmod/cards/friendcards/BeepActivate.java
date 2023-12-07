@@ -29,7 +29,7 @@ public class BeepActivate extends AbstractFriendCard {
                 CardType.SKILL, AbstractCardEnum.FRIEND_BLUE,
                 CardRarity.SPECIAL, CardTarget.ALL_ENEMY, "nearlmod:JusticeKnight");
         secondMagicNumber = baseSecondMagicNumber = BLOCK_GAIN;
-        magicNumber = BLOCK_NUM;
+        magicNumber = baseMagicNumber = BLOCK_NUM;
         tags.add(IS_KNIGHT_CARD);
     }
 
