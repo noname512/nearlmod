@@ -52,6 +52,7 @@ public class CandleKnightBattle extends AbstractImageEvent {
                 switch (buttonPressed) {
                     case 0:
                         logMetric(ID, "Fight");
+                        CardCrawlGame.music.fadeOutTempBGM();
                         CardCrawlGame.music.playTempBgmInstantly("m_bat_kazimierz2_1_combine.mp3", true);
                         AbstractCard card = new SwallowLight();
                         if (AbstractDungeon.ascensionLevel < 12)

@@ -43,6 +43,7 @@ public class BloodKnightBattle extends AbstractImageEvent {
         switch (buttonPressed) {
             case 0:
                 logMetric(ID, "Fight");
+                CardCrawlGame.music.fadeOutTempBGM();
                 CardCrawlGame.music.playTempBgmInstantly("m_bat_bldkgt_combine.mp3", true);
                 screen = CurScreen.FIGHT;
                 AbstractDungeon.getCurrRoom().rewards.clear();

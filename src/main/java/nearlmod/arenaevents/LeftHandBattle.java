@@ -77,6 +77,7 @@ public class LeftHandBattle extends AbstractImageEvent {
         switch (buttonPressed) {
             case 0:
                 logMetric(ID, "Fight");
+                CardCrawlGame.music.fadeOutTempBGM();
                 CardCrawlGame.music.playTempBgmInstantly("m_bat_warchaos_combine.mp3", true);
                 screen = CurScreen.FIGHT;
                 AbstractDungeon.getCurrRoom().rewards.clear();
