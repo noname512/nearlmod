@@ -27,7 +27,7 @@ import nearlmod.characters.Nearl;
 public class CostEnergyOrb extends CustomEnergyOrb {
     public static final float SECOND_ORB_IMG_SCALE = 0.75F * Settings.scale;
     public static final float PRIMARY_ORB_IMG_SCALE = 1.15F * Settings.scale;
-    public static final float X_OFFSET = 0.0F * Settings.scale;
+    public static final float X_OFFSET = -20.0F * Settings.scale;
     public static final float Y_OFFSET = 150.0F * Settings.scale;
     public static final String[] orbTexturesAlt = {
             "images/char/orb/layer1alt.png",

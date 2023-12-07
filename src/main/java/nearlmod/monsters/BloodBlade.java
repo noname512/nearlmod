@@ -101,6 +101,7 @@ public class BloodBlade extends AbstractMonster {
             }
             if (absorbTimer <= 0.0F) {
                 currentHealth = 0;
+                isAbsorbing = false;
                 die();
             }
         }
