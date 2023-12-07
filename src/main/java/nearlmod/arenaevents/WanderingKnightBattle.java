@@ -22,7 +22,7 @@ public class WanderingKnightBattle extends AbstractImageEvent {
         INTRO, FIGHT, LEAVE
     }
     public WanderingKnightBattle(int monsterLevel) {
-        super(NAME, DESCRIPTIONS[0], "images/events/laughallyouwant.png");
+        super(NAME, DESCRIPTIONS[0], "images/events/wanderingknight.png");
         imageEventText.setDialogOption(OPTIONS[0]);
         imageEventText.setDialogOption(OPTIONS[1]);
         this.monsterLevel = monsterLevel;

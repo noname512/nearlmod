@@ -29,7 +29,7 @@ public class CorruptedWitheredBattle extends AbstractImageEvent {
         INTRO, FIGHT, LEAVE
     }
     public CorruptedWitheredBattle() {
-        super(NAME, DESCRIPTIONS[0], "images/events/laughallyouwant.png");
+        super(NAME, DESCRIPTIONS[0], "images/events/corruptedwitheredbattle.png");
         this.imageEventText.setDialogOption(OPTIONS[0]);
         this.imageEventText.setDialogOption(OPTIONS[1], CardLibrary.getCopy("Regret"));
         noCardsInRewards = true;
@@ -44,6 +44,8 @@ public class CorruptedWitheredBattle extends AbstractImageEvent {
         switch (buttonPressed) {
             case 0:
                 logMetric(ID, "Fight");
+                CardCrawlGame.music.fadeOutTempBGM();
+                CardCrawlGame.music.playTempBgmInstantly("m_bat_putrid_combine.mp3", true);
                 screen = CurScreen.FIGHT;
                 AbstractDungeon.getCurrRoom().rewards.clear();
                 AbstractNearlCard.addSpecificCardsToReward(new Beginning());

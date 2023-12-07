@@ -32,7 +32,7 @@ public class LeftHandBattle extends AbstractImageEvent {
         INTRO, FIGHT, LEAVE
     }
     public LeftHandBattle() {
-        super(NAME, DESCRIPTIONS[0], "images/events/laughallyouwant.png");
+        super(NAME, DESCRIPTIONS[0], "images/events/lefthandbattle.png");
         this.imageEventText.setDialogOption(OPTIONS[0]);
         this.imageEventText.setDialogOption(OPTIONS[1], CardLibrary.getCopy("Injury"));
         noCardsInRewards = true;
@@ -77,6 +77,8 @@ public class LeftHandBattle extends AbstractImageEvent {
         switch (buttonPressed) {
             case 0:
                 logMetric(ID, "Fight");
+                CardCrawlGame.music.fadeOutTempBGM();
+                CardCrawlGame.music.playTempBgmInstantly("m_bat_warchaos_combine.mp3", true);
                 screen = CurScreen.FIGHT;
                 AbstractDungeon.getCurrRoom().rewards.clear();
                 AbstractNearlCard.addSpecificCardsToReward(getCardsWithRarity(AbstractCard.CardRarity.UNCOMMON));

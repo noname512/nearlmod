@@ -26,7 +26,7 @@ public class LastKheshigBattle extends AbstractImageEvent {
         INTRO, FIGHT, LEAVE
     }
     public LastKheshigBattle() {
-        super(NAME, DESCRIPTIONS[0], "images/events/laughallyouwant.png");
+        super(NAME, DESCRIPTIONS[0], "images/events/lastkheshigbattle.png");
         this.imageEventText.setDialogOption(OPTIONS[0]);
         this.imageEventText.setDialogOption(OPTIONS[1], CardLibrary.getCopy("Injury"));
         noCardsInRewards = true;
@@ -41,6 +41,8 @@ public class LastKheshigBattle extends AbstractImageEvent {
         switch (buttonPressed) {
             case 0:
                 logMetric(ID, "Fight");
+                CardCrawlGame.music.fadeOutTempBGM();
+                CardCrawlGame.music.playTempBgmInstantly("m_bat_kazimierz2_1_combine.mp3", true);
                 screen = CurScreen.FIGHT;
                 AbstractDungeon.getCurrRoom().rewards.clear();
                 AbstractDungeon.getCurrRoom().addRelicToRewards(AbstractRelic.RelicTier.UNCOMMON);
