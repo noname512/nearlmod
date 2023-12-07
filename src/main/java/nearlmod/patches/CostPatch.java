@@ -3,6 +3,8 @@ package nearlmod.patches;
 import com.evacipated.cardcrawl.modthespire.lib.*;
 import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
+import com.megacrit.cardcrawl.core.EnergyManager;
+import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.ui.panels.EnergyPanel;
 import javassist.CtBehavior;
 import nearlmod.cards.friendcards.AbstractFriendCard;
@@ -16,7 +18,10 @@ public class CostPatch {
         public static SpireReturn<?> bePlayable(AbstractCard __instance) {
             int found = CostReserves.reserveCount();
             if (__instance instanceof AbstractFriendCard) {
-                return SpireReturn.Return(EnergyPanel.totalCount + found >= __instance.costForTurn);
+                if (EnergyPanel.totalCount + found < __instance.costForTurn && !__instance.freeToPlay() && !__instance.isInAutoplay)
+                    return SpireReturn.Return(false);
+                else
+                    return SpireReturn.Return(true);
             }
             return SpireReturn.Continue();
         }
@@ -41,6 +46,9 @@ public class CostPatch {
                     if (c.costForTurn - delt > 0) {
                         __instance.energy.use(c.costForTurn - delt);
                     }
+                    if (!__instance.hand.canUseAnyCard() && !__instance.endTurnQueued) {
+                        AbstractDungeon.overlayMenu.endTurnButton.isGlowing = true;
+                    }
                     return SpireReturn.Return(0);
                 }
             }
@@ -49,8 +57,8 @@ public class CostPatch {
 
         public static class Locator extends SpireInsertLocator {
             public int[] Locate(CtBehavior ctBehavior) throws Exception {
-                Matcher.FieldAccessMatcher fieldAccessMatcher = new Matcher.FieldAccessMatcher(AbstractCard.class, "costForTurn");
-                return LineFinder.findAllInOrder(ctBehavior, fieldAccessMatcher);
+                Matcher.MethodCallMatcher methodCallMatcher = new Matcher.MethodCallMatcher(EnergyManager.class, "use");
+                return LineFinder.findAllInOrder(ctBehavior, methodCallMatcher);
             }
         }
     }
