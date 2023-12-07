@@ -40,6 +40,7 @@ public class AutoProtect extends AbstractFriendCard {
 
     @Override
     public void triggerWhenCopied() {
+        applyPowers();
         AbstractPlayer p = AbstractDungeon.player;
         addToTop(new GainBlockAction(p, magicNumber));
         addToTop(new ApplyPowerAction(p, p, new NextTurnBlockPower(p, magicNumber, NAME)));

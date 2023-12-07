@@ -39,9 +39,15 @@ public class MedalOfHonorPower extends AbstractPower implements CloneablePowerIn
     @Override
     public void onUseCard(AbstractCard card, UseCardAction action) {
         if (card.type == AbstractCard.CardType.STATUS) {
-            flash();
             card.exhaust = true;
             action.exhaustCard = true;
+        }
+    }
+
+    @Override
+    public void onExhaust(AbstractCard card) {
+        if (card.type == AbstractCard.CardType.STATUS) {
+            flash();
             addToBot(new DrawCardAction(1));
         }
     }
