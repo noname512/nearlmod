@@ -1,5 +1,6 @@
 package nearlmod.monsters;
 
+import com.badlogic.gdx.graphics.g2d.SpriteBatch;
 import com.badlogic.gdx.math.MathUtils;
 import com.megacrit.cardcrawl.actions.ClearCardQueueAction;
 import com.megacrit.cardcrawl.actions.animations.TalkAction;
@@ -18,6 +19,7 @@ import com.megacrit.cardcrawl.powers.StrengthPower;
 import com.megacrit.cardcrawl.powers.VulnerablePower;
 import com.megacrit.cardcrawl.powers.WeakPower;
 import com.megacrit.cardcrawl.relics.AbstractRelic;
+import com.megacrit.cardcrawl.vfx.combat.HealEffect;
 import com.megacrit.cardcrawl.vfx.combat.InflameEffect;
 import nearlmod.powers.AttackUpPower;
 import nearlmod.powers.DuelPower;
@@ -41,6 +43,8 @@ public class BloodKnight extends AbstractMonster {
     private final AbstractMonster[] blades = new AbstractMonster[6];
     private final int bladesPerSpawn;
     private boolean talked;
+    private int realHealth;
+
     public BloodKnight(float x, float y) {
         super(NAME, ID, 300, 0, 0, 150.0F, 320.0F, IMAGE, x, y);
         type = EnemyType.BOSS;
@@ -149,10 +153,11 @@ public class BloodKnight extends AbstractMonster {
             }
             addToBot(new ApplyPowerAction(p, this, new ExsanguinationPower(p)));
         }
-        else if (this.currentHealth == this.maxHealth) {
+        else if (this.realHealth == this.maxHealth) {
             CardCrawlGame.sound.play("BLOOD_KNIGHT_REBORN_LAS");
             this.state.setAnimation(0, "A_Die_End", false);
             this.state.addAnimation(0, "A_Idle", true, 0);
+            this.currentHealth = this.realHealth;
             this.halfDead = false;
             cleanDebuff();
             currentTurn = -1;
@@ -163,6 +168,7 @@ public class BloodKnight extends AbstractMonster {
             this.stateData.setMix("B_Idle", "B_Die", 0.1F);
             this.state.setAnimation(0, "A_Die_End_2", false);
             this.state.addAnimation(0, "B_Idle", true, 0);
+            this.currentHealth = this.realHealth;
             this.halfDead = false;
             cleanDebuff();
             currentTurn = -1;
@@ -239,6 +245,7 @@ public class BloodKnight extends AbstractMonster {
         }
     }
 
+    @Override
     public void die() {
         if (!AbstractDungeon.getCurrRoom().cannotLose) {
             this.state.setAnimation(0, "B_Die", false);
@@ -253,5 +260,46 @@ public class BloodKnight extends AbstractMonster {
             this.state.setAnimation(0, "A_Die_Start", false);
             this.state.addAnimation(0, "A_Die_Loop", true, 0);
         }
+    }
+
+    @Override
+    public void heal(int healAmount) {
+        if (halfDead) {
+            for (AbstractPower p : powers)
+                healAmount = p.onHeal(healAmount);
+
+            realHealth += healAmount;
+            if (realHealth > maxHealth) {
+                realHealth = maxHealth;
+            }
+
+            if (healAmount > 0) {
+                AbstractDungeon.effectList.add(new HealEffect(hb.cX - animX, hb.cY, healAmount));
+                healthBarUpdatedEvent();
+            }
+        } else {
+            super.heal(healAmount);
+        }
+    }
+
+    @Override
+    public void renderHealth(SpriteBatch sb) {
+        if (halfDead) currentHealth = realHealth;
+        super.renderHealth(sb);
+        if (halfDead) currentHealth = 0;
+    }
+
+    @Override
+    public void healthBarUpdatedEvent() {
+        if (halfDead) currentHealth = realHealth;
+        super.healthBarUpdatedEvent();
+        if (halfDead) currentHealth = 0;
+    }
+
+    @Override
+    public void healthBarRevivedEvent() {
+        if (halfDead) currentHealth = realHealth;
+        super.healthBarRevivedEvent();
+        if (halfDead) currentHealth = 0;
     }
 }

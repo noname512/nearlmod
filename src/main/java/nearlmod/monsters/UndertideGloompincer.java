@@ -18,7 +18,7 @@ public class UndertideGloompincer extends AbstractMonster {
     public static final String IMAGE = "images/monsters/undertidegloompincer.png";
 
     public UndertideGloompincer(float x, float y, int level) {
-        super(NAME, ID, 60, 0, 0, 150.0F, 320.0F, IMAGE, x, y);
+        super(NAME, ID, 60, 0, 0, 150.0F, 220.0F, IMAGE, x, y);
         type = EnemyType.NORMAL;
         int dmg;
         if (AbstractDungeon.ascensionLevel >= 17) dmg = 12;

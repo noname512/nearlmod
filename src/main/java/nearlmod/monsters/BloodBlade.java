@@ -5,7 +5,6 @@ import com.badlogic.gdx.math.MathUtils;
 import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
 import com.megacrit.cardcrawl.actions.common.DamageAction;
 import com.megacrit.cardcrawl.actions.common.HealAction;
-import com.megacrit.cardcrawl.actions.common.LoseHPAction;
 import com.megacrit.cardcrawl.cards.DamageInfo;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
@@ -25,7 +24,7 @@ public class BloodBlade extends AbstractMonster {
     private float vy;
 
     public BloodBlade(float x, float y) {
-        super(NAME, ID, AbstractDungeon.monsterHpRng.random(23, 28), 0, 0, 150.0F, 320.0F, IMAGE, x, y);
+        super(NAME, ID, AbstractDungeon.monsterHpRng.random(23, 28), 0, 0, 100.0F, 170.0F, IMAGE, x, y);
         type = EnemyType.NORMAL;
         if (AbstractDungeon.ascensionLevel >= 17)
             damage.add(new DamageInfo(this, 10));
@@ -42,6 +41,7 @@ public class BloodBlade extends AbstractMonster {
         this.flipHorizontal = true;
         this.stateData.setMix("Idle", "Die", 0.1F);
         this.state.setAnimation(0, "Idle", true);
+
     }
 
     public BloodBlade(float x, float y, int str) {
@@ -68,7 +68,6 @@ public class BloodBlade extends AbstractMonster {
                     if (ms.drawX > drawX) flipHorizontal = !flipHorizontal;
                     hideHealthBar();
                     addToTop(new ApplyPowerAction(ms, this, new StrengthPower(ms, 3)));
-                    AbstractDungeon.actionManager.addToBottom(new LoseHPAction(this, this, this.currentHealth));
                     return;
                 }
         }
