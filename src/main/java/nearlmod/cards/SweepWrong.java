@@ -1,14 +1,11 @@
 package nearlmod.cards;
 
-import com.megacrit.cardcrawl.actions.AbstractGameAction;
-import com.megacrit.cardcrawl.actions.common.DamageAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
-import com.megacrit.cardcrawl.cards.DamageInfo;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
-import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.localization.CardStrings;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
+import nearlmod.actions.SweepWrongAction;
 import nearlmod.patches.AbstractCardEnum;
 
 public class SweepWrong extends AbstractNearlCard {
@@ -35,15 +32,7 @@ public class SweepWrong extends AbstractNearlCard {
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
         applyPowers();
-        for (AbstractMonster mo : AbstractDungeon.getMonsters().monsters) {
-            if (!mo.isDeadOrEscaped()) {
-                if (mo.getIntentBaseDmg() >= 0) {
-                    addToBot(new DamageAction(mo, new DamageInfo(p, calculateSingleDamage(mo, damage + magicNumber), damageTypeForTurn), AbstractGameAction.AttackEffect.BLUNT_HEAVY));
-                } else {
-                    addToBot(new DamageAction(mo, new DamageInfo(p, calculateSingleDamage(mo, damage), damageTypeForTurn), AbstractGameAction.AttackEffect.BLUNT_LIGHT));
-                }
-            }
-        }
+        addToBot(new SweepWrongAction(p, damage, magicNumber));
     }
 
     public void applyPowers() {
