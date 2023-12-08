@@ -39,22 +39,20 @@ public class ArmorProtection extends AbstractNearlCard {
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
         applyPowers();
+        addToBot(new GainBlockAction(p, p, block));
         if (extraTriggered())
-            addToBot(new GainBlockAction(p, p, block + magicNumber));
-        else
-            addToBot(new GainBlockAction(p, p, block));
+            addToBot(new GainBlockAction(p, p, magicNumber));
     }
 
     @Override
     public void applyPowers() {
+        int basicBlock = baseBlock;
+        baseBlock = baseMagicNumber;
         super.applyPowers();
-        int basicBlock = block;
-        baseBlock += baseMagicNumber;
-        super.applyPowers();
-        magicNumber = block - basicBlock;
+        magicNumber = block;
         isMagicNumberModified = magicNumber != baseMagicNumber;
-        baseBlock -= baseMagicNumber;
-        block = basicBlock;
+        baseBlock = basicBlock;
+        super.applyPowers();
     }
 
     @Override
