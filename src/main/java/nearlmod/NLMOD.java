@@ -64,6 +64,7 @@ public class NLMOD implements EditCardsSubscriber, EditCharactersSubscriber, Edi
     private static final Logger logger = LogManager.getLogger(NLMOD.class.getName());
 
     public static final HashMap<String, TextureAtlas.AtlasRegion> specialImg = new HashMap<>();
+    public static boolean friendTipMode = false;
 
     public NLMOD() {
         BaseMod.subscribe(this);
