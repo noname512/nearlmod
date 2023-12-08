@@ -39,7 +39,7 @@
     "NAME": "血归",
     "DESCRIPTIONS": ["你的 #y力量 无法超过 #b0 。"]
   },
-  "nearlmod:Invincible": {
+  "nearlmod:FriendShelterPower": {
     "NAME": "伙伴们的庇护",
     "DESCRIPTIONS": ["本回合内，你不会受到伤害 。"]
   },

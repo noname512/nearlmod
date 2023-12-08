@@ -2,7 +2,6 @@ package nearlmod.powers;
 
 import basemod.interfaces.CloneablePowerInterface;
 import com.badlogic.gdx.graphics.g2d.TextureAtlas;
-import com.megacrit.cardcrawl.actions.common.DamageAction;
 import com.megacrit.cardcrawl.actions.common.RemoveSpecificPowerAction;
 import com.megacrit.cardcrawl.cards.DamageInfo;
 import com.megacrit.cardcrawl.core.AbstractCreature;
@@ -11,15 +10,14 @@ import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.helpers.ImageMaster;
 import com.megacrit.cardcrawl.localization.PowerStrings;
 import com.megacrit.cardcrawl.powers.AbstractPower;
-import com.megacrit.cardcrawl.powers.IntangiblePower;
 
-public class InvinciblePower extends AbstractPower implements CloneablePowerInterface {
-    public static final String POWER_ID = "nearlmod:Invincible";
+public class FriendShelterPower extends AbstractPower implements CloneablePowerInterface {
+    public static final String POWER_ID = "nearlmod:FriendShelterPower";
     public static final PowerStrings powerStrings = CardCrawlGame.languagePack.getPowerStrings(POWER_ID);
     public static final String NAME = powerStrings.NAME;
     public static final String[] DESCRIPTIONS = powerStrings.DESCRIPTIONS;
 
-    public InvinciblePower(AbstractCreature owner) {
+    public FriendShelterPower(AbstractCreature owner) {
         name = NAME;
         ID = POWER_ID;
         this.owner = owner;
@@ -35,7 +33,7 @@ public class InvinciblePower extends AbstractPower implements CloneablePowerInte
     }
 
     public void atStartOfTurn() {
-        AbstractDungeon.actionManager.addToBottom(new RemoveSpecificPowerAction(owner, owner, "nearlmod:Invincible"));
+        AbstractDungeon.actionManager.addToBottom(new RemoveSpecificPowerAction(owner, owner, this));
     }
 
     @Override
@@ -49,7 +47,7 @@ public class InvinciblePower extends AbstractPower implements CloneablePowerInte
         return 0;
     }
     public AbstractPower makeCopy() {
-        return new InvinciblePower(owner);
+        return new FriendShelterPower(owner);
     }
 
 }

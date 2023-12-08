@@ -7,7 +7,7 @@ import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.localization.CardStrings;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import nearlmod.cards.AbstractNearlCard;
-import nearlmod.powers.InvinciblePower;
+import nearlmod.powers.FriendShelterPower;
 
 public class BlemishinesFaintLight extends AbstractNearlCard {
     public static final String ID = "nearlmod:Blemishine'sFaintLight";
@@ -29,7 +29,7 @@ public class BlemishinesFaintLight extends AbstractNearlCard {
 
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
-        addToBot(new ApplyPowerAction(p, p, new InvinciblePower(p)));
+        addToBot(new ApplyPowerAction(p, p, new FriendShelterPower(p)));
     }
 
     @Override

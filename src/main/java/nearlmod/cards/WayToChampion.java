@@ -9,7 +9,7 @@ import com.megacrit.cardcrawl.localization.CardStrings;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import nearlmod.patches.AbstractCardEnum;
 import nearlmod.powers.ExsanguinationPower;
-import nearlmod.powers.InvinciblePower;
+import nearlmod.powers.FriendShelterPower;
 
 public class WayToChampion extends AbstractNearlCard {
     public static final String ID = "nearlmod:WayToChampion";
@@ -30,7 +30,7 @@ public class WayToChampion extends AbstractNearlCard {
 
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
-        addToBot(new ApplyPowerAction(p, p, new InvinciblePower(p)));
+        addToBot(new ApplyPowerAction(p, p, new FriendShelterPower(p)));
         for (AbstractMonster mo : AbstractDungeon.getMonsters().monsters)
             if (!mo.isDeadOrEscaped())
                 addToBot(new ApplyPowerAction(mo, p, new ExsanguinationPower(mo)));
