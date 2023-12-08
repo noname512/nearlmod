@@ -4,7 +4,6 @@ import com.megacrit.cardcrawl.cards.curses.Regret;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.core.Settings;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
-import com.megacrit.cardcrawl.events.AbstractImageEvent;
 import com.megacrit.cardcrawl.helpers.CardLibrary;
 import com.megacrit.cardcrawl.localization.EventStrings;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
@@ -17,17 +16,13 @@ import nearlmod.cards.special.Beginning;
 import nearlmod.monsters.*;
 import nearlmod.relics.LateLight;
 
-public class CorruptedWitheredBattle extends AbstractImageEvent {
+public class CorruptedWitheredBattle extends AbstractArenaEvent {
     public static final String ID = "nearlmod:CorruptedWitheredBattle";
     public static final EventStrings eventStrings = CardCrawlGame.languagePack.getEventString(ID);
     public static final String NAME = eventStrings.NAME;
     public static final String[] DESCRIPTIONS = eventStrings.DESCRIPTIONS;
     public static final String[] OPTIONS = eventStrings.OPTIONS;
 
-    private CurScreen screen = CurScreen.INTRO;
-    private enum CurScreen {
-        INTRO, FIGHT, LEAVE
-    }
     public CorruptedWitheredBattle() {
         super(NAME, DESCRIPTIONS[0], "images/events/corruptedwitheredbattle.png");
         this.imageEventText.setDialogOption(OPTIONS[0]);

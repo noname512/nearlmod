@@ -4,7 +4,6 @@ import com.megacrit.cardcrawl.cards.curses.Normality;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.core.Settings;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
-import com.megacrit.cardcrawl.events.AbstractImageEvent;
 import com.megacrit.cardcrawl.helpers.CardLibrary;
 import com.megacrit.cardcrawl.localization.EventStrings;
 import com.megacrit.cardcrawl.monsters.MonsterGroup;
@@ -16,17 +15,13 @@ import nearlmod.monsters.CandleKnight;
 import nearlmod.relics.Marigold;
 import nearlmod.relics.NormalPerson;
 
-public class CandleKnightBattle extends AbstractImageEvent {
+public class CandleKnightBattle extends AbstractArenaEvent {
     public static final String ID = "nearlmod:CandleKnightBattle";
     public static final EventStrings eventStrings = CardCrawlGame.languagePack.getEventString(ID);
     public static final String NAME = eventStrings.NAME;
     public static final String[] DESCRIPTIONS = eventStrings.DESCRIPTIONS;
     public static final String[] OPTIONS = eventStrings.OPTIONS;
 
-    private CurScreen screen = CurScreen.INTRO;
-    private enum CurScreen {
-        INTRO, FIGHT, LEAVE
-    }
     public CandleKnightBattle() {
         super(NAME, DESCRIPTIONS[0], "images/events/candleknightbattle.png");
         this.imageEventText.setDialogOption(OPTIONS[0]);

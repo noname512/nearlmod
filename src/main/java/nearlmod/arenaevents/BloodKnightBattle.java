@@ -5,7 +5,6 @@ import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.core.Settings;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
-import com.megacrit.cardcrawl.events.AbstractImageEvent;
 import com.megacrit.cardcrawl.localization.EventStrings;
 import com.megacrit.cardcrawl.monsters.MonsterGroup;
 import com.megacrit.cardcrawl.relics.AbstractRelic;
@@ -16,17 +15,13 @@ import nearlmod.cards.special.MedalOfChampion;
 import nearlmod.monsters.BloodKnight;
 import nearlmod.relics.*;
 
-public class BloodKnightBattle extends AbstractImageEvent {
+public class BloodKnightBattle extends AbstractArenaEvent {
     public static final String ID = "nearlmod:BloodKnightBattle";
     public static final EventStrings eventStrings = CardCrawlGame.languagePack.getEventString(ID);
     public static final String NAME = eventStrings.NAME;
     public static final String[] DESCRIPTIONS = eventStrings.DESCRIPTIONS;
     public static final String[] OPTIONS = eventStrings.OPTIONS;
 
-    private CurScreen screen = CurScreen.INTRO;
-    private enum CurScreen {
-        INTRO, FIGHT, LEAVE
-    }
     public BloodKnightBattle() {
         super(NAME, DESCRIPTIONS[0], "images/events/bloodknightbattle.png");
         this.imageEventText.setDialogOption(OPTIONS[0]);

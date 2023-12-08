@@ -107,13 +107,14 @@ public class NLMOD implements EditCardsSubscriber, EditCharactersSubscriber, Edi
                 eventType(EventUtils.EventType.ONE_TIME).
                 playerClass(NearlEnum.NEARL_CLASS).
                 dungeonID("TheCity").
-                //bonusCondition(() -> (AbstractDungeon.floorNum > 6)).
+                endsWithRewardsUI(true).
                 create());
         BaseMod.addEvent(new AddEventParams.Builder(TheSurroundedEvent.ID, TheSurroundedEvent.class).
                 eventType(EventUtils.EventType.ONE_TIME).
                 playerClass(NearlEnum.NEARL_CLASS).
                 dungeonID("TheCity").
                 dungeonID("TheBeyond").
+                endsWithRewardsUI(true).
                 bonusCondition(() -> (AbstractDungeon.floorNum <= 40)).
                 create());
 

@@ -5,11 +5,18 @@ import com.badlogic.gdx.graphics.g2d.SpriteBatch;
 import com.evacipated.cardcrawl.modthespire.lib.*;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
+import com.megacrit.cardcrawl.events.exordium.Mushrooms;
 import com.megacrit.cardcrawl.helpers.ImageMaster;
 import com.megacrit.cardcrawl.localization.UIStrings;
 import com.megacrit.cardcrawl.map.Legend;
 import com.megacrit.cardcrawl.map.LegendItem;
 import com.megacrit.cardcrawl.rooms.AbstractRoom;
+import com.megacrit.cardcrawl.rooms.EventRoom;
+import com.megacrit.cardcrawl.ui.buttons.ProceedButton;
+import javassist.CannotCompileException;
+import javassist.NotFoundException;
+import javassist.expr.ExprEditor;
+import javassist.expr.Instanceof;
 import nearlmod.arenaevents.*;
 import nearlmod.characters.Nearl;
 import nearlmod.events.LaughAllYouWantEvent;
@@ -37,7 +44,6 @@ public class ArenaRoom extends AbstractRoom {
     public void onPlayerEntry() {
         phase = RoomPhase.EVENT;
         AbstractDungeon.overlayMenu.proceedButton.hide();
-        //TODO 播放bgm：长夜临光活动主题曲
         enterTimes++;
         logger.info("enterTimes = " + enterTimes);
         event = new LaughAllYouWantEvent(); // 防crash
@@ -130,6 +136,42 @@ public class ArenaRoom extends AbstractRoom {
                 AbstractDungeon.getCurrRoom().renderEventTexts(sb);
             }
         }
+    }
+
+    @SpirePatch(clz = ProceedButton.class, method = "update")
+    public static class ProceedPatch {
+        @SpireInstrumentPatch
+        public static ExprEditor Instrument() {
+            return new ExprEditor() {
+                public void edit(Instanceof i) throws CannotCompileException {
+                    try {
+                        if (i.getType().getName().equals(Mushrooms.class.getName()))
+                            i.replace(String.format(" $_ = $proceed($$) || %s.check($1); ", ArenaRoom.ProceedPatch.class.getName()));
+                    } catch (NotFoundException ignored) {}
+                }
+            };
+        }
+
+        public static boolean check(Object event) {
+            return event instanceof AbstractArenaEvent;
+        }
+
+        @SpireInstrumentPatch
+        public static ExprEditor Instrument1() {
+            return new ExprEditor() {
+                public void edit(Instanceof i) throws CannotCompileException {
+                    try {
+                        if (i.getType().getName().equals(EventRoom.class.getName()))
+                            i.replace(String.format(" $_ = $proceed($$) || %s.check1($1); ", ArenaRoom.ProceedPatch.class.getName()));
+                    } catch (NotFoundException ignored) {}
+                }
+            };
+        }
+
+        public static boolean check1(Object room) {
+            return room instanceof ArenaRoom;
+        }
+
     }
 
 //    @SpirePatch(clz = AbstractScene.class, method = "renderEventRoom")

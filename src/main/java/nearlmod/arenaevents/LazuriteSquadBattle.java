@@ -2,7 +2,6 @@ package nearlmod.arenaevents;
 
 import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
-import com.megacrit.cardcrawl.events.AbstractImageEvent;
 import com.megacrit.cardcrawl.localization.EventStrings;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import com.megacrit.cardcrawl.monsters.MonsterGroup;
@@ -10,7 +9,7 @@ import com.megacrit.cardcrawl.rooms.AbstractRoom;
 import nearlmod.monsters.ArmorlessCleanupSquad;
 import nearlmod.monsters.ArmorlessThirdSquad;
 
-public class LazuriteSquadBattle extends AbstractImageEvent {
+public class LazuriteSquadBattle extends AbstractArenaEvent {
     public static final String ID = "nearlmod:LazuriteSquadBattle";
     public static final EventStrings eventStrings = CardCrawlGame.languagePack.getEventString(ID);
     public static final String NAME = eventStrings.NAME;
@@ -18,10 +17,6 @@ public class LazuriteSquadBattle extends AbstractImageEvent {
     public static final String[] OPTIONS = eventStrings.OPTIONS;
     private final int monsterLevel;
 
-    private CurScreen screen = CurScreen.INTRO;
-    private enum CurScreen {
-        INTRO, FIGHT, LEAVE
-    }
     public LazuriteSquadBattle(int monsterLevel) {
         super(NAME, DESCRIPTIONS[0], "images/events/lazuritesquad.png");
         imageEventText.setDialogOption(OPTIONS[0]);
