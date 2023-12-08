@@ -3,6 +3,7 @@ package nearlmod;
 import basemod.*;
 import basemod.eventUtil.AddEventParams;
 import basemod.eventUtil.EventUtils;
+import basemod.helpers.RelicType;
 import basemod.interfaces.*;
 import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.graphics.Color;
@@ -328,7 +329,8 @@ public class NLMOD implements EditCardsSubscriber, EditCharactersSubscriber, Edi
         // uncommon.
         BaseMod.addRelicToCustomPool(new FirstAidMode(), NEARL_GOLD);
         BaseMod.addRelicToCustomPool(new UpgradedCoreCaster(), NEARL_GOLD);
-        BaseMod.addRelicToCustomPool(new HandOfConqueror(), NEARL_GOLD);
+        BaseMod.addRelic(new HandOfConqueror(), RelicType.SHARED);
+        BaseMod.addRelic(new Lighthouse(), RelicType.SHARED);
 
         // rare.
         BaseMod.addRelicToCustomPool(new EmergencyCallBook(), NEARL_GOLD);

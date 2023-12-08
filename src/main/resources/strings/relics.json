@@ -44,6 +44,11 @@
     "FLAVOR": "胜利本身，便是最好的补给。",
     "DESCRIPTIONS": ["#y斩杀 后，造成的伤害永久提升 #b1% 。"]
   },
+  "nearlmod:Lighthouse": {
+    "NAME": "灯塔",
+    "FLAVOR": "向灯塔去，也向灯塔消失的地方去。",
+    "DESCRIPTIONS": ["同一回合内，你每打出 #b3 张相同类型的牌，下一张相同类型的牌无视耗能。"]
+  },
 
   "nearlmod:LateLight": {
     "NAME": "迟来的光",
