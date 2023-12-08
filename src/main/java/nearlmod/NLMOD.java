@@ -6,11 +6,12 @@ import basemod.eventUtil.EventUtils;
 import basemod.interfaces.*;
 import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.graphics.Color;
+import com.badlogic.gdx.graphics.Texture;
+import com.badlogic.gdx.graphics.g2d.TextureAtlas;
 import com.evacipated.cardcrawl.mod.stslib.Keyword;
 import com.evacipated.cardcrawl.modthespire.lib.SpireInitializer;
 import com.google.gson.Gson;
 import com.google.gson.reflect.TypeToken;
-import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.helpers.*;
@@ -21,6 +22,7 @@ import com.megacrit.cardcrawl.rooms.AbstractRoom;
 import com.megacrit.cardcrawl.screens.custom.CustomMod;
 import nearlmod.arenaevents.*;
 import nearlmod.events.*;
+import nearlmod.orbs.*;
 import nearlmod.patches.NearlEnum;
 import nearlmod.potions.*;
 import nearlmod.relics.*;
@@ -60,6 +62,8 @@ public class NLMOD implements EditCardsSubscriber, EditCharactersSubscriber, Edi
     private static final String miniManaSymbol = "images/manaSymbol.png";
     private static final Logger logger = LogManager.getLogger(NLMOD.class.getName());
 
+    public static final HashMap<String, TextureAtlas.AtlasRegion> specialImg = new HashMap<>();
+
     public NLMOD() {
         BaseMod.subscribe(this);
 
@@ -94,6 +98,7 @@ public class NLMOD implements EditCardsSubscriber, EditCharactersSubscriber, Edi
     public void receivePostInitialize() {
         initializeEvents();
         initializePotions();
+        initializeSpecialImg();
     }
 
     private void initializeEvents() {
@@ -128,6 +133,19 @@ public class NLMOD implements EditCardsSubscriber, EditCharactersSubscriber, Edi
         BaseMod.addPotion(EssenceOfLight.class, Color.GOLD, null, null, EssenceOfLight.ID, NearlEnum.NEARL_CLASS);
         BaseMod.addPotion(FriendshipDrink.class, Color.NAVY, Color.SKY, null, FriendshipDrink.ID, NearlEnum.NEARL_CLASS);
         BaseMod.addPotion(BrilliantLights.class, Color.GOLD, null, null, BrilliantLights.ID, NearlEnum.NEARL_CLASS);
+    }
+
+    private void initializeSpecialImg() {
+        specialImg.put(Viviana.ORB_ID, new TextureAtlas.AtlasRegion(new Texture("images/512/card_friend_viviana.png"), 0, 0, 512, 512));
+        specialImg.put(Shining.ORB_ID, new TextureAtlas.AtlasRegion(new Texture("images/512/card_friend_shining.png"), 0, 0, 512, 512));
+        specialImg.put(Nightingale.ORB_ID, new TextureAtlas.AtlasRegion(new Texture("images/512/card_friend_nightingale.png"), 0, 0, 512, 512));
+        specialImg.put(Blemishine.ORB_ID, new TextureAtlas.AtlasRegion(new Texture("images/512/card_friend_blemishine.png"), 0, 0, 512, 512));
+        specialImg.put(Whislash.ORB_ID, new TextureAtlas.AtlasRegion(new Texture("images/512/card_friend_whislash.png"), 0, 0, 512, 512));
+        specialImg.put(Flametail.ORB_ID, new TextureAtlas.AtlasRegion(new Texture("images/512/card_friend_flametail.png"), 0, 0, 512, 512));
+        specialImg.put(Fartooth.ORB_ID, new TextureAtlas.AtlasRegion(new Texture("images/512/card_friend_fartooth.png"), 0, 0, 512, 512));
+        specialImg.put(Ashlock.ORB_ID, new TextureAtlas.AtlasRegion(new Texture("images/512/card_friend_ashlock.png"), 0, 0, 512, 512));
+        specialImg.put(Wildmane.ORB_ID, new TextureAtlas.AtlasRegion(new Texture("images/512/card_friend_wildmane.png"), 0, 0, 512, 512));
+        specialImg.put(JusticeKnight.ORB_ID, new TextureAtlas.AtlasRegion(new Texture("images/512/card_friend_justiceknight.png"), 0, 0, 512, 512));
     }
 
     @Override
