@@ -56,9 +56,11 @@ public class HandOfConqueror extends CustomRelic {
                 }
             }
             flash();
-            counter++;
-            AbstractPlayer p = AbstractDungeon.player;
-            addToBot(new ApplyPowerAction(p, p, new AttackUpPower(p, 1)));
+            if (counter < 99) {
+                counter++;
+                AbstractPlayer p = AbstractDungeon.player;
+                addToBot(new ApplyPowerAction(p, p, new AttackUpPower(p, 1)));
+            }
         }
     }
 
