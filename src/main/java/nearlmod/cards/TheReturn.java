@@ -6,7 +6,7 @@ import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.localization.CardStrings;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
-import nearlmod.actions.SummonOrbAction;
+import nearlmod.actions.SummonFriendAction;
 import nearlmod.orbs.Nightingale;
 import nearlmod.orbs.Shining;
 import nearlmod.patches.AbstractCardEnum;
@@ -31,8 +31,8 @@ public class TheReturn extends AbstractNearlCard {
 
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
-        addToBot(new SummonOrbAction(new Shining()));
-        addToBot(new SummonOrbAction(new Nightingale()));
+        addToBot(new SummonFriendAction(new Shining()));
+        addToBot(new SummonFriendAction(new Nightingale()));
 
         if (!p.stance.ID.equals(AtkStance.STANCE_ID)) {
             addToBot(new ChangeStanceAction(new AtkStance()));

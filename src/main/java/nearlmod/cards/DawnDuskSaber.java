@@ -7,7 +7,7 @@ import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.localization.CardStrings;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
-import nearlmod.actions.SummonOrbAction;
+import nearlmod.actions.SummonFriendAction;
 import nearlmod.actions.WeakenAllAction;
 import nearlmod.orbs.Shining;
 import nearlmod.patches.AbstractCardEnum;
@@ -36,7 +36,7 @@ public class DawnDuskSaber extends AbstractNearlCard {
 
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
-        addToBot(new SummonOrbAction(new Shining()));
+        addToBot(new SummonFriendAction(new Shining()));
         if (p.hasPower("nearlmod:BFPPower"))
             ((BFPPower) p.getPower("nearlmod:BFPPower")).cardPlayed++;
         addToBot(new DamageAllEnemiesAction(p, multiDamage, damageTypeForTurn, AbstractGameAction.AttackEffect.SLASH_HORIZONTAL));

@@ -7,7 +7,7 @@ import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.localization.CardStrings;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import nearlmod.NLMOD;
-import nearlmod.actions.SummonOrbAction;
+import nearlmod.actions.SummonFriendAction;
 import nearlmod.orbs.Blemishine;
 import nearlmod.patches.AbstractCardEnum;
 import nearlmod.patches.NearlTags;
@@ -39,7 +39,7 @@ public class BladeOfBlazingSun extends AbstractNearlCard {
         if (extraTriggered()) {
             addToBot(new ApplyPowerAction(p, p, new BladeOfBlazingSunPower(p)));
         } else {
-            addToBot(new SummonOrbAction(new Blemishine()));
+            addToBot(new SummonFriendAction(new Blemishine()));
         }
     }
 

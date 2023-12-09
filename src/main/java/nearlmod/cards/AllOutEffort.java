@@ -9,12 +9,11 @@ import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.localization.CardStrings;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
-import nearlmod.actions.SummonOrbAction;
+import nearlmod.actions.SummonFriendAction;
 import nearlmod.orbs.Blemishine;
 import nearlmod.patches.AbstractCardEnum;
 import nearlmod.patches.NearlTags;
 import nearlmod.powers.LightPower;
-import nearlmod.relics.LateLight;
 import nearlmod.stances.AtkStance;
 import nearlmod.stances.DefStance;
 
@@ -50,7 +49,7 @@ public class AllOutEffort extends AbstractNearlCard {
             AbstractDungeon.actionManager.addToBottom(new ChangeStanceAction(new AtkStance()));
         }
 
-        addToBot(new SummonOrbAction(new Blemishine()));
+        addToBot(new SummonFriendAction(new Blemishine()));
     }
 
     @Override

@@ -9,11 +9,11 @@ import nearlmod.orbs.*;
 import nearlmod.relics.LateLight;
 import nearlmod.relics.NormalPerson;
 
-public class SummonOrbAction extends AbstractGameAction {
+public class SummonFriendAction extends AbstractGameAction {
 
     private final AbstractFriend summon;
 
-    public SummonOrbAction(AbstractFriend summonOrb) {
+    public SummonFriendAction(AbstractFriend summonOrb) {
         actionType = ActionType.SPECIAL;
         duration = Settings.ACTION_DUR_FAST;
         summon = summonOrb;
@@ -39,7 +39,7 @@ public class SummonOrbAction extends AbstractGameAction {
 
         boolean isOrbExist = false;
         for (AbstractOrb orb : AbstractDungeon.player.orbs)
-            if (orb.ID.equals(summon.ID)) {
+            if (orb instanceof AbstractFriend && orb.ID.equals(summon.ID)) {
                 ((AbstractFriend) orb).upgrade();
                 ((AbstractFriend) orb).applyStrength(summon.getTrustAmount());
                 isOrbExist = true;

@@ -7,7 +7,7 @@ import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.localization.CardStrings;
 import com.megacrit.cardcrawl.localization.OrbStrings;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
-import nearlmod.actions.SummonOrbAction;
+import nearlmod.actions.SummonFriendAction;
 import nearlmod.cards.AbstractNearlCard;
 import nearlmod.orbs.*;
 
@@ -64,7 +64,7 @@ public class SummonPinusFriend extends AbstractNearlCard {
             default:
                 return;
         }
-        addToBot(new SummonOrbAction(o));
+        addToBot(new SummonFriendAction(o));
     }
 
     @Override

@@ -5,7 +5,7 @@ import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.localization.CardStrings;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
-import nearlmod.actions.SummonOrbAction;
+import nearlmod.actions.SummonFriendAction;
 import nearlmod.orbs.*;
 import nearlmod.patches.AbstractCardEnum;
 import nearlmod.patches.NearlTags;
@@ -38,9 +38,9 @@ public class PersonalCharm extends AbstractNearlCard {
         list.add(new Fartooth());
         list.add(new Ashlock());
         Collections.shuffle(list);
-        addToBot(new SummonOrbAction(list.get(0)));
+        addToBot(new SummonFriendAction(list.get(0)));
         if (upgraded && list.size() >= 2)
-            addToBot(new SummonOrbAction(list.get(1)));
+            addToBot(new SummonFriendAction(list.get(1)));
     }
 
     @Override

@@ -13,9 +13,10 @@ import com.megacrit.cardcrawl.localization.MonsterStrings;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import com.megacrit.cardcrawl.vfx.combat.InflameEffect;
 import nearlmod.NLMOD;
-import nearlmod.actions.SummonOrbAction;
+import nearlmod.actions.SummonFriendAction;
 import nearlmod.cards.AbstractNearlCard;
 import nearlmod.cards.special.BlemishinesFaintLight;
+import nearlmod.characters.Nearl;
 import nearlmod.orbs.Blemishine;
 import nearlmod.powers.HintPower;
 
@@ -60,7 +61,7 @@ public class LastKheshig extends AbstractMonster {
     public void usePreBattleAction() {
         addToBot(new TalkAction(this, DIALOG[0], 0.3F, 3.0F));
         addToBot(new ApplyPowerAction(this, this, new HintPower(this)));
-        addToBot(new SummonOrbAction(new Blemishine()));
+        addToBot(new SummonFriendAction(new Blemishine()));
         if (AbstractDungeon.ascensionLevel >= 15)
             spawnImitator();
     }
@@ -91,9 +92,8 @@ public class LastKheshig extends AbstractMonster {
             if (this.damage.get(1).output > def_val) {
                 // TODO: 背刺动画，攻击在最后一个伙伴上
                 addToBot(new DamageAction(AbstractDungeon.player, new DamageInfo(AbstractDungeon.player, def_val)));
-                if (AbstractDungeon.player.orbs.size() <= 1)
+                if (((Nearl)AbstractDungeon.player).removeLastFriend().equals(Blemishine.ORB_ID))
                     isBlemishineSurvive = false;
-                this.addToBot(new DecreaseMaxOrbAction(1));
             } else {
                 addToBot(new DamageAction(AbstractDungeon.player, this.damage.get(1)));
             }

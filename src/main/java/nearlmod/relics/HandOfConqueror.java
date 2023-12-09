@@ -11,8 +11,6 @@ import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import com.megacrit.cardcrawl.monsters.beyond.AwakenedOne;
 import com.megacrit.cardcrawl.powers.MinionPower;
 import com.megacrit.cardcrawl.relics.AbstractRelic;
-import nearlmod.actions.SummonOrbAction;
-import nearlmod.orbs.Viviana;
 import nearlmod.powers.AttackUpPower;
 
 public class HandOfConqueror extends CustomRelic {

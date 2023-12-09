@@ -7,7 +7,7 @@ import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.localization.CardStrings;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import com.megacrit.cardcrawl.powers.AbstractPower;
-import nearlmod.actions.SummonOrbAction;
+import nearlmod.actions.SummonFriendAction;
 import nearlmod.orbs.Viviana;
 import nearlmod.patches.AbstractCardEnum;
 import nearlmod.patches.NearlTags;
@@ -44,7 +44,7 @@ public class SwallowLight extends AbstractNearlCard {
             p.getRelic(NormalPerson.ID).flash();
             return;
         }
-        addToBot(new SummonOrbAction(new Viviana(amount)));
+        addToBot(new SummonFriendAction(new Viviana(amount)));
     }
 
     @Override

@@ -18,7 +18,7 @@ import com.megacrit.cardcrawl.orbs.AbstractOrb;
 import com.megacrit.cardcrawl.powers.ArtifactPower;
 import com.megacrit.cardcrawl.vfx.SpeechBubble;
 import com.megacrit.cardcrawl.vfx.cardManip.ShowCardAndAddToHandEffect;
-import nearlmod.actions.SummonOrbAction;
+import nearlmod.actions.SummonFriendAction;
 import nearlmod.cards.BraveTheDarkness;
 import nearlmod.cards.NightScouringGleam;
 import nearlmod.orbs.Blemishine;
@@ -67,8 +67,8 @@ public class CorruptKnight extends AbstractMonster {
         else {
             addToBot(new ApplyPowerAction(p, this, new ArtifactPower(p, 1)));
         }
-        addToBot(new SummonOrbAction(new Blemishine()));
-        addToBot(new SummonOrbAction(new Blemishine()));
+        addToBot(new SummonFriendAction(new Blemishine()));
+        addToBot(new SummonFriendAction(new Blemishine()));
         AbstractCard card = new NightScouringGleam();
         card.upgrade();
         int amount = 1;

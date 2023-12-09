@@ -5,7 +5,7 @@ import com.badlogic.gdx.graphics.Texture;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.localization.RelicStrings;
 import com.megacrit.cardcrawl.relics.AbstractRelic;
-import nearlmod.actions.SummonOrbAction;
+import nearlmod.actions.SummonFriendAction;
 import nearlmod.orbs.Viviana;
 
 public class Marigold extends CustomRelic {
@@ -28,7 +28,7 @@ public class Marigold extends CustomRelic {
     @Override
     public void atBattleStartPreDraw() {
         flash();
-        addToBot(new SummonOrbAction(new Viviana()));
+        addToBot(new SummonFriendAction(new Viviana()));
     }
 
     @Override

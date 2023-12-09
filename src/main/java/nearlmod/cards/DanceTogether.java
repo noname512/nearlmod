@@ -6,7 +6,7 @@ import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.localization.CardStrings;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import nearlmod.actions.AddFriendCardToHandAction;
-import nearlmod.actions.SummonOrbAction;
+import nearlmod.actions.SummonFriendAction;
 import nearlmod.cards.friendcards.AbstractFriendCard;
 import nearlmod.orbs.Nightingale;
 import nearlmod.patches.AbstractCardEnum;
@@ -31,7 +31,7 @@ public class DanceTogether extends AbstractNearlCard {
 
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
-        addToBot(new SummonOrbAction(new Nightingale()));
+        addToBot(new SummonFriendAction(new Nightingale()));
         AbstractFriendCard card = Nightingale.getRandomCard(false, true);
         if (upgraded) {
             card.isEthereal = false;

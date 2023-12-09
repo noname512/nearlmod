@@ -8,6 +8,8 @@ import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.localization.MonsterStrings;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
+import nearlmod.characters.Nearl;
+import nearlmod.orbs.Blemishine;
 
 public class NightzmoraImitator extends AbstractMonster {
     public static final String ID = "nearlmod:NightzmoraImitator";
@@ -52,9 +54,8 @@ public class NightzmoraImitator extends AbstractMonster {
             if (this.damage.get(1).output > def_val) {
                 // TODO: 背刺动画，攻击在最后一个伙伴上
                 addToBot(new DamageAction(AbstractDungeon.player, new DamageInfo(AbstractDungeon.player, def_val)));
-                if (AbstractDungeon.player.orbs.size() <= 1)
+                if (((Nearl)AbstractDungeon.player).removeLastFriend().equals(Blemishine.ORB_ID))
                     LastKheshig.isBlemishineSurvive = false;
-                this.addToBot(new DecreaseMaxOrbAction(1));
             }
             else {
                 addToBot(new DamageAction(AbstractDungeon.player, this.damage.get(1)));
