@@ -35,9 +35,10 @@ public class PathOfRadiant extends AbstractNearlCard {
     @Override
     public boolean extraTriggered() {
         for (AbstractOrb orb : AbstractDungeon.player.orbs)
-            if (orb.ID.equals(Flametail.ORB_ID) || orb.ID.equals(Fartooth.ORB_ID) || orb.ID.equals(Wildmane.ORB_ID)
+            if (orb instanceof AbstractFriend)
+                if (orb.ID.equals(Flametail.ORB_ID) || orb.ID.equals(Fartooth.ORB_ID) || orb.ID.equals(Wildmane.ORB_ID)
                     || orb.ID.equals(Ashlock.ORB_ID) || orb.ID.equals(JusticeKnight.ORB_ID))
-                return true;
+                    return true;
         return false;
     }
 
