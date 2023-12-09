@@ -294,28 +294,17 @@ public class Nearl extends CustomPlayer {
         super.useCard(c, monster, energyOnUse);
     }
 
-    @Override
-    public void evokeWithoutLosingOrb() {
+    private int getFirstOrbIndex() {
         int index = -1;
         for (int i = 0; i < orbs.size(); i++)
             if (!(orbs.get(i) instanceof AbstractFriend)) {
                 index = i;
                 break;
             }
-        if (index == -1 || (orbs.get(index) instanceof EmptyOrbSlot)) return;
-        orbs.get(index).onEvoke();
+        return index;
     }
 
-    @Override
-    public void evokeOrb() {
-        int index = -1;
-        for (int i = 0; i < orbs.size(); i++)
-            if (!(orbs.get(i) instanceof AbstractFriend)) {
-                index = i;
-                break;
-            }
-        if (index == -1 || (orbs.get(index) instanceof EmptyOrbSlot)) return;
-        orbs.get(index).onEvoke();
+    private void removeOrb(int index) {
         for (int i = index + 1; i < orbs.size(); i++) {
             Collections.swap(orbs, i, i - 1);
         }
@@ -323,6 +312,28 @@ public class Nearl extends CustomPlayer {
         for (int i = 0; i < orbs.size(); i++) {
             orbs.get(i).setSlot(i, maxOrbs);
         }
+    }
+
+    @Override
+    public void evokeWithoutLosingOrb() {
+        int index = getFirstOrbIndex();
+        if (index == -1 || (orbs.get(index) instanceof EmptyOrbSlot)) return;
+        orbs.get(index).onEvoke();
+    }
+
+    @Override
+    public void evokeOrb() {
+        int index = getFirstOrbIndex();
+        if (index == -1 || (orbs.get(index) instanceof EmptyOrbSlot)) return;
+        orbs.get(index).onEvoke();
+        removeOrb(index);
+    }
+
+    @Override
+    public void removeNextOrb() {
+        int index = getFirstOrbIndex();
+        if (index == -1 || (orbs.get(index) instanceof EmptyOrbSlot)) return;
+        removeOrb(index);
     }
 
     public String removeLastFriend() {
@@ -343,5 +354,19 @@ public class Nearl extends CustomPlayer {
             orbs.get(i).setSlot(i, maxOrbs);
         }
         return ret;
+    }
+
+    @Override
+    public boolean hasOrb() {
+        return filledOrbCount() > 0;
+    }
+
+    @Override
+    public int filledOrbCount() {
+        int orbCount = 0;
+        for (AbstractOrb orb : orbs)
+            if (!(orb instanceof AbstractFriend) && !(orb instanceof EmptyOrbSlot))
+                orbCount++;
+        return orbCount;
     }
 }
