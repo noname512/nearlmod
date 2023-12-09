@@ -44,7 +44,7 @@ public class LastKheshigBattle extends AbstractArenaEvent {
                 AbstractDungeon.getCurrRoom().addGoldToRewards(70);
                 AbstractDungeon.lastCombatMetricKey = ID;
                 AbstractDungeon.getCurrRoom().phase = AbstractRoom.RoomPhase.COMBAT;
-                AbstractDungeon.getCurrRoom().monsters = new MonsterGroup(new LastKheshig(0.0F, 0.0F));
+                AbstractDungeon.getCurrRoom().monsters = new MonsterGroup(new LastKheshig(-80.0F, 0.0F));
                 enterCombatFromImage();
                 return;
             case 1:

@@ -4,7 +4,6 @@ import com.evacipated.cardcrawl.mod.stslib.patches.core.AbstractCreature.TempHPF
 import com.megacrit.cardcrawl.actions.animations.TalkAction;
 import com.megacrit.cardcrawl.actions.animations.VFXAction;
 import com.megacrit.cardcrawl.actions.common.*;
-import com.megacrit.cardcrawl.actions.defect.DecreaseMaxOrbAction;
 import com.megacrit.cardcrawl.actions.utility.HideHealthBarAction;
 import com.megacrit.cardcrawl.cards.DamageInfo;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
@@ -13,10 +12,10 @@ import com.megacrit.cardcrawl.localization.MonsterStrings;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import com.megacrit.cardcrawl.vfx.combat.InflameEffect;
 import nearlmod.NLMOD;
+import nearlmod.actions.RemoveLastFriendAction;
 import nearlmod.actions.SummonFriendAction;
 import nearlmod.cards.AbstractNearlCard;
 import nearlmod.cards.special.BlemishinesFaintLight;
-import nearlmod.characters.Nearl;
 import nearlmod.orbs.Blemishine;
 import nearlmod.powers.HintPower;
 
@@ -28,14 +27,14 @@ public class LastKheshig extends AbstractMonster {
     public static final String[] DIALOG = monsterStrings.DIALOG;
     public static final String IMAGE = "images/monsters/lastkheshig.png";
 
-    public static final float[] POSX = new float[] { 195.0F, -235.0F };
+    public static final float[] POSX = new float[] { 115.0F, 285.0F };
     public static final float[] POSY = new float[] { 0.0F, 0.0F };
     private final AbstractMonster[] imitators = new AbstractMonster[2];
     private boolean talked;
     public static boolean isBlemishineSurvive;
 
     public LastKheshig(float x, float y) {
-        super(NAME, ID, 160, 25.0F, 0, 150.0F, 320.0F, IMAGE, x, y);
+        super(NAME, ID, 160, 10.0F, 0, 170.0F, 320.0F, IMAGE, x, y);
         this.type = EnemyType.ELITE;
         if (AbstractDungeon.ascensionLevel >= 8)
             setHp(180);
@@ -92,8 +91,7 @@ public class LastKheshig extends AbstractMonster {
             if (this.damage.get(1).output > def_val) {
                 // TODO: 背刺动画，攻击在最后一个伙伴上
                 addToBot(new DamageAction(AbstractDungeon.player, new DamageInfo(AbstractDungeon.player, def_val)));
-                if (((Nearl)AbstractDungeon.player).removeLastFriend().equals(Blemishine.ORB_ID))
-                    isBlemishineSurvive = false;
+                addToBot(new RemoveLastFriendAction());
             } else {
                 addToBot(new DamageAction(AbstractDungeon.player, this.damage.get(1)));
             }
