@@ -59,12 +59,10 @@ public class Nearl extends CustomPlayer {
         "images/char/orb/layer3.png",
         "images/char/orb/layer4.png",
         "images/char/orb/layer5.png",
-        "images/char/orb/layer6.png",
         "images/char/orb/layer1d.png",
         "images/char/orb/layer2d.png",
         "images/char/orb/layer3d.png",
-        "images/char/orb/layer4d.png",
-        "images/char/orb/layer5d.png"
+        "images/char/orb/layer4d.png"
     };
 
     public enum MODE {

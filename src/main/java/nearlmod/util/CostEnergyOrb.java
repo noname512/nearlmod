@@ -34,13 +34,11 @@ public class CostEnergyOrb extends CustomEnergyOrb {
             "images/char/orb/layer2alt.png",
             "images/char/orb/layer3alt.png",
             "images/char/orb/layer4alt.png",
-            "images/char/orb/layer5alt.png",
-            "images/char/orb/layer6.png",
+            "images/char/orb/layer5.png",
             "images/char/orb/layer1d.png",
             "images/char/orb/layer2d.png",
             "images/char/orb/layer3d.png",
-            "images/char/orb/layer4d.png",
-            "images/char/orb/layer5d.png"
+            "images/char/orb/layer4d.png"
     };
     protected Texture secondBaseLayer;
     protected Texture[] secondEnergyLayers;
@@ -51,17 +49,17 @@ public class CostEnergyOrb extends CustomEnergyOrb {
     private final FrameBuffer fbo;
     public CostEnergyOrb(String[] orbTexturePaths, String orbVfxPath, float[] layerSpeeds) {
         super(orbTexturePaths, orbVfxPath, layerSpeeds);
-        int altIdx = 5;
+        int altIdx = 4;
         secondEnergyLayers = new Texture[altIdx];
         secondNoEnergyLayers = new Texture[altIdx];
         for (int i = 0; i < altIdx; i++) {
             secondEnergyLayers[i] = ImageMaster.loadImage(orbTexturesAlt[i]);
             secondNoEnergyLayers[i] = ImageMaster.loadImage(orbTexturesAlt[i + altIdx + 1]);
         }
-        secondBaseLayer = ImageMaster.loadImage(orbTexturesAlt[5]);
+        secondBaseLayer = ImageMaster.loadImage(orbTexturesAlt[altIdx]);
         orbVfx = ImageMaster.loadImage(orbVfxPath);
         if (layerSpeeds == null) {
-            layerSpeeds = new float[] { -20.0F, 20.0F, -40.0F, 40.0F, 360.0F };
+            layerSpeeds = new float[] { -20.0F, 20.0F, -40.0F, 40.0F };
         }
         secondLayerSpeeds = layerSpeeds;
         secondAngles = new float[this.secondLayerSpeeds.length];

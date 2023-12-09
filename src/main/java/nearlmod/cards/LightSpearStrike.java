@@ -11,7 +11,6 @@ import com.megacrit.cardcrawl.localization.CardStrings;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import com.megacrit.cardcrawl.powers.AbstractPower;
 import nearlmod.patches.AbstractCardEnum;
-import nearlmod.stances.AtkStance;
 
 public class LightSpearStrike extends AbstractNearlCard {
     public static final String ID = "nearlmod:LightSpearStrike";
@@ -19,7 +18,7 @@ public class LightSpearStrike extends AbstractNearlCard {
     public static final String NAME = cardStrings.NAME;
     public static final String DESCRIPTION = cardStrings.DESCRIPTION;
     public static final String UPGRADE_DESCRIPTION = cardStrings.UPGRADE_DESCRIPTION;
-    public static final String IMG_PATH = "images/cards/lightarrowstrike.png";
+    public static final String IMG_PATH = "images/cards/lightspearstrike.png";
     private static final int COST = 1;
     private static final int UPGRADE_COST = 0;
 
