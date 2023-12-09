@@ -18,7 +18,7 @@ public class BlackFiendProtection extends AbstractFriendCard {
     public static final String NAME = cardStrings.NAME;
     public static final String DESCRIPTION = cardStrings.DESCRIPTION;
     public static final String UPGRADE_DESCRIPTION = cardStrings.UPGRADE_DESCRIPTION;
-    public static final String IMG_PATH = "images/cards/flashfade.png";
+    public static final String IMG_PATH = "images/cards/blackfiendprotection.png";
     private static final int COST = 2;
 
     public BlackFiendProtection() {
