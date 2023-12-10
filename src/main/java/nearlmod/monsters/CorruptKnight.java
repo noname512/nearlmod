@@ -14,13 +14,16 @@ import com.megacrit.cardcrawl.core.Settings;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.localization.MonsterStrings;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
+import com.megacrit.cardcrawl.orbs.AbstractOrb;
 import com.megacrit.cardcrawl.powers.ArtifactPower;
+import com.megacrit.cardcrawl.vfx.SpeechBubble;
 import com.megacrit.cardcrawl.vfx.cardManip.ShowCardAndAddToHandEffect;
-import nearlmod.actions.SummonOrbAction;
+import nearlmod.actions.SummonFriendAction;
 import nearlmod.cards.BraveTheDarkness;
 import nearlmod.cards.NightScouringGleam;
 import nearlmod.orbs.Blemishine;
 import nearlmod.powers.DoubleBossPower;
+import nearlmod.powers.FriendShelterPower;
 
 public class CorruptKnight extends AbstractMonster {
     public static final String ID = "nearlmod:CorruptKnight";
@@ -30,6 +33,7 @@ public class CorruptKnight extends AbstractMonster {
     public static final String[] DIALOG = monsterStrings.DIALOG;
     public static final String IMAGE = "images/monsters/corruptknight.png";
     public boolean isWhitheredDead = false;
+    private int currentTurn;
 
     public CorruptKnight(float x, float y) {
         super(NAME, ID, 130, 25.0F, 0, 150.0F, 320.0F, IMAGE, x, y);
@@ -63,8 +67,8 @@ public class CorruptKnight extends AbstractMonster {
         else {
             addToBot(new ApplyPowerAction(p, this, new ArtifactPower(p, 1)));
         }
-        addToBot(new SummonOrbAction(new Blemishine()));
-        addToBot(new SummonOrbAction(new Blemishine()));
+        addToBot(new SummonFriendAction(new Blemishine()));
+        addToBot(new SummonFriendAction(new Blemishine()));
         AbstractCard card = new NightScouringGleam();
         card.upgrade();
         int amount = 1;
@@ -76,10 +80,26 @@ public class CorruptKnight extends AbstractMonster {
         card.selfRetain = true;
         card.initializeDescription();
         AbstractDungeon.effectList.add(new ShowCardAndAddToHandEffect(card, Settings.WIDTH * 0.5F, Settings.HEIGHT * 0.5F));
+        currentTurn = 0;
+    }
+
+    @Override
+    public void applyEndOfTurnTriggers() {
+        super.applyEndOfTurnTriggers();
+        if (currentTurn == 1) {
+            AbstractPlayer p = AbstractDungeon.player;
+            for (AbstractOrb orb : p.orbs)
+                if (orb instanceof Blemishine) {
+                    AbstractDungeon.effectList.add(new SpeechBubble(orb.hb.cX + 60.0F, orb.hb.cY + 30.0F, 3.0F, DIALOG[3], true));
+                    break;
+                }
+            addToBot(new ApplyPowerAction(p, p, new FriendShelterPower(p)));
+        }
     }
 
     @Override
     public void takeTurn() {
+        currentTurn++;
         int attTimes = 1;
         if (isWhitheredDead) attTimes++;
         if (this.nextMove == 2) {
@@ -101,7 +121,7 @@ public class CorruptKnight extends AbstractMonster {
                 setMove((byte) (this.nextMove + 1), Intent.ATTACK, this.damage.get(0).base, attTimes, (attTimes > 1));
             } else {
                 setMove(MOVES[0], (byte) 2, Intent.ATTACK, this.damage.get(1).base, attTimes, (attTimes > 1));
-                this.state.setAnimation(0, "Skill_Start", false);
+                this.state.addAnimation(0, "Skill_Start", false, 10.0F);
                 this.state.addAnimation(0, "Skill_Loop", true, 0);
             }
         }

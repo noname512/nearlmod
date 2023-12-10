@@ -4,7 +4,6 @@ import com.megacrit.cardcrawl.cards.curses.Injury;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.core.Settings;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
-import com.megacrit.cardcrawl.events.AbstractImageEvent;
 import com.megacrit.cardcrawl.helpers.CardLibrary;
 import com.megacrit.cardcrawl.localization.EventStrings;
 import com.megacrit.cardcrawl.monsters.MonsterGroup;
@@ -14,17 +13,13 @@ import com.megacrit.cardcrawl.vfx.cardManip.ShowCardAndObtainEffect;
 import nearlmod.monsters.LastKheshig;
 import nearlmod.relics.ImaginaryFear;
 
-public class LastKheshigBattle extends AbstractImageEvent {
+public class LastKheshigBattle extends AbstractArenaEvent {
     public static final String ID = "nearlmod:LastKheshigBattle";
     public static final EventStrings eventStrings = CardCrawlGame.languagePack.getEventString(ID);
     public static final String NAME = eventStrings.NAME;
     public static final String[] DESCRIPTIONS = eventStrings.DESCRIPTIONS;
     public static final String[] OPTIONS = eventStrings.OPTIONS;
 
-    private CurScreen screen = CurScreen.INTRO;
-    private enum CurScreen {
-        INTRO, FIGHT, LEAVE
-    }
     public LastKheshigBattle() {
         super(NAME, DESCRIPTIONS[0], "images/events/lastkheshigbattle.png");
         this.imageEventText.setDialogOption(OPTIONS[0]);
@@ -49,7 +44,7 @@ public class LastKheshigBattle extends AbstractImageEvent {
                 AbstractDungeon.getCurrRoom().addGoldToRewards(70);
                 AbstractDungeon.lastCombatMetricKey = ID;
                 AbstractDungeon.getCurrRoom().phase = AbstractRoom.RoomPhase.COMBAT;
-                AbstractDungeon.getCurrRoom().monsters = new MonsterGroup(new LastKheshig(0.0F, 0.0F));
+                AbstractDungeon.getCurrRoom().monsters = new MonsterGroup(new LastKheshig(-80.0F, 0.0F));
                 enterCombatFromImage();
                 return;
             case 1:

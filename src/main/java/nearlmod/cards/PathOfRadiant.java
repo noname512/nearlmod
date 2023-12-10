@@ -19,7 +19,7 @@ public class PathOfRadiant extends AbstractNearlCard {
     public static final String NAME = cardStrings.NAME;
     public static final String DESCRIPTION = cardStrings.DESCRIPTION;
     public static final String UPGRADE_DESCRIPTION = cardStrings.UPGRADE_DESCRIPTION;
-    public static final String IMG_PATH = "images/cards/gloriouskazimierz.png";
+    public static final String IMG_PATH = "images/cards/pathofradiant.png";
     private static final int COST = 1;
     private static final int TRUST_AMT = 2;
     private static final int UPGRADE_PLUS_TRUST = 2;
@@ -35,9 +35,10 @@ public class PathOfRadiant extends AbstractNearlCard {
     @Override
     public boolean extraTriggered() {
         for (AbstractOrb orb : AbstractDungeon.player.orbs)
-            if (orb.ID.equals(Flametail.ORB_ID) || orb.ID.equals(Fartooth.ORB_ID) || orb.ID.equals(Wildmane.ORB_ID)
+            if (orb instanceof AbstractFriend)
+                if (orb.ID.equals(Flametail.ORB_ID) || orb.ID.equals(Fartooth.ORB_ID) || orb.ID.equals(Wildmane.ORB_ID)
                     || orb.ID.equals(Ashlock.ORB_ID) || orb.ID.equals(JusticeKnight.ORB_ID))
-                return true;
+                    return true;
         return false;
     }
 

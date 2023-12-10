@@ -18,7 +18,7 @@ public class ToDefStance extends AbstractNearlCard {
     public static final String NAME = cardStrings.NAME;
     public static final String DESCRIPTION = cardStrings.DESCRIPTION;
     public static final String UPGRADE_DESCRIPTION = cardStrings.UPGRADE_DESCRIPTION;
-    public static final String IMG_PATH = "images/cards/nearldefend.png";
+    public static final String IMG_PATH = "images/cards/todef.png";
 
     public ToDefStance() {
         this(0);

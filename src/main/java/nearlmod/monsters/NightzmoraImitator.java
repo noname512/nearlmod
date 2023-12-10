@@ -2,12 +2,12 @@ package nearlmod.monsters;
 
 import com.evacipated.cardcrawl.mod.stslib.patches.core.AbstractCreature.TempHPField;
 import com.megacrit.cardcrawl.actions.common.DamageAction;
-import com.megacrit.cardcrawl.actions.defect.DecreaseMaxOrbAction;
 import com.megacrit.cardcrawl.cards.DamageInfo;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.localization.MonsterStrings;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
+import nearlmod.actions.RemoveLastFriendAction;
 
 public class NightzmoraImitator extends AbstractMonster {
     public static final String ID = "nearlmod:NightzmoraImitator";
@@ -18,7 +18,7 @@ public class NightzmoraImitator extends AbstractMonster {
     public static final String IMAGE = "images/monsters/nightzmoraimitator.png";
 
     public NightzmoraImitator(float x, float y) {
-        super(NAME, ID, 30, 25.0F, 0, 150.0F, 320.0F, IMAGE, x, y);
+        super(NAME, ID, 30, 20.0F, 0, 160.0F, 300.0F, IMAGE, x, y);
         this.type = EnemyType.NORMAL;
         if (AbstractDungeon.ascensionLevel >= 7)
             setHp(35);
@@ -32,7 +32,7 @@ public class NightzmoraImitator extends AbstractMonster {
             this.damage.add(new DamageInfo(this, 8));
             this.damage.add(new DamageInfo(this, 6));
         }
-        loadAnimation("images/monsters/enemy_1185_nmekgt/enemy_1185_nmekgt.atlas", "images/monsters/enemy_1185_nmekgt/enemy_1185_nmekgt37.json", 1.5F);
+        loadAnimation("images/monsters/enemy_1185_nmekgt/enemy_1185_nmekgt.atlas", "images/monsters/enemy_1185_nmekgt/enemy_1185_nmekgt37.json", 1.6F);
         this.flipHorizontal = true;
         this.stateData.setMix("Idle", "Die", 0.1F);
         this.state.setAnimation(0, "Idle", true);
@@ -52,9 +52,7 @@ public class NightzmoraImitator extends AbstractMonster {
             if (this.damage.get(1).output > def_val) {
                 // TODO: 背刺动画，攻击在最后一个伙伴上
                 addToBot(new DamageAction(AbstractDungeon.player, new DamageInfo(AbstractDungeon.player, def_val)));
-                if (AbstractDungeon.player.orbs.size() <= 1)
-                    LastKheshig.isBlemishineSurvive = false;
-                this.addToBot(new DecreaseMaxOrbAction(1));
+                addToBot(new RemoveLastFriendAction());
             }
             else {
                 addToBot(new DamageAction(AbstractDungeon.player, this.damage.get(1)));

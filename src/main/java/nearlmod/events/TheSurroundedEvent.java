@@ -5,7 +5,7 @@ import com.megacrit.cardcrawl.events.AbstractImageEvent;
 import com.megacrit.cardcrawl.localization.EventStrings;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import com.megacrit.cardcrawl.monsters.MonsterGroup;
-import nearlmod.actions.SummonOrbAction;
+import nearlmod.actions.SummonFriendAction;
 import nearlmod.cards.AbstractNearlCard;
 import nearlmod.cards.special.PersonalCharmSp;
 import nearlmod.monsters.*;
@@ -45,11 +45,11 @@ public class TheSurroundedEvent extends AbstractImageEvent {
                         AbstractNearlCard.addSpecificCardsToReward(new PersonalCharmSp());
                         AbstractDungeon.getCurrRoom().addGoldToRewards(30);
                         enterCombatFromImage();
-                        AbstractDungeon.actionManager.addToBottom(new SummonOrbAction(new Flametail()));
-                        AbstractDungeon.actionManager.addToBottom(new SummonOrbAction(new Wildmane()));
+                        AbstractDungeon.actionManager.addToBottom(new SummonFriendAction(new Flametail()));
+                        AbstractDungeon.actionManager.addToBottom(new SummonFriendAction(new Wildmane()));
                         if (AbstractDungeon.ascensionLevel < 15) {
-                            AbstractDungeon.actionManager.addToBottom(new SummonOrbAction(new Flametail()));
-                            AbstractDungeon.actionManager.addToBottom(new SummonOrbAction(new Wildmane()));
+                            AbstractDungeon.actionManager.addToBottom(new SummonFriendAction(new Flametail()));
+                            AbstractDungeon.actionManager.addToBottom(new SummonFriendAction(new Wildmane()));
                         }
                         break;
                     case 1:

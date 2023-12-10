@@ -39,7 +39,7 @@
     "NAME": "血归",
     "DESCRIPTIONS": ["你的 #y力量 无法超过 #b0 。"]
   },
-  "nearlmod:Invincible": {
+  "nearlmod:FriendShelterPower": {
     "NAME": "伙伴们的庇护",
     "DESCRIPTIONS": ["本回合内，你不会受到伤害 。"]
   },
@@ -150,5 +150,9 @@
   "nearlmod:DayBreakPower": {
     "NAME": "破晓",
     "DESCRIPTIONS": ["你对敌人造成伤害时无视其 #y格挡 ，如果敌人没有 #y格挡 ，则额外造成 #b3 点伤害。"]
+  },
+  "nearlmod:InfiniteLightBladePower": {
+    "NAME": "无尽光刃",
+    "DESCRIPTIONS": ["在你的回合开始时，增加一张 #y光！ 到你的手牌。"]
   }
 }

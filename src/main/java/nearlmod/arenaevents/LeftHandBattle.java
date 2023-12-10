@@ -6,7 +6,6 @@ import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.core.Settings;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
-import com.megacrit.cardcrawl.events.AbstractImageEvent;
 import com.megacrit.cardcrawl.helpers.CardLibrary;
 import com.megacrit.cardcrawl.helpers.ModHelper;
 import com.megacrit.cardcrawl.localization.EventStrings;
@@ -20,17 +19,13 @@ import nearlmod.relics.Revenge;
 
 import java.util.ArrayList;
 
-public class LeftHandBattle extends AbstractImageEvent {
+public class LeftHandBattle extends AbstractArenaEvent {
     public static final String ID = "nearlmod:LeftHandBattle";
     public static final EventStrings eventStrings = CardCrawlGame.languagePack.getEventString(ID);
     public static final String NAME = eventStrings.NAME;
     public static final String[] DESCRIPTIONS = eventStrings.DESCRIPTIONS;
     public static final String[] OPTIONS = eventStrings.OPTIONS;
 
-    private CurScreen screen = CurScreen.INTRO;
-    private enum CurScreen {
-        INTRO, FIGHT, LEAVE
-    }
     public LeftHandBattle() {
         super(NAME, DESCRIPTIONS[0], "images/events/lefthandbattle.png");
         this.imageEventText.setDialogOption(OPTIONS[0]);

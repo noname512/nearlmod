@@ -14,7 +14,7 @@ public class StartWithAtkStance extends AbstractNearlCard {
     public static final CardStrings cardStrings = CardCrawlGame.languagePack.getCardStrings(ID);
     public static final String NAME = cardStrings.NAME;
     public static final String DESCRIPTION = cardStrings.DESCRIPTION;
-    public static final String IMG_PATH = "images/cards/nearlstrike.png";
+    public static final String IMG_PATH = "images/cards/toatk.png";
 
     public StartWithAtkStance() {
         super(ID, NAME, IMG_PATH, -2, DESCRIPTION,

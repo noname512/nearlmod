@@ -111,7 +111,7 @@ F_R_Fist
   index: -1
 F_R_Finger
   rotate: false
-  xy: 1, 458
+  xy: 1, 436
   size: 21, 20
   orig: 21, 20
   offset: 0, 0
@@ -300,7 +300,7 @@ F_R_Skirt
   index: -1
 F_Skirt_M
   rotate: false
-  xy: 387, 221
+  xy: 457, 239
   size: 24, 27
   orig: 24, 27
   offset: 0, 0
@@ -391,7 +391,7 @@ F_Neck
   index: -1
 F_Head
   rotate: false
-  xy: 366, 64
+  xy: 302, 64
   size: 62, 63
   orig: 62, 63
   offset: 0, 0
@@ -461,14 +461,14 @@ F_R_Eye_cry
   index: -1
 F_L_Eye_cry
   rotate: false
-  xy: 1, 436
+  xy: 1, 458
   size: 21, 20
   orig: 21, 20
   offset: 0, 0
   index: -1
 F_Face_CloseEye
   rotate: false
-  xy: 302, 64
+  xy: 366, 64
   size: 62, 63
   orig: 62, 63
   offset: 0, 0
@@ -545,7 +545,7 @@ F_L_Eyeclose
   index: -1
 F_L_Fist
   rotate: false
-  xy: 457, 239
+  xy: 483, 239
   size: 24, 27
   orig: 24, 27
   offset: 0, 0
@@ -559,7 +559,7 @@ F_L_Finger_a
   index: -1
 F_L_Palm
   rotate: false
-  xy: 483, 239
+  xy: 387, 221
   size: 24, 27
   orig: 24, 27
   offset: 0, 0

@@ -3,6 +3,7 @@ package nearlmod;
 import basemod.*;
 import basemod.eventUtil.AddEventParams;
 import basemod.eventUtil.EventUtils;
+import basemod.helpers.RelicType;
 import basemod.interfaces.*;
 import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.graphics.Color;
@@ -63,6 +64,7 @@ public class NLMOD implements EditCardsSubscriber, EditCharactersSubscriber, Edi
     private static final Logger logger = LogManager.getLogger(NLMOD.class.getName());
 
     public static final HashMap<String, TextureAtlas.AtlasRegion> specialImg = new HashMap<>();
+    public static boolean friendTipMode = false;
 
     public NLMOD() {
         BaseMod.subscribe(this);
@@ -106,13 +108,14 @@ public class NLMOD implements EditCardsSubscriber, EditCharactersSubscriber, Edi
                 eventType(EventUtils.EventType.ONE_TIME).
                 playerClass(NearlEnum.NEARL_CLASS).
                 dungeonID("TheCity").
-                //bonusCondition(() -> (AbstractDungeon.floorNum > 6)).
+                endsWithRewardsUI(true).
                 create());
         BaseMod.addEvent(new AddEventParams.Builder(TheSurroundedEvent.ID, TheSurroundedEvent.class).
                 eventType(EventUtils.EventType.ONE_TIME).
                 playerClass(NearlEnum.NEARL_CLASS).
                 dungeonID("TheCity").
                 dungeonID("TheBeyond").
+                endsWithRewardsUI(true).
                 bonusCondition(() -> (AbstractDungeon.floorNum <= 40)).
                 create());
 
@@ -233,6 +236,7 @@ public class NLMOD implements EditCardsSubscriber, EditCharactersSubscriber, Edi
         BaseMod.addCard(new FanClub()); // 后援团
         BaseMod.addCard(new UpgradedKnightShield()); // 改良骑士盾牌
         BaseMod.addCard(new Flaw()); // 破绽
+        BaseMod.addCard(new InfiniteLightBlade()); // 无尽光刃
 
         // Rare.
         BaseMod.addCard(new BraveTheDarkness()); // 不畏苦暗
@@ -328,7 +332,8 @@ public class NLMOD implements EditCardsSubscriber, EditCharactersSubscriber, Edi
         // uncommon.
         BaseMod.addRelicToCustomPool(new FirstAidMode(), NEARL_GOLD);
         BaseMod.addRelicToCustomPool(new UpgradedCoreCaster(), NEARL_GOLD);
-        BaseMod.addRelicToCustomPool(new HandOfConqueror(), NEARL_GOLD);
+        BaseMod.addRelic(new HandOfConqueror(), RelicType.SHARED);
+        BaseMod.addRelic(new Lighthouse(), RelicType.SHARED);
 
         // rare.
         BaseMod.addRelicToCustomPool(new EmergencyCallBook(), NEARL_GOLD);

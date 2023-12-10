@@ -2,14 +2,13 @@ package nearlmod.arenaevents;
 
 import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
-import com.megacrit.cardcrawl.events.AbstractImageEvent;
 import com.megacrit.cardcrawl.localization.EventStrings;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import com.megacrit.cardcrawl.monsters.MonsterGroup;
 import com.megacrit.cardcrawl.rooms.AbstractRoom;
 import nearlmod.monsters.*;
 
-public class WanderingKnightBattle extends AbstractImageEvent {
+public class WanderingKnightBattle extends AbstractArenaEvent {
     public static final String ID = "nearlmod:WanderingKnightBattle";
     public static final EventStrings eventStrings = CardCrawlGame.languagePack.getEventString(ID);
     public static final String NAME = eventStrings.NAME;
@@ -17,10 +16,6 @@ public class WanderingKnightBattle extends AbstractImageEvent {
     public static final String[] OPTIONS = eventStrings.OPTIONS;
     private final int monsterLevel;
 
-    private CurScreen screen = CurScreen.INTRO;
-    private enum CurScreen {
-        INTRO, FIGHT, LEAVE
-    }
     public WanderingKnightBattle(int monsterLevel) {
         super(NAME, DESCRIPTIONS[0], "images/events/wanderingknight.png");
         imageEventText.setDialogOption(OPTIONS[0]);

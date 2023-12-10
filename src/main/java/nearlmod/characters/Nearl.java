@@ -22,10 +22,13 @@ import com.megacrit.cardcrawl.helpers.FontHelper;
 import com.megacrit.cardcrawl.helpers.ScreenShake;
 import com.megacrit.cardcrawl.localization.CharacterStrings;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
+import com.megacrit.cardcrawl.orbs.AbstractOrb;
+import com.megacrit.cardcrawl.orbs.EmptyOrbSlot;
 import com.megacrit.cardcrawl.screens.CharSelectInfo;
 import com.megacrit.cardcrawl.unlock.UnlockTracker;
 import nearlmod.cards.*;
 import nearlmod.cards.friendcards.*;
+import nearlmod.orbs.AbstractFriend;
 import nearlmod.patches.NearlTags;
 import nearlmod.powers.LightPower;
 import nearlmod.relics.*;
@@ -37,6 +40,7 @@ import nearlmod.stances.DefStance;
 import nearlmod.util.CostEnergyOrb;
 import nearlmod.util.CostReserves;
 import java.util.ArrayList;
+import java.util.Collections;
 
 public class Nearl extends CustomPlayer {
 
@@ -59,12 +63,10 @@ public class Nearl extends CustomPlayer {
         "images/char/orb/layer3.png",
         "images/char/orb/layer4.png",
         "images/char/orb/layer5.png",
-        "images/char/orb/layer6.png",
         "images/char/orb/layer1d.png",
         "images/char/orb/layer2d.png",
         "images/char/orb/layer3d.png",
-        "images/char/orb/layer4d.png",
-        "images/char/orb/layer5d.png"
+        "images/char/orb/layer4d.png"
     };
 
     public enum MODE {
@@ -290,5 +292,81 @@ public class Nearl extends CustomPlayer {
             AbstractDungeon.actionManager.addToTop(new WaitAction(1.0F));
         }
         super.useCard(c, monster, energyOnUse);
+    }
+
+    private int getFirstOrbIndex() {
+        int index = -1;
+        for (int i = 0; i < orbs.size(); i++)
+            if (!(orbs.get(i) instanceof AbstractFriend)) {
+                index = i;
+                break;
+            }
+        return index;
+    }
+
+    private void removeOrb(int index) {
+        for (int i = index + 1; i < orbs.size(); i++) {
+            Collections.swap(orbs, i, i - 1);
+        }
+        orbs.set(orbs.size() - 1, new EmptyOrbSlot());
+        for (int i = 0; i < orbs.size(); i++) {
+            orbs.get(i).setSlot(i, maxOrbs);
+        }
+    }
+
+    @Override
+    public void evokeWithoutLosingOrb() {
+        int index = getFirstOrbIndex();
+        if (index == -1 || (orbs.get(index) instanceof EmptyOrbSlot)) return;
+        orbs.get(index).onEvoke();
+    }
+
+    @Override
+    public void evokeOrb() {
+        int index = getFirstOrbIndex();
+        if (index == -1 || (orbs.get(index) instanceof EmptyOrbSlot)) return;
+        orbs.get(index).onEvoke();
+        removeOrb(index);
+    }
+
+    @Override
+    public void removeNextOrb() {
+        int index = getFirstOrbIndex();
+        if (index == -1 || (orbs.get(index) instanceof EmptyOrbSlot)) return;
+        removeOrb(index);
+    }
+
+    public String removeLastFriend() {
+        int index = -1;
+        for (int i = orbs.size() - 1; i >= 0; i--)
+            if (orbs.get(i) instanceof AbstractFriend) {
+                index = i;
+                break;
+            }
+        if (index == -1) return "";
+        String ret = orbs.get(index).ID;
+        for (int i = index + 1; i < orbs.size(); i++) {
+            Collections.swap(orbs, i, i - 1);
+        }
+        orbs.remove(orbs.size() - 1);
+        maxOrbs--;
+        for (int i = 0; i < orbs.size(); i++) {
+            orbs.get(i).setSlot(i, maxOrbs);
+        }
+        return ret;
+    }
+
+    @Override
+    public boolean hasOrb() {
+        return filledOrbCount() > 0;
+    }
+
+    @Override
+    public int filledOrbCount() {
+        int orbCount = 0;
+        for (AbstractOrb orb : orbs)
+            if (!(orb instanceof AbstractFriend) && !(orb instanceof EmptyOrbSlot))
+                orbCount++;
+        return orbCount;
     }
 }

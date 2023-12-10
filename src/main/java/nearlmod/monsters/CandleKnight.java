@@ -91,10 +91,12 @@ public class CandleKnight extends AbstractMonster {
             if (this.nextMove == 1) {
                 addToBot(new TalkAction(this, DIALOG[0], 3.0F, 3.0F));
                 this.state.setAnimation(0, "Attack", false);
+                this.state.addAnimation(0, "Idle", true, 0.0F);
                 addToBot(new DamageAction(AbstractDungeon.player, this.damage.get(0), AbstractGameAction.AttackEffect.FIRE));
                 addToBot(new TalkAction(this, DIALOG[1], 0.3F, 3.0F));
             } else if (this.nextMove == 4) {
                 this.state.setAnimation(0, "Attack", false);
+                this.state.addAnimation(0, "Idle", true, 0.0F);
                 addToBot(new DamageAction(AbstractDungeon.player, this.damage.get(0), AbstractGameAction.AttackEffect.FIRE));
             } else if (this.nextMove == 3) {
                 addToBot(new DamageAction(AbstractDungeon.player, this.damage.get(1)));

@@ -5,7 +5,7 @@ import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.localization.CardStrings;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
-import nearlmod.actions.SummonOrbAction;
+import nearlmod.actions.SummonFriendAction;
 import nearlmod.cards.AbstractNearlCard;
 import nearlmod.orbs.Blemishine;
 import nearlmod.patches.NearlTags;
@@ -29,7 +29,7 @@ public class Beginning extends AbstractNearlCard {
 
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
-        addToBot(new SummonOrbAction(new Blemishine()));
+        addToBot(new SummonFriendAction(new Blemishine()));
     }
 
     @Override

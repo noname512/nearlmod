@@ -11,8 +11,6 @@ import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import com.megacrit.cardcrawl.monsters.beyond.AwakenedOne;
 import com.megacrit.cardcrawl.powers.MinionPower;
 import com.megacrit.cardcrawl.relics.AbstractRelic;
-import nearlmod.actions.SummonOrbAction;
-import nearlmod.orbs.Viviana;
 import nearlmod.powers.AttackUpPower;
 
 public class HandOfConqueror extends CustomRelic {
@@ -56,9 +54,11 @@ public class HandOfConqueror extends CustomRelic {
                 }
             }
             flash();
-            counter++;
-            AbstractPlayer p = AbstractDungeon.player;
-            addToBot(new ApplyPowerAction(p, p, new AttackUpPower(p, 1)));
+            if (counter < 99) {
+                counter++;
+                AbstractPlayer p = AbstractDungeon.player;
+                addToBot(new ApplyPowerAction(p, p, new AttackUpPower(p, 1)));
+            }
         }
     }
 
