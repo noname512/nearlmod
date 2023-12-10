@@ -20,6 +20,9 @@ public abstract class AbstractFriend extends CustomOrb {
     protected int trustAmount;
     private final String[] DESCRIPTION;
     public boolean flipHorizontal;
+    public float animX;
+    public float animY;
+    public float animationTimer;
     public AbstractFriend(String ID, String NAME, String[] DESCRIPTION, String imgPath, int amount) {
         super(ID, NAME, 0, 0, "", "", imgPath);
         trustAmount = amount;
@@ -28,6 +31,7 @@ public abstract class AbstractFriend extends CustomOrb {
         channelAnimTimer = 0.5f;
         this.DESCRIPTION = DESCRIPTION;
         flipHorizontal = AbstractDungeon.player.flipHorizontal;
+        animX = animY = 0;
         updateDescription();
     }
 
@@ -90,11 +94,30 @@ public abstract class AbstractFriend extends CustomOrb {
         this.hb.render(sb);
     }
 
+    public void fastAttackAnimation() {
+        animX = animY = 0.0F;
+        animationTimer = 0.4F;
+    }
+
     @Override
     public void updateAnimation() {
+        if (animationTimer > 0.0F) {
+            animationTimer -= Gdx.graphics.getDeltaTime();
+            float targetPos = 90.0F * Settings.scale;
+
+            if (animationTimer > 0.2F) {
+                animX = Interpolation.exp5In.apply(0.0F, targetPos, (0.4F - animationTimer / 0.4F) * 2.0F);
+            } else if (animationTimer < 0.0F) {
+                animationTimer = 0.0F;
+                animX = 0.0F;
+            } else {
+                animX = Interpolation.fade.apply(0.0F, targetPos, this.animationTimer / 0.4F * 2.0F);
+            }
+        }
+
         this.bobEffect.update();
-        this.cX = MathHelper.orbLerpSnap(this.cX, this.tX);
-        this.cY = MathHelper.orbLerpSnap(this.cY, this.tY);
+        this.cX = MathHelper.orbLerpSnap(this.cX, this.tX + this.animX);
+        this.cY = MathHelper.orbLerpSnap(this.cY, this.tY + this.animY);
         if (this.channelAnimTimer != 0.0F) {
             this.channelAnimTimer -= Gdx.graphics.getDeltaTime();
             if (this.channelAnimTimer < 0.0F) {
