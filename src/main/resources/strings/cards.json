@@ -118,7 +118,10 @@
     "nearlmod:LightSpearStrike": {
         "NAME": "光枪打击",
         "DESCRIPTION": "造成等同于你的 nearlmod:光 的层数的伤害。",
-        "UPGRADE_DESCRIPTION": " NL （造成 !D! 点伤害）"
+        "UPGRADE_DESCRIPTION": "",
+        "EXTENDED_DESCRIPTION": [
+            " NL （造成 !D! 点伤害）"
+        ]
     },
     "nearlmod:SweepWrong": {
         "NAME": "扫尽恶行",
@@ -261,6 +264,11 @@
         "NAME": "破绽",
         "DESCRIPTION": "给予所有角色 !M! 层 易伤 。 NL 回合结束时，你失去 !M! 层 易伤 。",
         "UPGRADE_DESCRIPTION": ""
+    },
+    "nearlmod:InfiniteLightBlade": {
+        "NAME": "无尽光刃",
+        "DESCRIPTION": "在你的回合开始时，增加一张 *光！ 到你的手牌。",
+        "UPGRADE_DESCRIPTION": "固有 。 NL 在你的回合开始时，增加一张 *光！ 到你的手牌。"
     },
 
     "nearlmod:BraveTheDarkness": {

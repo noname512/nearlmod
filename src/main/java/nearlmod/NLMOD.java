@@ -236,6 +236,7 @@ public class NLMOD implements EditCardsSubscriber, EditCharactersSubscriber, Edi
         BaseMod.addCard(new FanClub()); // 后援团
         BaseMod.addCard(new UpgradedKnightShield()); // 改良骑士盾牌
         BaseMod.addCard(new Flaw()); // 破绽
+        BaseMod.addCard(new InfiniteLightBlade()); // 无尽光刃
 
         // Rare.
         BaseMod.addCard(new BraveTheDarkness()); // 不畏苦暗
