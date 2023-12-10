@@ -56,6 +56,8 @@ public class FocusedBombardment extends AbstractFriendCard {
     public AbstractCard makeCopy() {
         return new FocusedBombardment();
     }
+
+    /*
     @Override
     public void calculateCardDamage(AbstractMonster mo) {
         applyPowers();
@@ -68,12 +70,14 @@ public class FocusedBombardment extends AbstractFriendCard {
         if (ms_count == 1) {
             for (AbstractMonster m:AbstractDungeon.getCurrRoom().monsters.monsters) {
                 if (!m.isDeadOrEscaped()) {
-                    magicNumber = AbstractNearlCard.staticCalcDmg(m, magicNumber, damageTypeForTurn);
+                    magicNumber = AbstractNearlCard.staticCalcDmg(m, magicNumber, damageTypeForTurn, true);
                     isMagicNumberModified = (magicNumber != baseMagicNumber);
                 }
             }
         }
     }
+    我怀疑根本不用写这一堆
+    */
 
     @Override
     public void upgrade() {

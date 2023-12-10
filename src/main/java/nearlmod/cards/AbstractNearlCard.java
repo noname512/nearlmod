@@ -54,10 +54,16 @@ public abstract class AbstractNearlCard extends CustomCard {
     }
 
     public static int staticCalcDmg(AbstractMonster m, int baseDmg, DamageInfo.DamageType type) {
+        return staticCalcDmg(m, baseDmg, type, false);
+    }
+    public static int staticCalcDmg(AbstractMonster m, int baseDmg, DamageInfo.DamageType type, boolean isFriend) {
         if (m == null) return baseDmg;
         float tmp = (float)baseDmg;
         for (AbstractPower power : m.powers)
             tmp = power.atDamageReceive(tmp, type);
+        if (m.hasPower("nearlmod:Duel") && isFriend && type == DamageInfo.DamageType.NORMAL) {
+            tmp = MathUtils.floor(tmp * (1 - 0.01F * m.getPower("nearlmod:Duel").amount));
+        }
         for (AbstractPower power : m.powers)
             tmp = power.atDamageFinalReceive(tmp, type);
         if (tmp < 0.0F)

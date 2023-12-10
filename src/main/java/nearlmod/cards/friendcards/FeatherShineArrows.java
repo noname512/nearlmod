@@ -50,6 +50,10 @@ public class FeatherShineArrows extends AbstractFriendCard {
         return new FeatherShineArrows();
     }
 
+
+    public void applyPowers() {
+        super.applyPowers();
+    }
     @Override
     public void calculateCardDamage(AbstractMonster mo) {
         applyPowers();
@@ -58,7 +62,7 @@ public class FeatherShineArrows extends AbstractFriendCard {
             if (!ms.isDeadOrEscaped() && (target == null || ms.currentHealth < target.currentHealth))
                 target = ms;
         if (target != null) {
-            magicNumber = calculateSingleDamage(mo, magicNumber);
+            magicNumber = staticCalcDmg(target, magicNumber, damageTypeForTurn, true);
         }
         isMagicNumberModified = (magicNumber != baseMagicNumber);
     }

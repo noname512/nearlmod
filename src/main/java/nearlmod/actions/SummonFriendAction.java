@@ -26,13 +26,13 @@ public class SummonFriendAction extends AbstractGameAction {
         }
 
         if (summon.ID.equals(Blemishine.ORB_ID) && AbstractDungeon.player.hasRelic(LateLight.ID)) {
-            AbstractDungeon.player.getBlight(LateLight.ID).flash();
+            AbstractDungeon.player.getRelic(LateLight.ID).flash();
             isDone = true;
             return;
         }
 
         if (summon.ID.equals(Viviana.ORB_ID) && AbstractDungeon.player.hasRelic(NormalPerson.ID)) {
-            AbstractDungeon.player.getBlight(NormalPerson.ID).flash();
+            AbstractDungeon.player.getRelic(NormalPerson.ID).flash();
             isDone = true;
             return;
         }

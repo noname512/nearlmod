@@ -89,7 +89,7 @@ public class ShadowOut extends AbstractNearlCard {
         if (ms_count == 1) {
             for (AbstractMonster m:AbstractDungeon.getCurrRoom().monsters.monsters) {
                 if (!m.isDeadOrEscaped()) {
-                    magicNumber = AbstractNearlCard.staticCalcDmg(m, magicNumber, damageTypeForTurn);
+                    magicNumber = AbstractNearlCard.staticCalcDmg(m, magicNumber, damageTypeForTurn, true);
                     isMagicNumberModified = (magicNumber != baseMagicNumber);
                 }
             }

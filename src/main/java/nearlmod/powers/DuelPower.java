@@ -30,6 +30,7 @@ public class DuelPower extends AbstractPower implements CloneablePowerInterface 
         description = DESCRIPTIONS[0] + amount + DESCRIPTIONS[1];
     }
 
+    /*
     @Override
     public int onAttacked(DamageInfo info, int damageAmount) {
         if (info.name != null && info.type == DamageInfo.DamageType.NORMAL && info.name.endsWith(AbstractFriendCard.damageSuffix)) {
@@ -39,6 +40,7 @@ public class DuelPower extends AbstractPower implements CloneablePowerInterface 
             return damageAmount;
         }
     }
+    */
 
     @Override
     public AbstractPower makeCopy() {
