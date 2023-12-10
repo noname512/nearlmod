@@ -12,20 +12,12 @@ import com.megacrit.cardcrawl.vfx.combat.FlashAtkImgEffect;
 import nearlmod.cards.AbstractNearlCard;
 import nearlmod.cards.friendcards.AbstractFriendCard;
 
-import java.util.Iterator;
-
-import static basemod.BaseMod.logger;
-
 public class PureDamageAllEnemiesAction extends AbstractGameAction {
     private final int baseDamage;
     private final String name;
 
     public PureDamageAllEnemiesAction(AbstractCreature source, int baseDamage) {
         this(source, baseDamage, "");
-    }
-
-    public PureDamageAllEnemiesAction(AbstractCreature source, int baseDamage, AttackEffect effect) {
-        this(source, baseDamage, "", effect);
     }
 
     public PureDamageAllEnemiesAction(AbstractCreature source, int baseDamage, String name) {
@@ -84,12 +76,8 @@ public class PureDamageAllEnemiesAction extends AbstractGameAction {
                         ms.tint.changeColor(Color.WHITE.cpy());
                     }
                     DamageInfo info = new DamageInfo(source, baseDamage, damageType);
-                    boolean isFriend = false;
+                    info.output = AbstractNearlCard.staticCalcDmg(ms, info.base, info.type, name != null && name.endsWith(AbstractFriendCard.damageSuffix));
                     info.name = this.name;
-                    if (info.name.endsWith(AbstractFriendCard.damageSuffix)) {
-                        isFriend = true;
-                    }
-                    info.output = AbstractNearlCard.staticCalcDmg(ms, info.base, info.type, isFriend);
                     ms.damage(info);
                 }
             }

@@ -62,7 +62,7 @@ public class FeatherShineArrows extends AbstractFriendCard {
             if (!ms.isDeadOrEscaped() && (target == null || ms.currentHealth < target.currentHealth))
                 target = ms;
         if (target != null) {
-            magicNumber = staticCalcDmg(target, magicNumber, damageTypeForTurn, true);
+            magicNumber = calculateSingleDamage(mo, magicNumber, true);
         }
         isMagicNumberModified = (magicNumber != baseMagicNumber);
     }

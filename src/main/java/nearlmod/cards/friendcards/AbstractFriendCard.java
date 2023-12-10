@@ -1,7 +1,6 @@
 package nearlmod.cards.friendcards;
 
 import basemod.BaseMod;
-import com.badlogic.gdx.math.MathUtils;
 import com.megacrit.cardcrawl.actions.common.ExhaustSpecificCardAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
@@ -53,7 +52,7 @@ public abstract class AbstractFriendCard extends AbstractNearlCard {
     public void calculateCardDamage(AbstractMonster mo) {
         applyPowers();
         if ((this.target == CardTarget.ENEMY) || (this.target == CardTarget.ALL_ENEMY) || (this.target == CardTarget.SELF_AND_ENEMY))
-            magicNumber = staticCalcDmg(mo, magicNumber, damageTypeForTurn, true);
+            magicNumber = calculateSingleDamage(mo, magicNumber, true);
         isMagicNumberModified = (magicNumber != baseMagicNumber);
     }
 

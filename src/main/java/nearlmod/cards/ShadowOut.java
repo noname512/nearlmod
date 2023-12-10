@@ -46,9 +46,8 @@ public class ShadowOut extends AbstractNearlCard {
     public void use(AbstractPlayer p, AbstractMonster m) {
         applyPowers();
         AbstractPower power = p.getPower("nearlmod:LightPower");
-        int lightNum = 0;
         if (power != null) {
-            lightNum = power.amount;
+            int lightNum = power.amount;
             addToBot(new RemoveSpecificPowerAction(p, p, power));
             addToBot(new ApplyPowerAction(p, p, new ShadowPower(p, lightNum)));
         }
@@ -89,7 +88,7 @@ public class ShadowOut extends AbstractNearlCard {
         if (ms_count == 1) {
             for (AbstractMonster m:AbstractDungeon.getCurrRoom().monsters.monsters) {
                 if (!m.isDeadOrEscaped()) {
-                    magicNumber = AbstractNearlCard.staticCalcDmg(m, magicNumber, damageTypeForTurn, true);
+                    magicNumber = calculateSingleDamage(m, magicNumber, true);
                     isMagicNumberModified = (magicNumber != baseMagicNumber);
                 }
             }

@@ -50,9 +50,9 @@ public class SweepWrongAction extends AbstractGameAction {
             for (AbstractMonster ms : AbstractDungeon.getCurrRoom().monsters.monsters) {
                 if (!ms.isDeadOrEscaped()) {
                     if (ms.getIntentBaseDmg() >= 0) {
-                        info = new DamageInfo(source, AbstractNearlCard.staticCalcDmg(ms, baseDamage + extraDamage, DamageInfo.DamageType.NORMAL));
+                        info = new DamageInfo(source, AbstractNearlCard.staticCalcDmg(ms, baseDamage + extraDamage, DamageInfo.DamageType.NORMAL, false));
                     } else {
-                        info = new DamageInfo(source, AbstractNearlCard.staticCalcDmg(ms, baseDamage, DamageInfo.DamageType.NORMAL));
+                        info = new DamageInfo(source, AbstractNearlCard.staticCalcDmg(ms, baseDamage, DamageInfo.DamageType.NORMAL, false));
                     }
                     ms.damage(info);
                 }

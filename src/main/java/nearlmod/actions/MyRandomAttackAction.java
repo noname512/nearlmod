@@ -7,6 +7,7 @@ import com.megacrit.cardcrawl.core.Settings;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import nearlmod.cards.AbstractNearlCard;
+import nearlmod.cards.friendcards.AbstractFriendCard;
 
 public class MyRandomAttackAction extends AbstractGameAction {
     public final DamageInfo info;
@@ -20,7 +21,8 @@ public class MyRandomAttackAction extends AbstractGameAction {
     public void update() {
         AbstractMonster ms = AbstractDungeon.getMonsters().getRandomMonster(null, true, AbstractDungeon.cardRandomRng);
         if (ms != null) {
-            DamageInfo actualInfo = new DamageInfo(info.owner, AbstractNearlCard.staticCalcDmg(ms, info.base, DamageInfo.DamageType.NORMAL));
+            DamageInfo actualInfo = new DamageInfo(info.owner, AbstractNearlCard.staticCalcDmg(ms, info.base, DamageInfo.DamageType.NORMAL, info.name != null && info.name.endsWith(AbstractFriendCard.damageSuffix)));
+            actualInfo.name = info.name;
             addToTop(new DamageAction(ms, actualInfo));
         }
 

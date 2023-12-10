@@ -11,6 +11,7 @@ import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import com.megacrit.cardcrawl.powers.AbstractPower;
 import com.megacrit.cardcrawl.relics.AbstractRelic;
 import com.megacrit.cardcrawl.rewards.RewardItem;
+import nearlmod.powers.DayBreakPower;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -31,8 +32,7 @@ public abstract class AbstractNearlCard extends CustomCard {
 
     @Override
     public List<TooltipInfo> getCustomTooltips() {
-        List<TooltipInfo> ret = new ArrayList<>();
-        return ret;
+        return new ArrayList<>();
     }
 
     public void upgradeSecondMagicNumber(int amount) {
@@ -53,26 +53,26 @@ public abstract class AbstractNearlCard extends CustomCard {
             this.glowColor = AbstractCard.BLUE_BORDER_GLOW_COLOR.cpy();
     }
 
-    public static int staticCalcDmg(AbstractMonster m, int baseDmg, DamageInfo.DamageType type) {
-        return staticCalcDmg(m, baseDmg, type, false);
-    }
-    public static int staticCalcDmg(AbstractMonster m, int baseDmg, DamageInfo.DamageType type, boolean isFriend) {
+    public static int staticCalcDmg(AbstractMonster m, int baseDmg, DamageInfo.DamageType type, boolean isFriendDamage) {
         if (m == null) return baseDmg;
         float tmp = (float)baseDmg;
         for (AbstractPower power : m.powers)
             tmp = power.atDamageReceive(tmp, type);
-        if (m.hasPower("nearlmod:Duel") && isFriend && type == DamageInfo.DamageType.NORMAL) {
+        if (m.hasPower("nearlmod:Duel") && isFriendDamage && type == DamageInfo.DamageType.NORMAL) {
             tmp = MathUtils.floor(tmp * (1 - 0.01F * m.getPower("nearlmod:Duel").amount));
         }
         for (AbstractPower power : m.powers)
             tmp = power.atDamageFinalReceive(tmp, type);
-        if (tmp < 0.0F)
+        if (tmp < 0.0F) {
             tmp = 0.0F;
+        } else if (!isFriendDamage && m.currentBlock <= 0 && AbstractDungeon.player.hasPower(DayBreakPower.POWER_ID) && type == DamageInfo.DamageType.NORMAL) {
+            tmp += 3;
+        }
         return MathUtils.floor(tmp);
     }
 
-    public int calculateSingleDamage(AbstractMonster m, int baseDmg) {
-        return staticCalcDmg(m, baseDmg, damageTypeForTurn);
+    public int calculateSingleDamage(AbstractMonster m, int baseDmg, boolean isFriendDamage) {
+        return staticCalcDmg(m, baseDmg, damageTypeForTurn, isFriendDamage);
     }
 
     public static void addSpecificCardsToReward(AbstractCard card) {
