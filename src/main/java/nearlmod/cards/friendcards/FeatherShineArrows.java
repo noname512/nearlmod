@@ -1,5 +1,7 @@
 package nearlmod.cards.friendcards;
 
+import com.badlogic.gdx.graphics.g2d.SpriteBatch;
+import com.evacipated.cardcrawl.modthespire.lib.*;
 import com.megacrit.cardcrawl.actions.common.DamageAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.cards.DamageInfo;
@@ -8,6 +10,7 @@ import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.localization.CardStrings;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
+import javassist.CtBehavior;
 import nearlmod.patches.AbstractCardEnum;
 
 import static nearlmod.patches.NearlTags.IS_KNIGHT_CARD;
@@ -61,7 +64,7 @@ public class FeatherShineArrows extends AbstractFriendCard {
             if (!ms.isDeadOrEscaped() && (target == null || ms.currentHealth < target.currentHealth))
                 target = ms;
         if (target != null) {
-            magicNumber = calculateSingleDamage(mo, magicNumber, true);
+            magicNumber = calculateSingleDamage(target, magicNumber, true);
         }
         isMagicNumberModified = (magicNumber != baseMagicNumber);
     }
@@ -71,6 +74,23 @@ public class FeatherShineArrows extends AbstractFriendCard {
         if (!upgraded) {
             upgradeName();
             upgradeMagicNumber(UPGRADE_PLUS_DMG);
+        }
+    }
+
+    @SpirePatch(clz = AbstractPlayer.class, method = "renderHand")
+    public static class FeatherShineArrowsRenderPatch {
+        @SpireInsertPatch(locator = Locator.class, localvars = {"aliveMonsters"})
+        public static void Insert(AbstractPlayer __instance, SpriteBatch sb, @ByRef int[] aliveMonsters) {
+            if (__instance.hoveredCard instanceof FeatherShineArrows) {
+                aliveMonsters[0] = 1;
+            }
+        }
+
+        public static class Locator extends SpireInsertLocator {
+            public int[] Locate(CtBehavior ctBehavior) throws Exception {
+                Matcher.FieldAccessMatcher fieldAccessMatcher = new Matcher.FieldAccessMatcher(AbstractPlayer.class, "hoveredMonster");
+                return LineFinder.findInOrder(ctBehavior, fieldAccessMatcher);
+            }
         }
     }
 }
