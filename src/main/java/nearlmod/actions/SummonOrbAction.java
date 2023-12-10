@@ -25,13 +25,13 @@ public class SummonOrbAction extends AbstractGameAction {
             return;
         }
 
-        if (summon.ID.equals(Blemishine.ORB_ID) && AbstractDungeon.player.hasBlight(LateLight.ID)) {
+        if (summon.ID.equals(Blemishine.ORB_ID) && AbstractDungeon.player.hasRelic(LateLight.ID)) {
             AbstractDungeon.player.getBlight(LateLight.ID).flash();
             isDone = true;
             return;
         }
 
-        if (summon.ID.equals(Viviana.ORB_ID) && AbstractDungeon.player.hasBlight(NormalPerson.ID)) {
+        if (summon.ID.equals(Viviana.ORB_ID) && AbstractDungeon.player.hasRelic(NormalPerson.ID)) {
             AbstractDungeon.player.getBlight(NormalPerson.ID).flash();
             isDone = true;
             return;
@@ -39,7 +39,7 @@ public class SummonOrbAction extends AbstractGameAction {
 
         boolean isOrbExist = false;
         for (AbstractOrb orb : AbstractDungeon.player.orbs)
-            if (orb.ID.equals(summon.ID)) {
+            if ((orb instanceof AbstractFriend) && (orb.ID.equals(summon.ID))) {
                 ((AbstractFriend) orb).upgrade();
                 ((AbstractFriend) orb).applyStrength(summon.getTrustAmount());
                 isOrbExist = true;

@@ -372,7 +372,7 @@ public class NLMOD implements EditCardsSubscriber, EditCharactersSubscriber, Edi
 
     public static boolean checkOrb(String orbId) {
         for (AbstractOrb orb : AbstractDungeon.player.orbs)
-            if ((orb != null) && (orb.ID.equals(orbId)))
+            if ((orb instanceof AbstractFriend) && (orb.ID.equals(orbId)))
                 return true;
         return false;
     }
