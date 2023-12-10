@@ -7,7 +7,6 @@ import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.localization.CardStrings;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import nearlmod.actions.PureDamageAllEnemiesAction;
-import nearlmod.cards.AbstractNearlCard;
 import nearlmod.patches.AbstractCardEnum;
 
 import static nearlmod.patches.NearlTags.IS_KNIGHT_CARD;
@@ -56,28 +55,6 @@ public class FocusedBombardment extends AbstractFriendCard {
     public AbstractCard makeCopy() {
         return new FocusedBombardment();
     }
-
-    /*
-    @Override
-    public void calculateCardDamage(AbstractMonster mo) {
-        applyPowers();
-        int ms_count = 0;
-        for (AbstractMonster m:AbstractDungeon.getCurrRoom().monsters.monsters) {
-            if (!m.isDeadOrEscaped()) {
-                ms_count ++;
-            }
-        }
-        if (ms_count == 1) {
-            for (AbstractMonster m:AbstractDungeon.getCurrRoom().monsters.monsters) {
-                if (!m.isDeadOrEscaped()) {
-                    magicNumber = AbstractNearlCard.staticCalcDmg(m, magicNumber, damageTypeForTurn, true);
-                    isMagicNumberModified = (magicNumber != baseMagicNumber);
-                }
-            }
-        }
-    }
-    我怀疑根本不用写这一堆
-    */
 
     @Override
     public void upgrade() {
