@@ -38,7 +38,7 @@ public class GumboBreadBowl extends AbstractNearlCard {
             addToBot(new ChangeStanceAction(new DefStance()));
         }
         addToBot(new GainBlockAction(p, p, block));
-        addToBot(new UseLightAction(p));
+        addToBot(new UseLightAction(p, m));
     }
 
     private void preUpd() {

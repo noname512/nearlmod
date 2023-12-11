@@ -37,7 +37,7 @@ public class NearlCard extends AbstractNearlCard {
     public void use(AbstractPlayer p, AbstractMonster m) {
         if (AbstractDungeon.player.stance.ID.equals(AtkStance.STANCE_ID)) addToBot(new ChangeStanceAction(new DefStance()));
         addToBot(new ApplyPowerAction(p, p, new LightPower(p, magicNumber)));
-        addToBot(new UseLightAction(p));
+        addToBot(new UseLightAction(p, m));
     }
 
     @Override
