@@ -37,7 +37,7 @@ public class ShadowOutAction extends AbstractGameAction {
             addToTop(new UseShadowAction(p));
 
             if (!Settings.FAST_MODE) {
-                this.addToTop(new WaitAction(0.1F));
+                addToTop(new WaitAction(0.1F));
             }
         }
     }

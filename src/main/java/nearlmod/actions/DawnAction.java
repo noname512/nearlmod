@@ -48,7 +48,7 @@ public class DawnAction extends AbstractGameAction {
                     AbstractDungeon.player.bottledCardUpgradeCheck(this.sourceCard.copiedFrom);
                     AbstractDungeon.effectsQueue.add(new UpgradeShineEffect((float) Settings.WIDTH / 2.0F, (float)Settings.HEIGHT / 2.0F));
                     AbstractDungeon.topLevelEffectsQueue.add(new ShowCardBrieflyEffect(this.sourceCard.copiedFrom.makeStatEquivalentCopy()));
-                    this.addToTop(new WaitAction(Settings.ACTION_DUR_MED));
+                    addToTop(new WaitAction(Settings.ACTION_DUR_MED));
                 }
             }
         }

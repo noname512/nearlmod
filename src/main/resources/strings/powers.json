@@ -77,7 +77,7 @@
   },
   "nearlmod:BladeOfBlazingSunPower": {
     "NAME": "耀阳锋刃",
-    "DESCRIPTIONS": ["你处于 #y无畏 时，每打出一张攻击牌，获得 #b", " 层 #y光 。"]
+    "DESCRIPTIONS": ["你处于 #y无畏 时，每次使用 #y光 ，获得 #b", " 点 #y力量 。"]
   },
   "nearlmod:DoubleBoss": {
     "NAME": "双子骑士",

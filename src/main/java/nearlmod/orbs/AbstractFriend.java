@@ -5,6 +5,7 @@ import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.graphics.g2d.SpriteBatch;
 import com.badlogic.gdx.math.Interpolation;
 import com.badlogic.gdx.math.MathUtils;
+import com.megacrit.cardcrawl.actions.AbstractGameAction;
 import com.megacrit.cardcrawl.core.Settings;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.helpers.FontHelper;
@@ -138,5 +139,13 @@ public abstract class AbstractFriend extends CustomOrb {
         if (upgraded)
             c.upgrade();
         return c;
+    }
+
+    protected void addToBot(AbstractGameAction action) {
+        AbstractDungeon.actionManager.addToBottom(action);
+    }
+
+    protected void addToTop(AbstractGameAction action) {
+        AbstractDungeon.actionManager.addToTop(action);
     }
 }

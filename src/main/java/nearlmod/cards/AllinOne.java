@@ -37,12 +37,12 @@ public class AllinOne extends AbstractNearlCard {
 
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
-        AbstractDungeon.actionManager.addToBottom(new DamageAction(m, new DamageInfo(p, damage, damageTypeForTurn), AbstractGameAction.AttackEffect.SLASH_DIAGONAL));
-        AbstractDungeon.actionManager.addToBottom(new GainBlockAction(p, p, block));
+        addToBot(new DamageAction(m, new DamageInfo(p, damage, damageTypeForTurn), AbstractGameAction.AttackEffect.SLASH_DIAGONAL));
+        addToBot(new GainBlockAction(p, p, block));
         if (p.stance.ID.equals(AtkStance.STANCE_ID)) {
-            AbstractDungeon.actionManager.addToBottom(new ChangeStanceAction(new DefStance()));
+            addToBot(new ChangeStanceAction(new DefStance()));
         } else {
-            AbstractDungeon.actionManager.addToBottom(new ChangeStanceAction(new AtkStance()));
+            addToBot(new ChangeStanceAction(new AtkStance()));
         }
     }
 
@@ -50,12 +50,8 @@ public class AllinOne extends AbstractNearlCard {
         AbstractPower tempDex = AbstractDungeon.player.getPower("Dexterity");
         AbstractPower tempStr = AbstractDungeon.player.getPower("Strength");
         int dex = 0, str = 0;
-        if (tempDex != null) {
-            dex = tempDex.amount;
-        }
-        if (tempStr != null) {
-            str = tempStr.amount;
-        }
+        if (tempDex != null) dex = tempDex.amount;
+        if (tempStr != null) str = tempStr.amount;
         if (upgraded) {
             baseDamage += dex;
             baseBlock += str;
@@ -73,12 +69,8 @@ public class AllinOne extends AbstractNearlCard {
         AbstractPower tempDex = AbstractDungeon.player.getPower("Dexterity");
         AbstractPower tempStr = AbstractDungeon.player.getPower("Strength");
         int dex = 0, str = 0;
-        if (tempDex != null) {
-            dex = tempDex.amount;
-        }
-        if (tempStr != null) {
-            str = tempStr.amount;
-        }
+        if (tempDex != null) dex = tempDex.amount;
+        if (tempStr != null) str = tempStr.amount;
         if (upgraded) {
             baseDamage += dex;
             baseBlock += str;

@@ -21,7 +21,7 @@ public class TheSurroundedEvent extends AbstractImageEvent {
 
     private CurScreen screen = CurScreen.INTRO;
     private enum CurScreen {
-        INTRO, FIGHT, LEAVE;
+        INTRO, FIGHT, LEAVE
     }
     public TheSurroundedEvent() {
         super(NAME, DESCRIPTIONS[0], "images/events/laughallyouwant.png");

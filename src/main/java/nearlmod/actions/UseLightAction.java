@@ -10,10 +10,10 @@ import nearlmod.powers.LightPower;
 import nearlmod.relics.UpgradedCoreCaster;
 
 public class UseLightAction extends AbstractGameAction {
-    public UseLightAction(AbstractCreature Target) {
+    public UseLightAction(AbstractCreature target) {
         actionType = ActionType.POWER;
         duration = Settings.ACTION_DUR_FAST;
-        target = Target;
+        this.target = target;
     }
     @Override
     public void update() {

@@ -60,8 +60,10 @@ public class FullSpeedAhead extends AbstractNearlCard {
             damage += AtkStance.incNum;
             damage += AtkStance.atkInc;
             isDamageModified = (baseDamage != damage);
+            rawDescription = DEFMODE_DESCRIPTION;
+        } else {
+            rawDescription = ATKMODE_DESCRIPTION;
         }
-        rawDescription = DESCRIPTION + UPGRADE_DESCRIPTION;
         initializeDescription();
     }
 

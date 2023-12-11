@@ -32,7 +32,7 @@ public class ReliableFriend extends AbstractNearlCard {
         for (AbstractCard card : p.drawPile.group)
             if (card.hasTag(NearlTags.IS_SUMMON_CARD))
                 return true;
-        this.cantUseMessage = "抽牌堆内没有召唤伙伴的能力牌。";
+        this.cantUseMessage = CardCrawlGame.languagePack.getUIString("nearlmod:SummonFromDeckToHandAction").TEXT[1];
         return false;
     }
 

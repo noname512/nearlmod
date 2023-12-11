@@ -26,7 +26,6 @@ public class FlutteringWings extends AbstractNearlCard {
         super(ID, NAME, IMG_PATH, COST, DESCRIPTION,
                 CardType.SKILL, AbstractCardEnum.NEARL_GOLD,
                 CardRarity.UNCOMMON, CardTarget.SELF);
-        cardsToPreview = new AllinOne();
     }
 
     @Override
@@ -38,12 +37,13 @@ public class FlutteringWings extends AbstractNearlCard {
             DefStance.keepVal = true;
             addToBot(new ChangeStanceAction(new AtkStance()));
         }
-        AbstractCard c = new AllinOne();
-        c.isEthereal = true;
-        c.exhaust = true;
-        if (upgraded || p.hasPower("MasterRealityPower"))
-            c.upgrade();
-        AbstractDungeon.effectList.add(new ShowCardAndAddToHandEffect(c, Settings.WIDTH * 0.5F, Settings.HEIGHT * 0.5F));
+        if (upgraded) {
+            AbstractCard c = new AllinOne();
+            c.isEthereal = true;
+            c.exhaust = true;
+            if (p.hasPower("MasterRealityPower")) c.upgrade();
+            AbstractDungeon.effectList.add(new ShowCardAndAddToHandEffect(c, Settings.WIDTH * 0.5F, Settings.HEIGHT * 0.5F));
+        }
     }
 
     @Override
@@ -55,7 +55,7 @@ public class FlutteringWings extends AbstractNearlCard {
     public void upgrade() {
         if (!upgraded) {
             upgradeName();
-            cardsToPreview.upgrade();
+            cardsToPreview = new AllinOne();
             rawDescription = UPGRADE_DESCRIPTION;
             initializeDescription();
         }

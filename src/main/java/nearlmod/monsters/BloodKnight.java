@@ -92,7 +92,7 @@ public class BloodKnight extends AbstractMonster {
         if (currentHealth <= 0 && !this.halfDead) {
             if (AbstractDungeon.getCurrRoom().cannotLose) {
                 halfDead = true;
-                AbstractDungeon.actionManager.addToBottom(new HealAction(this, this, MathUtils.floor(this.maxHealth * 0.4F)));
+                addToBot(new HealAction(this, this, MathUtils.floor(this.maxHealth * 0.4F)));
                 for (AbstractPower p : this.powers)
                     p.onDeath();
                 for (AbstractRelic r : AbstractDungeon.player.relics)
@@ -173,7 +173,7 @@ public class BloodKnight extends AbstractMonster {
             cleanDebuff();
             currentTurn = -1;
             isStage2 = true;
-            AbstractDungeon.actionManager.addToBottom(new CanLoseAction());
+            addToBot(new CanLoseAction());
             addToBot(new TalkAction(this, DIALOG[2], 0.3F, 3.0F));
             addToBot(new RemoveSpecificPowerAction(this, this, "nearlmod:Reborn"));
             addToBot(new ApplyPowerAction(this, this, new DuelPower(this, 25)));

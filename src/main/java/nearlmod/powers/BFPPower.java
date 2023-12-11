@@ -15,7 +15,6 @@ import com.megacrit.cardcrawl.powers.AbstractPower;
 import com.megacrit.cardcrawl.powers.VulnerablePower;
 import com.megacrit.cardcrawl.powers.WeakPower;
 import nearlmod.cards.friendcards.AbstractFriendCard;
-import nearlmod.patches.NearlTags;
 
 public class BFPPower extends AbstractPower implements CloneablePowerInterface {
     public static final String POWER_ID = "nearlmod:BFPPower";
@@ -60,7 +59,7 @@ public class BFPPower extends AbstractPower implements CloneablePowerInterface {
 
     @Override
     public void onUseCard(AbstractCard card, UseCardAction action) {
-        if (card.hasTag(NearlTags.IS_FRIEND_CARD) || card.type != AbstractCard.CardType.ATTACK) return;
+        if (card instanceof AbstractFriendCard || card.type != AbstractCard.CardType.ATTACK) return;
         cardPlayed++;
     }
 

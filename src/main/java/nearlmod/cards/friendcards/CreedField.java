@@ -5,7 +5,6 @@ import com.megacrit.cardcrawl.actions.common.GainBlockAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
-import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.localization.CardStrings;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import nearlmod.patches.AbstractCardEnum;
@@ -34,8 +33,8 @@ public class CreedField extends AbstractFriendCard {
 
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
-        AbstractDungeon.actionManager.addToBottom(new GainBlockAction(p, magicNumber));
-        AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(p, p, new CreedFieldPower(p, secondMagicNumber)));
+        addToBot(new GainBlockAction(p, magicNumber));
+        addToBot(new ApplyPowerAction(p, p, new CreedFieldPower(p, secondMagicNumber)));
     }
 
     @Override

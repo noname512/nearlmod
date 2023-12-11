@@ -7,7 +7,6 @@ import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
 import com.megacrit.cardcrawl.actions.common.RemoveSpecificPowerAction;
 import com.megacrit.cardcrawl.core.AbstractCreature;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
-import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.helpers.ImageMaster;
 import com.megacrit.cardcrawl.localization.PowerStrings;
 import com.megacrit.cardcrawl.powers.AbstractPower;
@@ -32,8 +31,8 @@ public class ExsanguinationPower extends AbstractPower implements CloneablePower
     public void onInitialApplication() {
         if (owner.hasPower("Strength")) {
             if (owner.getPower("Strength").amount > 0) {
-                this.flash();
-                AbstractDungeon.actionManager.addToBottom(new RemoveSpecificPowerAction(owner, owner, "Strength"));
+                flash();
+                addToBot(new RemoveSpecificPowerAction(owner, owner, "Strength"));
             }
         }
     }
@@ -60,7 +59,7 @@ public class ExsanguinationPower extends AbstractPower implements CloneablePower
             if (now_strength + abstractPower.amount > 0) {
                 flash();
                 if (now_strength != 0) {
-                    AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(owner, owner, new StrengthPower(owner, -now_strength)));
+                    addToBot(new ApplyPowerAction(owner, owner, new StrengthPower(owner, -now_strength)));
                 }
                 return false;
             }

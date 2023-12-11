@@ -65,10 +65,10 @@ public class LeftHandTytusTopola extends AbstractMonster {
                     r.onMonsterDeath(this);
             }
 
-            this.addToTop(new ClearCardQueueAction());
-            this.setMove((byte)99, Intent.UNKNOWN);
-            this.createIntent();
-            this.applyPowers();
+            addToTop(new ClearCardQueueAction());
+            setMove((byte)99, Intent.UNKNOWN);
+            createIntent();
+            applyPowers();
         }
     }
     @Override
@@ -76,12 +76,12 @@ public class LeftHandTytusTopola extends AbstractMonster {
         AbstractPlayer p = AbstractDungeon.player;
         if (this.nextMove == 99) {
             this.halfDead = false;
-            AbstractDungeon.actionManager.addToBottom(new RemoveSpecificPowerAction(this, this, "nearlmod:Reborn"));
-            AbstractDungeon.actionManager.addToBottom(new HealAction(this, this, this.maxHealth));
-            AbstractDungeon.actionManager.addToBottom(new CanLoseAction());
+            addToBot(new RemoveSpecificPowerAction(this, this, "nearlmod:Reborn"));
+            addToBot(new HealAction(this, this, this.maxHealth));
+            addToBot(new CanLoseAction());
             if (AbstractDungeon.ascensionLevel >= 15) {
-                AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(this, this , new StrengthPower(this, 3)));
-                AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(this, this , new PainfulStabsPower(this)));
+                addToBot(new ApplyPowerAction(this, this , new StrengthPower(this, 3)));
+                addToBot(new ApplyPowerAction(this, this , new PainfulStabsPower(this)));
             }
             setMove(MOVES[0], (byte) 2, Intent.STRONG_DEBUFF);
         } else if (this.nextMove == 2) {

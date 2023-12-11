@@ -15,6 +15,7 @@ import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.helpers.ImageMaster;
 import com.megacrit.cardcrawl.localization.PowerStrings;
 import com.megacrit.cardcrawl.powers.AbstractPower;
+import com.megacrit.cardcrawl.powers.StrengthPower;
 import com.megacrit.cardcrawl.stances.AbstractStance;
 import nearlmod.relics.UpgradedCoreCaster;
 import nearlmod.stances.AtkStance;
@@ -61,7 +62,7 @@ public class LightPower extends AbstractPower implements CloneablePowerInterface
         return amount;
     }
 
-    public static void changeToShadow(boolean isUse) {
+    public static void onExhaustLight(boolean isUse) {
         AbstractPlayer p = AbstractDungeon.player;
         if (!p.hasPower(LightPower.POWER_ID)) return;
         AbstractPower power = p.getPower(LightPower.POWER_ID);
@@ -72,15 +73,18 @@ public class LightPower extends AbstractPower implements CloneablePowerInterface
             if (p.hasPower(PegasusFormPower.POWER_ID)) {
                 int val = p.getPower(PegasusFormPower.POWER_ID).amount;
                 val = power.amount * val / 3;
-                AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(p, p, new GainLightNextTurnPower(p, val)));
+                if (val > 0)
+                    AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(p, p, new GainLightNextTurnPower(p, val)));
             }
+            if (p.hasPower(BladeOfBlazingSunPower.POWER_ID))
+                AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(p, p, new StrengthPower(p, p.getPower(BladeOfBlazingSunPower.POWER_ID).amount)));
         }
         AbstractDungeon.actionManager.addToBottom(new RemoveSpecificPowerAction(p, p, power));
     }
 
     public void useLight(AbstractPlayer p, AbstractCreature m) {
         int realAmount = amount;
-        changeToShadow(true);
+        onExhaustLight(true);
         if (AbstractDungeon.player.hasRelic(UpgradedCoreCaster.ID))
             realAmount += UpgradedCoreCaster.EXTRA_VAL;
         if (p.stance.ID.equals(AtkStance.STANCE_ID)) {

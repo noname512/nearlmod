@@ -2,7 +2,6 @@ package nearlmod.orbs;
 
 import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.core.Settings;
-import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.localization.OrbStrings;
 import com.megacrit.cardcrawl.orbs.AbstractOrb;
 import nearlmod.actions.AddFriendCardToHandAction;
@@ -41,6 +40,6 @@ public class Wildmane extends AbstractFriend {
 
     @Override
     public void onStartOfTurn() {
-        AbstractDungeon.actionManager.addToBottom(new AddFriendCardToHandAction(getRandomCard(upgraded)));
+        addToBot(new AddFriendCardToHandAction(getRandomCard(upgraded)));
     }
 }

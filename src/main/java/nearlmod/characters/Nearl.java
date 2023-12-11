@@ -29,7 +29,6 @@ import com.megacrit.cardcrawl.unlock.UnlockTracker;
 import nearlmod.cards.*;
 import nearlmod.cards.friendcards.*;
 import nearlmod.orbs.AbstractFriend;
-import nearlmod.patches.NearlTags;
 import nearlmod.powers.LightPower;
 import nearlmod.relics.*;
 import nearlmod.patches.AbstractCardEnum;
@@ -279,7 +278,7 @@ public class Nearl extends CustomPlayer {
     @Override
     public void useCard(AbstractCard c, AbstractMonster monster, int energyOnUse) {
         if (!Settings.FAST_MODE) {
-            if (!c.hasTag(NearlTags.IS_FRIEND_CARD) && c.type == AbstractCard.CardType.ATTACK) {
+            if (!(c instanceof AbstractFriendCard) && c.type == AbstractCard.CardType.ATTACK) {
                 if (this.stance.ID.equals(AtkStance.STANCE_ID)) {
                     this.state.setAnimation(0, "Skill_1_Begin", false);
                     this.state.addAnimation(0, "Skill_1_Loop", false, 0.0F);

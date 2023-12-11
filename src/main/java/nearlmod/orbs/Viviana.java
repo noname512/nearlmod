@@ -61,6 +61,6 @@ public class Viviana extends AbstractFriend {
                 img = ImageMaster.loadImage(IMAGE);
             return;
         }
-        AbstractDungeon.actionManager.addToBottom(new AddFriendCardToHandAction(getRandomCard(upgraded, uniqueUsed)));
+        addToBot(new AddFriendCardToHandAction(getRandomCard(upgraded, uniqueUsed)));
     }
 }

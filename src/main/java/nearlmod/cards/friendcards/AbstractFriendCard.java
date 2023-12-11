@@ -22,7 +22,6 @@ public abstract class AbstractFriendCard extends AbstractNearlCard {
         super(id, name, img, cost, rawDescription,
                 type, color, rarity, target);
         baseDescription = rawDescription;
-        tags.add(NearlTags.IS_FRIEND_CARD);
         exhaust = true;
         isEthereal = true;
         this.belongFriend = belongFriend;

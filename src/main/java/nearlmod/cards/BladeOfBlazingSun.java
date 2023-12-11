@@ -20,12 +20,15 @@ public class BladeOfBlazingSun extends AbstractNearlCard {
     public static final String DESCRIPTION = cardStrings.DESCRIPTION;
     public static final String UPGRADE_DESCRIPTION = cardStrings.UPGRADE_DESCRIPTION;
     public static final String IMG_PATH = "images/cards/bladeofblazingsun.png";
-    private static final int COST = 1;
+    private static final int COST = 2;
+    private static final int STRENGTH_AMT = 2;
+    private static final int UPGRADE_PLUS_STR = 1;
 
     public BladeOfBlazingSun() {
         super(ID, NAME, IMG_PATH, COST, DESCRIPTION,
                 CardType.POWER, AbstractCardEnum.NEARL_GOLD,
                 CardRarity.RARE, CardTarget.SELF);
+        magicNumber = baseMagicNumber = STRENGTH_AMT;
         tags.add(NearlTags.IS_SUMMON_CARD);
     }
 
@@ -37,7 +40,7 @@ public class BladeOfBlazingSun extends AbstractNearlCard {
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
         if (extraTriggered()) {
-            addToBot(new ApplyPowerAction(p, p, new BladeOfBlazingSunPower(p)));
+            addToBot(new ApplyPowerAction(p, p, new BladeOfBlazingSunPower(p, magicNumber)));
         } else {
             addToBot(new SummonFriendAction(new Blemishine()));
         }
@@ -52,9 +55,7 @@ public class BladeOfBlazingSun extends AbstractNearlCard {
     public void upgrade() {
         if (!upgraded) {
             upgradeName();
-            isInnate = true;
-            rawDescription = UPGRADE_DESCRIPTION;
-            initializeDescription();
+            upgradeMagicNumber(UPGRADE_PLUS_STR);
         }
     }
 }

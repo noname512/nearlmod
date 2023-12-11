@@ -34,8 +34,7 @@ public class SecondSun extends AbstractNearlCard {
     public void use(AbstractPlayer p, AbstractMonster m) {
         AbstractPower power = AbstractDungeon.player.getPower("nearlmod:LightPower");
         if (power == null) return;
-        int lightAmount = power.amount;
-        AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(p, p, new LightPower(p, lightAmount), lightAmount));
+        addToBot(new ApplyPowerAction(p, p, new LightPower(p, power.amount), power.amount));
     }
 
     @Override

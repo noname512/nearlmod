@@ -38,12 +38,12 @@ public class FirstAid extends AbstractNearlCard {
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
         if (!p.stance.ID.equals(DefStance.STANCE_ID)) {
-            AbstractDungeon.actionManager.addToBottom(new ChangeStanceAction(new DefStance()));
+            addToBot(new ChangeStanceAction(new DefStance()));
         }
         applyPowers();
-        AbstractDungeon.actionManager.addToBottom(new GainBlockAction(p, p, block));
+        addToBot(new GainBlockAction(p, p, block));
         if (extraTriggered()) {
-            AbstractDungeon.actionManager.addToBottom((new AddTemporaryHPAction(p, p, block)));
+            addToBot(new AddTemporaryHPAction(p, p, block));
             if (p.stance.ID.equals(DefStance.STANCE_ID)) {
                 p.state.setAnimation(0, "Skill", false);
                 p.state.addAnimation(0, "Idle", true, 0);

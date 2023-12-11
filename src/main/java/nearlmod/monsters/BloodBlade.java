@@ -57,9 +57,9 @@ public class BloodBlade extends AbstractMonster {
             for (AbstractMonster ms : AbstractDungeon.getCurrRoom().monsters.monsters)
                 if (ms.id.equals("nearlmod:BloodKnight")) {
                     if (AbstractDungeon.ascensionLevel < 17) {
-                        AbstractDungeon.actionManager.addToBottom(new HealAction(ms, this, MathUtils.floor(ms.maxHealth * 0.1F)));
+                        addToBot(new HealAction(ms, this, MathUtils.floor(ms.maxHealth * 0.1F)));
                     } else {
-                        AbstractDungeon.actionManager.addToBottom(new HealAction(ms, this, MathUtils.floor(ms.maxHealth * 0.15F)));
+                        addToBot(new HealAction(ms, this, MathUtils.floor(ms.maxHealth * 0.15F)));
                     }
                     isAbsorbing = true;
                     absorbTimer = 1.5F;

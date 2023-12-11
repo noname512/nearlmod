@@ -9,9 +9,7 @@ import com.megacrit.cardcrawl.localization.CardStrings;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import nearlmod.actions.UseLightAction;
 import nearlmod.patches.AbstractCardEnum;
-import nearlmod.patches.NearlTags;
 import nearlmod.powers.LightPower;
-import nearlmod.stances.AtkStance;
 import nearlmod.stances.DefStance;
 
 public class MajestyLight extends AbstractNearlCard {

@@ -6,7 +6,6 @@ import com.megacrit.cardcrawl.actions.watcher.ChangeStanceAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
-import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.localization.CardStrings;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import nearlmod.actions.SummonFriendAction;
@@ -41,12 +40,12 @@ public class AllOutEffort extends AbstractNearlCard {
 
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
-        AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(p, p, new LightPower(p, magicNumber), magicNumber));
+        addToBot(new ApplyPowerAction(p, p, new LightPower(p, magicNumber), magicNumber));
         if (upgraded) {
-            AbstractDungeon.actionManager.addToBottom(new GainBlockAction(p, block));
+            addToBot(new GainBlockAction(p, block));
         }
         if (p.stance.ID.equals(DefStance.STANCE_ID)) {
-            AbstractDungeon.actionManager.addToBottom(new ChangeStanceAction(new AtkStance()));
+            addToBot(new ChangeStanceAction(new AtkStance()));
         }
 
         addToBot(new SummonFriendAction(new Blemishine()));

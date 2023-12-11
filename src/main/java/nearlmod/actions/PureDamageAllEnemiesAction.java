@@ -16,10 +16,6 @@ public class PureDamageAllEnemiesAction extends AbstractGameAction {
     private final int baseDamage;
     private final String name;
 
-    public PureDamageAllEnemiesAction(AbstractCreature source, int baseDamage) {
-        this(source, baseDamage, "");
-    }
-
     public PureDamageAllEnemiesAction(AbstractCreature source, int baseDamage, String name) {
         this(source, baseDamage, name, AttackEffect.NONE);
     }
@@ -87,7 +83,7 @@ public class PureDamageAllEnemiesAction extends AbstractGameAction {
             }
 
             if (!Settings.FAST_MODE) {
-                this.addToTop(new WaitAction(0.1F));
+                addToTop(new WaitAction(0.1F));
             }
         }
     }

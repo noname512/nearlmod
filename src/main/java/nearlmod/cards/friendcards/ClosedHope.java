@@ -6,12 +6,10 @@ import com.megacrit.cardcrawl.actions.watcher.ChangeStanceAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
-import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.localization.CardStrings;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import nearlmod.patches.AbstractCardEnum;
 import nearlmod.powers.ClosedHopePower;
-import nearlmod.stances.AtkStance;
 import nearlmod.stances.DefStance;
 
 public class ClosedHope extends AbstractFriendCard {
@@ -39,8 +37,8 @@ public class ClosedHope extends AbstractFriendCard {
         if (!p.stance.ID.equals(DefStance.STANCE_ID)) {
             addToBot(new ChangeStanceAction(new DefStance()));
         }
-        AbstractDungeon.actionManager.addToBottom(new GainBlockAction(p, magicNumber));
-        AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(p, p, new ClosedHopePower(p, secondMagicNumber)));
+        addToBot(new GainBlockAction(p, magicNumber));
+        addToBot(new ApplyPowerAction(p, p, new ClosedHopePower(p, secondMagicNumber)));
     }
 
     @Override

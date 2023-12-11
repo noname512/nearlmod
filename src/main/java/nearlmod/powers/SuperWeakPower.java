@@ -34,14 +34,15 @@ public class SuperWeakPower extends AbstractPower implements CloneablePowerInter
     public void updateDescription() {
         description = DESCRIPTIONS[0];
     }
+
     public void atEndOfRound() {
-        if (this.justApplied) {
-            this.justApplied = false;
+        if (justApplied) {
+            justApplied = false;
         } else {
             if (this.amount == 0) {
-                this.addToBot(new RemoveSpecificPowerAction(this.owner, this.owner, "nearlmod:SuperWeakPower"));
+                addToBot(new RemoveSpecificPowerAction(this.owner, this.owner, "nearlmod:SuperWeakPower"));
             } else {
-                this.addToBot(new ReducePowerAction(this.owner, this.owner, "nearlmod:SuperWeakPower", 1));
+                addToBot(new ReducePowerAction(this.owner, this.owner, "nearlmod:SuperWeakPower", 1));
             }
 
         }

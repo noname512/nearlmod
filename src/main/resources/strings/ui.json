@@ -7,7 +7,8 @@
   },
   "nearlmod:SummonFromDeckToHandAction": {
     "TEXT": [
-      "选择一张召唤伙伴的能力牌放入你的手牌"
+      "选择一张召唤伙伴的能力牌放入你的手牌",
+      "抽牌堆内没有召唤伙伴的能力牌。"
     ]
   },
   "nearlmod:FriendCardTab": {
@@ -15,10 +16,11 @@
       "伙伴牌"
     ]
   },
-  "nearlmod:BreakThroughFettersAction": {
+  "nearlmod:SelectScreenText": {
     "TEXT": [
       "选择至多",
-      "张牌消耗"
+      "张牌消耗",
+      "张牌加入手牌"
     ]
   },
   "nearlmod:ArenaRoom": {

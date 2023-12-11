@@ -1,20 +1,14 @@
 package nearlmod.powers;
 
 import com.badlogic.gdx.graphics.g2d.TextureAtlas;
-import com.megacrit.cardcrawl.actions.animations.VFXAction;
 import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
-import com.megacrit.cardcrawl.actions.common.DamageAction;
-import com.megacrit.cardcrawl.actions.common.ReducePowerAction;
 import com.megacrit.cardcrawl.actions.common.RemoveSpecificPowerAction;
-import com.megacrit.cardcrawl.cards.DamageInfo;
 import com.megacrit.cardcrawl.core.AbstractCreature;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
-import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.helpers.ImageMaster;
 import com.megacrit.cardcrawl.localization.PowerStrings;
 import com.megacrit.cardcrawl.powers.AbstractPower;
 import com.megacrit.cardcrawl.powers.ArtifactPower;
-import com.megacrit.cardcrawl.vfx.combat.ExplosionSmallEffect;
 
 public class ClosedHopePower extends AbstractPower {
     public static final String POWER_ID = "nearlmod:ClosedHope";
@@ -39,9 +33,9 @@ public class ClosedHopePower extends AbstractPower {
 
     public void atStartOfTurn() {
         if (owner.currentBlock != 0) {
-            AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(owner, owner, new ArtifactPower(owner, amount)));
+            addToBot(new ApplyPowerAction(owner, owner, new ArtifactPower(owner, amount)));
         }
-        AbstractDungeon.actionManager.addToBottom(new RemoveSpecificPowerAction(owner, owner, "nearlmod:ClosedHope"));
+        addToBot(new RemoveSpecificPowerAction(owner, owner, "nearlmod:ClosedHope"));
     }
 
 

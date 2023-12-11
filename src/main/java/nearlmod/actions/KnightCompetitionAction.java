@@ -26,7 +26,7 @@ public class KnightCompetitionAction extends AbstractGameAction {
         }
         AbstractPlayer p = AbstractDungeon.player;
         amount = LightPower.getAmount();
-        LightPower.changeToShadow(true);
+        LightPower.onExhaustLight(true);
         if (amount == 0) {
             isDone = true;
             return;

@@ -63,7 +63,7 @@ public class SweepWrongAction extends AbstractGameAction {
             }
 
             if (!Settings.FAST_MODE) {
-                this.addToTop(new WaitAction(0.1F));
+                addToTop(new WaitAction(0.1F));
             }
         }
     }

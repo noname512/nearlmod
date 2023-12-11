@@ -35,7 +35,7 @@ public class LightCascade extends AbstractNearlCard {
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
         int amount = LightPower.getAmount();
-        LightPower.changeToShadow(true);
+        LightPower.onExhaustLight(true);
         if (p.stance.ID.equals(DefStance.STANCE_ID))
             addToBot(new ChangeStanceAction(new AtkStance()));
         addToBot(new PureDamageAllEnemiesAction(p, amount, this.name, AbstractGameAction.AttackEffect.NONE, DamageInfo.DamageType.THORNS));

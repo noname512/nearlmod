@@ -201,6 +201,7 @@ public class NLMOD implements EditCardsSubscriber, EditCharactersSubscriber, Edi
         BaseMod.addCard(new OverflowingLight()); // 溢光
         BaseMod.addCard(new ReverseForce()); // 后备力量
         BaseMod.addCard(new ArmorProtection()); // 盔甲防护
+        BaseMod.addCard(new BoldAssault()); // 奋力一搏
 
         // Uncommon.
         BaseMod.addCard(new SecondSun()); // 第二轮太阳
@@ -255,6 +256,8 @@ public class NLMOD implements EditCardsSubscriber, EditCharactersSubscriber, Edi
         BaseMod.addCard(new PegasusForm()); // 天马形态
         BaseMod.addCard(new DayBreak()); // 破晓
         BaseMod.addCard(new UnitedAsOne()); // 万众一心
+        BaseMod.addCard(new Followers()); // 使徒
+        BaseMod.addCard(new PocketVault()); // “小金库”
 
         // Friend.
         BaseMod.addCard(new LSSwiftSword()); // 光影迅捷剑

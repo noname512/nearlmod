@@ -21,11 +21,9 @@ public class KnightTerritoryHibernator extends AbstractMonster {
     public static final String[] DIALOG = monsterStrings.DIALOG;
     public static final String IMAGE = "images/monsters/knightterritoryhibernator.png";
     public boolean asleep;
-    private final int level;
 
     public KnightTerritoryHibernator(float x, float y, int level) {
         super(NAME, ID, 180, 0, 0, 150.0F, 320.0F, IMAGE, x, y);
-        this.level = level;
         type = EnemyType.ELITE;
         int dmg;
         if (AbstractDungeon.ascensionLevel >= 18) dmg = 18;
@@ -82,7 +80,7 @@ public class KnightTerritoryHibernator extends AbstractMonster {
         super.damage(info);
         if (asleep && currentHealth < maxHealth) {
             this.state.setAnimation(0, "Idle", true);
-            AbstractDungeon.actionManager.addToBottom(new ShoutAction(this, DIALOG[0]));
+            addToBot(new ShoutAction(this, DIALOG[0]));
             asleep = false;
             setMove((byte)3, Intent.STUN);
             createIntent();

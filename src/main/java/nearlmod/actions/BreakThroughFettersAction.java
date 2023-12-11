@@ -12,7 +12,7 @@ import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.localization.UIStrings;
 
 public class BreakThroughFettersAction extends AbstractGameAction {
-    public static final UIStrings uiStrings = CardCrawlGame.languagePack.getUIString("nearlmod:BreakThroughFettersAction");
+    public static final UIStrings uiStrings = CardCrawlGame.languagePack.getUIString("nearlmod:SelectScreenText");
     public static final String[] TEXT = uiStrings.TEXT;
     private final AbstractPlayer p;
     private final int lightUse;

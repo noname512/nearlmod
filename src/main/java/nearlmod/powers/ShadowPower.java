@@ -34,7 +34,7 @@ public class ShadowPower extends AbstractPower implements CloneablePowerInterfac
             AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(p, p, new LightPower(p, amount)));
             p.getPower("nearlmod:Poem'sLooks").flash();
         }
-        AbstractDungeon.actionManager.addToBottom(new RemoveSpecificPowerAction(p, p, "nearmod:ShadowPower"));
+        addToBot(new RemoveSpecificPowerAction(p, p, "nearmod:ShadowPower"));
     }
 
     @Override
