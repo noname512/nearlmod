@@ -1,6 +1,5 @@
 package nearlmod.cards.special;
 
-import com.badlogic.gdx.graphics.Texture;
 import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
 import com.megacrit.cardcrawl.actions.common.MakeTempCardInHandAction;
 import com.megacrit.cardcrawl.actions.unique.SkillFromDeckToHandAction;
@@ -35,7 +34,7 @@ public class LightCard extends AbstractNearlCard {
     private static final int UPGRADE_PLUS_LIGHT = 2;
     private static final int STR_LOSS = 2;
     private static final int UPGRADE_PLUS_LOSS = 1;
-    private int type = 0;
+    private int type;
 
     public LightCard() {
         this(0);
@@ -99,7 +98,7 @@ public class LightCard extends AbstractNearlCard {
         if (type == 0) {
             type = AbstractDungeon.cardRng.random(1, 6);
             rawDescription = DESCRIPTION + EXTENDED_DESCRIPTION[type];
-            textureImg = IMG_PATH_PREFIX + type + IMG_PATH_POSTFIX;;
+            textureImg = IMG_PATH_PREFIX + type + IMG_PATH_POSTFIX;
             loadCardImage(textureImg);
             switch (type) {
                 case 1:
