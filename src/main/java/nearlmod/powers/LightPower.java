@@ -87,7 +87,7 @@ public class LightPower extends AbstractPower implements CloneablePowerInterface
         onExhaustLight(true);
         if (AbstractDungeon.player.hasRelic(UpgradedCoreCaster.ID))
             realAmount += UpgradedCoreCaster.EXTRA_VAL;
-        if (p.stance.ID.equals(AtkStance.STANCE_ID)) {
+        if (m != null) {
             addToBot(new DamageAction(m, new DamageInfo(p, realAmount, DamageInfo.DamageType.THORNS), AbstractGameAction.AttackEffect.LIGHTNING));
         } else {
             addToBot(new AddTemporaryHPAction(p, p, realAmount));

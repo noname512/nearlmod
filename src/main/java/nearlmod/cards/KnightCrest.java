@@ -40,7 +40,7 @@ public class KnightCrest extends AbstractNearlCard {
             addToBot(new ChangeStanceAction(new AtkStance()));
         }
         addToBot(new DamageAction(m, new DamageInfo(p, damage, this.damageType), AbstractGameAction.AttackEffect.SLASH_DIAGONAL));
-        addToBot(new UseLightAction(m));
+        addToBot(new UseLightAction(p, m));
     }
 
     private void preUpd() {

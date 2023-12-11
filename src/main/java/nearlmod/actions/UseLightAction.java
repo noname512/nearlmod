@@ -3,35 +3,36 @@ package nearlmod.actions;
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
 import com.megacrit.cardcrawl.actions.common.RemoveSpecificPowerAction;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
-import com.megacrit.cardcrawl.core.AbstractCreature;
-import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.core.Settings;
+import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import nearlmod.powers.LightPower;
 import nearlmod.relics.UpgradedCoreCaster;
 
 public class UseLightAction extends AbstractGameAction {
-    public UseLightAction(AbstractCreature target) {
+    private final AbstractPlayer p;
+    private final AbstractMonster m;
+    public UseLightAction(AbstractPlayer p, AbstractMonster m) {
         actionType = ActionType.POWER;
         duration = Settings.ACTION_DUR_FAST;
-        this.target = target;
+        this.p = p;
+        this.m = m;
     }
     @Override
     public void update() {
-        if (target == null) {
+        if (p == null) {
             isDone = true;
             return;
         }
-        AbstractPlayer p = AbstractDungeon.player;
         LightPower l = (LightPower) p.getPower("nearlmod:LightPower");
         if (l == null) {
             if (p.hasRelic(UpgradedCoreCaster.ID)) {
                 l = new LightPower(p, 0);
-                l.useLight(p, target);
+                l.useLight(p, m);
             }
             isDone = true;
             return;
         }
-        l.useLight(p, target);
+        l.useLight(p, m);
         addToTop(new RemoveSpecificPowerAction(p, p, l));
         isDone = true;
     }

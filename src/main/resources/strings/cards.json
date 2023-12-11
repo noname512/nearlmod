@@ -82,8 +82,19 @@
     },
     "nearlmod:Light!": {
         "NAME": "光！",
-        "DESCRIPTION": "保留 。 NL 消耗 。 NL 使用 nearlmod:光 。",
-        "UPGRADE_DESCRIPTION": "保留 。 NL 消耗 。 NL 获得 !M! 层 nearlmod:光 。 NL 使用 nearlmod:光 。"
+        "DESCRIPTION": "消耗 。 NL ",
+        "UPGRADE_DESCRIPTION": "",
+        "EXTENDED_DESCRIPTION": [
+            "使用 nearlmod:光 。 NL 加入手牌时获得一个额外效果。",
+            "获得 !M! 层 nearlmod:光 。 NL 使用 nearlmod:光 。",
+            "使用 nearlmod:光 。 NL nearlmod:无畏 ：使目标在本回合内失去 !M! 点 力量 。",
+            "使用 nearlmod:光 。 NL nearlmod:守护 ：从抽牌堆中选择一张技能牌放入你的手牌。",
+            "保留 。 NL 使用 nearlmod:光 。",
+            "使用 nearlmod:光 。 NL 加入手牌时也将一张 *切换形态+ 放入你的手牌。",
+            "使用 nearlmod:光 。 NL 将一张 *光！+ 放入你的手牌。",
+            "使用 nearlmod:光 。 NL nearlmod:守护 ：从抽牌堆中选择一张牌放入你的手牌。",
+            "获得 !M! 层 nearlmod:光 ， "
+        ]
     },
     "nearlmod:Dreadnought": {
         "NAME": "无畏者",
