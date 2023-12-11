@@ -46,6 +46,17 @@ public class SweepWrong extends AbstractNearlCard {
     }
 
     @Override
+    public void calculateCardDamage(AbstractMonster mo) {
+        this.baseDamage -= 7;
+        this.baseMagicNumber = this.baseDamage;
+        super.calculateCardDamage(mo);
+        this.magicNumber = this.damage;
+        this.isMagicNumberModified = this.isDamageModified;
+        this.baseDamage += 7;
+        super.calculateCardDamage(mo);
+    }
+
+    @Override
     public AbstractCard makeCopy() {
         return new SweepWrong();
     }
