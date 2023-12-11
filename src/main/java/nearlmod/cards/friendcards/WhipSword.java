@@ -1,14 +1,18 @@
 package nearlmod.cards.friendcards;
 
+import com.badlogic.gdx.math.MathUtils;
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
 import com.megacrit.cardcrawl.actions.common.DamageAllEnemiesAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.cards.DamageInfo;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
+import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.localization.CardStrings;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import com.megacrit.cardcrawl.orbs.AbstractOrb;
+import com.megacrit.cardcrawl.powers.AbstractPower;
+import com.megacrit.cardcrawl.relics.AbstractRelic;
 import nearlmod.actions.PureDamageAllEnemiesAction;
 import nearlmod.orbs.AbstractFriend;
 import nearlmod.patches.AbstractCardEnum;
@@ -19,6 +23,7 @@ public class WhipSword extends AbstractFriendCard {
     public static final String NAME = cardStrings.NAME;
     public static final String DESCRIPTION = cardStrings.DESCRIPTION;
     public static final String UPGRADE_DESCRIPTION = cardStrings.UPGRADE_DESCRIPTION;
+    public static final String EXTRA_DESCRIPTION = cardStrings.EXTENDED_DESCRIPTION[0];
     public static final String IMG_PATH = "images/cards/whipsword.png";
     private static final int COST = 2;
     private static final int ATTACK_DMG = 3;
@@ -36,14 +41,83 @@ public class WhipSword extends AbstractFriendCard {
     public void use(AbstractPlayer p, AbstractMonster m) {
         addToBot(new DamageAllEnemiesAction(p, secondMagicNumber, DamageInfo.DamageType.NORMAL, AbstractGameAction.AttackEffect.NONE));
 
-        if (upgraded) {
-            addToBot(new PureDamageAllEnemiesAction(p, magicNumber, belongFriend + damageSuffix));
-        }
-
         for (AbstractOrb orb : p.orbs)
             if (orb instanceof AbstractFriend) {
                 addToBot(new PureDamageAllEnemiesAction(p, secondMagicNumber + ((AbstractFriend)orb).getTrustAmount(), orb.ID + damageSuffix));
             }
+
+        if (upgraded) {
+            addToBot(new PureDamageAllEnemiesAction(p, magicNumber, belongFriend + damageSuffix));
+        }
+
+        if (upgraded) {
+            rawDescription = UPGRADE_DESCRIPTION;
+        }
+        else {
+            rawDescription = DESCRIPTION;
+        }
+        initializeDescription();
+    }
+
+    @Override
+    public void applyPowers() {
+        super.applyPowers();
+        damage = 0;
+        AbstractPlayer p = AbstractDungeon.player;
+        for (AbstractOrb orb : p.orbs)
+            if (orb instanceof AbstractFriend) {
+                damage += secondMagicNumber + ((AbstractFriend)orb).getTrustAmount();
+            }
+        float tmp = secondMagicNumber;
+        for (AbstractRelic relic : p.relics)
+            tmp = relic.atDamageModify(tmp, this);
+        for (AbstractPower power : p.powers)
+            tmp = power.atDamageGive(tmp, damageTypeForTurn);
+        for (AbstractPower power : p.powers)
+            tmp = power.atDamageFinalGive(tmp, damageTypeForTurn);
+        damage += MathUtils.floor(tmp);
+        isDamageModified = true;
+        if (upgraded) {
+            damage += magicNumber;
+        }
+        if (upgraded) {
+            rawDescription = UPGRADE_DESCRIPTION + EXTRA_DESCRIPTION;
+        }
+        else {
+            rawDescription = DESCRIPTION + EXTRA_DESCRIPTION;
+        }
+        initializeDescription();
+    }
+
+    @Override
+    public void calculateCardDamage(AbstractMonster mo) {
+        super.calculateCardDamage(mo);
+        if (mo == null) return;
+        damage = 0;
+        AbstractPlayer p = AbstractDungeon.player;
+        for (AbstractOrb orb : p.orbs)
+            if (orb instanceof AbstractFriend) {
+                damage += staticCalcDmg(mo, secondMagicNumber + ((AbstractFriend)orb).getTrustAmount(), damageTypeForTurn, true);
+            }
+        DamageInfo t = new DamageInfo(p, secondMagicNumber);
+        t.applyPowers(p, mo);
+        damage += t.output;
+        if (upgraded) {
+            damage += magicNumber;
+        }
+        isDamageModified = true;
+        if (upgraded) {
+            rawDescription = UPGRADE_DESCRIPTION + EXTRA_DESCRIPTION;
+        }
+        else {
+            rawDescription = DESCRIPTION + EXTRA_DESCRIPTION;
+        }
+        initializeDescription();
+    }
+
+    @Override
+    public void triggerOnOtherCardPlayed(AbstractCard c) {
+        super.triggerOnOtherCardPlayed(c);
     }
 
     @Override

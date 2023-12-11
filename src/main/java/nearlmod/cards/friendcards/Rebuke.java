@@ -4,6 +4,7 @@ import com.megacrit.cardcrawl.actions.watcher.ChangeStanceAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
+import com.megacrit.cardcrawl.helpers.ImageMaster;
 import com.megacrit.cardcrawl.localization.CardStrings;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import nearlmod.orbs.Whislash;
@@ -27,6 +28,8 @@ public class Rebuke extends AbstractFriendCard {
                 CardType.POWER, AbstractCardEnum.FRIEND_BLUE,
                 CardRarity.SPECIAL, CardTarget.SELF, "nearlmod:Whislash");
         secondMagicNumber = baseSecondMagicNumber = CHANGE_CNT;
+        bannerSmallRegion = ImageMaster.CARD_BANNER_RARE;
+        bannerLargeRegion = ImageMaster.CARD_BANNER_RARE_L;
     }
 
     @Override

@@ -23,10 +23,11 @@ public class DivineAvatar extends AbstractFriendCard {
     public static final String UPGRADE_DESCRIPTION = cardStrings.UPGRADE_DESCRIPTION;
     public static final String IMG_PATH = "images/cards/divineavatar.png";
     private static final int COST = 2;
-    private static final int ATTACK_DMG = 7;
-    private static final int RECOVER_HP = 12;
-    private static final int UPGRADE_PLUS_DMG = 3;
-    private static final int UPGRADE_PLUS_HP = 6;
+    private static final int ATTACK_DMG = 5;
+    private static final int RECOVER_HP = 11;
+    private static final int UPGRADE_PLUS_DMG = 2;
+    private static final int UPGRADE_PLUS_HP = 3;
+    private static final int ATTACK_TIMES = 2;
 
     public DivineAvatar() {
         super(ID, NAME, IMG_PATH, COST, DESCRIPTION,
@@ -42,7 +43,9 @@ public class DivineAvatar extends AbstractFriendCard {
     public void use(AbstractPlayer p, AbstractMonster m) {
         DamageInfo info = new DamageInfo(p, magicNumber);
         info.name = belongFriend + AbstractFriendCard.damageSuffix;
-        addToBot(new DamageAction(m, info, AbstractGameAction.AttackEffect.SLASH_DIAGONAL));
+        for (int i = 0; i < ATTACK_TIMES; i++) {
+            addToBot(new DamageAction(m, info, AbstractGameAction.AttackEffect.SLASH_DIAGONAL));
+        }
         addToBot(new HealAction(p, p, secondMagicNumber));
         Blemishine.uniqueUsed = true;
     }

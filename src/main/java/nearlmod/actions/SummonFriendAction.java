@@ -2,6 +2,7 @@ package nearlmod.actions;
 
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
 import com.megacrit.cardcrawl.actions.defect.ChannelAction;
+import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.orbs.AbstractOrb;
 import com.megacrit.cardcrawl.core.Settings;
@@ -65,6 +66,9 @@ public class SummonFriendAction extends AbstractGameAction {
             }
             addToTop(new ChannelAction(summon, false));
             AbstractDungeon.player.increaseMaxOrbSlots(1, false);
+        }
+        for (AbstractCard card: AbstractDungeon.player.hand.group) {
+            card.applyPowers();
         }
         isDone = true;
     }

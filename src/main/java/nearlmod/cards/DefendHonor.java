@@ -23,7 +23,7 @@ public class DefendHonor extends AbstractNearlCard {
     public DefendHonor() {
         super(ID, NAME, IMG_PATH, COST, DESCRIPTION,
                 CardType.ATTACK, AbstractCardEnum.NEARL_GOLD,
-                CardRarity.RARE, CardTarget.ENEMY);
+                CardRarity.UNCOMMON, CardTarget.ENEMY);
         damage = baseDamage = 0;
         actualDescription = DESCRIPTION;
     }

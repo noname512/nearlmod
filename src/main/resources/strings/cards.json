@@ -92,7 +92,7 @@
     },
     "nearlmod:DayLike": {
         "NAME": "如昼",
-        "DESCRIPTION": "获得 !M! 层 nearlmod:光 。",
+        "DESCRIPTION": "获得 !M! 层 nearlmod:光 ，将一张 *光！ 加入你的手牌。",
         "UPGRADE_DESCRIPTION": ""
     },
     "nearlmod:OverflowingLight": {
@@ -310,7 +310,7 @@
     "nearlmod:TheReturn": {
         "NAME" : "归来",
         "DESCRIPTION": "召唤 闪灵 和 夜莺 作为 nearlmod:伙伴 。进入 nearlmod:无畏 。",
-        "UPGRADE_DESCRIPTION": " 固有 。 NL "
+        "UPGRADE_DESCRIPTION": ""
     },
     "nearlmod:FullSpeedAhead": {
         "NAME" : "全力冲锋",
@@ -405,7 +405,8 @@
     "nearlmod:FlameShadow": {
         "NAME": "烛燃影息",
         "DESCRIPTION": " nearlmod:伙伴牌 ， nearlmod:唯一 。 NL 获得 nearlmod:诗的容貌 。 NL 消耗所有的 nearlmod:光 ，对所有敌人造成其层数两倍的伤害。",
-        "UPGRADE_DESCRIPTION": ""
+        "UPGRADE_DESCRIPTION": "",
+        "EXTENDED_DESCRIPTION": ["（ !M! 点）"]
     },
 
     "nearlmod:AllOutEffort": {
@@ -425,7 +426,7 @@
     },
     "nearlmod:DivineAvatar": {
         "NAME": "先贤化身",
-        "DESCRIPTION": " nearlmod:伙伴牌 ， nearlmod:唯一 。 NL 造成 !M! 点伤害，回复 !nearlmod:M2! 点生命。",
+        "DESCRIPTION": " nearlmod:伙伴牌 ， nearlmod:唯一 。 NL 造成 !M! 点伤害两次，回复 !nearlmod:M2! 点生命。",
         "UPGRADE_DESCRIPTION": ""
     },
     "nearlmod:CraftsmanEcho": {
@@ -519,7 +520,8 @@
     "nearlmod:WhipSword": {
         "NAME": "鞭刃",
         "DESCRIPTION": " nearlmod:伙伴牌 。 NL 你和所有 nearlmod:伙伴 对所有敌人分别造成 !nearlmod:M2! 点伤害。",
-        "UPGRADE_DESCRIPTION": " nearlmod:伙伴牌 。 NL 你和所有 nearlmod:伙伴 对所有敌人分别造成 !nearlmod:M2! 点伤害。鞭刃额外对所有敌人造成 !M! 点伤害。"
+        "UPGRADE_DESCRIPTION": " nearlmod:伙伴牌 。 NL 你和所有 nearlmod:伙伴 对所有敌人分别造成 !nearlmod:M2! 点伤害。鞭刃额外造成一次 !M! 点伤害。",
+        "EXTENDED_DESCRIPTION": ["（共 !D! 点）"]
     },
 
     "nearlmod:PersonalCharm": {

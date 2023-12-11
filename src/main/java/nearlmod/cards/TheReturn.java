@@ -21,6 +21,7 @@ public class TheReturn extends AbstractNearlCard {
     public static final String UPGRADE_DESCRIPTION = cardStrings.UPGRADE_DESCRIPTION;
     public static final String IMG_PATH = "images/cards/thereturn.png";
     private static final int COST = 3;
+    private static final int UPGRADE_COST = 2;
 
     public TheReturn() {
         super(ID, NAME, IMG_PATH, COST, DESCRIPTION,
@@ -49,7 +50,8 @@ public class TheReturn extends AbstractNearlCard {
         if (!upgraded) {
             upgradeName();
             rawDescription = UPGRADE_DESCRIPTION + DESCRIPTION;
-            isInnate = true;
+            upgradeBaseCost(UPGRADE_COST);
+            // isInnate = true;
             initializeDescription();
         }
     }

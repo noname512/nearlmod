@@ -23,6 +23,7 @@ public class FlameShadow extends AbstractFriendCard {
     public static final String NAME = cardStrings.NAME;
     public static final String DESCRIPTION = cardStrings.DESCRIPTION;
     public static final String UPGRADE_DESCRIPTION = cardStrings.UPGRADE_DESCRIPTION;
+    public static final String EXTRA_DESCRIPTION = cardStrings.EXTENDED_DESCRIPTION[0];
     public static final String IMG_PATH = "images/cards/flameshadow.png";
     private static final int COST = 2;
     private static final int UPGRADED_COST = 1;
@@ -43,7 +44,6 @@ public class FlameShadow extends AbstractFriendCard {
         int dmg = magicNumber;
         int light = 0;
         if (power != null) {
-            dmg += power.amount * 2;
             light += power.amount;
             addToBot(new RemoveSpecificPowerAction(p, p, power));
         }
@@ -54,6 +54,8 @@ public class FlameShadow extends AbstractFriendCard {
             addToBot(new ApplyPowerAction(p, p, new ShadowPower(p, light)));
         }
         addToBot(new ApplyPowerAction(p, p, new PoemsLooksPower(p)));
+        rawDescription = DESCRIPTION;
+        initializeDescription();
     }
 
     @Override
@@ -73,7 +75,21 @@ public class FlameShadow extends AbstractFriendCard {
         if (p.getPower("nearlmod:Shadow") != null) {
             magicNumber += p.getPower("nearlmod:Shadow").amount;
         }
+        AbstractPower power = p.getPower("nearlmod:LightPower");
+        if (power != null) {
+            magicNumber += power.amount * 2;
+        }
         isMagicNumberModified = (magicNumber != baseMagicNumber);
+        rawDescription = DESCRIPTION + EXTRA_DESCRIPTION;
+        initializeDescription();
+    }
+
+
+    @Override
+    public void calculateCardDamage(AbstractMonster mo) {
+        super.calculateCardDamage(mo);
+        rawDescription = DESCRIPTION + EXTRA_DESCRIPTION;
+        initializeDescription();
     }
 
     @Override

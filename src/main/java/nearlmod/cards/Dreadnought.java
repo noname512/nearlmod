@@ -23,8 +23,8 @@ public class Dreadnought extends AbstractNearlCard {
     public static final String IMG_PATH = "images/cards/dreadnought.png";
     private static final int COST = 1;
     private static final int ATTACK_DMG = 8;
-    private static final int LIGHT_AMT = 5;
-    private static final int UPGRADE_PLUS_DMG = 4;
+    private static final int LIGHT_AMT = 3;
+    private static final int UPGRADE_PLUS_DMG = 2;
     private static final int UPGRADE_PLUS_LIGHT = 2;
 
     public Dreadnought() {
