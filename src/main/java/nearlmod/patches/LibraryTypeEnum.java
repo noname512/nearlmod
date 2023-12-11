@@ -6,5 +6,4 @@ import com.megacrit.cardcrawl.helpers.CardLibrary;
 public class LibraryTypeEnum {
     @SpireEnum public static CardLibrary.LibraryType NEARL_GOLD;
     @SpireEnum public static CardLibrary.LibraryType FRIEND_BLUE;
-    @SpireEnum public static CardLibrary.LibraryType NEARL_CURSE;
 }

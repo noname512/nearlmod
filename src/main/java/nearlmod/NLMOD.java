@@ -82,13 +82,6 @@ public class NLMOD implements EditCardsSubscriber, EditCharactersSubscriber, Edi
                 attackFriendCard, skillFriendCard, powerFriendCard, energyOrb,
                 attackFriendCardPortrait, skillFriendCardPortrait, powerFriendCardPortrait, energyOrbPortrait,
                 miniManaSymbol);
-
-        logger.info("addColor NEARL_CURSE");
-        BaseMod.addColor(NEARL_CURSE,
-                Color.BLACK, Color.BLACK, Color.BLACK, Color.BLACK, Color.BLACK, Color.BLACK, Color.BLACK,
-                attackFriendCard, skillFriendCard, powerFriendCard, energyOrb,
-                attackFriendCardPortrait, skillFriendCardPortrait, powerFriendCardPortrait, energyOrbPortrait,
-                miniManaSymbol);
     }
 
     @SuppressWarnings("unused")
@@ -340,18 +333,18 @@ public class NLMOD implements EditCardsSubscriber, EditCharactersSubscriber, Edi
 
         // rare.
         BaseMod.addRelicToCustomPool(new EmergencyCallBook(), NEARL_GOLD);
-        BaseMod.addRelicToCustomPool(new KnightFamily(), NEARL_GOLD);
+        BaseMod.addRelic(new KnightFamily(), RelicType.SHARED);
 
         // boss.
         BaseMod.addRelicToCustomPool(new PegasusHalo(), NEARL_GOLD);
 
         // event.
         BaseMod.addRelicToCustomPool(new Marigold(), NEARL_GOLD);
-        BaseMod.addRelicToCustomPool(new LateLight(), NEARL_CURSE);
-        BaseMod.addRelicToCustomPool(new Revenge(), NEARL_CURSE);
-        BaseMod.addRelicToCustomPool(new NormalPerson(), NEARL_CURSE);
-        BaseMod.addRelicToCustomPool(new ImaginaryFear(), NEARL_CURSE);
-        BaseMod.addRelicToCustomPool(new BloodEntangle(), NEARL_CURSE);
+        BaseMod.addRelicToCustomPool(new LateLight(), NEARL_GOLD);
+        BaseMod.addRelicToCustomPool(new Revenge(), NEARL_GOLD);
+        BaseMod.addRelicToCustomPool(new NormalPerson(), NEARL_GOLD);
+        BaseMod.addRelicToCustomPool(new ImaginaryFear(), NEARL_GOLD);
+        BaseMod.addRelicToCustomPool(new BloodEntangle(), NEARL_GOLD);
     }
 
     @Override

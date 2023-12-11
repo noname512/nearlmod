@@ -87,6 +87,7 @@ public class SaveData {
         @SpirePostfixPatch
         public static void Postfix(AbstractDungeon __instance, SaveFile file) {
             ArenaRoom.enterTimes = SaveData.arenaEnterTimes;
+            if (file.post_combat) ArenaRoom.enterTimes--;
             SaveData.logger.info("Save loaded.");
         }
     }

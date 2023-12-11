@@ -32,7 +32,10 @@
   },
   "nearlmod:CurseRelic": {
     "TEXT": [
-      "诅咒"
+      "诅咒",
+      " 诅咒",
+      "诅咒：",
+      "竞技场事件拒绝战斗获得的诅咒遗物。"
     ]
   },
   "nearlmod:FriendTip": {
