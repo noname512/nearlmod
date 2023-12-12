@@ -38,7 +38,6 @@ public class BloodBlade extends AbstractMonster {
             setHp(23, 28);
         isAbsorbing = false;
         loadAnimation("images/monsters/enemy_1186_bldbld/enemy_1186_bldbld.atlas", "images/monsters/enemy_1186_bldbld/enemy_1186_bldbld37.json", 2.0F);
-        this.state.setTimeScale(2.0F);
         this.flipHorizontal = true;
         this.stateData.setMix("Idle", "Die", 0.1F);
         this.state.setAnimation(0, "Idle", true);

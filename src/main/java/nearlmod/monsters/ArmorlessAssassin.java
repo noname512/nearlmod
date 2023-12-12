@@ -35,7 +35,6 @@ public class ArmorlessAssassin extends AbstractMonster {
         else
             attackUpAmount = 50;
         loadAnimation("images/monsters/enemy_1180_aruass_2/enemy_1180_aruass_2.atlas", "images/monsters/enemy_1180_aruass_2/enemy_1180_aruass_237.json", 1.5F);
-        this.state.setTimeScale(2.0F);
         this.flipHorizontal = true;
         this.stateData.setMix("Idle", "Die", 0.1F);
         this.state.setAnimation(0, "Idle", true);

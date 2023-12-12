@@ -30,7 +30,6 @@ public class UndertideGloompincer extends AbstractMonster {
         else hp = 60;
         setHp(MathUtils.floor(hp * (1 + 0.1F * level)));
         loadAnimation("images/monsters/enemy_1178_dscorp_2/enemy_1178_dscorp_233.atlas", "images/monsters/enemy_1178_dscorp_2/enemy_1178_dscorp_233.json", 2.0F);
-        this.state.setTimeScale(2.0F);
         this.flipHorizontal = true;
         this.stateData.setMix("Idle", "Die", 0.1F);
         this.state.setAnimation(0, "Idle", true);

@@ -40,7 +40,6 @@ public class WitheredKnight extends AbstractMonster {
             this.damage.add(new DamageInfo(this, 12));
         }
         loadAnimation("images/monsters/enemy_1513_dekght_2/enemy_1513_dekght_2.atlas", "images/monsters/enemy_1513_dekght_2/enemy_1513_dekght_237.json", 1.5F);
-        this.state.setTimeScale(2.0F);
         this.flipHorizontal = true;
         this.stateData.setMix("Idle", "Die", 0.1F);
         this.state.setAnimation(0, "Idle", true);

@@ -51,7 +51,6 @@ public class CorruptKnight extends AbstractMonster {
             this.damage.add(new DamageInfo(this, 90));
         }
         loadAnimation("images/monsters/enemy_1513_dekght/enemy_1513_dekght.atlas", "images/monsters/enemy_1513_dekght/enemy_1513_dekght37.json", 1.5F);
-        this.state.setTimeScale(2.0F);
         this.flipHorizontal = true;
         this.stateData.setMix("Idle", "Die", 0.1F);
         this.state.setAnimation(0, "Idle", true);

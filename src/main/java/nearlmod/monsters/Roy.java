@@ -36,7 +36,6 @@ public class Roy extends AbstractMonster {
         else
             corrosionAmount = 30;
         loadAnimation("images/monsters/enemy_1183_mlasrt_3/enemy_1183_mlasrt_333.atlas", "images/monsters/enemy_1183_mlasrt_3/enemy_1183_mlasrt_333.json", 1.5F);
-        this.state.setTimeScale(2.0F);
         this.flipHorizontal = true;
         this.stateData.setMix("Idle", "Die", 0.1F);
         this.state.setAnimation(0, "Idle", true);

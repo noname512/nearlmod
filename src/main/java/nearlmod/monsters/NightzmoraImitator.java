@@ -33,7 +33,6 @@ public class NightzmoraImitator extends AbstractMonster {
             this.damage.add(new DamageInfo(this, 6));
         }
         loadAnimation("images/monsters/enemy_1185_nmekgt/enemy_1185_nmekgt.atlas", "images/monsters/enemy_1185_nmekgt/enemy_1185_nmekgt37.json", 1.6F);
-        this.state.setTimeScale(2.0F);
         this.flipHorizontal = true;
         this.stateData.setMix("Idle", "Die", 0.1F);
         this.state.setAnimation(0, "Idle", true);

@@ -37,7 +37,6 @@ public class Monique extends AbstractMonster {
         else
             corrosionAmount = 15;
         loadAnimation("images/monsters/enemy_1182_flasrt_3/enemy_1182_flasrt_333.atlas", "images/monsters/enemy_1182_flasrt_3/enemy_1182_flasrt_333.json", 1.5F);
-        this.state.setTimeScale(2.0F);
         this.flipHorizontal = true;
         this.stateData.setMix("Idle", "Die", 0.1F);
         this.state.setAnimation(0, "Idle", true);
