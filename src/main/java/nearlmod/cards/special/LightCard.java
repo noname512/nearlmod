@@ -20,8 +20,6 @@ import nearlmod.powers.LightPower;
 import nearlmod.stances.AtkStance;
 import nearlmod.stances.DefStance;
 
-import java.util.logging.Logger;
-
 public class LightCard extends AbstractNearlCard {
     public static final String ID = "nearlmod:Light!";
     public static final CardStrings cardStrings = CardCrawlGame.languagePack.getCardStrings(ID);
@@ -29,7 +27,8 @@ public class LightCard extends AbstractNearlCard {
     public static final String DESCRIPTION = cardStrings.DESCRIPTION;
     public static final String UPGRADE_DESCRIPTION = cardStrings.UPGRADE_DESCRIPTION;
     public static final String[] EXTENDED_DESCRIPTION = cardStrings.EXTENDED_DESCRIPTION;
-    public static final String IMG_PATH = "images/cards/majestylight.png";
+    public static final String IMG_PATH_PREFIX = "images/cards/lightcard/lightcard_";
+    public static final String IMG_PATH_POSTFIX = ".png";
     private static final int COST = 0;
     private static final int EXTRA_LIGHT = 4;
     private static final int UPGRADE_PLUS_LIGHT = 2;
@@ -38,11 +37,15 @@ public class LightCard extends AbstractNearlCard {
     private int type;
 
     public LightCard() {
-        super(ID, NAME, IMG_PATH, COST, DESCRIPTION + EXTENDED_DESCRIPTION[0],
+        this(0);
+    }
+
+    public LightCard(int type) {
+        super(ID, NAME, IMG_PATH_PREFIX + type + IMG_PATH_POSTFIX, COST, DESCRIPTION + EXTENDED_DESCRIPTION[0],
                 CardType.SKILL, CardColor.COLORLESS,
                 CardRarity.SPECIAL, CardTarget.ENEMY);
         exhaust = true;
-        type = 0;
+        this.type = type;
     }
 
     @Override
@@ -95,6 +98,8 @@ public class LightCard extends AbstractNearlCard {
         if (type == 0) {
             type = AbstractDungeon.cardRng.random(1, 6);
             rawDescription = DESCRIPTION + EXTENDED_DESCRIPTION[type];
+            textureImg = IMG_PATH_PREFIX + type + IMG_PATH_POSTFIX;
+            loadCardImage(textureImg);
             switch (type) {
                 case 1:
                     magicNumber = baseMagicNumber = EXTRA_LIGHT;
@@ -131,7 +136,7 @@ public class LightCard extends AbstractNearlCard {
 
     @Override
     public AbstractCard makeCopy() {
-        return new LightCard();
+        return new LightCard(type);
     }
 
     @Override
