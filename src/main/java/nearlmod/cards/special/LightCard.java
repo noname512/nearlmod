@@ -9,6 +9,7 @@ import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.localization.CardStrings;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
+import com.megacrit.cardcrawl.powers.GainStrengthPower;
 import com.megacrit.cardcrawl.powers.LoseStrengthPower;
 import com.megacrit.cardcrawl.powers.StrengthPower;
 import com.megacrit.cardcrawl.vfx.cardManip.ShowCardAndAddToHandEffect;
@@ -64,7 +65,9 @@ public class LightCard extends AbstractNearlCard {
             case 2:
                 if (extraTriggered()) {
                     addToBot(new ApplyPowerAction(m, p, new StrengthPower(m, -2)));
-                    addToBot(new ApplyPowerAction(m, p, new LoseStrengthPower(m, -2)));
+                    if (!m.hasPower("Artifact")) {
+                        addToBot(new ApplyPowerAction(m, p, new GainStrengthPower(m, 2)));
+                    }
                 }
                 break;
             case 3:
