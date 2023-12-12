@@ -21,6 +21,7 @@ public class Platinum extends AbstractMonster {
         if (AbstractDungeon.ascensionLevel >= 7)
             setHp(110);
         loadAnimation("images/monsters/char_204_platnm/char_204_platnm.atlas", "images/monsters/char_204_platnm/char_204_platnm37.json", 1.5F);
+        this.state.setTimeScale(2.0F);
         this.flipHorizontal = true;
         this.stateData.setMix("Idle", "Die", 0.1F);
         this.state.setAnimation(0, "Idle", true);

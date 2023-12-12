@@ -41,6 +41,7 @@ public class LeftHandTytusTopola extends AbstractMonster {
             this.damage.add(new DamageInfo(this, 9));
         }
         loadAnimation("images/monsters/enemy_1104_lfkght_3/enemy_1104_lfkght_3.atlas", "images/monsters/enemy_1104_lfkght_3/enemy_1104_lfkght_333.json", 1.5F);
+        this.state.setTimeScale(2.0F);
         this.flipHorizontal = true;
         this.stateData.setMix("Idle", "Die", 0.1F);
         this.state.setAnimation(0, "Idle", true);

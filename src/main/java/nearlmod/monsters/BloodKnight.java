@@ -74,6 +74,7 @@ public class BloodKnight extends AbstractMonster {
         isStage2 = false;
         talked = false;
         loadAnimation("images/monsters/enemy_1524_bldkgt/enemy_1524_bldkgt33.atlas", "images/monsters/enemy_1524_bldkgt/enemy_1524_bldkgt33.json", 1.5F);
+        this.state.setTimeScale(2.0F);
         this.flipHorizontal = true;
         this.stateData.setMix("A_Idle", "A_Die_Start", 0.1F);
         this.state.setAnimation(0, "A_Idle", true);
@@ -165,6 +166,7 @@ public class BloodKnight extends AbstractMonster {
         else if (this.nextMove == 55) {
             CardCrawlGame.sound.play("BLOOD_KNIGHT_REBORN_NXT");
             loadAnimation("images/monsters/enemy_1524_bldkgt/enemy_1524_bldkgt33.atlas", "images/monsters/enemy_1524_bldkgt/enemy_1524_bldkgt33.json", 1.5F);
+            this.state.setTimeScale(2.0F);
             this.stateData.setMix("B_Idle", "B_Die", 0.1F);
             this.state.setAnimation(0, "A_Die_End_2", false);
             this.state.addAnimation(0, "B_Idle", true, 0);

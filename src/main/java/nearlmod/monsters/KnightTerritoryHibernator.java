@@ -36,6 +36,7 @@ public class KnightTerritoryHibernator extends AbstractMonster {
         setHp(MathUtils.floor(hp * (1 + 0.1F * level)));
         asleep = true;
         loadAnimation("images/monsters/enemy_1181_napkgt_2/enemy_1181_napkgt_233.atlas", "images/monsters/enemy_1181_napkgt_2/enemy_1181_napkgt_233.json", 1.5F);
+        this.state.setTimeScale(2.0F);
         this.flipHorizontal = true;
         this.stateData.setMix("Idle", "Die", 0.1F);
         this.state.setAnimation(0, "Idle_Sleep", true);

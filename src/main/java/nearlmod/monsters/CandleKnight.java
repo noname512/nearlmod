@@ -55,6 +55,7 @@ public class CandleKnight extends AbstractMonster {
         this.damage.add(new DamageInfo(this, flameDmg));
         this.damage.add(new DamageInfo(this, swordDmg));
         loadAnimation("images/monsters/enemy_1184_cadkgt_3/enemy_1184_cadkgt_333.atlas", "images/monsters/enemy_1184_cadkgt_3/enemy_1184_cadkgt_333.json", 1.5F);
+        this.state.setTimeScale(2.0F);
         this.flipHorizontal = true;
         this.stateData.setMix("Idle", "Die", 0.1F);
         this.stateData.setMix("Skill_Loop", "Skill_End", 0.1F);
