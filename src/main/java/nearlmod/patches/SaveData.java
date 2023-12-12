@@ -31,6 +31,7 @@ public class SaveData {
         @SpirePostfixPatch
         public static void Postfix(SaveFile __instance, SaveFile.SaveType type) {
             SaveData.arenaEnterTimes = ArenaRoom.enterTimes;
+            if (AbstractDungeon.screen == AbstractDungeon.CurrentScreen.COMBAT_REWARD && AbstractDungeon.getCurrRoom() instanceof ArenaRoom) SaveData.arenaEnterTimes--;
             SaveData.specialRewardCard = "";
             if (type == SaveFile.SaveType.POST_COMBAT) {
                 for (RewardItem item : AbstractDungeon.getCurrRoom().rewards)
@@ -87,7 +88,6 @@ public class SaveData {
         @SpirePostfixPatch
         public static void Postfix(AbstractDungeon __instance, SaveFile file) {
             ArenaRoom.enterTimes = SaveData.arenaEnterTimes;
-            if (file.post_combat) ArenaRoom.enterTimes--;
             SaveData.logger.info("Save loaded.");
         }
     }
