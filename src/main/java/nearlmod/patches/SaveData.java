@@ -11,7 +11,10 @@ import com.megacrit.cardcrawl.saveAndContinue.SaveAndContinue;
 import com.megacrit.cardcrawl.saveAndContinue.SaveFile;
 import javassist.CtBehavior;
 import nearlmod.NLMOD;
+import nearlmod.arenaevents.LeftHandBattle;
 import nearlmod.cards.AbstractNearlCard;
+import nearlmod.cards.SwallowLight;
+import nearlmod.cards.WayToChampion;
 import nearlmod.cards.special.Beginning;
 import nearlmod.cards.special.BlemishinesFaintLight;
 import nearlmod.cards.special.PersonalCharmSp;
@@ -31,14 +34,18 @@ public class SaveData {
         @SpirePostfixPatch
         public static void Postfix(SaveFile __instance, SaveFile.SaveType type) {
             SaveData.arenaEnterTimes = ArenaRoom.enterTimes;
-            if (AbstractDungeon.screen == AbstractDungeon.CurrentScreen.COMBAT_REWARD && AbstractDungeon.getCurrRoom() instanceof ArenaRoom) SaveData.arenaEnterTimes--;
             SaveData.specialRewardCard = "";
             if (type == SaveFile.SaveType.POST_COMBAT) {
-                for (RewardItem item : AbstractDungeon.getCurrRoom().rewards)
-                    if (item.type == RewardItem.RewardType.CARD && item.cards.size() == 1) {
-                        if (item.cards.get(0) instanceof AbstractNearlCard)
-                            SaveData.specialRewardCard = item.cards.get(0).cardID;
-                    }
+                if (AbstractDungeon.getCurrRoom() instanceof ArenaRoom) SaveData.arenaEnterTimes--;
+                if (AbstractDungeon.getCurrRoom().event != null && AbstractDungeon.getCurrRoom().event.noCardsInRewards) {
+                    for (RewardItem item : AbstractDungeon.getCurrRoom().rewards)
+                        if (item.type == RewardItem.RewardType.CARD) {
+                            if (item.cards.size() == 1 && item.cards.get(0) instanceof AbstractNearlCard)
+                                SaveData.specialRewardCard = item.cards.get(0).cardID;
+                            else
+                                SaveData.specialRewardCard = "nearlmod:LeftHandBattle";
+                        }
+                }
             }
             SaveData.logger.info("Saved arena enter times: " + SaveData.arenaEnterTimes);
         }
@@ -97,15 +104,29 @@ public class SaveData {
         @SpirePrefixPatch
         public static void Prefix(CardCrawlGame __instance, SaveFile saveFile) {
             if (saveFile.post_combat && !saveFile.smoked && !SaveData.specialRewardCard.isEmpty()) {
+                AbstractCard c;
                 switch (SaveData.specialRewardCard) {
                     case Beginning.ID:
                         AbstractNearlCard.addSpecificCardsToReward(new Beginning());
                         break;
+                    case SwallowLight.ID:
+                        c = new SwallowLight();
+                        if (AbstractDungeon.ascensionLevel < 12) c.upgrade();
+                        AbstractNearlCard.addSpecificCardsToReward(c);
+                        break;
                     case BlemishinesFaintLight.ID:
                         AbstractNearlCard.addSpecificCardsToReward(new BlemishinesFaintLight());
                         break;
+                    case WayToChampion.ID:
+                        c = new WayToChampion();
+                        if (AbstractDungeon.ascensionLevel < 12) c.upgrade();
+                        AbstractNearlCard.addSpecificCardsToReward(c);
+                        break;
                     case PersonalCharmSp.ID:
                         AbstractNearlCard.addSpecificCardsToReward(new PersonalCharmSp());
+                        break;
+                    case "nearlmod:LeftHandBattle":
+                        AbstractNearlCard.addSpecificCardsToReward(LeftHandBattle.getCardsWithRarity(AbstractCard.CardRarity.UNCOMMON));
                         break;
                 }
                 SaveData.logger.info("Special reward loaded.");
