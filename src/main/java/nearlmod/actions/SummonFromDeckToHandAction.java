@@ -54,7 +54,7 @@ public class SummonFromDeckToHandAction extends AbstractGameAction {
 
     private void moveCardToHand(AbstractCard card) {
         card.unhover();
-        if (p.hand.size() >= 10) {
+        if (p.hand.size() >= Settings.MAX_HAND_SIZE) {
             p.drawPile.moveToDiscardPile(card);
             p.createHandIsFullDialog();
         } else {
