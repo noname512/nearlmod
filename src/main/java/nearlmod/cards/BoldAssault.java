@@ -33,7 +33,6 @@ public class BoldAssault extends AbstractNearlCard {
                 CardType.ATTACK, AbstractCardEnum.NEARL_GOLD,
                 CardRarity.COMMON, CardTarget.ENEMY);
         damage = baseDamage = ATTACK_DMG;
-        tags.add(NearlTags.IS_SUMMON_CARD);
         cardsToPreview = new Burn();
     }
 
