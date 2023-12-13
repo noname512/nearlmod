@@ -10,7 +10,8 @@
     "PROPER_NAME": "Friend",
     "NAMES": [
       "friend",
-      "Friends"
+      "Friends",
+      "friends"
     ],
     "DESCRIPTION": "Friend can fight alongside you. At the start of each turn, Friend will provide you a #yFriend #yCard specific to them. At the second or subsequent times of summoning Friend, they will be #yPromoted and gain #b2 #yTrust."
   },
@@ -24,9 +25,10 @@
   "FRIEND_CARD": {
     "PROPER_NAME": "Friend Card",
     "NAMES": [
-      "Friend-card"
+      "FriendCard",
+      "friendcard"
     ],
-    "DESCRIPTION": "Cards that belong to #yFriends. The numerical values of #yFriend #yCard do not determined by your power but #yFriend's #yTrust instead. #yFriend #yCard do not count towards the hand limit. They are #yEthereal and #Exhausted whenever leave your hand."
+    "DESCRIPTION": "Cards that belong to #yFriends. The numerical values of #yFriend #yCard do not determined by your power but #yFriend's #yTrust instead. #yFriend #yCard do not count towards the hand limit. They are #yEthereal and #yExhausted whenever leave your hand."
   },
   "TRUST": {
     "PROPER_NAME": "Trust",
@@ -38,6 +40,7 @@
   "PLAY_COST": {
     "PROPER_NAME": "Deployment Point",
     "NAMES": [
+      "dp",
       "DP"
     ],
     "DESCRIPTION": "A special #yEnergy conserved between turns. Can be used and prioritized for #yFriend #yCard ."
@@ -52,7 +55,8 @@
   "CHARGING": {
     "PROPER_NAME": "Charging",
     "NAMES": [
-      "Charging"
+      "Charging",
+      "charging"
     ],
     "DESCRIPTION": "During charging, #yFriend will not provide #yFriend #yCard ."
   },
@@ -66,7 +70,8 @@
   "POEM'S_LOOK": {
     "PROPER_NAME": "Poem's looks",
     "NAMES": [
-      "Poem-looks"
+      "PoemLooks",
+      "poemlooks"
     ],
     "DESCRIPTION": "After you use #yLight , gain equivalent #yShadow . After you use #Shadow , gain equivalent #yLight ."
   },
@@ -94,6 +99,7 @@
     "DESCRIPTION": "In Guardian, gain #yDexterity according to your entering times."
   },
   "NEARL_STANCE": {
+    "PROPER_NAME": "Stance",
     "NAMES": [
       "stance"
     ],
@@ -102,21 +108,24 @@
   "WFPPower": {
     "PROPER_NAME": "White Fiend's Protection",
     "NAMES": [
-      "White_Fiend's_Protection"
+      "WFProtection",
+      "wfprotection"
     ],
     "DESCRIPTION": "You can no longer become #yFrail , #yWeak and #yVulnerable . If you have #yBlack #yFiend's #yProtection at the same time, gain #b1 #yArtifact at the start of each turn."
   },
   "BFPPower": {
     "PROPER_NAME": "Black Fiend's Protection",
     "NAMES": [
-      "Black_Fiend's_Protection"
+      "BFProtection",
+      "bfprotection"
     ],
     "DESCRIPTION": "Your first #yAttack which is not #yFriend #yCard , apply #b1 #yVulnerable or #yWeak randomly. If you have #White #yFiend's #yProtection at the same time, change to apply #b1 #yVulnerable and #yWeak ."
   },
   "FriendShelter": {
     "PROPER_NAME": "Friend's Shelter",
     "NAMES": [
-      "FriendShelter"
+      "FriendShelter",
+      "friendshelter"
     ],
     "DESCRIPTIONS": "Prevent damage you take this turn."
   }

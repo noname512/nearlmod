@@ -10,7 +10,6 @@ import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.localization.CardStrings;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import com.megacrit.cardcrawl.powers.GainStrengthPower;
-import com.megacrit.cardcrawl.powers.LoseStrengthPower;
 import com.megacrit.cardcrawl.powers.StrengthPower;
 import com.megacrit.cardcrawl.vfx.cardManip.ShowCardAndAddToHandEffect;
 import nearlmod.actions.AllFromDeckToHandAction;
@@ -42,7 +41,7 @@ public class LightCard extends AbstractNearlCard {
     }
 
     public LightCard(int type) {
-        super(ID, NAME, IMG_PATH_PREFIX + type + IMG_PATH_POSTFIX, COST, DESCRIPTION + EXTENDED_DESCRIPTION[0],
+        super(ID, NAME, IMG_PATH_PREFIX + type + IMG_PATH_POSTFIX, COST, EXTENDED_DESCRIPTION[0] + DESCRIPTION,
                 CardType.SKILL, CardColor.COLORLESS,
                 CardRarity.SPECIAL, CardTarget.ENEMY);
         exhaust = true;
@@ -100,7 +99,7 @@ public class LightCard extends AbstractNearlCard {
     public void triggerWhenCopied() {
         if (type == 0) {
             type = AbstractDungeon.cardRng.random(1, 6);
-            rawDescription = DESCRIPTION + EXTENDED_DESCRIPTION[type];
+            rawDescription = EXTENDED_DESCRIPTION[type] + DESCRIPTION;
             textureImg = IMG_PATH_PREFIX + type + IMG_PATH_POSTFIX;
             loadCardImage(textureImg);
             switch (type) {
@@ -154,14 +153,14 @@ public class LightCard extends AbstractNearlCard {
                     upgradeMagicNumber(UPGRADE_PLUS_LOSS);
                     break;
                 case 3:
-                    rawDescription = DESCRIPTION + EXTENDED_DESCRIPTION[7];
+                    rawDescription = EXTENDED_DESCRIPTION[7] + DESCRIPTION;
                     initializeDescription();
                     break;
                 case 4:
                 case 5:
                 case 6:
                     upgradeMagicNumber(UPGRADE_PLUS_LIGHT);
-                    rawDescription = DESCRIPTION + EXTENDED_DESCRIPTION[8] + EXTENDED_DESCRIPTION[type];
+                    rawDescription = EXTENDED_DESCRIPTION[8] + EXTENDED_DESCRIPTION[type] + DESCRIPTION;
                     initializeDescription();
             }
         }

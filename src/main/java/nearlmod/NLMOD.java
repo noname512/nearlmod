@@ -307,7 +307,7 @@ public class NLMOD implements EditCardsSubscriber, EditCharactersSubscriber, Edi
     public void receiveEditKeywords() {
         Gson gson = new Gson();
 
-        String keywordStrings = Gdx.files.internal("strings/zhs/keywords.json").readString(String.valueOf(StandardCharsets.UTF_8));
+        String keywordStrings = Gdx.files.internal("strings/" + getLang() + "/keywords.json").readString(String.valueOf(StandardCharsets.UTF_8));
         Type typeToken = new TypeToken<Map<String, Keyword>>() {}.getType();
 
         Map<String, Keyword> keywords = gson.fromJson(keywordStrings, typeToken);
@@ -350,10 +350,7 @@ public class NLMOD implements EditCardsSubscriber, EditCharactersSubscriber, Edi
 
     @Override
     public void receiveEditStrings() {
-        String lang = "eng";
-        if (Settings.language == Settings.GameLanguage.ZHS || Settings.language == Settings.GameLanguage.ZHT) {
-            lang = "zhs";
-        }
+        String lang = getLang();
         String cardStrings = Gdx.files.internal("strings/" + lang + "/cards.json").readString(String.valueOf(StandardCharsets.UTF_8));
         BaseMod.loadCustomStrings(CardStrings.class, cardStrings);
         String characterStrings = Gdx.files.internal("strings/" + lang + "/character.json").readString(String.valueOf(StandardCharsets.UTF_8));
@@ -374,6 +371,14 @@ public class NLMOD implements EditCardsSubscriber, EditCharactersSubscriber, Edi
         BaseMod.loadCustomStrings(UIStrings.class, uiStrings);
         String potionStrings = Gdx.files.internal("strings/" + lang + "/potions.json").readString(String.valueOf(StandardCharsets.UTF_8));
         BaseMod.loadCustomStrings(PotionStrings.class, potionStrings);
+    }
+
+    private String getLang() {
+        String lang = "eng";
+        if (Settings.language == Settings.GameLanguage.ZHS || Settings.language == Settings.GameLanguage.ZHT) {
+            lang = "zhs";
+        }
+        return lang;
     }
 
     public static boolean checkOrb(String orbId) {

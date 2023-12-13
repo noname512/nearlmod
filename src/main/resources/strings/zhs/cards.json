@@ -82,14 +82,14 @@
     },
     "nearlmod:Light!": {
         "NAME": "光！",
-        "DESCRIPTION": "消耗 。 NL ",
+        "DESCRIPTION": " NL 消耗 。",
         "UPGRADE_DESCRIPTION": "",
         "EXTENDED_DESCRIPTION": [
             "使用 nearlmod:光 。 NL 加入手牌时随机获得一个额外效果。",
             "获得 !M! 层 nearlmod:光 。 NL 使用 nearlmod:光 。",
             "使用 nearlmod:光 。 NL nearlmod:无畏 ：使目标在本回合内失去 !M! 点 力量 。",
             "使用 nearlmod:光 。 NL nearlmod:守护 ：从抽牌堆中选择一张技能牌放入你的手牌。",
-            "保留 。 NL 使用 nearlmod:光 。",
+            "使用 nearlmod:光 。 NL 保留 。",
             "使用 nearlmod:光 。 NL 放入手牌时，将一张 *切换形态+ 放入你的手牌，并使其获得 消耗 和 虚无 。",
             "使用 nearlmod:光 。 NL 将一张 [#EFC851]光！+[] 放入你的手牌。",
             "使用 nearlmod:光 。 NL nearlmod:守护 ：从抽牌堆中选择一张牌放入你的手牌。",
@@ -350,7 +350,7 @@
     },
     "nearlmod:PathOfRadiant": {
         "NAME": "循光道途",
-        "DESCRIPTION": "消耗 。 NL 进入 nearlmod:无畏 。 NL nearlmod:晋升 你的所有 nearlmod:伙伴 。如果有红松骑士团成员在场，你的所有 nearlmod:伙伴 获得 !M! 点 nearlmod:信赖 。",
+        "DESCRIPTION": "进入 nearlmod:无畏 。 NL nearlmod:晋升 你的所有 nearlmod:伙伴 。如果有红松骑士团成员在场，你的所有 nearlmod:伙伴 获得 !M! 点 nearlmod:信赖 。 NL 消耗 。",
         "UPGRADE_DESCRIPTION": ""
     },
     "nearlmod:PegasusForm": {
@@ -365,13 +365,13 @@
     },
     "nearlmod:UnitedAsOne": {
         "NAME": "众志成城",
-        "DESCRIPTION": "消耗 。 NL 所有在场且 nearlmod:唯一 牌未被使用的 nearlmod:伙伴 给予你其 nearlmod:唯一 nearlmod:伙伴牌 。",
-        "UPGRADE_DESCRIPTION": "消耗 。 NL 所有在场且 nearlmod:唯一 牌未被使用的 nearlmod:伙伴 给予你其升级后的 nearlmod:唯一 nearlmod:伙伴牌 。"
+        "DESCRIPTION": "所有在场且 nearlmod:唯一 牌未被使用的 nearlmod:伙伴 给予你其 nearlmod:唯一 nearlmod:伙伴牌 。 NL 消耗 。",
+        "UPGRADE_DESCRIPTION": "所有在场且 nearlmod:唯一 牌未被使用的 nearlmod:伙伴 给予你其升级后的 nearlmod:唯一 nearlmod:伙伴牌 。 NL 消耗 。"
     },
     "nearlmod:Followers": {
         "NAME": "使徒",
         "DESCRIPTION": "从三张使徒牌中选择一张加入你的手牌，如果闪灵和夜莺均在场，则改为全部加入你的手牌。",
-        "UPGRADE_DESCRIPTION": "保留 。 NL 从三张使徒牌中选择一张加入你的手牌，如果闪灵和夜莺均在场，则改为全部加入你的手牌。"
+        "UPGRADE_DESCRIPTION": "从三张使徒牌中选择一张加入你的手牌，如果闪灵和夜莺均在场，则改为全部加入你的手牌。 NL 保留 。"
     },
     "nearlmod:NearlCard": {
         "NAME": "使徒：临光",
@@ -599,7 +599,7 @@
     },
     "nearlmod:Blemishine'sFaintLight": {
         "NAME": "瑕光微明",
-        "DESCRIPTION": " 保留 。 NL 消耗 。 获得 nearlmod:伙伴们的庇护 。",
+        "DESCRIPTION": "获得 nearlmod:伙伴们的庇护 。 NL 保留 。 NL 消耗 。 ",
         "UPGRADE_DESCRIPTION": ""
     },
     "nearlmod:PersonalCharmSp": {
@@ -618,7 +618,7 @@
     },
     "nearlmod:MedalOfChampion": {
         "NAME": "冠军奖章",
-        "DESCRIPTION": "消耗 。 NL 获得 !M! 金币。",
+        "DESCRIPTION": "获得 !M! 金币。 NL 消耗 。",
         "UPGRADE_DESCRIPTION": ""
     },
 
