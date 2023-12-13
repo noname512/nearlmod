@@ -26,7 +26,9 @@
     "PROPER_NAME": "Friend Card",
     "NAMES": [
       "FriendCard",
-      "friendcard"
+      "friendcard",
+      "friend_card",
+      "Friend_Card"
     ],
     "DESCRIPTION": "Cards that belong to #yFriends. The numerical values of #yFriend #yCard do not determined by your power but #yFriend's #yTrust instead. #yFriend #yCard do not count towards the hand limit. They are #yEthereal and #yExhausted whenever leave your hand."
   },
@@ -109,7 +111,9 @@
     "PROPER_NAME": "White Fiend's Protection",
     "NAMES": [
       "WFProtection",
-      "wfprotection"
+      "wfprotection",
+      "White_Fiend's_Protection",
+      "white_fiend's_protection"
     ],
     "DESCRIPTION": "You can no longer become #yFrail , #yWeak and #yVulnerable . If you have #yBlack #yFiend's #yProtection at the same time, gain #b1 #yArtifact at the start of each turn."
   },
@@ -117,7 +121,9 @@
     "PROPER_NAME": "Black Fiend's Protection",
     "NAMES": [
       "BFProtection",
-      "bfprotection"
+      "bfprotection",
+      "Black_Fiend's_Protection",
+      "black_fiend's_protection"
     ],
     "DESCRIPTION": "Your first #yAttack which is not #yFriend #yCard , apply #b1 #yVulnerable or #yWeak randomly. If you have #White #yFiend's #yProtection at the same time, change to apply #b1 #yVulnerable and #yWeak ."
   },
@@ -125,7 +131,9 @@
     "PROPER_NAME": "Friend's Shelter",
     "NAMES": [
       "FriendShelter",
-      "friendshelter"
+      "friendshelter",
+      "Friend's_Shelter",
+      "friend's_shelter"
     ],
     "DESCRIPTIONS": "Prevent damage you take this turn."
   }

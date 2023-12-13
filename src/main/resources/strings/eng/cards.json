@@ -113,7 +113,7 @@
     },
     "nearlmod:ReverseForce": {
         "NAME": "Reversed Force",
-        "DESCRIPTION": "Deal !D! damage. NL If Whislash is present, add a random non- nearlmod:Unique nearlmod:FriendCard into your hand. ( nearlmod:Dreadnought : Attack card , nearlmod:Guardian : Skill card )",
+        "DESCRIPTION": "Deal !D! damage. NL If Whislash is present, add a random non- nearlmod:Unique nearlmod:Friend_Card into your hand. ( nearlmod:Dreadnought : Attack card , nearlmod:Guardian : Skill card )",
         "UPGRADE_DESCRIPTION": ""
     },
     "nearlmod:ArmorProtection": {
@@ -152,8 +152,8 @@
     },
     "nearlmod:SightImpairingShowdown": {
         "NAME": "Sight-impairing Showdown",
-        "DESCRIPTION": "Add a random non- nearlmod:Unique nearlmod:FriendCard of Viviana into your hand. NL If Viviana is present, apply !M! nearlmod:Trust to her.",
-        "UPGRADE_DESCRIPTION": "Choose a non- nearlmod:Unique nearlmod:FriendCard of Viviana to add into your hand. NL If Viviana is present, apply !M! nearlmod:Trust to her."
+        "DESCRIPTION": "Add a random non- nearlmod:Unique nearlmod:Friend_Card of Viviana into your hand. NL If Viviana is present, apply !M! nearlmod:Trust to her.",
+        "UPGRADE_DESCRIPTION": "Choose a non- nearlmod:Unique nearlmod:Friend_Card of Viviana to add into your hand. NL If Viviana is present, apply !M! nearlmod:Trust to her."
     },
     "nearlmod:GloriousKazimierz": {
         "NAME": "Glorious Kazimierz",
@@ -270,7 +270,7 @@
     },
     "nearlmod:FanClub": {
         "NAME": "Fan Club",
-        "DESCRIPTION": "Whenever you play a nearlmod:FriendCard, apply !M! nearlmod:Trust to the nearlmod:Friend it belongs to. NL If you play a nearlmod:FriendCard belongs to Whislash, apply !M! nearlmod:Trust to all nearlmod:Friends instead.",
+        "DESCRIPTION": "Whenever you play a nearlmod:Friend_Card, apply !M! nearlmod:Trust to the nearlmod:Friend it belongs to. NL If you play a nearlmod:Friend_Card belongs to Whislash, apply !M! nearlmod:Trust to all nearlmod:Friends instead.",
         "UPGRADE_DESCRIPTION": ""
     },
     "nearlmod:UpgradedKnightShield": {
@@ -365,8 +365,8 @@
     },
     "nearlmod:UnitedAsOne": {
         "NAME": "United as One",
-        "DESCRIPTION": "Every nearlmod:Friend provide the nearlmod:Unique nearlmod:FriendCard if it isn't used. NL Exhaust.",
-        "UPGRADE_DESCRIPTION": "Every nearlmod:Friend provide the Upgraded nearlmod:Unique nearlmod:FriendCard if it isn't used. NL Exhaust."
+        "DESCRIPTION": "Every nearlmod:Friend provide the nearlmod:Unique nearlmod:Friend_Card if it isn't used. NL Exhaust.",
+        "UPGRADE_DESCRIPTION": "Every nearlmod:Friend provide the Upgraded nearlmod:Unique nearlmod:Friend_Card if it isn't used. NL Exhaust."
     },
     "nearlmod:Followers": {
         "NAME": "Followers",
@@ -401,22 +401,22 @@
     },
     "nearlmod:LSSwiftSword": {
         "NAME": "Light-Shadow Swift Sword",
-        "DESCRIPTION": "nearlmod:FriendCard. NL Deal !M! damage !nearlmod:M2! 次.",
+        "DESCRIPTION": "nearlmod:Friend_Card. NL Deal !M! damage !nearlmod:M2! 次.",
         "UPGRADE_DESCRIPTION": ""
     },
     "nearlmod:FlashFade": {
         "NAME": "\"Flash and Fade\"",
-        "DESCRIPTION": "nearlmod:FriendCard. NL Enter nearlmod:Dreadnought. Deal !M! damage !nearlmod:M2! times. NL Also influenced by your Strength.",
+        "DESCRIPTION": "nearlmod:Friend_Card. NL Enter nearlmod:Dreadnought. Deal !M! damage !nearlmod:M2! times. NL Also influenced by your Strength.",
         "UPGRADE_DESCRIPTION": ""
     },
     "nearlmod:GlimmeringTouch": {
         "NAME": "Glimmering Touch",
-        "DESCRIPTION": "nearlmod:FriendCard. NL Enter nearlmod:Charging. After two turns, deal !M! damage to all enemies and gain !nearlmod:M2! nearlmod:Light.",
-        "UPGRADE_DESCRIPTION": "nearlmod:FriendCard. NL Enter nearlmod:Charging. At the start of next turn, deal !M! damage to all enemies and gain !nearlmod:M2! nearlmod:Light."
+        "DESCRIPTION": "nearlmod:Friend_Card. NL Enter nearlmod:Charging. After two turns, deal !M! damage to all enemies and gain !nearlmod:M2! nearlmod:Light.",
+        "UPGRADE_DESCRIPTION": "nearlmod:Friend_Card. NL Enter nearlmod:Charging. At the start of next turn, deal !M! damage to all enemies and gain !nearlmod:M2! nearlmod:Light."
     },
     "nearlmod:FlameShadow": {
         "NAME": "Candlelit Shadow Whisper",
-        "DESCRIPTION": "nearlmod:FriendCard. nearlmod:Unique. NL Gain nearlmod:PoemLooks. NL Lose all nearlmod:Light and deal damage equal to twice of it to all enemies.",
+        "DESCRIPTION": "nearlmod:Friend_Card. nearlmod:Unique. NL Gain nearlmod:PoemLooks. NL Lose all nearlmod:Light and deal damage equal to twice of it to all enemies.",
         "UPGRADE_DESCRIPTION": "",
         "EXTENDED_DESCRIPTION": ["(Deals !M! damage)"]
     },
@@ -428,22 +428,22 @@
     },
     "nearlmod:SurgingBrilliance": {
         "NAME": "Surging Brilliance",
-        "DESCRIPTION": "nearlmod:FriendCard. NL Deal !M! damage. NL Gain !nearlmod:M2! nearlmod:Light.",
+        "DESCRIPTION": "nearlmod:Friend_Card. NL Deal !M! damage. NL Gain !nearlmod:M2! nearlmod:Light.",
         "UPGRADE_DESCRIPTION": ""
     },
     "nearlmod:DeterringRadiance": {
         "NAME": "Deterring Radiance",
-        "DESCRIPTION": "nearlmod:FriendCard. NL Apply !nearlmod:M2! Weak to all enemies. NL Gain !M! nearlmod:Light.",
+        "DESCRIPTION": "nearlmod:Friend_Card. NL Apply !nearlmod:M2! Weak to all enemies. NL Gain !M! nearlmod:Light.",
         "UPGRADE_DESCRIPTION": ""
     },
     "nearlmod:DivineAvatar": {
         "NAME": "Divine Avatar",
-        "DESCRIPTION": "nearlmod:FriendCard. nearlmod:Unique. NL Deal !M! damage twice. NL Heal !nearlmod:M2! HP.",
+        "DESCRIPTION": "nearlmod:Friend_Card. nearlmod:Unique. NL Deal !M! damage twice. NL Heal !nearlmod:M2! HP.",
         "UPGRADE_DESCRIPTION": ""
     },
     "nearlmod:CraftsmanEcho": {
         "NAME": "Craftsman's Echo",
-        "DESCRIPTION": "nearlmod:FriendCard. NL Enter nearlmod:Guardian or nearlmod:Dreadnought. Gain !nearlmod:M2! additional stats.",
+        "DESCRIPTION": "nearlmod:Friend_Card. NL Enter nearlmod:Guardian or nearlmod:Dreadnought. Gain !nearlmod:M2! additional stats.",
         "UPGRADE_DESCRIPTION": ""
     },
     "nearlmod:ToAtkStance": {
@@ -459,27 +459,27 @@
 
     "nearlmod:DanceTogether": {
         "NAME": "Dance Together",
-        "DESCRIPTION": "Summon Nightingale as nearlmod:Friend. NL Add a random non- nearlmod:Unique nearlmod:FriendCard.",
-        "UPGRADE_DESCRIPTION": "Summon Nightingale as nearlmod:Friend. NL Add a random non- nearlmod:Unique nearlmod:FriendCard. Remove its Ethereal and Retain it."
+        "DESCRIPTION": "Summon Nightingale as nearlmod:Friend. NL Add a random non- nearlmod:Unique nearlmod:Friend_Card.",
+        "UPGRADE_DESCRIPTION": "Summon Nightingale as nearlmod:Friend. NL Add a random non- nearlmod:Unique nearlmod:Friend_Card. Remove its Ethereal and Retain it."
     },
     "nearlmod:ArtsShield": {
         "NAME": "Arts Shield",
-        "DESCRIPTION": "nearlmod:FriendCard. NL Gain !M! Block and !nearlmod:M2! Temporary_HP.",
+        "DESCRIPTION": "nearlmod:Friend_Card. NL Gain !M! Block and !nearlmod:M2! Temporary_HP.",
         "UPGRADE_DESCRIPTION": ""
     },
     "nearlmod:Sanctuary": {
         "NAME": "Sanctuary",
-        "DESCRIPTION": "nearlmod:FriendCard. NL Gain !M! Block ，在接下来的 !nearlmod:M2! 回合内，你受到的伤害减半.",
+        "DESCRIPTION": "nearlmod:Friend_Card. NL Gain !M! Block ，在接下来的 !nearlmod:M2! 回合内，你受到的伤害减半.",
         "UPGRADE_DESCRIPTION": ""
     },
     "nearlmod:WhiteFiendProtection": {
         "NAME": "White Fiend's Protection",
-        "DESCRIPTION": "nearlmod:FriendCard. nearlmod:Unique. NL Gain nearlmod:WFProtection.",
-        "UPGRADE_DESCRIPTION": "nearlmod:FriendCard. nearlmod:Unique. NL Gain nearlmod:WFProtection. NL Lose 1 of all debuff."
+        "DESCRIPTION": "nearlmod:Friend_Card. nearlmod:Unique. NL Gain nearlmod:White_Fiend's_Protection.",
+        "UPGRADE_DESCRIPTION": "nearlmod:Friend_Card. nearlmod:Unique. NL Gain nearlmod:White_Fiend's_Protection. NL Lose 1 of all debuff."
     },
     "nearlmod:ClosedHope": {
         "NAME": "Closed Hope",
-        "DESCRIPTION": "nearlmod:FriendCard. NL Enter nearlmod:Guardian. NL Gain !M! Block. If you still have Block at the start of next turn, gain !nearlmod:M2! Artifact.",
+        "DESCRIPTION": "nearlmod:Friend_Card. NL Enter nearlmod:Guardian. NL Gain !M! Block. If you still have Block at the start of next turn, gain !nearlmod:M2! Artifact.",
         "UPGRADE_DESCRIPTION": ""
     },
 
@@ -490,22 +490,22 @@
     },
     "nearlmod:Creed": {
         "NAME": "Creed",
-        "DESCRIPTION": "nearlmod:FriendCard. NL Deal !M! damage，Enter nearlmod:Guardian.",
+        "DESCRIPTION": "nearlmod:Friend_Card. NL Deal !M! damage，Enter nearlmod:Guardian.",
         "UPGRADE_DESCRIPTION": ""
     },
     "nearlmod:AutoProtect": {
         "NAME": "Auto Protect",
-        "DESCRIPTION": "nearlmod:FriendCard. NL Unplayable. NL Gain !M! Block both this and next turn when added into hand.",
+        "DESCRIPTION": "nearlmod:Friend_Card. NL Unplayable. NL Gain !M! Block both this and next turn when added into hand.",
         "UPGRADE_DESCRIPTION": ""
     },
     "nearlmod:BlackFiendProtection": {
         "NAME": "Black Fiend's Protection",
-        "DESCRIPTION": "nearlmod:FriendCard. nearlmod:Unique. NL Gain nearlmod:BFProtection.",
-        "UPGRADE_DESCRIPTION": "nearlmod:FriendCard. nearlmod:Unique. NL Gain nearlmod:BFProtection. NL Apply 1 Weak to all enemies."
+        "DESCRIPTION": "nearlmod:Friend_Card. nearlmod:Unique. NL Gain nearlmod:Black_Fiend's_Protection.",
+        "UPGRADE_DESCRIPTION": "nearlmod:Friend_Card. nearlmod:Unique. NL Gain nearlmod:Black_Fiend's_Protection. NL Apply 1 Weak to all enemies."
     },
     "nearlmod:CreedField": {
         "NAME": "Creed Field",
-        "DESCRIPTION": "nearlmod:FriendCard. NL Gain !M! Block. Whenever you take damage in the following !nearlmod:M2! turns, take 6 less",
+        "DESCRIPTION": "nearlmod:Friend_Card. NL Gain !M! Block. Whenever you take damage in the following !nearlmod:M2! turns, take 6 less",
         "UPGRADE_DESCRIPTION": ""
     },
 
@@ -516,23 +516,23 @@
     },
     "nearlmod:VisionOfUnity": {
         "NAME": "Vision of Unity",
-        "DESCRIPTION": "nearlmod:FriendCard. NL Gain !nearlmod:M2! Buffers.",
+        "DESCRIPTION": "nearlmod:Friend_Card. NL Gain !nearlmod:M2! Buffers.",
         "UPGRADE_DESCRIPTION": ""
     },
     "nearlmod:Rebuke": {
         "NAME": "Rebuke",
-        "DESCRIPTION": "nearlmod:FriendCard ， nearlmod:Unique. NL whenever you switch your nearlmod:Stance, gain !nearlmod:M2! additional stats. Switch your nearlmod:Stance.",
+        "DESCRIPTION": "nearlmod:Friend_Card ， nearlmod:Unique. NL whenever you switch your nearlmod:Stance, gain !nearlmod:M2! additional stats. Switch your nearlmod:Stance.",
         "UPGRADE_DESCRIPTION": ""
     },
     "nearlmod:MotivationalSkills": {
         "NAME": "Motivational Skills",
-        "DESCRIPTION": "nearlmod:FriendCard. NL Enter nearlmod:Dreadnought. If you are already in nearlmod:Dreadnought, gain !nearlmod:M2! Strength.",
+        "DESCRIPTION": "nearlmod:Friend_Card. NL Enter nearlmod:Dreadnought. If you are already in nearlmod:Dreadnought, gain !nearlmod:M2! Strength.",
         "UPGRADE_DESCRIPTION": ""
     },
     "nearlmod:WhipSword": {
         "NAME": "Whip Sword",
-        "DESCRIPTION": "nearlmod:FriendCard. NL You and all nearlmod:Friends Deal !nearlmod:M2! damage to all enemies separately.",
-        "UPGRADE_DESCRIPTION": "nearlmod:FriendCard. NL You and all nearlmod:Friends Deal !nearlmod:M2! damage to all enemies separately. Whislash deal !M! damage separately.",
+        "DESCRIPTION": "nearlmod:Friend_Card. NL You and all nearlmod:Friends Deal !nearlmod:M2! damage to all enemies separately.",
+        "UPGRADE_DESCRIPTION": "nearlmod:Friend_Card. NL You and all nearlmod:Friends Deal !nearlmod:M2! damage to all enemies separately. Whislash deal !M! damage separately.",
         "EXTENDED_DESCRIPTION": ["(!D! in total)"]
     },
 
@@ -543,53 +543,53 @@
     },
     "nearlmod:PinusSylvestris": {
         "NAME": "\"Pinus Sylvestris\"",
-        "DESCRIPTION": "nearlmod:FriendCard. NL Gain !nearlmod:M2! nearlmod:DP. NL Add a random nearlmod:FriendCard belongs to Pinus Sylvestris member.",
-        "UPGRADE_DESCRIPTION": "nearlmod:FriendCard. NL Gain !nearlmod:M2! nearlmod:DP. NL Add a random Upgraded nearlmod:FriendCard belongs to Pinus Sylvestris member."
+        "DESCRIPTION": "nearlmod:Friend_Card. NL Gain !nearlmod:M2! nearlmod:DP. NL Add a random nearlmod:Friend_Card belongs to Pinus Sylvestris member.",
+        "UPGRADE_DESCRIPTION": "nearlmod:Friend_Card. NL Gain !nearlmod:M2! nearlmod:DP. NL Add a random Upgraded nearlmod:Friend_Card belongs to Pinus Sylvestris member."
     },
     "nearlmod:FlameHeart": {
         "NAME": "Flame Heart",
-        "DESCRIPTION": "nearlmod:FriendCard. NL Gain 1 nearlmod:DP and !nearlmod:M2! temporary Thorns. NL Deal !M! damage.",
-        "UPGRADE_DESCRIPTION": "nearlmod:FriendCard. NL Gain 1 nearlmod:DP, !nearlmod:M2! temporary Thorns and 1 Intangible. NL Deal !M! damage."
+        "DESCRIPTION": "nearlmod:Friend_Card. NL Gain 1 nearlmod:DP and !nearlmod:M2! temporary Thorns. NL Deal !M! damage.",
+        "UPGRADE_DESCRIPTION": "nearlmod:Friend_Card. NL Gain 1 nearlmod:DP, !nearlmod:M2! temporary Thorns and 1 Intangible. NL Deal !M! damage."
     },
     "nearlmod:StabbingLance": {
         "NAME": "Stabbing Lance",
-        "DESCRIPTION": "nearlmod:FriendCard. NL Randomly deal !M! damage !nearlmod:M2! times. Whenever kills an enemy, gain 1 nearlmod:DP.",
-        "UPGRADE_DESCRIPTION": "nearlmod:FriendCard. NL Randomly deal !M! damage !nearlmod:M2! times. Whenever kills an enemy, gain 2 nearlmod:DP."
+        "DESCRIPTION": "nearlmod:Friend_Card. NL Randomly deal !M! damage !nearlmod:M2! times. Whenever kills an enemy, gain 1 nearlmod:DP.",
+        "UPGRADE_DESCRIPTION": "nearlmod:Friend_Card. NL Randomly deal !M! damage !nearlmod:M2! times. Whenever kills an enemy, gain 2 nearlmod:DP."
     },
     "nearlmod:LanceCharge": {
         "NAME": "Lance Charge",
-        "DESCRIPTION": "nearlmod:FriendCard. NL Deal !M! damage. If the enemy intends to attack, it loses 99 Strength this turn.",
+        "DESCRIPTION": "nearlmod:Friend_Card. NL Deal !M! damage. If the enemy intends to attack, it loses 99 Strength this turn.",
         "UPGRADE_DESCRIPTION": ""
     },
     "nearlmod:JusticeDrive": {
         "NAME": "Justice Drive",
-        "DESCRIPTION": "nearlmod:FriendCard. NL Apply !nearlmod:M2! Vulnerable to all enemies. Shoot down all enemies with Flight.",
+        "DESCRIPTION": "nearlmod:Friend_Card. NL Apply !nearlmod:M2! Vulnerable to all enemies. Shoot down all enemies with Flight.",
         "UPGRADE_DESCRIPTION": ""
     },
     "nearlmod:BeepActivate": {
         "NAME": "\"Beep Activate\"",
-        "DESCRIPTION": "nearlmod:FriendCard. NL Gain !nearlmod:M2! Plated Armor and !M! Block.",
+        "DESCRIPTION": "nearlmod:Friend_Card. NL Gain !nearlmod:M2! Plated Armor and !M! Block.",
         "UPGRADE_DESCRIPTION": ""
     },
     "nearlmod:AllySupport": {
         "NAME": "Ally Support",
-        "DESCRIPTION": "nearlmod:FriendCard. NL Whenever you or other nearlmod:Friend deal damage to enemy, Fartooth also deal !nearlmod:M2! damage.",
+        "DESCRIPTION": "nearlmod:Friend_Card. NL Whenever you or other nearlmod:Friend deal damage to enemy, Fartooth also deal !nearlmod:M2! damage.",
         "UPGRADE_DESCRIPTION": ""
     },
     "nearlmod:FeatherShineArrows": {
         "NAME": "Feather Shine Arrows",
-        "DESCRIPTION": "nearlmod:FriendCard. NL Deal !M! damage to the enemy with lowest HP.",
+        "DESCRIPTION": "nearlmod:Friend_Card. NL Deal !M! damage to the enemy with lowest HP.",
         "UPGRADE_DESCRIPTION": ""
     },
     "nearlmod:FocusedBombardment": {
         "NAME": "Focused Bombardment",
-        "DESCRIPTION": "nearlmod:FriendCard. NL Deal !M! damage to all enemies !nearlmod:M2! times.",
+        "DESCRIPTION": "nearlmod:Friend_Card. NL Deal !M! damage to all enemies !nearlmod:M2! times.",
         "UPGRADE_DESCRIPTION": ""
     },
     "nearlmod:BombardmentStudies": {
         "NAME": "Bombardment Studies",
-        "DESCRIPTION": "nearlmod:FriendCard. NL Stats of *Focused *Bombardment increase !nearlmod:M2!. NL At the start of next turn, add a *Focused *Bombardment into your hand.",
-        "UPGRADE_DESCRIPTION": "nearlmod:FriendCard. NL Stats of *Focused *Bombardment increase !nearlmod:M2!. NL At the start of next turn, add a *Focused *Bombardment+ into your hand."
+        "DESCRIPTION": "nearlmod:Friend_Card. NL Stats of *Focused *Bombardment increase !nearlmod:M2!. NL At the start of next turn, add a *Focused *Bombardment into your hand.",
+        "UPGRADE_DESCRIPTION": "nearlmod:Friend_Card. NL Stats of *Focused *Bombardment increase !nearlmod:M2!. NL At the start of next turn, add a *Focused *Bombardment+ into your hand."
     },
 
     "nearlmod:Beginning": {
@@ -599,7 +599,7 @@
     },
     "nearlmod:Blemishine'sFaintLight": {
         "NAME": "Blemishine's Faint Light",
-        "DESCRIPTION": "Gain nearlmod:FriendShelter. NL Retain. Exhaust. ",
+        "DESCRIPTION": "Gain nearlmod:Friend's_Shelter. NL Retain. Exhaust. ",
         "UPGRADE_DESCRIPTION": ""
     },
     "nearlmod:PersonalCharmSp": {

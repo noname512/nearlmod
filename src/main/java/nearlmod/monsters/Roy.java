@@ -56,7 +56,7 @@ public class Roy extends AbstractMonster {
         } else if (!said && AbstractDungeon.aiRng.random(0, 3) == 0) {
             AbstractMonster ms = AbstractDungeon.getMonsters().getMonster("nearlmod:Monique");
             if (ms != null && !ms.isDeadOrEscaped()) {
-                addToBot(new TalkAction(ms, DIALOG[0], 0.3F, 3.0F));
+                addToBot(new TalkAction(ms, DIALOG[0], 2.5F, 3.0F));
                 addToBot(new TalkAction(this, DIALOG[1], 0.3F, 3.0F));
                 said = true;
                 setMove(MOVES[0], (byte)1, Intent.UNKNOWN);

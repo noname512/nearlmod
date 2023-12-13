@@ -64,6 +64,8 @@ public class CandleKnight extends AbstractMonster {
     @Override
     public void usePreBattleAction() {
         addToBot(new TalkAction(AbstractDungeon.player, DIALOG[2], 0.3F, 3.0F));
+        addToBot(new TalkAction(this, DIALOG[0], 2.5F, 3.0F));
+        addToBot(new TalkAction(this, DIALOG[1], 0.3F, 3.0F));
     }
 
     public void changeImg(String imgUrl) {
@@ -74,12 +76,12 @@ public class CandleKnight extends AbstractMonster {
     public void takeTurn() {
         if (!this.isDying && this.currentHealth <= this.maxHealth * 0.3F && this.said == 1) {
             this.said = 2;
-            addToBot(new TalkAction(AbstractDungeon.player, DIALOG[5], 0.3F, 3.0F));
+            addToBot(new TalkAction(AbstractDungeon.player, DIALOG[5], 2.0F, 3.0F));
             addToBot(new TalkAction(this, DIALOG[6], 0.3F, 3.0F));
         }
         if (!this.isDying && this.currentHealth <= this.maxHealth * 0.6F && this.said == 0) {
             this.said = 1;
-            addToBot(new TalkAction(this, DIALOG[3], 0.3F, 3.0F));
+            addToBot(new TalkAction(this, DIALOG[3], 2.0F, 3.0F));
             addToBot(new TalkAction(AbstractDungeon.player, DIALOG[4], 0.3F, 3.0F));
         }
         if (this.nextMove == 2) {
@@ -89,11 +91,9 @@ public class CandleKnight extends AbstractMonster {
             setMove(MOVES[1], (byte) 3, Intent.ATTACK, this.damage.get(1).base);
         } else {
             if (this.nextMove == 1) {
-                addToBot(new TalkAction(this, DIALOG[0], 3.0F, 3.0F));
                 this.state.setAnimation(0, "Attack", false);
                 this.state.addAnimation(0, "Idle", true, 0.0F);
                 addToBot(new DamageAction(AbstractDungeon.player, this.damage.get(0), AbstractGameAction.AttackEffect.FIRE));
-                addToBot(new TalkAction(this, DIALOG[1], 0.3F, 3.0F));
             } else if (this.nextMove == 4) {
                 this.state.setAnimation(0, "Attack", false);
                 this.state.addAnimation(0, "Idle", true, 0.0F);

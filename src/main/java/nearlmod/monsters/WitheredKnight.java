@@ -49,7 +49,7 @@ public class WitheredKnight extends AbstractMonster {
     public void usePreBattleAction() {
         AbstractMonster ms = AbstractDungeon.getMonsters().getMonster("nearlmod:CorruptKnight");
         if (ms != null)
-            addToBot(new TalkAction(ms, DIALOG[0], 0.3F, 3.0F));
+            addToBot(new TalkAction(ms, DIALOG[0], 2.5F, 3.0F));
         addToBot(new TalkAction(this, DIALOG[1], 0.3F, 3.0F));
         addToBot(new ApplyPowerAction(this, this, new DoubleBossPower(this)));
     }

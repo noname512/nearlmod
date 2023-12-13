@@ -56,7 +56,6 @@ public class CorruptKnight extends AbstractMonster {
         this.state.setAnimation(0, "Idle", true);
     }
 
-
     @Override
     public void usePreBattleAction() {
         addToBot(new ApplyPowerAction(this, this, new DoubleBossPower(this)));
@@ -126,7 +125,7 @@ public class CorruptKnight extends AbstractMonster {
             }
         }
         if (this.nextMove == 1) {
-            addToBot(new TalkAction(this, DIALOG[0], 0.3F, 3.0F));
+            addToBot(new TalkAction(this, DIALOG[0], 2.5F, 3.0F));
             AbstractMonster ms = AbstractDungeon.getMonsters().getMonster("nearlmod:WitheredKnight");
             if (ms != null)
                 addToBot(new TalkAction(ms, DIALOG[1], 0.3F, 3.0F));
