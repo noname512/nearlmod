@@ -85,7 +85,7 @@
         "DESCRIPTION": "消耗 。 NL ",
         "UPGRADE_DESCRIPTION": "",
         "EXTENDED_DESCRIPTION": [
-            "使用 nearlmod:光 。 NL 加入手牌时获得一个额外效果。",
+            "使用 nearlmod:光 。 NL 加入手牌时随机获得一个额外效果。",
             "获得 !M! 层 nearlmod:光 。 NL 使用 nearlmod:光 。",
             "使用 nearlmod:光 。 NL nearlmod:无畏 ：使目标在本回合内失去 !M! 点 力量 。",
             "使用 nearlmod:光 。 NL nearlmod:守护 ：从抽牌堆中选择一张技能牌放入你的手牌。",
@@ -157,7 +157,7 @@
     },
     "nearlmod:GloriousKazimierz": {
         "NAME": "光耀卡西米尔",
-        "DESCRIPTION": "选择一个敌人，如果其意图不是攻击，进入 nearlmod:守护 ，否则对其造成 !D! 点伤害。",
+        "DESCRIPTION": "选择一个敌人，如果其意图是攻击，对其造成 !D! 点伤害，否则进入 nearlmod:守护 。",
         "UPGRADE_DESCRIPTION": ""
     },
     "nearlmod:ScarlyMartin": {
@@ -177,7 +177,7 @@
     },
     "nearlmod:Oaths": {
         "NAME": "誓言",
-        "DESCRIPTION": "对所有敌人造成 !D! 点伤害，并给予 !M! 层虚弱。如果闪灵在场，本回合受到的伤害减少 6 点。",
+        "DESCRIPTION": "对所有敌人造成 !D! 点伤害，并给予 !M! 层虚弱。如果闪灵在场，本回合每次受到的伤害减少 6 点。",
         "UPGRADE_DESCRIPTION": ""
     },
     "nearlmod:DefendHonor": {
@@ -239,6 +239,7 @@
         "UPGRADE_DESCRIPTION": "",
         "EXTENDED_DESCRIPTION": [
             " NL （你本回合打出过",
+            " 张牌。）",
             " 张牌。）"
         ]
     },
@@ -305,8 +306,8 @@
     },
     "nearlmod:NightScouringGleam": {
         "NAME" : "逐夜烁光",
-        "DESCRIPTION": "获得 15 点 力量 。 NL 获得 !M! 层 缓冲。 NL 2 回合后死亡。 NL 进入 nearlmod:无畏 。 NL 消耗 。",
-        "UPGRADE_DESCRIPTION": " 保留 。 NL "
+        "DESCRIPTION": "获得 15 点 力量 和 !M! 层 缓冲。 NL 2 回合后死亡。 NL 进入 nearlmod:无畏 。 NL 消耗 。",
+        "UPGRADE_DESCRIPTION": "获得 15 点 力量 和 !M! 层 缓冲。 NL 2 回合后死亡。 NL 进入 nearlmod:无畏 。 NL 保留 。 NL 消耗 。"
     },
     "nearlmod:WayToChampion": {
         "NAME" : "冠军之路",
@@ -315,7 +316,7 @@
     },
     "nearlmod:Dawn": {
         "NAME" : "曙光",
-        "DESCRIPTION": "对所有敌人造成 !D! 点伤害。 如果未击杀敌人， 升级 这张牌。 NL 可无限 升级 。 NL  消耗 。 NL  虚无 。 ",
+        "DESCRIPTION": "对所有敌人造成 !D! 点伤害。 如果未击杀敌人， 升级 这张牌。 NL 能被多次 升级 。 NL 消耗 。 NL  虚无 。 ",
         "UPGRADE_DESCRIPTION": ""
     },
     "nearlmod:TheReturn": {
@@ -329,7 +330,7 @@
         "UPGRADE_DESCRIPTION": "",
         "EXTENDED_DESCRIPTION": [
             "造成 !D! 点伤害。",
-            "造成 !D! 点伤害。 NL 进入 nearlmod:无畏 。"
+            "进入 nearlmod:无畏 。 NL 造成 !D! 点伤害。"
         ]
     },
     "nearlmod:BlazingSun'sObeisance": {
@@ -364,8 +365,8 @@
     },
     "nearlmod:UnitedAsOne": {
         "NAME": "众志成城",
-        "DESCRIPTION": "消耗 。所有在场且 nearlmod:唯一 牌未被使用的 nearlmod:伙伴 给予你其 nearlmod:唯一 nearlmod:伙伴牌 。",
-        "UPGRADE_DESCRIPTION": "消耗 。所有在场且 nearlmod:唯一 牌未被使用的 nearlmod:伙伴 给予你其升级后的 nearlmod:唯一 nearlmod:伙伴牌 。"
+        "DESCRIPTION": "消耗 。 NL 所有在场且 nearlmod:唯一 牌未被使用的 nearlmod:伙伴 给予你其 nearlmod:唯一 nearlmod:伙伴牌 。",
+        "UPGRADE_DESCRIPTION": "消耗 。 NL 所有在场且 nearlmod:唯一 牌未被使用的 nearlmod:伙伴 给予你其升级后的 nearlmod:唯一 nearlmod:伙伴牌 。"
     },
     "nearlmod:Followers": {
         "NAME": "使徒",
@@ -410,8 +411,8 @@
     },
     "nearlmod:GlimmeringTouch": {
         "NAME": "微光之触",
-        "DESCRIPTION": " nearlmod:伙伴牌 。 NL 进入 nearlmod:蓄力 。两个回合后回合开始时，对所有敌人造成 !M! 点伤害，并获得 !nearlmod:M2! 层光。",
-        "UPGRADE_DESCRIPTION": " nearlmod:伙伴牌 。 NL 进入 nearlmod:蓄力 。下个回合开始时，对所有敌人造成 !M! 点伤害，并获得 !nearlmod:M2! 层光。"
+        "DESCRIPTION": " nearlmod:伙伴牌 。 NL 进入 nearlmod:蓄力 。两个回合后回合开始时，对所有敌人造成 !M! 点伤害，并获得 !nearlmod:M2! 层 nearlmod:光 。",
+        "UPGRADE_DESCRIPTION": " nearlmod:伙伴牌 。 NL 进入 nearlmod:蓄力 。下个回合开始时，对所有敌人造成 !M! 点伤害，并获得 !nearlmod:M2! 层 nearlmod:光 。"
     },
     "nearlmod:FlameShadow": {
         "NAME": "烛燃影息",
@@ -458,8 +459,8 @@
 
     "nearlmod:DanceTogether": {
         "NAME": "共舞一曲",
-        "DESCRIPTION": "召唤夜莺作为 nearlmod:伙伴 。 NL 获得来自夜莺的一张 nearlmod:伙伴牌 。",
-        "UPGRADE_DESCRIPTION": "召唤夜莺作为 nearlmod:伙伴 。 NL 获得来自夜莺的一张 nearlmod:伙伴牌 ，使其失去 虚无 ，获得 保留 。"
+        "DESCRIPTION": "召唤夜莺作为 nearlmod:伙伴 。 NL 获得来自夜莺的一张 非 nearlmod:唯一 nearlmod:伙伴牌 。",
+        "UPGRADE_DESCRIPTION": "召唤夜莺作为 nearlmod:伙伴 。 NL 获得来自夜莺的一张 非 nearlmod:唯一  nearlmod:伙伴牌 ，使其失去 虚无 ，获得 保留 。"
     },
     "nearlmod:ArtsShield": {
         "NAME": "法术护盾",
@@ -505,7 +506,7 @@
     "nearlmod:CreedField": {
         "NAME": "教条力场",
         "DESCRIPTION": " nearlmod:伙伴牌 。 NL 获得 !M! 点 格挡 。 在接下来的 !nearlmod:M2! 回合内，每次受到的伤害减少 6 点。",
-        "UPGRADE_DESCRIPTION": " nearlmod:伙伴牌 。 NL 获得 !M! 点 格挡 。 在接下来的 !nearlmod:M2! 回合内，每次受到的伤害减少 6 点。"
+        "UPGRADE_DESCRIPTION": ""
     },
 
     "nearlmod:WayToHome": {
@@ -537,8 +538,8 @@
 
     "nearlmod:PersonalCharm": {
         "NAME": "个人魅力",
-        "DESCRIPTION": "随机召唤一个红松骑士团成员作为伙伴。",
-        "UPGRADE_DESCRIPTION": "随机召唤两个红松骑士团成员作为伙伴。"
+        "DESCRIPTION": "随机召唤一个红松骑士团成员作为 nearlmod:伙伴 。",
+        "UPGRADE_DESCRIPTION": "随机召唤两个红松骑士团成员作为 nearmod:伙伴 。"
     },
     "nearlmod:PinusSylvestris": {
         "NAME": "“红松林”",

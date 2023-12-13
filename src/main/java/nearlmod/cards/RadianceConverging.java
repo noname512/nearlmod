@@ -44,7 +44,11 @@ public class RadianceConverging extends AbstractNearlCard {
     @Override
     public void applyPowers() {
         super.applyPowers();
-        rawDescription = DESCRIPTION + EXTENDED_DESCRIPTION[0] + AbstractDungeon.actionManager.cardsPlayedThisTurn.size() + EXTENDED_DESCRIPTION[1];
+        int amount = AbstractDungeon.actionManager.cardsPlayedThisTurn.size();
+        if (amount == 1)
+            rawDescription = DESCRIPTION + EXTENDED_DESCRIPTION[0] + amount + EXTENDED_DESCRIPTION[1];
+        else
+            rawDescription = DESCRIPTION + EXTENDED_DESCRIPTION[0] + amount + EXTENDED_DESCRIPTION[2];
         initializeDescription();
     }
 

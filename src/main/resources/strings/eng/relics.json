@@ -1,0 +1,78 @@
+{
+  "nearlmod:CureUp": {
+    "NAME": "Healing Boost",
+    "FLAVOR": "Her allies will not be affected as long as she is at the front.",
+    "DESCRIPTIONS": ["The first #b5 #yblock you gain each turn will be converted to #yTemporary #yHP ."]
+  },
+  "nearlmod:PegasusHalo": {
+    "NAME": "Pegasus's Halo",
+    "FLAVOR": "As long as she is on the battlefield, no one can snatch victory from us.",
+    "DESCRIPTIONS": ["Replace #rHealing #rBoost . Every time you gain #b4 #yBlock, gain #b1 #yTemporary #yHP ."]
+  },
+  "nearlmod:Marigold": {
+    "NAME": "Marigold",
+    "FLAVOR": "Perhaps you are not the light itself, but once, you drew your sword to protect it.",
+    "DESCRIPTIONS": ["At the start of each combat, summon Viviana as #yFriend ."]
+  },
+  "nearlmod:EmergencyCallBook": {
+    "NAME": "Emergency Call Book",
+    "FLAVOR": "All the base stations are destroyed, you are the last one.",
+    "DESCRIPTIONS": ["At the start of each turn, gain #b1 #yDP ."]
+  },
+  "nearlmod:FirstAidMode": {
+    "NAME": "First Aid Mode",
+    "FLAVOR": "The knight isn't used to the insurmountable foe, but the willingness to act in defense of others, has sufficed.",
+    "DESCRIPTIONS": ["At the start of each combat, add a #yFirst #yAid into your hand and apply #yRetain and #yExhaust to it."]
+  },
+  "nearlmod:KnightFamily": {
+    "NAME": "'Knight Family'",
+    "FLAVOR": "We all dwell in the shadows, as ever before.",
+    "DESCRIPTIONS": ["When you would die for the first time in each combat, reduce #b60% Max HP and heal to Max HP instead. Gain #b3 #yStrength and will not lose HP this turn."]
+  },
+  "nearlmod:UpgradedCoreCaster": {
+    "NAME": "Upgraded Core Caster",
+    "FLAVOR": "It's a Minoan beauty forged of D32 Steel. The ultimate in Originium Arts conductivity!",
+    "DESCRIPTIONS": ["The damage dealt and #yTemporary #yHP gained by #yLight increase #b4 ."]
+  },
+  "nearlmod:BackupEquipment" : {
+    "NAME": "Backup Equipment",
+    "FLAVOR": "Employing different weapons for different enemies is also a tactic.",
+    "DESCRIPTIONS": ["At the start of each combat, you can choose your initial stance."]
+  },
+  "nearlmod:HandOfConqueror": {
+    "NAME": "Hand of Conqueror",
+    "FLAVOR": "Victory in itself is the best sustenance.",
+    "DESCRIPTIONS": ["After #yFatal , damage you dealt increase #b1% forever."]
+  },
+  "nearlmod:Lighthouse": {
+    "NAME": "Lighthouse",
+    "FLAVOR": "Journey towards the lighthouse, and also to where the lighthouse vanishes.",
+    "DESCRIPTIONS": ["In the same turn, whenever you played #b3 card of same type, the next card of same type costs #b0 ."]
+  },
+
+  "nearlmod:LateLight": {
+    "NAME": "Late Light",
+    "FLAVOR": "Everything has passed the point of no return.",
+    "DESCRIPTIONS": ["You cannot summon Blemishine as #yFriend anymore."]
+  },
+  "nearlmod:Revenge": {
+    "NAME": "Revenge",
+    "FLAVOR": "The Left-hand Knight achieved his 'revenge'. To him, a victory without honor is no different.",
+    "DESCRIPTIONS": ["At the start of each combat, gain 2 #yLeft-hand #yMark."]
+  },
+  "nearlmod:NormalPerson": {
+    "NAME": "The Mediocre One",
+    "FLAVOR": "Viviana did not find the knight of her dreams.",
+    "DESCRIPTIONS": ["You cannot summon Viviana as #yFriend anymore."]
+  },
+  "nearlmod:ImaginaryFear": {
+    "NAME": "Imaginary Fear",
+    "FLAVOR": "The young Nightzmora has never seen any mountains of corpses or seas of blood for himself. Yet his lineage taught him how to control fear the moment he was born.",
+    "DESCRIPTIONS": ["After the first turn of each combat, take 8 damage."]
+  },
+  "nearlmod:BloodEntangle": {
+    "NAME": "Blood Entangle",
+    "FLAVOR": "The pool of blood seems to congeal into sticky silk strands, tangling themselves around limbs. The blood flowing through body resonates with its compatriot, causing a tingling pain.",
+    "DESCRIPTIONS": ["At the start of each combat, summon #b1 #yBlood #yBlade as additional enemy."]
+  }
+}

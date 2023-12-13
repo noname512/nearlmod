@@ -3,25 +3,27 @@
     "NAME": "光",
     "DESCRIPTIONS": ["使用时对敌人造成 #b", " 点伤害。", "使用时获得 #b", " 点 #y临时生命 。"]
   },
-  "nearlmod:AtkMode": {
-    "NAME": "无畏",
-    "DESCRIPTIONS": ["处于此形态时，获得 #b", " 点 #y力量 。"]
-  },
-  "nearlmod:DefMode": {
-    "NAME": "守护",
-    "DESCRIPTIONS": ["处于此形态时，获得 #b", " 点 #y敏捷 。"]
-  },
   "nearlmod:FlamingEdgePower": {
     "NAME": "灿焰长刀",
     "DESCRIPTIONS": ["每当你进入 #y无畏 时，获得 #b", " 层 #y光 。"]
   },
   "nearlmod:GlimmeringTouchPower": {
     "NAME": "微光之触",
-    "DESCRIPTIONS": ["回合后，对所有敌人造成 #b", " 点伤害，并获得 #b", " 层 #y光 。"]
+    "DESCRIPTIONS": [
+      "",
+      "回合后，对所有敌人造成 #b",
+      " 点伤害，并获得 #b",
+      " 层 #y光 。",
+      "回合后，对所有敌人造成 #b"
+    ]
   },
   "nearlmod:SanctuaryPower": {
     "NAME": "圣域",
-    "DESCRIPTIONS": ["#b"," 回合内受到的伤害减半。"]
+    "DESCRIPTIONS": [
+      "#b",
+      " 回合内受到的伤害减半。",
+      " 回合内受到的伤害减半。"
+    ]
   },
   "nearlmod:WFPPower": {
     "NAME": "白恶魔的庇护",
@@ -29,11 +31,15 @@
   },
   "nearlmod:CreedFieldPower": {
     "NAME": "教条立场",
-    "DESCRIPTIONS": ["回合内每次受到的伤害减少 #b", " 点。"]
+    "DESCRIPTIONS": [
+      "#b",
+      "回合内每次受到的伤害减少 #b",
+      "回合内每次受到的伤害减少 #b",
+      " 点。"]
   },
   "nearlmod:BFPPower": {
     "NAME": "黑恶魔的庇护",
-    "DESCRIPTIONS": ["你每回合第一张非伙伴攻击牌会随机给予目标一层 #y易伤 或 #y虚弱 。如果你同时拥有 #y白恶魔的庇护 ，改为给予目标一层 易伤 和 虚弱 。"]
+    "DESCRIPTIONS": ["你每回合第一张非伙伴攻击牌会随机给予目标一层 #y易伤 或 #y虚弱 。如果你同时拥有 #y白恶魔的庇护 ，改为给予目标一层 #y易伤 和 #y虚弱 。"]
   },
   "nearlmod:Exsanguination": {
     "NAME": "血归",
@@ -65,7 +71,7 @@
   },
   "nearlmod:ClosedHope": {
     "NAME": "封闭的希望",
-    "DESCRIPTIONS": ["你的回合开始时，如果你仍有 #y格挡 ，获得 #b", " 层 #y人工制品 。"]
+    "DESCRIPTIONS": ["下回合开始时，如果你仍有 #y格挡 ，获得 #b", " 层 #y人工制品 。"]
   },
   "nearlmod:CostNextTurnPower": {
     "NAME": "部署费用提升",
@@ -109,7 +115,7 @@
   },
   "nearlmod:Duel": {
     "NAME": "决战",
-    "DESCRIPTIONS": ["受到来自 #y伙伴牌 的伤害减少 #b", "% 。"]
+    "DESCRIPTIONS": ["受到来自 #y伙伴 的伤害减少 #b", "% 。"]
   },
   "nearlmod:AttackUp": {
     "NAME": "攻击力上升",
@@ -145,7 +151,7 @@
   },
   "nearlmod:LoseVulnerablePower": {
     "NAME": "破绽",
-    "DESCRIPTIONS": ["回合结束时，失去 #b", " 层 #y易伤"]
+    "DESCRIPTIONS": ["本回合结束时，失去 #b", " 层 #y易伤 。"]
   },
   "nearlmod:DayBreakPower": {
     "NAME": "破晓",

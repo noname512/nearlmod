@@ -53,7 +53,7 @@ public class NightScouringGleam extends AbstractNearlCard {
     public void upgrade() {
         if (!upgraded) {
             upgradeName();
-            rawDescription = UPGRADE_DESCRIPTION + DESCRIPTION;
+            rawDescription = UPGRADE_DESCRIPTION;
             initializeDescription();
             upgradeMagicNumber(UPGRADE_EXTRA_BUFFER);
             selfRetain = true;

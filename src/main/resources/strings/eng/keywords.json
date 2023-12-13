@@ -1,0 +1,123 @@
+{
+  "LIGHT": {
+    "PROPER_NAME": "Light",
+    "NAMES": [
+      "light"
+    ],
+    "DESCRIPTION": "A stackable power, will deal damage to an enemy if you are in #yDreadnought, and will provide #yTemporary #yHP if you are in #yGuardian. It will disappear after used."
+  },
+  "FRIEND": {
+    "PROPER_NAME": "Friend",
+    "NAMES": [
+      "friend",
+      "Friends"
+    ],
+    "DESCRIPTION": "Friend can fight alongside you. At the start of each turn, Friend will provide you a #yFriend #yCard specific to them. At the second or subsequent times of summoning Friend, they will be #yPromoted and gain #b2 #yTrust."
+  },
+  "PROMOTE": {
+    "PROPER_NAME": "Promote",
+    "NAMES": [
+      "promote"
+    ],
+    "DESCRIPTION": "After promoted, Friend will provide you a upgraded #yFriend #yCard specific to them at the start of each turn."
+  },
+  "FRIEND_CARD": {
+    "PROPER_NAME": "Friend Card",
+    "NAMES": [
+      "Friend-card"
+    ],
+    "DESCRIPTION": "Cards that belong to #yFriends. The numerical values of #yFriend #yCard do not determined by your power but #yFriend's #yTrust instead. #yFriend #yCard do not count towards the hand limit. They are #yEthereal and #Exhausted whenever leave your hand."
+  },
+  "TRUST": {
+    "PROPER_NAME": "Trust",
+    "NAMES": [
+      "trust"
+    ],
+    "DESCRIPTION": "An attribute of #yFriend. It will increase the damage dealt, #yBlock and #yLight gained by #yFriend #yCard ."
+  },
+  "PLAY_COST": {
+    "PROPER_NAME": "Deployment Point",
+    "NAMES": [
+      "DP"
+    ],
+    "DESCRIPTION": "A special #yEnergy conserved between turns. Can be used and prioritized for #yFriend #yCard ."
+  },
+  "UNIQUE": {
+    "PROPER_NAME": "Unique",
+    "NAMES": [
+      "unique"
+    ],
+    "DESCRIPTION": "After using this card, #yFriend will not provide it in this battle."
+  },
+  "CHARGING": {
+    "PROPER_NAME": "Charging",
+    "NAMES": [
+      "Charging"
+    ],
+    "DESCRIPTION": "During charging, #yFriend will not provide #yFriend #yCard ."
+  },
+  "EXSANGUINATION": {
+    "PROPER_NAME": "Exsanguination",
+    "NAMES": [
+      "exsanguination"
+    ],
+    "DESCRIPTION": "#yStrength cannot exceed #b0."
+  },
+  "POEM'S_LOOK": {
+    "PROPER_NAME": "Poem's looks",
+    "NAMES": [
+      "Poem-looks"
+    ],
+    "DESCRIPTION": "After you use #yLight , gain equivalent #yShadow . After you use #Shadow , gain equivalent #yLight ."
+  },
+  "SHADOW": {
+    "PROPER_NAME": "Shadow",
+    "NAMES": [
+      "shadow"
+    ],
+    "DESCRIPTION": "Shadow adds additional damage to Viviana's next attack."
+  },
+  "ATK_STANCE": {
+    "PROPER_NAME": "Dreadnought",
+    "NAMES": [
+      "dreadnought",
+      "atkstance"
+    ],
+    "DESCRIPTION": "In Dreadnought, gain #yStrength according to your entering times."
+  },
+  "DEF_STANCE": {
+    "PROPER_NAME": "Guardian",
+    "NAMES": [
+      "guardian",
+      "defstance"
+    ],
+    "DESCRIPTION": "In Guardian, gain #yDexterity according to your entering times."
+  },
+  "NEARL_STANCE": {
+    "NAMES": [
+      "stance"
+    ],
+    "DESCRIPTION": "You can only have one stance ( #yGuardian or #yDreadnought ) at a time."
+  },
+  "WFPPower": {
+    "PROPER_NAME": "White Fiend's Protection",
+    "NAMES": [
+      "White_Fiend's_Protection"
+    ],
+    "DESCRIPTION": "You can no longer become #yFrail , #yWeak and #yVulnerable . If you have #yBlack #yFiend's #yProtection at the same time, gain #b1 #yArtifact at the start of each turn."
+  },
+  "BFPPower": {
+    "PROPER_NAME": "Black Fiend's Protection",
+    "NAMES": [
+      "Black_Fiend's_Protection"
+    ],
+    "DESCRIPTION": "Your first #yAttack which is not #yFriend #yCard , apply #b1 #yVulnerable or #yWeak randomly. If you have #White #yFiend's #yProtection at the same time, change to apply #b1 #yVulnerable and #yWeak ."
+  },
+  "FriendShelter": {
+    "PROPER_NAME": "Friend's Shelter",
+    "NAMES": [
+      "FriendShelter"
+    ],
+    "DESCRIPTIONS": "Prevent damage you take this turn."
+  }
+}

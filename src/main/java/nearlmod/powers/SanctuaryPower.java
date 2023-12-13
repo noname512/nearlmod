@@ -29,7 +29,10 @@ public class SanctuaryPower extends AbstractPower implements CloneablePowerInter
 
     @Override
     public void updateDescription() {
-        description = DESCRIPTIONS[0] + amount + DESCRIPTIONS[1];
+        if (amount == 1)
+            description = DESCRIPTIONS[0] + amount + DESCRIPTIONS[2];
+        else
+            description = DESCRIPTIONS[0] + amount + DESCRIPTIONS[1];
     }
 
     @Override

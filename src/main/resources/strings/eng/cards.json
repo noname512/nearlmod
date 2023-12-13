@@ -1,0 +1,633 @@
+{
+    "nearlmod:NearlStrike": {
+        "NAME": "Strike",
+        "DESCRIPTION": "Deal !D! damage.",
+        "UPGRADE_DESCRIPTION": ""
+    },
+    "nearlmod:NearlDefend": {
+        "NAME": "Defend",
+        "DESCRIPTION": "Gain !B! Block.",
+        "UPGRADE_DESCRIPTION": ""
+    },
+    "nearlmod:SwitchType": {
+        "NAME": "Switch Stance",
+        "DESCRIPTION": "Switch your nearlmod:Stance",
+        "UPGRADE_DESCRIPTION": ""
+    },
+    "nearlmod:MajestyLight": {
+        "NAME": "Majesty Light",
+        "DESCRIPTION": "Use nearlmod:Light. NL Gain !M! nearlmod:Light.",
+        "UPGRADE_DESCRIPTION": ""
+    },
+
+    "nearlmod:GumboBreadBowl": {
+        "NAME": "Gumbo Bread Bowl",
+        "DESCRIPTION": "Enter nearlmod:Guardian. NL Gain !B! Block. NL Use nearlmod:Light.",
+        "UPGRADE_DESCRIPTION": ""
+    },
+    "nearlmod:KnightCrest": {
+        "NAME": "Knight Crest",
+        "DESCRIPTION": "Enter nearlmod:Dreadnought. NL Deal !D! damage. NL Use nearlmod:Light.",
+        "UPGRADE_DESCRIPTION": ""
+    },
+    "nearlmod:AllinOne": {
+        "NAME": "Offense-Defense",
+        "DESCRIPTION": "Deal !D! damage. NL Gain !B! Block. NL Switch your nearlmod:Stance.",
+        "UPGRADE_DESCRIPTION": "Deal !D! damage. NL Gain !B! Block. NL Switch your nearlmod:Stance. NL Receive bonus from both Strength and Dexterity."
+    },
+    "nearlmod:SwordShield": {
+        "NAME": "Swordshield Knight",
+        "DESCRIPTION": "Switch your nearlmod:Stance. NL Gain !M! nearlmod:Light. NL If Blemishine is present, gain !nearlmod:M2! additional stats.",
+        "UPGRADE_DESCRIPTION": ""
+    },
+    "nearlmod:NobleLight": {
+        "NAME": "Nobel Light",
+        "DESCRIPTION": "Apply 1 nearlmod:Trust to all your nearlmod:Friend.",
+        "UPGRADE_DESCRIPTION": ""
+    },
+    "nearlmod:Guardian": {
+        "NAME": "Guardian",
+        "DESCRIPTION": "Gain !B! Block. nearlmod:Guardian : Gain !M! nearlmod:Light.",
+        "UPGRADE_DESCRIPTION": ""
+    },
+    "nearlmod:WornOut": {
+        "NAME": "Worn Out",
+        "DESCRIPTION": "Gain !M! nearlmod:DP next turn.",
+        "UPGRADE_DESCRIPTION": ""
+    },
+    "nearlmod:LightsOut": {
+        "NAME": "Lights Out",
+        "DESCRIPTION": "Deal !D! damage. NL If Viviana is present, gain !M! nearlmod:Shadow.",
+        "UPGRADE_DESCRIPTION": ""
+    },
+    "nearlmod:GlowingBlueBird": {
+        "NAME": "Glowing Blue Fowlbeast",
+        "DESCRIPTION": "Gain !B! Block. NL If Nightingale is present, gain !M! Temporary_HP.",
+        "UPGRADE_DESCRIPTION": ""
+    },
+    "nearlmod:Facing": {
+        "NAME": "Confront",
+        "DESCRIPTION": "Gain !B! Block. NL Apply !M! Strength to all enemies.",
+        "UPGRADE_DESCRIPTION": ""
+    },
+    "nearlmod:ChargingWithShield": {
+        "NAME": "Charging With Shield",
+        "DESCRIPTION": "Deal !D! damage. NL nearlmod:Guardian : Gain !B! Block.",
+        "UPGRADE_DESCRIPTION": ""
+    },
+    "nearlmod:Unsheathed": {
+        "NAME": "Unsheathe",
+        "DESCRIPTION": "Enter nearlmod:Dreadnought. Deal !D! damage. NL Add a *Light! into your hand.",
+        "UPGRADE_DESCRIPTION": ""
+    },
+    "nearlmod:Light!": {
+        "NAME": "Light",
+        "DESCRIPTION": "Exhaust. NL ",
+        "UPGRADE_DESCRIPTION": "",
+        "EXTENDED_DESCRIPTION": [
+            "Use nearlmod:Light. NL Add an additional effect randomly when added into hand.",
+            "Gain !M! nearlmod:Light. NL Use nearlmod:Light.",
+            "Use nearlmod:Light. NL nearlmod:Dreadnought : Enemy loses !M! Strength this turn.",
+            "Use nearlmod:Light. NL nearlmod:Guardian : Put a Skill card from your draw pile into your hand.",
+            "Retain. NL Use nearlmod:Light.",
+            "Use nearlmod:Light. NL When added into hand, add a *Switch *Stance+ into your hand and apply Exhaust and Ethereal to it.",
+            "Use nearlmod:Light. NL add a *Light!+ into your hand.",
+            "Use nearlmod:Light. NL nearlmod:Guardian : Put a card from your draw pile into your hand.",
+            "Gain !M! nearlmod:Light."
+        ]
+    },
+    "nearlmod:Dreadnought": {
+        "NAME": "Dreadnought",
+        "DESCRIPTION": "Deal !D! damage. NL nearlmod:Dreadnought : Gain !M! nearlmod:Light.",
+        "UPGRADE_DESCRIPTION": ""
+    },
+    "nearlmod:DayLike": {
+        "NAME": "Day-like",
+        "DESCRIPTION": "Gain !M! nearlmod:Light. Add a *Light! into your hand.",
+        "UPGRADE_DESCRIPTION": ""
+    },
+    "nearlmod:OverflowingLight": {
+        "NAME": "Overflowing Light",
+        "DESCRIPTION": "Add !M! *Light! into your hand.",
+        "UPGRADE_DESCRIPTION": ""
+    },
+    "nearlmod:ReverseForce": {
+        "NAME": "Reversed Force",
+        "DESCRIPTION": "Deal !D! damage. NL If Whislash is present, add a random non-nearlmod:Unique nearlmod:Friend-card into your hand. ( nearlmod:Dreadnought : Attack card , nearlmod:Guardian : Skill card )",
+        "UPGRADE_DESCRIPTION": ""
+    },
+    "nearlmod:ArmorProtection": {
+        "NAME": "Armor Protection",
+        "DESCRIPTION": "Gain !B! Block. NL nearlmod:Guardian : Gain !M! Block separately",
+        "UPGRADE_DESCRIPTION": ""
+    },
+    "nearlmod:BoldAssault": {
+        "NAME": "Bold Assault",
+        "DESCRIPTION": "Deal !D! damage. Add two *Burns into your hand. NL If Shining is present, add two *Dazed instead.",
+        "UPGRADE_DESCRIPTION": ""
+    },
+
+    "nearlmod:SecondSun": {
+        "NAME": "Second Sun",
+        "DESCRIPTION": "Double your nearlmod:Light. NL Exhaust.",
+        "UPGRADE_DESCRIPTION": ""
+    },
+    "nearlmod:LightSpearStrike": {
+        "NAME": "Light Spear Strike",
+        "DESCRIPTION": "Deal damage equal to your nearlmod:Light.",
+        "UPGRADE_DESCRIPTION": "",
+        "EXTENDED_DESCRIPTION": [
+            "NL (Deals !D! Damage)"
+        ]
+    },
+    "nearlmod:SweepWrong": {
+        "NAME": "Sweep All Wrongdoing",
+        "DESCRIPTION": "Deal !D! damage to all enemies. NL If the enemy intends to attack, deal !M! additional damage.",
+        "UPGRADE_DESCRIPTION": ""
+    },
+    "nearlmod:ReliableFriend": {
+        "NAME": "Reliable Friends",
+        "DESCRIPTION": "Put a Power card which summons Friend from draw pile into your hand and Retain it for this turn. NL Exhaust.",
+        "UPGRADE_DESCRIPTION":""
+    },
+    "nearlmod:SightImpairingShowdown": {
+        "NAME": "Sight-impairing Showdown",
+        "DESCRIPTION": "Add a random non-nearlmod:Unique nearlmod:Friend-card of Viviana into your hand. NL If Viviana is present, apply !M! nearlmod:Trust to her.",
+        "UPGRADE_DESCRIPTION": "Choose a non-nearlmod:Unique nearlmod:Friend-card of Viviana to add into your hand. NL If Viviana is present, apply !M! nearlmod:Trust to her."
+    },
+    "nearlmod:GloriousKazimierz": {
+        "NAME": "Glorious Kazimierz",
+        "DESCRIPTION": "Choose an enemy. If it intend to attack, deal !D! damage. otherwise enter nearlmod:Guardian.",
+        "UPGRADE_DESCRIPTION": ""
+    },
+    "nearlmod:ScarlyMartin": {
+        "NAME": "\"Scarly Martin\"",
+        "DESCRIPTION": "Deal !D! Damage. When played, increase its base damage in this combat by your Strength.",
+        "UPGRADE_DESCRIPTION": ""
+    },
+    "nearlmod:Cooperate": {
+        "NAME": "Cooperate Fight",
+        "DESCRIPTION": "Deal !D! damage. NL If Blemishine is present, gain !M! nearlmod:Light.",
+        "UPGRADE_DESCRIPTION": ""
+    },
+    "nearlmod:DefensiveFormation": {
+        "NAME": "Defensive Formation",
+        "DESCRIPTION": "In this turn, after you play a card, enter nearlmod:Guardian.",
+        "UPGRADE_DESCRIPTION": ""
+    },
+    "nearlmod:Oaths": {
+        "NAME": "Oaths",
+        "DESCRIPTION": "Deal !D! damage and apply !M! Weak to all enemies. NL If Shining is present, take 6 less for each damage this turn.",
+        "UPGRADE_DESCRIPTION": ""
+    },
+    "nearlmod:DefendHonor": {
+        "NAME": "Defend the Honor",
+        "DESCRIPTION": "Deal damage equal to enemy's attack intent value.",
+        "UPGRADE_DESCRIPTION": "Deal damage equal to enemy's attack intent value plus 3.",
+        "EXTENDED_DESCRIPTION": [
+            "NL (Deals !D! damage)"
+        ]
+    },
+    "nearlmod:FlutteringWings": {
+        "NAME": "Fluttering It's Wings",
+        "DESCRIPTION": "Switch your nearlmod:Stance. Keep the attribute gained by current nearlmod:Stance in this turn.",
+        "UPGRADE_DESCRIPTION": "Switch your nearlmod:Stance. Keep the attribute gained by current nearlmod:Stance in this turn. Add a *Offense-Defense in your hand and apply Exhaust and Ethereal to it."
+    },
+    "nearlmod:ShieldAndShelter": {
+        "NAME": "Shield and Shelter",
+        "DESCRIPTION": "Gain !B! Block, 3 nearlmod:Light and 1 nearlmod:DP X times.",
+        "UPGRADE_DESCRIPTION": "Gain !B! Block, 3 nearlmod:Light and 1 nearlmod:DP X+1 times."
+    },
+    "nearlmod:BreakThroughFetters": {
+        "NAME": "Break Through Fetters",
+        "DESCRIPTION": "Choose any number of Status or Curse cards which is not Exhausted, and Exhaust each by !M! nearlmod:Light.",
+        "UPGRADE_DESCRIPTION": ""
+    },
+    "nearlmod:SalvationForSuffers": {
+        "NAME": "Salvation for Suffers",
+        "DESCRIPTION": "Gain !B! Block. Add a *Wound into your hand.",
+        "UPGRADE_DESCRIPTION": ""
+    },
+    "nearlmod:AweInspiringGlow": {
+        "NAME": "Awe-inspiring Glow",
+        "DESCRIPTION": "Innate. NL Exhaust. NL Gain !M! nearlmod:Light. Add a *Light! into your hand.",
+        "UPGRADE_DESCRIPTION": ""
+    },
+    "nearlmod:SilverlancePegasus": {
+        "NAME": "Silverlance Pegasus",
+        "DESCRIPTION": "Deal !D! damage to the enemy with highest attack intent value. Gain !B! Block.",
+        "UPGRADE_DESCRIPTION": ""
+    },
+    "nearlmod:SurgeBack": {
+        "NAME": "Surge Back",
+        "DESCRIPTION": "Deal !D! damage. Gain nearlmod:Light equal to unblocked damage dealt.",
+        "UPGRADE_DESCRIPTION": ""
+    },
+    "nearlmod:Duel": {
+        "NAME": "Duel",
+        "DESCRIPTION": "Apply 1 Strength to all enemies. NL nearlmod:Guardian : Gain !M! Dexterity. NL nearlmod:Dreadnought : Gain !M! Strength.",
+        "UPGRADE_DESCRIPTION": ""
+    },
+    "nearlmod:KnightCompetition": {
+        "NAME": "Knight Competition",
+        "DESCRIPTION": "Enter nearlmod:Dreadnought. Use nearlmod:Light to a random enemy. NL If Fatal, gain !M! Gold.",
+        "UPGRADE_DESCRIPTION": ""
+    },
+    "nearlmod:RadianceConverging": {
+        "NAME": "Radiance Converging",
+        "DESCRIPTION": "Gain !M! nearlmod:Light. For each card you played this turn, gain !nearlmod:M2! additional nearlmod:Light.",
+        "UPGRADE_DESCRIPTION": "",
+        "EXTENDED_DESCRIPTION": [
+            "NL (You have played ",
+            "card this turn)",
+            "cards this turn)"
+        ]
+    },
+    "nearlmod:Sacrifice": {
+        "NAME": "Sacrifice",
+        "DESCRIPTION": "Deal !D! damage. Apply Painful Stabs and !M! Strength to enemy.",
+        "UPGRADE_DESCRIPTION": ""
+    },
+    "nearlmod:LightCascade": {
+        "NAME": "Light Cascade",
+        "DESCRIPTION": "Enter nearlmod:Dreadnought. NL Use nearlmod:Light to all enemies.",
+        "UPGRADE_DESCRIPTION": ""
+    },
+    "nearlmod:StormCounterAttack": {
+        "NAME": "Storm Counterattack",
+        "DESCRIPTION": "End your turn. NL At the start of next turn, if you still have Block, deal damage equal to !M! times the number of your Block to all enemies.",
+        "UPGRADE_DESCRIPTION": ""
+    },
+    "nearlmod:SheathedBlade": {
+        "NAME": "Sheathed Blade",
+        "DESCRIPTION": "Store half of your nearlmod:Light until next turn. NL Add a *Light! into your hand.",
+        "UPGRADE_DESCRIPTION": "Store half of your nearlmod:Light until next turn. NL Add a *Switch *Stance with Exhaust and Ethereal, along with a *Light! into your hand."
+    },
+    "nearlmod:MedalOfHonor": {
+        "NAME": "Medal of Honor",
+        "DESCRIPTION": "Unplayable Status card can now be played now. Whenever you play a Status card, Exhaust it. Whenever you Exhaust a Status card, draw a card.",
+        "UPGRADE_DESCRIPTION": ""
+    },
+    "nearlmod:FanClub": {
+        "NAME": "Fan Club",
+        "DESCRIPTION": "Whenever you play a nearlmod:Friend-card, apply !M! Trust to the nearlmod:Friend it belongs to. NL If you play a nearlmod:Friend-card belongs to Whislash, apply !M! Trust to all nearlmod:Friends instead.",
+        "UPGRADE_DESCRIPTION": ""
+    },
+    "nearlmod:UpgradedKnightShield": {
+        "NAME": "Upgraded Knight Shield",
+        "DESCRIPTION": "Gain !B! Block. NL If Nightingale is present, take 50% less damage this turn.",
+        "UPGRADE_DESCRIPTION": ""
+    },
+    "nearlmod:Flaw": {
+        "NAME": "Flaw",
+        "DESCRIPTION": "Apply !M! Vulnerable to all characters. NL At the end of turn, you lose !M! Vulnerable.",
+        "UPGRADE_DESCRIPTION": ""
+    },
+    "nearlmod:InfiniteLightBlade": {
+        "NAME": "Infinite Light Blade",
+        "DESCRIPTION": "At the start of each turn, add a *Light! into your hand.",
+        "UPGRADE_DESCRIPTION": "Innate. NL At the start of each turn, add a *Light! into your hand."
+    },
+
+    "nearlmod:BraveTheDarkness": {
+        "NAME": "Brave the Darkness",
+        "DESCRIPTION": "Deal !D! damage, enemy loses 99 Strength this turn. NL nearlmod:Dreadnought : Deal !D! damage to all enemies instead. NL Exhaust.",
+        "UPGRADE_DESCRIPTION": ""
+    },
+    "nearlmod:FirstAid": {
+        "NAME": "First Aid",
+        "DESCRIPTION": "Enter nearlmod:Guardian. NL Gain !B! Block. NL If you are under half HP, gain equivalent Temporary_HP.",
+        "UPGRADE_DESCRIPTION": ""
+    },
+    "nearlmod:FlamingEdge": {
+        "NAME": "Flaming Edge",
+        "DESCRIPTION": "Whenever you enter nearlmod:Dreadnought, gain !M! nearlmod:Light and 1 additional stat. NL Enter nearlmod:Dreadnought.",
+        "UPGRADE_DESCRIPTION": ""
+    },
+    "nearlmod:NightScouringGleam": {
+        "NAME": "Night Scouring Gleam",
+        "DESCRIPTION": "Gain 15 Strength and !M! Buffers. NL Die after 2 turns. NL Enter nearlmod:Dreadnought. NL Exhaust.",
+        "UPGRADE_DESCRIPTION": "Gain 15 Strength and !M! Buffers. NL Die after 2 turns. NL Enter nearlmod:Dreadnought. NL Retain. NL Exhaust."
+    },
+    "nearlmod:WayToChampion": {
+        "NAME": "Way to Championship",
+        "DESCRIPTION": "Apply nearlmod:Exsanguination to all enemies. Prevent damage you take this turn. NL Exhaust.",
+        "UPGRADE_DESCRIPTION": ""
+    },
+    "nearlmod:Dawn": {
+        "NAME": "Dawn",
+        "DESCRIPTION": "Deal !D! damage to all enemies. NL If kill no enemy, Upgrade this card. NL Can be Upgraded any number of times. NL Exhaust. NL Ethereal.",
+        "UPGRADE_DESCRIPTION": ""
+    },
+    "nearlmod:TheReturn": {
+        "NAME": "The Return",
+        "DESCRIPTION": "Summon Shining and Nightingale as nearlmod:Friend. Enter nearlmod:Dreadnought.",
+        "UPGRADE_DESCRIPTION": ""
+    },
+    "nearlmod:FullSpeedAhead": {
+        "NAME": "Full Speed Ahead",
+        "DESCRIPTION": "Deal damage equal to your Block. NL nearlmod:Guardian : Enter nearlmod:Dreadnought and deal additional damage equal to your Temporary_HP.",
+        "UPGRADE_DESCRIPTION": "",
+        "EXTENDED_DESCRIPTION": [
+            "Deal !D! damage",
+            "Enter nearlmod:Dreadnought. Deal !D! damage."
+        ]
+    },
+    "nearlmod:BlazingSun'sObeisance": {
+        "NAME": "Blazing Sun's Obeisance",
+        "DESCRIPTION": "Deal !D! damage to all enemies. NL Deal additional damage equal to 1/3 of nearlmod:Light used in this combat.",
+        "UPGRADE_DESCRIPTION": "Deal !D! damage to all enemies. NL Deal additional damage equal to 1/2 of nearlmod:Light used in this combat."
+    },
+    "nearlmod:ShadowOut": {
+        "NAME": "Shadow Out",
+        "DESCRIPTION": "Lose all nearlmod:Light and gain equivalent nearlmod:Shadow. NL If Viviana is present, she deals !M! damage to all enemies !nearlmod:M2! times. Otherwise summon Viviana as nearlmod:Friend.",
+        "UPGRADE_DESCRIPTION": ""
+    },
+    "nearlmod:BladeOfBlazingSun": {
+        "NAME": "Blade of Blazing Sun",
+        "DESCRIPTION": "If Blemishine is present, whenever you use nearlmod:Light in nearlmod:Dreadnought, gain !M! Strength. Otherwise summon Blemishine as nearlmod:Friend.",
+        "UPGRADE_DESCRIPTION": ""
+    },
+    "nearlmod:PathOfRadiant": {
+        "NAME": "Path of Radiant",
+        "DESCRIPTION": "Exhaust. NL Enter nearlmod:Dreadnought. NL nearlmod:Promote all nearlmod:Friends. NL If any Pinus Sylvestris member is present, apply !M! nearlmod:Trust to all nearlmod:Friends.",
+        "UPGRADE_DESCRIPTION": ""
+    },
+    "nearlmod:PegasusForm": {
+        "NAME": "Pegasus Form",
+        "DESCRIPTION": "Whenever you use nearlmod:Light, gain nearlmod:Light equal to 2/3 times of it next turn.",
+        "UPGRADE_DESCRIPTION": "Whenever you use nearlmod:Light, gain nearlmod:Light equal to it next turn."
+    },
+    "nearlmod:DayBreak": {
+        "NAME": "Day Break",
+        "DESCRIPTION": "When you deal damage to an enemy, ignore their Block. NL If enemy has no Block, deal !M! additional damage.",
+        "UPGRADE_DESCRIPTION": "Innate. NL When you deal damage to an enemy, ignore their Block. NL If enemy has no Block, deal !M! additional damage."
+    },
+    "nearlmod:UnitedAsOne": {
+        "NAME": "United as One",
+        "DESCRIPTION": "Exhaust. NL Every nearlmod:Friend provide the nearlmod:Unique nearlmod:Friend-card if it isn't used.",
+        "UPGRADE_DESCRIPTION": "Exhaust. NL Every nearlmod:Friend provide the Upgraded nearlmod:Unique nearlmod:Friend-card if it isn't used."
+    },
+    "nearlmod:Followers": {
+        "NAME": "Followers",
+        "DESCRIPTION": "Choose 1 of 3 Followers cards and add into your hand. NL If Shining and Nightingale are both present, add all 3 cards into your hand instead.",
+        "UPGRADE_DESCRIPTION": "Retain. NL Choose 1 of 3 Followers cards and add into your hand. NL If Shining and Nightingale are both present, add all 3 cards into your hand instead."
+    },
+    "nearlmod:NearlCard": {
+        "NAME": "Followers: Nearl",
+        "DESCRIPTION": "Enter nearlmod:Guardian. NL Gain !M! nearlmod:Light. NL Use nearlmod:Light.",
+        "UPGRADE_DESCRIPTION": ""
+    },
+    "nearlmod:NightingaleCard": {
+        "NAME": "Followers: Nightingale",
+        "DESCRIPTION": "Gain !M! Temporary_HP and !B! Block.",
+        "UPGRADE_DESCRIPTION": ""
+    },
+    "nearlmod:ShiningCard": {
+        "NAME": "Followers: Shining",
+        "DESCRIPTION": "Deal !D! damage and apply !M! Weak.",
+        "UPGRADE_DESCRIPTION": ""
+    },
+    "nearlmod:PocketVault": {
+        "NAME": "\"Pocket Vault\"",
+        "DESCRIPTION": "Deal !D! damage. NL If Whislash is present, put no more than !M! card from your draw pile and discard pile into your hand. NL Otherwise summon Whislash as nearlmod:Friend.",
+        "UPGRADE_DESCRIPTION": ""
+    },
+
+    "nearlmod:SwallowLight": {
+        "NAME": "Swallow Light",
+        "DESCRIPTION": "Summon Viviana as nearlmod:Friend. NL Lose all nearlmod:Light and apply nearlmod:Trust equal to 1/3 of it to her.",
+        "UPGRADE_DESCRIPTION": "Summon Viviana as nearlmod:Friend. NL Lose all nearlmod:Light and apply nearlmod:Trust equal to 1/2 of it to her."
+    },
+    "nearlmod:LSSwiftSword": {
+        "NAME": "Light-Shadow Swift Sword",
+        "DESCRIPTION": "nearlmod:Friend-card. NL Deal !M! damage !nearlmod:M2! 次.",
+        "UPGRADE_DESCRIPTION": ""
+    },
+    "nearlmod:FlashFade": {
+        "NAME": "\"Flash and Fade\"",
+        "DESCRIPTION": "nearlmod:Friend-card. NL Enter nearlmod:Dreadnought. Deal !M! damage !nearlmod:M2! times. NL Also influenced by your Strength.",
+        "UPGRADE_DESCRIPTION": ""
+    },
+    "nearlmod:GlimmeringTouch": {
+        "NAME": "Glimmering Touch",
+        "DESCRIPTION": "nearlmod:Friend-card. NL Enter nearlmod:Charging. After two turns, deal !M! damage to all enemies and gain !nearlmod:M2! nearlmod:Light.",
+        "UPGRADE_DESCRIPTION": "nearlmod:Friend-card. NL Enter nearlmod:Charging. At the start of next turn, deal !M! damage to all enemies and gain !nearlmod:M2! nearlmod:Light."
+    },
+    "nearlmod:FlameShadow": {
+        "NAME": "Candlelit Shadow Whisper",
+        "DESCRIPTION": "nearlmod:Friend-card. nearlmod:Unique. NL Gain nearlmod:Poem-looks. NL Lose all nearlmod:Light and deal damage equal to twice of it to all enemies.",
+        "UPGRADE_DESCRIPTION": "",
+        "EXTENDED_DESCRIPTION": ["(Deals !M! damage)"]
+    },
+
+    "nearlmod:AllOutEffort": {
+        "NAME": "All Out Effort",
+        "DESCRIPTION": "Summon Blemishine as nearlmod:Friend. NL Gain !M! nearlmod:Light. NL Enter nearlmod:Dreadnought.",
+        "UPGRADE_DESCRIPTION": "Summon瑕光as nearlmod:Friend. NL Gain !M! nearlmod:Light and !B! Block. NL Enter nearlmod:Dreadnought."
+    },
+    "nearlmod:SurgingBrilliance": {
+        "NAME": "Surging Brilliance",
+        "DESCRIPTION": "nearlmod:Friend-card. NL Deal !M! damage. NL Gain !nearlmod:M2! nearlmod:Light.",
+        "UPGRADE_DESCRIPTION": ""
+    },
+    "nearlmod:DeterringRadiance": {
+        "NAME": "Deterring Radiance",
+        "DESCRIPTION": "nearlmod:Friend-card. NL Apply !nearlmod:M2! Weak to all enemies. NL Gain !M! nearlmod:Light.",
+        "UPGRADE_DESCRIPTION": ""
+    },
+    "nearlmod:DivineAvatar": {
+        "NAME": "Divine Avatar",
+        "DESCRIPTION": "nearlmod:Friend-card. nearlmod:Unique. NL Deal !M! damage twice. NL Heal !nearlmod:M2! HP.",
+        "UPGRADE_DESCRIPTION": ""
+    },
+    "nearlmod:CraftsmanEcho": {
+        "NAME": "Craftsman's Echo",
+        "DESCRIPTION": "nearlmod:Friend-card. NL Enter nearlmod:Guardian or nearlmod:Dreadnought. Gain !nearlmod:M2! additional stats.",
+        "UPGRADE_DESCRIPTION": ""
+    },
+    "nearlmod:ToAtkStance": {
+        "NAME": "Dreadnought",
+        "DESCRIPTION": "Enter nearlmod:Dreadnought.",
+        "UPGRADE_DESCRIPTION": "Enter nearlmod:Dreadnought. NL Gain !nearlmod:M2! additional stats."
+    },
+    "nearlmod:ToDefStance": {
+        "NAME": "Guardian",
+        "DESCRIPTION": "Enter nearlmod:Guardian.",
+        "UPGRADE_DESCRIPTION": "Enter nearlmod:Guardian. NL Gain !nearlmod:M2! additional stats."
+    },
+
+    "nearlmod:DanceTogether": {
+        "NAME": "Dance Together",
+        "DESCRIPTION": "Summon Nightingale as nearlmod:Friend. NL Add a random non-nearlmod:Unique nearlmod:Friend-card.",
+        "UPGRADE_DESCRIPTION": "Summon Nightingale as nearlmod:Friend. NL Add a random non-nearlmod:Unique nearlmod:Friend-card. Remove its Ethereal and Retain it."
+    },
+    "nearlmod:ArtsShield": {
+        "NAME": "Arts Shield",
+        "DESCRIPTION": "nearlmod:Friend-card. NL Gain !M! Block and !nearlmod:M2! Temporary_HP.",
+        "UPGRADE_DESCRIPTION": ""
+    },
+    "nearlmod:Sanctuary": {
+        "NAME": "Sanctuary",
+        "DESCRIPTION": "nearlmod:Friend-card. NL Gain !M! Block ，在接下来的 !nearlmod:M2! 回合内，你受到的伤害减半.",
+        "UPGRADE_DESCRIPTION": ""
+    },
+    "nearlmod:WhiteFiendProtection": {
+        "NAME": "White Fiend's Protection",
+        "DESCRIPTION": "nearlmod:Friend-card. nearlmod:Unique. NL Gain nearlmod:White-Fiend's-Protection.",
+        "UPGRADE_DESCRIPTION": "nearlmod:Friend-card. nearlmod:Unique. NL Gain nearlmod:White-Fiend's-Protection. NL Lose 1 of all debuff."
+    },
+    "nearlmod:ClosedHope": {
+        "NAME": "Closed Hope",
+        "DESCRIPTION": "nearlmod:Friend-card. NL Enter nearlmod:Guardian. NL Gain !M! Block. If you still have Block at the start of next turn, gain !nearlmod:M2! Artifact.",
+        "UPGRADE_DESCRIPTION": ""
+    },
+
+    "nearlmod:DawnDuskSaber": {
+        "NAME": "Dawn-Dusk Saber",
+        "DESCRIPTION": "Summon Shining as nearlmod:Friend. NL Deal !D! damage to all enemies.",
+        "UPGRADE_DESCRIPTION": "Summon Shining as nearlmod:Friend. NL Deal !D! damage and apply 1 Weak to all enemies."
+    },
+    "nearlmod:Creed": {
+        "NAME": "Creed",
+        "DESCRIPTION": "nearlmod:Friend-card. NL Deal !M! damage，Enter nearlmod:Guardian.",
+        "UPGRADE_DESCRIPTION": ""
+    },
+    "nearlmod:AutoProtect": {
+        "NAME": "Auto Protect",
+        "DESCRIPTION": "nearlmod:Friend-card. NL Unplayable. NL Gain !M! Block both this and next turn when added into hand.",
+        "UPGRADE_DESCRIPTION": ""
+    },
+    "nearlmod:BlackFiendProtection": {
+        "NAME": "Black Fiend's Protection",
+        "DESCRIPTION": "nearlmod:Friend-card. nearlmod:Unique. NL Gain nearlmod:Black-Fiend's-Protection.",
+        "UPGRADE_DESCRIPTION": "nearlmod:Friend-card. nearlmod:Unique. NL Gain nearlmod:Black-Fiend's-Protection. NL Apply 1 Weak to all enemies."
+    },
+    "nearlmod:CreedField": {
+        "NAME": "Creed Field",
+        "DESCRIPTION": "nearlmod:Friend-card. NL Gain !M! Block. Whenever you take damage in the following !nearlmod:M2! turns, take 6 less",
+        "UPGRADE_DESCRIPTION": ""
+    },
+
+    "nearlmod:WayToHome": {
+        "NAME": "Way to Home",
+        "DESCRIPTION": "Summon Whislash as nearlmod:Friend. NL Draw a card.",
+        "UPGRADE_DESCRIPTION": "Summon Whislash as nearlmod:Friend. NL Draw a card. NL Gain !M! Strength this turn."
+    },
+    "nearlmod:VisionOfUnity": {
+        "NAME": "Vision of Unity",
+        "DESCRIPTION": "nearlmod:Friend-card. NL Gain !nearlmod:M2! Buffers.",
+        "UPGRADE_DESCRIPTION": ""
+    },
+    "nearlmod:Rebuke": {
+        "NAME": "Rebuke",
+        "DESCRIPTION": "nearlmod:Friend-card ， nearlmod:Unique. NL whenever you switch your nearlmod:Stance, gain !nearlmod:M2! additional stats. Switch your nearlmod:Stance.",
+        "UPGRADE_DESCRIPTION": ""
+    },
+    "nearlmod:MotivationalSkills": {
+        "NAME": "Motivational Skills",
+        "DESCRIPTION": "nearlmod:Friend-card. NL Enter nearlmod:Dreadnought. If you are already in nearlmod:Dreadnought, gain !nearlmod:M2! Strength.",
+        "UPGRADE_DESCRIPTION": ""
+    },
+    "nearlmod:WhipSword": {
+        "NAME": "Whip Sword",
+        "DESCRIPTION": "nearlmod:Friend-card. NL You and all nearlmod:Friends Deal !nearlmod:M2! damage to all enemies separately.",
+        "UPGRADE_DESCRIPTION": "nearlmod:Friend-card. NL You and all nearlmod:Friends Deal !nearlmod:M2! damage to all enemies separately. Whislash deal !M! damage separately.",
+        "EXTENDED_DESCRIPTION": ["(!D! in total)"]
+    },
+
+    "nearlmod:PersonalCharm": {
+        "NAME": "Personal Charm",
+        "DESCRIPTION": "Summon a random Pinus Sylvestris member as nearlmod:Friend.",
+        "UPGRADE_DESCRIPTION": "Summon two random Pinus Sylvestris member as nearlmod:Friend."
+    },
+    "nearlmod:PinusSylvestris": {
+        "NAME": "\"Pinus Sylvestris\"",
+        "DESCRIPTION": "nearlmod:Friend-card. NL Gain !nearlmod:M2! nearlmod:DP. NL Add a random nearlmod:Friend-card belongs to Pinus Sylvestris member.",
+        "UPGRADE_DESCRIPTION": "nearlmod:Friend-card. NL Gain !nearlmod:M2! nearlmod:DP. NL Add a random Upgraded nearlmod:Friend-card belongs to Pinus Sylvestris member."
+    },
+    "nearlmod:FlameHeart": {
+        "NAME": "Flame Heart",
+        "DESCRIPTION": "nearlmod:Friend-card. NL Gain 1 nearlmod:DP and !nearlmod:M2! temporary Thorns. NL Deal !M! damage.",
+        "UPGRADE_DESCRIPTION": "nearlmod:Friend-card. NL Gain 1 nearlmod:DP, !nearlmod:M2! temporary Thorns and 1 Intangible. NL Deal !M! damage."
+    },
+    "nearlmod:StabbingLance": {
+        "NAME": "Stabbing Lance",
+        "DESCRIPTION": "nearlmod:Friend-card. NL Randomly deal !M! damage !nearlmod:M2! times. Whenever kills an enemy, gain 1 nearlmod:DP.",
+        "UPGRADE_DESCRIPTION": "nearlmod:Friend-card. NL Randomly deal !M! damage !nearlmod:M2! times. Whenever kills an enemy, gain 2 nearlmod:DP."
+    },
+    "nearlmod:LanceCharge": {
+        "NAME": "Lance Charge",
+        "DESCRIPTION": "nearlmod:Friend-card. NL Deal !M! damage. If enemy intend to attack, it loses 99 Strength this turn.",
+        "UPGRADE_DESCRIPTION": ""
+    },
+    "nearlmod:JusticeDrive": {
+        "NAME": "Justice Drive",
+        "DESCRIPTION": "nearlmod:Friend-card. NL Apply !nearlmod:M2! Vulnerable to all enemies. Shoot down all enemies with Flight.",
+        "UPGRADE_DESCRIPTION": ""
+    },
+    "nearlmod:BeepActivate": {
+        "NAME": "\"Beep Activate\"",
+        "DESCRIPTION": "nearlmod:Friend-card. NL Gain !nearlmod:M2! Plated Armor and !M! Block.",
+        "UPGRADE_DESCRIPTION": ""
+    },
+    "nearlmod:AllySupport": {
+        "NAME": "Ally Support",
+        "DESCRIPTION": "nearlmod:Friend-card. NL Whenever you or other nearlmod:Friend deal damage to enemy, Fartooth also deal !nearlmod:M2! damage.",
+        "UPGRADE_DESCRIPTION": ""
+    },
+    "nearlmod:FeatherShineArrows": {
+        "NAME": "Feather Shine Arrows",
+        "DESCRIPTION": "nearlmod:Friend-card. NL Deal !M! damage to the enemy with lowest HP.",
+        "UPGRADE_DESCRIPTION": ""
+    },
+    "nearlmod:FocusedBombardment": {
+        "NAME": "Focused Bombardment",
+        "DESCRIPTION": "nearlmod:Friend-card. NL Deal !M! damage to all enemies !nearlmod:M2! times.",
+        "UPGRADE_DESCRIPTION": ""
+    },
+    "nearlmod:BombardmentStudies": {
+        "NAME": "Bombardment Studies",
+        "DESCRIPTION": "nearlmod:Friend-card. NL Stats of *Focused *Bombardment increase !nearlmod:M2!. NL At the start of next turn, add a *Focused *Bombardment into your hand.",
+        "UPGRADE_DESCRIPTION": "nearlmod:Friend-card. NL Stats of *Focused *Bombardment increase !nearlmod:M2!. NL At the start of next turn, add a *Focused *Bombardment+ into your hand."
+    },
+
+    "nearlmod:Beginning": {
+        "NAME": "Beginning",
+        "DESCRIPTION": "Summon Blemishine as nearlmod:Friend.",
+        "UPGRADE_DESCRIPTION": ""
+    },
+    "nearlmod:Blemishine'sFaintLight": {
+        "NAME": "Blemishine's Faint Light",
+        "DESCRIPTION": "Retain. NL Exhaust. Gain nearlmod:FriendShelter.",
+        "UPGRADE_DESCRIPTION": ""
+    },
+    "nearlmod:PersonalCharmSp": {
+        "NAME": "Personal Charm SP",
+        "DESCRIPTION": "Choose and summon a Pinus Sylvestris member as nearlmod:Friend.",
+        "UPGRADE_DESCRIPTION": "Choose and summon two Pinus Sylvestris members as nearlmod:Friend."
+    },
+    "nearlmod:SummonPinusFriend": {
+        "NAME": "",
+        "DESCRIPTION": "",
+        "UPGRADE_DESCRIPTION": "",
+        "EXTENDED_DESCRIPTION": [
+            "Summon",
+            "as nearlmod:Friend."
+        ]
+    },
+    "nearlmod:MedalOfChampion": {
+        "NAME": "Medal of Champion",
+        "DESCRIPTION": "Exhaust. NL Gain !M! Gold.",
+        "UPGRADE_DESCRIPTION": ""
+    },
+
+    "nearlmod:StartWithAtkStance": {
+        "NAME": "Dreadnought",
+        "DESCRIPTION": "Start this combat in nearlmod:Dreadnought."
+    },
+    "nearlmod:StartWithDefStance": {
+        "NAME": "Guardian",
+        "DESCRIPTION": "Start this combat in nearlmod:Guardian."
+    }
+}

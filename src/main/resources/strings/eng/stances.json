@@ -1,0 +1,10 @@
+{
+  "nearlmod:AtkStance": {
+    "NAME": "Dreadnought",
+    "DESCRIPTION": ["In this stance, gain #b", " #yStrength. When you enter this stance next time, gain #b", " additional #yStrength."]
+  },
+  "nearlmod:DefStance": {
+    "NAME": "Guardian",
+    "DESCRIPTION": ["In this stance, gain #b", " #yDexterity. When you enter this stance next time, gain #b", " additional #yDexterity."]
+  }
+}

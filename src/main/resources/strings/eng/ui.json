@@ -1,0 +1,48 @@
+{
+  "nearlmod:CostEnergyOrb": {
+    "TEXT": [
+      "Deployment Point(DP)",
+      "A special #yEnergy conserved between turns. Can be used and prioritized for #yFriend #yCard ."
+    ]
+  },
+  "nearlmod:SummonFromDeckToHandAction": {
+    "TEXT": [
+      "Choose a #yPower card which can summon #yFriend and add it to hand.",
+      "There's no #yPower card which can summon #yFriend in your draw pile."
+    ]
+  },
+  "nearlmod:FriendCardTab": {
+    "TEXT": [
+      "Friend Card"
+    ]
+  },
+  "nearlmod:SelectScreenText": {
+    "TEXT": [
+      "Choose up to ",
+      " cards and #yExhaust them.",
+      " cards and add them into hand.",
+      "Choose 1 card and add it into hand."
+    ]
+  },
+  "nearlmod:ArenaRoom": {
+    "TEXT": [
+      "Arena",
+      "Arena",
+      "Fight with special enemy in these room. NL Beat them and gain special rewards!"
+    ]
+  },
+  "nearlmod:CurseRelic": {
+    "TEXT": [
+      "Curse",
+      " Curse",
+      "Curse: ",
+      "Cursed relics gained when refuse to fight in Arena."
+    ]
+  },
+  "nearlmod:FriendTip": {
+    "TEXT": [
+      "Friend Tip",
+      "Friend Card will show Friend it belongs to."
+    ]
+  }
+}

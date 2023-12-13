@@ -2,17 +2,17 @@
   "nearlmod:CureUp": {
     "NAME": "治疗效果大提升",
     "FLAVOR": "只要她还守在队伍的前列，她的队友就不会受伤。",
-    "DESCRIPTIONS": ["你每回合获得的前 #b5 点格挡转化为 #y临时生命 。"]
+    "DESCRIPTIONS": ["你每回合获得的前 #b5 点 #y格挡 转化为 #y临时生命 。"]
   },
   "nearlmod:PegasusHalo": {
     "NAME": "天马光环",
     "FLAVOR": "只要她还屹立在战场上，就没有敌人能夺走我们的胜利。",
-    "DESCRIPTIONS": ["替换 #r治疗效果大提升 。你每获得 #b4 点格挡，就获得 #b1 点 #y临时生命 。"]
+    "DESCRIPTIONS": ["替换 #r治疗效果大提升 。你每获得 #b4 点 #y格挡 ，就获得 #b1 点 #y临时生命 。"]
   },
   "nearlmod:Marigold": {
     "NAME": "金盏花",
     "FLAVOR": "或许你不是那光芒，但你亦曾，为守护它而拔剑。",
-    "DESCRIPTIONS": ["对战开始时，召唤薇薇安娜作为 #y伙伴 。"]
+    "DESCRIPTIONS": ["每场战斗开始时，召唤薇薇安娜作为 #y伙伴 。"]
   },
   "nearlmod:EmergencyCallBook": {
     "NAME": "应急通讯指南",

@@ -1,0 +1,164 @@
+{
+  "nearlmod:LightPower": {
+    "NAME": "Light",
+    "DESCRIPTIONS": ["Deal #b", " damage to enemy when used.", "Gain #b", " #yTemporary #yHP when used."]
+  },
+  "nearlmod:FlamingEdgePower": {
+    "NAME": "Flaming Edge",
+    "DESCRIPTIONS": ["Whenever you enter #yDreadnought, gain #b", " #yLight."]
+  },
+  "nearlmod:GlimmeringTouchPower": {
+    "NAME": "Glimmering Touch",
+    "DESCRIPTIONS": [
+      "After ",
+      "turns, deal #b",
+      " damage to all enemies and gain #b",
+      " #yLight.",
+      "turn, deal #b"
+    ]
+  },
+  "nearlmod:SanctuaryPower": {
+    "NAME": "Sanctuary",
+    "DESCRIPTIONS": [
+      "In next #b",
+      "turn, take #b50% less when damaged.",
+      "turn, take #b50% less when damaged."
+    ]
+  },
+  "nearlmod:WFPPower": {
+    "NAME": "White Fiend's Protection",
+    "DESCRIPTIONS": ["You can no longer become #yFrail , #yWeak and #yVulnerable . If you have #yBlack #yFiend's #yProtection at the same time, gain #b1 #yArtifact at the start of each turn."]
+  },
+  "nearlmod:CreedFieldPower": {
+    "NAME": "Creed Field",
+    "DESCRIPTIONS": [
+      "In next #b",
+      "turn, take #b",
+      "turns, take #b",
+      "less when damaged."]
+  },
+  "nearlmod:BFPPower": {
+    "NAME": "Black Fiend's Protection",
+    "DESCRIPTIONS": ["Your first #yAttack which is not #yFriend #yCard , apply #b1 #yVulnerable or #yWeak randomly. If you have #White #yFiend's #yProtection at the same time, change to apply #b1 #yVulnerable and #yWeak ."]
+  },
+  "nearlmod:Exsanguination": {
+    "NAME": "Exsanguination",
+    "DESCRIPTIONS": ["Your #yStrength cannot exceed #b0 ."]
+  },
+  "nearlmod:FriendShelterPower": {
+    "NAME": "Friend's Shelter",
+    "DESCRIPTIONS": ["Prevent damage you take this turn."]
+  },
+  "nearlmod:Shadow": {
+    "NAME": "Shadow",
+    "DESCRIPTIONS": ["Add additional #b", " damage to Viviana's next attack."]
+  },
+  "nearlmod:Poem'sLooks": {
+    "NAME": "Poem's Looks",
+    "DESCRIPTIONS": ["After you use #yLight , gain equivalent #yShadow . After you use #Shadow , gain equivalent #yLight ."]
+  },
+  "nearlmod:LoseThornsPower": {
+    "NAME": "Losing Thorns",
+    "DESCRIPTIONS": ["At the start of next turn, lose #b", " #yThorns ."]
+  },
+  "nearlmod:AllySupportPower": {
+    "NAME": "Ally Support",
+    "DESCRIPTIONS": ["Whenever you or other #yFriend deal damage to enemy, Fartooth also deal #b", " damage."]
+  },
+  "nearlmod:BombardmentStudiesPower": {
+    "NAME": "Bombardment Studies",
+    "DESCRIPTIONS": ["Stats of #yFocused #yBombardment increase #b", " ."]
+  },
+  "nearlmod:ClosedHope": {
+    "NAME": "Closed Hope",
+    "DESCRIPTIONS": ["If you still have Block at the start of next turn, gain #b", " #yArtifact ."]
+  },
+  "nearlmod:CostNextTurnPower": {
+    "NAME": "Increasing DP",
+    "DESCRIPTIONS": ["Gain #b", " #yDP next turn."]
+  },
+  "nearlmod:DefensiveFormationPower": {
+    "NAME": "Defensive Formation",
+    "DESCRIPTIONS": ["In this turn, after you play a card, enter #yGuardian ."]
+  },
+  "nearlmod:BladeOfBlazingSunPower": {
+    "NAME": "Blade of Blazing Sun",
+    "DESCRIPTIONS": ["Whenever you use #yLight in #yDreadnought , gain #b", " Strength"]
+  },
+  "nearlmod:DoubleBoss": {
+    "NAME": "Twin knight",
+    "DESCRIPTIONS": ["This enemy is twin knight with Withered Knight. If you kill one of then, the other will go berserk!", "This enemy has gone berserk! ATK increase #b80% and ATK times doubled.", "This enemy is twin knight with Corrupted Knight. If you kill one of then, the other will go berserk!"]
+  },
+  "nearlmod:Reborn": {
+    "NAME": "Reborn",
+    "DESCRIPTIONS": ["This enemy will reborn after first death."]
+  },
+  "nearlmod:SuperWeakPower": {
+    "NAME": "Left-Hand Mark",
+    "DESCRIPTIONS": ["You deal #b50% less damage when attack."]
+  },
+  "nearlmod:Hint": {
+    "NAME": "Warning!",
+    "DESCRIPTIONS": ["If damage of 'Coalescing Fear', the skill of this enemy is not fully blocked， your #yFriend will be kill!"]
+  },
+  "nearlmod:StormCounterAttackPower": {
+    "NAME": "Storm Counterattack",
+    "DESCRIPTIONS": ["At the start of next turn, if you still have Block, deal damage equal to #b", " times the number of your Block to all enemies."]
+  },
+  "nearlmod:GainLightNextTurnPower": {
+    "NAME": "Stored Light",
+    "DESCRIPTIONS": ["At the start of next turn, gain #b", " #yLight ."]
+  },
+  "nearlmod:PegasusFormPower": {
+    "NAME": "Pegasus Form",
+    "DESCRIPTIONS": ["Whenever you use #yLight, gain #yLight equal to #b", " times of it next turn."]
+  },
+  "nearlmod:Duel": {
+    "NAME": "Duel",
+    "DESCRIPTIONS": ["Take #b", "less damage from #yFriend."]
+  },
+  "nearlmod:AttackUp": {
+    "NAME": "ATK Increase",
+    "DESCRIPTIONS": ["You deal #b", "% more damage when attack."]
+  },
+  "nearlmod:CorrosionDamagePower": {
+    "NAME": "Corrosion Damage",
+    "DESCRIPTIONS": [
+      "When accumulated to #b1000, enter Elemental Burst: Reset the accumulation, ignore Corrosive Damage this turn, take 16 damage and lose 2 Dexterity.",
+      "Currently accumulated #b",
+      " Corrosion.",
+      "Currently in Elemental Burst."
+    ]
+  },
+  "nearlmod:DealCorrosionPower": {
+    "NAME": "Corrosion",
+    "DESCRIPTIONS": [
+      "Deal Corrosion Damage equal to #b",
+      " times of attack damage."
+    ]
+  },
+  "nearlmod:MedalOfHonorPower": {
+    "NAME": "Medal of Honor",
+    "DESCRIPTIONS": ["Unplayable #yStatus card can now be played now. Whenever you play a #yStatus card, #yExhaust it. Whenever you #yExhaust a #yStatus card, draw a card."]
+  },
+  "nearlmod:FanClubPower": {
+    "NAME": "Fan Club",
+    "DESCRIPTIONS": [
+      "Whenever you play a #yFriend #yCard, apply #b",
+      " #yTrust to the #yFriend it belongs to. If you play a #yFriend #yCard belongs to Whislash, apply ",
+      " #yTrust to all #yFriends instead."
+    ]
+  },
+  "nearlmod:LoseVulnerablePower": {
+    "NAME": "Losing Vulnerable",
+    "DESCRIPTIONS": ["At the end of this turn, lose #b", " Vulnerable."]
+  },
+  "nearlmod:DayBreakPower": {
+    "NAME": "Day Break",
+    "DESCRIPTIONS": ["When you deal damage to an enemy, ignore their #yBlock. If enemy has no #yBlock, deal #b3 additional damage."]
+  },
+  "nearlmod:InfiniteLightBladePower": {
+    "NAME": "Infinite Light Blade",
+    "DESCRIPTIONS": ["Add the start of each turn, add a #yLight! into your hand."]
+  }
+}

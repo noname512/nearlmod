@@ -1,0 +1,138 @@
+{
+  "nearlmod:CandleKnight": {
+    "NAME": "The Candle Knight, Viviana",
+    "MOVES": [
+      "Charging",
+      "Glimmering Touch",
+      "Light-Shadow Swift Sword",
+      "Swallow Light"
+    ],
+    "DIALOG": [
+      "If your faith truly is as unshakeable as the sun, allow such a meager candle-flame as myself...",
+      "To try and wrest a moment of your rays.",
+      "People's fates are not decided by their births, Viviana. In my view, you are an outstanding knight.",
+      "Hoh, did you hear that? He said we could dance.",
+      "Please, then.",
+      "Viviana... You are truly impressive...",
+      "I'm honored to have exhausted the Radiant Knight.",
+      "You've broken my blade. It seems I have lost."
+    ]
+  },
+  "nearlmod:Platinum": {
+    "NAME": "Platinum, Centaurea",
+    "MOVES": [],
+    "DIALOG": [
+      "Laugh all you want."
+    ]
+  },
+  "nearlmod:Roy": {
+    "NAME": "Lazurite, Roy",
+    "MOVES": [
+      "Slaking Off", "Power Strike"
+    ],
+    "DIALOG": [
+      "If you have so much free time on your hands, why not come help out?",
+      "Ahaha... We all have our own jobs to do, no? I'm a busy man, you know."
+    ]
+  },
+  "nearlmod:Monique": {
+    "NAME": "Lazurite, Monique",
+    "MOVES": ["Power Strike"],
+    "DIALOG": [
+      "Cut the crap, Roy. Either call the thing off, or come help me out over here."
+    ]
+  },
+  "nearlmod:CorruptKnight": {
+    "NAME": "Corrupted Knight",
+    "MOVES": ["Growth attack"],
+    "DIALOG": [
+      "Why... Why can't I hit her...?",
+      "...Her light is gathering and suppressing our Arts.",
+      "~Guh!!!~",
+      "I will become your shield, so——unleash your full strength!"
+    ]
+  },
+  "nearlmod:WitheredKnight": {
+    "NAME": "Withered Knight",
+    "MOVES": ["Explosive arrows"],
+    "DIALOG": [
+      "~Guh~ ... Where's the enemy? Too bright, can't see...!",
+      "Mission, must be completed. No matter who——kill the target first!",
+      "~Guh!!!~"
+    ]
+  },
+  "nearlmod:LeftHandTytusTopola": {
+    "NAME": "'Left-Hand' Tytus Topola",
+    "MOVES": ["ATK reduce"],
+    "DIALOG": [
+      "Let us -- use the most traditional methods to decide victory..."
+    ]
+  },
+  "nearlmod:LastKheshig": {
+    "NAME": "'The Last Kheshig', Tola",
+    "MOVES": ["Coalescing Fear"],
+    "DIALOG": [
+      "I truly hope that you will be my meaning.",
+      "(Ancient language) The young hunter sets out on his Equestrian ♪ From dreams he goes, towards the shores of gold ♪"
+    ]
+  },
+  "nearlmod:NightzmoraImitator": {
+    "NAME": "Nightzmora Phantom",
+    "MOVES": ["Coalescing Fear"],
+    "DIALOG": []
+  },
+  "nearlmod:BloodKnight": {
+    "NAME": "The Blood Knight Dikaiopolis",
+    "MOVES": [
+      "Exsanguination",
+      "Blood Clotting"
+    ],
+    "DIALOG": [
+      "The Radiant Knight. I'm very glad you've made it here.",
+      "(Minoan) Ashes to ashes, dust to dust. Exsanguination, to me.",
+      "Come. Let's settle this without any further delay. Thinking about anything else... is a right reserved only for the victor!"
+    ]
+  },
+  "nearlmod:BloodBlade": {
+    "NAME": "Blood Blade",
+    "MOVES": [
+      "Absorbing"
+    ],
+    "DIALOG": []
+  },
+  "nearlmod:ArmorlessThirdSquad": {
+    "NAME": "Armorless Third Squad",
+    "MOVES": [],
+    "DIALOG": []
+  },
+  "nearlmod:ArmorlessCleanupSquad": {
+    "NAME": "Armorless Cleanup Squad",
+    "MOVES": [],
+    "DIALOG": []
+  },
+  "nearlmod:ArmorlessAssassin": {
+    "NAME": "Armorless Assassin",
+    "MOVES": [],
+    "DIALOG": []
+  },
+  "nearlmod:ArmorlessCrossbowman": {
+    "NAME": "Armorless Crossbowman",
+    "MOVES": [],
+    "DIALOG": []
+  },
+  "nearlmod:KnightTerritoryHibernator": {
+    "NAME": "Knight Territory Hibernator",
+    "MOVES": [],
+    "DIALOG": ["????? NL ?????", "Let's go, don't wake him up."]
+  },
+  "nearlmod:UndertideGloompincer": {
+    "NAME": "Undertide Gloompincer",
+    "MOVES": [],
+    "DIALOG": []
+  },
+  "nearlmod:KnightShielder": {
+    "NAME": "Knight Shielder",
+    "MOVES": [],
+    "DIALOG": ["Don't sleep, there's enemy!"]
+  }
+}

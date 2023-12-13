@@ -1,0 +1,42 @@
+{
+  "nearlmod:Viviana": {
+    "NAME": "Viviana",
+    "DESCRIPTION": ["At the start of each turn, provide a #yFriend #yCard of Viviana. Current #yTrust: ", ".", "At the start of each turn, provide an #yUpgraded #yFriend #yCard of Viviana. Current #yTrust: "]
+  },
+  "nearlmod:Blemishine": {
+    "NAME": "Blemishine",
+    "DESCRIPTION": ["At the start of each turn, provide a #yFriend #yCard of Blemishine. Current #yTrust: ", ".", "At the start of each turn, provide an #yUpgraded #yFriend #yCard of Blemishine. Current #yTrust: "]
+  },
+  "nearlmod:Nightingale": {
+    "NAME": "Nightingale",
+    "DESCRIPTION": ["At the start of each turn, provide a #yFriend #yCard of Nightingale. Current #yTrust: ", ".", "At the start of each turn, provide an #yUpgraded #yFriend #yCard of Nightingale. Current #yTrust: "]
+  },
+  "nearlmod:Shining": {
+    "NAME": "Shining",
+    "DESCRIPTION": ["At the start of each turn, provide a #yFriend #yCard of Shining. Current #yTrust: ", ".", "At the start of each turn, provide an #yUpgraded #yFriend #yCard of Shining. Current #yTrust: "]
+  },
+  "nearlmod:Whislash": {
+    "NAME": "Whislash",
+    "DESCRIPTION": ["At the start of each turn, provide a #yFriend #yCard of Whislash. Current #yTrust: ", ".", "At the start of each turn, provide an #yUpgraded #yFriend #yCard of Whislash. Current #yTrust: "]
+  },
+  "nearlmod:Flametail": {
+    "NAME": "Flametail",
+    "DESCRIPTION": ["At the start of each turn, provide a #yFriend #yCard of Flametail. Current #yTrust: ", ".", "At the start of each turn, provide an #yUpgraded #yFriend #yCard of Flametail. Current #yTrust: "]
+  },
+  "nearlmod:Wildmane": {
+    "NAME": "Wildmane",
+    "DESCRIPTION": ["At the start of each turn, provide a #yFriend #yCard of Wildmane. Current #yTrust: ", ".", "At the start of each turn, provide an #yUpgraded #yFriend #yCard of Wildmane. Current #yTrust: "]
+  },
+  "nearlmod:Ashlock": {
+    "NAME": "Ashlock",
+    "DESCRIPTION": ["At the start of each turn, provide a #yFriend #yCard of Ashlock. Current #yTrust: ", ".", "At the start of each turn, provide an #yUpgraded #yFriend #yCard of Ashlock. Current #yTrust: "]
+  },
+  "nearlmod:Fartooth": {
+    "NAME": "Fartooth",
+    "DESCRIPTION": ["At the start of each turn, provide a #yFriend #yCard of Fartooth. Current #yTrust: ", ".", "At the start of each turn, provide an #yUpgraded #yFriend #yCard of Fartooth. Current #yTrust: "]
+  },
+  "nearlmod:JusticeKnight": {
+    "NAME": "Justice Knight",
+    "DESCRIPTION": ["At the start of each turn, provide a #yFriend #yCard of Justice Knight. Current #yTrust: ", ".", "At the start of each turn, provide an #yUpgraded #yFriend #yCard of Justice Knight. Current #yTrust: "]
+  }
+}

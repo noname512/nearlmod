@@ -40,7 +40,10 @@ public class GlimmeringTouchPower extends AbstractPower implements CloneablePowe
 
     @Override
     public void updateDescription() {
-        description = amount + DESCRIPTIONS[0] + damage + DESCRIPTIONS[1] + lightAmt + DESCRIPTIONS[2];
+        if (amount == 1)
+            description = DESCRIPTIONS[0] + amount + DESCRIPTIONS[4] + damage + DESCRIPTIONS[2] + lightAmt + DESCRIPTIONS[3];
+        else
+            description = DESCRIPTIONS[0] + amount + DESCRIPTIONS[1] + damage + DESCRIPTIONS[2] + lightAmt + DESCRIPTIONS[3];
     }
 
     @Override

@@ -1,0 +1,126 @@
+{
+  "nearlmod:LaughAllYouWantEvent": {
+    "NAME": "Laugh All You Want",
+    "DESCRIPTIONS": [
+      "The Armorless Union stand in your way. NL \"We both have business here. I'm afraid I have to ask you and your friend to step aside.\"",
+      "\"Do you have any idea what you're saying?\"",
+      "You took a different path to leave. The Armorless Union didn't follow you."
+    ],
+    "OPTIONS": [
+      "[Fight]",
+      "[Leave]"
+    ]
+  },
+
+  "nearlmod:CorruptedWitheredBattle": {
+    "NAME": "Corrupted Knight & Withered Knight",
+    "DESCRIPTIONS": [
+      "General Chamber of Commerce is highly dissatisfied with the actions of the independent knight Maria. Currently, Kazimierz does not welcome those who defy their intentions. NL The 'accidentally' vanished Fartooth Knight, the Sarkaz knight who was injected with a special drug, tonight's arena may well turn into an execution ground—",
+      "You failed to arrive in time at the Grand Knight Territory, and Maria fell under the heavy hammer of Corrupted Knight."
+    ],
+    "OPTIONS": [
+      "[Set off early] #gRush into the Arena and engaged in a special combat.",
+      "[Proceed as usual] #rBecome #rCursed #r- #Regret. #rYou #rcannot #rsummon #rBlemishine #ras #rFriend #ranymore.",
+      "[Leave]"
+    ]
+  },
+  "nearlmod:LeftHandBattle": {
+    "NAME": "Final 16: 'Left-Hand Knight', Tytus Topola",
+    "DESCRIPTIONS": [
+      "\"This battle reeks of revenge! All of you watching! I hope your blood's ~on fire~ ! He's fallen short of the Final 16 over and over, but today, will 'Left-hand' Tytus Topola have what it takes to overcome himself?!\" NL \"This battle reeks of revenge! All of you watching! I hope your blood's on fire! He's fallen short of the Final 16 over and over, but today, will \"Left-hand\" Tytus Topola have what it takes to overcome himself?!\" NL \"In the long and storied history that is the Topola family's knightly record, only one time! Only one opponent! Has brought such colossal shame!\"",
+      "Under pressure from all sides, you choose to give up continuing in the Kazimierz Major."
+    ],
+    "OPTIONS": [
+      "[Fight] #gEngaged #gin #ga #gspecial #gcombat.",
+      "[Give up] #rBeing #rCursed #r- #rInjury. #rAt #rthe #rstart #rof #reach #rcombat, #rgain #r2 #rLeft-hand #rMark.",
+      "[Leave]"
+    ]
+  },
+  "nearlmod:CandleKnightBattle": {
+    "NAME": "Final 8: 'The Candle Knight', Viviana Droste",
+    "DESCRIPTIONS": [
+      "\"Good evening, Radiant Knight.\" The Candle Knight slowly lifts her hand. Light and heat, weaving and twining in response to her title. NL \"You do invite curiosity. If you disdain the knight competitions of now, what goal do you pursue by participating? Is it simply to take this championship, prove something?\"",
+      "\"Illuminate... the land.\" NL \"Not all people can illuminate the land, Radiant Knight. Most are but tiny candle-flames, barely enough to light the way on their own lives.\" NL \"The storm rocks us. In this age, a candle-flame is indistinct, the people have lost their selves, and what frightens me, is they aren't even conscious of it.\" NL \"Knowing this full well, why must you still–\"",
+      "Under pressure from all sides, you choose to give up continuing in the Kazimierz Major."
+    ],
+    "OPTIONS": [
+      "[Reply] \"To be a knight is to be the noble light that illuminates the land.\"",
+      "[Fight] #gEngaged #gin #ga #gspecial #gcombat.",
+      "[Give up] #rBeing #rCursed #r- #rNormality. #rYou #rcannot #rsummon #rViviana #ras #rFriend #ranymore.",
+      "[Leave]"
+    ]
+  },
+  "nearlmod:LastKheshigBattle": {
+    "NAME": "Semi-Final: 'Nightmare Knight', Tola",
+    "DESCRIPTIONS": [
+      "\"The descendant of a race left on the pages of the history books, a rare Kuranta, war-god scions who flay the years past–\" NL \"We could go through the entire history of the knight sports and find no one with purer blood, purer @horror@, and purer @might@ than him!\" NL \"Now, here comes the lone wanderer from the grasslands, the last Kheshig, Nightmare Knight ~TOLAAAAAAAAA~ !\"",
+      "Under pressure from all sides, you choose to give up continuing in the Kazimierz Major."
+    ],
+    "OPTIONS": [
+      "[Fight] #gEngaged #gin #ga #gspecial #gcombat.",
+      "[Give up] #rBeing #rCursed #r- #rInjury. #rAfter #rthe #rfirst #rturn #rof #reach #rcombat, #rtake #r8 #rdamge.",
+      "[Leave]"
+    ]
+  },
+  "nearlmod:BloodKnightBattle": {
+    "NAME": "Final: 'The Blood Knight', Dikaiopolis",
+    "DESCRIPTIONS": [
+      "\"First, let me introduce you to –– The defending Champion of the Major, 'Kazimierz's Blood-Red Chalice,' the Blood Knight of the Crimson Chalice Knightclub –– ~DIKAAAAAAIOOOPOLIIIIIIS~ !\" NL \"A suit of crimson armor emerges from the shadows and takes its place beneath the light.\" NL \"The hero has no flashy moves. He simply stands in the arena, feeling the temperature of the soil and the humidity of the air.\"",
+      "Under pressure from all sides, you choose to give up continuing in the Kazimierz Major."
+    ],
+    "OPTIONS": [
+      "[Fight] #gEngaged #gin #ga #gspecial #gcombat.",
+      "[Give up] #rAt #rthe #rstart #rof #reach #rcombat, #rsummon #r1 #rBlood #rBlade #ras #radditional #renemy.",
+      "[Leave]"
+    ]
+  },
+  "nearlmod:LazuriteSquadBattle": {
+    "NAME": "Encounter Lazurite Squad",
+    "DESCRIPTIONS": [
+      "#g@Phew!!@ Followed by a few arrows, Armorless Third Squad and Cleanup Squad stand in your way.",
+      "You escaped. The arrows didn't catch you."
+    ],
+    "OPTIONS": [
+      "[Fight]",
+      "[Leave]",
+      "[Leave]"
+    ]
+  },
+  "nearlmod:ArmorlessSquadBattle": {
+    "NAME": "Encounter Armorless Squad",
+    "DESCRIPTIONS": [
+      "Armorless Crossbow Men show up in the corner ahead. In the darkness, assassins lurk, ~ready~ ~to~ ~strike~ .",
+      "You escaped. The assassins failed to track your trail."
+    ],
+    "OPTIONS": [
+      "[Fight]",
+      "[Leave]",
+      "[Leave]"
+    ]
+  },
+  "nearlmod:WanderingKnightBattle": {
+    "NAME": "Encounter wandering knights",
+    "DESCRIPTIONS": [
+      "You encounter several nameless knights wandering in the Grand Knight Territory. Not all from Kazimierz agree with you, and clearly, they are not among them. Wait... why are there Gloompincer among them?",
+      "You leaved. There is no need to entangle with these people."
+    ],
+    "OPTIONS": [
+      "[Fight]",
+      "[Leave]",
+      "[Leave]"
+    ]
+  },
+  "nearlmod:TheSurroundedEvent": {
+    "NAME": "The Surrounded",
+    "DESCRIPTIONS": [
+      "你遇到了焰尾和野鬃，她们刚刚取得了无胄盟的秘密，正在逃跑。 NL 或许你可以此时现身，帮她们一把。对了，不要打扰那边正在睡觉的骑士，不然他也可能来参合一脚。",
+      "是耀骑士？太好了！小心那边的刺客——",
+      "你相信她们的实力，她们一定能能够顺利逃离的。"
+    ],
+    "OPTIONS": [
+      "[Fight] #gEngaged #gin #ga #gspecial #gcombat.",
+      "[Leave] 她们能行，我也有我的事要做。",
+      "[Leave]"
+    ]
+  }
+}

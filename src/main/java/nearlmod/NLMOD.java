@@ -14,6 +14,7 @@ import com.evacipated.cardcrawl.modthespire.lib.SpireInitializer;
 import com.google.gson.Gson;
 import com.google.gson.reflect.TypeToken;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
+import com.megacrit.cardcrawl.core.Settings;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.helpers.*;
 import com.megacrit.cardcrawl.localization.*;
@@ -306,7 +307,7 @@ public class NLMOD implements EditCardsSubscriber, EditCharactersSubscriber, Edi
     public void receiveEditKeywords() {
         Gson gson = new Gson();
 
-        String keywordStrings = Gdx.files.internal("strings/keywords.json").readString(String.valueOf(StandardCharsets.UTF_8));
+        String keywordStrings = Gdx.files.internal("strings/zhs/keywords.json").readString(String.valueOf(StandardCharsets.UTF_8));
         Type typeToken = new TypeToken<Map<String, Keyword>>() {}.getType();
 
         Map<String, Keyword> keywords = gson.fromJson(keywordStrings, typeToken);
@@ -349,25 +350,29 @@ public class NLMOD implements EditCardsSubscriber, EditCharactersSubscriber, Edi
 
     @Override
     public void receiveEditStrings() {
-        String cardStrings = Gdx.files.internal("strings/cards.json").readString(String.valueOf(StandardCharsets.UTF_8));
+        String lang = "eng";
+        if (Settings.language == Settings.GameLanguage.ZHS || Settings.language == Settings.GameLanguage.ZHT) {
+            lang = "zhs";
+        }
+        String cardStrings = Gdx.files.internal("strings/" + lang + "/cards.json").readString(String.valueOf(StandardCharsets.UTF_8));
         BaseMod.loadCustomStrings(CardStrings.class, cardStrings);
-        String characterStrings = Gdx.files.internal("strings/character.json").readString(String.valueOf(StandardCharsets.UTF_8));
+        String characterStrings = Gdx.files.internal("strings/" + lang + "/character.json").readString(String.valueOf(StandardCharsets.UTF_8));
         BaseMod.loadCustomStrings(CharacterStrings.class, characterStrings);
-        String powerStrings = Gdx.files.internal("strings/powers.json").readString(String.valueOf(StandardCharsets.UTF_8));
+        String powerStrings = Gdx.files.internal("strings/" + lang + "/powers.json").readString(String.valueOf(StandardCharsets.UTF_8));
         BaseMod.loadCustomStrings(PowerStrings.class, powerStrings);
-        String stanceStrings = Gdx.files.internal("strings/stances.json").readString(String.valueOf(StandardCharsets.UTF_8));
+        String stanceStrings = Gdx.files.internal("strings/" + lang + "/stances.json").readString(String.valueOf(StandardCharsets.UTF_8));
         BaseMod.loadCustomStrings(StanceStrings.class, stanceStrings);
-        String orbStrings = Gdx.files.internal("strings/orbs.json").readString(String.valueOf(StandardCharsets.UTF_8));
+        String orbStrings = Gdx.files.internal("strings/" + lang + "/orbs.json").readString(String.valueOf(StandardCharsets.UTF_8));
         BaseMod.loadCustomStrings(OrbStrings.class, orbStrings);
-        String relicStrings = Gdx.files.internal("strings/relics.json").readString(String.valueOf(StandardCharsets.UTF_8));
+        String relicStrings = Gdx.files.internal("strings/" + lang + "/relics.json").readString(String.valueOf(StandardCharsets.UTF_8));
         BaseMod.loadCustomStrings(RelicStrings.class, relicStrings);
-        String eventStrings = Gdx.files.internal("strings/events.json").readString(String.valueOf(StandardCharsets.UTF_8));
+        String eventStrings = Gdx.files.internal("strings/" + lang + "/events.json").readString(String.valueOf(StandardCharsets.UTF_8));
         BaseMod.loadCustomStrings(EventStrings.class, eventStrings);
-        String monsterStrings = Gdx.files.internal("strings/monsters.json").readString(String.valueOf(StandardCharsets.UTF_8));
+        String monsterStrings = Gdx.files.internal("strings/" + lang + "/monsters.json").readString(String.valueOf(StandardCharsets.UTF_8));
         BaseMod.loadCustomStrings(MonsterStrings.class, monsterStrings);
-        String uiStrings = Gdx.files.internal("strings/ui.json").readString(String.valueOf(StandardCharsets.UTF_8));
+        String uiStrings = Gdx.files.internal("strings/" + lang + "/ui.json").readString(String.valueOf(StandardCharsets.UTF_8));
         BaseMod.loadCustomStrings(UIStrings.class, uiStrings);
-        String potionStrings = Gdx.files.internal("strings/potions.json").readString(String.valueOf(StandardCharsets.UTF_8));
+        String potionStrings = Gdx.files.internal("strings/" + lang + "/potions.json").readString(String.valueOf(StandardCharsets.UTF_8));
         BaseMod.loadCustomStrings(PotionStrings.class, potionStrings);
     }
 

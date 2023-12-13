@@ -1,0 +1,10 @@
+{
+  "nearlmod:AtkStance": {
+    "NAME": "无畏",
+    "DESCRIPTION": ["处于此 #y形态 时，获得 #b", "点 #y力量 。当你下次进入该 #y形态 时，额外获得 #b", "点 #y力量 。"]
+  },
+  "nearlmod:DefStance": {
+    "NAME": "守护",
+    "DESCRIPTION": ["处于此 #y形态 时，获得 #b", "点 #y敏捷 。当你下次进入该 #y形态 时，额外获得 #b", "点 #y敏捷 。"]
+  }
+}

@@ -31,7 +31,10 @@ public class CreedFieldPower extends AbstractPower implements CloneablePowerInte
 
     @Override
     public void updateDescription() {
-        description = amount + DESCRIPTIONS[0] + DAMAGE_DEC + DESCRIPTIONS[1];
+        if (amount == 1)
+            description = DESCRIPTIONS[0] + amount + DESCRIPTIONS[1] + DAMAGE_DEC + DESCRIPTIONS[3];
+        else
+            description = DESCRIPTIONS[0] + amount + DESCRIPTIONS[2] + DAMAGE_DEC + DESCRIPTIONS[3];
     }
 
     @Override
