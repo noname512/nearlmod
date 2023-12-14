@@ -356,7 +356,7 @@
     "nearlmod:PegasusForm": {
         "NAME": "天马形态",
         "DESCRIPTION": "你每次使用 nearlmod:光 后，下回合开始时获得等于其 2/3 倍的 nearlmod:光 。",
-        "UPGRADE_DESCRIPTION": "你每次使用 nearlmod:光 后，下回合开始时获得等于其 1 倍的 nearlmod:光 。"
+        "UPGRADE_DESCRIPTION": "你每次使用 nearlmod:光 后，下回合开始时获得等量的 nearlmod:光 。"
     },
     "nearlmod:DayBreak": {
         "NAME": "破晓",
@@ -539,7 +539,7 @@
     "nearlmod:PersonalCharm": {
         "NAME": "个人魅力",
         "DESCRIPTION": "随机召唤一个红松骑士团成员作为 nearlmod:伙伴 。",
-        "UPGRADE_DESCRIPTION": "随机召唤两个红松骑士团成员作为 nearmod:伙伴 。"
+        "UPGRADE_DESCRIPTION": "随机召唤两个红松骑士团成员作为 nearlmod:伙伴 。"
     },
     "nearlmod:PinusSylvestris": {
         "NAME": "“红松林”",
