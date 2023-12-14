@@ -73,12 +73,14 @@ public class CorruptKnight extends AbstractMonster {
         int amount = 1;
         if (AbstractDungeon.ascensionLevel < 15) amount = 2;
         addToBot(new MakeTempCardInHandAction(card, amount));
+        /*
         card = new BraveTheDarkness();
         card.upgrade();
         card.rawDescription += " NL 保留 。";
         card.selfRetain = true;
         card.initializeDescription();
         AbstractDungeon.effectList.add(new ShowCardAndAddToHandEffect(card, Settings.WIDTH * 0.5F, Settings.HEIGHT * 0.5F));
+        */
         currentTurn = 0;
     }
 

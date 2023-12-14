@@ -54,10 +54,7 @@ public class ArenaRoom extends AbstractRoom {
         else if (enterTimes == 5) event = new BloodKnightBattle();
         else {
             int rand = AbstractDungeon.eventRng.random(0, 4);
-            int monsterLevel = enterTimes;
-            if (AbstractDungeon.ascensionLevel < 15) {
-                monsterLevel --;
-            }
+            int monsterLevel = enterTimes - 1;
             if (rand <= 1) event = new LazuriteSquadBattle(monsterLevel);
             else if (rand <= 3) event = new ArmorlessSquadBattle(monsterLevel);
             else event = new WanderingKnightBattle(monsterLevel);
