@@ -159,6 +159,6 @@
   },
   "nearlmod:InfiniteLightBladePower": {
     "NAME": "无尽光刃",
-    "DESCRIPTIONS": ["在你的回合开始时，增加一张 #y光！ 到你的手牌。"]
+    "DESCRIPTIONS": ["在你的回合开始时，增加一张 #y光耀 到你的手牌。"]
   }
 }

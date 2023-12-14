@@ -159,6 +159,6 @@
   },
   "nearlmod:InfiniteLightBladePower": {
     "NAME": "Infinite Light Blade",
-    "DESCRIPTIONS": ["Add the start of each turn, add a #yLight! into your hand."]
+    "DESCRIPTIONS": ["Add the start of each turn, add a #yRadiance into your hand."]
   }
 }

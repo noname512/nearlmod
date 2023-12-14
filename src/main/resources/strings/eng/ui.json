@@ -44,5 +44,15 @@
       "Friend Tip",
       "Friend Card will show Friend it belongs to."
     ]
+  },
+  "nearlmod:Can'tUseMessage": {
+    "TEXT": [
+      "Viviana is Charging."
+    ]
+  },
+  "nearlmod:MyAscensionModeDescriptions": {
+    "TEXT": [
+      "15. Unfavorable Events and Arenas."
+    ]
   }
 }

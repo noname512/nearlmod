@@ -77,11 +77,11 @@
     },
     "nearlmod:Unsheathed": {
         "NAME": "Unsheathe",
-        "DESCRIPTION": "Enter nearlmod:Dreadnought. Deal !D! damage. NL Add a *Light! into your hand.",
+        "DESCRIPTION": "Enter nearlmod:Dreadnought. Deal !D! damage. NL Add a *Radiance into your hand.",
         "UPGRADE_DESCRIPTION": ""
     },
-    "nearlmod:Light!": {
-        "NAME": "Light",
+    "nearlmod:Radiance": {
+        "NAME": "Radiance",
         "DESCRIPTION": " NL Exhaust.",
         "UPGRADE_DESCRIPTION": "",
         "EXTENDED_DESCRIPTION": [
@@ -91,7 +91,7 @@
             "Use nearlmod:Light. NL nearlmod:Guardian : Put a Skill card from your draw pile into your hand.",
             "Use nearlmod:Light. NL Retain.",
             "Use nearlmod:Light. NL When added into hand, add a *Switch *Stance+ into your hand and apply Exhaust and Ethereal to it.",
-            "Use nearlmod:Light. NL add a *Light!+ into your hand.",
+            "Use nearlmod:Light. NL add a *Radiance+ into your hand.",
             "Use nearlmod:Light. NL nearlmod:Guardian : Put a card from your draw pile into your hand.",
             "Gain !M! nearlmod:Light."
         ]
@@ -103,12 +103,12 @@
     },
     "nearlmod:DayLike": {
         "NAME": "Day-like",
-        "DESCRIPTION": "Gain !M! nearlmod:Light. Add a *Light! into your hand.",
+        "DESCRIPTION": "Gain !M! nearlmod:Light. Add a *Radiance into your hand.",
         "UPGRADE_DESCRIPTION": ""
     },
     "nearlmod:OverflowingLight": {
         "NAME": "Overflowing Light",
-        "DESCRIPTION": "Add !M! *Light! into your hand.",
+        "DESCRIPTION": "Add !M! *Radiance into your hand.",
         "UPGRADE_DESCRIPTION": ""
     },
     "nearlmod:ReverseForce": {
@@ -210,7 +210,7 @@
     },
     "nearlmod:AweInspiringGlow": {
         "NAME": "Awe-inspiring Glow",
-        "DESCRIPTION": "Innate. NL Exhaust. NL Gain !M! nearlmod:Light. Add a *Light! into your hand.",
+        "DESCRIPTION": "Innate. NL Exhaust. NL Gain !M! nearlmod:Light. Add a *Radiance into your hand.",
         "UPGRADE_DESCRIPTION": ""
     },
     "nearlmod:SilverlancePegasus": {
@@ -260,8 +260,8 @@
     },
     "nearlmod:SheathedBlade": {
         "NAME": "Sheathed Blade",
-        "DESCRIPTION": "Store half of your nearlmod:Light until next turn. NL Add a *Light! into your hand.",
-        "UPGRADE_DESCRIPTION": "Store half of your nearlmod:Light until next turn. NL Add a *Switch *Stance with Exhaust and Ethereal, along with a *Light! into your hand."
+        "DESCRIPTION": "Store half of your nearlmod:Light until next turn. NL Add a *Radiance into your hand.",
+        "UPGRADE_DESCRIPTION": "Store half of your nearlmod:Light until next turn. NL Add a *Switch *Stance with Exhaust and Ethereal, along with a *Radiance into your hand."
     },
     "nearlmod:MedalOfHonor": {
         "NAME": "Medal of Honor",
@@ -285,8 +285,8 @@
     },
     "nearlmod:InfiniteLightBlade": {
         "NAME": "Infinite Light Blade",
-        "DESCRIPTION": "At the start of each turn, add a *Light! into your hand.",
-        "UPGRADE_DESCRIPTION": "Innate. NL At the start of each turn, add a *Light! into your hand."
+        "DESCRIPTION": "At the start of each turn, add a *Radiance into your hand.",
+        "UPGRADE_DESCRIPTION": "Innate. NL At the start of each turn, add a *Radiance into your hand."
     },
 
     "nearlmod:BraveTheDarkness": {

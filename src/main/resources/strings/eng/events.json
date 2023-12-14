@@ -113,13 +113,13 @@
   "nearlmod:TheSurroundedEvent": {
     "NAME": "The Surrounded",
     "DESCRIPTIONS": [
-      "你遇到了焰尾和野鬃，她们刚刚取得了无胄盟的秘密，正在逃跑。 NL 或许你可以此时现身，帮她们一把。对了，不要打扰那边正在睡觉的骑士，不然他也可能来参合一脚。",
-      "是耀骑士？太好了！小心那边的刺客——",
-      "你相信她们的实力，她们一定能能够顺利逃离的。"
+      "#r@Bang!!@ #r@Boom!!!@ A huge explosion was heard from the direction of the energy district, plunging Kawalerielki into darkness. NL You used your Arts to illuminate the surroundings. It wasn't long before you noticed cyan and red figures flashing towards the structure district from the K.G.C.C. Building, accompanied by the sound of clashing weapons. NL You recognized these people – it was #bFlametail #bSona and members of the Pinus Sylvestris knights... They seemed to be running for their lives.",
+      "It's there the Radiant Knight...? Thank goodness! Watch out the assassin--",
+      "You believe in them, they will surely be able to escape successfully."
     ],
     "OPTIONS": [
-      "[Fight] #gEngaged #gin #ga #gspecial #gcombat.",
-      "[Leave] 她们能行，我也有我的事要做。",
+      "[Fight] Go help them and engaged in a special combat.",
+      "[Leave] They can do it. I have my own business.",
       "[Leave]"
     ]
   }

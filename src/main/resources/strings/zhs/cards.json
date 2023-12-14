@@ -77,11 +77,11 @@
     },
     "nearlmod:Unsheathed": {
         "NAME": "出鞘",
-        "DESCRIPTION": "进入 nearlmod:无畏 ，造成 !D! 点伤害。 NL 将一张 *光！ 放入你的手牌。",
+        "DESCRIPTION": "进入 nearlmod:无畏 ，造成 !D! 点伤害。 NL 将一张 *光耀 放入你的手牌。",
         "UPGRADE_DESCRIPTION": ""
     },
-    "nearlmod:Light!": {
-        "NAME": "光！",
+    "nearlmod:Radiance": {
+        "NAME": "光耀",
         "DESCRIPTION": " NL 消耗 。",
         "UPGRADE_DESCRIPTION": "",
         "EXTENDED_DESCRIPTION": [
@@ -91,7 +91,7 @@
             "使用 nearlmod:光 。 NL nearlmod:守护 ：从抽牌堆中选择一张技能牌放入你的手牌。",
             "使用 nearlmod:光 。 NL 保留 。",
             "使用 nearlmod:光 。 NL 放入手牌时，将一张 *切换形态+ 放入你的手牌，并使其获得 消耗 和 虚无 。",
-            "使用 nearlmod:光 。 NL 将一张 [#EFC851]光！+[] 放入你的手牌。",
+            "使用 nearlmod:光 。 NL 将一张 [#EFC851]光耀+[] 放入你的手牌。",
             "使用 nearlmod:光 。 NL nearlmod:守护 ：从抽牌堆中选择一张牌放入你的手牌。",
             "获得 !M! 层 nearlmod:光 ， "
         ]
@@ -103,12 +103,12 @@
     },
     "nearlmod:DayLike": {
         "NAME": "如昼",
-        "DESCRIPTION": "获得 !M! 层 nearlmod:光 ，将一张 *光！ 加入你的手牌。",
+        "DESCRIPTION": "获得 !M! 层 nearlmod:光 ，将一张 *光耀 加入你的手牌。",
         "UPGRADE_DESCRIPTION": ""
     },
     "nearlmod:OverflowingLight": {
         "NAME": "溢光",
-        "DESCRIPTION": "将 !M! 张 *光！ 放入你的手牌。",
+        "DESCRIPTION": "将 !M! 张 *光耀 放入你的手牌。",
         "UPGRADE_DESCRIPTION": ""
     },
     "nearlmod:ReverseForce": {
@@ -210,7 +210,7 @@
     },
     "nearlmod:AweInspiringGlow": {
         "NAME": "凛然辉光",
-        "DESCRIPTION": "固有 。 NL 消耗 。 NL 获得 !M! 层 nearlmod:光 。 将一张 *光！ 放入你的手牌。",
+        "DESCRIPTION": "固有 。 NL 消耗 。 NL 获得 !M! 层 nearlmod:光 。 将一张 *光耀 放入你的手牌。",
         "UPGRADE_DESCRIPTION": ""
     },
     "nearlmod:SilverlancePegasus": {
@@ -260,8 +260,8 @@
     },
     "nearlmod:SheathedBlade": {
         "NAME": "收敛锋芒",
-        "DESCRIPTION": "将一半的 nearlmod:光 转化为下回合获得的 nearlmod:光 。 NL 将一张 *光！ 置入你的手牌。",
-        "UPGRADE_DESCRIPTION": "将一半的 nearlmod:光 转化为下回合获得的 nearlmod:光 。 NL 将一张 *光！ 和一张带有 消耗 和 虚无 的 *切换形态+ 置入你的手牌。"
+        "DESCRIPTION": "将一半的 nearlmod:光 转化为下回合获得的 nearlmod:光 。 NL 将一张 *光耀 置入你的手牌。",
+        "UPGRADE_DESCRIPTION": "将一半的 nearlmod:光 转化为下回合获得的 nearlmod:光 。 NL 将一张 *光耀 和一张带有 消耗 和 虚无 的 *切换形态+ 置入你的手牌。"
     },
     "nearlmod:MedalOfHonor": {
         "NAME": "荣誉之证",
@@ -285,8 +285,8 @@
     },
     "nearlmod:InfiniteLightBlade": {
         "NAME": "无尽光刃",
-        "DESCRIPTION": "在你的回合开始时，增加一张 *光！ 到你的手牌。",
-        "UPGRADE_DESCRIPTION": "固有 。 NL 在你的回合开始时，增加一张 *光！ 到你的手牌。"
+        "DESCRIPTION": "在你的回合开始时，增加一张 *光耀 到你的手牌。",
+        "UPGRADE_DESCRIPTION": "固有 。 NL 在你的回合开始时，增加一张 *光耀 到你的手牌。"
     },
 
     "nearlmod:BraveTheDarkness": {

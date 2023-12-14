@@ -9,7 +9,7 @@
   },
   "nearlmod:EssenceOfLight": {
     "NAME": "Essence of Light",
-    "DESCRIPTIONS": ["Gain #b10 #yLight. Add a #yLight into your hand."]
+    "DESCRIPTIONS": ["Gain #b10 #yLight. Add a #yRadiance into your hand."]
   },
   "nearlmod:FriendshipDrink": {
     "NAME": "Friendship Drink",

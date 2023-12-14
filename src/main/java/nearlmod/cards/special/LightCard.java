@@ -21,7 +21,7 @@ import nearlmod.stances.AtkStance;
 import nearlmod.stances.DefStance;
 
 public class LightCard extends AbstractNearlCard {
-    public static final String ID = "nearlmod:Light!";
+    public static final String ID = "nearlmod:Radiance";
     public static final CardStrings cardStrings = CardCrawlGame.languagePack.getCardStrings(ID);
     public static final String NAME = cardStrings.NAME;
     public static final String DESCRIPTION = cardStrings.DESCRIPTION;

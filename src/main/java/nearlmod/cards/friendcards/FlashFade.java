@@ -12,7 +12,6 @@ import com.megacrit.cardcrawl.localization.CardStrings;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import com.megacrit.cardcrawl.powers.AbstractPower;
 import nearlmod.actions.UseShadowAction;
-import nearlmod.cards.AbstractNearlCard;
 import nearlmod.patches.AbstractCardEnum;
 import nearlmod.stances.AtkStance;
 
@@ -75,7 +74,7 @@ public class FlashFade extends AbstractFriendCard {
     public boolean canUse(AbstractPlayer p, AbstractMonster m) {
         if (!super.canUse(p, m)) return false;
         if (p.hasPower("nearlmod:GlimmeringTouchPower")) {
-            this.cantUseMessage = "薇薇安娜正在蓄力中";
+            this.cantUseMessage = CardCrawlGame.languagePack.getUIString("nearlmod:Can'tUseMessage").TEXT[0];
             return false;
         }
         return true;
