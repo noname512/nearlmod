@@ -14,7 +14,7 @@ public class InfiniteLightBladePower extends AbstractPower implements CloneableP
     public static final String NAME = powerStrings.NAME;
     public static final String[] DESCRIPTIONS = powerStrings.DESCRIPTIONS;
 
-    public InfiniteLightBladePower(AbstractCreature owner) {
+    public InfiniteLightBladePower(AbstractCreature owner, int amount) {
         name = NAME;
         ID = POWER_ID;
         this.owner = owner;
@@ -22,6 +22,11 @@ public class InfiniteLightBladePower extends AbstractPower implements CloneableP
         updateDescription();
         this.loadRegion("curiosity");
         priority = 0;
+        this.amount = 1;
+    }
+
+    public InfiniteLightBladePower(AbstractCreature owner) {
+        this(owner, 1);
     }
     @Override
     public void updateDescription() {
@@ -30,7 +35,7 @@ public class InfiniteLightBladePower extends AbstractPower implements CloneableP
 
     @Override
     public void atStartOfTurn() {
-        addToBot(new MakeTempCardInHandAction(new LightCard(), 1));
+        addToBot(new MakeTempCardInHandAction(new LightCard(), amount));
     }
 
     @Override

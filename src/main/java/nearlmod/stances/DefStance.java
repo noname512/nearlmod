@@ -53,6 +53,7 @@ public class DefStance extends AbstractStance {
         AbstractPlayer p = AbstractDungeon.player;
         if (keepVal) {
             AbstractDungeon.actionManager.addToTop(new ApplyPowerAction(p, p, new LoseDexterityPower(p, defInc)));
+            keepVal = false;
         } else {
             AbstractDungeon.actionManager.addToTop(new SpecialApplyPowerAction(p, p, new DexterityPower(p, -defInc), -defInc));
         }

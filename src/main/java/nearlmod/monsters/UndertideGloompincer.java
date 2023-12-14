@@ -17,7 +17,7 @@ public class UndertideGloompincer extends AbstractMonster {
     public static final String NAME = monsterStrings.NAME;
     public static final String[] MOVES = monsterStrings.MOVES;
     public static final String IMAGE = "images/monsters/undertidegloompincer.png";
-    int block = 6;
+    int BlockNum = 6;
 
     public UndertideGloompincer(float x, float y, int level) {
         super(NAME, ID, 60, 0, 0, 150.0F, 220.0F, IMAGE, x, y);
@@ -31,7 +31,8 @@ public class UndertideGloompincer extends AbstractMonster {
         if (AbstractDungeon.ascensionLevel >= 7) hp = 65;
         else hp = 60;
         setHp(MathUtils.floor(hp * (1 + 0.1F * level)));
-        block = MathUtils.floor(block * (1 + 0.1F * level));
+        if (AbstractDungeon.ascensionLevel >= 7) BlockNum = 8;
+        BlockNum = MathUtils.floor(BlockNum * (1 + 0.1F * level));
         loadAnimation("images/monsters/enemy_1178_dscorp_2/enemy_1178_dscorp_233.atlas", "images/monsters/enemy_1178_dscorp_2/enemy_1178_dscorp_233.json", 2.0F);
         this.flipHorizontal = true;
         this.stateData.setMix("Idle", "Die", 0.1F);
@@ -40,8 +41,8 @@ public class UndertideGloompincer extends AbstractMonster {
 
     @Override
     public void usePreBattleAction() {
-        addToBot(new ApplyPowerAction(this, this, new MetallicizePower(this, block)));
-        addToBot(new GainBlockAction(this, this, block));
+        addToBot(new ApplyPowerAction(this, this, new MetallicizePower(this, BlockNum)));
+        addToBot(new GainBlockAction(this, this, BlockNum));
     }
 
     @Override

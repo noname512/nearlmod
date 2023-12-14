@@ -21,7 +21,7 @@ public class MedalOfHonorPower extends AbstractPower implements CloneablePowerIn
     public static final String NAME = powerStrings.NAME;
     public static final String[] DESCRIPTIONS = powerStrings.DESCRIPTIONS;
 
-    public MedalOfHonorPower(AbstractCreature owner) {
+    public MedalOfHonorPower(AbstractCreature owner, int amount) {
         name = NAME;
         ID = POWER_ID;
         this.owner = owner;
@@ -29,6 +29,10 @@ public class MedalOfHonorPower extends AbstractPower implements CloneablePowerIn
         region48 = new TextureAtlas.AtlasRegion(ImageMaster.loadImage("images/powers/medalofhonor power 48.png"), 0, 0, 48, 48);
         type = PowerType.BUFF;
         updateDescription();
+    }
+
+    public MedalOfHonorPower(AbstractCreature owner) {
+        this(owner, 1);
     }
 
     @Override
@@ -48,7 +52,7 @@ public class MedalOfHonorPower extends AbstractPower implements CloneablePowerIn
     public void onExhaust(AbstractCard card) {
         if (card.type == AbstractCard.CardType.STATUS) {
             flash();
-            addToBot(new DrawCardAction(1));
+            addToBot(new DrawCardAction(amount));
         }
     }
 

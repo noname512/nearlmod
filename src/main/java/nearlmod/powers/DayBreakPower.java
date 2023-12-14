@@ -22,7 +22,7 @@ public class DayBreakPower extends AbstractPower implements CloneablePowerInterf
     public static final String NAME = powerStrings.NAME;
     public static final String[] DESCRIPTIONS = powerStrings.DESCRIPTIONS;
 
-    public DayBreakPower(AbstractCreature owner) {
+    public DayBreakPower(AbstractCreature owner, int amount) {
         name = NAME;
         ID = POWER_ID;
         this.owner = owner;
@@ -30,6 +30,11 @@ public class DayBreakPower extends AbstractPower implements CloneablePowerInterf
         region48 = new TextureAtlas.AtlasRegion(ImageMaster.loadImage("images/powers/daybreak power 48.png"), 0, 0, 48, 48);
         type = PowerType.BUFF;
         updateDescription();
+        this.amount = amount;
+    }
+
+    public DayBreakPower(AbstractCreature owner) {
+        this(owner, 3);
     }
 
     @Override
@@ -60,14 +65,14 @@ public class DayBreakPower extends AbstractPower implements CloneablePowerInterf
             if (__instance instanceof AbstractFriendCard || !AbstractDungeon.player.hasPower(DayBreakPower.POWER_ID)) return;
             if (!___isMultiDamage && mo != null) {
                 if (mo.currentBlock <= 0 && __instance.damage > 0) {
-                    __instance.damage += 3;
+                    __instance.damage += AbstractDungeon.player.getPower(DayBreakPower.POWER_ID).amount;
                     __instance.isDamageModified = true;
                 }
             } else {
                 ArrayList<AbstractMonster> m = AbstractDungeon.getCurrRoom().monsters.monsters;
                 for (int i = 0; i < m.size(); i++)
                     if (m.get(i).currentBlock <= 0 && __instance.multiDamage[i] > 0) {
-                        __instance.multiDamage[i] += 3;
+                        __instance.multiDamage[i] += AbstractDungeon.player.getPower(DayBreakPower.POWER_ID).amount;
                         __instance.isDamageModified = true;
                     }
                 __instance.damage = __instance.multiDamage[0];
