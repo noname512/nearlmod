@@ -46,7 +46,7 @@ public class BFPPower extends AbstractPower implements CloneablePowerInterface {
 
     @Override
     public void onAttack(DamageInfo info, int damageAmount, AbstractCreature target) {
-        if (cardPlayed > 1) return;
+        if (cardPlayed != 1) return;
         if (info.type != DamageInfo.DamageType.NORMAL) return;
         if (info.name != null && info.name.endsWith(AbstractFriendCard.damageSuffix)) return;
         int effectType = AbstractDungeon.cardRandomRng.random(1, 2);
