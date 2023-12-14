@@ -139,7 +139,11 @@
   },
   "nearlmod:MedalOfHonorPower": {
     "NAME": "Medal of Honor",
-    "DESCRIPTIONS": ["Unplayable #yStatus card can now be played now. Whenever you play a #yStatus card, #yExhaust it. Whenever you #yExhaust a #yStatus card, draw a card."]
+    "DESCRIPTIONS": [
+      "Unplayable #yStatus card can now be played now. Whenever you play a #yStatus card, #yExhaust it. Whenever you #yExhaust a #yStatus card, draw #b",
+      " card.",
+      " cards."
+    ]
   },
   "nearlmod:FanClubPower": {
     "NAME": "Fan Club",
@@ -155,10 +159,14 @@
   },
   "nearlmod:DayBreakPower": {
     "NAME": "Day Break",
-    "DESCRIPTIONS": ["When you deal damage to an enemy, ignore their #yBlock. If enemy has no #yBlock, deal #b3 additional damage."]
+    "DESCRIPTIONS": ["When you deal damage to an enemy, ignore their #yBlock. If enemy has no #yBlock, deal #b", " additional damage."]
   },
   "nearlmod:InfiniteLightBladePower": {
     "NAME": "Infinite Light Blade",
-    "DESCRIPTIONS": ["Add the start of each turn, add a #yRadiance into your hand."]
+    "DESCRIPTIONS": [
+      "Add the start of each turn, add #b",
+      " #yRadiance into your hand.",
+      " #yRadiances into your hand."
+    ]
   }
 }

@@ -22,7 +22,7 @@ public class InfiniteLightBladePower extends AbstractPower implements CloneableP
         updateDescription();
         this.loadRegion("curiosity");
         priority = 0;
-        this.amount = 1;
+        this.amount = amount;
     }
 
     public InfiniteLightBladePower(AbstractCreature owner) {
@@ -30,7 +30,10 @@ public class InfiniteLightBladePower extends AbstractPower implements CloneableP
     }
     @Override
     public void updateDescription() {
-        description = DESCRIPTIONS[0];
+        if (amount == 1)
+            description = DESCRIPTIONS[0] + amount + DESCRIPTIONS[1];
+        else
+            description = DESCRIPTIONS[0] + amount + DESCRIPTIONS[2];
     }
 
     @Override

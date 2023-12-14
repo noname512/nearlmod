@@ -28,6 +28,7 @@ public class MedalOfHonorPower extends AbstractPower implements CloneablePowerIn
         region128 = new TextureAtlas.AtlasRegion(ImageMaster.loadImage("images/powers/medalofhonor power 128.png"), 0, 0, 128, 128);
         region48 = new TextureAtlas.AtlasRegion(ImageMaster.loadImage("images/powers/medalofhonor power 48.png"), 0, 0, 48, 48);
         type = PowerType.BUFF;
+        this.amount = amount;
         updateDescription();
     }
 
@@ -37,7 +38,10 @@ public class MedalOfHonorPower extends AbstractPower implements CloneablePowerIn
 
     @Override
     public void updateDescription() {
-        description = DESCRIPTIONS[0];
+        if (amount == 1)
+            description = DESCRIPTIONS[0] + amount + DESCRIPTIONS[1];
+        else
+            description = DESCRIPTIONS[0] + amount + DESCRIPTIONS[2];
     }
 
     @Override
