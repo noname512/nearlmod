@@ -138,6 +138,7 @@ public class CandleKnight extends AbstractMonster {
 
     @Override
     public void die() {
+        CardCrawlGame.sound.stop("CANDLE_KNIGHT_CHARGE");
         this.state.setAnimation(0, "Die", false);
         addToBot(new TalkAction(this, DIALOG[7], 0.3F, 3.0F));
         addToBot(new WaitAction(3.0F));
