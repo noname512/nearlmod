@@ -28,7 +28,7 @@ public class DayBreak extends AbstractNearlCard {
 
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
-        addToBot(new ApplyPowerAction(p, p, new DayBreakPower(p), -1));
+        addToBot(new ApplyPowerAction(p, p, new DayBreakPower(p)));
     }
 
     @Override

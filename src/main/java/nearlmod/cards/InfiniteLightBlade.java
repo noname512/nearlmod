@@ -28,7 +28,7 @@ public class InfiniteLightBlade extends AbstractNearlCard {
 
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
-        addToBot(new ApplyPowerAction(p, p, new InfiniteLightBladePower(p), -1));
+        addToBot(new ApplyPowerAction(p, p, new InfiniteLightBladePower(p)));
     }
 
     @Override
