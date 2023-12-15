@@ -70,7 +70,7 @@
     "DESCRIPTIONS": ["Stats of #yFocused #yBombardment increase #b", " ."]
   },
   "nearlmod:ClosedHope": {
-    "NAME": "Closed Hope",
+    "NAME": "\"Closed Hope\"",
     "DESCRIPTIONS": ["If you still have Block at the start of next turn, gain #b", " #yArtifact ."]
   },
   "nearlmod:CostNextTurnPower": {

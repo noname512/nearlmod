@@ -70,7 +70,7 @@
     "DESCRIPTIONS": ["你的 #y专注轰击 数值增加 #b", " 点。"]
   },
   "nearlmod:ClosedHope": {
-    "NAME": "封闭的希望",
+    "NAME": "“封闭的希望”",
     "DESCRIPTIONS": ["下回合开始时，如果你仍有 #y格挡 ，获得 #b", " 层 #y人工制品 。"]
   },
   "nearlmod:CostNextTurnPower": {

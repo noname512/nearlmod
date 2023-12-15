@@ -274,7 +274,7 @@
         "UPGRADE_DESCRIPTION": ""
     },
     "nearlmod:UpgradedKnightShield": {
-        "NAME": "Upgraded Knight Shield",
+        "NAME": "Improved Knight Shield",
         "DESCRIPTION": "Gain !B! Block. NL If Nightingale is present, take 50% less damage this turn.",
         "UPGRADE_DESCRIPTION": ""
     },
@@ -442,7 +442,7 @@
         "UPGRADE_DESCRIPTION": ""
     },
     "nearlmod:CraftsmanEcho": {
-        "NAME": "Craftsman's Echo",
+        "NAME": "Echo of Craftsman's Guild",
         "DESCRIPTION": "nearlmod:Friend_Card. NL Enter nearlmod:Guardian or nearlmod:Dreadnought. Gain !nearlmod:M2! additional stats.",
         "UPGRADE_DESCRIPTION": ""
     },
@@ -478,7 +478,7 @@
         "UPGRADE_DESCRIPTION": "nearlmod:Friend_Card. nearlmod:Unique. NL Gain nearlmod:White_Fiend's_Protection. NL Lose 1 of all debuff."
     },
     "nearlmod:ClosedHope": {
-        "NAME": "Closed Hope",
+        "NAME": "\"Closed Hope\"",
         "DESCRIPTION": "nearlmod:Friend_Card. NL Enter nearlmod:Guardian. NL Gain !M! Block. If you still have Block at the start of next turn, gain !nearlmod:M2! Artifact.",
         "UPGRADE_DESCRIPTION": ""
     },
