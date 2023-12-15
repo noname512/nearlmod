@@ -22,6 +22,7 @@ public class BFPPower extends AbstractPower implements CloneablePowerInterface {
     public static final String NAME = powerStrings.NAME;
     public static final String[] DESCRIPTIONS = powerStrings.DESCRIPTIONS;
     public int cardPlayed;
+    public boolean lastCardSatisfy;
 
     public BFPPower(AbstractCreature owner) {
         name = NAME;
@@ -46,7 +47,7 @@ public class BFPPower extends AbstractPower implements CloneablePowerInterface {
 
     @Override
     public void onAttack(DamageInfo info, int damageAmount, AbstractCreature target) {
-        if (cardPlayed != 1) return;
+        if (cardPlayed != 1 || !lastCardSatisfy) return;
         if (info.type != DamageInfo.DamageType.NORMAL) return;
         if (info.name != null && info.name.endsWith(AbstractFriendCard.damageSuffix)) return;
         flash();
@@ -60,8 +61,12 @@ public class BFPPower extends AbstractPower implements CloneablePowerInterface {
 
     @Override
     public void onUseCard(AbstractCard card, UseCardAction action) {
-        if (card instanceof AbstractFriendCard || card.type != AbstractCard.CardType.ATTACK) return;
+        if (card instanceof AbstractFriendCard || card.type != AbstractCard.CardType.ATTACK) {
+            lastCardSatisfy = false;
+            return;
+        }
         cardPlayed++;
+        lastCardSatisfy = true;
     }
 
     @Override
