@@ -1,7 +1,7 @@
 {
   "nearlmod:LightPower": {
     "NAME": "Light",
-    "DESCRIPTIONS": ["Deal #b", " damage to enemy when used.", "Gain #b", " #yTemporary #yHP when used."]
+    "DESCRIPTIONS": ["Deal #b", " damage to enemy when used.", "Gain #b", " #yBlock when used."]
   },
   "nearlmod:FlamingEdgePower": {
     "NAME": "Flaming Edge",
@@ -39,7 +39,7 @@
   },
   "nearlmod:BFPPower": {
     "NAME": "Black Fiend's Protection",
-    "DESCRIPTIONS": ["Your first #yAttack which is not #yFriend #yCard , apply #b1 #yVulnerable or #yWeak randomly. If you have #yWhite #yFiend's #yProtection at the same time, change to apply #b1 #yVulnerable and #yWeak ."]
+    "DESCRIPTIONS": ["Your first #yAttack which is not #yFriend #yCard , apply #b2 #yVulnerable or #yWeak randomly. If you have #yWhite #yFiend's #yProtection at the same time, change to apply #b2 #yVulnerable and #yWeak ."]
   },
   "nearlmod:Exsanguination": {
     "NAME": "Exsanguination",

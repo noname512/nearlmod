@@ -33,7 +33,7 @@ public class BlackFiendProtection extends AbstractFriendCard {
     public void use(AbstractPlayer p, AbstractMonster m) {
         Shining.uniqueUsed = true;
         addToBot(new ApplyPowerAction(p, p, new BFPPower(p), -1));
-        if (upgraded) addToBot(new WeakenAllAction(p));
+        if (upgraded) addToBot(new WeakenAllAction(p, 2));
     }
 
     @Override

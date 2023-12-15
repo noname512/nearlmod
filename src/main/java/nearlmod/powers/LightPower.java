@@ -6,6 +6,7 @@ import com.evacipated.cardcrawl.mod.stslib.actions.tempHp.AddTemporaryHPAction;
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
 import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
 import com.megacrit.cardcrawl.actions.common.DamageAction;
+import com.megacrit.cardcrawl.actions.common.GainBlockAction;
 import com.megacrit.cardcrawl.actions.common.RemoveSpecificPowerAction;
 import com.megacrit.cardcrawl.cards.DamageInfo;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
@@ -90,7 +91,7 @@ public class LightPower extends AbstractPower implements CloneablePowerInterface
         if (m != null) {
             addToBot(new DamageAction(m, new DamageInfo(p, realAmount, DamageInfo.DamageType.THORNS), AbstractGameAction.AttackEffect.LIGHTNING));
         } else {
-            addToBot(new AddTemporaryHPAction(p, p, realAmount));
+            addToBot(new GainBlockAction(p, p, realAmount));
         }
     }
 

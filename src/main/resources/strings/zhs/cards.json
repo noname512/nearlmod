@@ -501,7 +501,7 @@
     "nearlmod:BlackFiendProtection": {
         "NAME": "黑恶魔的庇护",
         "DESCRIPTION": " nearlmod:伙伴牌 ， nearlmod:唯一 。 NL 获得 nearlmod:黑恶魔的庇护 。",
-        "UPGRADE_DESCRIPTION": " nearlmod:伙伴牌 ， nearlmod:唯一 。 NL 获得 nearlmod:黑恶魔的庇护 。 NL 给予所有敌人一层 虚弱 。"
+        "UPGRADE_DESCRIPTION": " nearlmod:伙伴牌 ， nearlmod:唯一 。 NL 获得 nearlmod:黑恶魔的庇护 。 NL 给予所有敌人 2 层 虚弱 。"
     },
     "nearlmod:CreedField": {
         "NAME": "教条力场",

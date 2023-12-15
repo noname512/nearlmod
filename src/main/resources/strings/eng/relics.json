@@ -32,7 +32,7 @@
   "nearlmod:UpgradedCoreCaster": {
     "NAME": "Upgraded Core Caster",
     "FLAVOR": "It's a Minoan beauty forged of D32 Steel. The ultimate in Originium Arts conductivity!",
-    "DESCRIPTIONS": ["The damage dealt and #yTemporary #yHP gained by #yLight increase #b4 ."]
+    "DESCRIPTIONS": ["The damage dealt and #Block gained by #yLight increase #b4 ."]
   },
   "nearlmod:BackupEquipment" : {
     "NAME": "Backup Equipment",

@@ -1,7 +1,7 @@
 {
   "nearlmod:LightPower": {
     "NAME": "光",
-    "DESCRIPTIONS": ["使用时对敌人造成 #b", " 点伤害。", "使用时获得 #b", " 点 #y临时生命 。"]
+    "DESCRIPTIONS": ["使用时对敌人造成 #b", " 点伤害。", "使用时获得 #b", " 点 #y格挡 。"]
   },
   "nearlmod:FlamingEdgePower": {
     "NAME": "灿焰长刀",
@@ -39,7 +39,7 @@
   },
   "nearlmod:BFPPower": {
     "NAME": "黑恶魔的庇护",
-    "DESCRIPTIONS": ["你每回合第一张非伙伴攻击牌会随机给予目标一层 #y易伤 或 #y虚弱 。如果你同时拥有 #y白恶魔的庇护 ，改为给予目标一层 #y易伤 和 #y虚弱 。"]
+    "DESCRIPTIONS": ["你每回合第一张非伙伴攻击牌会随机给予目标 #b2 层 #y易伤 或 #y虚弱 。如果你同时拥有 #y白恶魔的庇护 ，改为给予目标 #b2 层 #y易伤 和 #y虚弱 。"]
   },
   "nearlmod:Exsanguination": {
     "NAME": "血归",

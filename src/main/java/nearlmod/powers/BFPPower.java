@@ -49,12 +49,13 @@ public class BFPPower extends AbstractPower implements CloneablePowerInterface {
         if (cardPlayed != 1) return;
         if (info.type != DamageInfo.DamageType.NORMAL) return;
         if (info.name != null && info.name.endsWith(AbstractFriendCard.damageSuffix)) return;
+        flash();
         int effectType = AbstractDungeon.cardRandomRng.random(1, 2);
         if (owner.hasPower("nearlmod:WFPPower")) effectType = 3;
         if ((effectType & 1) != 0)
-            addToBot(new ApplyPowerAction(target, info.owner, new WeakPower(target, 1, false)));
+            addToBot(new ApplyPowerAction(target, info.owner, new WeakPower(target, 2, false)));
         if ((effectType & 2) != 0)
-            addToBot(new ApplyPowerAction(target, info.owner, new VulnerablePower(target, 1, false)));
+            addToBot(new ApplyPowerAction(target, info.owner, new VulnerablePower(target, 2, false)));
     }
 
     @Override

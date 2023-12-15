@@ -501,7 +501,7 @@
     "nearlmod:BlackFiendProtection": {
         "NAME": "Black Fiend's Protection",
         "DESCRIPTION": "nearlmod:Friend_Card. nearlmod:Unique. NL Gain nearlmod:Black_Fiend's_Protection.",
-        "UPGRADE_DESCRIPTION": "nearlmod:Friend_Card. nearlmod:Unique. NL Gain nearlmod:Black_Fiend's_Protection. NL Apply 1 Weak to all enemies."
+        "UPGRADE_DESCRIPTION": "nearlmod:Friend_Card. nearlmod:Unique. NL Gain nearlmod:Black_Fiend's_Protection. NL Apply 2 Weak to all enemies."
     },
     "nearlmod:CreedField": {
         "NAME": "Creed Field",

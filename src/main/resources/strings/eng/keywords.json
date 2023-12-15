@@ -4,7 +4,7 @@
     "NAMES": [
       "light"
     ],
-    "DESCRIPTION": "A stackable power, will deal damage to an enemy if you are in #yDreadnought, and will provide #yTemporary #yHP if you are in #yGuardian. It will disappear after used."
+    "DESCRIPTION": "A stackable power, will deal damage to an enemy if you are in #yDreadnought, and will provide #Block if you are in #yGuardian. It will disappear after used."
   },
   "FRIEND": {
     "PROPER_NAME": "Friend",
@@ -125,7 +125,7 @@
       "Black_Fiend's_Protection",
       "black_fiend's_protection"
     ],
-    "DESCRIPTION": "Your first #yAttack which is not #yFriend #yCard , apply #b1 #yVulnerable or #yWeak randomly. If you have #White #yFiend's #yProtection at the same time, change to apply #b1 #yVulnerable and #yWeak ."
+    "DESCRIPTION": "Your first #yAttack which is not #yFriend #yCard , apply #b2 #yVulnerable or #yWeak randomly. If you have #White #yFiend's #yProtection at the same time, change to apply #b2 #yVulnerable and #yWeak ."
   },
   "FriendShelter": {
     "PROPER_NAME": "Friend's Shelter",

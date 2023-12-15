@@ -32,7 +32,7 @@
   "nearlmod:UpgradedCoreCaster": {
     "NAME": "改良施术单元",
     "FLAVOR": "米诺斯的D32夹钢锻造工艺，极佳的源石技艺传导性！",
-    "DESCRIPTIONS": ["你使用 #y光 造成的伤害和获得的 #y临时生命 增加 #b4 点。"]
+    "DESCRIPTIONS": ["你使用 #y光 造成的伤害和获得的 #y格挡 增加 #b4 点。"]
   },
   "nearlmod:BackupEquipment" : {
     "NAME": "备选装备",
