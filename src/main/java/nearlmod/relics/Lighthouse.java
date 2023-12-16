@@ -2,19 +2,9 @@ package nearlmod.relics;
 
 import basemod.abstracts.CustomRelic;
 import com.badlogic.gdx.graphics.Texture;
-import com.evacipated.cardcrawl.modthespire.lib.SpirePatch;
-import com.evacipated.cardcrawl.modthespire.lib.SpirePrefixPatch;
-import com.evacipated.cardcrawl.modthespire.lib.SpireReturn;
-import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
-import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.localization.RelicStrings;
-import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import com.megacrit.cardcrawl.relics.AbstractRelic;
-import com.megacrit.cardcrawl.rooms.AbstractRoom;
-
-import java.util.HashMap;
-import java.util.HashSet;
 
 public class Lighthouse extends CustomRelic {
 
@@ -24,10 +14,9 @@ public class Lighthouse extends CustomRelic {
     public static final String[] DESCRIPTIONS = relicStrings.DESCRIPTIONS;
     public static final Texture IMG = new Texture("images/relics/lighthouse.png");
     public static final Texture IMG_OUTLINE = new Texture("images/relics/lighthouse_p.png");
-    private final HashMap<AbstractCard.CardType, Integer> playedCount = new HashMap<>();
-    public static HashSet<AbstractCard.CardType> freeToPlayType = new HashSet<>();
+    public static boolean isFirstTime;
     public Lighthouse() {
-        super(ID, IMG, IMG_OUTLINE, RelicTier.UNCOMMON, LandingSound.FLAT);
+        super(ID, IMG, IMG_OUTLINE, RelicTier.BOSS, LandingSound.FLAT);
     }
 
     @Override
@@ -37,37 +26,11 @@ public class Lighthouse extends CustomRelic {
 
     @Override
     public void atTurnStart() {
-        playedCount.clear();
-        freeToPlayType.clear();
-    }
-
-    @Override
-    public void onPlayCard(AbstractCard c, AbstractMonster m) {
-        playedCount.put(c.type, playedCount.getOrDefault(c.type, 0) + 1);
-        int cnt = playedCount.get(c.type);
-        if (cnt == 3) {
-            beginLongPulse();
-            freeToPlayType.add(c.type);
-        } else if (cnt == 4) {
-            freeToPlayType.remove(c.type);
-            if (freeToPlayType.isEmpty()) stopPulse();
-            playedCount.put(c.type, 0);
-        }
+        isFirstTime = true;
     }
 
     @Override
     public AbstractRelic makeCopy() {
         return new Lighthouse();
-    }
-
-    @SpirePatch(clz = AbstractCard.class, method = "freeToPlay")
-    public static class LighthousePatch {
-        @SpirePrefixPatch
-        public static SpireReturn<?> Prefix(AbstractCard __instance) {
-            if (AbstractDungeon.player != null && AbstractDungeon.currMapNode != null && AbstractDungeon.getCurrRoom().phase == AbstractRoom.RoomPhase.COMBAT &&
-                AbstractDungeon.player.hasRelic(Lighthouse.ID) && Lighthouse.freeToPlayType.contains(__instance.type))
-                return SpireReturn.Return(true);
-            return SpireReturn.Continue();
-        }
     }
 }

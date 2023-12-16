@@ -2,12 +2,8 @@ package nearlmod.powers;
 
 import basemod.interfaces.CloneablePowerInterface;
 import com.badlogic.gdx.graphics.g2d.TextureAtlas;
-import com.evacipated.cardcrawl.mod.stslib.actions.tempHp.AddTemporaryHPAction;
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
-import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
-import com.megacrit.cardcrawl.actions.common.DamageAction;
-import com.megacrit.cardcrawl.actions.common.GainBlockAction;
-import com.megacrit.cardcrawl.actions.common.RemoveSpecificPowerAction;
+import com.megacrit.cardcrawl.actions.common.*;
 import com.megacrit.cardcrawl.cards.DamageInfo;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.core.AbstractCreature;
@@ -18,6 +14,7 @@ import com.megacrit.cardcrawl.localization.PowerStrings;
 import com.megacrit.cardcrawl.powers.AbstractPower;
 import com.megacrit.cardcrawl.powers.StrengthPower;
 import com.megacrit.cardcrawl.stances.AbstractStance;
+import nearlmod.relics.Lighthouse;
 import nearlmod.relics.UpgradedCoreCaster;
 import nearlmod.stances.AtkStance;
 
@@ -79,6 +76,10 @@ public class LightPower extends AbstractPower implements CloneablePowerInterface
             }
             if (p.hasPower(BladeOfBlazingSunPower.POWER_ID))
                 AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(p, p, new StrengthPower(p, p.getPower(BladeOfBlazingSunPower.POWER_ID).amount)));
+            if (p.hasRelic(Lighthouse.ID) && Lighthouse.isFirstTime && (power.amount > 0 || p.hasRelic(UpgradedCoreCaster.ID))) {
+                Lighthouse.isFirstTime = false;
+                AbstractDungeon.actionManager.addToBottom(new GainEnergyAction(1));
+            }
         }
         AbstractDungeon.actionManager.addToBottom(new RemoveSpecificPowerAction(p, p, power));
     }

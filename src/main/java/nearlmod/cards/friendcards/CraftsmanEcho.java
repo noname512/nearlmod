@@ -22,6 +22,7 @@ public class CraftsmanEcho extends AbstractFriendCard {
     public static final String NAME = cardStrings.NAME;
     public static final String DESCRIPTION = cardStrings.DESCRIPTION;
     public static final String UPGRADE_DESCRIPTION = cardStrings.UPGRADE_DESCRIPTION;
+    public static final String[] EXTENDED_DESCRIPTION = cardStrings.EXTENDED_DESCRIPTION;
     public static final String IMG_PATH = "images/cards/craftsmanecho.png";
     private static final int COST = 2;
     private static final int EXTRA_INC = 3;
@@ -43,7 +44,7 @@ public class CraftsmanEcho extends AbstractFriendCard {
         AbstractCard card = new AllinOne();
         card.upgrade();
         card.exhaust = true;
-        card.rawDescription += " NL 消耗 。";
+        card.rawDescription += EXTENDED_DESCRIPTION[0];
         card.initializeDescription();
         AbstractDungeon.effectList.add(new ShowCardAndAddToHandEffect(card, Settings.WIDTH * 0.5F, Settings.HEIGHT * 0.5F));
     }

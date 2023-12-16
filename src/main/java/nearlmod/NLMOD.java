@@ -330,7 +330,7 @@ public class NLMOD implements EditCardsSubscriber, EditCharactersSubscriber, Edi
         BaseMod.addRelicToCustomPool(new FirstAidMode(), NEARL_GOLD);
         BaseMod.addRelicToCustomPool(new UpgradedCoreCaster(), NEARL_GOLD);
         BaseMod.addRelic(new HandOfConqueror(), RelicType.SHARED);
-        BaseMod.addRelic(new Lighthouse(), RelicType.SHARED);
+        BaseMod.addRelic(new KnightFiction(), RelicType.SHARED);
 
         // rare.
         BaseMod.addRelicToCustomPool(new EmergencyCallBook(), NEARL_GOLD);
@@ -338,6 +338,7 @@ public class NLMOD implements EditCardsSubscriber, EditCharactersSubscriber, Edi
 
         // boss.
         BaseMod.addRelicToCustomPool(new PegasusHalo(), NEARL_GOLD);
+        BaseMod.addRelicToCustomPool(new Lighthouse(), NEARL_GOLD);
 
         // event.
         BaseMod.addRelicToCustomPool(new Marigold(), NEARL_GOLD);

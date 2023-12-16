@@ -191,7 +191,7 @@
     "nearlmod:FlutteringWings": {
         "NAME": "Fluttering It's Wings",
         "DESCRIPTION": "Switch your nearlmod:Stance. Keep the attribute gained by current nearlmod:Stance in this turn.",
-        "UPGRADE_DESCRIPTION": "Switch your nearlmod:Stance. Keep the attribute gained by current nearlmod:Stance in this turn. Add a *Offense-Defense in your hand and apply Exhaust and Ethereal to it."
+        "UPGRADE_DESCRIPTION": "Switch your nearlmod:Stance. Keep the attribute gained by current nearlmod:Stance in this turn. Add a *Offense-Defense into your hand and apply Exhaust and Ethereal to it."
     },
     "nearlmod:ShieldAndShelter": {
         "NAME": "Shield and Shelter",
@@ -443,8 +443,11 @@
     },
     "nearlmod:CraftsmanEcho": {
         "NAME": "Echo of Craftsman's Guild",
-        "DESCRIPTION": "nearlmod:Friend_Card. NL Enter nearlmod:Guardian or nearlmod:Dreadnought. Gain !nearlmod:M2! additional stats.",
-        "UPGRADE_DESCRIPTION": ""
+        "DESCRIPTION": "nearlmod:Friend_Card. NL Enter nearlmod:Guardian or nearlmod:Dreadnought. Gain !nearlmod:M2! additional stats. NL Add a *Offense-Defense into your hand and apply Exhaust to it.",
+        "UPGRADE_DESCRIPTION": "",
+        "EXTENDED_DESCRIPTION": [
+            " NL Exhaust ."
+        ]
     },
     "nearlmod:ToAtkStance": {
         "NAME": "Dreadnought",

@@ -32,7 +32,7 @@
   "nearlmod:UpgradedCoreCaster": {
     "NAME": "Upgraded Core Caster",
     "FLAVOR": "It's a Minoan beauty forged of D32 Steel. The ultimate in Originium Arts conductivity!",
-    "DESCRIPTIONS": ["The damage dealt and #Block gained by #yLight increase #b4 ."]
+    "DESCRIPTIONS": ["The damage dealt and #yBlock gained by #yLight increase #b4 ."]
   },
   "nearlmod:BackupEquipment" : {
     "NAME": "Backup Equipment",
@@ -47,6 +47,11 @@
   "nearlmod:Lighthouse": {
     "NAME": "Lighthouse",
     "FLAVOR": "Journey towards the lighthouse, and also to where the lighthouse vanishes.",
+    "DESCRIPTIONS": ["The first time you use light each turn, gain [E]"]
+  },
+  "nearlmod:KnightFiction": {
+    "NAME": "Knight Fiction",
+    "FLAVOR": "\"When the knight charged toward the endless waves, did you imagine that he was trying to overcome the entire world?\"",
     "DESCRIPTIONS": ["In the same turn, whenever you played #b3 card of same type, the next card of same type costs #b0 ."]
   },
 

@@ -443,8 +443,11 @@
     },
     "nearlmod:CraftsmanEcho": {
         "NAME": "工匠团的回响",
-        "DESCRIPTION": " nearlmod:伙伴牌 。 NL 进入 nearlmod:守护 或 nearlmod:无畏 ，本次切换 nearlmod:形态 获得的数值增加 !nearlmod:M2! 点。",
-        "UPGRADE_DESCRIPTION": ""
+        "DESCRIPTION": " nearlmod:伙伴牌 。 NL 进入 nearlmod:守护 或 nearlmod:无畏 ，本次切换 nearlmod:形态 获得的数值增加 !nearlmod:M2! 点。 NL 将一张 *攻防一体+ 加入你的手牌，并使其获得 消耗 。",
+        "UPGRADE_DESCRIPTION": "",
+        "EXTENDED_DESCRIPTION": [
+            " NL 消耗 。"
+        ]
     },
     "nearlmod:ToAtkStance": {
         "NAME": "无畏",

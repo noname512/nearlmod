@@ -47,6 +47,11 @@
   "nearlmod:Lighthouse": {
     "NAME": "灯塔",
     "FLAVOR": "向灯塔去，也向灯塔消失的地方去。",
+    "DESCRIPTIONS": ["你在每回合第一次使用 #y光 时，获得 [E] 。"]
+  },
+  "nearlmod:KnightFiction": {
+    "NAME": "骑士小说",
+    "FLAVOR": "“当那名骑士冲向无边的浪潮中时，你觉得他想的是战胜这片大地吗？”",
     "DESCRIPTIONS": ["同一回合内，你每打出 #b3 张相同类型的牌，下一张相同类型的牌无视耗能。"]
   },
 
