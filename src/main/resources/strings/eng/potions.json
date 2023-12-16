@@ -5,7 +5,7 @@
   },
   "nearlmod:FriendPotion": {
     "NAME": "Friend Potion",
-    "DESCRIPTIONS": ["Choose #1 of #b3 random non-#yUnique #yFriend #yCard to add into your hand, it costs #b0 this turn."]
+    "DESCRIPTIONS": ["Choose #b1 of #b3 random non-#yUnique #yFriend #yCard to add into your hand, it costs #b0 this turn."]
   },
   "nearlmod:EssenceOfLight": {
     "NAME": "Essence of Light",
@@ -18,5 +18,17 @@
   "nearlmod:BrilliantLights": {
     "NAME": "Brilliant Lights",
     "DESCRIPTIONS": ["Choose #b1 of #b3 random card which gain or use #yLight, it costs #b0 this turn."]
+  },
+  "nearlmod:BottledCommand": {
+    "NAME": "Bottled Command",
+    "DESCRIPTIONS": ["Gain #b2 #yDP."]
+  },
+  "nearlmod:LayeredElixir": {
+    "NAME": "Layered Elixir",
+    "DESCRIPTIONS": ["Gain #b1 additional stat whenever you switch #yStance in this combat."]
+  },
+  "nearlmod:InvigoratingPotion": {
+    "NAME": "Invigoration Potion",
+    "DESCRIPTIONS": ["Gain #b15 #yStrength and #b3 #yBuffers. Die after #b2 turns."]
   }
 }

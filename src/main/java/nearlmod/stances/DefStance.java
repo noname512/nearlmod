@@ -32,6 +32,7 @@ public class DefStance extends AbstractStance {
 
     public static void upgradeIncNum(int updateNum) {
         incNum += updateNum;
+        AbstractDungeon.player.stance.updateDescription();
     }
 
     @Override

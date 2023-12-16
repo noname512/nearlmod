@@ -18,5 +18,17 @@
   "nearlmod:BrilliantLights": {
     "NAME": "流光溢彩",
     "DESCRIPTIONS": ["从 #b3 张随机获得 #y光 或使用 #y光 的牌中选择 #b1 张加入你的手牌。这张牌在本回合耗能变为 #b0 。"]
+  },
+  "nearlmod:BottledCommand": {
+    "NAME": "瓶装号令",
+    "DESCRIPTIONS": ["获得 #b2 点 #y部署费用 。"]
+  },
+  "nearlmod:LayeredElixir": {
+    "NAME": "层叠灵药",
+    "DESCRIPTIONS": ["本场战斗中切换形态获得的数值增加 #b1 点。"]
+  },
+  "nearlmod:InvigoratingPotion": {
+    "NAME": "醒神秘药",
+    "DESCRIPTIONS": ["获得 #b15 点 #y力量 和 #b3 层 #y缓冲， #b2 回合后死亡。"]
   }
 }
