@@ -30,5 +30,9 @@
   "nearlmod:InvigoratingPotion": {
     "NAME": "醒神秘药",
     "DESCRIPTIONS": ["获得 #b15 点 #y力量 和 #b3 层 #y缓冲， #b2 回合后死亡。"]
+  },
+  "nearlmod:BottledGleam": {
+    "NAME": "瓶装烁光",
+    "DESCRIPTIONS": ["使一个敌人本回合失去 #b99 点 #y力量 。"]
   }
 }

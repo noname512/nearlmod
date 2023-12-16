@@ -30,5 +30,9 @@
   "nearlmod:InvigoratingPotion": {
     "NAME": "Invigoration Potion",
     "DESCRIPTIONS": ["Gain #b15 #yStrength and #b3 #yBuffers. Die after #b2 turns."]
+  },
+  "nearlmod:BottledGleam": {
+    "NAME": "Bottled Gleam",
+    "DESCRIPTIONS": ["Make an enemy lose #b99 #yStrength this turn."]
   }
 }
