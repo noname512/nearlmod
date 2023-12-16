@@ -37,7 +37,7 @@
   "nearlmod:BackupEquipment" : {
     "NAME": "备选装备",
     "FLAVOR": "对不同的敌人使用不同的武器，也是一种战术。",
-    "DESCRIPTIONS": ["对战开始时，你可以选择你的初始形态。"]
+    "DESCRIPTIONS": ["对战开始时，你可以选择你的初始形态，并使其初始数值增加 #b1 点。"]
   },
   "nearlmod:HandOfConqueror": {
     "NAME": "刻勋之手",

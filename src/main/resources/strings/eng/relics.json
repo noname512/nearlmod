@@ -37,7 +37,7 @@
   "nearlmod:BackupEquipment" : {
     "NAME": "Backup Equipment",
     "FLAVOR": "Employing different weapons for different enemies is also a tactic.",
-    "DESCRIPTIONS": ["At the start of each combat, you can choose your initial stance."]
+    "DESCRIPTIONS": ["At the start of each combat, you can choose your initial stance and gain #b1 additional stat."]
   },
   "nearlmod:HandOfConqueror": {
     "NAME": "Hand of Conqueror",

@@ -3,9 +3,11 @@ package nearlmod.cards.special;
 import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
+import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.localization.CardStrings;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import nearlmod.cards.AbstractNearlCard;
+import nearlmod.stances.DefStance;
 
 public class StartWithDefStance extends AbstractNearlCard {
     public static final String ID = "nearlmod:StartWithDefStance";
@@ -26,7 +28,10 @@ public class StartWithDefStance extends AbstractNearlCard {
     }
 
     @Override
-    public void onChoseThisOption() {}
+    public void onChoseThisOption() {
+        DefStance.defInc++;
+        AbstractDungeon.player.stance.updateDescription();
+    }
 
     @Override
     public void upgrade() {}

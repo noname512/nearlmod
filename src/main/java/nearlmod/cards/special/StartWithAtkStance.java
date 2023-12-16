@@ -29,7 +29,7 @@ public class StartWithAtkStance extends AbstractNearlCard {
 
     @Override
     public void onChoseThisOption() {
-        AtkStance.atkInc = -1;
+        AtkStance.atkInc = 0;
         addToBot(new ChangeStanceAction(new AtkStance()));
     }
 
