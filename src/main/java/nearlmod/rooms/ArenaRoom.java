@@ -1,18 +1,24 @@
 package nearlmod.rooms;
 
+import com.badlogic.gdx.graphics.Color;
 import com.badlogic.gdx.graphics.Texture;
 import com.badlogic.gdx.graphics.g2d.SpriteBatch;
 import com.evacipated.cardcrawl.modthespire.lib.*;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
+import com.megacrit.cardcrawl.core.Settings;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.events.exordium.Mushrooms;
+import com.megacrit.cardcrawl.helpers.FontHelper;
 import com.megacrit.cardcrawl.helpers.ImageMaster;
 import com.megacrit.cardcrawl.localization.UIStrings;
 import com.megacrit.cardcrawl.map.Legend;
 import com.megacrit.cardcrawl.map.LegendItem;
+import com.megacrit.cardcrawl.rewards.RewardItem;
 import com.megacrit.cardcrawl.rooms.AbstractRoom;
 import com.megacrit.cardcrawl.rooms.EventRoom;
+import com.megacrit.cardcrawl.screens.CombatRewardScreen;
 import com.megacrit.cardcrawl.ui.buttons.ProceedButton;
+import com.megacrit.cardcrawl.vfx.AbstractGameEffect;
 import javassist.CannotCompileException;
 import javassist.NotFoundException;
 import javassist.expr.ExprEditor;
@@ -87,7 +93,6 @@ public class ArenaRoom extends AbstractRoom {
         if (this.event != null) {
             this.event.renderAboveTopPanel(sb);
         }
-
     }
 
     @SpirePatch(clz = AbstractDungeon.class, method = "generateRoomTypes")
@@ -168,7 +173,23 @@ public class ArenaRoom extends AbstractRoom {
         public static boolean check1(Object room) {
             return room instanceof ArenaRoom;
         }
+    }
 
+    @SpirePatch(clz = CombatRewardScreen.class, method = "render")
+    public static class RenderRewardScreenPatch {
+        @SpireInsertPatch(rloc = 2)
+        public static SpireReturn<?> Insert(CombatRewardScreen __instance, SpriteBatch sb, float ___tipY) {
+            if (AbstractDungeon.getCurrRoom() instanceof ArenaRoom) {
+                if (enterTimes <= 5) {
+                    logger.info("patched! text = " + TEXT[enterTimes + 2]);
+                    FontHelper.renderFontCentered(sb, FontHelper.panelNameFont, TEXT[enterTimes + 2], Settings.WIDTH / 2.0F, ___tipY, Color.LIGHT_GRAY);
+                    for (AbstractGameEffect e : __instance.effects)
+                        e.render(sb);
+                    return SpireReturn.Return();
+                }
+            }
+            return SpireReturn.Continue();
+        }
     }
 
 //    @SpirePatch(clz = AbstractScene.class, method = "renderEventRoom")
