@@ -9,6 +9,7 @@ import com.megacrit.cardcrawl.localization.CardStrings;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import nearlmod.orbs.Whislash;
 import nearlmod.patches.AbstractCardEnum;
+import nearlmod.patches.NearlTags;
 import nearlmod.stances.AtkStance;
 import nearlmod.stances.DefStance;
 
@@ -30,6 +31,7 @@ public class Rebuke extends AbstractFriendCard {
         secondMagicNumber = baseSecondMagicNumber = CHANGE_CNT;
         bannerSmallRegion = ImageMaster.CARD_BANNER_RARE;
         bannerLargeRegion = ImageMaster.CARD_BANNER_RARE_L;
+        tags.add(NearlTags.IS_UNIQUE_CARD);
     }
 
     @Override

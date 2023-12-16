@@ -14,6 +14,7 @@ import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import nearlmod.cards.AbstractNearlCard;
 import nearlmod.orbs.Blemishine;
 import nearlmod.patches.AbstractCardEnum;
+import nearlmod.patches.NearlTags;
 
 public class DivineAvatar extends AbstractFriendCard {
     public static final String ID = "nearlmod:DivineAvatar";
@@ -37,6 +38,7 @@ public class DivineAvatar extends AbstractFriendCard {
         secondMagicNumber = baseSecondMagicNumber = RECOVER_HP;
         bannerSmallRegion = ImageMaster.CARD_BANNER_RARE;
         bannerLargeRegion = ImageMaster.CARD_BANNER_RARE_L;
+        tags.add(NearlTags.IS_UNIQUE_CARD);
     }
 
     @Override

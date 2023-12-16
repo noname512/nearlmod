@@ -11,8 +11,10 @@ import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import nearlmod.NLMOD;
 import nearlmod.actions.AddFriendCardToHandAction;
 import nearlmod.cards.friendcards.*;
+import nearlmod.characters.Nearl;
 import nearlmod.orbs.Whislash;
 import nearlmod.patches.AbstractCardEnum;
+import nearlmod.patches.NearlTags;
 import nearlmod.stances.AtkStance;
 
 import java.util.ArrayList;
@@ -46,29 +48,13 @@ public class DEPRECATEDReservedForce extends AbstractNearlCard {
         if (extraTriggered()) {
             ArrayList<AbstractFriendCard> list = new ArrayList<>();
             if (p.stance.ID.equals(AtkStance.STANCE_ID)) {
-                list.add(new LSSwiftSword());
-                list.add(new FlashFade());
-                list.add(new SurgingBrilliance());
-                list.add(new Creed());
-                list.add(new WhipSword());
-                list.add(new FlameHeart());
-                list.add(new StabbingLance());
-                list.add(new LanceCharge());
-                list.add(new FeatherShineArrows());
-                list.add(new FocusedBombardment());
+                for (AbstractCard c : Nearl.friendCards.group)
+                    if (!c.hasTag(NearlTags.IS_UNIQUE_CARD) && c.type == CardType.ATTACK)
+                        list.add((AbstractFriendCard)c);
             } else {
-                list.add(new GlimmeringTouch());
-                list.add(new DeterringRadiance());
-                list.add(new CraftsmanEcho());
-                list.add(new ArtsShield());
-                list.add(new Sanctuary());
-                list.add(new ClosedHope());
-                list.add(new AutoProtect());
-                list.add(new CreedField());
-                list.add(new VisionOfUnity());
-                list.add(new MotivationalSkills());
-                list.add(new PinusSylvestris());
-                list.add(new JusticeDrive());
+                for (AbstractCard c : Nearl.friendCards.group)
+                    if (!c.hasTag(NearlTags.IS_UNIQUE_CARD) && c.type == CardType.SKILL)
+                        list.add((AbstractFriendCard)c);
             }
             addToBot(new AddFriendCardToHandAction(list.get(AbstractDungeon.cardRng.random(0, list.size() - 1))));
         }

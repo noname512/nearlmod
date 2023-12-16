@@ -4,6 +4,7 @@ import basemod.BaseMod;
 import com.badlogic.gdx.graphics.Texture;
 import com.megacrit.cardcrawl.actions.utility.WaitAction;
 import com.megacrit.cardcrawl.actions.watcher.ChangeStanceAction;
+import com.megacrit.cardcrawl.cards.CardGroup;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.events.city.Vampires;
 import com.megacrit.cardcrawl.helpers.ImageMaster;
@@ -29,6 +30,7 @@ import com.megacrit.cardcrawl.unlock.UnlockTracker;
 import nearlmod.cards.*;
 import nearlmod.cards.friendcards.*;
 import nearlmod.orbs.AbstractFriend;
+import nearlmod.patches.NearlTags;
 import nearlmod.powers.LightPower;
 import nearlmod.relics.*;
 import nearlmod.patches.AbstractCardEnum;
@@ -68,11 +70,7 @@ public class Nearl extends CustomPlayer {
         "images/char/orb/layer4d.png"
     };
 
-    public enum MODE {
-        ATK_MODE, DEF_MODE
-    }
-
-    public static MODE mode;
+    public static CardGroup friendCards;
 
     public Nearl(String name) {
         // 参数列表：角色名，角色类枚举，能量面板贴图路径列表，能量面板特效贴图路径，能量面板贴图旋转速度列表，能量面板，模型资源路径，动画资源路径
@@ -87,6 +85,7 @@ public class Nearl extends CustomPlayer {
         this.stateData.setMix("Idle", "Die", 0.1F);
         this.state.setAnimation(0, "Idle", true);
         ArenaRoom.enterTimes = 0;
+        initFriendCard();
     }
 
     @Override
@@ -239,39 +238,45 @@ public class Nearl extends CustomPlayer {
         this.state.setAnimation(0, "Idle", true);
     }
 
+    public static void initFriendCard() {
+        friendCards = new CardGroup(CardGroup.CardGroupType.CARD_POOL);
+        friendCards.group.add(new AllySupport());
+        friendCards.group.add(new ArtsShield());
+        friendCards.group.add(new AutoProtect());
+        friendCards.group.add(new BeepActivate());
+        friendCards.group.add(new BlackFiendProtection());
+        friendCards.group.add(new BombardmentStudies());
+        friendCards.group.add(new ClosedHope());
+        friendCards.group.add(new CraftsmanEcho());
+        friendCards.group.add(new Creed());
+        friendCards.group.add(new CreedField());
+        friendCards.group.add(new DeterringRadiance());
+        friendCards.group.add(new DivineAvatar());
+        friendCards.group.add(new FeatherShineArrows());
+        friendCards.group.add(new FlameHeart());
+        friendCards.group.add(new FlameShadow());
+        friendCards.group.add(new FlashFade());
+        friendCards.group.add(new FocusedBombardment());
+        friendCards.group.add(new GlimmeringTouch());
+        friendCards.group.add(new JusticeDrive());
+        friendCards.group.add(new LanceCharge());
+        friendCards.group.add(new LSSwiftSword());
+        friendCards.group.add(new MotivationalSkills());
+        friendCards.group.add(new PinusSylvestris());
+        friendCards.group.add(new Rebuke());
+        friendCards.group.add(new Sanctuary());
+        friendCards.group.add(new StabbingLance());
+        friendCards.group.add(new SurgingBrilliance());
+        friendCards.group.add(new VisionOfUnity());
+        friendCards.group.add(new WhipSword());
+        friendCards.group.add(new WhiteFiendProtection());
+    }
+
     public static ArrayList<AbstractCard> getUnuniqueFriendCard(boolean isPinusSylvestris) {
         ArrayList<AbstractCard> list = new ArrayList<>();
-        list.add(new PinusSylvestris());
-        list.add(new FlameHeart());
-        list.add(new StabbingLance());
-        list.add(new LanceCharge());
-        list.add(new JusticeDrive());
-        list.add(new BeepActivate());
-        list.add(new AllySupport());
-        list.add(new FeatherShineArrows());
-        list.add(new FocusedBombardment());
-        list.add(new BombardmentStudies());
-        if (!isPinusSylvestris) {
-            list.add(new GlimmeringTouch());
-            list.add(new FlashFade());
-            list.add(new LSSwiftSword());
-
-            list.add(new ArtsShield());
-            list.add(new Sanctuary());
-            list.add(new ClosedHope());
-
-            list.add(new Creed());
-            list.add(new CreedField());
-            list.add(new AutoProtect());
-
-            list.add(new CraftsmanEcho());
-            list.add(new DeterringRadiance());
-            list.add(new SurgingBrilliance());
-
-            list.add(new WhipSword());
-            list.add(new VisionOfUnity());
-            list.add(new MotivationalSkills());
-        }
+        for (AbstractCard c : friendCards.group)
+            if (!c.hasTag(NearlTags.IS_UNIQUE_CARD) && (!isPinusSylvestris || c.hasTag(NearlTags.IS_KNIGHT_CARD)))
+                list.add(c);
         return list;
     }
 

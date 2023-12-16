@@ -14,6 +14,7 @@ import nearlmod.actions.PureDamageAllEnemiesAction;
 import nearlmod.actions.UseShadowAction;
 import nearlmod.orbs.Viviana;
 import nearlmod.patches.AbstractCardEnum;
+import nearlmod.patches.NearlTags;
 import nearlmod.powers.PoemsLooksPower;
 import nearlmod.powers.ShadowPower;
 
@@ -35,6 +36,7 @@ public class FlameShadow extends AbstractFriendCard {
         magicNumber = baseMagicNumber = 0;
         bannerSmallRegion = ImageMaster.CARD_BANNER_RARE;
         bannerLargeRegion = ImageMaster.CARD_BANNER_RARE_L;
+        tags.add(NearlTags.IS_UNIQUE_CARD);
     }
 
     @Override

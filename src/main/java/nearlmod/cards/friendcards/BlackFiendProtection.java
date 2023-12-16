@@ -10,6 +10,7 @@ import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import nearlmod.actions.WeakenAllAction;
 import nearlmod.orbs.Shining;
 import nearlmod.patches.AbstractCardEnum;
+import nearlmod.patches.NearlTags;
 import nearlmod.powers.BFPPower;
 
 public class BlackFiendProtection extends AbstractFriendCard {
@@ -27,6 +28,7 @@ public class BlackFiendProtection extends AbstractFriendCard {
                 CardRarity.SPECIAL, CardTarget.SELF, "nearlmod:Shining");
         bannerSmallRegion = ImageMaster.CARD_BANNER_RARE;
         bannerLargeRegion = ImageMaster.CARD_BANNER_RARE_L;
+        tags.add(NearlTags.IS_UNIQUE_CARD);
     }
 
     @Override

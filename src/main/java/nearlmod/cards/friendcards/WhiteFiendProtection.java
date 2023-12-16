@@ -11,6 +11,7 @@ import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import com.megacrit.cardcrawl.powers.AbstractPower;
 import nearlmod.orbs.Nightingale;
 import nearlmod.patches.AbstractCardEnum;
+import nearlmod.patches.NearlTags;
 import nearlmod.powers.WFPPower;
 
 public class WhiteFiendProtection extends AbstractFriendCard {
@@ -28,6 +29,7 @@ public class WhiteFiendProtection extends AbstractFriendCard {
                 CardRarity.SPECIAL, CardTarget.SELF, "nearlmod:Nightingale");
         this.bannerSmallRegion = ImageMaster.CARD_BANNER_RARE;
         this.bannerLargeRegion = ImageMaster.CARD_BANNER_RARE_L;
+        tags.add(NearlTags.IS_UNIQUE_CARD);
     }
 
     @Override
