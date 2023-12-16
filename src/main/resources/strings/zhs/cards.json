@@ -111,9 +111,14 @@
         "DESCRIPTION": "将 !M! 张 *光耀 放入你的手牌。",
         "UPGRADE_DESCRIPTION": ""
     },
-    "nearlmod:ReverseForce": {
+    "nearlmod:DEPRECATEDReservedForce": {
         "NAME": "后备力量",
         "DESCRIPTION": "造成 !D! 点伤害。 NL 如果鞭刃在场，根据你的 nearlmod:形态 将一张随机的非 nearlmod:唯一 nearlmod:伙伴牌 放入你的手牌。（ nearlmod:无畏 ：攻击牌， nearlmod:守护 ：技能牌）",
+        "UPGRADE_DESCRIPTION": ""
+    },
+    "nearlmod:ReservedForce": {
+        "NAME": "后备力量",
+        "DESCRIPTION": "造成 !D! 点伤害。 NL 如果鞭刃在场，获得 !M! 点 nearlmod:部署费用 。",
         "UPGRADE_DESCRIPTION": ""
     },
     "nearlmod:ArmorProtection": {

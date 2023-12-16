@@ -111,9 +111,14 @@
         "DESCRIPTION": "Add !M! *Radiance into your hand.",
         "UPGRADE_DESCRIPTION": ""
     },
-    "nearlmod:ReverseForce": {
-        "NAME": "Reversed Force",
+    "nearlmod:DEPRECATEDReservedForce": {
+        "NAME": "Reserved Force",
         "DESCRIPTION": "Deal !D! damage. NL If Whislash is present, add a random non- nearlmod:Unique nearlmod:Friend_Card into your hand. ( nearlmod:Dreadnought : Attack card , nearlmod:Guardian : Skill card )",
+        "UPGRADE_DESCRIPTION": ""
+    },
+    "nearlmod:ReservedForce": {
+        "NAME": "Reserved Force",
+        "DESCRIPTION": "Deal !D! damage. NL If Whislash is present, gain !M! nearlmod:DP.",
         "UPGRADE_DESCRIPTION": ""
     },
     "nearlmod:ArmorProtection": {

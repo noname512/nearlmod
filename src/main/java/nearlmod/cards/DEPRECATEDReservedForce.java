@@ -17,8 +17,8 @@ import nearlmod.stances.AtkStance;
 
 import java.util.ArrayList;
 
-public class ReverseForce extends AbstractNearlCard {
-    public static final String ID = "nearlmod:ReverseForce";
+public class DEPRECATEDReservedForce extends AbstractNearlCard {
+    public static final String ID = "nearlmod:DEPRECATEDReservedForce";
     public static final CardStrings cardStrings = CardCrawlGame.languagePack.getCardStrings(ID);
     public static final String NAME = cardStrings.NAME;
     public static final String DESCRIPTION = cardStrings.DESCRIPTION;
@@ -28,7 +28,7 @@ public class ReverseForce extends AbstractNearlCard {
     private static final int ATTACK_DMG = 5;
     private static final int UPGRADE_PLUS_DMG = 3;
 
-    public ReverseForce() {
+    public DEPRECATEDReservedForce() {
         super(ID, NAME, IMG_PATH, COST, DESCRIPTION,
                 CardType.ATTACK, AbstractCardEnum.NEARL_GOLD,
                 CardRarity.COMMON, CardTarget.ENEMY);
@@ -76,7 +76,7 @@ public class ReverseForce extends AbstractNearlCard {
 
     @Override
     public AbstractCard makeCopy() {
-        return new ReverseForce();
+        return new DEPRECATEDReservedForce();
     }
 
     @Override
