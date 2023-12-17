@@ -23,7 +23,7 @@ public class FullSpeedAhead extends AbstractNearlCard {
     public static final String UPGRADE_DESCRIPTION = cardStrings.UPGRADE_DESCRIPTION;
     public static final String ATKMODE_DESCRIPTION = cardStrings.EXTENDED_DESCRIPTION[0];
     public static final String DEFMODE_DESCRIPTION = cardStrings.EXTENDED_DESCRIPTION[1];
-    public static final String IMG_PATH = "images/cards/nearlstrike.png";
+    public static final String IMG_PATH = "images/cards/fullspeedahead.png";
     private static final int COST = 1;
     private static final int UPGRADE_COST = 0;
 

@@ -16,7 +16,7 @@ public class ArmorProtection extends AbstractNearlCard {
     public static final String NAME = cardStrings.NAME;
     public static final String DESCRIPTION = cardStrings.DESCRIPTION;
     public static final String UPGRADE_DESCRIPTION = cardStrings.UPGRADE_DESCRIPTION;
-    public static final String IMG_PATH = "images/cards/glowingbluebird.png";
+    public static final String IMG_PATH = "images/cards/armorprotection.png";
     private static final int COST = 1;
     private static final int BLOCK_AMT = 8;
     private static final int BLOCK_EXT = 4;
