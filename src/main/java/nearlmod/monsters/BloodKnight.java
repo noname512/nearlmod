@@ -14,10 +14,7 @@ import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.localization.MonsterStrings;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
-import com.megacrit.cardcrawl.powers.AbstractPower;
-import com.megacrit.cardcrawl.powers.StrengthPower;
-import com.megacrit.cardcrawl.powers.VulnerablePower;
-import com.megacrit.cardcrawl.powers.WeakPower;
+import com.megacrit.cardcrawl.powers.*;
 import com.megacrit.cardcrawl.relics.AbstractRelic;
 import com.megacrit.cardcrawl.vfx.combat.HealEffect;
 import com.megacrit.cardcrawl.vfx.combat.InflameEffect;
@@ -49,17 +46,17 @@ public class BloodKnight extends AbstractMonster {
         super(NAME, ID, 300, 0, 0, 150.0F, 320.0F, IMAGE, x, y);
         type = EnemyType.BOSS;
         if (AbstractDungeon.ascensionLevel >= 19) {
-            damage.add(new DamageInfo(this, 20));
-            damage.add(new DamageInfo(this, 12));
+            damage.add(new DamageInfo(this, 26));
+            damage.add(new DamageInfo(this, 16));
             debuffTimes = 3;
         }
         else if (AbstractDungeon.ascensionLevel >= 4) {
-            damage.add(new DamageInfo(this, 20));
-            damage.add(new DamageInfo(this, 12));
+            damage.add(new DamageInfo(this, 26));
+            damage.add(new DamageInfo(this, 16));
         }
         else {
-            damage.add(new DamageInfo(this, 18));
-            damage.add(new DamageInfo(this, 12));
+            damage.add(new DamageInfo(this, 24));
+            damage.add(new DamageInfo(this, 16));
         }
         if (AbstractDungeon.ascensionLevel >= 15) {
             bladeStrength = 2;
@@ -178,6 +175,8 @@ public class BloodKnight extends AbstractMonster {
             addToBot(new RemoveSpecificPowerAction(this, this, "nearlmod:Reborn"));
             addToBot(new ApplyPowerAction(this, this, new DuelPower(this, 25)));
             addToBot(new ApplyPowerAction(this, this, new AttackUpPower(this, 50)));
+            // TODO:是否有无敌特效？
+            addToBot(new ApplyPowerAction(this, this, new InvinciblePower(this, 0)));
         }
         else {
             spawnBlade(bladesPerSpawn + 1);
@@ -185,6 +184,11 @@ public class BloodKnight extends AbstractMonster {
             return;
         }
         currentTurn ++;
+        if ((currentTurn == 3) && (hasPower("Invincible"))) {
+            // TODO:解除无敌特效（如果有的话）
+            // 要不另外写个无敌power，告诉玩家我还有几个回合的无敌之类的
+            addToBot(new RemoveSpecificPowerAction(this, this, "Invincible"));
+        }
         if ((currentTurn == 2) && (!p.hasPower("nearlmod:Exsanguination"))) {
             setMove(MOVES[0], (byte)99, Intent.STRONG_DEBUFF);
         }

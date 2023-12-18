@@ -63,9 +63,9 @@ public class LightCard extends AbstractNearlCard {
         switch (type) {
             case 2:
                 if (extraTriggered()) {
-                    addToBot(new ApplyPowerAction(m, p, new StrengthPower(m, -2)));
+                    addToBot(new ApplyPowerAction(m, p, new StrengthPower(m, -magicNumber)));
                     if (!m.hasPower("Artifact")) {
-                        addToBot(new ApplyPowerAction(m, p, new GainStrengthPower(m, 2)));
+                        addToBot(new ApplyPowerAction(m, p, new GainStrengthPower(m, magicNumber)));
                     }
                 }
                 break;

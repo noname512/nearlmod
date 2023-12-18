@@ -335,7 +335,8 @@
         "UPGRADE_DESCRIPTION": "",
         "EXTENDED_DESCRIPTION": [
             "造成 !D! 点伤害。",
-            "进入 nearlmod:无畏 。 NL 造成 !D! 点伤害。"
+            "进入 nearlmod:无畏 。 NL 造成 !D! 点伤害。",
+            "(共 !D! 点）造成你当前 格挡 值的伤害。 NL nearlmod:守护 ：进入 nearlmod:无畏 并额外造成你当前 stslib:临时生命 值的伤害。"
         ]
     },
     "nearlmod:BlazingSun'sObeisance": {

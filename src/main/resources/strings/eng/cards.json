@@ -335,7 +335,8 @@
         "UPGRADE_DESCRIPTION": "",
         "EXTENDED_DESCRIPTION": [
             "Deal !D! damage",
-            "Enter nearlmod:Dreadnought. Deal !D! damage."
+            "Enter nearlmod:Dreadnought. Deal !D! damage.",
+            "(Total !D! ) Deal damage equal to your Block. NL nearlmod:Guardian : Enter nearlmod:Dreadnought and deal additional damage equal to your Temporary_HP."
         ]
     },
     "nearlmod:BlazingSun'sObeisance": {

@@ -13,6 +13,8 @@ import com.megacrit.cardcrawl.powers.MinionPower;
 import com.megacrit.cardcrawl.relics.AbstractRelic;
 import nearlmod.powers.AttackUpPower;
 
+import static java.lang.Math.min;
+
 public class HandOfConqueror extends CustomRelic {
 
     public static final String ID = "nearlmod:HandOfConqueror";
@@ -53,11 +55,12 @@ public class HandOfConqueror extends CustomRelic {
                     AwakenPatch = 1;
                 }
             }
-            flash();
+            int add_num = min(2, 99 - counter);
             if (counter < 99) {
-                counter++;
+                flash();
+                counter += add_num;
                 AbstractPlayer p = AbstractDungeon.player;
-                addToBot(new ApplyPowerAction(p, p, new AttackUpPower(p, 1)));
+                addToBot(new ApplyPowerAction(p, p, new AttackUpPower(p, add_num)));
             }
         }
     }
