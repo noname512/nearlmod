@@ -5,7 +5,6 @@ import com.badlogic.gdx.math.MathUtils;
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
 import com.megacrit.cardcrawl.core.Settings;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
-import com.megacrit.cardcrawl.unlock.UnlockTracker;
 import com.megacrit.cardcrawl.vfx.cardManip.ShowCardAndAddToHandEffect;
 import nearlmod.cards.friendcards.AbstractFriendCard;
 
@@ -27,7 +26,6 @@ public class AddFriendCardToHandAction extends AbstractGameAction {
     @Override
     public void update() {
         BaseMod.MAX_HAND_SIZE++;
-        UnlockTracker.markCardAsSeen(card.cardID);
         AbstractDungeon.effectList.add(new ShowCardAndAddToHandEffect(card, MathUtils.random((float)Settings.WIDTH * 0.2F, (float)Settings.WIDTH * 0.8F), MathUtils.random((float)Settings.HEIGHT * 0.3F, (float)Settings.HEIGHT * 0.7F)));
         isDone = true;
     }
