@@ -41,8 +41,10 @@ public class WhiteFiendProtection extends AbstractFriendCard {
                 if (power.type == AbstractPower.PowerType.DEBUFF) {
                     if (power.amount == -1 || power.amount == 1)
                         addToBot(new RemoveSpecificPowerAction(p, p, power));
-                    else
+                    else if (power.amount > 0)
                         power.reducePower(1);
+                    else
+                        power.stackPower(1);
                 }
         }
     }
