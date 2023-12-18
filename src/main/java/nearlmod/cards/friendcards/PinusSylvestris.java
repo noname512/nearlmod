@@ -10,6 +10,9 @@ import nearlmod.actions.AddFriendCardToHandAction;
 import nearlmod.actions.GainCostAction;
 import nearlmod.characters.Nearl;
 import nearlmod.patches.AbstractCardEnum;
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.core.Logger;
+import org.apache.logging.log4j.spi.AbstractLogger;
 
 import java.util.ArrayList;
 
@@ -39,7 +42,7 @@ public class PinusSylvestris extends AbstractFriendCard {
         addToBot(new GainCostAction(secondMagicNumber));
         ArrayList<AbstractCard> list = Nearl.getUnuniqueFriendCard(true);
         int random = AbstractDungeon.cardRng.random(0, list.size() - 1);
-        AbstractFriendCard card = (AbstractFriendCard) list.get(random);
+        AbstractFriendCard card = (AbstractFriendCard) list.get(random).makeCopy();
         if (upgraded) card.upgrade();
         addToBot(new AddFriendCardToHandAction(card));
     }

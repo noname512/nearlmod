@@ -17,7 +17,7 @@
   "nearlmod:EmergencyCallBook": {
     "NAME": "应急通讯指南",
     "FLAVOR": "所有的基站都被毁了，你就是最后一台。",
-    "DESCRIPTIONS": ["回合开始时，获得 #b1 点 #y部署费用 。"]
+    "DESCRIPTIONS": ["每两回合，获得 #b1 点 #y部署费用 。"]
   },
   "nearlmod:FirstAidMode": {
     "NAME": "急救模式",

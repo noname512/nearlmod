@@ -216,10 +216,15 @@ public class Nearl extends CustomPlayer {
         DefStance.defInc = -1;
         AtkStance.incNum = 1;
         DefStance.incNum = 1;
-        BaseMod.MAX_HAND_SIZE = 10;
         AbstractDungeon.actionManager.addToBottom(new ChangeStanceAction(new DefStance()));
         CostReserves.resetReserves();
         LightPower.amountForBattle = 0;
+    }
+
+    @Override
+    public void onVictory() {
+        super.onVictory();
+        BaseMod.MAX_HAND_SIZE = 10;
     }
 
     @Override

@@ -17,6 +17,7 @@ public class EmergencyCallBook extends CustomRelic {
     public static final Texture IMG_OUTLINE = new Texture("images/relics/emergencycallbook.png");
     public EmergencyCallBook() {
         super(ID, IMG, IMG_OUTLINE, RelicTier.RARE, LandingSound.FLAT);
+        counter = 0;
     }
 
     @Override
@@ -26,8 +27,11 @@ public class EmergencyCallBook extends CustomRelic {
 
     @Override
     public void atTurnStart() {
-        flash();
-        addToBot(new GainCostAction(1));
+        if (counter == 1) {
+            flash();
+            addToBot(new GainCostAction(1));
+        }
+        counter = (counter + 1) % 2;
     }
 
     @Override

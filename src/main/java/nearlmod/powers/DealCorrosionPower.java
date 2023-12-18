@@ -31,8 +31,10 @@ public class DealCorrosionPower extends AbstractPower implements CloneablePowerI
 
     @Override
     public void onAttack(DamageInfo info, int damageAmount, AbstractCreature target) {
-        if (info.output > 0)
+        if (info.output > 0) {
+            this.flash();
             addToBot(new ApplyPowerAction(target, owner, new CorrosionDamagePower(target, info.output * amount)));
+        }
     }
 
     @Override

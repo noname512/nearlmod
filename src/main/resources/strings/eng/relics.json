@@ -17,7 +17,7 @@
   "nearlmod:EmergencyCallBook": {
     "NAME": "Emergency Call Book",
     "FLAVOR": "All the base stations are destroyed, you are the last one.",
-    "DESCRIPTIONS": ["At the start of each turn, gain #b1 #yDP ."]
+    "DESCRIPTIONS": ["Gain #b1 #yDP every two turns."]
   },
   "nearlmod:FirstAidMode": {
     "NAME": "First Aid Mode",
