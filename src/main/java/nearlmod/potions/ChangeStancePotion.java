@@ -22,26 +22,32 @@ public class ChangeStancePotion extends AbstractPotion {
     public static final String[] DESCRIPTIONS = potionStrings.DESCRIPTIONS;
     public ChangeStancePotion() {
         super(NAME, ID, PotionRarity.COMMON, PotionSize.SPHERE, PotionColor.ANCIENT);
-        this.labOutlineColor = NLMOD.NearlGold;
-        this.description = potionStrings.DESCRIPTIONS[0];
-        this.isThrown = false;
-        this.targetRequired = false;
-        this.tips.clear();
-        this.tips.add(new PowerTip(this.name, this.description));
-        this.tips.add(new PowerTip(TipHelper.capitalize(BaseMod.getKeywordTitle("nearlmod:defstance")), BaseMod.getKeywordDescription("nearlmod:defstance")));
-        this.tips.add(new PowerTip(TipHelper.capitalize(BaseMod.getKeywordTitle("nearlmod:atkstance")), BaseMod.getKeywordDescription("nearlmod:atkstance")));
+        labOutlineColor = NLMOD.NearlGold;
+        isThrown = false;
+        targetRequired = false;
     }
+
+    @Override
+    public void initializeData() {
+        potency = getPotency();
+        description = potionStrings.DESCRIPTIONS[0] + potency + potionStrings.DESCRIPTIONS[1];
+        tips.clear();
+        tips.add(new PowerTip(this.name, this.description));
+        tips.add(new PowerTip(TipHelper.capitalize(BaseMod.getKeywordTitle("nearlmod:defstance")), BaseMod.getKeywordDescription("nearlmod:defstance")));
+        tips.add(new PowerTip(TipHelper.capitalize(BaseMod.getKeywordTitle("nearlmod:atkstance")), BaseMod.getKeywordDescription("nearlmod:atkstance")));
+    }
+
     @Override
     public void use(AbstractCreature abstractCreature) {
         ArrayList<AbstractCard> choice = new ArrayList<>();
-        choice.add(new ToDefStance(1));
-        choice.add(new ToAtkStance(1));
+        choice.add(new ToDefStance(potency));
+        choice.add(new ToAtkStance(potency));
         addToBot(new ChooseOneAction(choice));
     }
 
     @Override
     public int getPotency(int i) {
-        return 0;
+        return 1;
     }
 
     @Override

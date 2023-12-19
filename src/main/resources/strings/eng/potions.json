@@ -1,35 +1,47 @@
 {
   "nearlmod:ChangeStancePotion": {
     "NAME": "Stance Potion",
-    "DESCRIPTIONS": ["Enter #yGuardian or #yDreadnought. Gain #b1 additional stat."]
+    "DESCRIPTIONS": ["Enter #yGuardian or #yDreadnought. Gain #b", " additional stat."]
   },
   "nearlmod:FriendPotion": {
     "NAME": "Friend Potion",
-    "DESCRIPTIONS": ["Choose #b1 of #b3 random non-#yUnique #yFriend #yCard to add into your hand, it costs #b0 this turn."]
+    "DESCRIPTIONS": [
+      "Choose #b1 of #b3 random non- #yUnique #yFriend #yCard to add into your hand, it costs #b0 this turn.",
+      "Choose #b1 of #b3 random non- #yUnique #yFriend #yCard to add #b2 copies into your hand, they cost #b0 this turn."
+    ]
   },
   "nearlmod:EssenceOfLight": {
     "NAME": "Essence of Light",
-    "DESCRIPTIONS": ["Gain #b10 #yLight. Add a #yRadiance into your hand."]
+    "DESCRIPTIONS": [
+      "Gain #b10 #yLight. Add a #yRadiance into your hand.",
+      "Gain #b20 #yLight. Add #b2 #yRadiances into your hand."
+    ]
   },
   "nearlmod:FriendshipDrink": {
     "NAME": "Friendship Drink",
-    "DESCRIPTIONS": ["Apply #b1 #yTrust to all #yFriends"]
+    "DESCRIPTIONS": ["Apply #b", " #yTrust to all #yFriends"]
   },
   "nearlmod:BrilliantLights": {
     "NAME": "Brilliant Lights",
-    "DESCRIPTIONS": ["Choose #b1 of #b3 random card which gain or use #yLight, it costs #b0 this turn."]
+    "DESCRIPTIONS": [
+      "Choose #b1 of #b3 random card which gain or use #yLight to add into your hand, it costs #b0 this turn.",
+      "Choose #b1 of #b3 random card which gain or use #yLight tto add #b2 copies into your hand, they cost #b0 this turn."
+    ]
   },
   "nearlmod:BottledCommand": {
     "NAME": "Bottled Command",
-    "DESCRIPTIONS": ["Gain #b2 #yDP."]
+    "DESCRIPTIONS": ["Gain #b", " #yDP."]
   },
   "nearlmod:LayeredElixir": {
     "NAME": "Layered Elixir",
-    "DESCRIPTIONS": ["Gain #b1 additional stat whenever you switch #yStance in this combat."]
+    "DESCRIPTIONS": ["Gain #b", " additional stat whenever you switch #yStance in this combat."]
   },
   "nearlmod:InvigoratingPotion": {
     "NAME": "Invigoration Potion",
-    "DESCRIPTIONS": ["Gain #b15 #yStrength and #b3 #yBuffers. Die after #b2 turns."]
+    "DESCRIPTIONS": [
+      "Gain #b15 #yStrength and #b3 #yBuffers. Die after #b2 turns.",
+      "Gain #b30 #yStrength and #b6 #yBuffers. Die after #b2 turns."
+    ]
   },
   "nearlmod:BottledGleam": {
     "NAME": "Bottled Gleam",

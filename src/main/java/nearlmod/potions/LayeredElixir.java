@@ -18,23 +18,30 @@ public class LayeredElixir extends AbstractPotion {
     public static final String[] DESCRIPTIONS = potionStrings.DESCRIPTIONS;
     public LayeredElixir() {
         super(NAME, ID, PotionRarity.RARE, PotionSize.H, PotionColor.ELIXIR);
-        this.labOutlineColor = NLMOD.NearlGold;
-        this.description = potionStrings.DESCRIPTIONS[0];
-        this.isThrown = false;
-        this.targetRequired = false;
-        this.tips.clear();
-        this.tips.add(new PowerTip(this.name, this.description));
-        this.tips.add(new PowerTip(TipHelper.capitalize(BaseMod.getKeywordTitle("nearlmod:stance")), BaseMod.getKeywordDescription("nearlmod:stance")));
+        labOutlineColor = NLMOD.NearlGold;
+        isThrown = false;
+        targetRequired = false;
     }
+
+    @Override
+    public void initializeData() {
+        potency = getPotency();
+        description = potionStrings.DESCRIPTIONS[0] + potency + potionStrings.DESCRIPTIONS[1];
+        tips.clear();
+        tips.add(new PowerTip(this.name, this.description));
+        tips.add(new PowerTip(TipHelper.capitalize(BaseMod.getKeywordTitle("nearlmod:stance")), BaseMod.getKeywordDescription("nearlmod:stance")));
+    }
+
+
     @Override
     public void use(AbstractCreature abstractCreature) {
-        AtkStance.upgradeIncNum(1);
-        DefStance.upgradeIncNum(1);
+        AtkStance.upgradeIncNum(potency);
+        DefStance.upgradeIncNum(potency);
     }
 
     @Override
     public int getPotency(int i) {
-        return 0;
+        return 1;
     }
 
     @Override

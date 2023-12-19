@@ -23,14 +23,24 @@ public class BrilliantLights extends AbstractPotion {
     public static final String[] DESCRIPTIONS = potionStrings.DESCRIPTIONS;
     public BrilliantLights() {
         super(NAME, ID, PotionRarity.COMMON, PotionSize.CARD, PotionColor.ENERGY);
-        this.labOutlineColor = NLMOD.NearlGold;
-        this.description = potionStrings.DESCRIPTIONS[0];
-        this.isThrown = false;
-        this.targetRequired = false;
-        this.tips.clear();
-        this.tips.add(new PowerTip(this.name, this.description));
-        this.tips.add(new PowerTip(TipHelper.capitalize(BaseMod.getKeywordTitle("nearlmod:light")), BaseMod.getKeywordDescription("nearlmod:light")));
+        labOutlineColor = NLMOD.NearlGold;
+        isThrown = false;
+        targetRequired = false;
     }
+
+    @Override
+    public void initializeData() {
+        potency = getPotency();
+        if (AbstractDungeon.player != null && !AbstractDungeon.player.hasRelic("SacredBark")) {
+            description = potionStrings.DESCRIPTIONS[0];
+        } else {
+            description = potionStrings.DESCRIPTIONS[1];
+        }
+        tips.clear();
+        tips.add(new PowerTip(this.name, this.description));
+        tips.add(new PowerTip(TipHelper.capitalize(BaseMod.getKeywordTitle("nearlmod:light")), BaseMod.getKeywordDescription("nearlmod:light")));
+    }
+
     @Override
     public void use(AbstractCreature abstractCreature) {
         ArrayList<AbstractCard> list = new ArrayList<>();
@@ -45,12 +55,12 @@ public class BrilliantLights extends AbstractPotion {
                 list.add(c);
         Collections.shuffle(list);
         ArrayList<AbstractCard> chooseList = new ArrayList<>(list.subList(0, 3));
-        addToBot(new ChooseSpecificCardAction(chooseList, true));
+        addToBot(new ChooseSpecificCardAction(chooseList, true, potency));
     }
 
     @Override
     public int getPotency(int i) {
-        return 0;
+        return 1;
     }
 
     @Override

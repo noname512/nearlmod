@@ -22,24 +22,34 @@ public class EssenceOfLight extends AbstractPotion {
     public static final String[] DESCRIPTIONS = potionStrings.DESCRIPTIONS;
     public EssenceOfLight() {
         super(NAME, ID, PotionRarity.COMMON, PotionSize.ANVIL, PotionColor.ENERGY);
-        this.labOutlineColor = NLMOD.NearlGold;
-        this.description = potionStrings.DESCRIPTIONS[0];
-        this.isThrown = false;
-        this.targetRequired = false;
-        this.tips.clear();
-        this.tips.add(new PowerTip(this.name, this.description));
-        this.tips.add(new PowerTip(TipHelper.capitalize(BaseMod.getKeywordTitle("nearlmod:light")), BaseMod.getKeywordDescription("nearlmod:light")));
+        labOutlineColor = NLMOD.NearlGold;
+        isThrown = false;
+        targetRequired = false;
     }
+
+    @Override
+    public void initializeData() {
+        potency = getPotency();
+        if (AbstractDungeon.player != null && !AbstractDungeon.player.hasRelic("SacredBark")) {
+            description = potionStrings.DESCRIPTIONS[0];
+        } else {
+            description = potionStrings.DESCRIPTIONS[1];
+        }
+        tips.clear();
+        tips.add(new PowerTip(this.name, this.description));
+        tips.add(new PowerTip(TipHelper.capitalize(BaseMod.getKeywordTitle("nearlmod:light")), BaseMod.getKeywordDescription("nearlmod:light")));
+    }
+
     @Override
     public void use(AbstractCreature abstractCreature) {
         AbstractPlayer p = AbstractDungeon.player;
-        addToBot(new ApplyPowerAction(p, p, new LightPower(p, 10)));
-        addToBot(new MakeTempCardInHandAction(new LightCard()));
+        addToBot(new ApplyPowerAction(p, p, new LightPower(p, potency * 10)));
+        addToBot(new MakeTempCardInHandAction(new LightCard(), potency));
     }
 
     @Override
     public int getPotency(int i) {
-        return 0;
+        return 1;
     }
 
     @Override

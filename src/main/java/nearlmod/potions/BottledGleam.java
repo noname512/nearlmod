@@ -16,7 +16,6 @@ import com.megacrit.cardcrawl.localization.PotionStrings;
 import com.megacrit.cardcrawl.potions.AbstractPotion;
 import com.megacrit.cardcrawl.powers.GainStrengthPower;
 import com.megacrit.cardcrawl.powers.StrengthPower;
-import nearlmod.NLMOD;
 
 public class BottledGleam extends AbstractPotion {
     public static String ID = "nearlmod:BottledGleam";
@@ -25,13 +24,12 @@ public class BottledGleam extends AbstractPotion {
     public static final String[] DESCRIPTIONS = potionStrings.DESCRIPTIONS;
     public BottledGleam() {
         super(NAME, ID, PotionRarity.RARE, PotionSize.FAIRY, PotionColor.FAIRY);
-        this.labOutlineColor = NLMOD.NearlGold;
-        this.description = potionStrings.DESCRIPTIONS[0];
-        this.isThrown = true;
-        this.targetRequired = true;
-        this.tips.clear();
-        this.tips.add(new PowerTip(this.name, this.description));
-        this.tips.add(new PowerTip(TipHelper.capitalize(GameDictionary.STRENGTH.NAMES[0]), GameDictionary.keywords.get(GameDictionary.STRENGTH.NAMES[0])));
+        isThrown = true;
+        targetRequired = true;
+        description = DESCRIPTIONS[0];
+        tips.clear();
+        tips.add(new PowerTip(this.name, this.description));
+        tips.add(new PowerTip(TipHelper.capitalize(GameDictionary.STRENGTH.NAMES[0]), GameDictionary.keywords.get(GameDictionary.STRENGTH.NAMES[0])));
     }
 
     @Override

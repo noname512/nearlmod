@@ -19,25 +19,31 @@ public class FriendshipDrink extends AbstractPotion {
     public static final String[] DESCRIPTIONS = potionStrings.DESCRIPTIONS;
     public FriendshipDrink() {
         super(NAME, ID, PotionRarity.COMMON, PotionSize.M, PotionColor.POWER);
-        this.labOutlineColor = NLMOD.NearlGold;
-        this.description = potionStrings.DESCRIPTIONS[0];
-        this.isThrown = false;
-        this.targetRequired = false;
-        this.tips.clear();
-        this.tips.add(new PowerTip(this.name, this.description));
-        this.tips.add(new PowerTip(TipHelper.capitalize(BaseMod.getKeywordTitle("nearlmod:friend")), BaseMod.getKeywordDescription("nearlmod:friend")));
-        this.tips.add(new PowerTip(TipHelper.capitalize(BaseMod.getKeywordTitle("nearlmod:trust")), BaseMod.getKeywordDescription("nearlmod:trust")));
+        labOutlineColor = NLMOD.NearlGold;
+        isThrown = false;
+        targetRequired = false;
     }
+
+    @Override
+    public void initializeData() {
+        potency = getPotency();
+        description = potionStrings.DESCRIPTIONS[0] + potency + potionStrings.DESCRIPTIONS[1];
+        tips.clear();
+        tips.add(new PowerTip(this.name, this.description));
+        tips.add(new PowerTip(TipHelper.capitalize(BaseMod.getKeywordTitle("nearlmod:friend")), BaseMod.getKeywordDescription("nearlmod:friend")));
+        tips.add(new PowerTip(TipHelper.capitalize(BaseMod.getKeywordTitle("nearlmod:trust")), BaseMod.getKeywordDescription("nearlmod:trust")));
+    }
+
     @Override
     public void use(AbstractCreature abstractCreature) {
         for (AbstractOrb orb : AbstractDungeon.player.orbs)
             if (orb instanceof AbstractFriend)
-                ((AbstractFriend) orb).applyStrength(1);
+                ((AbstractFriend) orb).applyStrength(potency);
     }
 
     @Override
     public int getPotency(int i) {
-        return 0;
+        return 1;
     }
 
     @Override

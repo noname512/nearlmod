@@ -11,7 +11,6 @@ import com.megacrit.cardcrawl.localization.PotionStrings;
 import com.megacrit.cardcrawl.potions.AbstractPotion;
 import com.megacrit.cardcrawl.powers.BufferPower;
 import com.megacrit.cardcrawl.powers.StrengthPower;
-import nearlmod.NLMOD;
 import nearlmod.powers.MyFadingPower;
 
 public class InvigoratingPotion extends AbstractPotion {
@@ -21,24 +20,33 @@ public class InvigoratingPotion extends AbstractPotion {
     public static final String[] DESCRIPTIONS = potionStrings.DESCRIPTIONS;
     public InvigoratingPotion() {
         super(NAME, ID, PotionRarity.RARE, PotionSize.EYE, PotionEffect.RAINBOW, Color.WHITE, null, null);
-        this.labOutlineColor = NLMOD.NearlGold;
-        this.description = potionStrings.DESCRIPTIONS[0];
-        this.isThrown = false;
-        this.targetRequired = false;
+        isThrown = false;
+        targetRequired = false;
+    }
+
+    @Override
+    public void initializeData() {
+        potency = getPotency();
+        if (AbstractDungeon.player != null && !AbstractDungeon.player.hasRelic("SacredBark")) {
+            description = potionStrings.DESCRIPTIONS[0];
+        } else {
+            description = potionStrings.DESCRIPTIONS[1];
+        }
         this.tips.clear();
         this.tips.add(new PowerTip(this.name, this.description));
     }
+
     @Override
     public void use(AbstractCreature abstractCreature) {
         AbstractPlayer p = AbstractDungeon.player;
-        addToBot(new ApplyPowerAction(p, p, new StrengthPower(p, 15)));
-        addToBot(new ApplyPowerAction(p, p, new BufferPower(p, 3)));
+        addToBot(new ApplyPowerAction(p, p, new StrengthPower(p, 15 * potency)));
+        addToBot(new ApplyPowerAction(p, p, new BufferPower(p, 3 * potency)));
         addToBot(new ApplyPowerAction(p,p, new MyFadingPower(p, 2)));
     }
 
     @Override
     public int getPotency(int i) {
-        return 0;
+        return 1;
     }
 
     @Override

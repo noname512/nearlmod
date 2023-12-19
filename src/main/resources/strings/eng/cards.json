@@ -243,7 +243,7 @@
         "DESCRIPTION": "Gain !M! nearlmod:Light. For each card you played this turn, gain !nearlmod:M2! additional nearlmod:Light.",
         "UPGRADE_DESCRIPTION": "",
         "EXTENDED_DESCRIPTION": [
-            "NL (You have played ",
+            " NL (You have played ",
             "card this turn)",
             "cards this turn)"
         ]
@@ -430,7 +430,7 @@
     "nearlmod:StayGold": {
         "NAME": "Stay Gold",
         "DESCRIPTION": "Summon Blemishine as nearlmod:Friend. NL Gain !M! nearlmod:Light. NL Enter nearlmod:Dreadnought.",
-        "UPGRADE_DESCRIPTION": "Summon瑕光as nearlmod:Friend. NL Gain !M! nearlmod:Light and !B! Block. NL Enter nearlmod:Dreadnought."
+        "UPGRADE_DESCRIPTION": "Summon Blemishine as nearlmod:Friend. NL Gain !M! nearlmod:Light and !B! Block. NL Enter nearlmod:Dreadnought."
     },
     "nearlmod:SurgingBrilliance": {
         "NAME": "Surging Brilliance",

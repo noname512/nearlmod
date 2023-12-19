@@ -17,22 +17,28 @@ public class BottledCommand extends AbstractPotion {
     public static final String[] DESCRIPTIONS = potionStrings.DESCRIPTIONS;
     public BottledCommand() {
         super(NAME, ID, PotionRarity.COMMON, PotionSize.SPHERE, PotionColor.BLUE);
-        this.labOutlineColor = NLMOD.NearlGold;
-        this.description = potionStrings.DESCRIPTIONS[0];
-        this.isThrown = false;
-        this.targetRequired = false;
-        this.tips.clear();
-        this.tips.add(new PowerTip(this.name, this.description));
-        this.tips.add(new PowerTip(TipHelper.capitalize(BaseMod.getKeywordTitle("nearlmod:DP")), BaseMod.getKeywordDescription("nearlmod:DP")));
+        labOutlineColor = NLMOD.NearlGold;
+        isThrown = false;
+        targetRequired = false;
     }
+
+    @Override
+    public void initializeData() {
+        potency = getPotency();
+        description = potionStrings.DESCRIPTIONS[0] + potency + potionStrings.DESCRIPTIONS[1];
+        tips.clear();
+        tips.add(new PowerTip(this.name, this.description));
+        tips.add(new PowerTip(TipHelper.capitalize(BaseMod.getKeywordTitle("nearlmod:DP")), BaseMod.getKeywordDescription("nearlmod:DP")));
+    }
+
     @Override
     public void use(AbstractCreature abstractCreature) {
-        addToBot(new GainCostAction(2));
+        addToBot(new GainCostAction(potency));
     }
 
     @Override
     public int getPotency(int i) {
-        return 0;
+        return 2;
     }
 
     @Override

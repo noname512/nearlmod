@@ -1,6 +1,7 @@
 package nearlmod.actions;
 
 import basemod.BaseMod;
+import com.badlogic.gdx.math.MathUtils;
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.core.Settings;
@@ -20,10 +21,15 @@ public class ChooseSpecificCardAction extends AbstractGameAction {
     }
 
     public ChooseSpecificCardAction(ArrayList<AbstractCard> cards, boolean zeroCost) {
+        this(cards, zeroCost, 1);
+    }
+
+    public ChooseSpecificCardAction(ArrayList<AbstractCard> cards, boolean zeroCost, int amount) {
         actionType = ActionType.CARD_MANIPULATION;
         duration = Settings.ACTION_DUR_FAST;
         this.cards = cards;
         this.zeroCost = zeroCost;
+        this.amount = amount;
     }
 
     @Override
@@ -44,11 +50,13 @@ public class ChooseSpecificCardAction extends AbstractGameAction {
             if (zeroCost)
                 card.setCostForTurn(0);
             if (card instanceof AbstractFriendCard)
-                BaseMod.MAX_HAND_SIZE++;
-            if (AbstractDungeon.player.hand.size() >= BaseMod.MAX_HAND_SIZE) {
-                AbstractDungeon.effectList.add(new ShowCardAndAddToDiscardEffect(card, Settings.WIDTH / 2.0F, Settings.HEIGHT / 2.0F));
-            } else {
-                AbstractDungeon.effectList.add(new ShowCardAndAddToHandEffect(card, Settings.WIDTH / 2.0F, Settings.HEIGHT / 2.0F));
+                BaseMod.MAX_HAND_SIZE += amount;
+            int resSpace = BaseMod.MAX_HAND_SIZE - AbstractDungeon.player.hand.size();
+            for (int i = 0; i < resSpace && i < amount; i++) {
+                AbstractDungeon.effectList.add(new ShowCardAndAddToHandEffect(card.makeStatEquivalentCopy(), MathUtils.random(Settings.WIDTH * 0.4F, Settings.WIDTH * 0.6F), MathUtils.random(Settings.HEIGHT * 0.4F, Settings.HEIGHT * 0.6F)));
+            }
+            for (int i = resSpace; i < amount; i++) {
+                AbstractDungeon.effectList.add(new ShowCardAndAddToDiscardEffect(card.makeStatEquivalentCopy(), MathUtils.random(Settings.WIDTH * 0.4F, Settings.WIDTH * 0.6F), MathUtils.random(Settings.HEIGHT * 0.4F, Settings.HEIGHT * 0.6F)));
             }
             AbstractDungeon.cardRewardScreen.discoveryCard = null;
             isDone = true;

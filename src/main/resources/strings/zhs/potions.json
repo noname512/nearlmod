@@ -1,35 +1,47 @@
 {
   "nearlmod:ChangeStancePotion": {
     "NAME": "形态药水",
-    "DESCRIPTIONS": ["进入 #y守护 或 #y无畏 。本次切换形态获得的数值增加 #b1 点。"]
+    "DESCRIPTIONS": ["进入 #y守护 或 #y无畏 。本次切换形态获得的数值增加 #b", " 点。"]
   },
   "nearlmod:FriendPotion": {
     "NAME": "伙伴药水",
-    "DESCRIPTIONS": ["从 #b3 张随机非唯一伙伴牌中选择 #b1 张加入你的手牌。这张牌在本回合耗能变为 #b0 。"]
+    "DESCRIPTIONS": [
+      "从 #b3 张随机非唯一伙伴牌中选择 #b1 张加入你的手牌。这张牌在本回合耗能变为 #b0 。",
+      "从 #b3 张随机非唯一伙伴牌中选择 #b1 张，将其加入你的手牌 #b2 次。这两张牌在本回合耗能变为 #b0 。"
+    ]
   },
   "nearlmod:EssenceOfLight": {
     "NAME": "光之精华",
-    "DESCRIPTIONS": ["获得 #b10 层 #y光 。将一张 #y光耀 放入你的手牌。"]
+    "DESCRIPTIONS": [
+      "获得 #b10 层 #y光 。将一张 #y光耀 放入你的手牌。",
+      "获得 #b20 层 #y光 。将 #b2 张 #y光耀 放入你的手牌。"
+    ]
   },
   "nearlmod:FriendshipDrink": {
     "NAME": "友谊甘露",
-    "DESCRIPTIONS": ["使你的 #y伙伴 获得 #b1 点 #y信赖 。"]
+    "DESCRIPTIONS": ["使你的 #y伙伴 获得 #b", " 点 #y信赖 。"]
   },
   "nearlmod:BrilliantLights": {
     "NAME": "流光溢彩",
-    "DESCRIPTIONS": ["从 #b3 张随机获得 #y光 或使用 #y光 的牌中选择 #b1 张加入你的手牌。这张牌在本回合耗能变为 #b0 。"]
+    "DESCRIPTIONS": [
+      "从 #b3 张随机获得 #y光 或使用 #y光 的牌中选择 #b1 张加入你的手牌。这张牌在本回合耗能变为 #b0 。",
+      "从 #b3 张随机获得 #y光 或使用 #y光 的牌中选择 #b1 张，将其加入你的手牌 #b2 次。这两张牌在本回合耗能变为 #b0 。"
+    ]
   },
   "nearlmod:BottledCommand": {
     "NAME": "瓶装号令",
-    "DESCRIPTIONS": ["获得 #b2 点 #y部署费用 。"]
+    "DESCRIPTIONS": ["获得 #b", " 点 #y部署费用 。"]
   },
   "nearlmod:LayeredElixir": {
     "NAME": "层叠灵药",
-    "DESCRIPTIONS": ["本场战斗中切换形态获得的数值增加 #b1 点。"]
+    "DESCRIPTIONS": ["本场战斗中切换形态获得的数值增加 #b", " 点。"]
   },
   "nearlmod:InvigoratingPotion": {
     "NAME": "醒神秘药",
-    "DESCRIPTIONS": ["获得 #b15 点 #y力量 和 #b3 层 #y缓冲， #b2 回合后死亡。"]
+    "DESCRIPTIONS": [
+      "获得 #b15 点 #y力量 和 #b3 层 #y缓冲， #b2 回合后死亡。",
+      "获得 #b30 点 #y力量 和 #b6 层 #y缓冲， #b2 回合后死亡。"
+    ]
   },
   "nearlmod:BottledGleam": {
     "NAME": "瓶装烁光",
