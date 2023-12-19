@@ -16,19 +16,19 @@ import nearlmod.powers.LightPower;
 import nearlmod.stances.AtkStance;
 import nearlmod.stances.DefStance;
 
-public class AllOutEffort extends AbstractNearlCard {
-    public static final String ID = "nearlmod:AllOutEffort";
+public class StayGold extends AbstractNearlCard {
+    public static final String ID = "nearlmod:StayGold";
     public static final CardStrings cardStrings = CardCrawlGame.languagePack.getCardStrings(ID);
     public static final String NAME = cardStrings.NAME;
     public static final String DESCRIPTION = cardStrings.DESCRIPTION;
     public static final String UPGRADE_DESCRIPTION = cardStrings.UPGRADE_DESCRIPTION;
-    public static final String IMG_PATH = "images/cards/allouteffort.png";
+    public static final String IMG_PATH = "images/cards/staygold.png";
     private static final int COST = 2;
     private static final int UPGRADE_COST = 1;
     private static final int LIGHT_GAIN = 3;
     private static final int BLOCK_AMT = 5;
 
-    public AllOutEffort() {
+    public StayGold() {
         super(ID, NAME, IMG_PATH, COST, DESCRIPTION,
                 CardType.POWER, AbstractCardEnum.NEARL_GOLD,
                 CardRarity.UNCOMMON, CardTarget.SELF);
@@ -53,7 +53,7 @@ public class AllOutEffort extends AbstractNearlCard {
 
     @Override
     public AbstractCard makeCopy() {
-        return new AllOutEffort();
+        return new StayGold();
     }
 
     @Override

@@ -427,8 +427,8 @@
         "EXTENDED_DESCRIPTION": ["（ !M! 点）"]
     },
 
-    "nearlmod:AllOutEffort": {
-        "NAME": "全力以赴",
+    "nearlmod:StayGold": {
+        "NAME": "不渝之金",
         "DESCRIPTION": "召唤瑕光作为 nearlmod:伙伴 。 NL 获得 !M! 层 nearlmod:光 并进入 nearlmod:无畏 。",
         "UPGRADE_DESCRIPTION": "召唤瑕光作为 nearlmod:伙伴 。 NL 获得 !M! 层 nearlmod:光 和 !B! 点 格挡 并进入 nearlmod:无畏 。"
     },

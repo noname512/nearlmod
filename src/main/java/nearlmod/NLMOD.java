@@ -205,7 +205,7 @@ public class NLMOD implements EditCardsSubscriber, EditCharactersSubscriber, Edi
         BaseMod.addCard(new SecondSun()); // 第二轮太阳
         BaseMod.addCard(new LightSpearStrike()); // 光枪打击
         BaseMod.addCard(new SwallowLight()); // 侵吞光芒
-        BaseMod.addCard(new AllOutEffort()); // 全力以赴
+        BaseMod.addCard(new StayGold()); // 不渝之金
         BaseMod.addCard(new DanceTogether()); // 共舞一曲
         BaseMod.addCard(new DawnDuskSaber()); // 斩破晨昏
         BaseMod.addCard(new SweepWrong()); // 扫尽恶行

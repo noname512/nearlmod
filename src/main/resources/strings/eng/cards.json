@@ -427,8 +427,8 @@
         "EXTENDED_DESCRIPTION": ["(Deals !M! damage)"]
     },
 
-    "nearlmod:AllOutEffort": {
-        "NAME": "All Out Effort",
+    "nearlmod:StayGold": {
+        "NAME": "Stay Gold",
         "DESCRIPTION": "Summon Blemishine as nearlmod:Friend. NL Gain !M! nearlmod:Light. NL Enter nearlmod:Dreadnought.",
         "UPGRADE_DESCRIPTION": "Summon瑕光as nearlmod:Friend. NL Gain !M! nearlmod:Light and !B! Block. NL Enter nearlmod:Dreadnought."
     },

@@ -26,7 +26,7 @@ public class Cooperate extends AbstractNearlCard {
     private static final int ATTACK_DMG = 8;
     private static final int LIGHT_GAIN = 6;
     private static final int UPGRADE_PLUS_DMG = 2;
-    private static final int UPGRADE_PLUS_LIGNT = 2;
+    private static final int UPGRADE_PLUS_LIGHT = 2;
 
     public Cooperate() {
         super(ID, NAME, IMG_PATH, COST, DESCRIPTION,
@@ -59,7 +59,7 @@ public class Cooperate extends AbstractNearlCard {
         if (!upgraded) {
             upgradeName();
             upgradeDamage(UPGRADE_PLUS_DMG);
-            upgradeMagicNumber(UPGRADE_PLUS_LIGNT);
+            upgradeMagicNumber(UPGRADE_PLUS_LIGHT);
         }
     }
 }
