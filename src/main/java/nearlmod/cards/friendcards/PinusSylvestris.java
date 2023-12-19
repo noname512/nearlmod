@@ -42,7 +42,7 @@ public class PinusSylvestris extends AbstractFriendCard {
         addToBot(new GainCostAction(secondMagicNumber));
         ArrayList<AbstractCard> list = Nearl.getUnuniqueFriendCard(true);
         int random = AbstractDungeon.cardRng.random(0, list.size() - 1);
-        AbstractFriendCard card = (AbstractFriendCard) list.get(random).makeCopy();
+        AbstractFriendCard card = (AbstractFriendCard) list.get(random);
         if (upgraded) card.upgrade();
         addToBot(new AddFriendCardToHandAction(card));
     }

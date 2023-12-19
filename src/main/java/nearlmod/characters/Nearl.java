@@ -281,7 +281,7 @@ public class Nearl extends CustomPlayer {
         ArrayList<AbstractCard> list = new ArrayList<>();
         for (AbstractCard c : friendCards.group)
             if (!c.hasTag(NearlTags.IS_UNIQUE_CARD) && (!isPinusSylvestris || c.hasTag(NearlTags.IS_KNIGHT_CARD)))
-                list.add(c);
+                list.add(c.makeCopy());
         return list;
     }
 
