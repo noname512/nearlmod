@@ -74,7 +74,7 @@ public class LightPower extends AbstractPower implements CloneablePowerInterface
                 if (val > 0)
                     AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(p, p, new GainLightNextTurnPower(p, val)));
             }
-            if (p.hasPower(BladeOfBlazingSunPower.POWER_ID))
+            if (p.hasPower(BladeOfBlazingSunPower.POWER_ID) && p.stance.ID.equals(AtkStance.STANCE_ID))
                 AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(p, p, new StrengthPower(p, p.getPower(BladeOfBlazingSunPower.POWER_ID).amount)));
             if (p.hasRelic(Lighthouse.ID) && Lighthouse.isFirstTime && (power.amount > 0 || p.hasRelic(UpgradedCoreCaster.ID))) {
                 Lighthouse.isFirstTime = false;

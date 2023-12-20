@@ -25,7 +25,7 @@ public class HandOfConqueror extends CustomRelic {
     public static final Texture IMG_OUTLINE = new Texture("images/relics/handofconqueror_p.png");
     public int AwakenPatch = 0;
     public HandOfConqueror() {
-        super(ID, IMG, IMG_OUTLINE, RelicTier.UNCOMMON, LandingSound.FLAT);
+        super(ID, IMG, IMG_OUTLINE, RelicTier.RARE, LandingSound.FLAT);
         counter = 0;
     }
 
@@ -63,6 +63,10 @@ public class HandOfConqueror extends CustomRelic {
                 addToBot(new ApplyPowerAction(p, p, new AttackUpPower(p, add_num)));
             }
         }
+    }
+
+    public boolean canSpawn() {
+        return AbstractDungeon.floorNum <= 40;
     }
 
     @Override

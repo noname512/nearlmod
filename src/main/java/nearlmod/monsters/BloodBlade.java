@@ -67,7 +67,7 @@ public class BloodBlade extends AbstractMonster {
                     vy = (ms.drawY - drawY) / (absorbTimer / Gdx.graphics.getDeltaTime());
                     if (ms.drawX > drawX) flipHorizontal = !flipHorizontal;
                     hideHealthBar();
-                    addToTop(new ApplyPowerAction(ms, this, new StrengthPower(ms, 3)));
+                    addToTop(new ApplyPowerAction(ms, this, new StrengthPower(ms, BloodKnight.upgradeStrength)));
                     return;
                 }
         }

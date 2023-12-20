@@ -172,7 +172,7 @@
     },
     "nearlmod:Cooperate": {
         "NAME": "协同战斗",
-        "DESCRIPTION": "造成 !D! 点伤害。如果瑕光在场，获得 !M! 层 nearlmod:光 。",
+        "DESCRIPTION": "造成 !D! 点伤害。如果瑕光在场，她给你 !M! 层 nearlmod:光 ，然后你使用 nearlmod:光 。",
         "UPGRADE_DESCRIPTION": ""
     },
     "nearlmod:DefensiveFormation": {
@@ -276,7 +276,7 @@
     "nearlmod:FanClub": {
         "NAME": "后援团",
         "DESCRIPTION": "你每打出一张 nearlmod:伙伴牌 ，对应 nearlmod:伙伴 获得 !M! 点 nearlmod:信赖 。如果打出鞭刃的 nearlmod:伙伴牌 ，则改为所有 nearlmod:伙伴 获得 !M! 点 nearlmod:信赖 。",
-        "UPGRADE_DESCRIPTION": ""
+        "UPGRADE_DESCRIPTION": " 固有 。 NL "
     },
     "nearlmod:UpgradedKnightShield": {
         "NAME": "改良骑士盾牌",
@@ -422,7 +422,7 @@
     },
     "nearlmod:FlameShadow": {
         "NAME": "烛燃影息",
-        "DESCRIPTION": " nearlmod:伙伴牌 ， nearlmod:唯一 。 NL 获得 nearlmod:诗的容貌 。 NL 消耗所有的 nearlmod:光 ，对所有敌人造成其层数两倍的伤害。",
+        "DESCRIPTION": " nearlmod:伙伴牌 ， nearlmod:唯一 。 NL 消耗所有的 nearlmod:光 ，对所有敌人造成其层数两倍的伤害。 NL 获得 nearlmod:诗的容貌 。",
         "UPGRADE_DESCRIPTION": "",
         "EXTENDED_DESCRIPTION": ["（ !M! 点）"]
     },
@@ -572,7 +572,7 @@
     },
     "nearlmod:JusticeDrive": {
         "NAME": "正义助威",
-        "DESCRIPTION": " nearlmod:伙伴牌 。 NL 给予所有敌人 !nearlmod:M2! 层 易伤 ，击落所有 飞行 的敌人。",
+        "DESCRIPTION": " nearlmod:伙伴牌 。 NL 对所有敌人造成 !M! 点伤害，并给予所有敌人 !nearlmod:M2! 层 易伤 ，击落所有 飞行 的敌人。",
         "UPGRADE_DESCRIPTION": ""
     },
     "nearlmod:BeepActivate": {

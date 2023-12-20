@@ -41,7 +41,9 @@ public class FanClub extends AbstractNearlCard {
     public void upgrade() {
         if (!upgraded) {
             upgradeName();
-            upgradeMagicNumber(UPGRADED_PLUS_TRUST);
+            isInnate = true;
+            rawDescription = UPGRADE_DESCRIPTION + DESCRIPTION;
+            initializeDescription();
         }
     }
 }

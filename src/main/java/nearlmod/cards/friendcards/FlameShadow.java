@@ -44,17 +44,12 @@ public class FlameShadow extends AbstractFriendCard {
         applyPowers();
         AbstractPower power = p.getPower("nearlmod:LightPower");
         int dmg = magicNumber;
-        int light = 0;
         if (power != null) {
-            light += power.amount;
             addToBot(new RemoveSpecificPowerAction(p, p, power));
         }
         addToBot(new PureDamageAllEnemiesAction(p, dmg, belongFriend + damageSuffix));
         Viviana.uniqueUsed = true;
         addToBot(new UseShadowAction(p));
-        if (light != 0) {
-            addToBot(new ApplyPowerAction(p, p, new ShadowPower(p, light)));
-        }
         addToBot(new ApplyPowerAction(p, p, new PoemsLooksPower(p)));
         rawDescription = DESCRIPTION;
         initializeDescription();

@@ -172,7 +172,7 @@
     },
     "nearlmod:Cooperate": {
         "NAME": "Cooperate Fight",
-        "DESCRIPTION": "Deal !D! damage. NL If Blemishine is present, gain !M! nearlmod:Light.",
+        "DESCRIPTION": "Deal !D! damage. NL If Blemishine is present, she gives you gain !M! nearlmod:Light, then you use nearlmod:Light.",
         "UPGRADE_DESCRIPTION": ""
     },
     "nearlmod:DefensiveFormation": {
@@ -276,7 +276,7 @@
     "nearlmod:FanClub": {
         "NAME": "Fan Club",
         "DESCRIPTION": "Whenever you play a nearlmod:Friend_Card, apply !M! nearlmod:Trust to the nearlmod:Friend it belongs to. NL If you play a nearlmod:Friend_Card belongs to Whislash, apply !M! nearlmod:Trust to all nearlmod:Friends instead.",
-        "UPGRADE_DESCRIPTION": ""
+        "UPGRADE_DESCRIPTION": "Innate. NL "
     },
     "nearlmod:UpgradedKnightShield": {
         "NAME": "Improved Knight Shield",
@@ -422,7 +422,7 @@
     },
     "nearlmod:FlameShadow": {
         "NAME": "Candlelit Shadow Whisper",
-        "DESCRIPTION": "nearlmod:Friend_Card. nearlmod:Unique. NL Gain nearlmod:PoemLooks. NL Lose all nearlmod:Light and deal damage equal to twice of it to all enemies.",
+        "DESCRIPTION": "nearlmod:Friend_Card. nearlmod:Unique. NL Lose all nearlmod:Light and deal damage equal to twice of it to all enemies. NL Gain nearlmod:PoemLooks. ",
         "UPGRADE_DESCRIPTION": "",
         "EXTENDED_DESCRIPTION": ["(Deals !M! damage)"]
     },
@@ -572,7 +572,7 @@
     },
     "nearlmod:JusticeDrive": {
         "NAME": "Justice Drive",
-        "DESCRIPTION": "nearlmod:Friend_Card. NL Apply !nearlmod:M2! Vulnerable to all enemies. Shoot down all enemies with Flight.",
+        "DESCRIPTION": "nearlmod:Friend_Card. NL Deal !M! and Apply !nearlmod:M2! Vulnerable to all enemies. Shoot down all enemies with Flight.",
         "UPGRADE_DESCRIPTION": ""
     },
     "nearlmod:BeepActivate": {

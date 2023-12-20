@@ -35,10 +35,18 @@ public class SilverlancePegasus extends AbstractNearlCard {
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
         AbstractMonster target = null;
+        int maxIntent = -2;
         for (AbstractMonster ms : AbstractDungeon.getCurrRoom().monsters.monsters)
-            if (!ms.isDeadOrEscaped())
-                if (target == null || ms.getIntentDmg() > target.getIntentDmg())
+            if (!ms.isDeadOrEscaped()) {
+                int intent = ms.getIntentBaseDmg();
+                if (intent != -1) {
+                    intent = ms.getIntentDmg();
+                }
+                if (target == null || intent > maxIntent) {
                     target = ms;
+                    maxIntent = intent;
+                }
+            }
         if (target != null)
             addToBot(new DamageAction(target, new DamageInfo(p, damage, damageTypeForTurn)));
         addToBot(new GainBlockAction(p, block));

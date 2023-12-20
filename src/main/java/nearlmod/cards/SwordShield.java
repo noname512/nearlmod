@@ -31,7 +31,7 @@ public class SwordShield extends AbstractNearlCard {
     public SwordShield() {
         super(ID, NAME, IMG_PATH, COST, DESCRIPTION,
                 CardType.SKILL, AbstractCardEnum.NEARL_GOLD,
-                CardRarity.COMMON, CardTarget.SELF);
+                CardRarity.UNCOMMON, CardTarget.SELF);
         magicNumber = baseMagicNumber = LIGHT_ADD;
         secondMagicNumber = baseSecondMagicNumber = EXTRA_INC;
         tags.add(NearlTags.IS_GAIN_LIGHT);

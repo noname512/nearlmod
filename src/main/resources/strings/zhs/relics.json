@@ -42,7 +42,7 @@
   "nearlmod:HandOfConqueror": {
     "NAME": "刻勋之手",
     "FLAVOR": "胜利本身，便是最好的补给。",
-    "DESCRIPTIONS": ["#y斩杀 后，造成的伤害永久提升 #b1% 。"]
+    "DESCRIPTIONS": ["#y斩杀 后，你造成的伤害永久提升 #b2% 。"]
   },
   "nearlmod:Lighthouse": {
     "NAME": "灯塔",

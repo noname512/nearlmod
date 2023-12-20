@@ -42,7 +42,7 @@
   "nearlmod:HandOfConqueror": {
     "NAME": "Hand of Conqueror",
     "FLAVOR": "Victory in itself is the best sustenance.",
-    "DESCRIPTIONS": ["After #yFatal , damage you dealt increase #b1% forever."]
+    "DESCRIPTIONS": ["After #yFatal , damage you dealt increase #b2% forever."]
   },
   "nearlmod:Lighthouse": {
     "NAME": "Lighthouse",

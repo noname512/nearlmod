@@ -35,6 +35,7 @@ public class BloodKnight extends AbstractMonster {
     public static final float[] POSY = new float[] { 85.0F, 75.0F, 225.0F, 215.0F, 345.0F, 335.0F };
     private int debuffTimes = 2;
     private int bladeStrength = 0;
+    public static int upgradeStrength = 4;
     private int currentTurn;
     private boolean isStage2;
     private final AbstractMonster[] blades = new AbstractMonster[6];
@@ -129,7 +130,7 @@ public class BloodKnight extends AbstractMonster {
         }
         else if (this.nextMove == 3) {
             cleanDebuff();
-            addToBot(new ApplyPowerAction(this, this, new StrengthPower(this, 3)));
+            addToBot(new ApplyPowerAction(this, this, new StrengthPower(this, upgradeStrength)));
         }
         else if (this.nextMove == 4) {
             cleanDebuff();
