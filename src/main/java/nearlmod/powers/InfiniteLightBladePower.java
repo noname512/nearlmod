@@ -19,15 +19,16 @@ public class InfiniteLightBladePower extends AbstractPower implements CloneableP
         ID = POWER_ID;
         this.owner = owner;
         type = PowerType.BUFF;
-        updateDescription();
         this.loadRegion("curiosity");
         priority = 0;
         this.amount = amount;
+        updateDescription();
     }
 
     public InfiniteLightBladePower(AbstractCreature owner) {
         this(owner, 1);
     }
+
     @Override
     public void updateDescription() {
         if (amount == 1)

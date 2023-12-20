@@ -29,8 +29,8 @@ public class DayBreakPower extends AbstractPower implements CloneablePowerInterf
         region128 = new TextureAtlas.AtlasRegion(ImageMaster.loadImage("images/powers/daybreak power 128.png"), 0, 0, 128, 128);
         region48 = new TextureAtlas.AtlasRegion(ImageMaster.loadImage("images/powers/daybreak power 48.png"), 0, 0, 48, 48);
         type = PowerType.BUFF;
-        updateDescription();
         this.amount = amount;
+        updateDescription();
     }
 
     public DayBreakPower(AbstractCreature owner) {
