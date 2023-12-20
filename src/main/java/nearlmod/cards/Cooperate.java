@@ -18,6 +18,7 @@ import nearlmod.orbs.Viviana;
 import nearlmod.patches.AbstractCardEnum;
 import nearlmod.patches.NearlTags;
 import nearlmod.powers.LightPower;
+import nearlmod.stances.AtkStance;
 
 public class Cooperate extends AbstractNearlCard {
     public static final String ID = "nearlmod:Cooperate";
@@ -51,7 +52,12 @@ public class Cooperate extends AbstractNearlCard {
         addToBot(new DamageAction(m, new DamageInfo(p, damage), AbstractGameAction.AttackEffect.LIGHTNING));
         if (extraTriggered())
             addToBot(new ApplyPowerAction(p, p, new LightPower(p, magicNumber)));
-        addToBot(new UseLightAction(p, m));
+        if (p.stance.ID.equals(AtkStance.STANCE_ID)) {
+            addToBot(new UseLightAction(p, m));
+        }
+        else {
+            addToBot(new UseLightAction(p, null));
+        }
     }
 
     @Override

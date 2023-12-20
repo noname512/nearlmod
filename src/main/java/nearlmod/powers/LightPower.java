@@ -62,6 +62,19 @@ public class LightPower extends AbstractPower implements CloneablePowerInterface
 
     public static void onExhaustLight(boolean isUse) {
         AbstractPlayer p = AbstractDungeon.player;
+        if (isUse) {
+            if (p.hasPower(BladeOfBlazingSunPower.POWER_ID) && p.stance.ID.equals(AtkStance.STANCE_ID)) {
+                if (p.hasPower(LightPower.POWER_ID) || p.hasRelic(UpgradedCoreCaster.ID)) {
+                    AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(p, p, new StrengthPower(p, p.getPower(BladeOfBlazingSunPower.POWER_ID).amount)));
+                    p.getPower(BladeOfBlazingSunPower.POWER_ID).flash();
+                }
+            }
+            if (p.hasRelic(Lighthouse.ID) && Lighthouse.isFirstTime && (p.hasPower(LightPower.POWER_ID) || p.hasRelic(UpgradedCoreCaster.ID))) {
+                Lighthouse.isFirstTime = false;
+                AbstractDungeon.actionManager.addToBottom(new GainEnergyAction(1));
+                p.getRelic(Lighthouse.ID).flash();
+            }
+        }
         if (!p.hasPower(LightPower.POWER_ID)) return;
         AbstractPower power = p.getPower(LightPower.POWER_ID);
         if (isUse) {
@@ -73,12 +86,6 @@ public class LightPower extends AbstractPower implements CloneablePowerInterface
                 val = power.amount * val / 3;
                 if (val > 0)
                     AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(p, p, new GainLightNextTurnPower(p, val)));
-            }
-            if (p.hasPower(BladeOfBlazingSunPower.POWER_ID) && p.stance.ID.equals(AtkStance.STANCE_ID))
-                AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(p, p, new StrengthPower(p, p.getPower(BladeOfBlazingSunPower.POWER_ID).amount)));
-            if (p.hasRelic(Lighthouse.ID) && Lighthouse.isFirstTime && (power.amount > 0 || p.hasRelic(UpgradedCoreCaster.ID))) {
-                Lighthouse.isFirstTime = false;
-                AbstractDungeon.actionManager.addToBottom(new GainEnergyAction(1));
             }
         }
         AbstractDungeon.actionManager.addToBottom(new RemoveSpecificPowerAction(p, p, power));
