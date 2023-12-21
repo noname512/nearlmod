@@ -1,8 +1,10 @@
 package nearlmod.powers;
 
 import basemod.interfaces.CloneablePowerInterface;
+import com.badlogic.gdx.graphics.g2d.TextureAtlas;
 import com.megacrit.cardcrawl.core.AbstractCreature;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
+import com.megacrit.cardcrawl.helpers.ImageMaster;
 import com.megacrit.cardcrawl.localization.PowerStrings;
 import com.megacrit.cardcrawl.powers.AbstractPower;
 
@@ -19,7 +21,8 @@ public class DuelPower extends AbstractPower implements CloneablePowerInterface 
         type = PowerType.BUFF;
         this.amount = amount;
         updateDescription();
-        this.loadRegion("curiosity"); // TODO: 换个图案
+        region128 = new TextureAtlas.AtlasRegion(ImageMaster.loadImage("images/powers/duel power 84.png"), 0, 0, 84, 84);
+        region48 = new TextureAtlas.AtlasRegion(ImageMaster.loadImage("images/powers/duel power 32.png"), 0, 0, 32, 32);
         priority = 120;
     }
     @Override

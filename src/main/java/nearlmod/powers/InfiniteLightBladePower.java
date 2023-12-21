@@ -1,9 +1,11 @@
 package nearlmod.powers;
 
 import basemod.interfaces.CloneablePowerInterface;
+import com.badlogic.gdx.graphics.g2d.TextureAtlas;
 import com.megacrit.cardcrawl.actions.common.MakeTempCardInHandAction;
 import com.megacrit.cardcrawl.core.AbstractCreature;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
+import com.megacrit.cardcrawl.helpers.ImageMaster;
 import com.megacrit.cardcrawl.localization.PowerStrings;
 import com.megacrit.cardcrawl.powers.AbstractPower;
 import nearlmod.cards.special.LightCard;
@@ -19,7 +21,8 @@ public class InfiniteLightBladePower extends AbstractPower implements CloneableP
         ID = POWER_ID;
         this.owner = owner;
         type = PowerType.BUFF;
-        this.loadRegion("curiosity");
+        region128 = new TextureAtlas.AtlasRegion(ImageMaster.loadImage("images/powers/infinitelightblade power 84.png"), 0, 0, 84, 84);
+        region48 = new TextureAtlas.AtlasRegion(ImageMaster.loadImage("images/powers/infinitelightblade power 32.png"), 0, 0, 32, 32);
         priority = 0;
         this.amount = amount;
         updateDescription();

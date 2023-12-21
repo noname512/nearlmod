@@ -1,10 +1,12 @@
 package nearlmod.powers;
 
 import basemod.interfaces.CloneablePowerInterface;
+import com.badlogic.gdx.graphics.g2d.TextureAtlas;
 import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
 import com.megacrit.cardcrawl.cards.DamageInfo;
 import com.megacrit.cardcrawl.core.AbstractCreature;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
+import com.megacrit.cardcrawl.helpers.ImageMaster;
 import com.megacrit.cardcrawl.localization.PowerStrings;
 import com.megacrit.cardcrawl.powers.AbstractPower;
 
@@ -19,7 +21,8 @@ public class DealCorrosionPower extends AbstractPower implements CloneablePowerI
         ID = POWER_ID;
         this.owner = owner;
         type = PowerType.BUFF;
-        this.loadRegion("curiosity");
+        region128 = new TextureAtlas.AtlasRegion(ImageMaster.loadImage("images/powers/dealcorrosion power 84.png"), 0, 0, 84, 84);
+        region48 = new TextureAtlas.AtlasRegion(ImageMaster.loadImage("images/powers/dealcorrosion power 32.png"), 0, 0, 32, 32);
         this.amount = amount;
         updateDescription();
     }
