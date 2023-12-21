@@ -90,6 +90,7 @@ public class BloodKnight extends AbstractMonster {
         if (currentHealth <= 0 && !this.halfDead) {
             if (AbstractDungeon.getCurrRoom().cannotLose) {
                 halfDead = true;
+                realHealth = 0;
                 addToBot(new HealAction(this, this, MathUtils.floor(this.maxHealth * 0.4F)));
                 for (AbstractPower p : this.powers)
                     p.onDeath();
