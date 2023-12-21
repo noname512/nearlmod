@@ -9,6 +9,7 @@ import com.megacrit.cardcrawl.localization.CardStrings;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import nearlmod.NLMOD;
 import nearlmod.actions.PocketVaultAction;
+import nearlmod.actions.SummonFriendAction;
 import nearlmod.orbs.Whislash;
 import nearlmod.patches.AbstractCardEnum;
 
@@ -42,6 +43,9 @@ public class PocketVault extends AbstractNearlCard {
         addToBot(new DamageAction(m, new DamageInfo(p, damage, damageTypeForTurn)));
         if (extraTriggered())
             addToBot(new PocketVaultAction(magicNumber));
+        else {
+            addToBot(new SummonFriendAction(new Whislash()));
+        }
     }
 
     @Override
