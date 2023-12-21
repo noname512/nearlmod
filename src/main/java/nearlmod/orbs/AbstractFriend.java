@@ -24,6 +24,9 @@ public abstract class AbstractFriend extends CustomOrb {
     public float animX;
     public float animY;
     public float animationTimer;
+    public float realFontSize;
+    public float fontAnimTimer;
+    public final float fullFontAnimTimer;
     public AbstractFriend(String ID, String NAME, String[] DESCRIPTION, String imgPath, int amount) {
         super(ID, NAME, 0, 0, "", "", imgPath);
         trustAmount = amount;
@@ -33,11 +36,15 @@ public abstract class AbstractFriend extends CustomOrb {
         this.DESCRIPTION = DESCRIPTION;
         flipHorizontal = AbstractDungeon.player.flipHorizontal;
         animX = animY = 0;
+        realFontSize = 0.7F;
+        if (Settings.FAST_MODE) fullFontAnimTimer = 0.4F;
+        else fullFontAnimTimer = 0.7F;
         updateDescription();
     }
 
     public void applyStrength(int amount) {
         trustAmount += amount;
+        fontAnimTimer = fullFontAnimTimer;
         updateDescription();
     }
 
@@ -65,7 +72,7 @@ public abstract class AbstractFriend extends CustomOrb {
         this.tY = dist * MathUtils.sinDeg(angle) + AbstractDungeon.player.drawY + AbstractDungeon.player.hb_h / 2.0F;
         if (maxOrbs == 1) {
             this.tX = AbstractDungeon.player.drawX;
-            this.tY = 200.0F * Settings.scale + AbstractDungeon.player.drawY + AbstractDungeon.player.hb_h / 2.0F;
+            this.tY = 230.0F * Settings.scale + AbstractDungeon.player.drawY + AbstractDungeon.player.hb_h / 2.0F;
         }
 
         this.hb.move(this.tX, this.tY);
@@ -81,7 +88,14 @@ public abstract class AbstractFriend extends CustomOrb {
 
     @Override
     protected void renderText(SpriteBatch sb) {
-        FontHelper.renderFontCentered(sb, FontHelper.cardEnergyFont_L, Integer.toString(this.trustAmount), this.cX + MY_X_OFFSET, this.cY + this.bobEffect.y / 2.0F + MY_Y_OFFSET, this.c, this.fontScale);
+        if (fontAnimTimer > 0) {
+            fontAnimTimer -= Gdx.graphics.getDeltaTime();
+            if (fontAnimTimer > fullFontAnimTimer * 0.5) realFontSize = 0.7F + (fontAnimTimer * 2 / fullFontAnimTimer) * 0.2F;
+            else realFontSize = 0.7F + (2 - fontAnimTimer * 2 / fullFontAnimTimer) * 0.2F;
+        } else {
+            realFontSize = 0.7F;
+        }
+        FontHelper.renderFontCentered(sb, FontHelper.cardEnergyFont_L, Integer.toString(this.trustAmount), this.cX + MY_X_OFFSET, this.cY + this.bobEffect.y / 2.0F + MY_Y_OFFSET, this.c, realFontSize);
     }
 
     @Override

@@ -22,8 +22,8 @@ public class KnightFiction extends CustomRelic {
     public static final RelicStrings relicStrings = CardCrawlGame.languagePack.getRelicStrings(ID);
     public static final String NAME = relicStrings.NAME;
     public static final String[] DESCRIPTIONS = relicStrings.DESCRIPTIONS;
-    public static final Texture IMG = new Texture("images/relics/lighthouse.png");
-    public static final Texture IMG_OUTLINE = new Texture("images/relics/lighthouse_p.png");
+    public static final Texture IMG = new Texture("images/relics/knightfiction.png");
+    public static final Texture IMG_OUTLINE = new Texture("images/relics/knightfiction_p.png");
     private final HashMap<AbstractCard.CardType, Integer> playedCount = new HashMap<>();
     public static HashSet<AbstractCard.CardType> freeToPlayType = new HashSet<>();
     public KnightFiction() {
