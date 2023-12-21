@@ -99,13 +99,13 @@ public class NLMOD implements EditCardsSubscriber, EditCharactersSubscriber, Edi
 
     private void initializeEvents() {
         BaseMod.addEvent(new AddEventParams.Builder(LaughAllYouWantEvent.ID, LaughAllYouWantEvent.class).
-                eventType(EventUtils.EventType.ONE_TIME).
+                eventType(EventUtils.EventType.NORMAL).
                 playerClass(NearlEnum.NEARL_CLASS).
                 dungeonID("TheCity").
                 endsWithRewardsUI(true).
                 create());
         BaseMod.addEvent(new AddEventParams.Builder(TheSurroundedEvent.ID, TheSurroundedEvent.class).
-                eventType(EventUtils.EventType.ONE_TIME).
+                eventType(EventUtils.EventType.NORMAL).
                 playerClass(NearlEnum.NEARL_CLASS).
                 dungeonID("TheCity").
                 dungeonID("TheBeyond").
