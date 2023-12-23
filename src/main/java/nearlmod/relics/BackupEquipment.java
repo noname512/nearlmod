@@ -18,8 +18,8 @@ public class BackupEquipment extends CustomRelic {
     public static final RelicStrings relicStrings = CardCrawlGame.languagePack.getRelicStrings(ID);
     public static final String NAME = relicStrings.NAME;
     public static final String[] DESCRIPTIONS = relicStrings.DESCRIPTIONS;
-    public static final Texture IMG = new Texture("images/relics/cureup.png");
-    public static final Texture IMG_OUTLINE = new Texture("images/relics/cureup_p.png");
+    public static final Texture IMG = new Texture("images/relics/backupequipment.png");
+    public static final Texture IMG_OUTLINE = new Texture("images/relics/backupequipment.png");
     public BackupEquipment() {
         super(ID, IMG, IMG_OUTLINE, RelicTier.COMMON, LandingSound.FLAT);
     }
