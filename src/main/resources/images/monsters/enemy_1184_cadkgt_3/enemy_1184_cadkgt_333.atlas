@@ -97,7 +97,7 @@ C_Candle_Flame
   index: -1
 C_L_Finger
   rotate: false
-  xy: 218, 107
+  xy: 218, 131
   size: 23, 22
   orig: 23, 22
   offset: 0, 0
@@ -202,7 +202,7 @@ C_R_Leg
   index: -1
 C_R_KneeArmor
   rotate: false
-  xy: 271, 28
+  xy: 245, 31
   size: 24, 25
   orig: 25, 25
   offset: 0, 0
@@ -230,7 +230,7 @@ C_BellBelt
   index: -1
 C_Bell
   rotate: false
-  xy: 130, 454
+  xy: 308, 358
   size: 9, 9
   orig: 9, 9
   offset: 0, 0
@@ -279,21 +279,21 @@ C_R_Arm
   index: -1
 C_R_Forearm
   rotate: false
-  xy: 271, 1
+  xy: 271, 28
   size: 24, 25
   orig: 24, 25
   offset: 0, 0
   index: -1
 C_L_Finger2
   rotate: false
-  xy: 318, 374
-  size: 1, 1
-  orig: 1, 1
+  xy: 218, 107
+  size: 23, 22
+  orig: 23, 22
   offset: 0, 0
   index: -1
 C_R_Hand
   rotate: false
-  xy: 245, 31
+  xy: 271, 1
   size: 24, 25
   orig: 24, 25
   offset: 0, 0
@@ -391,7 +391,7 @@ C_R_Eye_Closed
   index: -1
 C_R_Eye
   rotate: false
-  xy: 218, 131
+  xy: 243, 107
   size: 27, 17
   orig: 27, 17
   offset: 0, 0
@@ -473,19 +473,19 @@ C_R_Horn
   orig: 55, 78
   offset: 0, 0
   index: -1
-C_Mouth_B
-  rotate: false
-  xy: 54, 507
-  size: 4, 4
-  orig: 5, 4
-  offset: 1, 0
-  index: -1
 C_Mouth
   rotate: false
   xy: 308, 374
   size: 8, 2
   orig: 8, 2
   offset: 0, 0
+  index: -1
+C_Mouth_B
+  rotate: false
+  xy: 54, 507
+  size: 4, 4
+  orig: 5, 4
+  offset: 1, 0
   index: -1
 C_Mouth_A
   rotate: false
@@ -510,7 +510,7 @@ C_R_Eyebrow
   index: -1
 C_Hairpin
   rotate: false
-  xy: 308, 358
+  xy: 130, 454
   size: 9, 9
   orig: 9, 9
   offset: 0, 0
