@@ -28,7 +28,7 @@ public class JusticeDrive extends AbstractFriendCard {
 
     public JusticeDrive() {
         super(ID, NAME, IMG_PATH, COST, DESCRIPTION,
-                CardType.SKILL, AbstractCardEnum.FRIEND_BLUE,
+                CardType.ATTACK, AbstractCardEnum.FRIEND_BLUE,
                 CardRarity.SPECIAL, CardTarget.ALL_ENEMY, "nearlmod:JusticeKnight");
         secondMagicNumber = baseSecondMagicNumber = VULN_GAIN;
         magicNumber = DAMAGE;

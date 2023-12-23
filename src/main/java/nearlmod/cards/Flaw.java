@@ -17,7 +17,7 @@ public class Flaw extends AbstractNearlCard {
     public static final String NAME = cardStrings.NAME;
     public static final String DESCRIPTION = cardStrings.DESCRIPTION;
     public static final String UPGRADE_DESCRIPTION = cardStrings.UPGRADE_DESCRIPTION;
-    public static final String IMG_PATH = "images/cards/majestylight.png";
+    public static final String IMG_PATH = "images/cards/flaw.png";
     private static final int COST = 1;
     private static final int VUL_AMT = 2;
     private static final int UPGRADED_PLUS_VUL = 1;

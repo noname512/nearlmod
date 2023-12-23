@@ -71,7 +71,7 @@
         "UPGRADE_DESCRIPTION": ""
     },
     "nearlmod:ChargingWithShield": {
-        "NAME": "持盾冲锋",
+        "NAME": "持盾反击",
         "DESCRIPTION": "造成 !D! 点伤害。 NL nearlmod:守护 ：获得 !B! 点 格挡 。",
         "UPGRADE_DESCRIPTION": ""
     },

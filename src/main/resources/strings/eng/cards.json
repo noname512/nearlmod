@@ -71,7 +71,7 @@
         "UPGRADE_DESCRIPTION": ""
     },
     "nearlmod:ChargingWithShield": {
-        "NAME": "Charging With Shield",
+        "NAME": "Counterattack With Shield",
         "DESCRIPTION": "Deal !D! damage. NL nearlmod:Guardian : Gain !B! Block.",
         "UPGRADE_DESCRIPTION": ""
     },

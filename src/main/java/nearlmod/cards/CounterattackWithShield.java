@@ -12,20 +12,20 @@ import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import nearlmod.patches.AbstractCardEnum;
 import nearlmod.stances.DefStance;
 
-public class ChargingWithShield extends AbstractNearlCard {
-    public static final String ID = "nearlmod:ChargingWithShield";
+public class CounterattackWithShield extends AbstractNearlCard {
+    public static final String ID = "nearlmod:CounterattackWithShield";
     public static final CardStrings cardStrings = CardCrawlGame.languagePack.getCardStrings(ID);
     public static final String NAME = cardStrings.NAME;
     public static final String DESCRIPTION = cardStrings.DESCRIPTION;
     public static final String UPGRADE_DESCRIPTION = cardStrings.UPGRADE_DESCRIPTION;
-    public static final String IMG_PATH = "images/cards/nearlstrike.png";
+    public static final String IMG_PATH = "images/cards/counterattackwithshield.png";
     private static final int COST = 1;
     private static final int ATTACK_DMG = 6;
     private static final int BLOCK_AMT = 6;
     private static final int UPGRADE_PLUS_DMG = 2;
     private static final int UPGRADE_PLUS_BLOCK = 2;
 
-    public ChargingWithShield() {
+    public CounterattackWithShield() {
         super(ID, NAME, IMG_PATH, COST, DESCRIPTION,
                 CardType.ATTACK, AbstractCardEnum.NEARL_GOLD,
                 CardRarity.COMMON, CardTarget.ENEMY);
@@ -47,7 +47,7 @@ public class ChargingWithShield extends AbstractNearlCard {
 
     @Override
     public AbstractCard makeCopy() {
-        return new ChargingWithShield();
+        return new CounterattackWithShield();
     }
 
     @Override
