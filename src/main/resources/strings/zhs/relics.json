@@ -52,7 +52,7 @@
   "nearlmod:KnightFiction": {
     "NAME": "骑士小说",
     "FLAVOR": "“当那名骑士冲向无边的浪潮中时，你觉得他想的是战胜这片大地吗？”",
-    "DESCRIPTIONS": ["同一回合内，你每打出 #b3 张相同类型的牌，下一张相同类型的牌无视耗能。"]
+    "DESCRIPTIONS": ["同一回合内，你每打出 #b3 张相同类型的牌，下一张相同类型的牌耗能变为 #b0 。"]
   },
 
   "nearlmod:LateLight": {
