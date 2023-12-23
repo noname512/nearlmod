@@ -19,7 +19,7 @@ public class PegasusHalo extends CustomRelic {
     public static final Texture IMG = new Texture("images/relics/pegasushalo.png");
     public static final Texture IMG_OUTLINE = new Texture("images/relics/pegasushalo_p.png");
     public PegasusHalo() {
-        super(ID, IMG, IMG_OUTLINE, RelicTier.BOSS, LandingSound.FLAT);
+        super(ID, IMG, IMG_OUTLINE, RelicTier.BOSS, LandingSound.MAGICAL);
         this.counter = 0;
     }
 

@@ -26,7 +26,7 @@ public class CorruptedWitheredBattle extends AbstractArenaEvent {
     public CorruptedWitheredBattle() {
         super(NAME, DESCRIPTIONS[0], "images/events/corruptedwitheredbattle.png");
         this.imageEventText.setDialogOption(OPTIONS[0]);
-        this.imageEventText.setDialogOption(OPTIONS[1], CardLibrary.getCopy("Regret"));
+        this.imageEventText.setDialogOption(OPTIONS[1], CardLibrary.getCopy("Regret"), new LateLight());
         noCardsInRewards = true;
     }
 

@@ -22,7 +22,7 @@ public class CureUp extends CustomRelic {
     public static final Texture IMG_OUTLINE = new Texture("images/relics/cureup_p.png");
     public static final int MAX_AMOUNT = 5;
     public CureUp() {
-        super(ID, IMG, IMG_OUTLINE, RelicTier.STARTER, LandingSound.FLAT);
+        super(ID, IMG, IMG_OUTLINE, RelicTier.STARTER, LandingSound.MAGICAL);
     }
 
     @Override

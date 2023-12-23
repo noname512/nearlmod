@@ -20,7 +20,7 @@
     ],
     "OPTIONS": [
       "[Set off early] #gRush #ginto #gthe #gArena #gand #gengaged #gin #ga #gspecial #gcombat.",
-      "[Proceed as usual] #rBecome #rCursed #r- #rRegret. #rYou #rcannot #rsummon #rBlemishine #ras #rFriend #ranymore.",
+      "[Proceed as usual] #rBecome #rCursed #r- #rRegret, #rLate #rLight.",
       "[Leave]"
     ]
   },
@@ -32,7 +32,7 @@
     ],
     "OPTIONS": [
       "[Fight] #gEngaged #gin #ga #gspecial #gcombat.",
-      "[Give up] #rBeing #rCursed #r- #rInjury. #rAt #rthe #rstart #rof #reach #rcombat, #rgain #r2 #rLeft-hand #rMark.",
+      "[Give up] #rBeing #rCursed #r- #rInjury, #rRevenge.",
       "[Leave]"
     ]
   },
@@ -46,7 +46,7 @@
     "OPTIONS": [
       "[Reply] \"To be a knight is to be the noble light that illuminates the land.\"",
       "[Fight] #gEngaged #gin #ga #gspecial #gcombat.",
-      "[Give up] #rBeing #rCursed #r- #rNormality. #rYou #rcannot #rsummon #rViviana #ras #rFriend #ranymore.",
+      "[Give up] #rBeing #rCursed #r- #rNormality, #rThe #rMediocre #rOne.",
       "[Leave]"
     ]
   },
@@ -58,7 +58,7 @@
     ],
     "OPTIONS": [
       "[Fight] #gEngaged #gin #ga #gspecial #gcombat.",
-      "[Give up] #rBeing #rCursed #r- #rInjury. #rAfter #rthe #rfirst #rturn #rof #reach #rcombat, #rtake #r8 #rdamge.",
+      "[Give up] #rBeing #rCursed #r- #rInjury, #rImaginary #rFear.",
       "[Leave]"
     ]
   },
@@ -70,7 +70,7 @@
     ],
     "OPTIONS": [
       "[Fight] #gEngaged #gin #ga #gspecial #gcombat.",
-      "[Give up] #rAt #rthe #rstart #rof #reach #rcombat, #rsummon #r1 #rBlood #rBlade #ras #radditional #renemy.",
+      "[Give up] #rBeing #rCursed #r- #rBlood #rEntangle.",
       "[Leave]"
     ]
   },

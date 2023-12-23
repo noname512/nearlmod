@@ -21,7 +21,7 @@ public class KnightFamily extends CustomRelic {
     public static final Texture IMG_OUTLINE = new Texture("images/relics/knightfamily_p.png");
     private int status; // 1-未触发 2-触发中 3-已触发
     public KnightFamily() {
-        super(ID, IMG, IMG_OUTLINE, RelicTier.RARE, LandingSound.FLAT);
+        super(ID, IMG, IMG_OUTLINE, RelicTier.RARE, LandingSound.CLINK);
     }
 
     @Override
@@ -55,14 +55,6 @@ public class KnightFamily extends CustomRelic {
         p.heal(p.maxHealth);
         addToBot(new ApplyPowerAction(p, p, new StrengthPower(p, 3)));
         return 0;
-    }
-
-    @Override
-    public int compareTo(AbstractRelic arg0) {
-        if (arg0 instanceof KnightFamily)
-            return 0;
-        else
-            return 999;
     }
 
     @Override

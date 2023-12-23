@@ -58,7 +58,7 @@
   "nearlmod:LateLight": {
     "NAME": "Late Light",
     "FLAVOR": "Everything has passed the point of no return.",
-    "DESCRIPTIONS": ["You cannot summon Blemishine as #yFriend anymore."]
+    "DESCRIPTIONS": ["You can't summon Blemishine as #yFriend anymore."]
   },
   "nearlmod:Revenge": {
     "NAME": "Revenge",
@@ -68,7 +68,7 @@
   "nearlmod:NormalPerson": {
     "NAME": "The Mediocre One",
     "FLAVOR": "Viviana did not find the knight of her dreams.",
-    "DESCRIPTIONS": ["You cannot summon Viviana as #yFriend anymore."]
+    "DESCRIPTIONS": ["You can't summon Viviana as #yFriend anymore."]
   },
   "nearlmod:ImaginaryFear": {
     "NAME": "Imaginary Fear",

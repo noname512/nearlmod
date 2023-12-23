@@ -21,7 +21,7 @@ public class BackupEquipment extends CustomRelic {
     public static final Texture IMG = new Texture("images/relics/backupequipment.png");
     public static final Texture IMG_OUTLINE = new Texture("images/relics/backupequipment_p.png");
     public BackupEquipment() {
-        super(ID, IMG, IMG_OUTLINE, RelicTier.COMMON, LandingSound.FLAT);
+        super(ID, IMG, IMG_OUTLINE, RelicTier.COMMON, LandingSound.CLINK);
     }
 
     @Override

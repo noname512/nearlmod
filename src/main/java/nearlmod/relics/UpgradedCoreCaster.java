@@ -16,7 +16,7 @@ public class UpgradedCoreCaster extends CustomRelic {
     public static final Texture IMG_OUTLINE = new Texture("images/relics/upgradedcorecaster_p.png");
     public static final int EXTRA_VAL = 4;
     public UpgradedCoreCaster() {
-        super(ID, IMG, IMG_OUTLINE, RelicTier.UNCOMMON, LandingSound.FLAT);
+        super(ID, IMG, IMG_OUTLINE, RelicTier.UNCOMMON, LandingSound.CLINK);
     }
 
     @Override

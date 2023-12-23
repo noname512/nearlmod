@@ -19,7 +19,7 @@ public class ImaginaryFear extends CustomRelic {
     public static final Texture IMG_OUTLINE = new Texture("images/relics/imaginaryfear_p.png");
     public boolean isFirstTurn;
     public ImaginaryFear() {
-        super(ID, IMG, IMG_OUTLINE, CurseRelicPatch.CURSE, LandingSound.FLAT);
+        super(ID, IMG, IMG_OUTLINE, CurseRelicPatch.CURSE, LandingSound.HEAVY);
     }
 
     @Override

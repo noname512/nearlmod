@@ -16,7 +16,7 @@ public class Lighthouse extends CustomRelic {
     public static final Texture IMG_OUTLINE = new Texture("images/relics/lighthouse_p.png");
     public static boolean isFirstTime;
     public Lighthouse() {
-        super(ID, IMG, IMG_OUTLINE, RelicTier.BOSS, LandingSound.FLAT);
+        super(ID, IMG, IMG_OUTLINE, RelicTier.BOSS, LandingSound.SOLID);
     }
 
     @Override

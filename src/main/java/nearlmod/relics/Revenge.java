@@ -20,7 +20,7 @@ public class Revenge extends CustomRelic {
     public static final Texture IMG = new Texture("images/relics/cureup.png");
     public static final Texture IMG_OUTLINE = new Texture("images/relics/cureup_p.png");
     public Revenge() {
-        super(ID, IMG, IMG_OUTLINE, CurseRelicPatch.CURSE, LandingSound.FLAT);
+        super(ID, IMG, IMG_OUTLINE, CurseRelicPatch.CURSE, LandingSound.HEAVY);
     }
 
     @Override
