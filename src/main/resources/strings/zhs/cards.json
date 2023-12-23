@@ -126,8 +126,8 @@
         "DESCRIPTION": "获得 !B! 点 格挡 。 NL nearlmod:守护 ：额外获得一次 !M! 点 格挡 。",
         "UPGRADE_DESCRIPTION": ""
     },
-    "nearlmod:BoldAssault": {
-        "NAME": "奋力一搏",
+    "nearlmod:Sacrifice": {
+        "NAME": "牺牲",
         "DESCRIPTION": "造成 !D! 点伤害，将两张 *灼伤 加入你的手牌。如果闪灵在场，改为 *晕眩 。",
         "UPGRADE_DESCRIPTION": ""
     },
@@ -248,8 +248,8 @@
             " 张牌。）"
         ]
     },
-    "nearlmod:Sacrifice": {
-        "NAME": "牺牲",
+    "nearlmod:BoldAssault": {
+        "NAME": "奋力一搏",
         "DESCRIPTION": "造成 !D! 点伤害。给予目标 疼痛戳刺 和 !M! 点 力量 。",
         "UPGRADE_DESCRIPTION": ""
     },

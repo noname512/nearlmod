@@ -126,8 +126,8 @@
         "DESCRIPTION": "Gain !B! Block. NL nearlmod:Guardian : Gain !M! Block separately.",
         "UPGRADE_DESCRIPTION": ""
     },
-    "nearlmod:BoldAssault": {
-        "NAME": "Bold Assault",
+    "nearlmod:Sacrifice": {
+        "NAME": "Sacrifice",
         "DESCRIPTION": "Deal !D! damage. Add two *Burns into your hand. NL If Shining is present, add two *Dazed instead.",
         "UPGRADE_DESCRIPTION": ""
     },
@@ -248,8 +248,8 @@
             "cards this turn)"
         ]
     },
-    "nearlmod:Sacrifice": {
-        "NAME": "Sacrifice",
+    "nearlmod:BoldAssault": {
+        "NAME": "Bold Assault",
         "DESCRIPTION": "Deal !D! damage. Apply Painful Stabs and !M! Strength to enemy.",
         "UPGRADE_DESCRIPTION": ""
     },

@@ -199,7 +199,7 @@ public class NLMOD implements EditCardsSubscriber, EditCharactersSubscriber, Edi
         BaseMod.addCard(new OverflowingLight()); // 溢光
         BaseMod.addCard(new ReservedForce()); // 后备力量
         BaseMod.addCard(new ArmorProtection()); // 盔甲防护
-        BaseMod.addCard(new BoldAssault()); // 奋力一搏
+        BaseMod.addCard(new Sacrifice()); // 牺牲
 
         // Uncommon.
         BaseMod.addCard(new SecondSun()); // 第二轮太阳
@@ -227,7 +227,7 @@ public class NLMOD implements EditCardsSubscriber, EditCharactersSubscriber, Edi
         BaseMod.addCard(new Duel()); // 对决
         BaseMod.addCard(new KnightCompetition()); // 骑士竞技
         BaseMod.addCard(new RadianceConverging()); // 光耀积聚
-        BaseMod.addCard(new Sacrifice()); // 牺牲
+        BaseMod.addCard(new BoldAssault()); // 奋力一搏
         BaseMod.addCard(new LightCascade()); // 光瀑
         BaseMod.addCard(new StormCounterAttack()); // 风暴反击
         BaseMod.addCard(new SheathedBlade()); // 收敛锋芒
