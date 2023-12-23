@@ -12,8 +12,8 @@ public class UpgradedCoreCaster extends CustomRelic {
     public static final RelicStrings relicStrings = CardCrawlGame.languagePack.getRelicStrings(ID);
     public static final String NAME = relicStrings.NAME;
     public static final String[] DESCRIPTIONS = relicStrings.DESCRIPTIONS;
-    public static final Texture IMG = new Texture("images/relics/cureup.png");
-    public static final Texture IMG_OUTLINE = new Texture("images/relics/cureup_p.png");
+    public static final Texture IMG = new Texture("images/relics/upgradedcorecaster.png");
+    public static final Texture IMG_OUTLINE = new Texture("images/relics/upgradedcorecaster_p.png");
     public static final int EXTRA_VAL = 4;
     public UpgradedCoreCaster() {
         super(ID, IMG, IMG_OUTLINE, RelicTier.UNCOMMON, LandingSound.FLAT);

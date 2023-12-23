@@ -13,8 +13,8 @@ public class NormalPerson extends CustomRelic {
     public static final RelicStrings relicStrings = CardCrawlGame.languagePack.getRelicStrings(ID);
     public static final String NAME = relicStrings.NAME;
     public static final String[] DESCRIPTIONS = relicStrings.DESCRIPTIONS;
-    public static final Texture IMG = new Texture("images/relics/cureup.png");
-    public static final Texture IMG_OUTLINE = new Texture("images/relics/cureup_p.png");
+    public static final Texture IMG = new Texture("images/relics/normalperson.png");
+    public static final Texture IMG_OUTLINE = new Texture("images/relics/normalperson_p.png");
     public NormalPerson() {
         super(ID, IMG, IMG_OUTLINE, CurseRelicPatch.CURSE, LandingSound.FLAT);
     }

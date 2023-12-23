@@ -15,8 +15,8 @@ public class ImaginaryFear extends CustomRelic {
     public static final RelicStrings relicStrings = CardCrawlGame.languagePack.getRelicStrings(ID);
     public static final String NAME = relicStrings.NAME;
     public static final String[] DESCRIPTIONS = relicStrings.DESCRIPTIONS;
-    public static final Texture IMG = new Texture("images/relics/cureup.png");
-    public static final Texture IMG_OUTLINE = new Texture("images/relics/cureup_p.png");
+    public static final Texture IMG = new Texture("images/relics/imaginaryfear.png");
+    public static final Texture IMG_OUTLINE = new Texture("images/relics/imaginaryfear_p.png");
     public boolean isFirstTurn;
     public ImaginaryFear() {
         super(ID, IMG, IMG_OUTLINE, CurseRelicPatch.CURSE, LandingSound.FLAT);
