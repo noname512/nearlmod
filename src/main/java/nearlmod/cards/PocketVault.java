@@ -21,6 +21,7 @@ public class PocketVault extends AbstractNearlCard {
     public static final String UPGRADE_DESCRIPTION = cardStrings.UPGRADE_DESCRIPTION;
     public static final String IMG_PATH = "images/cards/pocketvault.png";
     private static final int COST = 2;
+    private static final int UPGRADE_COST = 1;
     private static final int ATTACK_DMG = 8;
     private static final int CARD_SELECT = 3;
     private static final int UPGRADE_PLUS_CARD = 1;
@@ -57,6 +58,7 @@ public class PocketVault extends AbstractNearlCard {
     public void upgrade() {
         if (!upgraded) {
             upgradeName();
+            upgradeBaseCost(UPGRADE_COST);
             upgradeMagicNumber(UPGRADE_PLUS_CARD);
         }
     }

@@ -499,8 +499,8 @@
 
     "nearlmod:DawnDuskSaber": {
         "NAME": "斩破晨昏",
-        "DESCRIPTION": "召唤闪灵作为 nearlmod:伙伴 。 NL 对所有敌人造成 !D! 点伤害。",
-        "UPGRADE_DESCRIPTION": "召唤闪灵作为 nearlmod:伙伴 。 NL 对所有敌人造成 !D! 点伤害并给予一层 虚弱 。"
+        "DESCRIPTION": "召唤闪灵作为 nearlmod:伙伴 。 NL 她对所有敌人造成 !M! 点伤害。",
+        "UPGRADE_DESCRIPTION": "召唤闪灵作为 nearlmod:伙伴 。 NL 她对所有敌人造成 !M! 点伤害并给予一层 虚弱 。"
     },
     "nearlmod:Creed": {
         "NAME": "信条",
