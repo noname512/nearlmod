@@ -10,13 +10,14 @@ import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.events.exordium.Mushrooms;
 import com.megacrit.cardcrawl.helpers.FontHelper;
 import com.megacrit.cardcrawl.helpers.ImageMaster;
+import com.megacrit.cardcrawl.helpers.MonsterHelper;
 import com.megacrit.cardcrawl.localization.UIStrings;
 import com.megacrit.cardcrawl.map.Legend;
 import com.megacrit.cardcrawl.map.LegendItem;
-import com.megacrit.cardcrawl.rewards.RewardItem;
 import com.megacrit.cardcrawl.rooms.AbstractRoom;
 import com.megacrit.cardcrawl.rooms.EventRoom;
 import com.megacrit.cardcrawl.screens.CombatRewardScreen;
+import com.megacrit.cardcrawl.screens.runHistory.RunPathElement;
 import com.megacrit.cardcrawl.ui.buttons.ProceedButton;
 import com.megacrit.cardcrawl.vfx.AbstractGameEffect;
 import javassist.CannotCompileException;
@@ -29,6 +30,7 @@ import nearlmod.events.LaughAllYouWantEvent;
 
 import java.util.ArrayList;
 
+import nearlmod.patches.NearlEnum;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
@@ -181,7 +183,6 @@ public class ArenaRoom extends AbstractRoom {
         public static SpireReturn<?> Insert(CombatRewardScreen __instance, SpriteBatch sb, float ___tipY) {
             if (AbstractDungeon.getCurrRoom() instanceof ArenaRoom) {
                 if (enterTimes <= 5) {
-                    logger.info("patched! text = " + TEXT[enterTimes + 2]);
                     FontHelper.renderFontCentered(sb, FontHelper.panelNameFont, TEXT[enterTimes + 2], Settings.WIDTH / 2.0F, ___tipY, Color.LIGHT_GRAY);
                     for (AbstractGameEffect e : __instance.effects)
                         e.render(sb);

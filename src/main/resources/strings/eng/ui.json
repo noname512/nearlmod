@@ -59,5 +59,25 @@
     "TEXT": [
       "15. Unfavorable Events and Arenas."
     ]
+  },
+  "nearlmod:RunPathPatch": {
+    "TEXT": [
+      "Arena",
+      "Lazurites & Platinum",
+      "The Surrounder",
+      "Corrupted & Withered Knight",
+      "Left-Hand Knight",
+      "the Candle Knight",
+      "Nightmare Knight",
+      "the Blood Knight",
+      "Armorless Squad",
+      "Lazurite Squad",
+      "Wandering Knights",
+      "Qualifying Round",
+      "Final 16",
+      "Final 8",
+      "Semi-Final",
+      "Final"
+    ]
   }
 }
