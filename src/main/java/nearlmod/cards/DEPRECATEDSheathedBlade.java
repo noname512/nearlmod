@@ -16,8 +16,8 @@ import nearlmod.patches.AbstractCardEnum;
 import nearlmod.powers.GainLightNextTurnPower;
 import nearlmod.powers.LightPower;
 
-public class SheathedBlade extends AbstractNearlCard {
-    public static final String ID = "nearlmod:SheathedBlade";
+public class DEPRECATEDSheathedBlade extends AbstractNearlCard {
+    public static final String ID = "nearlmod:DEPRECATEDSheathedBlade";
     public static final CardStrings cardStrings = CardCrawlGame.languagePack.getCardStrings(ID);
     public static final String NAME = cardStrings.NAME;
     public static final String DESCRIPTION = cardStrings.DESCRIPTION;
@@ -25,7 +25,7 @@ public class SheathedBlade extends AbstractNearlCard {
     public static final String IMG_PATH = "images/cards/majestylight.png";
     private static final int COST = 0;
 
-    public SheathedBlade() {
+    public DEPRECATEDSheathedBlade() {
         super(ID, NAME, IMG_PATH, COST, DESCRIPTION,
                 CardType.SKILL, AbstractCardEnum.NEARL_GOLD,
                 CardRarity.UNCOMMON, CardTarget.SELF);
@@ -52,7 +52,7 @@ public class SheathedBlade extends AbstractNearlCard {
 
     @Override
     public AbstractCard makeCopy() {
-        return new SheathedBlade();
+        return new DEPRECATEDSheathedBlade();
     }
 
     @Override

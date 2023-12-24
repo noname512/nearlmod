@@ -70,7 +70,7 @@
         "DESCRIPTION": "Gain !B! Block. NL Apply !M! Strength to all enemies.",
         "UPGRADE_DESCRIPTION": ""
     },
-    "nearlmod:ChargingWithShield": {
+    "nearlmod:CounterattackWithShield": {
         "NAME": "Counterattack With Shield",
         "DESCRIPTION": "Deal !D! damage. NL nearlmod:Guardian : Gain !B! Block.",
         "UPGRADE_DESCRIPTION": ""
@@ -263,7 +263,7 @@
         "DESCRIPTION": "End your turn. NL At the start of next turn, if you still have Block, deal damage equal to !M! times the number of your Block to all enemies.",
         "UPGRADE_DESCRIPTION": ""
     },
-    "nearlmod:SheathedBlade": {
+    "nearlmod:DEPRECATEDSheathedBlade": {
         "NAME": "Sheathed Blade",
         "DESCRIPTION": "Store half of your nearlmod:Light until next turn. NL Add a *Radiance into your hand.",
         "UPGRADE_DESCRIPTION": "Store half of your nearlmod:Light until next turn. NL Add a *Switch *Stance with Exhaust and Ethereal, along with a *Radiance into your hand."
@@ -292,6 +292,11 @@
         "NAME": "Infinite Light Blade",
         "DESCRIPTION": "At the start of each turn, add a *Radiance into your hand.",
         "UPGRADE_DESCRIPTION": "Innate. NL At the start of each turn, add a *Radiance into your hand."
+    },
+    "nearlmod:FieldInTheLight": {
+        "NAME": "Field in the Light",
+        "DESCRIPTION": "Choose 1 of 3 nearlmod:non-Unique nearlmod:Friend_Card belongs to Pinus Sylvestris member.",
+        "UPGRADE_DESCRIPTION": ""
     },
 
     "nearlmod:BraveTheDarkness": {
@@ -552,8 +557,8 @@
     },
     "nearlmod:PinusSylvestris": {
         "NAME": "\"Pinus Sylvestris\"",
-        "DESCRIPTION": "nearlmod:Friend_Card. NL Gain !nearlmod:M2! nearlmod:DP. NL Add a random nearlmod:Friend_Card belongs to Pinus Sylvestris member.",
-        "UPGRADE_DESCRIPTION": "nearlmod:Friend_Card. NL Gain !nearlmod:M2! nearlmod:DP. NL Add a random Upgraded nearlmod:Friend_Card belongs to Pinus Sylvestris member."
+        "DESCRIPTION": "nearlmod:Friend_Card. NL Gain !nearlmod:M2! nearlmod:DP. NL Add a random nearlmod:non-Unique nearlmod:Friend_Card belongs to Pinus Sylvestris member.",
+        "UPGRADE_DESCRIPTION": "nearlmod:Friend_Card. NL Gain !nearlmod:M2! nearlmod:DP. NL Add a random Upgraded nearlmod:non-Unique nearlmod:Friend_Card belongs to Pinus Sylvestris member."
     },
     "nearlmod:FlameHeart": {
         "NAME": "Flame Heart",

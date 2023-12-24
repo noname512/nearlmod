@@ -230,7 +230,7 @@ public class NLMOD implements EditCardsSubscriber, EditCharactersSubscriber, Edi
         BaseMod.addCard(new BoldAssault()); // 奋力一搏
         BaseMod.addCard(new LightCascade()); // 光瀑
         BaseMod.addCard(new StormCounterAttack()); // 风暴反击
-        BaseMod.addCard(new SheathedBlade()); // 收敛锋芒
+        BaseMod.addCard(new FieldInTheLight()); // 光中原野
         BaseMod.addCard(new MedalOfHonor()); // 荣誉之证
         BaseMod.addCard(new FanClub()); // 后援团
         BaseMod.addCard(new UpgradedKnightShield()); // 改良骑士盾牌

@@ -50,6 +50,8 @@
   "UNIQUE": {
     "PROPER_NAME": "Unique",
     "NAMES": [
+      "non-unique",
+      "non-Unique",
       "unique"
     ],
     "DESCRIPTION": "After using this card, #yFriend will not provide it in this battle."

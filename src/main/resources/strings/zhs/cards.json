@@ -70,7 +70,7 @@
         "DESCRIPTION": "获得 !B! 点 格挡 。 NL 所有敌人本回合获得 !M! 点 力量 。",
         "UPGRADE_DESCRIPTION": ""
     },
-    "nearlmod:ChargingWithShield": {
+    "nearlmod:CounterattackWithShield": {
         "NAME": "持盾反击",
         "DESCRIPTION": "造成 !D! 点伤害。 NL nearlmod:守护 ：获得 !B! 点 格挡 。",
         "UPGRADE_DESCRIPTION": ""
@@ -263,7 +263,7 @@
         "DESCRIPTION": "结束你的回合。 NL 下回合开始时，如果你还有 格挡 ，对所有敌人造成等同于你剩余 格挡 !M! 倍的伤害。",
         "UPGRADE_DESCRIPTION": ""
     },
-    "nearlmod:SheathedBlade": {
+    "nearlmod:DEPRECATEDSheathedBlade": {
         "NAME": "收敛锋芒",
         "DESCRIPTION": "将一半的 nearlmod:光 转化为下回合获得的 nearlmod:光 。 NL 将一张 *光耀 置入你的手牌。",
         "UPGRADE_DESCRIPTION": "将一半的 nearlmod:光 转化为下回合获得的 nearlmod:光 。 NL 将一张 *光耀 和一张带有 消耗 和 虚无 的 *切换形态+ 置入你的手牌。"
@@ -292,6 +292,11 @@
         "NAME": "无尽光刃",
         "DESCRIPTION": "在你的回合开始时，增加一张 *光耀 到你的手牌。",
         "UPGRADE_DESCRIPTION": "固有 。 NL 在你的回合开始时，增加一张 *光耀 到你的手牌。"
+    },
+    "nearlmod:FieldInTheLight": {
+        "NAME": "光中原野",
+        "DESCRIPTION": "从三张红松骑士团的非 nearlmod:唯一 nearlmod:伙伴牌 中选择一张加入你的手牌。",
+        "UPGRADE_DESCRIPTION": ""
     },
 
     "nearlmod:BraveTheDarkness": {
@@ -552,8 +557,8 @@
     },
     "nearlmod:PinusSylvestris": {
         "NAME": "“红松林”",
-        "DESCRIPTION": " nearlmod:伙伴牌 。 NL 获得 !nearlmod:M2! 点 nearlmod:部署费用 ，随机获得一张红松骑士团的 nearlmod:伙伴牌 。",
-        "UPGRADE_DESCRIPTION": " nearlmod:伙伴牌 。 NL 获得 !nearlmod:M2! 点 nearlmod:部署费用 ，随机获得一张红松骑士团的升级后的 nearlmod:伙伴牌 。"
+        "DESCRIPTION": " nearlmod:伙伴牌 。 NL 获得 !nearlmod:M2! 点 nearlmod:部署费用 ，随机获得一张红松骑士团的非 nearlmod:唯一 nearlmod:伙伴牌 。",
+        "UPGRADE_DESCRIPTION": " nearlmod:伙伴牌 。 NL 获得 !nearlmod:M2! 点 nearlmod:部署费用 ，随机获得一张红松骑士团的升级后的非 nearlmod:唯一 nearlmod:伙伴牌 。"
     },
     "nearlmod:FlameHeart": {
         "NAME": "焰心",
