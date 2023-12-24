@@ -499,8 +499,8 @@
 
     "nearlmod:DawnDuskSaber": {
         "NAME": "Dawn-Dusk Saber",
-        "DESCRIPTION": "Summon Shining as nearlmod:Friend. NL Deal !D! damage to all enemies.",
-        "UPGRADE_DESCRIPTION": "Summon Shining as nearlmod:Friend. NL Deal !D! damage and apply 1 Weak to all enemies."
+        "DESCRIPTION": "Summon Shining as nearlmod:Friend. NL She deals !M! damage to all enemies.",
+        "UPGRADE_DESCRIPTION": "Summon Shining as nearlmod:Friend. NL She deals !M! damage and apply 1 Weak to all enemies."
     },
     "nearlmod:Creed": {
         "NAME": "Creed",
