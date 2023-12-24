@@ -8,7 +8,6 @@ import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.localization.MonsterStrings;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
-import com.megacrit.cardcrawl.powers.FrailPower;
 import nearlmod.powers.DealCorrosionPower;
 
 public class Monique extends AbstractMonster {
@@ -53,12 +52,11 @@ public class Monique extends AbstractMonster {
         this.state.addAnimation(0, "Idle", true, 0);
         if (this.nextMove == 4) {
             addToBot(new DamageAction(AbstractDungeon.player, this.damage.get(1)));
-            addToBot(new ApplyPowerAction(AbstractDungeon.player, this, new FrailPower(AbstractDungeon.player, 1, true)));
             setMove((byte)1, Intent.ATTACK, this.damage.get(0).base);
         } else {
             addToBot(new DamageAction(AbstractDungeon.player, this.damage.get(0)));
             if (this.nextMove == 3)
-                setMove((byte)4, Intent.ATTACK_DEBUFF, this.damage.get(1).base);
+                setMove((byte)4, Intent.ATTACK, this.damage.get(1).base);
             else
                 setMove((byte)(this.nextMove + 1), Intent.ATTACK, this.damage.get(0).base);
         }

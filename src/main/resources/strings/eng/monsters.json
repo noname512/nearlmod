@@ -73,7 +73,7 @@
     "MOVES": ["Coalescing Fear"],
     "DIALOG": [
       "I truly hope that you will be my meaning.",
-      "(Ancient language) The young hunter sets out on his Equestrian ♪ From dreams he goes, towards the shores of gold ♪"
+      "The young hunter sets out on his Equestrian ♪ From dreams he goes, towards the shores of gold ♪"
     ]
   },
   "nearlmod:NightzmoraImitator": {
@@ -90,7 +90,7 @@
     "DIALOG": [
       "The Radiant Knight. I'm very glad you've made it here.",
       "(Minoan) Ashes to ashes, dust to dust. Exsanguination, to me.",
-      "Come. Let's settle this without any further delay. Thinking about anything else... is a right reserved only for the victor!"
+      "Come. Let's settle this without any further delay."
     ]
   },
   "nearlmod:BloodBlade": {

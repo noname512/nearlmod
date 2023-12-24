@@ -8,7 +8,6 @@ import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.localization.MonsterStrings;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
-import com.megacrit.cardcrawl.powers.FrailPower;
 import nearlmod.powers.DealCorrosionPower;
 
 public class Roy extends AbstractMonster {
@@ -22,10 +21,10 @@ public class Roy extends AbstractMonster {
     private final int corrosionAmount;
 
     public Roy(float x, float y) {
-        super(NAME, ID, 100, 0, 0, 150.0F, 320.0F, IMAGE, x, y);
+        super(NAME, ID, 180, 0, 0, 150.0F, 320.0F, IMAGE, x, y);
         this.type = EnemyType.ELITE;
         if (AbstractDungeon.ascensionLevel >= 8)
-            setHp(110);
+            setHp(190);
         if (AbstractDungeon.ascensionLevel >= 3)
             this.damage.add(new DamageInfo(this, 19));
         else
@@ -52,7 +51,6 @@ public class Roy extends AbstractMonster {
             this.state.setAnimation(0, "Attack", false);
             this.state.addAnimation(0, "Idle", true, 0);
             addToBot(new DamageAction(AbstractDungeon.player, this.damage.get(0)));
-            addToBot(new ApplyPowerAction(AbstractDungeon.player, this, new FrailPower(AbstractDungeon.player, 2, true)));
         } else if (!said && AbstractDungeon.aiRng.random(0, 3) == 0) {
             AbstractMonster ms = AbstractDungeon.getMonsters().getMonster("nearlmod:Monique");
             if (ms != null && !ms.isDeadOrEscaped()) {
@@ -68,7 +66,7 @@ public class Roy extends AbstractMonster {
             num = 3;
         }
         if (AbstractDungeon.aiRng.random(0, num) == 0)
-            setMove((byte)2, Intent.ATTACK_DEBUFF, this.damage.get(0).base);
+            setMove((byte)2, Intent.ATTACK, this.damage.get(0).base);
         else
             setMove(MOVES[0], (byte)1, Intent.UNKNOWN);
     }

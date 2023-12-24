@@ -290,9 +290,13 @@ public class Nearl extends CustomPlayer {
         if (!Settings.FAST_MODE) {
             if (!(c instanceof AbstractFriendCard) && c.type == AbstractCard.CardType.ATTACK) {
                 if (this.stance.ID.equals(AtkStance.STANCE_ID)) {
-                    this.state.setAnimation(0, "Skill_1_Begin", false);
-                    this.state.addAnimation(0, "Skill_1_Loop", false, 0.0F);
-                    this.state.addAnimation(0, "Skill_1_End", false, 0.0F);
+                    if (c instanceof BraveTheDarkness) {
+                        this.state.setAnimation(0, "BraveTheDarkness", false);
+                    } else {
+                        this.state.setAnimation(0, "Skill_1_Begin", false);
+                        this.state.addAnimation(0, "Skill_1_Loop", false, 0.0F);
+                        this.state.addAnimation(0, "Skill_1_End", false, 0.0F);
+                    }
                 } else {
                     this.state.setAnimation(0, "Attack", false);
                 }
