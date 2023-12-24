@@ -50,13 +50,13 @@ public class Cooperate extends AbstractNearlCard {
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
         addToBot(new DamageAction(m, new DamageInfo(p, damage), AbstractGameAction.AttackEffect.LIGHTNING));
-        if (extraTriggered())
+        if (extraTriggered()) {
             addToBot(new ApplyPowerAction(p, p, new LightPower(p, magicNumber)));
-        if (p.stance.ID.equals(AtkStance.STANCE_ID)) {
-            addToBot(new UseLightAction(p, m));
-        }
-        else {
-            addToBot(new UseLightAction(p, null));
+            if (p.stance.ID.equals(AtkStance.STANCE_ID)) {
+                addToBot(new UseLightAction(p, m));
+            } else {
+                addToBot(new UseLightAction(p, null));
+            }
         }
     }
 
