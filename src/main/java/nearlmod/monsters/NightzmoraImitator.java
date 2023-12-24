@@ -2,12 +2,16 @@ package nearlmod.monsters;
 
 import com.evacipated.cardcrawl.mod.stslib.patches.core.AbstractCreature.TempHPField;
 import com.megacrit.cardcrawl.actions.common.DamageAction;
+import com.megacrit.cardcrawl.actions.utility.WaitAction;
 import com.megacrit.cardcrawl.cards.DamageInfo;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.localization.MonsterStrings;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import nearlmod.actions.RemoveLastFriendAction;
+import nearlmod.characters.Nearl;
+import nearlmod.orbs.AbstractFriend;
+import nearlmod.vfx.CoalescingFearEffect;
 
 public class NightzmoraImitator extends AbstractMonster {
     public static final String ID = "nearlmod:NightzmoraImitator";
@@ -48,14 +52,20 @@ public class NightzmoraImitator extends AbstractMonster {
         else {
             this.state.setAnimation(0, "Skill", false);
             this.state.addAnimation(0, "Idle", true, 0);
+            CardCrawlGame.sound.play("LAST_KHESHIG_SKILL");
             int def_val = AbstractDungeon.player.currentBlock + TempHPField.tempHp.get(AbstractDungeon.player);
             if (this.damage.get(1).output > def_val) {
-                // TODO: 背刺动画，攻击在最后一个伙伴上
-                addToBot(new DamageAction(AbstractDungeon.player, new DamageInfo(AbstractDungeon.player, def_val)));
-                addToBot(new RemoveLastFriendAction());
-            }
-            else {
-                addToBot(new DamageAction(AbstractDungeon.player, this.damage.get(1)));
+                addToTop(new DamageAction(AbstractDungeon.player, new DamageInfo(AbstractDungeon.player, def_val)));
+                AbstractFriend friend = ((Nearl)AbstractDungeon.player).lastFriend();
+                if (friend != null) {
+                    AbstractDungeon.effectList.add(new CoalescingFearEffect(drawX, drawY, friend.cX, friend.cY - friend.hb.height, 1.5F));
+                    addToTop(new RemoveLastFriendAction());
+                    addToTop(new WaitAction(1.3F));
+                }
+            } else {
+                AbstractDungeon.effectList.add(new CoalescingFearEffect(drawX, drawY, AbstractDungeon.player.drawX, AbstractDungeon.player.drawY, 3.0F));
+                addToTop(new DamageAction(AbstractDungeon.player, this.damage.get(1)));
+                addToTop(new WaitAction(0.5F));
             }
         }
         byte nextIntent;
@@ -68,7 +78,7 @@ public class NightzmoraImitator extends AbstractMonster {
                 setMove(nextIntent, Intent.ATTACK, this.damage.get(0).base);
             }
             else {
-                if (!AbstractDungeon.player.hasOrb()) {
+                if (!((Nearl)AbstractDungeon.player).hasFriend()) {
                     continue;
                 }
                 setMove(MOVES[0], nextIntent, Intent.ATTACK_DEBUFF, this.damage.get(1).base);
@@ -79,7 +89,7 @@ public class NightzmoraImitator extends AbstractMonster {
 
     @Override
     protected void getMove(int i) {
-        if ((AbstractDungeon.aiRng.random(0, 1) == 0) && (AbstractDungeon.player.hasOrb())) {
+        if ((AbstractDungeon.aiRng.random(0, 1) == 0) && ((Nearl)AbstractDungeon.player).hasFriend()) {
             setMove((byte)2, Intent.ATTACK_DEBUFF, this.damage.get(1).base);
         }
         else {

@@ -5,6 +5,7 @@ import com.megacrit.cardcrawl.actions.animations.TalkAction;
 import com.megacrit.cardcrawl.actions.animations.VFXAction;
 import com.megacrit.cardcrawl.actions.common.*;
 import com.megacrit.cardcrawl.actions.utility.HideHealthBarAction;
+import com.megacrit.cardcrawl.actions.utility.WaitAction;
 import com.megacrit.cardcrawl.cards.DamageInfo;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
@@ -16,8 +17,11 @@ import nearlmod.actions.RemoveLastFriendAction;
 import nearlmod.actions.SummonFriendAction;
 import nearlmod.cards.AbstractNearlCard;
 import nearlmod.cards.special.BlemishinesFaintLight;
+import nearlmod.characters.Nearl;
+import nearlmod.orbs.AbstractFriend;
 import nearlmod.orbs.Blemishine;
 import nearlmod.powers.HintPower;
+import nearlmod.vfx.CoalescingFearEffect;
 
 public class LastKheshig extends AbstractMonster {
     public static final String ID = "nearlmod:LastKheshig";
@@ -89,11 +93,17 @@ public class LastKheshig extends AbstractMonster {
             CardCrawlGame.sound.play("LAST_KHESHIG_SKILL");
             int def_val = AbstractDungeon.player.currentBlock + TempHPField.tempHp.get(AbstractDungeon.player);
             if (this.damage.get(1).output > def_val) {
-                // TODO: 背刺动画，攻击在最后一个伙伴上
-                addToBot(new DamageAction(AbstractDungeon.player, new DamageInfo(AbstractDungeon.player, def_val)));
-                addToBot(new RemoveLastFriendAction());
+                addToTop(new DamageAction(AbstractDungeon.player, new DamageInfo(AbstractDungeon.player, def_val)));
+                AbstractFriend friend = ((Nearl)AbstractDungeon.player).lastFriend();
+                if (friend != null) {
+                    AbstractDungeon.effectList.add(new CoalescingFearEffect(drawX, drawY, friend.cX, friend.cY - friend.hb.height, 1.5F));
+                    addToTop(new RemoveLastFriendAction());
+                    addToTop(new WaitAction(1.3F));
+                }
             } else {
-                addToBot(new DamageAction(AbstractDungeon.player, this.damage.get(1)));
+                AbstractDungeon.effectList.add(new CoalescingFearEffect(drawX, drawY, AbstractDungeon.player.drawX, AbstractDungeon.player.drawY, 3.0F));
+                addToTop(new DamageAction(AbstractDungeon.player, this.damage.get(1)));
+                addToTop(new WaitAction(0.5F));
             }
         }
         byte nextIntent;
@@ -108,7 +118,7 @@ public class LastKheshig extends AbstractMonster {
                 if (fullImitator()) continue;
                 setMove(nextIntent, Intent.UNKNOWN);
             } else {
-                if (!AbstractDungeon.player.hasOrb()) {
+                if (!((Nearl)AbstractDungeon.player).hasFriend()) {
                     continue;
                 }
                 setMove(MOVES[0], nextIntent, Intent.ATTACK_DEBUFF, this.damage.get(1).base);

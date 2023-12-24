@@ -378,4 +378,18 @@ public class Nearl extends CustomPlayer {
                 orbCount++;
         return orbCount;
     }
+
+    public boolean hasFriend() {
+        for (AbstractOrb orb : orbs)
+            if (orb instanceof AbstractFriend)
+                return true;
+        return false;
+    }
+
+    public AbstractFriend lastFriend() {
+        for (int i = orbs.size() - 1; i >= 0; i--)
+            if (orbs.get(i) instanceof AbstractFriend)
+                return (AbstractFriend)orbs.get(i);
+        return null;
+    }
 }
