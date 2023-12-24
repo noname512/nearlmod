@@ -463,12 +463,12 @@
     "nearlmod:ToAtkStance": {
         "NAME": "Dreadnought",
         "DESCRIPTION": "Enter nearlmod:Dreadnought.",
-        "UPGRADE_DESCRIPTION": "Enter nearlmod:Dreadnought. NL Gain !nearlmod:M2! additional stats."
+        "UPGRADE_DESCRIPTION": "Enter nearlmod:Dreadnought. NL Gain !M! additional stats."
     },
     "nearlmod:ToDefStance": {
         "NAME": "Guardian",
         "DESCRIPTION": "Enter nearlmod:Guardian.",
-        "UPGRADE_DESCRIPTION": "Enter nearlmod:Guardian. NL Gain !nearlmod:M2! additional stats."
+        "UPGRADE_DESCRIPTION": "Enter nearlmod:Guardian. NL Gain !M! additional stats."
     },
 
     "nearlmod:DanceTogether": {
