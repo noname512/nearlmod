@@ -43,7 +43,7 @@ public class FriendshipDrink extends AbstractPotion {
 
     @Override
     public int getPotency(int i) {
-        return 1;
+        return 2;
     }
 
     @Override
