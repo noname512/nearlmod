@@ -531,7 +531,7 @@ F_Mouth_Happy
   index: -1
 F_R_Eyeclose
   rotate: false
-  xy: 497, 276
+  xy: 497, 268
   size: 14, 6
   orig: 14, 6
   offset: 0, 0
@@ -755,7 +755,7 @@ F_M_Bangs
   index: -1
 F_R_Eyebrow
   rotate: false
-  xy: 497, 268
+  xy: 497, 276
   size: 14, 6
   orig: 15, 7
   offset: 0, 1
