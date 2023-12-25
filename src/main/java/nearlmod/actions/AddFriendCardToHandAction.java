@@ -19,7 +19,7 @@ public class AddFriendCardToHandAction extends AbstractGameAction {
     public AddFriendCardToHandAction(AbstractFriendCard card, boolean needUpgrade) {
         actionType = ActionType.CARD_MANIPULATION;
         duration = Settings.ACTION_DUR_FAST;
-        if (needUpgrade) card.upgrade();
+        if (needUpgrade || AbstractDungeon.player.hasPower("MasterRealityPower")) card.upgrade();
         this.card = card;
     }
 

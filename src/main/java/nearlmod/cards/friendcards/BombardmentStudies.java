@@ -4,9 +4,10 @@ import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
+import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.localization.CardStrings;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
-import com.megacrit.cardcrawl.powers.NightmarePower;
+import com.megacrit.cardcrawl.vfx.combat.PowerBuffEffect;
 import nearlmod.patches.AbstractCardEnum;
 import nearlmod.powers.BombardmentStudiesPower;
 
@@ -34,11 +35,21 @@ public class BombardmentStudies extends AbstractFriendCard {
 
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
-        AbstractCard card = new FocusedBombardment();
-        if (upgraded)
-            card.upgrade();
-        addToBot(new ApplyPowerAction(p, p, new BombardmentStudiesPower(p, secondMagicNumber)));
-        addToBot(new ApplyPowerAction(p, p, new NightmarePower(p, 1, card)));
+        int bombCnt = 0;
+        int bombPlusCnt = 0;
+        if (upgraded) bombPlusCnt = 1;
+        else bombCnt = 1;
+        if (p.hasPower(BombardmentStudiesPower.POWER_ID)) {
+            BombardmentStudiesPower power = (BombardmentStudiesPower) p.getPower(BombardmentStudiesPower.POWER_ID);
+            AbstractDungeon.effectList.add(new PowerBuffEffect(p.hb.cX - p.animX, p.hb.cY + p.hb.height / 2.0F, BombardmentStudiesPower.NAME));
+            power.stackPower(secondMagicNumber);
+            power.bombCnt += bombCnt;
+            power.bombPlusCnt += bombPlusCnt;
+            power.updateDescription();
+            AbstractDungeon.onModifyPower();
+        } else {
+            addToBot(new ApplyPowerAction(p, p, new BombardmentStudiesPower(p, secondMagicNumber, bombCnt, bombPlusCnt)));
+        }
     }
 
     @Override

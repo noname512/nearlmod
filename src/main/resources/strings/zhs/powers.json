@@ -67,7 +67,15 @@
   },
   "nearlmod:BombardmentStudiesPower": {
     "NAME": "炮术研习",
-    "DESCRIPTIONS": ["你的 #y专注轰击 数值增加 #b", " 点。"]
+    "DESCRIPTIONS": [
+      "你的 #y专注轰击 数值增加 #b",
+      " 点。",
+      "在你的下回合开始时，将 #b",
+      " 张 #y专注轰击",
+      " 张 #y专注轰击+",
+      " 和 #b",
+      " 放入你的手牌。"
+    ]
   },
   "nearlmod:ClosedHope": {
     "NAME": "“封闭的希望”",

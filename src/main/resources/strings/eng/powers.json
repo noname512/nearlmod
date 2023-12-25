@@ -67,7 +67,15 @@
   },
   "nearlmod:BombardmentStudiesPower": {
     "NAME": "Bombardment Studies",
-    "DESCRIPTIONS": ["Stats of #yFocused #yBombardment increase #b", " ."]
+    "DESCRIPTIONS": [
+      "Stats of #yFocused #yBombardment increase #b",
+      " .",
+      " Add #b",
+      " #yFocused #yBombardment",
+      " #yFocused #yBombardment+",
+      " and #b",
+      " into your hand next turn."
+    ]
   },
   "nearlmod:ClosedHope": {
     "NAME": "\"Closed Hope\"",
