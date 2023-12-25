@@ -1,8 +1,8 @@
 package nearlmod.actions;
 
+import com.evacipated.cardcrawl.modthespire.lib.*;
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
 import com.megacrit.cardcrawl.actions.common.ExhaustSpecificCardAction;
-import com.megacrit.cardcrawl.actions.common.ReducePowerAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.cards.CardGroup;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
@@ -10,8 +10,11 @@ import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.core.Settings;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.localization.UIStrings;
-import com.megacrit.cardcrawl.vfx.ThoughtBubble;
+import com.megacrit.cardcrawl.screens.select.GridCardSelectScreen;
+import javassist.CtBehavior;
 import nearlmod.cards.friendcards.AbstractFriendCard;
+
+import java.util.ArrayList;
 
 public class BreakThroughFettersAction extends AbstractGameAction {
     public static final UIStrings uiStrings = CardCrawlGame.languagePack.getUIString("nearlmod:SelectScreenText");
@@ -38,8 +41,10 @@ public class BreakThroughFettersAction extends AbstractGameAction {
                 if (!(c instanceof AbstractFriendCard))
                     cards.group.add(c);
             for (AbstractCard c : p.hand.group)
-                if (!(c instanceof AbstractFriendCard))
+                if (!(c instanceof AbstractFriendCard)) {
                     cards.group.add(c);
+                    c.stopGlowing();
+                }
             if (cards.isEmpty()) {
                 isDone = true;
                 return;
@@ -50,23 +55,11 @@ public class BreakThroughFettersAction extends AbstractGameAction {
         }
 
         if (!AbstractDungeon.gridSelectScreen.selectedCards.isEmpty()) {
-            int cnt = 0;
             for (AbstractCard c : AbstractDungeon.gridSelectScreen.selectedCards) {
                 if (c.type == AbstractCard.CardType.CURSE || c.type == AbstractCard.CardType.STATUS)
                 {
-                    cnt ++;
-                }
-                else {
-                    cnt --;
-                }
-            }
-            if (cnt == 0) {
-                for (AbstractCard c : AbstractDungeon.gridSelectScreen.selectedCards) {
-                    if (c.type == AbstractCard.CardType.CURSE || c.type == AbstractCard.CardType.STATUS)
-                    {
-                        exhaustCard(c);
-                        // TODO: 现在可能会把抽上来的牌烧掉，想想咋办
-                    }
+                    exhaustCard(c);
+                    // TODO: 现在可能会把抽上来的牌烧掉，想想咋办
                 }
             }
             AbstractDungeon.gridSelectScreen.selectedCards.clear();
@@ -91,5 +84,55 @@ public class BreakThroughFettersAction extends AbstractGameAction {
                 addToTop(new ExhaustSpecificCardAction(c, p.hand));
                 return;
             }
+    }
+
+    @SpirePatch(clz = GridCardSelectScreen.class, method = "update")
+    public static class AddCardPatch {
+        @SpireInsertPatch(locator = Locator.class)
+        public static void Insert(GridCardSelectScreen __instance, String ___tipMsg) {
+            if (___tipMsg.equals(TEXT[1])) {
+                int cnt = 0;
+                for (AbstractCard c : __instance.selectedCards)
+                    if (c.type == AbstractCard.CardType.CURSE || c.type == AbstractCard.CardType.STATUS)
+                        cnt++;
+                    else
+                        cnt--;
+                __instance.confirmButton.isDisabled = cnt != 0;
+            }
+        }
+
+        public static class Locator extends SpireInsertLocator {
+            public int[] Locate(CtBehavior ctBehavior) throws Exception {
+                Matcher.FieldAccessMatcher fieldAccessMatcher = new Matcher.FieldAccessMatcher(GridCardSelectScreen.class, "numCards");
+                return LineFinder.findInOrder(ctBehavior, fieldAccessMatcher);
+            }
+        }
+    }
+
+    @SpirePatch(clz = GridCardSelectScreen.class, method = "update")
+    public static class RemoveCardPatch {
+        @SpireInsertPatch(locator = Locator.class)
+        public static void Insert(GridCardSelectScreen __instance, String ___tipMsg, AbstractCard ___hoveredCard) {
+            if (___tipMsg.equals(TEXT[1])) {
+                int cnt = 0;
+                for (AbstractCard c : __instance.selectedCards)
+                    if (c.type == AbstractCard.CardType.CURSE || c.type == AbstractCard.CardType.STATUS)
+                        cnt++;
+                    else
+                        cnt--;
+                if (___hoveredCard.type == AbstractCard.CardType.CURSE || ___hoveredCard.type == AbstractCard.CardType.STATUS)
+                    cnt--;
+                else
+                    cnt++;
+                __instance.confirmButton.isDisabled = cnt != 0;
+            }
+        }
+
+        public static class Locator extends SpireInsertLocator {
+            public int[] Locate(CtBehavior ctBehavior) throws Exception {
+                Matcher.MethodCallMatcher methodCallMatcher = new Matcher.MethodCallMatcher(ArrayList.class, "remove");
+                return LineFinder.findInOrder(ctBehavior, methodCallMatcher);
+            }
+        }
     }
 }
