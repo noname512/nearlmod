@@ -28,7 +28,7 @@ public class DawnDuskSaber extends AbstractNearlCard {
     public static final String IMG_PATH = "images/cards/dawndusksaber.png";
     private static final int COST = 2;
     private static final int UPGRADE_COST = 1;
-    private static final int ATTACK_DMG = 7;
+    private static final int ATTACK_DMG = 4;
 
     public DawnDuskSaber() {
         super(ID, NAME, IMG_PATH, COST, DESCRIPTION,
