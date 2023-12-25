@@ -20,6 +20,8 @@ public class MedalOfHonorPower extends AbstractPower implements CloneablePowerIn
     public static final PowerStrings powerStrings = CardCrawlGame.languagePack.getPowerStrings(POWER_ID);
     public static final String NAME = powerStrings.NAME;
     public static final String[] DESCRIPTIONS = powerStrings.DESCRIPTIONS;
+    public int totalAmount;
+    public int exhaustedAmount;
 
     public MedalOfHonorPower(AbstractCreature owner, int amount) {
         name = NAME;
@@ -55,9 +57,24 @@ public class MedalOfHonorPower extends AbstractPower implements CloneablePowerIn
     @Override
     public void onExhaust(AbstractCard card) {
         if (card.type == AbstractCard.CardType.STATUS) {
-            flash();
-            addToBot(new DrawCardAction(amount));
+            if (totalAmount == 0) {
+                flash();
+                addToBot(new DrawCardAction(amount));
+            } else {
+                exhaustedAmount++;
+                if (exhaustedAmount >= totalAmount) {
+                    flash();
+                    addToBot(new DrawCardAction(amount * exhaustedAmount));
+                    totalAmount = 0;
+                    exhaustedAmount = 0;
+                }
+            }
         }
+    }
+
+    public void notifyExhaustAmount(int amount) {
+        totalAmount = amount;
+        exhaustedAmount = 0;
     }
 
     @Override

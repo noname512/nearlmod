@@ -13,6 +13,7 @@ import com.megacrit.cardcrawl.localization.UIStrings;
 import com.megacrit.cardcrawl.screens.select.GridCardSelectScreen;
 import javassist.CtBehavior;
 import nearlmod.cards.friendcards.AbstractFriendCard;
+import nearlmod.powers.MedalOfHonorPower;
 
 import java.util.ArrayList;
 
@@ -55,13 +56,20 @@ public class BreakThroughFettersAction extends AbstractGameAction {
         }
 
         if (!AbstractDungeon.gridSelectScreen.selectedCards.isEmpty()) {
-            for (AbstractCard c : AbstractDungeon.gridSelectScreen.selectedCards) {
-                if (c.type == AbstractCard.CardType.CURSE || c.type == AbstractCard.CardType.STATUS)
-                {
-                    exhaustCard(c);
-                    // TODO: 现在可能会把抽上来的牌烧掉，想想咋办
-                }
+            if (AbstractDungeon.player.hasPower(MedalOfHonorPower.POWER_ID)) {
+                MedalOfHonorPower power = (MedalOfHonorPower) AbstractDungeon.player.getPower(MedalOfHonorPower.POWER_ID);
+                int cnt = 0;
+                for (AbstractCard c : AbstractDungeon.gridSelectScreen.selectedCards)
+                    if (c.type == AbstractCard.CardType.STATUS)
+                        cnt++;
+                power.notifyExhaustAmount(cnt);
             }
+            for (AbstractCard c : AbstractDungeon.gridSelectScreen.selectedCards)
+                if (c.type != AbstractCard.CardType.STATUS)
+                    exhaustCard(c);
+            for (AbstractCard c : AbstractDungeon.gridSelectScreen.selectedCards)
+                if (c.type == AbstractCard.CardType.STATUS)
+                    exhaustCard(c);
             AbstractDungeon.gridSelectScreen.selectedCards.clear();
             p.hand.refreshHandLayout();
         }
