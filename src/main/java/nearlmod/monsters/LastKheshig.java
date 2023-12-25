@@ -93,7 +93,10 @@ public class LastKheshig extends AbstractMonster {
             CardCrawlGame.sound.play("LAST_KHESHIG_SKILL");
             int def_val = AbstractDungeon.player.currentBlock + TempHPField.tempHp.get(AbstractDungeon.player);
             if (this.damage.get(1).output > def_val) {
-                addToTop(new DamageAction(AbstractDungeon.player, new DamageInfo(AbstractDungeon.player, def_val)));
+                if (def_val > 0) {
+                    addToTop(new DamageAction(AbstractDungeon.player, new DamageInfo(AbstractDungeon.player, def_val)));
+                    AbstractDungeon.effectList.add(new CoalescingFearEffect(drawX, drawY, AbstractDungeon.player.drawX, AbstractDungeon.player.drawY, 3.0F));
+                }
                 AbstractFriend friend = ((Nearl)AbstractDungeon.player).lastFriend();
                 if (friend != null) {
                     AbstractDungeon.effectList.add(new CoalescingFearEffect(drawX, drawY, friend.cX, friend.cY - friend.hb.height, 1.5F));
