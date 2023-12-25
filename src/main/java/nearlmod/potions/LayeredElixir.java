@@ -17,7 +17,7 @@ public class LayeredElixir extends AbstractPotion {
     public static final String NAME = potionStrings.NAME;
     public static final String[] DESCRIPTIONS = potionStrings.DESCRIPTIONS;
     public LayeredElixir() {
-        super(NAME, ID, PotionRarity.RARE, PotionSize.H, PotionColor.ELIXIR);
+        super(NAME, ID, PotionRarity.RARE, PotionSize.GHOST, PotionColor.ELIXIR);
         labOutlineColor = NLMOD.NearlGold;
         isThrown = false;
         targetRequired = false;

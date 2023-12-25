@@ -1,5 +1,6 @@
 target/
 /lib/
+/pv/
 /pom.xml
 /target/**
 !.mvn/wrapper/maven-wrapper.jar

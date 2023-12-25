@@ -21,7 +21,7 @@ public class ChangeStancePotion extends AbstractPotion {
     public static final String NAME = potionStrings.NAME;
     public static final String[] DESCRIPTIONS = potionStrings.DESCRIPTIONS;
     public ChangeStancePotion() {
-        super(NAME, ID, PotionRarity.COMMON, PotionSize.SPHERE, PotionColor.ANCIENT);
+        super(NAME, ID, PotionRarity.UNCOMMON, PotionSize.SPHERE, PotionColor.ANCIENT);
         labOutlineColor = NLMOD.NearlGold;
         isThrown = false;
         targetRequired = false;

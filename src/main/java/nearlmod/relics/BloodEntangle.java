@@ -18,8 +18,8 @@ public class BloodEntangle extends CustomRelic {
     public static final RelicStrings relicStrings = CardCrawlGame.languagePack.getRelicStrings(ID);
     public static final String NAME = relicStrings.NAME;
     public static final String[] DESCRIPTIONS = relicStrings.DESCRIPTIONS;
-    public static final Texture IMG = new Texture("images/relics/cureup.png");
-    public static final Texture IMG_OUTLINE = new Texture("images/relics/cureup_p.png");
+    public static final Texture IMG = new Texture("images/relics/bloodentangle.png");
+    public static final Texture IMG_OUTLINE = new Texture("images/relics/bloodentangle_p.png");
     public BloodEntangle() {
         super(ID, IMG, IMG_OUTLINE, CurseRelicPatch.CURSE, LandingSound.HEAVY);
     }

@@ -83,7 +83,7 @@ public class CorruptKnight extends AbstractMonster {
                     AbstractDungeon.effectList.add(new SpeechBubble(orb.hb.cX + 60.0F, orb.hb.cY + 30.0F, 3.0F, DIALOG[3], true));
                     break;
                 }
-            addToBot(new ApplyPowerAction(p, p, new FriendShelterPower(p)));
+            addToTop(new ApplyPowerAction(p, p, new FriendShelterPower(p)));
         }
         int attTimes = 1;
         if (isWhitheredDead) attTimes++;

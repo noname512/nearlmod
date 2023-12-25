@@ -18,7 +18,7 @@ public class FriendshipDrink extends AbstractPotion {
     public static final String NAME = potionStrings.NAME;
     public static final String[] DESCRIPTIONS = potionStrings.DESCRIPTIONS;
     public FriendshipDrink() {
-        super(NAME, ID, PotionRarity.COMMON, PotionSize.M, PotionColor.POWER);
+        super(NAME, ID, PotionRarity.UNCOMMON, PotionSize.M, PotionColor.POWER);
         labOutlineColor = NLMOD.NearlGold;
         isThrown = false;
         targetRequired = false;

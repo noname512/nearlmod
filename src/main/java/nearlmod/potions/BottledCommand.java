@@ -16,7 +16,7 @@ public class BottledCommand extends AbstractPotion {
     public static final String NAME = potionStrings.NAME;
     public static final String[] DESCRIPTIONS = potionStrings.DESCRIPTIONS;
     public BottledCommand() {
-        super(NAME, ID, PotionRarity.COMMON, PotionSize.SPHERE, PotionColor.BLUE);
+        super(NAME, ID, PotionRarity.COMMON, PotionSize.BOLT, PotionColor.BLUE);
         labOutlineColor = NLMOD.NearlGold;
         isThrown = false;
         targetRequired = false;

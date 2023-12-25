@@ -71,7 +71,7 @@ public class WitheredKnight extends AbstractMonster {
                     AbstractDungeon.effectList.add(new SpeechBubble(orb.hb.cX + 60.0F, orb.hb.cY + 30.0F, 3.0F, DIALOG[3], true));
                     break;
                 }
-            addToBot(new ApplyPowerAction(p, p, new FriendShelterPower(p)));
+            addToTop(new ApplyPowerAction(p, p, new FriendShelterPower(p)));
         }
         addToBot(new ApplyPowerAction(p, this, new FrailPower(p, 1, true)));
         int attTimes = 1;
