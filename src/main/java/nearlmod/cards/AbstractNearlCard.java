@@ -92,6 +92,16 @@ public abstract class AbstractNearlCard extends CustomCard {
         AbstractDungeon.getCurrRoom().addCardReward(item);
     }
 
+    @Override
+    public AbstractCard makeStatEquivalentCopy() {
+        AbstractCard card = super.makeStatEquivalentCopy();
+        card.exhaust = this.exhaust;
+        card.isEthereal = this.isEthereal;
+        card.rawDescription = this.rawDescription;
+        card.initializeDescription();
+        return card;
+    }
+
     public static class SecondMagicNumber extends DynamicVariable {
 
         @Override

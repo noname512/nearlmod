@@ -1,14 +1,12 @@
 package nearlmod.cards.friendcards;
 
+import com.megacrit.cardcrawl.actions.common.MakeTempCardInHandAction;
 import com.megacrit.cardcrawl.actions.watcher.ChooseOneAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
-import com.megacrit.cardcrawl.core.Settings;
-import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.localization.CardStrings;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
-import com.megacrit.cardcrawl.vfx.cardManip.ShowCardAndAddToHandEffect;
 import nearlmod.cards.AllinOne;
 import nearlmod.cards.special.ToAtkStance;
 import nearlmod.cards.special.ToDefStance;
@@ -46,7 +44,7 @@ public class CraftsmanEcho extends AbstractFriendCard {
         card.exhaust = true;
         card.rawDescription += EXTENDED_DESCRIPTION[0];
         card.initializeDescription();
-        AbstractDungeon.effectList.add(new ShowCardAndAddToHandEffect(card, Settings.WIDTH * 0.5F, Settings.HEIGHT * 0.5F));
+        addToBot(new MakeTempCardInHandAction(card, true));
     }
 
     @Override

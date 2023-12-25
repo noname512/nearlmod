@@ -11,7 +11,6 @@ import com.megacrit.cardcrawl.localization.CardStrings;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import com.megacrit.cardcrawl.powers.GainStrengthPower;
 import com.megacrit.cardcrawl.powers.StrengthPower;
-import com.megacrit.cardcrawl.vfx.cardManip.ShowCardAndAddToHandEffect;
 import nearlmod.actions.AllFromDeckToHandAction;
 import nearlmod.actions.UseLightAction;
 import nearlmod.cards.AbstractNearlCard;
@@ -119,7 +118,7 @@ public class LightCard extends AbstractNearlCard {
                     card.upgrade();
                     card.exhaust = true;
                     card.isEthereal = true;
-                    AbstractDungeon.effectList.add(new ShowCardAndAddToHandEffect(card));
+                    addToBot(new MakeTempCardInHandAction(card, false));
                     break;
                 case 6:
                     magicNumber = baseMagicNumber = 0;
