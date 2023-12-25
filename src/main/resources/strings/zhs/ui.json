@@ -19,7 +19,7 @@
   "nearlmod:SelectScreenText": {
     "TEXT": [
       "选择至多",
-      "张牌消耗",
+      "选择任意张诅咒或状态牌以及等量的其他牌",
       "张牌放入你的手牌",
       "选择一张牌放入你的手牌"
     ]
@@ -52,7 +52,8 @@
   },
   "nearlmod:Can'tUseMessage": {
     "TEXT": [
-      "薇薇安娜正在蓄力中。"
+      "薇薇安娜正在蓄力中。",
+      "我没有诅咒或者状态牌。"
     ]
   },
   "nearlmod:MyAscensionModeDescriptions": {

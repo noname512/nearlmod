@@ -19,7 +19,7 @@
   "nearlmod:SelectScreenText": {
     "TEXT": [
       "Choose up to ",
-      " cards and #yExhaust them.",
+      "Choose any Curse or Status card and same amount of others.",
       " cards and add them into hand.",
       "Choose 1 card and add it into hand."
     ]
@@ -52,7 +52,8 @@
   },
   "nearlmod:Can'tUseMessage": {
     "TEXT": [
-      "Viviana is Charging."
+      "Viviana is Charging.",
+      "I have no Curse or Status card."
     ]
   },
   "nearlmod:MyAscensionModeDescriptions": {

@@ -17,25 +17,24 @@ public class BreakThroughFetters extends AbstractNearlCard {
     public static final String UPGRADE_DESCRIPTION = cardStrings.UPGRADE_DESCRIPTION;
     public static final String IMG_PATH = "images/cards/breakthroughfetters.png";
     private static final int COST = 1;
-    private static final int LIGHT_COST = 4;
-    private static final int UPGRADE_PLUS_COST = -1;
+    private static final int UPGRADE_COST = 0;
 
     public BreakThroughFetters() {
         super(ID, NAME, IMG_PATH, COST, DESCRIPTION,
                 CardType.SKILL, AbstractCardEnum.NEARL_GOLD,
                 CardRarity.UNCOMMON, CardTarget.SELF);
-        magicNumber = baseMagicNumber = LIGHT_COST;
+        retain = true;
+        exhaust = true;
     }
 
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
-        addToBot(new BreakThroughFettersAction(getLightAmount() / magicNumber, magicNumber));
+        addToBot(new BreakThroughFettersAction());
     }
 
     @Override
     public boolean canUse(AbstractPlayer p, AbstractMonster m) {
         if (!super.canUse(p, m)) return false;
-        if (getLightAmount() < magicNumber) return false;
         for (AbstractCard c : p.drawPile.group)
             if (c.type == AbstractCard.CardType.CURSE || c.type == AbstractCard.CardType.STATUS)
                 return true;
@@ -45,12 +44,8 @@ public class BreakThroughFetters extends AbstractNearlCard {
         for (AbstractCard c : p.hand.group)
             if (c.type == AbstractCard.CardType.CURSE || c.type == AbstractCard.CardType.STATUS)
                 return true;
+        this.cantUseMessage = CardCrawlGame.languagePack.getUIString("nearlmod:Can'tUseMessage").TEXT[1];
         return false;
-    }
-
-    private int getLightAmount() {
-        if (!AbstractDungeon.player.hasPower("nearlmod:LightPower")) return 0;
-        else return AbstractDungeon.player.getPower("nearlmod:LightPower").amount;
     }
 
     @Override
@@ -62,7 +57,7 @@ public class BreakThroughFetters extends AbstractNearlCard {
     public void upgrade() {
         if (!upgraded) {
             upgradeName();
-            upgradeMagicNumber(UPGRADE_PLUS_COST);
+            upgradeBaseCost(UPGRADE_COST);
         }
     }
 }

@@ -205,7 +205,7 @@
     },
     "nearlmod:BreakThroughFetters": {
         "NAME": "冲破桎梏",
-        "DESCRIPTION": "选择任意张未被 消耗 的 状态牌 或 诅咒 牌，使用 !M! 倍的 nearlmod:光 消耗 它们。",
+        "DESCRIPTION": "选择任意张未被 消耗 的非 nearlmod:伙伴牌 ，如果 诅咒 、 状态牌 的数量之和与其他牌数量相等， 消耗 它们。 NL  保留 ， 消耗 。",
         "UPGRADE_DESCRIPTION": ""
     },
     "nearlmod:SalvationForSuffers": {
@@ -294,7 +294,7 @@
         "UPGRADE_DESCRIPTION": "固有 。 NL 在你的回合开始时，增加一张 *光耀 到你的手牌。"
     },
     "nearlmod:FieldInTheLight": {
-        "NAME": "光中原野",
+        "NAME": "沐光原野",
         "DESCRIPTION": "从三张红松骑士团的非 nearlmod:唯一 nearlmod:伙伴牌 中选择一张加入你的手牌。",
         "UPGRADE_DESCRIPTION": ""
     },

@@ -205,7 +205,7 @@
     },
     "nearlmod:BreakThroughFetters": {
         "NAME": "Break Through Fetters",
-        "DESCRIPTION": "Choose any number of Status or Curse cards which is not Exhausted, and Exhaust each by !M! nearlmod:Light.",
+        "DESCRIPTION": "Choose any number of Non- nearlmod:FriendCard cards which is not Exhausted. If the sum of Curse and Status cards' amount equals to others' amount, Exhaust them. Retain, Exhaust.",
         "UPGRADE_DESCRIPTION": ""
     },
     "nearlmod:SalvationForSuffers": {
