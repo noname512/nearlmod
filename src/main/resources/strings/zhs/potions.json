@@ -17,6 +17,10 @@
       "获得 #b20 层 #y光 。将 #b2 张 #y光耀 放入你的手牌。"
     ]
   },
+  "nearlmod:AttackUpPotion": {
+    "NAME": "攻击强化药水",
+    "DESCRIPTIONS": ["在本场战斗中，你的攻击伤害提升 #b", " % 。"]
+  },
   "nearlmod:FriendshipDrink": {
     "NAME": "友谊甘露",
     "DESCRIPTIONS": ["使你的 #y伙伴 获得 #b", " 点 #y信赖 。"]
@@ -31,6 +35,10 @@
   "nearlmod:BottledCommand": {
     "NAME": "瓶装号令",
     "DESCRIPTIONS": ["获得 #b", " 点 #y部署费用 。"]
+  },
+  "nearlmod:StrikeBackPotion": {
+    "NAME": "反击药水",
+    "DESCRIPTIONS": ["在下个回合开始时，对所有敌人造成等同你 #y格挡 的伤害 #b", " 次。"]
   },
   "nearlmod:LayeredElixir": {
     "NAME": "层叠灵药",

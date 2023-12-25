@@ -46,5 +46,13 @@
   "nearlmod:BottledGleam": {
     "NAME": "Bottled Gleam",
     "DESCRIPTIONS": ["Make an enemy lose #b99 #yStrength this turn."]
+  },
+  "nearlmod:AttackUpPotion": {
+    "NAME": "Attack Up Potion",
+    "DESCRIPTIONS": ["In this battle, your attack up #b", " %."]
+  },
+  "nearlmod:StrikeBackPotion": {
+    "NAME": "Strike Back Potion",
+    "DESCRIPTIONS": ["At the start of next turn, deal damage to all enemies with your remaining #yBlock #b", "times."]
   }
 }
