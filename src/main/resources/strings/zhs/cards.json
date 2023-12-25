@@ -473,8 +473,8 @@
 
     "nearlmod:DanceTogether": {
         "NAME": "共舞一曲",
-        "DESCRIPTION": "召唤夜莺作为 nearlmod:伙伴 。 NL 获得来自夜莺的一张  nearlmod:非唯一 nearlmod:伙伴牌 。",
-        "UPGRADE_DESCRIPTION": "召唤夜莺作为 nearlmod:伙伴 。 NL 获得来自夜莺的一张  nearlmod:非唯一  nearlmod:伙伴牌 ，使其失去 虚无 ，获得 保留 。"
+        "DESCRIPTION": "召唤夜莺作为 nearlmod:伙伴 。 NL 获得来自夜莺的一张 NL nearlmod:非唯一 nearlmod:伙伴牌 。",
+        "UPGRADE_DESCRIPTION": "召唤夜莺作为 nearlmod:伙伴 。 NL 获得来自夜莺的一张 NL nearlmod:非唯一  nearlmod:伙伴牌 ，使其失去 虚无 ，获得 保留 。"
     },
     "nearlmod:ArtsShield": {
         "NAME": "法术护盾",
