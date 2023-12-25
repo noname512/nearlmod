@@ -113,7 +113,7 @@
     },
     "nearlmod:DEPRECATEDReservedForce": {
         "NAME": "Reserved Force",
-        "DESCRIPTION": "Deal !D! damage. NL If Whislash is present, add a random non- nearlmod:Unique nearlmod:Friend_Card into your hand. ( nearlmod:Dreadnought : Attack card , nearlmod:Guardian : Skill card )",
+        "DESCRIPTION": "Deal !D! damage. NL If Whislash is present, add a random nearlmod:Non-Unique nearlmod:Friend_Card into your hand. ( nearlmod:Dreadnought : Attack card , nearlmod:Guardian : Skill card )",
         "UPGRADE_DESCRIPTION": ""
     },
     "nearlmod:ReservedForce": {
@@ -157,8 +157,8 @@
     },
     "nearlmod:SightImpairingShowdown": {
         "NAME": "Sight-impairing Showdown",
-        "DESCRIPTION": "Add a random non- nearlmod:Unique nearlmod:Friend_Card of Viviana into your hand. NL If Viviana is present, apply !M! nearlmod:Trust to her.",
-        "UPGRADE_DESCRIPTION": "Choose a non- nearlmod:Unique nearlmod:Friend_Card of Viviana to add into your hand. NL If Viviana is present, apply !M! nearlmod:Trust to her."
+        "DESCRIPTION": "Add a random nearlmod:Non-Unique nearlmod:Friend_Card of Viviana into your hand. NL If Viviana is present, apply !M! nearlmod:Trust to her.",
+        "UPGRADE_DESCRIPTION": "Choose a nearlmod:Non-Unique nearlmod:Friend_Card of Viviana to add into your hand. NL If Viviana is present, apply !M! nearlmod:Trust to her."
     },
     "nearlmod:GloriousKazimierz": {
         "NAME": "Glorious Kazimierz",
@@ -205,7 +205,7 @@
     },
     "nearlmod:BreakThroughFetters": {
         "NAME": "Break Through Fetters",
-        "DESCRIPTION": "Choose any number of Non- nearlmod:FriendCard cards which is not Exhausted. If the sum of Curse and Status cards' amount equals to others' amount, Exhaust them. Retain, Exhaust.",
+        "DESCRIPTION": "Choose any number of nearlmod:Non-FriendCard cards which is not Exhausted. If the total number of Curse and Status equals to number of others, Exhaust them. NL Retain, Exhaust.",
         "UPGRADE_DESCRIPTION": ""
     },
     "nearlmod:SalvationForSuffers": {
@@ -295,7 +295,7 @@
     },
     "nearlmod:FieldInTheLight": {
         "NAME": "Field in the Light",
-        "DESCRIPTION": "Choose 1 of 3 nearlmod:non-Unique nearlmod:Friend_Card belongs to Pinus Sylvestris member.",
+        "DESCRIPTION": "Choose 1 of 3 nearlmod:Friend_Card belongs to Pinus Sylvestris member.",
         "UPGRADE_DESCRIPTION": ""
     },
 
@@ -473,8 +473,8 @@
 
     "nearlmod:DanceTogether": {
         "NAME": "Dance Together",
-        "DESCRIPTION": "Summon Nightingale as nearlmod:Friend. NL Add a random non- nearlmod:Unique nearlmod:Friend_Card.",
-        "UPGRADE_DESCRIPTION": "Summon Nightingale as nearlmod:Friend. NL Add a random non- nearlmod:Unique nearlmod:Friend_Card. Remove its Ethereal and Retain it."
+        "DESCRIPTION": "Summon Nightingale as nearlmod:Friend. NL Add a random nearlmod:Non-Unique nearlmod:Friend_Card.",
+        "UPGRADE_DESCRIPTION": "Summon Nightingale as nearlmod:Friend. NL Add a random nearlmod:Non-Unique nearlmod:Friend_Card. Remove its Ethereal and Retain it."
     },
     "nearlmod:ArtsShield": {
         "NAME": "Arts Shield",
@@ -557,8 +557,8 @@
     },
     "nearlmod:PinusSylvestris": {
         "NAME": "\"Pinus Sylvestris\"",
-        "DESCRIPTION": "nearlmod:Friend_Card. NL Gain !nearlmod:M2! nearlmod:DP. NL Add a random nearlmod:non-Unique nearlmod:Friend_Card belongs to Pinus Sylvestris member.",
-        "UPGRADE_DESCRIPTION": "nearlmod:Friend_Card. NL Gain !nearlmod:M2! nearlmod:DP. NL Add a random Upgraded nearlmod:non-Unique nearlmod:Friend_Card belongs to Pinus Sylvestris member."
+        "DESCRIPTION": "nearlmod:Friend_Card. NL Gain !nearlmod:M2! nearlmod:DP. NL Add a random nearlmod:Friend_Card belongs to Pinus Sylvestris member.",
+        "UPGRADE_DESCRIPTION": "nearlmod:Friend_Card. NL Gain !nearlmod:M2! nearlmod:DP. NL Add a random Upgraded nearlmod:Friend_Card belongs to Pinus Sylvestris member."
     },
     "nearlmod:FlameHeart": {
         "NAME": "Flame Heart",

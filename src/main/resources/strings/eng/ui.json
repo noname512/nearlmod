@@ -19,7 +19,7 @@
   "nearlmod:SelectScreenText": {
     "TEXT": [
       "Choose up to ",
-      "Choose any Curse or Status card and same amount of others.",
+      "Choose any numbers of Curse or Status card with equal number of other cards.",
       " cards and add them into hand.",
       "Choose 1 card and add it into hand."
     ]

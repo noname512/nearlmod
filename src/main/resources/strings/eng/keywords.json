@@ -28,7 +28,11 @@
       "FriendCard",
       "friendcard",
       "friend_card",
-      "Friend_Card"
+      "Friend_Card",
+      "Non-Friend_Card",
+      "non-friend_card",
+      "Non-FriendCard",
+      "non-friendcard"
     ],
     "DESCRIPTION": "Cards that belong to #yFriends. The numerical values of #yFriend #yCard do not determined by your power but #yFriend's #yTrust instead. #yFriend #yCard do not count towards the hand limit. They are #yEthereal and #yExhausted whenever leave your hand."
   },

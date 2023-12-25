@@ -113,7 +113,7 @@
     },
     "nearlmod:DEPRECATEDReservedForce": {
         "NAME": "后备力量",
-        "DESCRIPTION": "造成 !D! 点伤害。 NL 如果鞭刃在场，根据你的 nearlmod:形态 将一张随机的非 nearlmod:唯一 nearlmod:伙伴牌 放入你的手牌。（ nearlmod:无畏 ：攻击牌， nearlmod:守护 ：技能牌）",
+        "DESCRIPTION": "造成 !D! 点伤害。 NL 如果鞭刃在场，根据你的 nearlmod:形态 将一张随机的 nearlmod:非唯一 nearlmod:伙伴牌 放入你的手牌。（ nearlmod:无畏 ：攻击牌， nearlmod:守护 ：技能牌）",
         "UPGRADE_DESCRIPTION": ""
     },
     "nearlmod:ReservedForce": {
@@ -157,8 +157,8 @@
     },
     "nearlmod:SightImpairingShowdown": {
         "NAME": "有损视力的对决",
-        "DESCRIPTION": "随机将一张非 nearlmod:唯一 的薇薇安娜的 nearlmod:伙伴牌 放入你的手牌。如果薇薇安娜在场，她获得 !M! 点 nearlmod:信赖 。",
-        "UPGRADE_DESCRIPTION": "选择一张非 nearlmod:唯一 的薇薇安娜的 nearlmod:伙伴牌 放入你的手牌。如果薇薇安娜在场，她获得 !M! 点 nearlmod:信赖 。"
+        "DESCRIPTION": "随机将一张 nearlmod:非唯一 的薇薇安娜的 nearlmod:伙伴牌 放入你的手牌。如果薇薇安娜在场，她获得 !M! 点 nearlmod:信赖 。",
+        "UPGRADE_DESCRIPTION": "选择一张 nearlmod:非唯一 的薇薇安娜的 nearlmod:伙伴牌 放入你的手牌。如果薇薇安娜在场，她获得 !M! 点 nearlmod:信赖 。"
     },
     "nearlmod:GloriousKazimierz": {
         "NAME": "光耀卡西米尔",
@@ -205,7 +205,7 @@
     },
     "nearlmod:BreakThroughFetters": {
         "NAME": "冲破桎梏",
-        "DESCRIPTION": "选择任意张未被 消耗 的非 nearlmod:伙伴牌 ，如果 诅咒 、 状态牌 的数量之和与其他牌数量相等， 消耗 它们。 NL  保留 ， 消耗 。",
+        "DESCRIPTION": "选择任意张未被 消耗 的 nearlmod:非伙伴牌 ，如果 诅咒 、 状态牌 的数量之和与其他牌数量相等， 消耗 它们。 NL  保留 ， 消耗 。",
         "UPGRADE_DESCRIPTION": ""
     },
     "nearlmod:SalvationForSuffers": {
@@ -295,7 +295,7 @@
     },
     "nearlmod:FieldInTheLight": {
         "NAME": "沐光原野",
-        "DESCRIPTION": "从三张红松骑士团的非 nearlmod:唯一 nearlmod:伙伴牌 中选择一张加入你的手牌。",
+        "DESCRIPTION": "从三张红松骑士团的 nearlmod:伙伴牌 中选择一张加入你的手牌。",
         "UPGRADE_DESCRIPTION": ""
     },
 
@@ -473,8 +473,8 @@
 
     "nearlmod:DanceTogether": {
         "NAME": "共舞一曲",
-        "DESCRIPTION": "召唤夜莺作为 nearlmod:伙伴 。 NL 获得来自夜莺的一张 非 nearlmod:唯一 nearlmod:伙伴牌 。",
-        "UPGRADE_DESCRIPTION": "召唤夜莺作为 nearlmod:伙伴 。 NL 获得来自夜莺的一张 非 nearlmod:唯一  nearlmod:伙伴牌 ，使其失去 虚无 ，获得 保留 。"
+        "DESCRIPTION": "召唤夜莺作为 nearlmod:伙伴 。 NL 获得来自夜莺的一张  nearlmod:非唯一 nearlmod:伙伴牌 。",
+        "UPGRADE_DESCRIPTION": "召唤夜莺作为 nearlmod:伙伴 。 NL 获得来自夜莺的一张  nearlmod:非唯一  nearlmod:伙伴牌 ，使其失去 虚无 ，获得 保留 。"
     },
     "nearlmod:ArtsShield": {
         "NAME": "法术护盾",
@@ -557,8 +557,8 @@
     },
     "nearlmod:PinusSylvestris": {
         "NAME": "“红松林”",
-        "DESCRIPTION": " nearlmod:伙伴牌 。 NL 获得 !nearlmod:M2! 点 nearlmod:部署费用 ，随机获得一张红松骑士团的非 nearlmod:唯一 nearlmod:伙伴牌 。",
-        "UPGRADE_DESCRIPTION": " nearlmod:伙伴牌 。 NL 获得 !nearlmod:M2! 点 nearlmod:部署费用 ，随机获得一张红松骑士团的升级后的非 nearlmod:唯一 nearlmod:伙伴牌 。"
+        "DESCRIPTION": " nearlmod:伙伴牌 。 NL 获得 !nearlmod:M2! 点 nearlmod:部署费用 ，随机获得一张红松骑士团的 nearlmod:伙伴牌 。",
+        "UPGRADE_DESCRIPTION": " nearlmod:伙伴牌 。 NL 获得 !nearlmod:M2! 点 nearlmod:部署费用 ，随机获得一张红松骑士团的升级后的 nearlmod:伙伴牌 。"
     },
     "nearlmod:FlameHeart": {
         "NAME": "焰心",
