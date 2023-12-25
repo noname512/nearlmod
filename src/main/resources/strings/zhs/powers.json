@@ -168,5 +168,13 @@
       " 张 #y光耀 到你的手牌。",
       " 张 #y光耀 到你的手牌。"
     ]
+  },
+  "nearlmod:InvulnerabilityPower": {
+    "NAME": "无敌",
+    "DESCRIPTIONS": [
+      " #b",
+      " 回合内不会受到伤害。",
+      " 回合内不会受到伤害。"
+    ]
   }
 }

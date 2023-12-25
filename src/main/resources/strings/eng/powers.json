@@ -168,5 +168,13 @@
       " #yRadiance into your hand.",
       " #yRadiances into your hand."
     ]
+  },
+  "nearlmod:InvulnerabilityPower": {
+    "NAME": "Invulnerability",
+    "DESCRIPTIONS": [
+      "Prevent damage take in #b",
+      " turn.",
+      " turns."
+    ]
   }
 }

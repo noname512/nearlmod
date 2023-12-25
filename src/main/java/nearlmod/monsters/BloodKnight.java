@@ -18,10 +18,7 @@ import com.megacrit.cardcrawl.powers.*;
 import com.megacrit.cardcrawl.relics.AbstractRelic;
 import com.megacrit.cardcrawl.vfx.combat.HealEffect;
 import com.megacrit.cardcrawl.vfx.combat.InflameEffect;
-import nearlmod.powers.AttackUpPower;
-import nearlmod.powers.DuelPower;
-import nearlmod.powers.ExsanguinationPower;
-import nearlmod.powers.RebornPower;
+import nearlmod.powers.*;
 
 public class BloodKnight extends AbstractMonster {
     public static final String ID = "nearlmod:BloodKnight";
@@ -177,20 +174,13 @@ public class BloodKnight extends AbstractMonster {
             addToBot(new RemoveSpecificPowerAction(this, this, "nearlmod:Reborn"));
             addToBot(new ApplyPowerAction(this, this, new DuelPower(this, 25)));
             addToBot(new ApplyPowerAction(this, this, new AttackUpPower(this, 50)));
-            // TODO:是否有无敌特效？
-            addToBot(new ApplyPowerAction(this, this, new InvinciblePower(this, 0)));
-        }
-        else {
+            addToBot(new ApplyPowerAction(this, this, new InvulnerabilityPower(this, 3)));
+        } else {
             spawnBlade(bladesPerSpawn + 1);
             setMove((byte)(this.nextMove + 1), Intent.UNKNOWN);
             return;
         }
         currentTurn ++;
-        if ((currentTurn == 3) && (hasPower("Invincible"))) {
-            // TODO:解除无敌特效（如果有的话）
-            // 要不另外写个无敌power，告诉玩家我还有几个回合的无敌之类的
-            addToBot(new RemoveSpecificPowerAction(this, this, "Invincible"));
-        }
         if ((currentTurn == 2) && (!p.hasPower("nearlmod:Exsanguination"))) {
             setMove(MOVES[0], (byte)99, Intent.STRONG_DEBUFF);
         }
