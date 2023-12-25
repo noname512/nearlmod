@@ -46,6 +46,7 @@ public class LazuriteSquadBattle extends AbstractArenaEvent {
                 AbstractDungeon.getCurrRoom().rewards.clear();
                 AbstractDungeon.getCurrRoom().addGoldToRewards(AbstractDungeon.miscRng.random(30, 40));
                 AbstractDungeon.getCurrRoom().addRelicToRewards(AbstractDungeon.returnRandomRelicTier());
+                AbstractDungeon.getCurrRoom().eliteTrigger = true;
                 enterCombatFromImage();
                 return;
             case 1:

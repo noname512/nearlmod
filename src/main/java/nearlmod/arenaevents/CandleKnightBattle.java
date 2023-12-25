@@ -59,6 +59,7 @@ public class CandleKnightBattle extends AbstractArenaEvent {
                         AbstractDungeon.lastCombatMetricKey = ID;
                         AbstractDungeon.getCurrRoom().phase = AbstractRoom.RoomPhase.COMBAT;
                         AbstractDungeon.getCurrRoom().monsters = new MonsterGroup(new CandleKnight());
+                        AbstractDungeon.getCurrRoom().eliteTrigger = true;
                         enterCombatFromImage();
                         return;
                     case 1:

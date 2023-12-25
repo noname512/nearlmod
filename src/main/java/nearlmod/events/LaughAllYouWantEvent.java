@@ -38,8 +38,9 @@ public class LaughAllYouWantEvent extends AbstractImageEvent {
                     AbstractDungeon.getCurrRoom().rewards.clear();
                     AbstractDungeon.getCurrRoom().addGoldToRewards(AbstractDungeon.miscRng.random(30, 40));
                     AbstractDungeon.getCurrRoom().addRelicToRewards(AbstractDungeon.returnRandomRelicTier());
-                    enterCombatFromImage();
                     AbstractDungeon.lastCombatMetricKey = "Laugh All You Want Battle";
+                    AbstractDungeon.getCurrRoom().eliteTrigger = true;
+                    enterCombatFromImage();
                     break;
                 case 1:
                     imageEventText.updateBodyText(DESCRIPTIONS[2]);

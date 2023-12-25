@@ -54,6 +54,7 @@ public class ArmorlessSquadBattle extends AbstractArenaEvent {
                 AbstractDungeon.getCurrRoom().rewards.clear();
                 AbstractDungeon.getCurrRoom().addGoldToRewards(AbstractDungeon.miscRng.random(30, 40));
                 AbstractDungeon.getCurrRoom().addRelicToRewards(AbstractDungeon.returnRandomRelicTier());
+                AbstractDungeon.getCurrRoom().eliteTrigger = true;
                 return;
             case 1:
                 logMetric(ID, "Leave");

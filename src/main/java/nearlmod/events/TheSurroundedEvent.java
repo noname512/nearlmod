@@ -44,6 +44,7 @@ public class TheSurroundedEvent extends AbstractImageEvent {
                         AbstractDungeon.getCurrRoom().rewards.clear();
                         AbstractNearlCard.addSpecificCardsToReward(new PersonalCharmSp());
                         AbstractDungeon.getCurrRoom().addGoldToRewards(30);
+                        AbstractDungeon.getCurrRoom().eliteTrigger = true;
                         enterCombatFromImage();
                         AbstractDungeon.actionManager.addToBottom(new SummonFriendAction(new Flametail()));
                         AbstractDungeon.actionManager.addToBottom(new SummonFriendAction(new Wildmane()));
