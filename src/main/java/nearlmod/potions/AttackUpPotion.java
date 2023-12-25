@@ -2,7 +2,6 @@ package nearlmod.potions;
 
 import basemod.BaseMod;
 import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
-import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.core.AbstractCreature;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
@@ -11,13 +10,7 @@ import com.megacrit.cardcrawl.helpers.PowerTip;
 import com.megacrit.cardcrawl.helpers.TipHelper;
 import com.megacrit.cardcrawl.localization.PotionStrings;
 import com.megacrit.cardcrawl.potions.AbstractPotion;
-import nearlmod.NLMOD;
-import nearlmod.actions.ChooseSpecificCardAction;
-import nearlmod.characters.Nearl;
 import nearlmod.powers.AttackUpPower;
-
-import java.util.ArrayList;
-import java.util.Collections;
 
 public class AttackUpPotion extends AbstractPotion {
     public static String ID = "nearlmod:AttackUpPotion";
@@ -36,6 +29,7 @@ public class AttackUpPotion extends AbstractPotion {
         description = potionStrings.DESCRIPTIONS[0] + potency + potionStrings.DESCRIPTIONS[1];
         tips.clear();
         tips.add(new PowerTip(this.name, this.description));
+        tips.add(new PowerTip(TipHelper.capitalize(BaseMod.getKeywordTitle("nearlmod:attackup")), BaseMod.getKeywordDescription("nearlmod:attackup")));
     }
 
     @Override

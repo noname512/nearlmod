@@ -53,6 +53,6 @@
   },
   "nearlmod:StrikeBackPotion": {
     "NAME": "Strike Back Potion",
-    "DESCRIPTIONS": ["At the start of next turn, deal damage to all enemies with your remaining #yBlock #b", "times."]
+    "DESCRIPTIONS": ["At the start of next turn, deal damage to all enemies with your remaining #yBlock #b", " times."]
   }
 }

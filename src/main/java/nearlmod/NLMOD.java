@@ -134,8 +134,8 @@ public class NLMOD implements EditCardsSubscriber, EditCharactersSubscriber, Edi
         BaseMod.addPotion(LayeredElixir.class, Color.GOLD, Color.DARK_GRAY, null, LayeredElixir.ID, NearlEnum.NEARL_CLASS);
         BaseMod.addPotion(InvigoratingPotion.class, Color.WHITE, null, null, InvigoratingPotion.ID);
         BaseMod.addPotion(BottledGleam.class, Color.CLEAR, null, Color.WHITE, BottledGleam.ID);
-        BaseMod.addPotion(AttackUpPotion.class, Color.CLEAR, null, null, AttackUpPotion.ID);
-        BaseMod.addPotion(StrikeBackPotion.class, Color.CLEAR, null, null, StrikeBackPotion.ID);
+        BaseMod.addPotion(AttackUpPotion.class, Color.RED, Color.ORANGE, null, AttackUpPotion.ID);
+        BaseMod.addPotion(StrikeBackPotion.class, Color.SKY , null, null, StrikeBackPotion.ID);
     }
 
     private void initializeSpecialImg() {

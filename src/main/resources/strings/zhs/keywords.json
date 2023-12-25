@@ -122,5 +122,13 @@
       "伙伴们的庇护"
     ],
     "DESCRIPTION": "本回合内，你不会受到伤害。"
+  },
+  "AttackUp": {
+    "PROPER_NAME": "攻击力提升",
+    "NAMES": [
+      "AttackUp",
+      "attackup"
+    ],
+    "DESCRIPTION": "造成的伤害百分比提高。"
   }
 }

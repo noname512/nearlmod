@@ -138,5 +138,13 @@
       "friend's_shelter"
     ],
     "DESCRIPTION": "Prevent damage you take this turn."
+  },
+  "AttackUp": {
+    "PROPER_NAME": "Attack Up",
+    "NAMES": [
+      "AttackUp",
+      "attackup"
+    ],
+    "DESCRIPTION": "Increase damage percentage."
   }
 }
