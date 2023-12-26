@@ -51,10 +51,19 @@ public class PocketVaultAction extends AbstractGameAction {
     private void moveCardToHand(AbstractCard card) {
         card.unhover();
         if (p.hand.size() >= Settings.MAX_HAND_SIZE) {
-            p.drawPile.moveToDiscardPile(card);
             p.createHandIsFullDialog();
+            for (AbstractCard c : p.drawPile.group)
+                if (c.uuid.equals(card.uuid)) {
+                    p.drawPile.moveToDiscardPile(card);
+                    return;
+                }
         } else {
-            p.drawPile.moveToHand(card);
+            for (AbstractCard c : p.drawPile.group)
+                if (c.uuid.equals(card.uuid)) {
+                    p.drawPile.moveToHand(card);
+                    return;
+                }
+            p.discardPile.moveToHand(card);
         }
     }
 }
