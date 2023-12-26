@@ -8,6 +8,7 @@ import com.megacrit.cardcrawl.actions.common.MakeTempCardInHandAction;
 import com.megacrit.cardcrawl.actions.utility.WaitAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.cards.DamageInfo;
+import com.megacrit.cardcrawl.cards.colorless.Panacea;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
@@ -57,11 +58,9 @@ public class CorruptKnight extends AbstractMonster {
     public void usePreBattleAction() {
         addToBot(new ApplyPowerAction(this, this, new DoubleBossPower(this)));
         AbstractPlayer p = AbstractDungeon.player;
+        AbstractCard arti = new Panacea();
         if (AbstractDungeon.ascensionLevel < 15) {
-            addToBot(new ApplyPowerAction(p, this, new ArtifactPower(p, 2)));
-        }
-        else {
-            addToBot(new ApplyPowerAction(p, this, new ArtifactPower(p, 1)));
+            arti.upgrade();
         }
         addToBot(new SummonFriendAction(new Blemishine()));
         addToBot(new SummonFriendAction(new Blemishine()));
@@ -69,6 +68,7 @@ public class CorruptKnight extends AbstractMonster {
         card.upgrade();
         int amount = 1;
         if (AbstractDungeon.ascensionLevel < 15) amount = 2;
+        addToBot(new MakeTempCardInHandAction(arti));
         addToBot(new MakeTempCardInHandAction(card, amount));
         currentTurn = 0;
     }
