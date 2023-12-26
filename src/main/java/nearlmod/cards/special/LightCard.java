@@ -77,7 +77,9 @@ public class LightCard extends AbstractNearlCard {
                 }
                 break;
             case 6:
-                addToBot(new MakeTempCardInHandAction(cardsToPreview));
+                AbstractCard c = new LightCard();
+                c.upgrade();
+                addToBot(new MakeTempCardInHandAction(c));
                 break;
         }
     }

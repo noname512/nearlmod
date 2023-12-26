@@ -52,6 +52,10 @@ public class LeftHandTytusTopola extends AbstractMonster {
         addToBot(new TalkAction(this, DIALOG[0], 0.3F, 3.0F));
         AbstractDungeon.getCurrRoom().cannotLose = true;
         addToBot(new ApplyPowerAction(this, this, new RebornPower(this)));
+        if (AbstractDungeon.ascensionLevel >= 15)
+        {
+            addToBot(new ApplyPowerAction(this, this , new PainfulStabsPower(this)));
+        }
     }
 
     public void damage(DamageInfo info) {
@@ -81,7 +85,6 @@ public class LeftHandTytusTopola extends AbstractMonster {
             addToBot(new CanLoseAction());
             if (AbstractDungeon.ascensionLevel >= 15) {
                 addToBot(new ApplyPowerAction(this, this , new StrengthPower(this, 3)));
-                addToBot(new ApplyPowerAction(this, this , new PainfulStabsPower(this)));
             }
             setMove(MOVES[0], (byte) 2, Intent.STRONG_DEBUFF);
         } else if (this.nextMove == 2) {
