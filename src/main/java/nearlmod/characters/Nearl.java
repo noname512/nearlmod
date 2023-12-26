@@ -81,7 +81,7 @@ public class Nearl extends CustomPlayer {
 
         // 参数列表：静态贴图路径，越肩视角2贴图路径，越肩视角贴图路径，失败时贴图路径，角色选择界面信息，碰撞箱XY宽高，初始能量数
         initializeClass(SHIELD, SHOULDER, SHOULDER, SHIELDDIE, getLoadout(), 20.0F, -10.0F, 220.0F, 290.0F, new EnergyManager(3));
-        loadAnimation("images/char/char_148_nearl.atlas", "images/char/char_148_nearl.json", 1.5F);
+        loadAnimation("images/char/char_148_nearl/char_148_nearl.atlas", "images/char/char_148_nearl/char_148_nearl37.json", 1.5F);
         this.stateData.setMix("Idle", "Die", 0.1F);
         this.state.setAnimation(0, "Idle", true);
         ArenaRoom.enterTimes = 0;
