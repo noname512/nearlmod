@@ -1,5 +1,6 @@
 package nearlmod.actions;
 
+import basemod.BaseMod;
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.cards.CardGroup;
@@ -50,7 +51,7 @@ public class PocketVaultAction extends AbstractGameAction {
 
     private void moveCardToHand(AbstractCard card) {
         card.unhover();
-        if (p.hand.size() >= Settings.MAX_HAND_SIZE) {
+        if (p.hand.size() >= BaseMod.MAX_HAND_SIZE) {
             p.createHandIsFullDialog();
             for (AbstractCard c : p.drawPile.group)
                 if (c.uuid.equals(card.uuid)) {
