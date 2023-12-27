@@ -49,9 +49,5 @@ public class ScarlyMartin extends AbstractNearlCard {
             upgradeDamage(UPGRADE_PLUS_DMG);
         }
     }
-    @Override
-    public boolean canUpgrade() {
-        return true;
-    }
 
 }
