@@ -42,7 +42,7 @@ public class FanClubPower extends AbstractPower implements CloneablePowerInterfa
         if (card instanceof AbstractFriendCard) {
             String belongFriend = ((AbstractFriendCard) card).belongFriend;
             for (AbstractOrb orb : AbstractDungeon.player.orbs)
-                if (belongFriend.equals(Whislash.ORB_ID) || belongFriend.equals(orb.ID)) {
+                if (orb instanceof AbstractFriend && (belongFriend.equals(Whislash.ORB_ID) || belongFriend.equals(orb.ID))) {
                     ((AbstractFriend) orb).applyStrength(amount);
                 }
         }
