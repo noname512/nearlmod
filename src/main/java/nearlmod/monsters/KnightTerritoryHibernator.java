@@ -77,8 +77,9 @@ public class KnightTerritoryHibernator extends AbstractMonster {
 
     @Override
     public void damage(DamageInfo info) {
+        int previousHealth = this.currentHealth;
         super.damage(info);
-        if (asleep && currentHealth < maxHealth) {
+        if (asleep && currentHealth < previousHealth) {
             this.state.setAnimation(0, "Idle", true);
             addToBot(new ShoutAction(this, DIALOG[0]));
             asleep = false;

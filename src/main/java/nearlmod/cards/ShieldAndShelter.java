@@ -46,7 +46,7 @@ public class ShieldAndShelter extends AbstractNearlCard {
         if (amount > 0) {
             for (int i = 1; i <= amount; i++) {
                 addToBot(new GainBlockAction(p, block));
-                addToBot(new ApplyPowerAction(p, p, new LightPower(p, LIGHT_AMT)));
+                // addToBot(new ApplyPowerAction(p, p, new LightPower(p, LIGHT_AMT)));
                 addToBot(new GainCostAction(COST_AMT));
             }
             if (!freeToPlayOnce)

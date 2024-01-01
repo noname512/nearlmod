@@ -23,6 +23,7 @@ public class ReservedForce extends AbstractNearlCard {
     private static final int ATTACK_DMG = 7;
     private static final int UPGRADE_PLUS_DMG = 2;
     private static final int DP_GAIN = 1;
+    private static final int UPGRADE_DP = 1;
 
     public ReservedForce() {
         super(ID, NAME, IMG_PATH, COST, DESCRIPTION,
@@ -55,6 +56,7 @@ public class ReservedForce extends AbstractNearlCard {
         if (!upgraded) {
             upgradeName();
             upgradeDamage(UPGRADE_PLUS_DMG);
+            upgradeMagicNumber(UPGRADE_DP);
         }
     }
 }

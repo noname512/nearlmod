@@ -200,8 +200,8 @@
     },
     "nearlmod:ShieldAndShelter": {
         "NAME": "盾与避难所",
-        "DESCRIPTION": "获得 !B! 点 格挡 ， 3 层 nearlmod:光 和 1 点 nearlmod:部署费用 X 次。",
-        "UPGRADE_DESCRIPTION": "获得 !B! 点 格挡 ， 3 层 nearlmod:光 和 1 点 nearlmod:部署费用 X+1 次。"
+        "DESCRIPTION": "获得 !B! 点 格挡 和 1 点 nearlmod:部署费用 X 次。",
+        "UPGRADE_DESCRIPTION": "获得 !B! 点 格挡 和 1 点 nearlmod:部署费用 X+1 次。"
     },
     "nearlmod:BreakThroughFetters": {
         "NAME": "冲破桎梏",

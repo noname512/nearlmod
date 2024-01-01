@@ -46,7 +46,7 @@ public class BloodKnight extends AbstractMonster {
         if (AbstractDungeon.ascensionLevel >= 19) {
             damage.add(new DamageInfo(this, 26));
             damage.add(new DamageInfo(this, 16));
-            debuffTimes = 3;
+            // debuffTimes = 3;
         }
         else if (AbstractDungeon.ascensionLevel >= 4) {
             damage.add(new DamageInfo(this, 26));
@@ -125,6 +125,9 @@ public class BloodKnight extends AbstractMonster {
             addToBot(new DamageAction(p, damage.get(1)));
             addToBot(new ApplyPowerAction(p, this, new WeakPower(p, debuffTimes, true)));
             addToBot(new ApplyPowerAction(p, this, new VulnerablePower(p, debuffTimes, true)));
+            if (AbstractDungeon.ascensionLevel >= 19) {
+                addToBot(new ApplyPowerAction(p, this, new FrailPower(p, debuffTimes, true)));
+            }
         }
         else if (this.nextMove == 3) {
             cleanDebuff();

@@ -200,8 +200,8 @@
     },
     "nearlmod:ShieldAndShelter": {
         "NAME": "Shield and Shelter",
-        "DESCRIPTION": "Gain !B! Block, 3 nearlmod:Light and 1 nearlmod:DP X times.",
-        "UPGRADE_DESCRIPTION": "Gain !B! Block, 3 nearlmod:Light and 1 nearlmod:DP X+1 times."
+        "DESCRIPTION": "Gain !B! Block and 1 nearlmod:DP X times.",
+        "UPGRADE_DESCRIPTION": "Gain !B! Block and 1 nearlmod:DP X+1 times."
     },
     "nearlmod:BreakThroughFetters": {
         "NAME": "Break Through Fetters",
