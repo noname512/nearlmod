@@ -39,6 +39,7 @@ public class KnightFiction extends CustomRelic {
     public void atTurnStart() {
         playedCount.clear();
         freeToPlayType.clear();
+        stopPulse();
     }
 
     @Override

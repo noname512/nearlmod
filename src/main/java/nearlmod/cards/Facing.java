@@ -10,6 +10,7 @@ import com.megacrit.cardcrawl.localization.CardStrings;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import com.megacrit.cardcrawl.powers.LoseStrengthPower;
 import com.megacrit.cardcrawl.powers.StrengthPower;
+import nearlmod.actions.TempStrengthAction;
 import nearlmod.patches.AbstractCardEnum;
 
 public class Facing extends AbstractNearlCard {
@@ -36,8 +37,7 @@ public class Facing extends AbstractNearlCard {
     public void use(AbstractPlayer p, AbstractMonster m) {
         addToBot(new GainBlockAction(p, block));
         for (AbstractMonster ms : AbstractDungeon.getMonsters().monsters) {
-            addToBot(new ApplyPowerAction(ms, p, new StrengthPower(ms, magicNumber)));
-            addToBot(new ApplyPowerAction(ms, p, new LoseStrengthPower(ms, magicNumber)));
+            addToBot(new TempStrengthAction(p, ms, magicNumber));
         }
     }
 

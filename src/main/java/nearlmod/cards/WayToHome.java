@@ -10,6 +10,7 @@ import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import com.megacrit.cardcrawl.powers.LoseStrengthPower;
 import com.megacrit.cardcrawl.powers.StrengthPower;
 import nearlmod.actions.SummonFriendAction;
+import nearlmod.actions.TempStrengthAction;
 import nearlmod.orbs.Whislash;
 import nearlmod.patches.AbstractCardEnum;
 import nearlmod.patches.NearlTags;
@@ -38,8 +39,7 @@ public class WayToHome extends AbstractNearlCard {
         addToBot(new SummonFriendAction(new Whislash()));
         addToBot(new DrawCardAction(p, 1));
         if (upgraded) {
-            addToBot(new ApplyPowerAction(p, p, new StrengthPower(p, magicNumber)));
-            addToBot(new ApplyPowerAction(p, p, new LoseStrengthPower(p, magicNumber)));
+            addToBot(new TempStrengthAction(p, p, magicNumber));
         }
     }
 

@@ -27,10 +27,10 @@ public class InvigoratingPotion extends AbstractPotion {
     @Override
     public void initializeData() {
         potency = getPotency();
-        if (AbstractDungeon.player != null && !AbstractDungeon.player.hasRelic("SacredBark")) {
-            description = potionStrings.DESCRIPTIONS[0];
-        } else {
+        if (AbstractDungeon.player != null && AbstractDungeon.player.hasRelic("SacredBark")) {
             description = potionStrings.DESCRIPTIONS[1];
+        } else {
+            description = potionStrings.DESCRIPTIONS[0];
         }
         this.tips.clear();
         this.tips.add(new PowerTip(this.name, this.description));

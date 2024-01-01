@@ -31,10 +31,10 @@ public class BrilliantLights extends AbstractPotion {
     @Override
     public void initializeData() {
         potency = getPotency();
-        if (AbstractDungeon.player != null && !AbstractDungeon.player.hasRelic("SacredBark")) {
-            description = potionStrings.DESCRIPTIONS[0];
-        } else {
+        if (AbstractDungeon.player != null && AbstractDungeon.player.hasRelic("SacredBark")) {
             description = potionStrings.DESCRIPTIONS[1];
+        } else {
+            description = potionStrings.DESCRIPTIONS[0];
         }
         tips.clear();
         tips.add(new PowerTip(this.name, this.description));

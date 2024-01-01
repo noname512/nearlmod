@@ -32,7 +32,7 @@ public class ExsanguinationPower extends AbstractPower implements CloneablePower
         if (owner.hasPower("Strength")) {
             if (owner.getPower("Strength").amount > 0) {
                 flash();
-                addToBot(new RemoveSpecificPowerAction(owner, owner, "Strength"));
+                addToTop(new RemoveSpecificPowerAction(owner, owner, "Strength"));
             }
         }
     }
@@ -59,7 +59,7 @@ public class ExsanguinationPower extends AbstractPower implements CloneablePower
             if (now_strength + abstractPower.amount > 0) {
                 flash();
                 if (now_strength != 0) {
-                    addToBot(new ApplyPowerAction(owner, owner, new StrengthPower(owner, -now_strength)));
+                    addToTop(new ApplyPowerAction(owner, owner, new StrengthPower(owner, -now_strength)));
                 }
                 return false;
             }
