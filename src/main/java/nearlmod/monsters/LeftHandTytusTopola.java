@@ -33,7 +33,7 @@ public class LeftHandTytusTopola extends AbstractMonster {
         if (AbstractDungeon.ascensionLevel >= 8)
             setHp(60);
         if (AbstractDungeon.ascensionLevel >= 18) {
-            this.damage.add(new DamageInfo(this, 11));
+            this.damage.add(new DamageInfo(this, 13));
             weakTimes = 4;
         } else if (AbstractDungeon.ascensionLevel >= 3) {
             this.damage.add(new DamageInfo(this, 11));
@@ -107,12 +107,7 @@ public class LeftHandTytusTopola extends AbstractMonster {
 
     @Override
     protected void getMove(int i) {
-        if (AbstractDungeon.ascensionLevel < 18) {
-            setMove((byte) 1, Intent.ATTACK, this.damage.get(0).base);
-        }
-        else {
-            setMove((byte) 2, Intent.STRONG_DEBUFF);
-        }
+        setMove((byte) 1, Intent.ATTACK, this.damage.get(0).base);
     }
 
     public void die() {

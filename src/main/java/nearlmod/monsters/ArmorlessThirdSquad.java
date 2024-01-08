@@ -20,7 +20,7 @@ public class ArmorlessThirdSquad extends AbstractMonster {
     private final int corrosionAmount;
 
     public ArmorlessThirdSquad(float x, float y, int level) {
-        super(NAME, ID, 100, 0, 0, 150.0F, 320.0F, IMAGE, x, y);
+        super(NAME, ID, 80, 0, 0, 150.0F, 320.0F, IMAGE, x, y);
         type = EnemyType.ELITE;
         int dmg1, dmg2;
         if (AbstractDungeon.ascensionLevel >= 18) { dmg1 = 10; dmg2 = 15; }
@@ -29,7 +29,7 @@ public class ArmorlessThirdSquad extends AbstractMonster {
         damage.add(new DamageInfo(this, MathUtils.floor(dmg1 * (1 + 0.1F * level))));
         damage.add(new DamageInfo(this, MathUtils.floor(dmg2 * (1 + 0.1F * level))));
         int hp;
-        if (AbstractDungeon.ascensionLevel >= 8) hp = 110;
+        if (AbstractDungeon.ascensionLevel >= 8) hp = 90;
         else hp = 100;
         setHp(MathUtils.floor(hp * (1 + 0.1F * level)));
         if (AbstractDungeon.ascensionLevel >= 15)
