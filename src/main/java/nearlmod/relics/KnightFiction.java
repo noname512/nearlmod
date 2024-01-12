@@ -61,12 +61,20 @@ public class KnightFiction extends CustomRelic {
         return new KnightFiction();
     }
 
+    @Override
+    public void onVictory() {
+        playedCount.clear();
+        freeToPlayType.clear();
+        stopPulse();
+    }
+
+
     @SpirePatch(clz = AbstractCard.class, method = "freeToPlay")
     public static class KnightFictionPatch {
         @SpirePrefixPatch
         public static SpireReturn<?> Prefix(AbstractCard __instance) {
             if (AbstractDungeon.player != null && AbstractDungeon.currMapNode != null && AbstractDungeon.getCurrRoom().phase == AbstractRoom.RoomPhase.COMBAT &&
-                AbstractDungeon.player.hasRelic(KnightFiction.ID) && KnightFiction.freeToPlayType.contains(__instance.type))
+                AbstractDungeon.player.hasRelic(KnightFiction.ID) && KnightFiction.freeToPlayType.contains(__instance.type) && AbstractDungeon.player.hand.contains(__instance))
                 return SpireReturn.Return(true);
             return SpireReturn.Continue();
         }

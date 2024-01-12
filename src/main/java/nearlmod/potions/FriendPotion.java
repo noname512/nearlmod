@@ -46,7 +46,7 @@ public class FriendPotion extends AbstractPotion {
         ArrayList<AbstractCard> list = Nearl.getUnuniqueFriendCard(false);
         Collections.shuffle(list);
         ArrayList<AbstractCard> chooseList = new ArrayList<>(list.subList(0, 3));
-        addToBot(new ChooseSpecificCardAction(chooseList, true, potency));
+        addToBot(new ChooseSpecificCardAction(chooseList, true, potency, true));
     }
 
     @Override

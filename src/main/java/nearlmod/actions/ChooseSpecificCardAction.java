@@ -16,6 +16,7 @@ import java.util.ArrayList;
 public class ChooseSpecificCardAction extends AbstractGameAction {
     private final ArrayList<AbstractCard> cards;
     private final boolean zeroCost;
+    private final boolean canSkip;
     public ChooseSpecificCardAction(ArrayList<AbstractCard> cards) {
         this(cards, false);
     }
@@ -25,11 +26,15 @@ public class ChooseSpecificCardAction extends AbstractGameAction {
     }
 
     public ChooseSpecificCardAction(ArrayList<AbstractCard> cards, boolean zeroCost, int amount) {
+        this(cards, zeroCost, amount, false);
+    }
+    public ChooseSpecificCardAction(ArrayList<AbstractCard> cards, boolean zeroCost, int amount, boolean canSkip) {
         actionType = ActionType.CARD_MANIPULATION;
         duration = Settings.ACTION_DUR_FAST;
         this.cards = cards;
         this.zeroCost = zeroCost;
         this.amount = amount;
+        this.canSkip = canSkip;
     }
 
     @Override
@@ -39,7 +44,7 @@ public class ChooseSpecificCardAction extends AbstractGameAction {
                 isDone = true;
                 return;
             }
-            AbstractDungeon.cardRewardScreen.customCombatOpen(cards, CardRewardScreen.TEXT[1], false);
+            AbstractDungeon.cardRewardScreen.customCombatOpen(cards, CardRewardScreen.TEXT[1], canSkip);
             tickDuration();
             return;
         }
@@ -59,6 +64,9 @@ public class ChooseSpecificCardAction extends AbstractGameAction {
                 AbstractDungeon.effectList.add(new ShowCardAndAddToDiscardEffect(card.makeStatEquivalentCopy(), MathUtils.random(Settings.WIDTH * 0.4F, Settings.WIDTH * 0.6F), MathUtils.random(Settings.HEIGHT * 0.4F, Settings.HEIGHT * 0.6F)));
             }
             AbstractDungeon.cardRewardScreen.discoveryCard = null;
+            isDone = true;
+        }
+        else {
             isDone = true;
         }
     }
