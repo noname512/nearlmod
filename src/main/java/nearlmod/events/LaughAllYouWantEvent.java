@@ -34,6 +34,8 @@ public class LaughAllYouWantEvent extends AbstractImageEvent {
                     imageEventText.updateBodyText(DESCRIPTIONS[1]);
                     screen = CurScreen.FIGHT;
                     logMetric(ID, "Fight");
+                    CardCrawlGame.music.fadeOutTempBGM();
+                    CardCrawlGame.music.playTempBgmInstantly("m_bat_kazimierz2_2_loop.mp3", true);
                     AbstractDungeon.getCurrRoom().monsters = new MonsterGroup(new AbstractMonster[]{new Platinum(-350.0F, 0.0F), new Monique(-125.0F, 0.0F), new Roy(80.0F, 0.0F)});
                     AbstractDungeon.getCurrRoom().rewards.clear();
                     AbstractDungeon.getCurrRoom().addGoldToRewards(AbstractDungeon.miscRng.random(30, 40));
