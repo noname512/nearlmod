@@ -1,5 +1,6 @@
 package nearlmod.cards;
 
+import com.badlogic.gdx.graphics.g3d.particles.influencers.DynamicsModifier;
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
 import com.megacrit.cardcrawl.actions.common.DamageAction;
 import com.megacrit.cardcrawl.actions.watcher.ChangeStanceAction;
@@ -10,10 +11,14 @@ import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.localization.CardStrings;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
+import com.megacrit.cardcrawl.powers.StrengthPower;
 import nearlmod.actions.UseLightAction;
 import nearlmod.patches.AbstractCardEnum;
 import nearlmod.patches.NearlTags;
+import nearlmod.powers.ExsanguinationPower;
 import nearlmod.stances.AtkStance;
+
+import static java.lang.Integer.min;
 
 public class KnightCrest extends AbstractNearlCard {
     public static final String ID = "nearlmod:KnightCrest";
@@ -43,32 +48,44 @@ public class KnightCrest extends AbstractNearlCard {
         addToBot(new UseLightAction(p, m));
     }
 
-    private void preUpd() {
+    int calc() {
+        int num =  AtkStance.incNum + AtkStance.atkInc;
+        if (AbstractDungeon.player.hasPower(ExsanguinationPower.POWER_ID)) {
+            int strength = 0;
+            if (AbstractDungeon.player.hasPower(StrengthPower.POWER_ID)) {
+                strength = AbstractDungeon.player.getPower(StrengthPower.POWER_ID).amount;
+            }
+            num = min(num, -strength);
+        }
+        return num;
+    }
+
+    private void preUpd(int atk) {
         if (!AbstractDungeon.player.stance.ID.equals(AtkStance.STANCE_ID)) {
-            this.baseDamage += AtkStance.incNum;
-            this.baseDamage += AtkStance.atkInc;
+            this.baseDamage += atk;
         }
     }
 
-    private void postUpd() {
+    private void postUpd(int atk) {
         if (!AbstractDungeon.player.stance.ID.equals(AtkStance.STANCE_ID)) {
-            this.baseDamage -= AtkStance.incNum;
-            this.baseDamage -= AtkStance.atkInc;
+            this.baseDamage -= atk;
             isDamageModified = (baseDamage != damage);
         }
     }
 
     @Override
     public void applyPowers() {
-        preUpd();
+        int atk = calc();
+        preUpd(atk);
         super.applyPowers();
-        postUpd();
+        postUpd(atk);
     }
     @Override
     public void calculateCardDamage(AbstractMonster mo) {
-        preUpd();
+        int atk = calc();
+        preUpd(atk);
         super.calculateCardDamage(mo);
-        postUpd();
+        postUpd(atk);
     }
     @Override
     public AbstractCard makeCopy() {
