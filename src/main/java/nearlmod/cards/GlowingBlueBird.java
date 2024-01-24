@@ -20,9 +20,9 @@ public class GlowingBlueBird extends AbstractNearlCard {
     public static final String IMG_PATH = "images/cards/glowingbluebird.png";
     private static final int COST = 1;
     private static final int BLOCK_AMT = 7;
-    private static final int HP_GAIN = 4;
+    private static final int HP_GAIN = 3;
     private static final int UPGRADE_PLUS_BLOCK = 2;
-    private static final int UPGRADE_PLUS_HP = 2;
+    private static final int UPGRADE_PLUS_HP = 1;
 
     public GlowingBlueBird() {
         super(ID, NAME, IMG_PATH, COST, DESCRIPTION,

@@ -42,7 +42,7 @@
     },
     "nearlmod:NobleLight": {
         "NAME": "Nobel Light",
-        "DESCRIPTION": "Apply 1 nearlmod:Trust to all your nearlmod:Friend.",
+        "DESCRIPTION": "Apply !M! nearlmod:Trust to all your nearlmod:Friend. NL Exhaust. ",
         "UPGRADE_DESCRIPTION": ""
     },
     "nearlmod:Guardian": {
@@ -90,7 +90,7 @@
             "Use nearlmod:Light. NL nearlmod:Dreadnought : Enemy loses !M! Strength this turn.",
             "Use nearlmod:Light. NL nearlmod:Guardian : Put a Skill card from your draw pile into your hand.",
             "Use nearlmod:Light. NL Retain.",
-            "Use nearlmod:Light. NL When added into hand, add a *Switch *Stance+ into your hand and apply Exhaust and Ethereal to it.",
+            "Use nearlmod:Light. NL When added into hand first time, add a *Switch *Stance+ into your hand and apply Exhaust and Ethereal to it.",
             "Use nearlmod:Light. NL add a *Radiance+ into your hand.",
             "Use nearlmod:Light. NL nearlmod:Guardian : Put a card from your draw pile into your hand.",
             "Gain !M! nearlmod:Light."
@@ -152,8 +152,8 @@
     },
     "nearlmod:ReliableFriend": {
         "NAME": "Reliable Friends",
-        "DESCRIPTION": "Put a Power card which summons Friend from draw pile into your hand and Retain it for this turn. NL Exhaust.",
-        "UPGRADE_DESCRIPTION":""
+        "DESCRIPTION": "Put a Power card which summons Friend from draw pile into your hand. NL Exhaust.",
+        "UPGRADE_DESCRIPTION":"Put a Power card which summons Friend from draw pile into your hand and give it Retain. NL Exhaust."
     },
     "nearlmod:SightImpairingShowdown": {
         "NAME": "Sight-impairing Showdown",
@@ -346,8 +346,8 @@
     },
     "nearlmod:BlazingSun'sObeisance": {
         "NAME": "Blazing Sun's Obeisance",
-        "DESCRIPTION": "Deal !D! damage to all enemies. NL Deal additional damage equal to 1/3 of nearlmod:Light used in this combat.",
-        "UPGRADE_DESCRIPTION": "Deal !D! damage to all enemies. NL Deal additional damage equal to 1/2 of nearlmod:Light used in this combat."
+        "DESCRIPTION": "Deal !D! damage to all enemies. NL Deal additional damage equal to 1/2 of nearlmod:Light used in this combat.",
+        "UPGRADE_DESCRIPTION": "Deal !D! damage to all enemies. NL Deal additional damage equal to nearlmod:Light used in this combat."
     },
     "nearlmod:ShadowOut": {
         "NAME": "Shadow Out",

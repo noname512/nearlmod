@@ -23,13 +23,15 @@ public class NobleLight extends AbstractNearlCard {
         super(ID, NAME, IMG_PATH, COST, DESCRIPTION,
                 CardType.SKILL, AbstractCardEnum.NEARL_GOLD,
                 CardRarity.COMMON, CardTarget.SELF);
+        magicNumber = baseMagicNumber = 2;
+        exhaust = true;
     }
 
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
         for (AbstractOrb orb : p.orbs)
             if (orb instanceof AbstractFriend)
-                ((AbstractFriend) orb).applyStrength(1);
+                ((AbstractFriend) orb).applyStrength(magicNumber);
     }
 
     @Override

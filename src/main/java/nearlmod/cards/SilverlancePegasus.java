@@ -19,9 +19,9 @@ public class SilverlancePegasus extends AbstractNearlCard {
     public static final String UPGRADE_DESCRIPTION = cardStrings.UPGRADE_DESCRIPTION;
     public static final String IMG_PATH = "images/cards/silverlancepegasus.png";
     private static final int COST = 2;
-    private static final int ATTACK_DMG = 14;
+    private static final int ATTACK_DMG = 12;
     private static final int BLOCK_AMT = 10;
-    private static final int UPGRADE_PLUS_DMG = 3;
+    private static final int UPGRADE_PLUS_DMG = 4;
     private static final int UPGRADE_PLUS_BLOCK = 3;
 
     public SilverlancePegasus() {

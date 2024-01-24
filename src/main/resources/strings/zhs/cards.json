@@ -42,7 +42,7 @@
     },
     "nearlmod:NobleLight": {
         "NAME": "崇高者",
-        "DESCRIPTION": "使你的 nearlmod:伙伴 获得 1 点 nearlmod:信赖 。",
+        "DESCRIPTION": "使你的 nearlmod:伙伴 获得 !M! 点 nearlmod:信赖 。 NL 消耗 。",
         "UPGRADE_DESCRIPTION": ""
     },
     "nearlmod:Guardian": {
@@ -90,7 +90,7 @@
             "使用 nearlmod:光 。 NL nearlmod:无畏 ：使目标在本回合内失去 !M! 点 力量 。",
             "使用 nearlmod:光 。 NL nearlmod:守护 ：从抽牌堆中选择一张技能牌放入你的手牌。",
             "使用 nearlmod:光 。 NL 保留 。",
-            "使用 nearlmod:光 。 NL 放入手牌时，将一张 *切换形态+ 放入你的手牌，并使其获得 消耗 和 虚无 。",
+            "使用 nearlmod:光 。 NL 首次放入手牌时，将一张 *切换形态+ 放入你的手牌，并使其获得 消耗 和 虚无 。",
             "使用 nearlmod:光 。 NL 将一张 [#EFC851]光耀+[] 放入你的手牌。",
             "使用 nearlmod:光 。 NL nearlmod:守护 ：从抽牌堆中选择一张牌放入你的手牌。",
             "获得 !M! 层 nearlmod:光 ， "
@@ -152,8 +152,8 @@
     },
     "nearlmod:ReliableFriend": {
         "NAME": "信赖伙伴",
-        "DESCRIPTION": "从抽牌堆中选择一张召唤 nearlmod:伙伴 的能力牌放入你的手牌，并使其本回合 保留 。 NL  消耗 。",
-        "UPGRADE_DESCRIPTION":""
+        "DESCRIPTION": "从抽牌堆中选择一张召唤 nearlmod:伙伴 的能力牌放入你的手牌。 NL  消耗 。",
+        "UPGRADE_DESCRIPTION":"从抽牌堆中选择一张召唤 nearlmod:伙伴 的能力牌放入你的手牌，并使其获得 保留 。 NL  消耗 。"
     },
     "nearlmod:SightImpairingShowdown": {
         "NAME": "有损视力的对决",
@@ -346,8 +346,8 @@
     },
     "nearlmod:BlazingSun'sObeisance": {
         "NAME": "耀阳颔首",
-        "DESCRIPTION": "对所有敌人造成 !D! 点伤害。 NL 额外造成本场战斗中使用过的 nearlmod:光 层数三分之一的伤害。",
-        "UPGRADE_DESCRIPTION": "对所有敌人造成 !D! 点伤害。 NL 额外造成本场战斗中使用过的 nearlmod:光 层数一半的伤害。"
+        "DESCRIPTION": "对所有敌人造成 !D! 点伤害。 NL 额外造成本场战斗中使用过的 nearlmod:光 层数一半的伤害。",
+        "UPGRADE_DESCRIPTION": "对所有敌人造成 !D! 点伤害。 NL 额外造成本场战斗中使用过的 nearlmod:光 层数的伤害。"
     },
     "nearlmod:ShadowOut": {
         "NAME": "影灭",
@@ -439,7 +439,7 @@
     },
     "nearlmod:SurgingBrilliance": {
         "NAME": "光芒涌动",
-        "DESCRIPTION": " nearlmod:伙伴牌 。 NL 造成 !M! 点伤害，获得 !nearlmod:M2! 层 nearlmod:光 。",
+        "DESCRIPTION": " nearlmod:伙伴牌 。 NL 造成 !M! 点伤害。 NL 获得 !nearlmod:M2! 层 nearlmod:光 。",
         "UPGRADE_DESCRIPTION": ""
     },
     "nearlmod:DeterringRadiance": {

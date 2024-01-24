@@ -18,10 +18,10 @@ public class ArmorProtection extends AbstractNearlCard {
     public static final String UPGRADE_DESCRIPTION = cardStrings.UPGRADE_DESCRIPTION;
     public static final String IMG_PATH = "images/cards/armorprotection.png";
     private static final int COST = 1;
-    private static final int BLOCK_AMT = 8;
-    private static final int BLOCK_EXT = 4;
-    private static final int UPGRADE_PLUS_AMT = 2;
-    private static final int UPGRADE_PLUS_EXT = 1;
+    private static final int BLOCK_AMT = 7;
+    private static final int BLOCK_EXT = 3;
+    private static final int UPGRADE_PLUS_AMT = 1;
+    private static final int UPGRADE_PLUS_EXT = 2;
 
     public ArmorProtection() {
         super(ID, NAME, IMG_PATH, COST, DESCRIPTION,

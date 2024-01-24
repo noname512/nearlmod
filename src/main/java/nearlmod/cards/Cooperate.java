@@ -28,10 +28,10 @@ public class Cooperate extends AbstractNearlCard {
     public static final String UPGRADE_DESCRIPTION = cardStrings.UPGRADE_DESCRIPTION;
     public static final String IMG_PATH = "images/cards/gloriouskazimierz.png";
     private static final int COST = 1;
-    private static final int ATTACK_DMG = 8;
+    private static final int ATTACK_DMG = 7;
     private static final int LIGHT_GAIN = 3;
     private static final int UPGRADE_PLUS_DMG = 2;
-    private static final int UPGRADE_PLUS_LIGHT = 2;
+    private static final int UPGRADE_PLUS_LIGHT = 1;
 
     public Cooperate() {
         super(ID, NAME, IMG_PATH, COST, DESCRIPTION,

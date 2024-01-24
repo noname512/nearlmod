@@ -28,7 +28,7 @@ public class WhipSword extends AbstractFriendCard {
     public static final String EXTRA_DESCRIPTION = cardStrings.EXTENDED_DESCRIPTION[0];
     public static final String IMG_PATH = "images/cards/whipsword.png";
     private static final int COST = 2;
-    private static final int ATTACK_DMG = 3;
+    private static final int ATTACK_DMG = 4;
     private static final int EXTRA_DMG = 8;
 
     public WhipSword() {

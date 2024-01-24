@@ -35,9 +35,9 @@ public class BlazingSunsObeisance extends AbstractNearlCard {
 
     private int extraDamage() {
         if (!upgraded) {
-            return (LightPower.amountForBattle + 2) / 3;
+            return LightPower.amountForBattle / 2;
         } else {
-            return (LightPower.amountForBattle + 1) / 2;
+            return LightPower.amountForBattle;
         }
     }
     @Override

@@ -11,9 +11,13 @@ import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.localization.CardStrings;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
+import com.megacrit.cardcrawl.powers.StrengthPower;
 import nearlmod.patches.AbstractCardEnum;
+import nearlmod.powers.ExsanguinationPower;
 import nearlmod.stances.AtkStance;
 import nearlmod.stances.DefStance;
+
+import static java.lang.Integer.min;
 
 public class FullSpeedAhead extends AbstractNearlCard {
     public static final String ID = "nearlmod:FullSpeedAhead";
@@ -58,14 +62,24 @@ public class FullSpeedAhead extends AbstractNearlCard {
         }
         super.applyPowers();
         if (extraTriggered()) {
-            damage += AtkStance.incNum;
-            damage += AtkStance.atkInc;
+            damage += calcStrength();
             isDamageModified = (baseDamage != damage);
         }
         rawDescription = INHAND_DESCRIPTION;
         initializeDescription();
     }
 
+    int calcStrength() {
+        int num = AtkStance.incNum + AtkStance.atkInc;
+        if (AbstractDungeon.player.hasPower(ExsanguinationPower.POWER_ID)) {
+            int strength = 0;
+            if (AbstractDungeon.player.hasPower(StrengthPower.POWER_ID)) {
+                strength = AbstractDungeon.player.getPower(StrengthPower.POWER_ID).amount;
+            }
+            num = min(num, -strength);
+        }
+        return num;
+    }
     @Override
     public void onMoveToDiscard() {
         rawDescription = DESCRIPTION;
@@ -75,13 +89,11 @@ public class FullSpeedAhead extends AbstractNearlCard {
     @Override
     public void calculateCardDamage(AbstractMonster mo) {
         if (extraTriggered()) {
-            baseDamage += AtkStance.incNum;
-            baseDamage += AtkStance.atkInc;
+            baseDamage += calcStrength();
         }
         super.calculateCardDamage(mo);
         if (extraTriggered()) {
-            baseDamage -= AtkStance.incNum;
-            baseDamage -= AtkStance.atkInc;
+            baseDamage -= calcStrength();
             isDamageModified = (baseDamage != damage);
             rawDescription = DEFMODE_DESCRIPTION;
         } else {

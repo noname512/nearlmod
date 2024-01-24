@@ -16,7 +16,7 @@ public class ReliableFriend extends AbstractNearlCard {
     public static final String DESCRIPTION = cardStrings.DESCRIPTION;
     public static final String UPGRADE_DESCRIPTION = cardStrings.UPGRADE_DESCRIPTION;
     public static final String IMG_PATH = "images/cards/reliablefriend.png";
-    private static final int COST = 1;
+    private static final int COST = 0;
     private static final int UPGRADE_PLUS_COST = 0;
 
     public ReliableFriend() {
@@ -38,7 +38,12 @@ public class ReliableFriend extends AbstractNearlCard {
 
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
-        addToBot(new SummonFromDeckToHandAction(1, true));
+        if (upgraded) {
+            addToBot(new SummonFromDeckToHandAction(1, true));
+        }
+        else {
+            addToBot(new SummonFromDeckToHandAction(1, false));
+        }
     }
 
     @Override
@@ -50,7 +55,8 @@ public class ReliableFriend extends AbstractNearlCard {
     public void upgrade() {
         if (!upgraded) {
             upgradeName();
-            upgradeBaseCost(UPGRADE_PLUS_COST);
+            rawDescription = UPGRADE_DESCRIPTION;
+            initializeDescription();
         }
     }
 }

@@ -96,6 +96,9 @@ public class LightCard extends AbstractNearlCard {
         else this.target = CardTarget.ENEMY;
     }
 
+    public void triggerWhenDrawn() {
+        triggerWhenCopied();
+    }
     @Override
     public void triggerWhenCopied() {
         if (type == 0) {
