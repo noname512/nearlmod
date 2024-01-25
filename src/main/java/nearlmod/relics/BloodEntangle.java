@@ -31,10 +31,12 @@ public class BloodEntangle extends CustomRelic {
     
     @Override
     public void atBattleStart() {
-        float leftX = 100.0F;
+        float leftX = 1000.0F;
         for (AbstractMonster ms : AbstractDungeon.getCurrRoom().monsters.monsters)
-            leftX = Math.min(leftX, (ms.drawX - Settings.WIDTH * 0.75F) / Settings.xScale);
-        addToTop(new SpawnMonsterAction(new BloodBlade(leftX - 100.0F, 0.0F), false));
+            if (!ms.isDeadOrEscaped()) {
+                leftX = Math.min(leftX, (ms.hb.x - Settings.WIDTH * 0.75F) / Settings.xScale);
+            }
+        addToTop(new SpawnMonsterAction(new BloodBlade(leftX - 70.0F, 0.0F), false));
     }
     
     @Override
