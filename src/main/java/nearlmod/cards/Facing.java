@@ -23,7 +23,7 @@ public class Facing extends AbstractNearlCard {
     private static final int COST = 1;
     private static final int BLOCK_AMT = 13;
     private static final int STRENGTH_AMT = 3;
-    private static final int UPGRADE_PLUS_BLOCK = 3;
+    private static final int UPGRADE_PLUS_BLOCK = 4;
 
     public Facing() {
         super(ID, NAME, IMG_PATH, COST, DESCRIPTION,

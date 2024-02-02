@@ -25,7 +25,7 @@ public class KnightCompetition extends AbstractNearlCard {
 
     public KnightCompetition() {
         super(ID, NAME, IMG_PATH, COST, DESCRIPTION,
-                CardType.ATTACK, AbstractCardEnum.NEARL_GOLD,
+                CardType.SKILL, AbstractCardEnum.NEARL_GOLD,
                 CardRarity.UNCOMMON, CardTarget.ALL_ENEMY);
         magicNumber = baseMagicNumber = COIN_AMT;
         tags.add(NearlTags.IS_USE_LIGHT);
