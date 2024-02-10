@@ -24,7 +24,6 @@ public class BlemishinesFaintLight extends AbstractNearlCard {
                 CardType.POWER, CardColor.COLORLESS,
                 CardRarity.SPECIAL, CardTarget.SELF);
         selfRetain = true;
-        exhaust = true;
     }
 
     @Override
