@@ -50,7 +50,7 @@ public abstract class AbstractFriendCard extends AbstractNearlCard {
     @Override
     public void calculateCardDamage(AbstractMonster mo) {
         applyPowers();
-        if ((this.target == CardTarget.ENEMY) || (this.target == CardTarget.ALL_ENEMY) || (this.target == CardTarget.SELF_AND_ENEMY))
+        if (this.type == CardType.ATTACK)
             magicNumber = calculateSingleDamage(mo, magicNumber, true);
         isMagicNumberModified = (magicNumber != baseMagicNumber);
     }

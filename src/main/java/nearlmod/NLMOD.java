@@ -353,6 +353,9 @@ public class NLMOD implements EditCardsSubscriber, EditCharactersSubscriber, Edi
         BaseMod.addRelicToCustomPool(new NormalPerson(), NEARL_GOLD);
         BaseMod.addRelicToCustomPool(new ImaginaryFear(), NEARL_GOLD);
         BaseMod.addRelicToCustomPool(new BloodEntangle(), NEARL_GOLD);
+
+        // shop.
+        BaseMod.addRelicToCustomPool(new RatSwarm(), NEARL_GOLD);
     }
 
     @Override

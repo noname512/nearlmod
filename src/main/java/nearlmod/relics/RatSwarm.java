@@ -6,17 +6,17 @@ import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.localization.RelicStrings;
 import com.megacrit.cardcrawl.relics.AbstractRelic;
 
-public class Lighthouse extends CustomRelic {
+public class RatSwarm extends CustomRelic {
 
-    public static final String ID = "nearlmod:Lighthouse";
+    public static final String ID = "nearlmod:RatSwarm";
     public static final RelicStrings relicStrings = CardCrawlGame.languagePack.getRelicStrings(ID);
     public static final String NAME = relicStrings.NAME;
     public static final String[] DESCRIPTIONS = relicStrings.DESCRIPTIONS;
     public static final Texture IMG = new Texture("images/relics/lighthouse.png");
     public static final Texture IMG_OUTLINE = new Texture("images/relics/lighthouse_p.png");
     public static boolean isFirstTime;
-    public Lighthouse() {
-        super(ID, IMG, IMG_OUTLINE, RelicTier.BOSS, LandingSound.SOLID);
+    public RatSwarm() {
+        super(ID, IMG, IMG_OUTLINE, RelicTier.SHOP, LandingSound.SOLID);
     }
 
     @Override
@@ -25,12 +25,10 @@ public class Lighthouse extends CustomRelic {
     }
 
     @Override
-    public void atTurnStart() {
-        isFirstTime = true;
-    }
+    public void atTurnStart() {}
 
     @Override
     public AbstractRelic makeCopy() {
-        return new Lighthouse();
+        return new RatSwarm();
     }
 }

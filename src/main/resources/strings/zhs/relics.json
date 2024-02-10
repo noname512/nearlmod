@@ -54,6 +54,11 @@
     "FLAVOR": "“当那名骑士冲向无边的浪潮中时，你觉得他想的是战胜这片大地吗？”",
     "DESCRIPTIONS": ["同一回合内，你每打出 #b3 张相同类型的牌，下一张相同类型的牌耗能变为 #b0 。"]
   },
+  "nearlmod:RatSwarm": {
+    "NAME": "鼠群",
+    "FLAVOR": "鼠群，聚集起来吧！",
+    "DESCRIPTIONS": ["当你召唤一名新的 #y伙伴 时，获得 #b5 点 #y格挡 。"]
+  },
 
   "nearlmod:LateLight": {
     "NAME": "迟来的光",

@@ -613,7 +613,7 @@
     },
     "nearlmod:Blemishine'sFaintLight": {
         "NAME": "Blemishine's Faint Light",
-        "DESCRIPTION": "Gain nearlmod:Friend's_Shelter. NL Retain. Exhaust. ",
+        "DESCRIPTION": "Gain nearlmod:Friend's_Shelter. NL Retain. ",
         "UPGRADE_DESCRIPTION": ""
     },
     "nearlmod:PersonalCharmSp": {

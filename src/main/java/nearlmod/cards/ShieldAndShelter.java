@@ -31,7 +31,7 @@ public class ShieldAndShelter extends AbstractNearlCard {
                 CardType.SKILL, AbstractCardEnum.NEARL_GOLD,
                 CardRarity.UNCOMMON, CardTarget.SELF);
         block = baseBlock = BLOCK_AMT;
-        tags.add(NearlTags.IS_GAIN_LIGHT);
+        // tags.add(NearlTags.IS_GAIN_LIGHT);
     }
 
     @Override

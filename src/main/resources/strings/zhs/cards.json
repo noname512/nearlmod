@@ -613,7 +613,7 @@
     },
     "nearlmod:Blemishine'sFaintLight": {
         "NAME": "瑕光微明",
-        "DESCRIPTION": "获得 nearlmod:伙伴们的庇护 。 NL 保留 。 NL 消耗 。 ",
+        "DESCRIPTION": "获得 nearlmod:伙伴们的庇护 。 NL 保留 。",
         "UPGRADE_DESCRIPTION": ""
     },
     "nearlmod:PersonalCharmSp": {

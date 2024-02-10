@@ -79,5 +79,10 @@
     "NAME": "Blood Entangle",
     "FLAVOR": "The pool of blood seems to congeal into sticky silk strands, tangling themselves around limbs. The blood flowing through body resonates with its compatriot, causing a tingling pain.",
     "DESCRIPTIONS": ["At the start of each combat, summon #b1 #yBlood #yBlade as additional enemy."]
+  },
+  "nearlmod:RatSwarm": {
+    "NAME": "Rat Swarm",
+    "FLAVOR": "Gather up, Rats!",
+    "DESCRIPTIONS": ["Whenever you summon a new #yFriend , gain #b5 #yBlocks."]
   }
 }

@@ -86,6 +86,9 @@ public class LightCard extends AbstractNearlCard {
 
     @Override
     public void applyPowers() {
+        if (type == 0) {
+            triggerWhenCopied();
+        }
         switchedStance();
         super.applyPowers();
     }
@@ -96,9 +99,12 @@ public class LightCard extends AbstractNearlCard {
         else this.target = CardTarget.ENEMY;
     }
 
+    /*
     public void triggerWhenDrawn() {
         triggerWhenCopied();
     }
+     */
+
     @Override
     public void triggerWhenCopied() {
         if (type == 0) {

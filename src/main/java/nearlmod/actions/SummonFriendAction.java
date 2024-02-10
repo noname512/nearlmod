@@ -1,6 +1,7 @@
 package nearlmod.actions;
 
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
+import com.megacrit.cardcrawl.actions.common.GainBlockAction;
 import com.megacrit.cardcrawl.actions.defect.ChannelAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
@@ -66,6 +67,10 @@ public class SummonFriendAction extends AbstractGameAction {
             }
             addToTop(new ChannelAction(summon, false));
             AbstractDungeon.player.increaseMaxOrbSlots(1, false);
+            if (AbstractDungeon.player.hasRelic("nearlmod:RatSwarm")) {
+                AbstractDungeon.player.getPower("nearlmod:RatSwarm").flash();
+                addToBot(new GainBlockAction(AbstractDungeon.player, 5));
+            }
         }
         for (AbstractCard card: AbstractDungeon.player.hand.group) {
             card.applyPowers();
