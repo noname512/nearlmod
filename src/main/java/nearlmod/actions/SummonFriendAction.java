@@ -68,7 +68,7 @@ public class SummonFriendAction extends AbstractGameAction {
             addToTop(new ChannelAction(summon, false));
             AbstractDungeon.player.increaseMaxOrbSlots(1, false);
             if (AbstractDungeon.player.hasRelic("nearlmod:RatSwarm")) {
-                AbstractDungeon.player.getPower("nearlmod:RatSwarm").flash();
+                AbstractDungeon.player.getRelic("nearlmod:RatSwarm").flash();
                 addToBot(new GainBlockAction(AbstractDungeon.player, 5));
             }
         }
