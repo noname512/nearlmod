@@ -302,6 +302,9 @@ public class NLMOD implements EditCardsSubscriber, EditCharactersSubscriber, Edi
         BaseMod.addCard(new BlemishinesFaintLight()); // 瑕光微明
         BaseMod.addCard(new PersonalCharmSp()); // 个人魅力SP
         BaseMod.addCard(new MedalOfChampion()); // 冠军奖章
+        BaseMod.addCard(new NearlCard()); // 使徒：临光
+        BaseMod.addCard(new NightingaleCard()); // 使徒：夜莺
+        BaseMod.addCard(new ShiningCard()); // 使徒：闪灵
     }
 
     @Override
