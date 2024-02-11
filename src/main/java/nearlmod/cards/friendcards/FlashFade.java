@@ -11,9 +11,13 @@ import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.localization.CardStrings;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import com.megacrit.cardcrawl.powers.AbstractPower;
+import com.megacrit.cardcrawl.powers.StrengthPower;
 import nearlmod.actions.UseShadowAction;
 import nearlmod.patches.AbstractCardEnum;
+import nearlmod.powers.ExsanguinationPower;
 import nearlmod.stances.AtkStance;
+
+import static java.lang.Integer.min;
 
 public class FlashFade extends AbstractFriendCard {
     public static final String ID = "nearlmod:FlashFade";
@@ -48,9 +52,24 @@ public class FlashFade extends AbstractFriendCard {
             magicNumber += str.amount;
         }
         if (!p.stance.ID.equals(AtkStance.STANCE_ID)) {
-            magicNumber += AtkStance.atkInc + AtkStance.incNum;
+            magicNumber += calc();
+        }
+        if (magicNumber < 0) {
+            magicNumber = 0;
         }
         isMagicNumberModified = (magicNumber != baseMagicNumber);
+    }
+
+    int calc() {
+        int num =  AtkStance.incNum + AtkStance.atkInc;
+        if (AbstractDungeon.player.hasPower(ExsanguinationPower.POWER_ID)) {
+            int strength = 0;
+            if (AbstractDungeon.player.hasPower(StrengthPower.POWER_ID)) {
+                strength = AbstractDungeon.player.getPower(StrengthPower.POWER_ID).amount;
+            }
+            num = min(num, -strength);
+        }
+        return num;
     }
 
     @Override

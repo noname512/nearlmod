@@ -93,6 +93,9 @@ public class WhipSword extends AbstractFriendCard {
             tmp = power.atDamageGive(tmp, damageTypeForTurn);
         for (AbstractPower power : p.powers)
             tmp = power.atDamageFinalGive(tmp, damageTypeForTurn);
+        if (tmp < 0) {
+            tmp = 0;
+        }
         damage += MathUtils.floor(tmp);
         isDamageModified = true;
         if (upgraded) {
