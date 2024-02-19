@@ -31,14 +31,14 @@ public class WitheredKnight extends AbstractMonster {
 
     public WitheredKnight(float x, float y) {
         super(NAME, ID, 130, 25.0F, 0, 150.0F, 320.0F, IMAGE, x, y);
-        this.type = EnemyType.ELITE;
-        if (AbstractDungeon.ascensionLevel >= 8)
+        this.type = EnemyType.BOSS;
+        if (AbstractDungeon.ascensionLevel >= 9)
             setHp(145);
-        if (AbstractDungeon.ascensionLevel >= 18) {
+        if (AbstractDungeon.ascensionLevel >= 19) {
             this.damage.add(new DamageInfo(this, 10));
             this.damage.add(new DamageInfo(this, 16));
             skillTimes = 4;
-        } else if (AbstractDungeon.ascensionLevel >= 3) {
+        } else if (AbstractDungeon.ascensionLevel >= 4) {
             this.damage.add(new DamageInfo(this, 9));
             this.damage.add(new DamageInfo(this, 14));
         } else {
