@@ -3,6 +3,7 @@ package nearlmod.cards;
 import basemod.abstracts.CustomCard;
 import basemod.abstracts.DynamicVariable;
 import basemod.helpers.TooltipInfo;
+import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.math.MathUtils;
 import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.cards.DamageInfo;
@@ -23,6 +24,11 @@ public abstract class AbstractNearlCard extends CustomCard {
     public boolean isSecondMagicNumberModified;
     public boolean upgradedSecondMagicNumber;
     public String belongFriend;
+
+    private float rotationTimer = 0.0F;
+    private int previewIndex = 0;
+    public ArrayList<AbstractCard> previewList = null;
+
 
     public AbstractNearlCard(String id, String name, String img, int cost, String rawDescription,
                              AbstractCard.CardType type, AbstractCard.CardColor color,
@@ -100,6 +106,25 @@ public abstract class AbstractNearlCard extends CustomCard {
         card.rawDescription = this.rawDescription;
         card.initializeDescription();
         return card;
+    }
+    public void update() {
+        super.update();
+        if (previewList == null) {
+            return;
+        }
+        if (this.hb.hovered) {
+            if (this.rotationTimer <= 0.0F) {
+                this.rotationTimer = 2.0F;
+                this.cardsToPreview = this.previewList.get(this.previewIndex);
+                if (this.previewIndex == this.previewList.size() - 1) {
+                    this.previewIndex = 0;
+                } else {
+                    this.previewIndex++;
+                }
+            } else {
+                this.rotationTimer -= Gdx.graphics.getDeltaTime();
+            }
+        }
     }
 
     public static class SecondMagicNumber extends DynamicVariable {

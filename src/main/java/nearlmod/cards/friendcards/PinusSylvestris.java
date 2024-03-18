@@ -1,5 +1,6 @@
 package nearlmod.cards.friendcards;
 
+import com.badlogic.gdx.Gdx;
 import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
@@ -10,9 +11,6 @@ import nearlmod.actions.AddFriendCardToHandAction;
 import nearlmod.actions.GainCostAction;
 import nearlmod.characters.Nearl;
 import nearlmod.patches.AbstractCardEnum;
-import org.apache.logging.log4j.LogManager;
-import org.apache.logging.log4j.core.Logger;
-import org.apache.logging.log4j.spi.AbstractLogger;
 
 import java.util.ArrayList;
 
@@ -29,12 +27,37 @@ public class PinusSylvestris extends AbstractFriendCard {
     private static final int COST_GAIN = 2;
     private static final int UPGRADE_PLUS_COST = 1;
 
+    boolean hasPreview;
+
     public PinusSylvestris() {
+        this(true);
+    }
+
+    public PinusSylvestris(boolean hasPreview) {
         super(ID, NAME, IMG_PATH, COST, DESCRIPTION,
                 CardType.SKILL, AbstractCardEnum.FRIEND_BLUE,
                 CardRarity.SPECIAL, CardTarget.SELF, "nearlmod:Flametail");
         secondMagicNumber = baseSecondMagicNumber = COST_GAIN;
         tags.add(IS_KNIGHT_CARD);
+
+        this.hasPreview = hasPreview;
+        if (hasPreview) {
+            previewList = Nearl.getUnuniqueFriendCard(true);
+        }
+    }
+
+    @Override
+    public void applyPowers() {
+        super.applyPowers();
+        if (!hasPreview) {
+            hasPreview = true;
+            previewList = Nearl.getUnuniqueFriendCard(true);
+            if (upgraded) {
+                for (AbstractCard x: previewList) {
+                    x.upgrade();
+                }
+            }
+        }
     }
 
     @Override
@@ -49,13 +72,20 @@ public class PinusSylvestris extends AbstractFriendCard {
 
     @Override
     public AbstractCard makeCopy() {
-        return new PinusSylvestris();
+        return new PinusSylvestris(hasPreview);
     }
 
     @Override
     public void upgrade() {
         if (!upgraded) {
             upgradeName();
+            rawDescription = UPGRADE_DESCRIPTION;
+            initializeDescription();
+            if (hasPreview) {
+                for (AbstractCard x: previewList) {
+                    x.upgrade();
+                }
+            }
             upgradeSecondMagicNumber(UPGRADE_PLUS_COST);
         }
     }

@@ -9,6 +9,7 @@ import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.localization.CardStrings;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import nearlmod.actions.SummonFriendAction;
+import nearlmod.characters.Nearl;
 import nearlmod.orbs.Blemishine;
 import nearlmod.patches.AbstractCardEnum;
 import nearlmod.patches.NearlTags;
@@ -36,6 +37,8 @@ public class StayGold extends AbstractNearlCard {
         block = baseBlock = BLOCK_AMT;
         tags.add(NearlTags.IS_SUMMON_CARD);
         tags.add(NearlTags.IS_GAIN_LIGHT);
+
+        previewList = Nearl.getFriendCard(Blemishine.ORB_ID);
     }
 
     @Override

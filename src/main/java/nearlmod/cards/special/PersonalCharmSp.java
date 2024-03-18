@@ -7,6 +7,7 @@ import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.localization.CardStrings;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import nearlmod.cards.AbstractNearlCard;
+import nearlmod.characters.Nearl;
 import nearlmod.orbs.*;
 import nearlmod.patches.NearlTags;
 
@@ -28,6 +29,8 @@ public class PersonalCharmSp extends AbstractNearlCard {
                 CardType.POWER, CardColor.COLORLESS,
                 CardRarity.SPECIAL, CardTarget.SELF);
         tags.add(NearlTags.IS_SUMMON_CARD);
+
+        previewList = Nearl.getUnuniqueFriendCard(true);
     }
 
     @Override

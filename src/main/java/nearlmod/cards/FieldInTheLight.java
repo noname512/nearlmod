@@ -26,6 +26,8 @@ public class FieldInTheLight extends AbstractNearlCard {
         super(ID, NAME, IMG_PATH, COST, DESCRIPTION,
                 CardType.SKILL, AbstractCardEnum.NEARL_GOLD,
                 CardRarity.UNCOMMON, CardTarget.SELF);
+
+        previewList = Nearl.getUnuniqueFriendCard(true);
     }
 
     @Override

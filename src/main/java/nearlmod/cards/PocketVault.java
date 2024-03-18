@@ -10,6 +10,7 @@ import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import nearlmod.NLMOD;
 import nearlmod.actions.PocketVaultAction;
 import nearlmod.actions.SummonFriendAction;
+import nearlmod.characters.Nearl;
 import nearlmod.orbs.Whislash;
 import nearlmod.patches.AbstractCardEnum;
 
@@ -32,6 +33,8 @@ public class PocketVault extends AbstractNearlCard {
                 CardRarity.RARE, CardTarget.ENEMY);
         damage = baseDamage = ATTACK_DMG;
         magicNumber = baseMagicNumber = CARD_SELECT;
+
+        previewList = Nearl.getFriendCard(Whislash.ORB_ID);
     }
 
     @Override

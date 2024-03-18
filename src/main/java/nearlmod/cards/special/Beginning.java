@@ -7,6 +7,7 @@ import com.megacrit.cardcrawl.localization.CardStrings;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import nearlmod.actions.SummonFriendAction;
 import nearlmod.cards.AbstractNearlCard;
+import nearlmod.characters.Nearl;
 import nearlmod.orbs.Blemishine;
 import nearlmod.patches.NearlTags;
 
@@ -25,6 +26,8 @@ public class Beginning extends AbstractNearlCard {
                 CardType.POWER, CardColor.COLORLESS,
                 CardRarity.SPECIAL, CardTarget.SELF);
         tags.add(NearlTags.IS_SUMMON_CARD);
+
+        previewList = Nearl.getFriendCard(Blemishine.ORB_ID);
     }
 
     @Override

@@ -8,6 +8,7 @@ import com.megacrit.cardcrawl.localization.CardStrings;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import com.megacrit.cardcrawl.powers.AbstractPower;
 import nearlmod.actions.SummonFriendAction;
+import nearlmod.characters.Nearl;
 import nearlmod.orbs.Viviana;
 import nearlmod.patches.AbstractCardEnum;
 import nearlmod.patches.NearlTags;
@@ -28,6 +29,8 @@ public class SwallowLight extends AbstractNearlCard {
                 CardType.POWER, AbstractCardEnum.NEARL_GOLD,
                 CardRarity.UNCOMMON, CardTarget.SELF);
         tags.add(NearlTags.IS_SUMMON_CARD);
+
+        previewList = Nearl.getFriendCard(Viviana.ORB_ID);
     }
 
     @Override

@@ -8,6 +8,7 @@ import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import nearlmod.actions.AddFriendCardToHandAction;
 import nearlmod.actions.SummonFriendAction;
 import nearlmod.cards.friendcards.AbstractFriendCard;
+import nearlmod.characters.Nearl;
 import nearlmod.orbs.Nightingale;
 import nearlmod.patches.AbstractCardEnum;
 import nearlmod.patches.NearlTags;
@@ -27,6 +28,8 @@ public class DanceTogether extends AbstractNearlCard {
                 CardType.POWER, AbstractCardEnum.NEARL_GOLD,
                 CardRarity.UNCOMMON, CardTarget.SELF);
         tags.add(NearlTags.IS_SUMMON_CARD);
+
+        previewList = Nearl.getFriendCard(Nightingale.ORB_ID);
     }
 
     @Override

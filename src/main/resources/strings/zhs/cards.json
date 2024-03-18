@@ -16,18 +16,18 @@
     },
     "nearlmod:MajestyLight": {
         "NAME": "手执威光",
-        "DESCRIPTION": "使用 nearlmod:光 ，然后获得 !M! 层 nearlmod:光 。",
+        "DESCRIPTION": "使用 nearlmod:光 ， NL 然后获得 !M! 层 nearlmod:光 。",
         "UPGRADE_DESCRIPTION": ""
     },
 
     "nearlmod:GumboBreadBowl": {
         "NAME": "浓汤面包碗",
-        "DESCRIPTION": "进入 nearlmod:守护 ，获得 !B! 点 格挡 ，使用 nearlmod:光 。",
+        "DESCRIPTION": "进入 nearlmod:守护 ， NL 获得 !B! 点 格挡 ， NL 使用 nearlmod:光 。",
         "UPGRADE_DESCRIPTION": ""
     },
     "nearlmod:KnightCrest": {
         "NAME": "骑士之辉",
-        "DESCRIPTION": "进入 nearlmod:无畏 ，造成 !D! 点伤害，使用 nearlmod:光 。",
+        "DESCRIPTION": "进入 nearlmod:无畏 ， NL 造成 !D! 点伤害， NL 使用 nearlmod:光 。",
         "UPGRADE_DESCRIPTION": ""
     },
     "nearlmod:AllinOne": {
@@ -182,7 +182,7 @@
     },
     "nearlmod:Oaths": {
         "NAME": "誓言",
-        "DESCRIPTION": "对所有敌人造成 !D! 点伤害，并给予 !M! 层虚弱。如果闪灵在场，本回合每次受到的伤害减少 6 点。",
+        "DESCRIPTION": "对所有敌人造成 !D! 点伤害，并给予 !M! 层 虚弱 。如果闪灵在场，本回合每次受到的伤害减少 6 点。",
         "UPGRADE_DESCRIPTION": ""
     },
     "nearlmod:DefendHonor": {
@@ -196,7 +196,7 @@
     "nearlmod:FlutteringWings": {
         "NAME": "振翅欲飞",
         "DESCRIPTION": "切换 nearlmod:形态 ，本回合内保留当前 nearlmod:形态 增加的属性。",
-        "UPGRADE_DESCRIPTION": "切换 nearlmod:形态 ，本回合内保留当前 nearlmod:形态 增加的属性。将一张 *攻防一体 放入你的手牌，并使其获得 消耗 和 虚无 。"
+        "UPGRADE_DESCRIPTION": "切换 nearlmod:形态 ，本回合内保留当前 nearlmod:形态 增加的属性。将一张带有 消耗 和 虚无 的 *攻防一体 放入你的手牌。"
     },
     "nearlmod:ShieldAndShelter": {
         "NAME": "盾与避难所",
@@ -401,7 +401,7 @@
     },
     "nearlmod:PocketVault": {
         "NAME": "“小金库”",
-        "DESCRIPTION": "造成 !D! 点伤害，如果鞭刃在场，选择抽牌堆和弃牌堆中不超过 !M! 张牌加入你的手牌。 NL 否则召唤鞭刃作为伙伴。",
+        "DESCRIPTION": "造成 !D! 点伤害，如果鞭刃在场，选择抽牌堆和弃牌堆中不超过 !M! 张牌加入你的手牌。 NL 否则召唤鞭刃作为 伙伴 。",
         "UPGRADE_DESCRIPTION": ""
     },
 

@@ -7,6 +7,7 @@ import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.localization.CardStrings;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import nearlmod.cards.special.LightCard;
+import nearlmod.characters.Nearl;
 import nearlmod.patches.AbstractCardEnum;
 
 public class OverflowingLight extends AbstractNearlCard {
@@ -26,6 +27,7 @@ public class OverflowingLight extends AbstractNearlCard {
                 CardRarity.COMMON, CardTarget.SELF);
         magicNumber = baseMagicNumber = CARD_AMT;
         cardsToPreview = new LightCard();
+        previewList = Nearl.getLightCards();
     }
 
     @Override

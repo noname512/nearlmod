@@ -7,6 +7,7 @@ import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.localization.CardStrings;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import nearlmod.cards.special.LightCard;
+import nearlmod.characters.Nearl;
 import nearlmod.patches.AbstractCardEnum;
 import nearlmod.powers.InfiniteLightBladePower;
 
@@ -24,6 +25,7 @@ public class InfiniteLightBlade extends AbstractNearlCard {
                 CardType.POWER, AbstractCardEnum.NEARL_GOLD,
                 CardRarity.UNCOMMON, CardTarget.SELF);
         cardsToPreview = new LightCard();
+        previewList = Nearl.getLightCards();
     }
 
     @Override

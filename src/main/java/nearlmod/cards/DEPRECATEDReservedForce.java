@@ -48,11 +48,11 @@ public class DEPRECATEDReservedForce extends AbstractNearlCard {
         if (extraTriggered()) {
             ArrayList<AbstractFriendCard> list = new ArrayList<>();
             if (p.stance.ID.equals(AtkStance.STANCE_ID)) {
-                for (AbstractCard c : Nearl.friendCards.group)
+                for (AbstractCard c : NLMOD.friendCards.group)
                     if (!c.hasTag(NearlTags.IS_UNIQUE_CARD) && c.type == CardType.ATTACK)
                         list.add((AbstractFriendCard)c.makeCopy());
             } else {
-                for (AbstractCard c : Nearl.friendCards.group)
+                for (AbstractCard c : NLMOD.friendCards.group)
                     if (!c.hasTag(NearlTags.IS_UNIQUE_CARD) && c.type == CardType.SKILL)
                         list.add((AbstractFriendCard)c.makeCopy());
             }

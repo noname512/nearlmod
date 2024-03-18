@@ -11,6 +11,7 @@ import com.megacrit.cardcrawl.powers.LoseStrengthPower;
 import com.megacrit.cardcrawl.powers.StrengthPower;
 import nearlmod.actions.SummonFriendAction;
 import nearlmod.actions.TempStrengthAction;
+import nearlmod.characters.Nearl;
 import nearlmod.orbs.Whislash;
 import nearlmod.patches.AbstractCardEnum;
 import nearlmod.patches.NearlTags;
@@ -32,6 +33,8 @@ public class WayToHome extends AbstractNearlCard {
                 CardRarity.UNCOMMON, CardTarget.SELF);
         magicNumber = baseMagicNumber = POWER_GAIN;
         tags.add(NearlTags.IS_SUMMON_CARD);
+
+        previewList = Nearl.getFriendCard(Whislash.ORB_ID);
     }
 
     @Override

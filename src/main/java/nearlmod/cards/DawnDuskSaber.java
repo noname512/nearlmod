@@ -13,6 +13,7 @@ import nearlmod.actions.PureDamageAllEnemiesAction;
 import nearlmod.actions.SummonFriendAction;
 import nearlmod.actions.WeakenAllAction;
 import nearlmod.cards.friendcards.AbstractFriendCard;
+import nearlmod.characters.Nearl;
 import nearlmod.orbs.Shining;
 import nearlmod.orbs.Viviana;
 import nearlmod.patches.AbstractCardEnum;
@@ -36,6 +37,8 @@ public class DawnDuskSaber extends AbstractNearlCard {
                 CardRarity.UNCOMMON, CardTarget.SELF);
         magicNumber = baseMagicNumber = ATTACK_DMG;
         tags.add(NearlTags.IS_SUMMON_CARD);
+
+        previewList = Nearl.getFriendCard(Shining.ORB_ID);
     }
 
     @Override

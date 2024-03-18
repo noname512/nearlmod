@@ -13,6 +13,7 @@ import com.evacipated.cardcrawl.mod.stslib.Keyword;
 import com.evacipated.cardcrawl.modthespire.lib.SpireInitializer;
 import com.google.gson.Gson;
 import com.google.gson.reflect.TypeToken;
+import com.megacrit.cardcrawl.cards.CardGroup;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.core.Settings;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
@@ -66,6 +67,8 @@ public class NLMOD implements EditCardsSubscriber, EditCharactersSubscriber, Edi
 
     public static final HashMap<String, TextureAtlas.AtlasRegion> specialImg = new HashMap<>();
     public static boolean friendTipMode = false;
+
+    public static CardGroup friendCards;
 
     public NLMOD() {
         BaseMod.subscribe(this);
@@ -176,6 +179,7 @@ public class NLMOD implements EditCardsSubscriber, EditCharactersSubscriber, Edi
     @Override
     public void receiveEditCards() {
         BaseMod.addDynamicVariable(new AbstractNearlCard.SecondMagicNumber());
+        initFriendCard();
 
         // Basic.
         BaseMod.addCard(new NearlStrike()); // 打击
@@ -399,5 +403,39 @@ public class NLMOD implements EditCardsSubscriber, EditCharactersSubscriber, Edi
             if ((orb instanceof AbstractFriend) && (orb.ID.equals(orbId)))
                 return true;
         return false;
+    }
+
+    public static void initFriendCard() {
+        friendCards = new CardGroup(CardGroup.CardGroupType.CARD_POOL);
+        friendCards.group.add(new AllySupport());
+        friendCards.group.add(new ArtsShield());
+        friendCards.group.add(new AutoProtect());
+        friendCards.group.add(new BeepActivate());
+        friendCards.group.add(new BlackFiendProtection());
+        friendCards.group.add(new BombardmentStudies());
+        friendCards.group.add(new ClosedHope());
+        friendCards.group.add(new CraftsmanEcho());
+        friendCards.group.add(new Creed());
+        friendCards.group.add(new CreedField());
+        friendCards.group.add(new DeterringRadiance());
+        friendCards.group.add(new DivineAvatar());
+        friendCards.group.add(new FeatherShineArrows());
+        friendCards.group.add(new FlameHeart());
+        friendCards.group.add(new FlameShadow());
+        friendCards.group.add(new FlashFade());
+        friendCards.group.add(new FocusedBombardment());
+        friendCards.group.add(new GlimmeringTouch());
+        friendCards.group.add(new JusticeDrive());
+        friendCards.group.add(new LanceCharge());
+        friendCards.group.add(new LSSwiftSword());
+        friendCards.group.add(new MotivationalSkills());
+        friendCards.group.add(new PinusSylvestris(false));
+        friendCards.group.add(new Rebuke());
+        friendCards.group.add(new Sanctuary());
+        friendCards.group.add(new StabbingLance());
+        friendCards.group.add(new SurgingBrilliance());
+        friendCards.group.add(new VisionOfUnity());
+        friendCards.group.add(new WhipSword());
+        friendCards.group.add(new WhiteFiendProtection());
     }
 }

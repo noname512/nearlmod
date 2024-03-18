@@ -32,6 +32,11 @@ public class SightImpairingShowdown extends AbstractNearlCard {
                 CardType.SKILL, AbstractCardEnum.NEARL_GOLD,
                 CardRarity.UNCOMMON, CardTarget.SELF);
         magicNumber = baseMagicNumber = POWER_GAIN;
+
+        previewList = new ArrayList<>();
+        previewList.add(new LSSwiftSword());
+        previewList.add(new GlimmeringTouch());
+        previewList.add(new FlashFade());
     }
 
     @Override
@@ -43,11 +48,7 @@ public class SightImpairingShowdown extends AbstractNearlCard {
             AbstractFriendCard card = Viviana.getRandomCard(false, true);
             addToBot(new AddFriendCardToHandAction(card));
         } else {
-            ArrayList<AbstractCard> list = new ArrayList<>();
-            list.add(new LSSwiftSword());
-            list.add(new GlimmeringTouch());
-            list.add(new FlashFade());
-            addToBot(new ChooseSpecificCardAction(list));
+            addToBot(new ChooseSpecificCardAction(previewList));
         }
     }
 

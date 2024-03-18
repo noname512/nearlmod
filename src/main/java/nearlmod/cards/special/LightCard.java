@@ -15,6 +15,7 @@ import nearlmod.actions.AllFromDeckToHandAction;
 import nearlmod.actions.UseLightAction;
 import nearlmod.cards.AbstractNearlCard;
 import nearlmod.cards.SwitchType;
+import nearlmod.characters.Nearl;
 import nearlmod.powers.LightPower;
 import nearlmod.stances.AtkStance;
 import nearlmod.stances.DefStance;
@@ -40,11 +41,25 @@ public class LightCard extends AbstractNearlCard {
     }
 
     public LightCard(int type) {
-        super(ID, NAME, IMG_PATH_PREFIX + type + IMG_PATH_POSTFIX, COST, EXTENDED_DESCRIPTION[0] + DESCRIPTION,
+        super(ID, NAME, IMG_PATH_PREFIX + type + IMG_PATH_POSTFIX, COST, EXTENDED_DESCRIPTION[type] + DESCRIPTION,
                 CardType.SKILL, CardColor.COLORLESS,
                 CardRarity.SPECIAL, CardTarget.ENEMY);
         exhaust = true;
         this.type = type;
+        switch (type) {
+            case 1:
+                magicNumber = baseMagicNumber = EXTRA_LIGHT;
+                break;
+            case 2:
+                magicNumber = baseMagicNumber = STR_LOSS;
+                break;
+            case 4:
+                selfRetain = true;
+                break;
+            case 5:
+            case 6:
+                magicNumber = baseMagicNumber = 0;
+        }
     }
 
     @Override
@@ -99,12 +114,6 @@ public class LightCard extends AbstractNearlCard {
         else this.target = CardTarget.ENEMY;
     }
 
-    /*
-    public void triggerWhenDrawn() {
-        triggerWhenCopied();
-    }
-     */
-
     @Override
     public void triggerWhenCopied() {
         if (type == 0) {
@@ -135,6 +144,7 @@ public class LightCard extends AbstractNearlCard {
                     magicNumber = baseMagicNumber = 0;
                     cardsToPreview = new LightCard();
                     cardsToPreview.upgrade();
+                    previewList = Nearl.getLightCards(true);
                     break;
             }
             initializeDescription();

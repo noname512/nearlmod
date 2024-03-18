@@ -29,6 +29,7 @@ import com.megacrit.cardcrawl.screens.CharSelectInfo;
 import com.megacrit.cardcrawl.unlock.UnlockTracker;
 import nearlmod.cards.*;
 import nearlmod.cards.friendcards.*;
+import nearlmod.cards.special.LightCard;
 import nearlmod.orbs.AbstractFriend;
 import nearlmod.patches.NearlTags;
 import nearlmod.powers.LightPower;
@@ -42,6 +43,8 @@ import nearlmod.util.CostEnergyOrb;
 import nearlmod.util.CostReserves;
 import java.util.ArrayList;
 import java.util.Collections;
+
+import static nearlmod.NLMOD.friendCards;
 
 public class Nearl extends CustomPlayer {
 
@@ -70,8 +73,6 @@ public class Nearl extends CustomPlayer {
         "images/char/orb/layer4d.png"
     };
 
-    public static CardGroup friendCards;
-
     public Nearl(String name) {
         // 参数列表：角色名，角色类枚举，能量面板贴图路径列表，能量面板特效贴图路径，能量面板贴图旋转速度列表，能量面板，模型资源路径，动画资源路径
         super(name, NearlEnum.NEARL_CLASS, new CostEnergyOrb(orbTextures, "images/char/orb/vfx.png", null), null, null);
@@ -85,7 +86,6 @@ public class Nearl extends CustomPlayer {
         this.stateData.setMix("Idle", "Die", 0.1F);
         this.state.setAnimation(0, "Idle", true);
         ArenaRoom.enterTimes = 0;
-        initFriendCard();
     }
 
     @Override
@@ -243,45 +243,32 @@ public class Nearl extends CustomPlayer {
         this.state.setAnimation(0, "Idle", true);
     }
 
-    public static void initFriendCard() {
-        friendCards = new CardGroup(CardGroup.CardGroupType.CARD_POOL);
-        friendCards.group.add(new AllySupport());
-        friendCards.group.add(new ArtsShield());
-        friendCards.group.add(new AutoProtect());
-        friendCards.group.add(new BeepActivate());
-        friendCards.group.add(new BlackFiendProtection());
-        friendCards.group.add(new BombardmentStudies());
-        friendCards.group.add(new ClosedHope());
-        friendCards.group.add(new CraftsmanEcho());
-        friendCards.group.add(new Creed());
-        friendCards.group.add(new CreedField());
-        friendCards.group.add(new DeterringRadiance());
-        friendCards.group.add(new DivineAvatar());
-        friendCards.group.add(new FeatherShineArrows());
-        friendCards.group.add(new FlameHeart());
-        friendCards.group.add(new FlameShadow());
-        friendCards.group.add(new FlashFade());
-        friendCards.group.add(new FocusedBombardment());
-        friendCards.group.add(new GlimmeringTouch());
-        friendCards.group.add(new JusticeDrive());
-        friendCards.group.add(new LanceCharge());
-        friendCards.group.add(new LSSwiftSword());
-        friendCards.group.add(new MotivationalSkills());
-        friendCards.group.add(new PinusSylvestris());
-        friendCards.group.add(new Rebuke());
-        friendCards.group.add(new Sanctuary());
-        friendCards.group.add(new StabbingLance());
-        friendCards.group.add(new SurgingBrilliance());
-        friendCards.group.add(new VisionOfUnity());
-        friendCards.group.add(new WhipSword());
-        friendCards.group.add(new WhiteFiendProtection());
-    }
-
     public static ArrayList<AbstractCard> getUnuniqueFriendCard(boolean isPinusSylvestris) {
         ArrayList<AbstractCard> list = new ArrayList<>();
         for (AbstractCard c : friendCards.group)
             if (!c.hasTag(NearlTags.IS_UNIQUE_CARD) && (!isPinusSylvestris || c.hasTag(NearlTags.IS_KNIGHT_CARD)))
                 list.add(c.makeCopy());
+        return list;
+    }
+
+    public static ArrayList<AbstractCard> getFriendCard(String FriendID) {
+        ArrayList<AbstractCard> list = new ArrayList<>();
+        for (AbstractCard c : friendCards.group)
+            if (((AbstractFriendCard) c).belongFriend.equals(FriendID))
+                list.add(c.makeCopy());
+        return list;
+    }
+
+    public static ArrayList<AbstractCard> getLightCards() {
+        return getLightCards(false);
+    }
+    public static ArrayList<AbstractCard> getLightCards(boolean isUpgraded) {
+        ArrayList<AbstractCard> list = new ArrayList<>();
+        for (int i = 0; i <= 6; i++) {
+            AbstractCard c = new LightCard(i);
+            if (isUpgraded) c.upgrade();
+            list.add(c);
+        }
         return list;
     }
 

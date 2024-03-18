@@ -1,5 +1,6 @@
 package nearlmod.cards;
 
+import com.badlogic.gdx.Gdx;
 import com.megacrit.cardcrawl.actions.common.MakeTempCardInHandAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
@@ -25,11 +26,14 @@ public class Followers extends AbstractNearlCard {
     public static final String UPGRADE_DESCRIPTION = cardStrings.UPGRADE_DESCRIPTION;
     public static final String IMG_PATH = "images/cards/followers.png";
     private static final int COST = 1;
-
     public Followers() {
         super(ID, NAME, IMG_PATH, COST, DESCRIPTION,
                 CardType.SKILL, AbstractCardEnum.NEARL_GOLD,
                 CardRarity.RARE, CardTarget.SELF);
+        previewList = new ArrayList<>();
+        previewList.add(new NearlCard());
+        previewList.add(new NightingaleCard());
+        previewList.add(new ShiningCard());
     }
 
     @Override
@@ -39,14 +43,10 @@ public class Followers extends AbstractNearlCard {
 
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
-        ArrayList<AbstractCard> list = new ArrayList<>();
-        list.add(new NearlCard());
-        list.add(new NightingaleCard());
-        list.add(new ShiningCard());
         if (extraTriggered()) {
-            for (AbstractCard card : list) addToBot(new MakeTempCardInHandAction(card));
+            for (AbstractCard card : previewList) addToBot(new MakeTempCardInHandAction(card));
         } else {
-            addToBot(new ChooseSpecificCardAction(list, false));
+            addToBot(new ChooseSpecificCardAction(previewList, false));
         }
     }
 

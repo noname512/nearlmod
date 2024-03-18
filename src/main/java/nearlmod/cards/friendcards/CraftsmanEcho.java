@@ -31,6 +31,8 @@ public class CraftsmanEcho extends AbstractFriendCard {
                 CardType.SKILL, AbstractCardEnum.FRIEND_BLUE,
                 CardRarity.SPECIAL, CardTarget.SELF, "nearlmod:Blemishine");
         secondMagicNumber = baseSecondMagicNumber = EXTRA_INC;
+
+        cardsToPreview = new AllinOne();
     }
 
     @Override

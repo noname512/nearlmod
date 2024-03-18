@@ -26,6 +26,7 @@ public class ReliableFriend extends AbstractNearlCard {
         exhaust = true;
     }
 
+    /* 暂时先允许空召吧，感觉不允许有点弱智。
     @Override
     public boolean canUse(AbstractPlayer p, AbstractMonster m) {
         if (!super.canUse(p, m)) return false;
@@ -35,6 +36,7 @@ public class ReliableFriend extends AbstractNearlCard {
         this.cantUseMessage = CardCrawlGame.languagePack.getUIString("nearlmod:SummonFromDeckToHandAction").TEXT[1];
         return false;
     }
+    */
 
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {

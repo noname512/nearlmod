@@ -13,6 +13,7 @@ import com.megacrit.cardcrawl.powers.AbstractPower;
 import nearlmod.NLMOD;
 import nearlmod.actions.ShadowOutAction;
 import nearlmod.actions.SummonFriendAction;
+import nearlmod.characters.Nearl;
 import nearlmod.orbs.Viviana;
 import nearlmod.patches.AbstractCardEnum;
 import nearlmod.powers.ShadowPower;
@@ -35,6 +36,8 @@ public class ShadowOut extends AbstractNearlCard {
                 CardRarity.RARE, CardTarget.SELF);
         magicNumber = baseMagicNumber = ATTACK_DMG;
         secondMagicNumber = baseSecondMagicNumber = ATTACK_TIMES;
+
+        previewList = Nearl.getFriendCard(Viviana.ORB_ID);
     }
 
     @Override

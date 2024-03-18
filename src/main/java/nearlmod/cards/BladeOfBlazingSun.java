@@ -8,6 +8,7 @@ import com.megacrit.cardcrawl.localization.CardStrings;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import nearlmod.NLMOD;
 import nearlmod.actions.SummonFriendAction;
+import nearlmod.characters.Nearl;
 import nearlmod.orbs.Blemishine;
 import nearlmod.patches.AbstractCardEnum;
 import nearlmod.patches.NearlTags;
@@ -30,6 +31,8 @@ public class BladeOfBlazingSun extends AbstractNearlCard {
                 CardRarity.RARE, CardTarget.SELF);
         magicNumber = baseMagicNumber = STRENGTH_AMT;
         tags.add(NearlTags.IS_SUMMON_CARD);
+
+        previewList = Nearl.getFriendCard(Blemishine.ORB_ID);
     }
 
     @Override

@@ -12,6 +12,7 @@ import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.localization.CardStrings;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import nearlmod.cards.special.LightCard;
+import nearlmod.characters.Nearl;
 import nearlmod.patches.AbstractCardEnum;
 import nearlmod.stances.AtkStance;
 
@@ -32,6 +33,7 @@ public class Unsheathed extends AbstractNearlCard {
                 CardRarity.COMMON, CardTarget.ENEMY);
         damage = baseDamage = ATTACK_DMG;
         cardsToPreview = new LightCard();
+        previewList = Nearl.getLightCards();
     }
 
     @Override
