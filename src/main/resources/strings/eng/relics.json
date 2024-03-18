@@ -52,7 +52,7 @@
   "nearlmod:KnightFiction": {
     "NAME": "Knight Fiction",
     "FLAVOR": "\"When the knight charged toward the endless waves, did you imagine that he was trying to overcome the entire world?\"",
-    "DESCRIPTIONS": ["In the same turn, whenever you played #b3 card of same type, the next card of same type costs #b0 ."]
+    "DESCRIPTIONS": ["In the same turn, every #b4-th card of same type costs #b0 ."]
   },
 
   "nearlmod:LateLight": {

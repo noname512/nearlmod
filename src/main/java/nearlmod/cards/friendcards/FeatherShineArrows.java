@@ -8,6 +8,7 @@ import com.megacrit.cardcrawl.cards.DamageInfo;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
+import com.megacrit.cardcrawl.helpers.ImageMaster;
 import com.megacrit.cardcrawl.localization.CardStrings;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import javassist.CtBehavior;
@@ -31,6 +32,8 @@ public class FeatherShineArrows extends AbstractFriendCard {
                 CardType.ATTACK, AbstractCardEnum.FRIEND_BLUE,
                 CardRarity.SPECIAL, CardTarget.ALL_ENEMY, "nearlmod:Fartooth");
         magicNumber = baseMagicNumber = ATTACK_DMG;
+        bannerSmallRegion = ImageMaster.CARD_BANNER_UNCOMMON;
+        bannerLargeRegion = ImageMaster.CARD_BANNER_UNCOMMON_L;
         tags.add(IS_KNIGHT_CARD);
     }
 

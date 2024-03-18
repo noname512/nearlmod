@@ -27,7 +27,7 @@
   "nearlmod:KnightFamily": {
     "NAME": "“骑士家族”",
     "FLAVOR": "我们都身在阴影中，一如既往。",
-    "DESCRIPTIONS": ["你每场战斗第一次要被杀死时，免疫本次伤害，最大生命值减少 #b60% ，回复全部的生命值，获得 #b3 点力量，本回合不再受到伤害。"]
+    "DESCRIPTIONS": ["你每场战斗第一次要被杀死时，免疫本次伤害，最大生命值减少 #b60% ，回复全部的生命值，获得 #b3 点 #y力量 ，本回合不再受到伤害。"]
   },
   "nearlmod:UpgradedCoreCaster": {
     "NAME": "改良施术单元",
@@ -52,7 +52,7 @@
   "nearlmod:KnightFiction": {
     "NAME": "骑士小说",
     "FLAVOR": "“当那名骑士冲向无边的浪潮中时，你觉得他想的是战胜这片大地吗？”",
-    "DESCRIPTIONS": ["同一回合内，你每打出 #b3 张相同类型的牌，下一张相同类型的牌耗能变为 #b0 。"]
+    "DESCRIPTIONS": ["同一回合内，你每打出的第 #b4 张相同类型的牌耗能将变为 #b0 。"]
   },
   "nearlmod:RatSwarm": {
     "NAME": "鼠群",

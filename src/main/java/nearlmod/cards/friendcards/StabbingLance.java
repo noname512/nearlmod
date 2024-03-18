@@ -5,6 +5,7 @@ import com.megacrit.cardcrawl.cards.DamageInfo;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
+import com.megacrit.cardcrawl.helpers.ImageMaster;
 import com.megacrit.cardcrawl.localization.CardStrings;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import nearlmod.actions.MyRandomAttackAction;
@@ -31,6 +32,8 @@ public class StabbingLance extends AbstractFriendCard {
                 CardRarity.SPECIAL, CardTarget.ALL_ENEMY, "nearlmod:Wildmane");
         magicNumber = baseMagicNumber = ATTACK_DMG;
         secondMagicNumber = baseSecondMagicNumber = ATTACK_TIMES;
+        bannerSmallRegion = ImageMaster.CARD_BANNER_UNCOMMON;
+        bannerLargeRegion = ImageMaster.CARD_BANNER_UNCOMMON_L;
         tags.add(IS_KNIGHT_CARD);
     }
 

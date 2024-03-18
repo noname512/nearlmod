@@ -33,6 +33,7 @@ public class CraftsmanEcho extends AbstractFriendCard {
         secondMagicNumber = baseSecondMagicNumber = EXTRA_INC;
 
         cardsToPreview = new AllinOne();
+        cardsToPreview.upgrade();
     }
 
     @Override

@@ -407,35 +407,44 @@ public class NLMOD implements EditCardsSubscriber, EditCharactersSubscriber, Edi
 
     public static void initFriendCard() {
         friendCards = new CardGroup(CardGroup.CardGroupType.CARD_POOL);
-        friendCards.group.add(new AllySupport());
-        friendCards.group.add(new ArtsShield());
-        friendCards.group.add(new AutoProtect());
-        friendCards.group.add(new BeepActivate());
-        friendCards.group.add(new BlackFiendProtection());
-        friendCards.group.add(new BombardmentStudies());
-        friendCards.group.add(new ClosedHope());
+        friendCards.group.add(new DivineAvatar());
+        friendCards.group.add(new DeterringRadiance());
+        friendCards.group.add(new SurgingBrilliance());
         friendCards.group.add(new CraftsmanEcho());
+
+        friendCards.group.add(new WhiteFiendProtection());
+        friendCards.group.add(new ArtsShield());
+        friendCards.group.add(new ClosedHope());
+        friendCards.group.add(new Sanctuary());
+
+        friendCards.group.add(new BlackFiendProtection());
+        friendCards.group.add(new AutoProtect());
         friendCards.group.add(new Creed());
         friendCards.group.add(new CreedField());
-        friendCards.group.add(new DeterringRadiance());
-        friendCards.group.add(new DivineAvatar());
-        friendCards.group.add(new FeatherShineArrows());
-        friendCards.group.add(new FlameHeart());
+
         friendCards.group.add(new FlameShadow());
-        friendCards.group.add(new FlashFade());
-        friendCards.group.add(new FocusedBombardment());
-        friendCards.group.add(new GlimmeringTouch());
-        friendCards.group.add(new JusticeDrive());
-        friendCards.group.add(new LanceCharge());
         friendCards.group.add(new LSSwiftSword());
-        friendCards.group.add(new MotivationalSkills());
-        friendCards.group.add(new PinusSylvestris(false));
+        friendCards.group.add(new GlimmeringTouch());
+        friendCards.group.add(new FlashFade());
+
         friendCards.group.add(new Rebuke());
-        friendCards.group.add(new Sanctuary());
-        friendCards.group.add(new StabbingLance());
-        friendCards.group.add(new SurgingBrilliance());
+        friendCards.group.add(new MotivationalSkills());
         friendCards.group.add(new VisionOfUnity());
         friendCards.group.add(new WhipSword());
-        friendCards.group.add(new WhiteFiendProtection());
+
+        friendCards.group.add(new FlameHeart());
+        friendCards.group.add(new PinusSylvestris(false));
+
+        friendCards.group.add(new BombardmentStudies());
+        friendCards.group.add(new FocusedBombardment());
+
+        friendCards.group.add(new LanceCharge());
+        friendCards.group.add(new StabbingLance());
+
+        friendCards.group.add(new AllySupport());
+        friendCards.group.add(new FeatherShineArrows());
+
+        friendCards.group.add(new BeepActivate());
+        friendCards.group.add(new JusticeDrive());
     }
 }

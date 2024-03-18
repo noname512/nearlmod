@@ -6,6 +6,7 @@ import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
+import com.megacrit.cardcrawl.helpers.ImageMaster;
 import com.megacrit.cardcrawl.localization.CardStrings;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import com.megacrit.cardcrawl.powers.VulnerablePower;
@@ -32,6 +33,8 @@ public class JusticeDrive extends AbstractFriendCard {
                 CardRarity.SPECIAL, CardTarget.ALL_ENEMY, "nearlmod:JusticeKnight");
         secondMagicNumber = baseSecondMagicNumber = VULN_GAIN;
         baseMagicNumber = magicNumber = DAMAGE;
+        bannerSmallRegion = ImageMaster.CARD_BANNER_UNCOMMON;
+        bannerLargeRegion = ImageMaster.CARD_BANNER_UNCOMMON_L;
         tags.add(IS_KNIGHT_CARD);
     }
 
