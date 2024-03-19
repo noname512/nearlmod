@@ -2,8 +2,11 @@ package nearlmod.powers;
 
 import basemod.interfaces.CloneablePowerInterface;
 import com.badlogic.gdx.graphics.g2d.TextureAtlas;
+import com.evacipated.cardcrawl.modthespire.lib.SpirePatch;
+import com.evacipated.cardcrawl.modthespire.lib.SpirePrefixPatch;
 import com.megacrit.cardcrawl.actions.common.RemoveSpecificPowerAction;
 import com.megacrit.cardcrawl.cards.DamageInfo;
+import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.core.AbstractCreature;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.helpers.ImageMaster;
@@ -35,18 +38,18 @@ public class FriendShelterPower extends AbstractPower implements CloneablePowerI
         addToBot(new RemoveSpecificPowerAction(owner, owner, this));
     }
 
-    @Override
-    public float atDamageFinalReceive(float damage, DamageInfo.DamageType damageType) {
-        return 0;
-    }
-
-    @Override
-    public int onAttackedToChangeDamage(DamageInfo info, int DamageAmount) {
-        flash();
-        return 0;
-    }
     public AbstractPower makeCopy() {
         return new FriendShelterPower(owner);
     }
 
+    @SpirePatch(clz = AbstractPlayer.class, method = "damage")
+    public static class DamagePatch {
+        @SpirePrefixPatch
+        public static void Prefix(AbstractPlayer _inst, DamageInfo info) {
+            if (info.output > 0 && _inst.hasPower(POWER_ID)) {
+                _inst.getPower(POWER_ID).flash();
+                info.output = 0;
+            }
+        }
+    }
 }
