@@ -31,8 +31,6 @@ public class WhiteFiendProtection extends AbstractFriendCard {
         this.bannerSmallRegion = ImageMaster.CARD_BANNER_RARE;
         this.bannerLargeRegion = ImageMaster.CARD_BANNER_RARE_L;
         tags.add(NearlTags.IS_UNIQUE_CARD);
-
-        BaseMod.MAX_HAND_SIZE --;
     }
 
     @Override
@@ -50,6 +48,8 @@ public class WhiteFiendProtection extends AbstractFriendCard {
                         power.stackPower(1);
                 }
         }
+
+        BaseMod.MAX_HAND_SIZE --;
     }
 
     @Override
