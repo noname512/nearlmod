@@ -1,5 +1,6 @@
 package nearlmod.cards.friendcards;
 
+import basemod.BaseMod;
 import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
@@ -36,6 +37,7 @@ public class AllySupport extends AbstractFriendCard {
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
         addToBot(new ApplyPowerAction(p, p, new AllySupportPower(p, secondMagicNumber)));
+        BaseMod.MAX_HAND_SIZE --;
     }
 
     @Override

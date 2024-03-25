@@ -38,6 +38,11 @@ public class FriendShelterPower extends AbstractPower implements CloneablePowerI
         addToBot(new RemoveSpecificPowerAction(owner, owner, this));
     }
 
+    @Override
+    public float atDamageFinalReceive(float damage, DamageInfo.DamageType damageType) {
+        return 0;
+    }
+
     public AbstractPower makeCopy() {
         return new FriendShelterPower(owner);
     }

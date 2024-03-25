@@ -1,5 +1,6 @@
 package nearlmod.cards.friendcards;
 
+import basemod.BaseMod;
 import com.megacrit.cardcrawl.actions.watcher.ChangeStanceAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
@@ -43,6 +44,8 @@ public class Rebuke extends AbstractFriendCard {
             addToBot(new ChangeStanceAction(new DefStance()));
         else
             addToBot(new ChangeStanceAction(new AtkStance()));
+
+        BaseMod.MAX_HAND_SIZE --;
     }
 
     @Override

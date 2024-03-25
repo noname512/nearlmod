@@ -1,5 +1,6 @@
 package nearlmod.cards.friendcards;
 
+import basemod.BaseMod;
 import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
@@ -53,6 +54,7 @@ public class BombardmentStudies extends AbstractFriendCard {
         } else {
             addToBot(new ApplyPowerAction(p, p, new BombardmentStudiesPower(p, secondMagicNumber, bombCnt, bombPlusCnt)));
         }
+        BaseMod.MAX_HAND_SIZE --;
     }
 
     @Override

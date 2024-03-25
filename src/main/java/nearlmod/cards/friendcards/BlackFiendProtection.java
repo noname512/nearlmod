@@ -1,5 +1,6 @@
 package nearlmod.cards.friendcards;
 
+import basemod.BaseMod;
 import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
@@ -36,6 +37,7 @@ public class BlackFiendProtection extends AbstractFriendCard {
         Shining.uniqueUsed = true;
         addToBot(new ApplyPowerAction(p, p, new BFPPower(p), -1));
         if (upgraded) addToBot(new WeakenAllAction(p, 2));
+        BaseMod.MAX_HAND_SIZE --;
     }
 
     @Override

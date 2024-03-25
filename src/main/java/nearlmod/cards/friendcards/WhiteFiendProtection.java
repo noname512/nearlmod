@@ -1,5 +1,6 @@
 package nearlmod.cards.friendcards;
 
+import basemod.BaseMod;
 import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
 import com.megacrit.cardcrawl.actions.common.RemoveSpecificPowerAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
@@ -30,6 +31,8 @@ public class WhiteFiendProtection extends AbstractFriendCard {
         this.bannerSmallRegion = ImageMaster.CARD_BANNER_RARE;
         this.bannerLargeRegion = ImageMaster.CARD_BANNER_RARE_L;
         tags.add(NearlTags.IS_UNIQUE_CARD);
+
+        BaseMod.MAX_HAND_SIZE --;
     }
 
     @Override
