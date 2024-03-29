@@ -22,7 +22,7 @@ public class AllinOne extends AbstractNearlCard {
     public static final String NAME = cardStrings.NAME;
     public static final String DESCRIPTION = cardStrings.DESCRIPTION;
     public static final String UPGRADE_DESCRIPTION = cardStrings.UPGRADE_DESCRIPTION;
-    public static final String IMG_PATH = "rhinemod/images/cards/allinone.png";
+    public static final String IMG_PATH = "resources/nearlmod/images/cards/allinone.png";
     private static final int COST = 1;
     private static final int ATTACK_DMG = 4;
     private static final int BLOCK_AMT = 4;

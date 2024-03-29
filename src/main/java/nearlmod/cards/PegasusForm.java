@@ -15,7 +15,7 @@ public class PegasusForm extends AbstractNearlCard {
     public static final String NAME = cardStrings.NAME;
     public static final String DESCRIPTION = cardStrings.DESCRIPTION;
     public static final String UPGRADE_DESCRIPTION = cardStrings.UPGRADE_DESCRIPTION;
-    public static final String IMG_PATH = "images/cards/pegasusform.png";
+    public static final String IMG_PATH = "resources/nearlmod/images/cards/pegasusform.png";
     private static final int COST = 3;
 
     public PegasusForm() {

@@ -18,7 +18,7 @@ public class LazuriteSquadBattle extends AbstractArenaEvent {
     private final int monsterLevel;
 
     public LazuriteSquadBattle(int monsterLevel) {
-        super(NAME, DESCRIPTIONS[0], "images/events/lazuritesquad.png");
+        super(NAME, DESCRIPTIONS[0], "resources/nearlmod/images/events/lazuritesquad.png");
         imageEventText.setDialogOption(OPTIONS[0]);
         imageEventText.setDialogOption(OPTIONS[1]);
         this.monsterLevel = monsterLevel;

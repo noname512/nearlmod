@@ -18,7 +18,7 @@ public class UpgradedKnightShield extends AbstractNearlCard {
     public static final String NAME = cardStrings.NAME;
     public static final String DESCRIPTION = cardStrings.DESCRIPTION;
     public static final String UPGRADE_DESCRIPTION = cardStrings.UPGRADE_DESCRIPTION;
-    public static final String IMG_PATH = "images/cards/upgradedknightshield.png";
+    public static final String IMG_PATH = "resources/nearlmod/images/cards/upgradedknightshield.png";
     private static final int COST = 2;
     private static final int BLOCK_AMT = 8;
     private static final int UPGRADED_PLUS_BLOCK = 4;

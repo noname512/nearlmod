@@ -17,7 +17,7 @@ public class BloodBlade extends AbstractMonster {
     public static final MonsterStrings monsterStrings = CardCrawlGame.languagePack.getMonsterStrings(ID);
     public static final String NAME = monsterStrings.NAME;
     public static final String[] MOVES = monsterStrings.MOVES;
-    public static final String IMAGE = "images/monsters/bloodblade.png";
+    public static final String IMAGE = "resources/nearlmod/images/monsters/bloodblade.png";
     private float absorbTimer;
     private boolean isAbsorbing;
     private float vx;
@@ -37,7 +37,7 @@ public class BloodBlade extends AbstractMonster {
         else
             setHp(23, 28);
         isAbsorbing = false;
-        loadAnimation("images/monsters/enemy_1186_bldbld/enemy_1186_bldbld.atlas", "images/monsters/enemy_1186_bldbld/enemy_1186_bldbld37.json", 2.0F);
+        loadAnimation("resources/nearlmod/images/monsters/enemy_1186_bldbld/enemy_1186_bldbld.atlas", "resources/nearlmod/images/monsters/enemy_1186_bldbld/enemy_1186_bldbld37.json", 2.0F);
         this.flipHorizontal = true;
         this.stateData.setMix("Idle", "Die", 0.1F);
         this.state.setAnimation(0, "Idle", true);

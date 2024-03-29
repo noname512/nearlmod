@@ -13,8 +13,8 @@ public class LateLight extends CustomRelic {
     public static final RelicStrings relicStrings = CardCrawlGame.languagePack.getRelicStrings(ID);
     public static final String NAME = relicStrings.NAME;
     public static final String[] DESCRIPTIONS = relicStrings.DESCRIPTIONS;
-    public static final Texture IMG = new Texture("images/relics/latelight.png");
-    public static final Texture IMG_OUTLINE = new Texture("images/relics/latelight_p.png");
+    public static final Texture IMG = new Texture("resources/nearlmod/images/relics/latelight.png");
+    public static final Texture IMG_OUTLINE = new Texture("resources/nearlmod/images/relics/latelight_p.png");
     public LateLight() {
         super(ID, IMG, IMG_OUTLINE, CurseRelicPatch.CURSE, LandingSound.HEAVY);
     }

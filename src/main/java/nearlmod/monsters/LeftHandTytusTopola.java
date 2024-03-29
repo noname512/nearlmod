@@ -23,7 +23,7 @@ public class LeftHandTytusTopola extends AbstractMonster {
     public static final String NAME = monsterStrings.NAME;
     public static final String[] MOVES = monsterStrings.MOVES;
     public static final String[] DIALOG = monsterStrings.DIALOG;
-    public static final String IMAGE = "images/monsters/lefthand.png";
+    public static final String IMAGE = "resources/nearlmod/images/monsters/lefthand.png";
 
     private int weakTimes = 3;
 
@@ -40,7 +40,7 @@ public class LeftHandTytusTopola extends AbstractMonster {
         } else {
             this.damage.add(new DamageInfo(this, 9));
         }
-        loadAnimation("images/monsters/enemy_1104_lfkght_3/enemy_1104_lfkght_3.atlas", "images/monsters/enemy_1104_lfkght_3/enemy_1104_lfkght_333.json", 1.5F);
+        loadAnimation("resources/nearlmod/images/monsters/enemy_1104_lfkght_3/enemy_1104_lfkght_3.atlas", "resources/nearlmod/images/monsters/enemy_1104_lfkght_3/enemy_1104_lfkght_333.json", 1.5F);
         this.flipHorizontal = true;
         this.stateData.setMix("Idle", "Die", 0.1F);
         this.state.setAnimation(0, "Idle", true);

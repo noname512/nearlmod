@@ -25,8 +25,8 @@ public class CorrosionDamagePower extends AbstractPower implements CloneablePowe
         this.owner = owner;
         type = PowerType.DEBUFF;
         this.amount = amount;
-        region128 = new TextureAtlas.AtlasRegion(ImageMaster.loadImage("images/powers/corrosiondamage power 84.png"), 0, 0, 84, 84);
-        region48 = new TextureAtlas.AtlasRegion(ImageMaster.loadImage("images/powers/corrosiondamage power 32.png"), 0, 0, 32, 32);
+        region128 = new TextureAtlas.AtlasRegion(ImageMaster.loadImage("resources/nearlmod/images/powers/corrosiondamage power 84.png"), 0, 0, 84, 84);
+        region48 = new TextureAtlas.AtlasRegion(ImageMaster.loadImage("resources/nearlmod/images/powers/corrosiondamage power 32.png"), 0, 0, 32, 32);
         inBreak = false;
         updateDescription();
     }

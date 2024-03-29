@@ -21,8 +21,8 @@ public class CreedFieldPower extends AbstractPower implements CloneablePowerInte
         name = NAME;
         ID = POWER_ID;
         this.owner = owner;
-        region128 = new TextureAtlas.AtlasRegion(ImageMaster.loadImage("images/powers/creedfield power 84.png"), 0, 0, 84, 84);
-        region48 = new TextureAtlas.AtlasRegion(ImageMaster.loadImage("images/powers/creedfield power 32.png"), 0, 0, 32, 32);
+        region128 = new TextureAtlas.AtlasRegion(ImageMaster.loadImage("resources/nearlmod/images/powers/creedfield power 84.png"), 0, 0, 84, 84);
+        region48 = new TextureAtlas.AtlasRegion(ImageMaster.loadImage("resources/nearlmod/images/powers/creedfield power 32.png"), 0, 0, 32, 32);
         type = PowerType.BUFF;
         priority = 100;
         this.amount = amount;

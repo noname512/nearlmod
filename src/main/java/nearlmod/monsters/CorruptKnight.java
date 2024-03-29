@@ -29,7 +29,7 @@ public class CorruptKnight extends AbstractMonster {
     public static final String NAME = monsterStrings.NAME;
     public static final String[] MOVES = monsterStrings.MOVES;
     public static final String[] DIALOG = monsterStrings.DIALOG;
-    public static final String IMAGE = "images/monsters/corruptknight.png";
+    public static final String IMAGE = "resources/nearlmod/images/monsters/corruptknight.png";
     public boolean isWhitheredDead = false;
     private int currentTurn;
 
@@ -48,7 +48,7 @@ public class CorruptKnight extends AbstractMonster {
             this.damage.add(new DamageInfo(this, 18));
             this.damage.add(new DamageInfo(this, 90));
         }
-        loadAnimation("images/monsters/enemy_1513_dekght/enemy_1513_dekght.atlas", "images/monsters/enemy_1513_dekght/enemy_1513_dekght37.json", 1.5F);
+        loadAnimation("resources/nearlmod/images/monsters/enemy_1513_dekght/enemy_1513_dekght.atlas", "resources/nearlmod/images/monsters/enemy_1513_dekght/enemy_1513_dekght37.json", 1.5F);
         this.flipHorizontal = true;
         this.stateData.setMix("Idle", "Die", 0.1F);
         this.state.setAnimation(0, "Idle", true);

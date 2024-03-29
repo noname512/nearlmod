@@ -16,7 +16,7 @@ public class ArmorlessThirdSquad extends AbstractMonster {
     public static final MonsterStrings monsterStrings = CardCrawlGame.languagePack.getMonsterStrings(ID);
     public static final String NAME = monsterStrings.NAME;
     public static final String[] MOVES = monsterStrings.MOVES;
-    public static final String IMAGE = "images/monsters/armorlessthirdsquad.png";
+    public static final String IMAGE = "resources/nearlmod/images/monsters/armorlessthirdsquad.png";
     private final int corrosionAmount;
 
     public ArmorlessThirdSquad(float x, float y, int level) {
@@ -36,7 +36,7 @@ public class ArmorlessThirdSquad extends AbstractMonster {
             corrosionAmount = 20;
         else
             corrosionAmount = 15;
-        loadAnimation("images/monsters/enemy_1182_flasrt_2/enemy_1182_flasrt_233.atlas", "images/monsters/enemy_1182_flasrt_2/enemy_1182_flasrt_233.json", 1.5F);
+        loadAnimation("resources/nearlmod/images/monsters/enemy_1182_flasrt_2/enemy_1182_flasrt_233.atlas", "resources/nearlmod/images/monsters/enemy_1182_flasrt_2/enemy_1182_flasrt_233.json", 1.5F);
         this.flipHorizontal = true;
         this.stateData.setMix("Idle", "Die", 0.1F);
         this.state.setAnimation(0, "Idle", true);

@@ -12,8 +12,8 @@ public class Lighthouse extends CustomRelic {
     public static final RelicStrings relicStrings = CardCrawlGame.languagePack.getRelicStrings(ID);
     public static final String NAME = relicStrings.NAME;
     public static final String[] DESCRIPTIONS = relicStrings.DESCRIPTIONS;
-    public static final Texture IMG = new Texture("images/relics/lighthouse.png");
-    public static final Texture IMG_OUTLINE = new Texture("images/relics/lighthouse_p.png");
+    public static final Texture IMG = new Texture("resources/nearlmod/images/relics/lighthouse.png");
+    public static final Texture IMG_OUTLINE = new Texture("resources/nearlmod/images/relics/lighthouse_p.png");
     public static boolean isFirstTime;
     public Lighthouse() {
         super(ID, IMG, IMG_OUTLINE, RelicTier.BOSS, LandingSound.SOLID);

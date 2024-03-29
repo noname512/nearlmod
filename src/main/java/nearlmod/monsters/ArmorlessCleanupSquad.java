@@ -16,7 +16,7 @@ public class ArmorlessCleanupSquad extends AbstractMonster {
     public static final MonsterStrings monsterStrings = CardCrawlGame.languagePack.getMonsterStrings(ID);
     public static final String NAME = monsterStrings.NAME;
     public static final String[] MOVES = monsterStrings.MOVES;
-    public static final String IMAGE = "images/monsters/armorlesscleanupsquad.png";
+    public static final String IMAGE = "resources/nearlmod/images/monsters/armorlesscleanupsquad.png";
     private final int corrosionAmount;
 
     public ArmorlessCleanupSquad(float x, float y, int level) {
@@ -36,7 +36,7 @@ public class ArmorlessCleanupSquad extends AbstractMonster {
             corrosionAmount = 20;
         else
             corrosionAmount = 15;
-        loadAnimation("images/monsters/enemy_1183_mlasrt_2/enemy_1183_mlasrt_233.atlas", "images/monsters/enemy_1183_mlasrt_2/enemy_1183_mlasrt_233.json", 1.5F);
+        loadAnimation("resources/nearlmod/images/monsters/enemy_1183_mlasrt_2/enemy_1183_mlasrt_233.atlas", "resources/nearlmod/images/monsters/enemy_1183_mlasrt_2/enemy_1183_mlasrt_233.json", 1.5F);
         this.flipHorizontal = true;
         this.stateData.setMix("Idle", "Die", 0.1F);
         this.state.setAnimation(0, "Idle", true);

@@ -23,7 +23,7 @@ public class CandleKnightBattle extends AbstractArenaEvent {
     public static final String[] OPTIONS = eventStrings.OPTIONS;
 
     public CandleKnightBattle() {
-        super(NAME, DESCRIPTIONS[0], "images/events/candleknightbattle.png");
+        super(NAME, DESCRIPTIONS[0], "resources/nearlmod/images/events/candleknightbattle.png");
         this.imageEventText.setDialogOption(OPTIONS[0]);
         this.imageEventText.setDialogOption(OPTIONS[2], CardLibrary.getCopy("Normality"), new NormalPerson());
         noCardsInRewards = true;

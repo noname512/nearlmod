@@ -17,7 +17,7 @@ public class ArmorlessSquadBattle extends AbstractArenaEvent {
     public static final String[] OPTIONS = eventStrings.OPTIONS;
     private final int monsterLevel;
     public ArmorlessSquadBattle(int monsterLevel) {
-        super(NAME, DESCRIPTIONS[0], "images/events/armorlesssquad.png");
+        super(NAME, DESCRIPTIONS[0], "resources/nearlmod/images/events/armorlesssquad.png");
         imageEventText.setDialogOption(OPTIONS[0]);
         imageEventText.setDialogOption(OPTIONS[1]);
         this.monsterLevel = monsterLevel;

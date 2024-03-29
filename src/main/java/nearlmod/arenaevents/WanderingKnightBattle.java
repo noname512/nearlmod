@@ -17,7 +17,7 @@ public class WanderingKnightBattle extends AbstractArenaEvent {
     private final int monsterLevel;
 
     public WanderingKnightBattle(int monsterLevel) {
-        super(NAME, DESCRIPTIONS[0], "images/events/wanderingknight.png");
+        super(NAME, DESCRIPTIONS[0], "resources/nearlmod/images/events/wanderingknight.png");
         imageEventText.setDialogOption(OPTIONS[0]);
         imageEventText.setDialogOption(OPTIONS[1]);
         this.monsterLevel = monsterLevel;

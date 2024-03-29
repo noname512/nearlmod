@@ -25,7 +25,7 @@ public class CandleKnight extends AbstractMonster {
     public static final String NAME = monsterStrings.NAME;
     public static final String[] MOVES = monsterStrings.MOVES;
     public static final String[] DIALOG = monsterStrings.DIALOG;
-    public static final String IMAGE = "images/monsters/candleknight.png";
+    public static final String IMAGE = "resources/nearlmod/images/monsters/candleknight.png";
     private final int damageTimes;
     private int said = 0;
 
@@ -54,7 +54,7 @@ public class CandleKnight extends AbstractMonster {
         this.damage.add(new DamageInfo(this, candleDmg));
         this.damage.add(new DamageInfo(this, flameDmg));
         this.damage.add(new DamageInfo(this, swordDmg));
-        loadAnimation("images/monsters/enemy_1184_cadkgt_3/enemy_1184_cadkgt_333.atlas", "images/monsters/enemy_1184_cadkgt_3/enemy_1184_cadkgt_333.json", 1.5F);
+        loadAnimation("resources/nearlmod/images/monsters/enemy_1184_cadkgt_3/enemy_1184_cadkgt_333.atlas", "resources/nearlmod/images/monsters/enemy_1184_cadkgt_3/enemy_1184_cadkgt_333.json", 1.5F);
         this.flipHorizontal = true;
         this.stateData.setMix("Idle", "Die", 0.1F);
         this.stateData.setMix("Skill_Loop", "Skill_End", 0.1F);

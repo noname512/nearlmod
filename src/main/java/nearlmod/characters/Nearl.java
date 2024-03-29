@@ -52,37 +52,37 @@ public class Nearl extends CustomPlayer {
     public static final String NAME = characterStrings.NAMES[0];
     public static final String[] TEXT = characterStrings.TEXT;
     private static final Color NearlGold = CardHelper.getColor(255, 236, 194);
-    public static final String SWORD = "rhinemod/images/char/atkidle.png";
+    public static final String SWORD = "resources/nearlmod/images/char/atkidle.png";
     public static final Texture SWORDIMG = ImageMaster.loadImage(SWORD);
-    public static final String SWORDDIE = "rhinemod/images/char/atkdie.png";
+    public static final String SWORDDIE = "resources/nearlmod/images/char/atkdie.png";
     public static final Texture SWORDDIEIMG = ImageMaster.loadImage(SWORDDIE);
-    public static final String SHIELD = "rhinemod/images/char/defidle.png";
+    public static final String SHIELD = "resources/nearlmod/images/char/defidle.png";
     public static final Texture SHIELDIMG = ImageMaster.loadImage(SHIELD);
-    public static final String SHIELDDIE = "rhinemod/images/char/defdie.png";
+    public static final String SHIELDDIE = "resources/nearlmod/images/char/defdie.png";
     public static final Texture SHIELDDIEIMG = ImageMaster.loadImage(SHIELDDIE);
-    public static final String SHOULDER = "rhinemod/images/char/shoulder.png";
+    public static final String SHOULDER = "resources/nearlmod/images/char/shoulder.png";
     public static final String[] orbTextures = {
-        "rhinemod/images/char/orb/layer1.png",
-        "rhinemod/images/char/orb/layer2.png",
-        "rhinemod/images/char/orb/layer3.png",
-        "rhinemod/images/char/orb/layer4.png",
-        "rhinemod/images/char/orb/layer5.png",
-        "rhinemod/images/char/orb/layer1d.png",
-        "rhinemod/images/char/orb/layer2d.png",
-        "images/char/orb/layer3d.png",
-        "images/char/orb/layer4d.png"
+        "resources/nearlmod/images/char/orb/layer1.png",
+        "resources/nearlmod/images/char/orb/layer2.png",
+        "resources/nearlmod/images/char/orb/layer3.png",
+        "resources/nearlmod/images/char/orb/layer4.png",
+        "resources/nearlmod/images/char/orb/layer5.png",
+        "resources/nearlmod/images/char/orb/layer1d.png",
+        "resources/nearlmod/images/char/orb/layer2d.png",
+        "resources/nearlmod/images/char/orb/layer3d.png",
+        "resources/nearlmod/images/char/orb/layer4d.png"
     };
 
     public Nearl(String name) {
         // 参数列表：角色名，角色类枚举，能量面板贴图路径列表，能量面板特效贴图路径，能量面板贴图旋转速度列表，能量面板，模型资源路径，动画资源路径
-        super(name, NearlEnum.NEARL_CLASS, new CostEnergyOrb(orbTextures, "images/char/orb/vfx.png", null), null, null);
+        super(name, NearlEnum.NEARL_CLASS, new CostEnergyOrb(orbTextures, "resources/nearlmod/images/char/orb/vfx.png", null), null, null);
         
         dialogX = 50.0F * Settings.scale;
         dialogY = 170.0F * Settings.scale;
 
         // 参数列表：静态贴图路径，越肩视角2贴图路径，越肩视角贴图路径，失败时贴图路径，角色选择界面信息，碰撞箱XY宽高，初始能量数
         initializeClass(SHIELD, SHOULDER, SHOULDER, SHIELDDIE, getLoadout(), 20.0F, -10.0F, 220.0F, 290.0F, new EnergyManager(3));
-        loadAnimation("images/char/char_148_nearl/char_148_nearl.atlas", "images/char/char_148_nearl/char_148_nearl37.json", 1.5F);
+        loadAnimation("resources/nearlmod/images/char/char_148_nearl/char_148_nearl.atlas", "resources/nearlmod/images/char/char_148_nearl/char_148_nearl37.json", 1.5F);
         this.stateData.setMix("Idle", "Die", 0.1F);
         this.state.setAnimation(0, "Idle", true);
         ArenaRoom.enterTimes = 0;
@@ -230,12 +230,12 @@ public class Nearl extends CustomPlayer {
     @Override
     public void onStanceChange(String id) {
         if (id.equals(AtkStance.STANCE_ID)) {
-            loadAnimation("images/char/char_1014_nearl2/char_1014_nearl233.atlas", "images/char/char_1014_nearl2/char_1014_nearl233.json", 1.5F);
+            loadAnimation("resources/nearlmod/images/char/char_1014_nearl2/char_1014_nearl233.atlas", "resources/nearlmod/images/char/char_1014_nearl2/char_1014_nearl233.json", 1.5F);
             this.stateData.setMix("Gain_Light", "Idle", 0.5F);
             this.img = SWORDIMG;
             this.corpseImg = SWORDDIEIMG;
         } else {
-            loadAnimation("images/char/char_148_nearl/char_148_nearl.atlas", "images/char/char_148_nearl/char_148_nearl37.json", 1.5F);
+            loadAnimation("resources/nearlmod/images/char/char_148_nearl/char_148_nearl.atlas", "resources/nearlmod/images/char/char_148_nearl/char_148_nearl37.json", 1.5F);
             this.img = SHIELDIMG;
             this.corpseImg = SHIELDDIEIMG;
         }

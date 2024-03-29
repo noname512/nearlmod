@@ -22,8 +22,8 @@ public class GainLightNextTurnPower extends AbstractPower implements CloneablePo
         ID = POWER_ID;
         this.owner = player;
         this.p = player;
-        region128 = new TextureAtlas.AtlasRegion(ImageMaster.loadImage("images/powers/gainlightnextturn power 84.png"), 0, 0, 84, 84);
-        region48 = new TextureAtlas.AtlasRegion(ImageMaster.loadImage("images/powers/gainlightnextturn power 32.png"), 0, 0, 32, 32);
+        region128 = new TextureAtlas.AtlasRegion(ImageMaster.loadImage("resources/nearlmod/images/powers/gainlightnextturn power 84.png"), 0, 0, 84, 84);
+        region48 = new TextureAtlas.AtlasRegion(ImageMaster.loadImage("resources/nearlmod/images/powers/gainlightnextturn power 32.png"), 0, 0, 32, 32);
         type = PowerType.BUFF;
         this.amount = amount;
         updateDescription();

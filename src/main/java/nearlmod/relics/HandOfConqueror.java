@@ -21,8 +21,8 @@ public class HandOfConqueror extends CustomRelic {
     public static final RelicStrings relicStrings = CardCrawlGame.languagePack.getRelicStrings(ID);
     public static final String NAME = relicStrings.NAME;
     public static final String[] DESCRIPTIONS = relicStrings.DESCRIPTIONS;
-    public static final Texture IMG = new Texture("images/relics/handofconqueror.png");
-    public static final Texture IMG_OUTLINE = new Texture("images/relics/handofconqueror_p.png");
+    public static final Texture IMG = new Texture("resources/nearlmod/images/relics/handofconqueror.png");
+    public static final Texture IMG_OUTLINE = new Texture("resources/nearlmod/images/relics/handofconqueror_p.png");
     public int AwakenPatch = 0;
     public HandOfConqueror() {
         super(ID, IMG, IMG_OUTLINE, RelicTier.RARE, LandingSound.SOLID);

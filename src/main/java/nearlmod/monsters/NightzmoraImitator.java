@@ -19,7 +19,7 @@ public class NightzmoraImitator extends AbstractMonster {
     public static final String NAME = monsterStrings.NAME;
     public static final String[] MOVES = monsterStrings.MOVES;
     public static final String[] DIALOG = monsterStrings.DIALOG;
-    public static final String IMAGE = "images/monsters/nightzmoraimitator.png";
+    public static final String IMAGE = "resources/nearlmod/images/monsters/nightzmoraimitator.png";
 
     public NightzmoraImitator(float x, float y) {
         super(NAME, ID, 30, 20.0F, 0, 160.0F, 300.0F, IMAGE, x, y);
@@ -36,7 +36,7 @@ public class NightzmoraImitator extends AbstractMonster {
             this.damage.add(new DamageInfo(this, 8));
             this.damage.add(new DamageInfo(this, 6));
         }
-        loadAnimation("images/monsters/enemy_1185_nmekgt/enemy_1185_nmekgt.atlas", "images/monsters/enemy_1185_nmekgt/enemy_1185_nmekgt37.json", 1.6F);
+        loadAnimation("resources/nearlmod/images/monsters/enemy_1185_nmekgt/enemy_1185_nmekgt.atlas", "resources/nearlmod/images/monsters/enemy_1185_nmekgt/enemy_1185_nmekgt37.json", 1.6F);
         this.flipHorizontal = true;
         this.stateData.setMix("Idle", "Die", 0.1F);
         this.state.setAnimation(0, "Idle", true);

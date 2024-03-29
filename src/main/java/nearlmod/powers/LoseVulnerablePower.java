@@ -19,8 +19,8 @@ public class LoseVulnerablePower extends AbstractPower implements CloneablePower
         name = NAME;
         ID = POWER_ID;
         this.owner = owner;
-        region128 = new TextureAtlas.AtlasRegion(ImageMaster.loadImage("images/powers/losevulnerable power 128.png"), 0, 0, 128, 128);
-        region48 = new TextureAtlas.AtlasRegion(ImageMaster.loadImage("images/powers/losevulnerable power 48.png"), 0, 0, 48, 48);
+        region128 = new TextureAtlas.AtlasRegion(ImageMaster.loadImage("resources/nearlmod/images/powers/losevulnerable power 128.png"), 0, 0, 128, 128);
+        region48 = new TextureAtlas.AtlasRegion(ImageMaster.loadImage("resources/nearlmod/images/powers/losevulnerable power 48.png"), 0, 0, 48, 48);
         type = PowerType.BUFF;
         this.amount = amount;
         updateDescription();

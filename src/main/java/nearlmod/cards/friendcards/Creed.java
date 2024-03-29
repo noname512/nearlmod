@@ -19,7 +19,7 @@ public class Creed extends AbstractFriendCard {
     public static final String NAME = cardStrings.NAME;
     public static final String DESCRIPTION = cardStrings.DESCRIPTION;
     public static final String UPGRADE_DESCRIPTION = cardStrings.UPGRADE_DESCRIPTION;
-    public static final String IMG_PATH = "images/cards/creed.png";
+    public static final String IMG_PATH = "resources/nearlmod/images/cards/creed.png";
     private static final int COST = 1;
     private static final int ATTACK_DMG = 9;
     private static final int UPGRADE_PLUS_DMG = 3;

@@ -27,7 +27,7 @@ public class LeftHandBattle extends AbstractArenaEvent {
     public static final String[] OPTIONS = eventStrings.OPTIONS;
 
     public LeftHandBattle() {
-        super(NAME, DESCRIPTIONS[0], "images/events/lefthandbattle.png");
+        super(NAME, DESCRIPTIONS[0], "resources/nearlmod/images/events/lefthandbattle.png");
         this.imageEventText.setDialogOption(OPTIONS[0]);
         this.imageEventText.setDialogOption(OPTIONS[1], CardLibrary.getCopy("Injury"), new Revenge());
         noCardsInRewards = true;

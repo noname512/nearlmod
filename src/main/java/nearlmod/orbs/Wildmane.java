@@ -15,7 +15,7 @@ public class Wildmane extends AbstractFriend {
     private static final OrbStrings orbStrings = CardCrawlGame.languagePack.getOrbString(ORB_ID);
     public static final String NAME = orbStrings.NAME;
     public static final String[] DESCRIPTION = orbStrings.DESCRIPTION;
-    public static final String IMAGE = "images/orbs/wildmane.png";
+    public static final String IMAGE = "resources/nearlmod/images/orbs/wildmane.png";
 
     public Wildmane(int amount) {
         super(ORB_ID, NAME, DESCRIPTION, IMAGE, amount);

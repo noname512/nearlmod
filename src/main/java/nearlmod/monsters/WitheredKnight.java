@@ -23,7 +23,7 @@ public class WitheredKnight extends AbstractMonster {
     public static final String NAME = monsterStrings.NAME;
     public static final String[] MOVES = monsterStrings.MOVES;
     public static final String[] DIALOG = monsterStrings.DIALOG;
-    public static final String IMAGE = "images/monsters/witheredknight.png";
+    public static final String IMAGE = "resources/nearlmod/images/monsters/witheredknight.png";
 
     public boolean isCorruptedDead = false;
     public int skillTimes = 3;
@@ -45,7 +45,7 @@ public class WitheredKnight extends AbstractMonster {
             this.damage.add(new DamageInfo(this, 8));
             this.damage.add(new DamageInfo(this, 12));
         }
-        loadAnimation("images/monsters/enemy_1513_dekght_2/enemy_1513_dekght_2.atlas", "images/monsters/enemy_1513_dekght_2/enemy_1513_dekght_237.json", 1.5F);
+        loadAnimation("resources/nearlmod/images/monsters/enemy_1513_dekght_2/enemy_1513_dekght_2.atlas", "resources/nearlmod/images/monsters/enemy_1513_dekght_2/enemy_1513_dekght_237.json", 1.5F);
         this.flipHorizontal = true;
         this.stateData.setMix("Idle", "Die", 0.1F);
         this.state.setAnimation(0, "Idle", true);

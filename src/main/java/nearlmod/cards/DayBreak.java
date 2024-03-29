@@ -15,7 +15,7 @@ public class DayBreak extends AbstractNearlCard {
     public static final String NAME = cardStrings.NAME;
     public static final String DESCRIPTION = cardStrings.DESCRIPTION;
     public static final String UPGRADE_DESCRIPTION = cardStrings.UPGRADE_DESCRIPTION;
-    public static final String IMG_PATH = "images/cards/daybreak.png";
+    public static final String IMG_PATH = "resources/nearlmod/images/cards/daybreak.png";
     private static final int COST = 1;
     private static final int EXTRA_DMG = 3;
 

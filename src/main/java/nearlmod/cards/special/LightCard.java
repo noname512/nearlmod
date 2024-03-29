@@ -27,7 +27,7 @@ public class LightCard extends AbstractNearlCard {
     public static final String DESCRIPTION = cardStrings.DESCRIPTION;
     public static final String UPGRADE_DESCRIPTION = cardStrings.UPGRADE_DESCRIPTION;
     public static final String[] EXTENDED_DESCRIPTION = cardStrings.EXTENDED_DESCRIPTION;
-    public static final String IMG_PATH_PREFIX = "images/cards/lightcard/lightcard_";
+    public static final String IMG_PATH_PREFIX = "resources/nearlmod/images/cards/lightcard/lightcard_";
     public static final String IMG_PATH_POSTFIX = ".png";
     private static final int COST = 0;
     private static final int EXTRA_LIGHT = 4;

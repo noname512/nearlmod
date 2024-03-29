@@ -20,7 +20,7 @@ public class NearlCard extends AbstractNearlCard {
     public static final String NAME = cardStrings.NAME;
     public static final String DESCRIPTION = cardStrings.DESCRIPTION;
     public static final String UPGRADE_DESCRIPTION = cardStrings.UPGRADE_DESCRIPTION;
-    public static final String IMG_PATH = "images/cards/nearlcard.png";
+    public static final String IMG_PATH = "resources/nearlmod/images/cards/nearlcard.png";
     private static final int COST = 0;
     private static final int LIGHT_AMT = 10;
     private static final int UPGRADE_PLUS_LIGHT = 2;

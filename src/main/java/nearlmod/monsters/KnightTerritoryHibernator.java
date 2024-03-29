@@ -19,7 +19,7 @@ public class KnightTerritoryHibernator extends AbstractMonster {
     public static final String NAME = monsterStrings.NAME;
     public static final String[] MOVES = monsterStrings.MOVES;
     public static final String[] DIALOG = monsterStrings.DIALOG;
-    public static final String IMAGE = "images/monsters/knightterritoryhibernator.png";
+    public static final String IMAGE = "resources/nearlmod/images/monsters/knightterritoryhibernator.png";
     public boolean asleep;
 
     public KnightTerritoryHibernator(float x, float y, int level) {
@@ -35,7 +35,7 @@ public class KnightTerritoryHibernator extends AbstractMonster {
         else hp = 180;
         setHp(MathUtils.floor(hp * (1 + 0.1F * level)));
         asleep = true;
-        loadAnimation("images/monsters/enemy_1181_napkgt_2/enemy_1181_napkgt_233.atlas", "images/monsters/enemy_1181_napkgt_2/enemy_1181_napkgt_233.json", 1.5F);
+        loadAnimation("resources/nearlmod/images/monsters/enemy_1181_napkgt_2/enemy_1181_napkgt_233.atlas", "resources/nearlmod/images/monsters/enemy_1181_napkgt_2/enemy_1181_napkgt_233.json", 1.5F);
         this.flipHorizontal = true;
         this.stateData.setMix("Idle", "Die", 0.1F);
         this.state.setAnimation(0, "Idle_Sleep", true);

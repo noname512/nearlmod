@@ -26,8 +26,8 @@ public class FanClubPower extends AbstractPower implements CloneablePowerInterfa
         ID = POWER_ID;
         this.owner = owner;
         this.amount = amount;
-        region128 = new TextureAtlas.AtlasRegion(ImageMaster.loadImage("images/powers/fanclub power 128.png"), 0, 0, 128, 128);
-        region48 = new TextureAtlas.AtlasRegion(ImageMaster.loadImage("images/powers/fanclub power 48.png"), 0, 0, 48, 48);
+        region128 = new TextureAtlas.AtlasRegion(ImageMaster.loadImage("resources/nearlmod/images/powers/fanclub power 128.png"), 0, 0, 128, 128);
+        region48 = new TextureAtlas.AtlasRegion(ImageMaster.loadImage("resources/nearlmod/images/powers/fanclub power 48.png"), 0, 0, 48, 48);
         type = PowerType.BUFF;
         updateDescription();
     }

@@ -19,7 +19,7 @@ public class Facing extends AbstractNearlCard {
     public static final String NAME = cardStrings.NAME;
     public static final String DESCRIPTION = cardStrings.DESCRIPTION;
     public static final String UPGRADE_DESCRIPTION = cardStrings.UPGRADE_DESCRIPTION;
-    public static final String IMG_PATH = "rhinemod/images/cards/facing.png";
+    public static final String IMG_PATH = "resources/nearlmod/images/cards/facing.png";
     private static final int COST = 1;
     private static final int BLOCK_AMT = 13;
     private static final int STRENGTH_AMT = 3;

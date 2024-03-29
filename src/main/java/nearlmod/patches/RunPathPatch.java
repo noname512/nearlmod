@@ -34,7 +34,7 @@ public class RunPathPatch {
     public static class ImageForTypePatch {
         @SpirePrefixPatch
         public static SpireReturn<?> Prefix(RunPathElement __instance, RunPathElement.PathNodeType nodeType) {
-            if (nodeType == RunPathPatch.ARENA) return SpireReturn.Return(new Texture("images/ui/arenaicon.png"));
+            if (nodeType == RunPathPatch.ARENA) return SpireReturn.Return(new Texture("resources/nearlmod/images/ui/arenaicon.png"));
             return SpireReturn.Continue();
         }
     }

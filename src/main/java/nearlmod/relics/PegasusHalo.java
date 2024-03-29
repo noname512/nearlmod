@@ -16,8 +16,8 @@ public class PegasusHalo extends CustomRelic {
     public static final RelicStrings relicStrings = CardCrawlGame.languagePack.getRelicStrings(ID);
     public static final String NAME = relicStrings.NAME;
     public static final String[] DESCRIPTIONS = relicStrings.DESCRIPTIONS;
-    public static final Texture IMG = new Texture("rhinemod/images/relics/pegasushalo.png");
-    public static final Texture IMG_OUTLINE = new Texture("rhinemod/images/relics/pegasushalo_p.png");
+    public static final Texture IMG = new Texture("resources/nearlmod/images/relics/pegasushalo.png");
+    public static final Texture IMG_OUTLINE = new Texture("resources/nearlmod/images/relics/pegasushalo_p.png");
     public PegasusHalo() {
         super(ID, IMG, IMG_OUTLINE, RelicTier.BOSS, LandingSound.MAGICAL);
         this.counter = 0;

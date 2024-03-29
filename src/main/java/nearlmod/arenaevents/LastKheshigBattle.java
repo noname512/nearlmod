@@ -21,7 +21,7 @@ public class LastKheshigBattle extends AbstractArenaEvent {
     public static final String[] OPTIONS = eventStrings.OPTIONS;
 
     public LastKheshigBattle() {
-        super(NAME, DESCRIPTIONS[0], "images/events/lastkheshigbattle.png");
+        super(NAME, DESCRIPTIONS[0], "resources/nearlmod/images/events/lastkheshigbattle.png");
         this.imageEventText.setDialogOption(OPTIONS[0]);
         this.imageEventText.setDialogOption(OPTIONS[1], CardLibrary.getCopy("Injury"), new ImaginaryFear());
         noCardsInRewards = true;

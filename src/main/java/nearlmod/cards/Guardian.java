@@ -19,7 +19,7 @@ public class Guardian extends AbstractNearlCard {
     public static final String NAME = cardStrings.NAME;
     public static final String DESCRIPTION = cardStrings.DESCRIPTION;
     public static final String UPGRADE_DESCRIPTION = cardStrings.UPGRADE_DESCRIPTION;
-    public static final String IMG_PATH = "images/cards/guardian.png";
+    public static final String IMG_PATH = "resources/nearlmod/images/cards/guardian.png";
     private static final int COST = 1;
     private static final int BLOCK_AMT = 7;
     private static final int UPGRADE_PLUS_BLOCK = 2;

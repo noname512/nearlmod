@@ -24,7 +24,7 @@ public class TheSurroundedEvent extends AbstractImageEvent {
         INTRO, FIGHT, LEAVE
     }
     public TheSurroundedEvent() {
-        super(NAME, DESCRIPTIONS[0], "images/events/thesurrounded.png");
+        super(NAME, DESCRIPTIONS[0], "resources/nearlmod/images/events/thesurrounded.png");
         this.imageEventText.setDialogOption(OPTIONS[0]);
         this.imageEventText.setDialogOption(OPTIONS[1]);
         noCardsInRewards = true;

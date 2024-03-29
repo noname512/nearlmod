@@ -19,7 +19,7 @@ public class AweInspiringGlow extends AbstractNearlCard {
     public static final String NAME = cardStrings.NAME;
     public static final String DESCRIPTION = cardStrings.DESCRIPTION;
     public static final String UPGRADE_DESCRIPTION = cardStrings.UPGRADE_DESCRIPTION;
-    public static final String IMG_PATH = "images/cards/aweinspiringglow.png";
+    public static final String IMG_PATH = "resources/nearlmod/images/cards/aweinspiringglow.png";
     private static final int COST = 0;
     private static final int LIGHT_AMT = 8;
     private static final int UPGRADE_PLUS_LIGHT = 3;

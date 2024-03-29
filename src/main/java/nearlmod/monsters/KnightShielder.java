@@ -16,7 +16,7 @@ public class KnightShielder extends AbstractMonster {
     public static final String NAME = monsterStrings.NAME;
     public static final String[] MOVES = monsterStrings.MOVES;
     public static final String[] DIALOG = monsterStrings.DIALOG;
-    public static final String IMAGE = "images/monsters/knightshielder.png";
+    public static final String IMAGE = "resources/nearlmod/images/monsters/knightshielder.png";
     private int blockAmount;
 
     public KnightShielder(float x, float y, int level) {
@@ -34,7 +34,7 @@ public class KnightShielder extends AbstractMonster {
         else if (AbstractDungeon.ascensionLevel >= 3) blockAmount = 18;
         else blockAmount = 16;
         blockAmount = MathUtils.floor(blockAmount * (1 + 0.1F * level));
-        loadAnimation("images/monsters/enemy_1102_sdkght_2/enemy_1102_sdkght_2.atlas", "images/monsters/enemy_1102_sdkght_2/enemy_1102_sdkght_237.json", 1.5F);
+        loadAnimation("resources/nearlmod/images/monsters/enemy_1102_sdkght_2/enemy_1102_sdkght_2.atlas", "resources/nearlmod/images/monsters/enemy_1102_sdkght_2/enemy_1102_sdkght_237.json", 1.5F);
         this.flipHorizontal = true;
         this.stateData.setMix("Idle", "Die", 0.1F);
         this.state.setAnimation(0, "Idle", true);

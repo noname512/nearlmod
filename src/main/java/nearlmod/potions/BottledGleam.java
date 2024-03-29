@@ -56,7 +56,7 @@ public class BottledGleam extends AbstractPotion {
         @SpirePostfixPatch
         public static void Postfix(AbstractPotion __instance, @ByRef Texture[] ___spotsImg) {
             if (__instance instanceof BottledGleam)
-                ___spotsImg[0] = new Texture("images/ui/gleam_spots.png");
+                ___spotsImg[0] = new Texture("resources/nearlmod/images/ui/gleam_spots.png");
         }
     }
 }

@@ -14,7 +14,7 @@ public class Flametail extends AbstractFriend {
     private static final OrbStrings orbStrings = CardCrawlGame.languagePack.getOrbString(ORB_ID);
     public static final String NAME = orbStrings.NAME;
     public static final String[] DESCRIPTION = orbStrings.DESCRIPTION;
-    public static final String IMAGE = "images/orbs/flametail.png";
+    public static final String IMAGE = "resources/nearlmod/images/orbs/flametail.png";
 
     public Flametail(int amount) {
         super(ORB_ID, NAME, DESCRIPTION, IMAGE, amount);

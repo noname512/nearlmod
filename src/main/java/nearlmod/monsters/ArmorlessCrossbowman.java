@@ -16,7 +16,7 @@ public class ArmorlessCrossbowman extends AbstractMonster {
     public static final MonsterStrings monsterStrings = CardCrawlGame.languagePack.getMonsterStrings(ID);
     public static final String NAME = monsterStrings.NAME;
     public static final String[] MOVES = monsterStrings.MOVES;
-    public static final String IMAGE = "images/monsters/armorlesscrossbowman.png";
+    public static final String IMAGE = "resources/nearlmod/images/monsters/armorlesscrossbowman.png";
     private final int frailAmount;
 
     public ArmorlessCrossbowman(float x, float y, int level) {
@@ -36,7 +36,7 @@ public class ArmorlessCrossbowman extends AbstractMonster {
             frailAmount = 2;
         else
             frailAmount = 1;
-        loadAnimation("images/monsters/enemy_1179_aruarw_2/enemy_1179_aruarw_2.atlas", "images/monsters/enemy_1179_aruarw_2/enemy_1179_aruarw_237.json", 1.5F);
+        loadAnimation("resources/nearlmod/images/monsters/enemy_1179_aruarw_2/enemy_1179_aruarw_2.atlas", "resources/nearlmod/images/monsters/enemy_1179_aruarw_2/enemy_1179_aruarw_237.json", 1.5F);
         this.flipHorizontal = true;
         this.stateData.setMix("Idle", "Die", 0.1F);
         this.state.setAnimation(0, "Idle", true);

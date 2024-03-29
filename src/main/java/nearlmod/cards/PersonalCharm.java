@@ -20,7 +20,7 @@ public class PersonalCharm extends AbstractNearlCard {
     public static final String NAME = cardStrings.NAME;
     public static final String DESCRIPTION = cardStrings.DESCRIPTION;
     public static final String UPGRADE_DESCRIPTION = cardStrings.UPGRADE_DESCRIPTION;
-    public static final String IMG_PATH = "images/cards/personalcharm.png";
+    public static final String IMG_PATH = "resources/nearlmod/images/cards/personalcharm.png";
     private static final int COST = 2;
 
     public PersonalCharm() {

@@ -16,7 +16,7 @@ public class Roy extends AbstractMonster {
     public static final String NAME = monsterStrings.NAME;
     public static final String[] MOVES = monsterStrings.MOVES;
     public static final String[] DIALOG = monsterStrings.DIALOG;
-    public static final String IMAGE = "images/monsters/roy.png";
+    public static final String IMAGE = "resources/nearlmod/images/monsters/roy.png";
     private boolean said;
     private final int corrosionAmount;
 
@@ -34,7 +34,7 @@ public class Roy extends AbstractMonster {
             corrosionAmount = 40;
         else
             corrosionAmount = 30;
-        loadAnimation("images/monsters/enemy_1183_mlasrt_3/enemy_1183_mlasrt_333.atlas", "images/monsters/enemy_1183_mlasrt_3/enemy_1183_mlasrt_333.json", 1.5F);
+        loadAnimation("resources/nearlmod/images/monsters/enemy_1183_mlasrt_3/enemy_1183_mlasrt_333.atlas", "resources/nearlmod/images/monsters/enemy_1183_mlasrt_3/enemy_1183_mlasrt_333.json", 1.5F);
         this.flipHorizontal = true;
         this.stateData.setMix("Idle", "Die", 0.1F);
         this.state.setAnimation(0, "Idle", true);

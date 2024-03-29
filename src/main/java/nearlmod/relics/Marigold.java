@@ -14,8 +14,8 @@ public class Marigold extends CustomRelic {
     public static final RelicStrings relicStrings = CardCrawlGame.languagePack.getRelicStrings(ID);
     public static final String NAME = relicStrings.NAME;
     public static final String[] DESCRIPTIONS = relicStrings.DESCRIPTIONS;
-    public static final Texture IMG = new Texture("images/relics/marigold.png");
-    public static final Texture IMG_OUTLINE = new Texture("images/relics/marigold_p.png");
+    public static final Texture IMG = new Texture("resources/nearlmod/images/relics/marigold.png");
+    public static final Texture IMG_OUTLINE = new Texture("resources/nearlmod/images/relics/marigold_p.png");
     public Marigold() {
         super(ID, IMG, IMG_OUTLINE, RelicTier.SPECIAL, LandingSound.FLAT);
     }

@@ -21,7 +21,7 @@ public class CoalescingFearEffect extends AbstractGameEffect {
     private float alpha;
     private float currentScale;
     private float stayDuration;
-    public static final Texture img = new Texture("images/vfx/coalescingfear.png");
+    public static final Texture img = new Texture("resources/nearlmod/images/vfx/coalescingfear.png");
     public static final TextureAtlas.AtlasRegion region = new TextureAtlas.AtlasRegion(img, 0, 0, img.getWidth(), img.getHeight());
 
     public CoalescingFearEffect(float sx, float sy, float tx, float ty, float scale) {

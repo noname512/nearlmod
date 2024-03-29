@@ -14,7 +14,7 @@ public class StartWithDefStance extends AbstractNearlCard {
     public static final CardStrings cardStrings = CardCrawlGame.languagePack.getCardStrings(ID);
     public static final String NAME = cardStrings.NAME;
     public static final String DESCRIPTION = cardStrings.DESCRIPTION;
-    public static final String IMG_PATH = "images/cards/todef.png";
+    public static final String IMG_PATH = "resources/nearlmod/images/cards/todef.png";
 
     public StartWithDefStance() {
         super(ID, NAME, IMG_PATH, -2, DESCRIPTION,

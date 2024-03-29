@@ -26,7 +26,7 @@ public class BloodKnight extends AbstractMonster {
     public static final String NAME = monsterStrings.NAME;
     public static final String[] MOVES = monsterStrings.MOVES;
     public static final String[] DIALOG = monsterStrings.DIALOG;
-    public static final String IMAGE = "images/monsters/bloodknight.png";
+    public static final String IMAGE = "resources/nearlmod/images/monsters/bloodknight.png";
 
     public static final float[] POSX = new float[] { 195.0F, -235.0F, 165.0F, -265.0F, 225.0F, -205.0F };
     public static final float[] POSY = new float[] { 85.0F, 75.0F, 225.0F, 215.0F, 345.0F, 335.0F };
@@ -68,7 +68,7 @@ public class BloodKnight extends AbstractMonster {
         currentTurn = 0;
         isStage2 = false;
         talked = false;
-        loadAnimation("images/monsters/enemy_1524_bldkgt/enemy_1524_bldkgt33.atlas", "images/monsters/enemy_1524_bldkgt/enemy_1524_bldkgt33.json", 1.5F);
+        loadAnimation("resources/nearlmod/images/monsters/enemy_1524_bldkgt/enemy_1524_bldkgt33.atlas", "resources/nearlmod/images/monsters/enemy_1524_bldkgt/enemy_1524_bldkgt33.json", 1.5F);
         this.flipHorizontal = true;
         this.stateData.setMix("A_Idle", "A_Die_Start", 0.1F);
         this.state.setAnimation(0, "A_Idle", true);
@@ -163,7 +163,7 @@ public class BloodKnight extends AbstractMonster {
         }
         else if (this.nextMove == 55) {
             CardCrawlGame.sound.play("BLOOD_KNIGHT_REBORN_NXT");
-            loadAnimation("images/monsters/enemy_1524_bldkgt/enemy_1524_bldkgt33.atlas", "images/monsters/enemy_1524_bldkgt/enemy_1524_bldkgt33.json", 1.5F);
+            loadAnimation("resources/nearlmod/images/monsters/enemy_1524_bldkgt/enemy_1524_bldkgt33.atlas", "resources/nearlmod/images/monsters/enemy_1524_bldkgt/enemy_1524_bldkgt33.json", 1.5F);
             this.stateData.setMix("B_Idle", "B_Die", 0.1F);
             this.state.setAnimation(0, "A_Die_End_2", false);
             this.state.addAnimation(0, "B_Idle", true, 0);

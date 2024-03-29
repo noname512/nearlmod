@@ -19,8 +19,8 @@ public class LoseThornsPower extends AbstractPower implements CloneablePowerInte
         name = NAME;
         ID = POWER_ID;
         this.owner = owner;
-        region128 = new TextureAtlas.AtlasRegion(ImageMaster.loadImage("images/powers/losethorns power 84.png"), 0, 0, 84, 84);
-        region48 = new TextureAtlas.AtlasRegion(ImageMaster.loadImage("images/powers/losethorns power 32.png"), 0, 0, 32, 32);
+        region128 = new TextureAtlas.AtlasRegion(ImageMaster.loadImage("resources/nearlmod/images/powers/losethorns power 84.png"), 0, 0, 84, 84);
+        region48 = new TextureAtlas.AtlasRegion(ImageMaster.loadImage("resources/nearlmod/images/powers/losethorns power 32.png"), 0, 0, 32, 32);
         type = PowerType.DEBUFF;
         this.amount = amount;
         updateDescription();

@@ -30,15 +30,15 @@ public class CostEnergyOrb extends CustomEnergyOrb {
     public static final float X_OFFSET = -20.0F * Settings.scale;
     public static final float Y_OFFSET = 150.0F * Settings.scale;
     public static final String[] orbTexturesAlt = {
-            "images/char/orb/layer1alt.png",
-            "images/char/orb/layer2alt.png",
-            "images/char/orb/layer3alt.png",
-            "images/char/orb/layer4alt.png",
-            "images/char/orb/layer5.png",
-            "images/char/orb/layer1d.png",
-            "images/char/orb/layer2d.png",
-            "images/char/orb/layer3d.png",
-            "images/char/orb/layer4d.png"
+            "resources/nearlmod/images/char/orb/layer1alt.png",
+            "resources/nearlmod/images/char/orb/layer2alt.png",
+            "resources/nearlmod/images/char/orb/layer3alt.png",
+            "resources/nearlmod/images/char/orb/layer4alt.png",
+            "resources/nearlmod/images/char/orb/layer5.png",
+            "resources/nearlmod/images/char/orb/layer1d.png",
+            "resources/nearlmod/images/char/orb/layer2d.png",
+            "resources/nearlmod/images/char/orb/layer3d.png",
+            "resources/nearlmod/images/char/orb/layer4d.png"
     };
     protected Texture secondBaseLayer;
     protected Texture[] secondEnergyLayers;
@@ -64,7 +64,7 @@ public class CostEnergyOrb extends CustomEnergyOrb {
         secondLayerSpeeds = layerSpeeds;
         secondAngles = new float[this.secondLayerSpeeds.length];
         this.fbo = new FrameBuffer(Pixmap.Format.RGBA8888, Gdx.graphics.getWidth(), Gdx.graphics.getHeight(), false, false);
-        this.mask = ImageMaster.loadImage("images/char/orb/mask.png");
+        this.mask = ImageMaster.loadImage("resources/nearlmod/images/char/orb/mask.png");
     }
 
     @Override

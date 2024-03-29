@@ -16,7 +16,7 @@ public class ArmorlessAssassin extends AbstractMonster {
     public static final MonsterStrings monsterStrings = CardCrawlGame.languagePack.getMonsterStrings(ID);
     public static final String NAME = monsterStrings.NAME;
     public static final String[] MOVES = monsterStrings.MOVES;
-    public static final String IMAGE = "images/monsters/armorlessassassin.png";
+    public static final String IMAGE = "resources/nearlmod/images/monsters/armorlessassassin.png";
     private final int attackUpAmount;
 
     public ArmorlessAssassin(float x, float y, int level) {
@@ -34,7 +34,7 @@ public class ArmorlessAssassin extends AbstractMonster {
             attackUpAmount = 80;
         else
             attackUpAmount = 50;
-        loadAnimation("images/monsters/enemy_1180_aruass_2/enemy_1180_aruass_2.atlas", "images/monsters/enemy_1180_aruass_2/enemy_1180_aruass_237.json", 1.5F);
+        loadAnimation("resources/nearlmod/images/monsters/enemy_1180_aruass_2/enemy_1180_aruass_2.atlas", "resources/nearlmod/images/monsters/enemy_1180_aruass_2/enemy_1180_aruass_237.json", 1.5F);
         this.flipHorizontal = true;
         this.stateData.setMix("Idle", "Die", 0.1F);
         this.state.setAnimation(0, "Idle", true);

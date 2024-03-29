@@ -13,8 +13,8 @@ public class EmergencyCallBook extends CustomRelic {
     public static final RelicStrings relicStrings = CardCrawlGame.languagePack.getRelicStrings(ID);
     public static final String NAME = relicStrings.NAME;
     public static final String[] DESCRIPTIONS = relicStrings.DESCRIPTIONS;
-    public static final Texture IMG = new Texture("images/relics/emergencycallbook.png");
-    public static final Texture IMG_OUTLINE = new Texture("images/relics/emergencycallbook_p.png");
+    public static final Texture IMG = new Texture("resources/nearlmod/images/relics/emergencycallbook.png");
+    public static final Texture IMG_OUTLINE = new Texture("resources/nearlmod/images/relics/emergencycallbook_p.png");
     public EmergencyCallBook() {
         super(ID, IMG, IMG_OUTLINE, RelicTier.RARE, LandingSound.FLAT);
         counter = 0;

@@ -17,7 +17,7 @@ public class SummonPinusFriend extends AbstractNearlCard {
     public static final String NAME = cardStrings.NAME;
     public static final String DESCRIPTION = cardStrings.DESCRIPTION;
     public static final String[] EXTENDED_DESCRIPTION = cardStrings.EXTENDED_DESCRIPTION;
-    public static final String IMG_PATH_PREFIX = "images/cards/";
+    public static final String IMG_PATH_PREFIX = "resources/nearlmod/images/cards/";
     public static final String IMG_PATH_POSTFIX = ".png";
     private final String friendID;
 

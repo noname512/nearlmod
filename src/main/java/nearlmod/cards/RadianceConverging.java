@@ -18,7 +18,7 @@ public class RadianceConverging extends AbstractNearlCard {
     public static final String DESCRIPTION = cardStrings.DESCRIPTION;
     public static final String UPGRADE_DESCRIPTION = cardStrings.UPGRADE_DESCRIPTION;
     public static final String[] EXTENDED_DESCRIPTION = cardStrings.EXTENDED_DESCRIPTION;
-    public static final String IMG_PATH = "images/cards/radianceconverging.png";
+    public static final String IMG_PATH = "resources/nearlmod/images/cards/radianceconverging.png";
     private static final int COST = 2;
     private static final int LIGHT_AMT = 10;
     private static final int LIGHT_EX = 6;

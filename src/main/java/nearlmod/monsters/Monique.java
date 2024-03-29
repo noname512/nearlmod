@@ -16,7 +16,7 @@ public class Monique extends AbstractMonster {
     public static final String NAME = monsterStrings.NAME;
     public static final String[] MOVES = monsterStrings.MOVES;
     public static final String[] DIALOG = monsterStrings.DIALOG;
-    public static final String IMAGE = "images/monsters/monique.png";
+    public static final String IMAGE = "resources/nearlmod/images/monsters/monique.png";
     private final int corrosionAmount;
 
     public Monique(float x, float y) {
@@ -35,7 +35,7 @@ public class Monique extends AbstractMonster {
             corrosionAmount = 20;
         else
             corrosionAmount = 15;
-        loadAnimation("images/monsters/enemy_1182_flasrt_3/enemy_1182_flasrt_333.atlas", "images/monsters/enemy_1182_flasrt_3/enemy_1182_flasrt_333.json", 1.5F);
+        loadAnimation("resources/nearlmod/images/monsters/enemy_1182_flasrt_3/enemy_1182_flasrt_333.atlas", "resources/nearlmod/images/monsters/enemy_1182_flasrt_3/enemy_1182_flasrt_333.json", 1.5F);
         this.flipHorizontal = true;
         this.stateData.setMix("Idle", "Die", 0.1F);
         this.state.setAnimation(0, "Idle", true);

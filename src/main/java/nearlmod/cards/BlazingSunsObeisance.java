@@ -16,7 +16,7 @@ public class BlazingSunsObeisance extends AbstractNearlCard {
     public static final String NAME = cardStrings.NAME;
     public static final String DESCRIPTION = cardStrings.DESCRIPTION;
     public static final String UPGRADE_DESCRIPTION = cardStrings.UPGRADE_DESCRIPTION;
-    public static final String IMG_PATH = "images/cards/blazingsunsobeisance.png";
+    public static final String IMG_PATH = "resources/nearlmod/images/cards/blazingsunsobeisance.png";
     private static final int COST = 2;
     private static final int BASE_DMG = 19;
 

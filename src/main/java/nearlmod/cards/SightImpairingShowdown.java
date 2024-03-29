@@ -23,7 +23,7 @@ public class SightImpairingShowdown extends AbstractNearlCard {
     public static final String NAME = cardStrings.NAME;
     public static final String DESCRIPTION = cardStrings.DESCRIPTION;
     public static final String UPGRADE_DESCRIPTION = cardStrings.UPGRADE_DESCRIPTION;
-    public static final String IMG_PATH = "images/cards/sightimpairingshowdown.png";
+    public static final String IMG_PATH = "resources/nearlmod/images/cards/sightimpairingshowdown.png";
     private static final int COST = 0;
     private static final int POWER_GAIN = 1;
 

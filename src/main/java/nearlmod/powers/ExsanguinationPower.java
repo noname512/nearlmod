@@ -22,8 +22,8 @@ public class ExsanguinationPower extends AbstractPower implements CloneablePower
         name = NAME;
         ID = POWER_ID;
         this.owner = owner;
-        region128 = new TextureAtlas.AtlasRegion(ImageMaster.loadImage("images/powers/exsanguination power 84.png"), 0, 0, 84, 84);
-        region48 = new TextureAtlas.AtlasRegion(ImageMaster.loadImage("images/powers/exsanguination power 32.png"), 0, 0, 32, 32);
+        region128 = new TextureAtlas.AtlasRegion(ImageMaster.loadImage("resources/nearlmod/images/powers/exsanguination power 84.png"), 0, 0, 84, 84);
+        region48 = new TextureAtlas.AtlasRegion(ImageMaster.loadImage("resources/nearlmod/images/powers/exsanguination power 32.png"), 0, 0, 32, 32);
         type = PowerType.DEBUFF;
         updateDescription();
     }

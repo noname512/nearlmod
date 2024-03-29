@@ -23,7 +23,7 @@ public class BloodKnightBattle extends AbstractArenaEvent {
     public static final String[] OPTIONS = eventStrings.OPTIONS;
 
     public BloodKnightBattle() {
-        super(NAME, DESCRIPTIONS[0], "images/events/bloodknightbattle.png");
+        super(NAME, DESCRIPTIONS[0], "resources/nearlmod/images/events/bloodknightbattle.png");
         this.imageEventText.setDialogOption(OPTIONS[0]);
         this.imageEventText.setDialogOption(OPTIONS[1], new BloodEntangle());
         noCardsInRewards = true;

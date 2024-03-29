@@ -21,8 +21,8 @@ public class AttackUpPower extends AbstractPower implements CloneablePowerInterf
         this.owner = owner;
         type = PowerType.BUFF;
         this.amount = amount;
-        region128 = new TextureAtlas.AtlasRegion(ImageMaster.loadImage("images/powers/attackup power 128.png"), 0, 0, 128, 128);
-        region48 = new TextureAtlas.AtlasRegion(ImageMaster.loadImage("images/powers/attackup power 48.png"), 0, 0, 48, 48);
+        region128 = new TextureAtlas.AtlasRegion(ImageMaster.loadImage("resources/nearlmod/images/powers/attackup power 128.png"), 0, 0, 128, 128);
+        region48 = new TextureAtlas.AtlasRegion(ImageMaster.loadImage("resources/nearlmod/images/powers/attackup power 48.png"), 0, 0, 48, 48);
         updateDescription();
         priority = 120;
     }

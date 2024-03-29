@@ -21,8 +21,8 @@ public class DuelPower extends AbstractPower implements CloneablePowerInterface 
         type = PowerType.BUFF;
         this.amount = amount;
         updateDescription();
-        region128 = new TextureAtlas.AtlasRegion(ImageMaster.loadImage("images/powers/duel power 84.png"), 0, 0, 84, 84);
-        region48 = new TextureAtlas.AtlasRegion(ImageMaster.loadImage("images/powers/duel power 32.png"), 0, 0, 32, 32);
+        region128 = new TextureAtlas.AtlasRegion(ImageMaster.loadImage("resources/nearlmod/images/powers/duel power 84.png"), 0, 0, 84, 84);
+        region48 = new TextureAtlas.AtlasRegion(ImageMaster.loadImage("resources/nearlmod/images/powers/duel power 32.png"), 0, 0, 32, 32);
         priority = 120;
     }
     @Override

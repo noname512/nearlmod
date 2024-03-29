@@ -16,7 +16,7 @@ public class UndertideGloompincer extends AbstractMonster {
     public static final MonsterStrings monsterStrings = CardCrawlGame.languagePack.getMonsterStrings(ID);
     public static final String NAME = monsterStrings.NAME;
     public static final String[] MOVES = monsterStrings.MOVES;
-    public static final String IMAGE = "images/monsters/undertidegloompincer.png";
+    public static final String IMAGE = "resources/nearlmod/images/monsters/undertidegloompincer.png";
     int blockNum = 6;
 
     public UndertideGloompincer(float x, float y, int level) {
@@ -33,7 +33,7 @@ public class UndertideGloompincer extends AbstractMonster {
         setHp(MathUtils.floor(hp * (1 + 0.1F * level)));
         if (AbstractDungeon.ascensionLevel >= 7) blockNum = 8;
         blockNum = MathUtils.floor(blockNum * (1 + 0.1F * level));
-        loadAnimation("images/monsters/enemy_1178_dscorp_2/enemy_1178_dscorp_233.atlas", "images/monsters/enemy_1178_dscorp_2/enemy_1178_dscorp_233.json", 2.0F);
+        loadAnimation("resources/nearlmod/images/monsters/enemy_1178_dscorp_2/enemy_1178_dscorp_233.atlas", "resources/nearlmod/images/monsters/enemy_1178_dscorp_2/enemy_1178_dscorp_233.json", 2.0F);
         this.flipHorizontal = true;
         this.stateData.setMix("Idle", "Die", 0.1F);
         this.state.setAnimation(0, "Idle", true);

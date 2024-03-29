@@ -23,7 +23,7 @@ public class StayGold extends AbstractNearlCard {
     public static final String NAME = cardStrings.NAME;
     public static final String DESCRIPTION = cardStrings.DESCRIPTION;
     public static final String UPGRADE_DESCRIPTION = cardStrings.UPGRADE_DESCRIPTION;
-    public static final String IMG_PATH = "images/cards/staygold.png";
+    public static final String IMG_PATH = "resources/nearlmod/images/cards/staygold.png";
     private static final int COST = 2;
     private static final int UPGRADE_COST = 1;
     private static final int LIGHT_GAIN = 3;

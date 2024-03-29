@@ -17,8 +17,8 @@ public class KnightFamily extends CustomRelic {
     public static final RelicStrings relicStrings = CardCrawlGame.languagePack.getRelicStrings(ID);
     public static final String NAME = relicStrings.NAME;
     public static final String[] DESCRIPTIONS = relicStrings.DESCRIPTIONS;
-    public static final Texture IMG = new Texture("images/relics/knightfamily.png");
-    public static final Texture IMG_OUTLINE = new Texture("images/relics/knightfamily_p.png");
+    public static final Texture IMG = new Texture("resources/nearlmod/images/relics/knightfamily.png");
+    public static final Texture IMG_OUTLINE = new Texture("resources/nearlmod/images/relics/knightfamily_p.png");
     private int status; // 1-未触发 2-触发中 3-已触发
     public KnightFamily() {
         super(ID, IMG, IMG_OUTLINE, RelicTier.RARE, LandingSound.CLINK);

@@ -39,13 +39,13 @@ public class ArenaRoom extends AbstractRoom {
     public static final String ID = "nearlmod:ArenaRoom";
     public static final UIStrings uiStrings = CardCrawlGame.languagePack.getUIString(ID);
     public static final String[] TEXT = uiStrings.TEXT;
-    public static final Texture MAP_IMG = new Texture("images/ui/arena.png");
+    public static final Texture MAP_IMG = new Texture("resources/nearlmod/images/ui/arena.png");
     public static int enterTimes;
 
     public ArenaRoom() {
         mapSymbol = "A";
         mapImg = MAP_IMG;
-        mapImgOutline = new Texture("images/ui/arenaoutline.png");
+        mapImgOutline = new Texture("resources/nearlmod/images/ui/arenaoutline.png");
     }
 
     @Override
@@ -114,7 +114,7 @@ public class ArenaRoom extends AbstractRoom {
         @SpirePostfixPatch
         public static void Postfix(Legend __instance) {
             __instance.items.add(new LegendItem(ArenaRoom.TEXT[0], ArenaRoom.MAP_IMG, ArenaRoom.TEXT[1], ArenaRoom.TEXT[2], 6));
-            ImageMaster.MAP_LEGEND = new Texture("images/ui/legend.png");
+            ImageMaster.MAP_LEGEND = new Texture("resources/nearlmod/images/ui/legend.png");
         }
     }
 
@@ -198,7 +198,7 @@ public class ArenaRoom extends AbstractRoom {
 //        @SpirePrefixPatch
 //        public static SpireReturn<?> Prefix(AbstractScene __instance, SpriteBatch sb) {
 //            if (AbstractDungeon.getCurrRoom() instanceof ArenaRoom) {
-//                sb.draw(new Texture("images/ui/arenascene.png"), 0.0F, 0.0F, 0.0F, 0.0F, 1920, 1080, Settings.xScale, Settings.xScale, 0.0F, 0, 0, 3840, 2160, false, false);
+//                sb.draw(new Texture("resources/nearlmod/images/ui/arenascene.png"), 0.0F, 0.0F, 0.0F, 0.0F, 1920, 1080, Settings.xScale, Settings.xScale, 0.0F, 0, 0, 3840, 2160, false, false);
 //                return SpireReturn.Return();
 //            }
 //            return SpireReturn.Continue();
@@ -210,7 +210,7 @@ public class ArenaRoom extends AbstractRoom {
 //        @SpirePrefixPatch
 //        public static SpireReturn<?> Prefix(TheBottomScene __instance, SpriteBatch sb) {
 //            if (AbstractDungeon.getCurrRoom() instanceof ArenaRoom) {
-//                sb.draw(new Texture("images/ui/arenascene.png"), 0.0F, 0.0F, 0.0F, 0.0F, 1920, 1080, Settings.xScale, Settings.xScale, 0.0F, 0, 0, 3840, 2160, false, false);
+//                sb.draw(new Texture("resources/nearlmod/images/ui/arenascene.png"), 0.0F, 0.0F, 0.0F, 0.0F, 1920, 1080, Settings.xScale, Settings.xScale, 0.0F, 0, 0, 3840, 2160, false, false);
 //                return SpireReturn.Return();
 //            }
 //            return SpireReturn.Continue();

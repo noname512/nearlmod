@@ -18,8 +18,8 @@ public class CureUp extends CustomRelic {
     public static final RelicStrings relicStrings = CardCrawlGame.languagePack.getRelicStrings(ID);
     public static final String NAME = relicStrings.NAME;
     public static final String[] DESCRIPTIONS = relicStrings.DESCRIPTIONS;
-    public static final Texture IMG = new Texture("rhinemod/images/relics/cureup.png");
-    public static final Texture IMG_OUTLINE = new Texture("rhinemod/images/relics/cureup_p.png");
+    public static final Texture IMG = new Texture("resources/nearlmod/images/relics/cureup.png");
+    public static final Texture IMG_OUTLINE = new Texture("resources/nearlmod/images/relics/cureup_p.png");
     public static final int MAX_AMOUNT = 5;
     public CureUp() {
         super(ID, IMG, IMG_OUTLINE, RelicTier.STARTER, LandingSound.MAGICAL);

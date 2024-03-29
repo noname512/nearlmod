@@ -21,8 +21,8 @@ public class DealCorrosionPower extends AbstractPower implements CloneablePowerI
         ID = POWER_ID;
         this.owner = owner;
         type = PowerType.BUFF;
-        region128 = new TextureAtlas.AtlasRegion(ImageMaster.loadImage("images/powers/dealcorrosion power 84.png"), 0, 0, 84, 84);
-        region48 = new TextureAtlas.AtlasRegion(ImageMaster.loadImage("images/powers/dealcorrosion power 32.png"), 0, 0, 32, 32);
+        region128 = new TextureAtlas.AtlasRegion(ImageMaster.loadImage("resources/nearlmod/images/powers/dealcorrosion power 84.png"), 0, 0, 84, 84);
+        region48 = new TextureAtlas.AtlasRegion(ImageMaster.loadImage("resources/nearlmod/images/powers/dealcorrosion power 32.png"), 0, 0, 32, 32);
         this.amount = amount;
         updateDescription();
     }

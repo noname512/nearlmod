@@ -21,8 +21,8 @@ public class InfiniteLightBladePower extends AbstractPower implements CloneableP
         ID = POWER_ID;
         this.owner = owner;
         type = PowerType.BUFF;
-        region128 = new TextureAtlas.AtlasRegion(ImageMaster.loadImage("images/powers/infinitelightblade power 84.png"), 0, 0, 84, 84);
-        region48 = new TextureAtlas.AtlasRegion(ImageMaster.loadImage("images/powers/infinitelightblade power 32.png"), 0, 0, 32, 32);
+        region128 = new TextureAtlas.AtlasRegion(ImageMaster.loadImage("resources/nearlmod/images/powers/infinitelightblade power 84.png"), 0, 0, 84, 84);
+        region48 = new TextureAtlas.AtlasRegion(ImageMaster.loadImage("resources/nearlmod/images/powers/infinitelightblade power 32.png"), 0, 0, 32, 32);
         priority = 0;
         this.amount = amount;
         updateDescription();

@@ -29,7 +29,7 @@ public class LastKheshig extends AbstractMonster {
     public static final String NAME = monsterStrings.NAME;
     public static final String[] MOVES = monsterStrings.MOVES;
     public static final String[] DIALOG = monsterStrings.DIALOG;
-    public static final String IMAGE = "images/monsters/lastkheshig.png";
+    public static final String IMAGE = "resources/nearlmod/images/monsters/lastkheshig.png";
 
     public static final float[] POSX = new float[] { 115.0F, 285.0F };
     public static final float[] POSY = new float[] { 0.0F, 0.0F };
@@ -54,7 +54,7 @@ public class LastKheshig extends AbstractMonster {
         }
         isBlemishineSurvive = true;
         talked = false;
-        loadAnimation("images/monsters/enemy_1185_nmekgt_3/enemy_1185_nmekgt_333.atlas", "images/monsters/enemy_1185_nmekgt_3/enemy_1185_nmekgt_333.json", 1.5F);
+        loadAnimation("resources/nearlmod/images/monsters/enemy_1185_nmekgt_3/enemy_1185_nmekgt_333.atlas", "resources/nearlmod/images/monsters/enemy_1185_nmekgt_3/enemy_1185_nmekgt_333.json", 1.5F);
         this.flipHorizontal = true;
         this.stateData.setMix("Idle", "Die", 0.1F);
         this.state.setAnimation(0, "Idle", true);

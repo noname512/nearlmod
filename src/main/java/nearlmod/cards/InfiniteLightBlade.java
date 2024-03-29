@@ -17,7 +17,7 @@ public class InfiniteLightBlade extends AbstractNearlCard {
     public static final String NAME = cardStrings.NAME;
     public static final String DESCRIPTION = cardStrings.DESCRIPTION;
     public static final String UPGRADE_DESCRIPTION = cardStrings.UPGRADE_DESCRIPTION;
-    public static final String IMG_PATH = "images/cards/infinitelightblade.png";
+    public static final String IMG_PATH = "resources/nearlmod/images/cards/infinitelightblade.png";
     private static final int COST = 1;
 
     public InfiniteLightBlade() {

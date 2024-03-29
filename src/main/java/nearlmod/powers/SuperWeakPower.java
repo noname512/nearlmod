@@ -24,8 +24,8 @@ public class SuperWeakPower extends AbstractPower implements CloneablePowerInter
         this.owner = owner;
         type = PowerType.DEBUFF;
         this.amount = amount;
-        region128 = new TextureAtlas.AtlasRegion(ImageMaster.loadImage("images/powers/superweak power 84.png"), 0, 0, 84, 84);
-        region48 = new TextureAtlas.AtlasRegion(ImageMaster.loadImage("images/powers/superweak power 32.png"), 0, 0, 32, 32);
+        region128 = new TextureAtlas.AtlasRegion(ImageMaster.loadImage("resources/nearlmod/images/powers/superweak power 84.png"), 0, 0, 84, 84);
+        region48 = new TextureAtlas.AtlasRegion(ImageMaster.loadImage("resources/nearlmod/images/powers/superweak power 32.png"), 0, 0, 32, 32);
         updateDescription();
         this.priority = 120;
         this.justApplied = true;

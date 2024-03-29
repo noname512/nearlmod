@@ -16,7 +16,7 @@ public class NearlStrike extends AbstractNearlCard {
     public static final String NAME = cardStrings.NAME;
     public static final String DESCRIPTION = cardStrings.DESCRIPTION;
     public static final String UPGRADE_DESCRIPTION = cardStrings.UPGRADE_DESCRIPTION;
-    public static final String IMG_PATH = "rhinemod/images/cards/nearlstrike.png";
+    public static final String IMG_PATH = "resources/nearlmod/images/cards/nearlstrike.png";
     private static final int COST = 1;
     private static final int ATTACK_DMG = 6;
     private static final int UPGRADE_PLUS_DMG = 3;
