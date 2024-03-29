@@ -19,7 +19,7 @@ public class BeepActivate extends AbstractFriendCard {
     public static final String NAME = cardStrings.NAME;
     public static final String DESCRIPTION = cardStrings.DESCRIPTION;
     public static final String UPGRADE_DESCRIPTION = cardStrings.UPGRADE_DESCRIPTION;
-    public static final String IMG_PATH = "images/cards/beepactivate.png";
+    public static final String IMG_PATH = "rhinemod/images/cards/beepactivate.png";
     private static final int COST = 0;
     private static final int BLOCK_GAIN = 2;
     private static final int BLOCK_NUM = 2;

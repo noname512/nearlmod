@@ -14,7 +14,7 @@ public class Shining extends AbstractFriend {
     private static final OrbStrings orbStrings = CardCrawlGame.languagePack.getOrbString(ORB_ID);
     public static final String NAME = orbStrings.NAME;
     public static final String[] DESCRIPTION = orbStrings.DESCRIPTION;
-    public static final String IMAGE = "images/orbs/shining.png";
+    public static final String IMAGE = "rhinemod/images/orbs/shining.png";
     public static boolean uniqueUsed;
 
     public Shining(int amount) {

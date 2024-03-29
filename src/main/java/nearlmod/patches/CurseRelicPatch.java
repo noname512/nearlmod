@@ -108,7 +108,7 @@ public class CurseRelicPatch {
         @SpireInsertPatch(rloc = 0, localvars = {"relic", "relicFrameImg"})
         public static SpireReturn<?> Insert(SingleRelicViewPopup __instance, AbstractRelic relic, @ByRef Texture[] relicFrameImg) {
             if (relic.isSeen && relic.tier == CurseRelicPatch.CURSE) {
-                relicFrameImg[0] = ImageMaster.loadImage("images/ui/relicFrameCurse.png");
+                relicFrameImg[0] = ImageMaster.loadImage("rhinemod/images/ui/relicFrameCurse.png");
                 return SpireReturn.Return();
             }
             return SpireReturn.Continue();

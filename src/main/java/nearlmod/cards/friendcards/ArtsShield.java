@@ -15,7 +15,7 @@ public class ArtsShield extends AbstractFriendCard {
     public static final String NAME = cardStrings.NAME;
     public static final String DESCRIPTION = cardStrings.DESCRIPTION;
     public static final String UPGRADE_DESCRIPTION = cardStrings.UPGRADE_DESCRIPTION;
-    public static final String IMG_PATH = "images/cards/artsshield.png";
+    public static final String IMG_PATH = "rhinemod/images/cards/artsshield.png";
     private static final int COST = 1;
     private static final int BLOCK_AMT = 5;
     private static final int TEMP_HP = 5;

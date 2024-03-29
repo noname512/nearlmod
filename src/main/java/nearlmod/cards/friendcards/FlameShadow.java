@@ -25,7 +25,7 @@ public class FlameShadow extends AbstractFriendCard {
     public static final String DESCRIPTION = cardStrings.DESCRIPTION;
     public static final String UPGRADE_DESCRIPTION = cardStrings.UPGRADE_DESCRIPTION;
     public static final String EXTRA_DESCRIPTION = cardStrings.EXTENDED_DESCRIPTION[0];
-    public static final String IMG_PATH = "images/cards/flameshadow.png";
+    public static final String IMG_PATH = "rhinemod/images/cards/flameshadow.png";
     private static final int COST = 2;
     private static final int UPGRADED_COST = 1;
 

@@ -21,7 +21,7 @@ public class CraftsmanEcho extends AbstractFriendCard {
     public static final String DESCRIPTION = cardStrings.DESCRIPTION;
     public static final String UPGRADE_DESCRIPTION = cardStrings.UPGRADE_DESCRIPTION;
     public static final String[] EXTENDED_DESCRIPTION = cardStrings.EXTENDED_DESCRIPTION;
-    public static final String IMG_PATH = "images/cards/craftsmanecho.png";
+    public static final String IMG_PATH = "rhinemod/images/cards/craftsmanecho.png";
     private static final int COST = 2;
     private static final int EXTRA_INC = 3;
     private static final int UPGRADE_PLUS_COST = 1;

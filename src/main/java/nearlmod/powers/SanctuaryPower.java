@@ -20,8 +20,8 @@ public class SanctuaryPower extends AbstractPower implements CloneablePowerInter
         name = NAME;
         ID = POWER_ID;
         this.owner = owner;
-        region128 = new TextureAtlas.AtlasRegion(ImageMaster.loadImage("images/powers/sanctuary power 84.png"), 0, 0, 84, 84);
-        region48 = new TextureAtlas.AtlasRegion(ImageMaster.loadImage("images/powers/sanctuary power 32.png"), 0, 0, 32, 32);
+        region128 = new TextureAtlas.AtlasRegion(ImageMaster.loadImage("rhinemod/images/powers/sanctuary power 84.png"), 0, 0, 84, 84);
+        region48 = new TextureAtlas.AtlasRegion(ImageMaster.loadImage("rhinemod/images/powers/sanctuary power 32.png"), 0, 0, 32, 32);
         type = PowerType.BUFF;
         this.amount = amount;
         updateDescription();

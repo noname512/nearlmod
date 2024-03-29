@@ -17,7 +17,7 @@ public class WayToChampion extends AbstractNearlCard {
     public static final String NAME = cardStrings.NAME;
     public static final String DESCRIPTION = cardStrings.DESCRIPTION;
     public static final String UPGRADE_DESCRIPTION = cardStrings.UPGRADE_DESCRIPTION;
-    public static final String IMG_PATH = "images/cards/waytochampion.png";
+    public static final String IMG_PATH = "rhinemod/images/cards/waytochampion.png";
     private static final int COST = 4;
     private static final int UPGRADE_COST = 3;
 

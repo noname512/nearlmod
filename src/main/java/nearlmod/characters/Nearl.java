@@ -52,23 +52,23 @@ public class Nearl extends CustomPlayer {
     public static final String NAME = characterStrings.NAMES[0];
     public static final String[] TEXT = characterStrings.TEXT;
     private static final Color NearlGold = CardHelper.getColor(255, 236, 194);
-    public static final String SWORD = "images/char/atkidle.png";
+    public static final String SWORD = "rhinemod/images/char/atkidle.png";
     public static final Texture SWORDIMG = ImageMaster.loadImage(SWORD);
-    public static final String SWORDDIE = "images/char/atkdie.png";
+    public static final String SWORDDIE = "rhinemod/images/char/atkdie.png";
     public static final Texture SWORDDIEIMG = ImageMaster.loadImage(SWORDDIE);
-    public static final String SHIELD = "images/char/defidle.png";
+    public static final String SHIELD = "rhinemod/images/char/defidle.png";
     public static final Texture SHIELDIMG = ImageMaster.loadImage(SHIELD);
-    public static final String SHIELDDIE = "images/char/defdie.png";
+    public static final String SHIELDDIE = "rhinemod/images/char/defdie.png";
     public static final Texture SHIELDDIEIMG = ImageMaster.loadImage(SHIELDDIE);
-    public static final String SHOULDER = "images/char/shoulder.png";
+    public static final String SHOULDER = "rhinemod/images/char/shoulder.png";
     public static final String[] orbTextures = {
-        "images/char/orb/layer1.png",
-        "images/char/orb/layer2.png",
-        "images/char/orb/layer3.png",
-        "images/char/orb/layer4.png",
-        "images/char/orb/layer5.png",
-        "images/char/orb/layer1d.png",
-        "images/char/orb/layer2d.png",
+        "rhinemod/images/char/orb/layer1.png",
+        "rhinemod/images/char/orb/layer2.png",
+        "rhinemod/images/char/orb/layer3.png",
+        "rhinemod/images/char/orb/layer4.png",
+        "rhinemod/images/char/orb/layer5.png",
+        "rhinemod/images/char/orb/layer1d.png",
+        "rhinemod/images/char/orb/layer2d.png",
         "images/char/orb/layer3d.png",
         "images/char/orb/layer4d.png"
     };

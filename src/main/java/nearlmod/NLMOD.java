@@ -46,23 +46,23 @@ public class NLMOD implements EditCardsSubscriber, EditCharactersSubscriber, Edi
 
     public static final Color NearlGold = CardHelper.getColor(255, 236, 194);
     public static final Color FriendBlue = CardHelper.getColor(202, 210, 255);
-    private static final String attackCard = "images/512/bg_attack_nearl.png";
-    private static final String skillCard = "images/512/bg_skill_nearl.png";
-    private static final String powerCard = "images/512/bg_power_nearl.png";
-    private static final String attackFriendCard = "images/512/bg_attack_friend.png";
-    private static final String skillFriendCard = "images/512/bg_skill_friend.png";
-    private static final String powerFriendCard = "images/512/bg_power_friend.png";
-    private static final String energyOrb = "images/512/card_nearl_orb.png";
-    private static final String attackCardPortrait = "images/1024/bg_attack_nearl.png";
-    private static final String skillCardPortrait = "images/1024/bg_skill_nearl.png";
-    private static final String powerCardPortrait = "images/1024/bg_power_nearl.png";
-    private static final String attackFriendCardPortrait = "images/1024/bg_attack_friend.png";
-    private static final String skillFriendCardPortrait = "images/1024/bg_skill_friend.png";
-    private static final String powerFriendCardPortrait = "images/1024/bg_power_friend.png";
-    private static final String energyOrbPortrait = "images/1024/card_nearl_orb.png";
-    private static final String charButton = "images/charSelect/button.png";
-    private static final String charPortrait = "images/charSelect/portrait.png";
-    private static final String miniManaSymbol = "images/manaSymbol.png";
+    private static final String attackCard = "rhinemod/images/512/bg_attack_nearl.png";
+    private static final String skillCard = "rhinemod/images/512/bg_skill_nearl.png";
+    private static final String powerCard = "rhinemod/images/512/bg_power_nearl.png";
+    private static final String attackFriendCard = "rhinemod/images/512/bg_attack_friend.png";
+    private static final String skillFriendCard = "rhinemod/images/512/bg_skill_friend.png";
+    private static final String powerFriendCard = "rhinemod/images/512/bg_power_friend.png";
+    private static final String energyOrb = "rhinemod/images/512/card_nearl_orb.png";
+    private static final String attackCardPortrait = "rhinemod/images/1024/bg_attack_nearl.png";
+    private static final String skillCardPortrait = "rhinemod/images/1024/bg_skill_nearl.png";
+    private static final String powerCardPortrait = "rhinemod/images/1024/bg_power_nearl.png";
+    private static final String attackFriendCardPortrait = "rhinemod/images/1024/bg_attack_friend.png";
+    private static final String skillFriendCardPortrait = "rhinemod/images/1024/bg_skill_friend.png";
+    private static final String powerFriendCardPortrait = "rhinemod/images/1024/bg_power_friend.png";
+    private static final String energyOrbPortrait = "rhinemod/images/1024/card_nearl_orb.png";
+    private static final String charButton = "rhinemod/images/charSelect/button.png";
+    private static final String charPortrait = "rhinemod/images/charSelect/portrait.png";
+    private static final String miniManaSymbol = "rhinemod/images/manaSymbol.png";
     private static final Logger logger = LogManager.getLogger(NLMOD.class.getName());
 
     public static final HashMap<String, TextureAtlas.AtlasRegion> specialImg = new HashMap<>();
@@ -142,16 +142,16 @@ public class NLMOD implements EditCardsSubscriber, EditCharactersSubscriber, Edi
     }
 
     private void initializeSpecialImg() {
-        specialImg.put(Viviana.ORB_ID, new TextureAtlas.AtlasRegion(new Texture("images/512/card_friend_viviana.png"), 0, 0, 512, 512));
-        specialImg.put(Shining.ORB_ID, new TextureAtlas.AtlasRegion(new Texture("images/512/card_friend_shining.png"), 0, 0, 512, 512));
-        specialImg.put(Nightingale.ORB_ID, new TextureAtlas.AtlasRegion(new Texture("images/512/card_friend_nightingale.png"), 0, 0, 512, 512));
-        specialImg.put(Blemishine.ORB_ID, new TextureAtlas.AtlasRegion(new Texture("images/512/card_friend_blemishine.png"), 0, 0, 512, 512));
-        specialImg.put(Whislash.ORB_ID, new TextureAtlas.AtlasRegion(new Texture("images/512/card_friend_whislash.png"), 0, 0, 512, 512));
-        specialImg.put(Flametail.ORB_ID, new TextureAtlas.AtlasRegion(new Texture("images/512/card_friend_flametail.png"), 0, 0, 512, 512));
-        specialImg.put(Fartooth.ORB_ID, new TextureAtlas.AtlasRegion(new Texture("images/512/card_friend_fartooth.png"), 0, 0, 512, 512));
-        specialImg.put(Ashlock.ORB_ID, new TextureAtlas.AtlasRegion(new Texture("images/512/card_friend_ashlock.png"), 0, 0, 512, 512));
-        specialImg.put(Wildmane.ORB_ID, new TextureAtlas.AtlasRegion(new Texture("images/512/card_friend_wildmane.png"), 0, 0, 512, 512));
-        specialImg.put(JusticeKnight.ORB_ID, new TextureAtlas.AtlasRegion(new Texture("images/512/card_friend_justiceknight.png"), 0, 0, 512, 512));
+        specialImg.put(Viviana.ORB_ID, new TextureAtlas.AtlasRegion(new Texture("rhinemod/images/512/card_friend_viviana.png"), 0, 0, 512, 512));
+        specialImg.put(Shining.ORB_ID, new TextureAtlas.AtlasRegion(new Texture("rhinemod/images/512/card_friend_shining.png"), 0, 0, 512, 512));
+        specialImg.put(Nightingale.ORB_ID, new TextureAtlas.AtlasRegion(new Texture("rhinemod/images/512/card_friend_nightingale.png"), 0, 0, 512, 512));
+        specialImg.put(Blemishine.ORB_ID, new TextureAtlas.AtlasRegion(new Texture("rhinemod/images/512/card_friend_blemishine.png"), 0, 0, 512, 512));
+        specialImg.put(Whislash.ORB_ID, new TextureAtlas.AtlasRegion(new Texture("rhinemod/images/512/card_friend_whislash.png"), 0, 0, 512, 512));
+        specialImg.put(Flametail.ORB_ID, new TextureAtlas.AtlasRegion(new Texture("rhinemod/images/512/card_friend_flametail.png"), 0, 0, 512, 512));
+        specialImg.put(Fartooth.ORB_ID, new TextureAtlas.AtlasRegion(new Texture("rhinemod/images/512/card_friend_fartooth.png"), 0, 0, 512, 512));
+        specialImg.put(Ashlock.ORB_ID, new TextureAtlas.AtlasRegion(new Texture("rhinemod/images/512/card_friend_ashlock.png"), 0, 0, 512, 512));
+        specialImg.put(Wildmane.ORB_ID, new TextureAtlas.AtlasRegion(new Texture("rhinemod/images/512/card_friend_wildmane.png"), 0, 0, 512, 512));
+        specialImg.put(JusticeKnight.ORB_ID, new TextureAtlas.AtlasRegion(new Texture("rhinemod/images/512/card_friend_justiceknight.png"), 0, 0, 512, 512));
     }
 
     @Override
@@ -320,7 +320,7 @@ public class NLMOD implements EditCardsSubscriber, EditCharactersSubscriber, Edi
     public void receiveEditKeywords() {
         Gson gson = new Gson();
 
-        String keywordStrings = Gdx.files.internal("strings/" + getLang() + "/keywords.json").readString(String.valueOf(StandardCharsets.UTF_8));
+        String keywordStrings = Gdx.files.internal("rhinemod/strings/" + getLang() + "/keywords.json").readString(String.valueOf(StandardCharsets.UTF_8));
         Type typeToken = new TypeToken<Map<String, Keyword>>() {}.getType();
 
         Map<String, Keyword> keywords = gson.fromJson(keywordStrings, typeToken);
@@ -368,25 +368,25 @@ public class NLMOD implements EditCardsSubscriber, EditCharactersSubscriber, Edi
     @Override
     public void receiveEditStrings() {
         String lang = getLang();
-        String cardStrings = Gdx.files.internal("strings/" + lang + "/cards.json").readString(String.valueOf(StandardCharsets.UTF_8));
+        String cardStrings = Gdx.files.internal("rhinemod/strings/" + lang + "/cards.json").readString(String.valueOf(StandardCharsets.UTF_8));
         BaseMod.loadCustomStrings(CardStrings.class, cardStrings);
-        String characterStrings = Gdx.files.internal("strings/" + lang + "/character.json").readString(String.valueOf(StandardCharsets.UTF_8));
+        String characterStrings = Gdx.files.internal("rhinemod/strings/" + lang + "/character.json").readString(String.valueOf(StandardCharsets.UTF_8));
         BaseMod.loadCustomStrings(CharacterStrings.class, characterStrings);
-        String powerStrings = Gdx.files.internal("strings/" + lang + "/powers.json").readString(String.valueOf(StandardCharsets.UTF_8));
+        String powerStrings = Gdx.files.internal("rhinemod/strings/" + lang + "/powers.json").readString(String.valueOf(StandardCharsets.UTF_8));
         BaseMod.loadCustomStrings(PowerStrings.class, powerStrings);
-        String stanceStrings = Gdx.files.internal("strings/" + lang + "/stances.json").readString(String.valueOf(StandardCharsets.UTF_8));
+        String stanceStrings = Gdx.files.internal("rhinemod/strings/" + lang + "/stances.json").readString(String.valueOf(StandardCharsets.UTF_8));
         BaseMod.loadCustomStrings(StanceStrings.class, stanceStrings);
-        String orbStrings = Gdx.files.internal("strings/" + lang + "/orbs.json").readString(String.valueOf(StandardCharsets.UTF_8));
+        String orbStrings = Gdx.files.internal("rhinemod/strings/" + lang + "/orbs.json").readString(String.valueOf(StandardCharsets.UTF_8));
         BaseMod.loadCustomStrings(OrbStrings.class, orbStrings);
-        String relicStrings = Gdx.files.internal("strings/" + lang + "/relics.json").readString(String.valueOf(StandardCharsets.UTF_8));
+        String relicStrings = Gdx.files.internal("rhinemod/strings/" + lang + "/relics.json").readString(String.valueOf(StandardCharsets.UTF_8));
         BaseMod.loadCustomStrings(RelicStrings.class, relicStrings);
-        String eventStrings = Gdx.files.internal("strings/" + lang + "/events.json").readString(String.valueOf(StandardCharsets.UTF_8));
+        String eventStrings = Gdx.files.internal("rhinemod/strings/" + lang + "/events.json").readString(String.valueOf(StandardCharsets.UTF_8));
         BaseMod.loadCustomStrings(EventStrings.class, eventStrings);
-        String monsterStrings = Gdx.files.internal("strings/" + lang + "/monsters.json").readString(String.valueOf(StandardCharsets.UTF_8));
+        String monsterStrings = Gdx.files.internal("rhinemod/strings/" + lang + "/monsters.json").readString(String.valueOf(StandardCharsets.UTF_8));
         BaseMod.loadCustomStrings(MonsterStrings.class, monsterStrings);
-        String uiStrings = Gdx.files.internal("strings/" + lang + "/ui.json").readString(String.valueOf(StandardCharsets.UTF_8));
+        String uiStrings = Gdx.files.internal("rhinemod/strings/" + lang + "/ui.json").readString(String.valueOf(StandardCharsets.UTF_8));
         BaseMod.loadCustomStrings(UIStrings.class, uiStrings);
-        String potionStrings = Gdx.files.internal("strings/" + lang + "/potions.json").readString(String.valueOf(StandardCharsets.UTF_8));
+        String potionStrings = Gdx.files.internal("rhinemod/strings/" + lang + "/potions.json").readString(String.valueOf(StandardCharsets.UTF_8));
         BaseMod.loadCustomStrings(PotionStrings.class, potionStrings);
     }
 

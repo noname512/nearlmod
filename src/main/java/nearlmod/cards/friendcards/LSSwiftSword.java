@@ -18,7 +18,7 @@ public class LSSwiftSword extends AbstractFriendCard {
     public static final String NAME = cardStrings.NAME;
     public static final String DESCRIPTION = cardStrings.DESCRIPTION;
     public static final String UPGRADE_DESCRIPTION = cardStrings.UPGRADE_DESCRIPTION;
-    public static final String IMG_PATH = "images/cards/lsswiftsword.png";
+    public static final String IMG_PATH = "rhinemod/images/cards/lsswiftsword.png";
     private static final int COST = 1;
     private static final int ATTACK_DMG = 5;
     private static final int ATTACK_TIMES = 2;
