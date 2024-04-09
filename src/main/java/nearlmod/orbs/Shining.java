@@ -1,9 +1,11 @@
 package nearlmod.orbs;
 
+import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.localization.OrbStrings;
 import com.megacrit.cardcrawl.orbs.AbstractOrb;
 import nearlmod.actions.AddFriendCardToHandAction;
+import nearlmod.cards.*;
 import nearlmod.cards.friendcards.*;
 
 import java.util.ArrayList;
@@ -43,5 +45,15 @@ public class Shining extends AbstractFriend {
     @Override
     public void onStartOfTurn() {
         addToBot(new AddFriendCardToHandAction(getRandomCard(upgraded, uniqueUsed)));
+    }
+
+    @Override
+    public ArrayList<AbstractCard> getRelateCards() {
+        ArrayList<AbstractCard> list = new ArrayList<AbstractCard>();
+        list.add(new DawnDuskSaber());
+        list.add(new Sacrifice());
+        list.add(new Oaths());
+        list.add(new Followers());
+        return list;
     }
 }

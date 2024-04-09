@@ -1,11 +1,13 @@
 package nearlmod.orbs;
 
+import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.helpers.ImageMaster;
 import com.megacrit.cardcrawl.localization.OrbStrings;
 import com.megacrit.cardcrawl.orbs.AbstractOrb;
 import nearlmod.actions.AddFriendCardToHandAction;
+import nearlmod.cards.*;
 import nearlmod.cards.friendcards.*;
 
 import java.util.ArrayList;
@@ -62,5 +64,15 @@ public class Viviana extends AbstractFriend {
             return;
         }
         addToBot(new AddFriendCardToHandAction(getRandomCard(upgraded, uniqueUsed)));
+    }
+
+    @Override
+    public ArrayList<AbstractCard> getRelateCards() {
+        ArrayList<AbstractCard> list = new ArrayList<AbstractCard>();
+        list.add(new SwallowLight());
+        list.add(new LightsOut());
+        list.add(new SightImpairingShowdown());
+        list.add(new ShadowOut());
+        return list;
     }
 }

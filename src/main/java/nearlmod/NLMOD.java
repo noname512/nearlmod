@@ -152,6 +152,8 @@ public class NLMOD implements EditCardsSubscriber, EditCharactersSubscriber, Edi
         specialImg.put(Ashlock.ORB_ID, new TextureAtlas.AtlasRegion(new Texture("resources/nearlmod/images/512/card_friend_ashlock.png"), 0, 0, 512, 512));
         specialImg.put(Wildmane.ORB_ID, new TextureAtlas.AtlasRegion(new Texture("resources/nearlmod/images/512/card_friend_wildmane.png"), 0, 0, 512, 512));
         specialImg.put(JusticeKnight.ORB_ID, new TextureAtlas.AtlasRegion(new Texture("resources/nearlmod/images/512/card_friend_justiceknight.png"), 0, 0, 512, 512));
+
+        specialImg.put(Aurora.ORB_ID, new TextureAtlas.AtlasRegion(new Texture("resources/nearlmod/images/512/card_friend_ashlock.png"), 0, 0, 512, 512)); //TODO: 这里是灰毫
     }
 
     @Override
@@ -301,6 +303,11 @@ public class NLMOD implements EditCardsSubscriber, EditCharactersSubscriber, Edi
         BaseMod.addCard(new JusticeDrive()); // 正义助威
         BaseMod.addCard(new BeepActivate()); // “滴滴，启动！”
 
+        BaseMod.addCard(new ArtificialSnowfall()); // 人工降雪
+        BaseMod.addCard(new FrigidRespite()); // 低温静滞
+        BaseMod.addCard(new HomelandProtector()); // 固守家园
+        BaseMod.addCard(new ShieldPhotographyModule()); // 盾用摄制模块
+
         // Special
         BaseMod.addCard(new Beginning()); // 起点
         BaseMod.addCard(new BlemishinesFaintLight()); // 瑕光微明
@@ -446,5 +453,11 @@ public class NLMOD implements EditCardsSubscriber, EditCharactersSubscriber, Edi
 
         friendCards.group.add(new BeepActivate());
         friendCards.group.add(new JusticeDrive());
+
+        // Monthly Team 1
+        friendCards.group.add(new ShieldPhotographyModule());
+        friendCards.group.add(new ArtificialSnowfall());
+        friendCards.group.add(new HomelandProtector());
+        friendCards.group.add(new FrigidRespite());
     }
 }
