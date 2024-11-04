@@ -1,15 +1,13 @@
 package nearlmod.cards.friendcards;
 
-import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
-import com.megacrit.cardcrawl.actions.common.GainBlockAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.localization.CardStrings;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
+import com.megacrit.cardcrawl.orbs.AbstractOrb;
+import nearlmod.orbs.Aurora;
 import nearlmod.patches.AbstractCardEnum;
-import nearlmod.powers.FrigidRespitePower;
-import nearlmod.powers.LossEnergyNextTurnPower;
 
 public class FrigidRespite extends AbstractFriendCard {
     public static final String ID = "nearlmod:HomelandProtector";
@@ -31,7 +29,9 @@ public class FrigidRespite extends AbstractFriendCard {
 
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
-        addToBot(new ApplyPowerAction(p, p, new FrigidRespitePower(p, secondMagicNumber)));
+        for (AbstractOrb o : p.orbs)
+            if (o instanceof Aurora)
+                ((Aurora) o).startRespite(secondMagicNumber);
     }
 
     @Override
