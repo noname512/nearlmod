@@ -2,7 +2,6 @@ package nearlmod.cards.friendcards;
 
 import com.evacipated.cardcrawl.mod.stslib.actions.tempHp.AddTemporaryHPAction;
 import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
-import com.megacrit.cardcrawl.actions.common.GainBlockAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
@@ -10,7 +9,6 @@ import com.megacrit.cardcrawl.localization.CardStrings;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import nearlmod.orbs.Aurora;
 import nearlmod.patches.AbstractCardEnum;
-import nearlmod.powers.LossEnergyNextTurnPower;
 import nearlmod.powers.RemoveHPNextTurn;
 
 public class ShieldPhotographyModule extends AbstractFriendCard {

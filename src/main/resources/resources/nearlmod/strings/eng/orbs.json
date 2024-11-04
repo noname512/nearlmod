@@ -38,5 +38,21 @@
   "nearlmod:JusticeKnight": {
     "NAME": "Justice Knight",
     "DESCRIPTION": ["At the start of each turn, provide a #yFriend #yCard of Justice Knight. Current #yTrust: ", ".", "At the start of each turn, provide an #yUpgraded #yFriend #yCard of Justice Knight. Current #yTrust: "]
+  },
+  "nearlmod:Penance": {
+    "NAME": "Penance",
+    "DESCRIPTION": ["At the start of each turn, provide a #yFriend #yCard of Penance. Current #yTrust: ", ".", "At the start of each turn, provide an #yUpgraded #yFriend #yCard of Penance. Current #yTrust: "]
+  },
+  "nearlmod:Horn": {
+    "NAME": "Horn",
+    "DESCRIPTION": ["At the start of each turn, provide a #yFriend #yCard of Horn. Current #yTrust: ", ".", "At the start of each turn, provide an #yUpgraded #yFriend #yCard of Horn. Current #yTrust: "]
+  },
+  "nearlmod:Aurora": {
+    "NAME": "Aurora",
+    "DESCRIPTION": ["At the start of each turn, provide a #yFriend #yCard of Aurora. Current #yTrust: ", ".", "At the start of each turn, provide an #yUpgraded #yFriend #yCard of Aurora. Current #yTrust: "]
+  },
+  "nearlmod:Gummy": {
+    "NAME": "Gummy",
+    "DESCRIPTION": ["At the start of each turn, provide a #yFriend #yCard of Gummy. Current #yTrust: ", ".", "At the start of each turn, provide an #yUpgraded #yFriend #yCard of Gummy. Current #yTrust: "]
   }
 }

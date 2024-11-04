@@ -605,6 +605,26 @@
         "DESCRIPTION": "nearlmod:Friend_Card. NL Stats of *Focused *Bombardment increase !nearlmod:M2!. NL At the start of next turn, add a *Focused *Bombardment into your hand.",
         "UPGRADE_DESCRIPTION": "nearlmod:Friend_Card. NL Stats of *Focused *Bombardment increase !nearlmod:M2!. NL At the start of next turn, add a *Focused *Bombardment+ into your hand."
     },
+    "nearlmod:ShieldPhotographyModule": {
+        "NAME": "Shield Photography Module",
+        "DESCRIPTION": " nearlmod:Friend_Card, nearlmod:Unique. NL Gain !nearlmod:M2! Temporary_HP. At the start of next turn, remove your Temporary_HP.",
+        "UPGRADE_DESCRIPTION": ""
+    },
+    "nearlmod:ArtificialSnowfall": {
+        "NAME": "Artificial Snowfall",
+        "DESCRIPTION": " nearlmod:Friend_Card. NL Deal !M! damage and apply 1 nearlmod:Cold. If the target already has 2 nearlmod:Cold, deal !nearlmod:M2! damage instead.",
+        "UPGRADE_DESCRIPTION": ""
+    },
+    "nearlmod:HomelandProtector": {
+        "NAME": "Homeland Protector",
+        "DESCRIPTION": " nearlmod:Friend_Card. NL Gain !M! Block, lose 1 Energy at the start of next turn.",
+        "UPGRADE_DESCRIPTION": ""
+    },
+    "nearlmod:FrigidRespite": {
+        "NAME": "Frigid Respite",
+        "DESCRIPTION": " nearlmod:Friend_Card. NL Aurora will not provide nearlmod:Friend_Card. She will apply !nearlmod:M2! Block to you at the end of each turn instead.",
+        "UPGRADE_DESCRIPTION": ""
+    },
 
     "nearlmod:Beginning": {
         "NAME": "Beginning",

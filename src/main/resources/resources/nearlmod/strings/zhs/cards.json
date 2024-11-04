@@ -605,6 +605,26 @@
         "DESCRIPTION": " nearlmod:伙伴牌 。 NL *专注轰击 数值 + !nearlmod:M2! 。 NL 下回合开始时，将一张 *专注轰击 放入你的手牌。",
         "UPGRADE_DESCRIPTION": " nearlmod:伙伴牌 。 NL *专注轰击 数值 + !nearlmod:M2! 。 NL 下回合开始时，将一张 *专注轰击+ 放入你的手牌。"
     },
+    "nearlmod:ShieldPhotographyModule": {
+        "NAME": "盾用摄制模块",
+        "DESCRIPTION": " nearlmod:伙伴牌 ， nearlmod:唯一 。 NL 获得 !nearlmod:M2! 点 stslib:临时生命 ，在下个回合开始时，清空你的 stslib:临时生命 。",
+        "UPGRADE_DESCRIPTION": ""
+    },
+    "nearlmod:ArtificialSnowfall": {
+        "NAME": "人工降雪",
+        "DESCRIPTION": " nearlmod:伙伴牌 。 NL 造成 !M! 点伤害并给予其1层 nearlmod:寒冷 ，如果目标已经有2层 nearlmod:寒冷 ，改为 !nearlmod:M2! 点。",
+        "UPGRADE_DESCRIPTION": ""
+    },
+    "nearlmod:HomelandProtector": {
+        "NAME": "固守家园",
+        "DESCRIPTION": " nearlmod:伙伴牌 。 NL 获得 !M! 点格挡，下回合开始时失去1点能量。",
+        "UPGRADE_DESCRIPTION": ""
+    },
+    "nearlmod:FrigidRespite": {
+        "NAME": "低温休憩",
+        "DESCRIPTION": " nearlmod:伙伴牌 。 NL 极光不再提供 nearlmod:伙伴牌 ，而是回合结束时给予你 !nearlmod:M2! 点 格挡 。",
+        "UPGRADE_DESCRIPTION": ""
+    },
 
     "nearlmod:Beginning": {
         "NAME": "起点",
