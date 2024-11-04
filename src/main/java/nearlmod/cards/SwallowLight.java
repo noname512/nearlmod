@@ -29,6 +29,8 @@ public class SwallowLight extends AbstractNearlCard {
                 CardType.POWER, AbstractCardEnum.NEARL_GOLD,
                 CardRarity.UNCOMMON, CardTarget.SELF);
         tags.add(NearlTags.IS_SUMMON_CARD);
+        tags.add(NearlTags.FRIEND_RELATED);
+        belongFriend = Viviana.ORB_ID;
 
         previewList = Nearl.getFriendCard(Viviana.ORB_ID);
     }

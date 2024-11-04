@@ -9,7 +9,6 @@ import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import com.megacrit.cardcrawl.orbs.AbstractOrb;
 import nearlmod.cards.AbstractNearlCard;
 import nearlmod.orbs.AbstractFriend;
-import nearlmod.patches.NearlTags;
 
 public abstract class AbstractFriendCard extends AbstractNearlCard {
     public String baseDescription;

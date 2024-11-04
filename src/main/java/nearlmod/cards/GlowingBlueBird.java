@@ -10,6 +10,7 @@ import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import nearlmod.NLMOD;
 import nearlmod.orbs.Nightingale;
 import nearlmod.patches.AbstractCardEnum;
+import nearlmod.patches.NearlTags;
 
 public class GlowingBlueBird extends AbstractNearlCard {
     public static final String ID = "nearlmod:GlowingBlueBird";
@@ -30,6 +31,8 @@ public class GlowingBlueBird extends AbstractNearlCard {
                 CardRarity.COMMON, CardTarget.SELF);
         block = baseBlock = BLOCK_AMT;
         magicNumber = baseMagicNumber = HP_GAIN;
+        tags.add(NearlTags.FRIEND_RELATED);
+        belongFriend = Nightingale.ORB_ID;
     }
 
     @Override

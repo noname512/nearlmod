@@ -1,6 +1,5 @@
 package nearlmod.cards;
 
-import com.badlogic.gdx.Gdx;
 import com.megacrit.cardcrawl.actions.common.MakeTempCardInHandAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
@@ -15,6 +14,7 @@ import nearlmod.cards.special.ShiningCard;
 import nearlmod.orbs.Nightingale;
 import nearlmod.orbs.Shining;
 import nearlmod.patches.AbstractCardEnum;
+import nearlmod.patches.NearlTags;
 
 import java.util.ArrayList;
 
@@ -30,6 +30,9 @@ public class Followers extends AbstractNearlCard {
         super(ID, NAME, IMG_PATH, COST, DESCRIPTION,
                 CardType.SKILL, AbstractCardEnum.NEARL_GOLD,
                 CardRarity.RARE, CardTarget.SELF);
+        tags.add(NearlTags.FRIEND_RELATED);
+        belongFriend = Shining.ORB_ID;
+
         previewList = new ArrayList<>();
         previewList.add(new NearlCard());
         previewList.add(new NightingaleCard());

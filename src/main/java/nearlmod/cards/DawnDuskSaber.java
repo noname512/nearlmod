@@ -1,7 +1,6 @@
 package nearlmod.cards;
 
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
-import com.megacrit.cardcrawl.actions.common.DamageAllEnemiesAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
@@ -15,10 +14,8 @@ import nearlmod.actions.WeakenAllAction;
 import nearlmod.cards.friendcards.AbstractFriendCard;
 import nearlmod.characters.Nearl;
 import nearlmod.orbs.Shining;
-import nearlmod.orbs.Viviana;
 import nearlmod.patches.AbstractCardEnum;
 import nearlmod.patches.NearlTags;
-import nearlmod.powers.BFPPower;
 
 public class DawnDuskSaber extends AbstractNearlCard {
     public static final String ID = "nearlmod:DawnDuskSaber";
@@ -37,6 +34,8 @@ public class DawnDuskSaber extends AbstractNearlCard {
                 CardRarity.UNCOMMON, CardTarget.SELF);
         magicNumber = baseMagicNumber = ATTACK_DMG;
         tags.add(NearlTags.IS_SUMMON_CARD);
+        tags.add(NearlTags.FRIEND_RELATED);
+        belongFriend = Shining.ORB_ID;
 
         previewList = Nearl.getFriendCard(Shining.ORB_ID);
     }

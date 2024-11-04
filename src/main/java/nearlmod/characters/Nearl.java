@@ -4,10 +4,9 @@ import basemod.BaseMod;
 import com.badlogic.gdx.graphics.Texture;
 import com.megacrit.cardcrawl.actions.utility.WaitAction;
 import com.megacrit.cardcrawl.actions.watcher.ChangeStanceAction;
-import com.megacrit.cardcrawl.cards.CardGroup;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.events.city.Vampires;
-import com.megacrit.cardcrawl.helpers.ImageMaster;
+import com.megacrit.cardcrawl.helpers.*;
 import basemod.abstracts.CustomPlayer;
 import com.badlogic.gdx.graphics.Color;
 import com.badlogic.gdx.graphics.g2d.BitmapFont;
@@ -18,9 +17,6 @@ import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.core.EnergyManager;
 import com.megacrit.cardcrawl.core.Settings;
-import com.megacrit.cardcrawl.helpers.CardHelper;
-import com.megacrit.cardcrawl.helpers.FontHelper;
-import com.megacrit.cardcrawl.helpers.ScreenShake;
 import com.megacrit.cardcrawl.localization.CharacterStrings;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import com.megacrit.cardcrawl.orbs.AbstractOrb;
@@ -31,11 +27,9 @@ import nearlmod.cards.*;
 import nearlmod.cards.friendcards.*;
 import nearlmod.cards.special.LightCard;
 import nearlmod.orbs.AbstractFriend;
-import nearlmod.patches.NearlTags;
+import nearlmod.patches.*;
 import nearlmod.powers.LightPower;
 import nearlmod.relics.*;
-import nearlmod.patches.AbstractCardEnum;
-import nearlmod.patches.NearlEnum;
 import nearlmod.rooms.ArenaRoom;
 import nearlmod.stances.AtkStance;
 import nearlmod.stances.DefStance;
@@ -43,6 +37,7 @@ import nearlmod.util.CostEnergyOrb;
 import nearlmod.util.CostReserves;
 import java.util.ArrayList;
 import java.util.Collections;
+import java.util.Map;
 
 import static nearlmod.NLMOD.friendCards;
 
@@ -382,5 +377,18 @@ public class Nearl extends CustomPlayer {
             if (orbs.get(i) instanceof AbstractFriend)
                 return (AbstractFriend)orbs.get(i);
         return null;
+    }
+
+    @Override
+    public ArrayList<AbstractCard> getCardPool(ArrayList<AbstractCard> tmpPool) {
+        for (Map.Entry<String, AbstractCard> c : CardLibrary.cards.entrySet()) {
+            AbstractCard card = c.getValue();
+            if (card instanceof AbstractNearlCard && card.color.equals(AbstractCardEnum.NEARL_GOLD) && card.rarity != AbstractCard.CardRarity.BASIC) {
+                if (!card.hasTag(NearlTags.FRIEND_RELATED) || CharacterSettingPatch.friendsInTeams.get(CharacterSettingPatch.curTeam).contains(((AbstractNearlCard) card).belongFriend)) {
+                    tmpPool.add(card);
+                }
+            }
+        }
+        return tmpPool;
     }
 }

@@ -28,6 +28,8 @@ public class DanceTogether extends AbstractNearlCard {
                 CardType.POWER, AbstractCardEnum.NEARL_GOLD,
                 CardRarity.UNCOMMON, CardTarget.SELF);
         tags.add(NearlTags.IS_SUMMON_CARD);
+        tags.add(NearlTags.FRIEND_RELATED);
+        belongFriend = Nightingale.ORB_ID;
 
         previewList = Nearl.getFriendCard(Nightingale.ORB_ID);
     }

@@ -44,10 +44,15 @@
       "Cursed relics gained when refuse to fight in Arena."
     ]
   },
-  "nearlmod:FriendTip": {
+  "nearlmod:CharacterSetting": {
     "TEXT": [
       "Friend Tip",
-      "Friend Card will show Friend it belongs to."
+      "Friend Card will show Friend it belongs to.",
+      "Select Friends:",
+      "Classic Friends",
+      "Including Friends: Blemishine, Whislash, Viviana, Shining, Nightingale.",
+      "Team of Defender",
+      "Including Friends: Blemishine, Penance, Horn, Aurora, Gummy."
     ]
   },
   "nearlmod:Can'tUseMessage": {

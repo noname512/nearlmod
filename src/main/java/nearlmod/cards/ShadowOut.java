@@ -16,6 +16,7 @@ import nearlmod.actions.SummonFriendAction;
 import nearlmod.characters.Nearl;
 import nearlmod.orbs.Viviana;
 import nearlmod.patches.AbstractCardEnum;
+import nearlmod.patches.NearlTags;
 import nearlmod.powers.ShadowPower;
 
 public class ShadowOut extends AbstractNearlCard {
@@ -36,6 +37,8 @@ public class ShadowOut extends AbstractNearlCard {
                 CardRarity.RARE, CardTarget.SELF);
         magicNumber = baseMagicNumber = ATTACK_DMG;
         secondMagicNumber = baseSecondMagicNumber = ATTACK_TIMES;
+        tags.add(NearlTags.FRIEND_RELATED);
+        belongFriend = Viviana.ORB_ID;
 
         previewList = Nearl.getFriendCard(Viviana.ORB_ID);
     }

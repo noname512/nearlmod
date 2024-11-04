@@ -35,6 +35,8 @@ public class SwordShield extends AbstractNearlCard {
         magicNumber = baseMagicNumber = LIGHT_ADD;
         secondMagicNumber = baseSecondMagicNumber = EXTRA_INC;
         tags.add(NearlTags.IS_GAIN_LIGHT);
+        tags.add(NearlTags.FRIEND_RELATED);
+        belongFriend = Blemishine.ORB_ID;
     }
 
     @Override

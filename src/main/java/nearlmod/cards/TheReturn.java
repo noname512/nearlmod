@@ -29,6 +29,8 @@ public class TheReturn extends AbstractNearlCard {
                 CardType.POWER, AbstractCardEnum.NEARL_GOLD,
                 CardRarity.RARE, CardTarget.SELF);
         tags.add(NearlTags.IS_SUMMON_CARD);
+        tags.add(NearlTags.FRIEND_RELATED);
+        belongFriend = Nightingale.ORB_ID;
 
         previewList = Nearl.getFriendCard(Shining.ORB_ID);
         previewList.addAll(Nearl.getFriendCard(Nightingale.ORB_ID));

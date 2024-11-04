@@ -39,6 +39,8 @@ public class Cooperate extends AbstractNearlCard {
         damage = baseDamage = ATTACK_DMG;
         magicNumber = baseMagicNumber = LIGHT_GAIN;
         tags.add(NearlTags.IS_GAIN_LIGHT);
+        tags.add(NearlTags.FRIEND_RELATED);
+        belongFriend = Blemishine.ORB_ID;
     }
 
     @Override
