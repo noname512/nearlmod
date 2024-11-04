@@ -153,7 +153,7 @@ public class NLMOD implements EditCardsSubscriber, EditCharactersSubscriber, Edi
         specialImg.put(Wildmane.ORB_ID, new TextureAtlas.AtlasRegion(new Texture("resources/nearlmod/images/512/card_friend_wildmane.png"), 0, 0, 512, 512));
         specialImg.put(JusticeKnight.ORB_ID, new TextureAtlas.AtlasRegion(new Texture("resources/nearlmod/images/512/card_friend_justiceknight.png"), 0, 0, 512, 512));
 
-        specialImg.put(Aurora.ORB_ID, new TextureAtlas.AtlasRegion(new Texture("resources/nearlmod/images/512/card_friend_ashlock.png"), 0, 0, 512, 512)); //TODO: 这里是灰毫
+        specialImg.put(Aurora.ORB_ID, new TextureAtlas.AtlasRegion(new Texture("resources/nearlmod/images/512/card_friend_aurora.png"), 0, 0, 512, 512));
     }
 
     @Override
