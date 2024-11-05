@@ -241,8 +241,13 @@ public class Nearl extends CustomPlayer {
     public static ArrayList<AbstractCard> getUnuniqueFriendCard(boolean isPinusSylvestris) {
         ArrayList<AbstractCard> list = new ArrayList<>();
         for (AbstractCard c : friendCards.group)
-            if (!c.hasTag(NearlTags.IS_UNIQUE_CARD) && (!isPinusSylvestris || c.hasTag(NearlTags.IS_KNIGHT_CARD)))
+            if (!c.hasTag(NearlTags.IS_UNIQUE_CARD)) {
+                if (!c.hasTag(NearlTags.IS_KNIGHT_CARD)) {
+                    if (isPinusSylvestris) continue;
+                    if (!CharacterSettingPatch.friendsInTeams.get(CharacterSettingPatch.curTeam).contains(((AbstractFriendCard) c).belongFriend)) continue;
+                }
                 list.add(c.makeCopy());
+            }
         return list;
     }
 

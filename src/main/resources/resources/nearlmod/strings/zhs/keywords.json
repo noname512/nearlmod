@@ -132,5 +132,12 @@
       "attackup"
     ],
     "DESCRIPTION": "造成的伤害百分比提高。"
+  },
+  "Cold": {
+    "PROPER_NAME": "寒冷",
+    "NAMES": [
+      "Cold"
+    ],
+    "DESCRIPTION": "多段攻击时伤害降低25%。最多叠加两层。"
   }
 }

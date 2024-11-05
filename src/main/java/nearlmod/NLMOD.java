@@ -303,6 +303,15 @@ public class NLMOD implements EditCardsSubscriber, EditCharactersSubscriber, Edi
         BaseMod.addCard(new JusticeDrive()); // 正义助威
         BaseMod.addCard(new BeepActivate()); // “滴滴，启动！”
 
+        BaseMod.addCard(new TempestPlatoon()); // 风暴突击
+        BaseMod.addCard(new Exemplars()); // “典范之人”
+        BaseMod.addCard(new Solo()); // 独奏曲
+        BaseMod.addCard(new FallingShield()); // 坠落之盾
+        BaseMod.addCard(new Bloodbath()); // 血战
+        BaseMod.addCard(new FlareGrenade()); // 照明榴弹
+        BaseMod.addCard(new TempestCommand()); // 暴风号令
+        BaseMod.addCard(new UltimateLineOfDefense()); // 终极防线
+
         BaseMod.addCard(new ArtificialSnowfall()); // 人工降雪
         BaseMod.addCard(new FrigidRespite()); // 低温静滞
         BaseMod.addCard(new HomelandProtector()); // 固守家园
@@ -455,6 +464,11 @@ public class NLMOD implements EditCardsSubscriber, EditCharactersSubscriber, Edi
         friendCards.group.add(new JusticeDrive());
 
         // Monthly Team 1
+        friendCards.group.add(new Bloodbath());
+        friendCards.group.add(new FlareGrenade());
+        friendCards.group.add(new TempestCommand());
+        friendCards.group.add(new UltimateLineOfDefense());
+
         friendCards.group.add(new ShieldPhotographyModule());
         friendCards.group.add(new ArtificialSnowfall());
         friendCards.group.add(new HomelandProtector());
