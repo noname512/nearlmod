@@ -605,6 +605,47 @@
         "DESCRIPTION": "nearlmod:Friend_Card. NL Stats of *Focused *Bombardment increase !nearlmod:M2!. NL At the start of next turn, add a *Focused *Bombardment into your hand.",
         "UPGRADE_DESCRIPTION": "nearlmod:Friend_Card. NL Stats of *Focused *Bombardment increase !nearlmod:M2!. NL At the start of next turn, add a *Focused *Bombardment+ into your hand."
     },
+
+    "nearlmod:TempestPlatoon": {
+        "NAME": "Tempest Platoon",
+        "DESCRIPTION": "Summon Horn as nearlmod:Friend. Apply !M! nearlmod:Trust to all your nearlmod:Friend.",
+        "UPGRADE_DESCRIPTION": "Summon Horn as nearlmod:Friend. Apply !M! nearlmod:Trust to all your nearlmod:Friend and apply additional !nearlmod:M2! nearlmod:Trust to Horn."
+    },
+    "nearlmod:Exemplars": {
+        "NAME": "Exemplars",
+        "DESCRIPTION": "Deal !D! damage, gain !B! Block. If Horn is present, trigger 1 additional time.",
+        "UPGRADE_DESCRIPTION": ""
+    },
+    "nearlmod:Solo": {
+        "NAME": "Solo",
+        "DESCRIPTION": "Deal !D! damage. If Horn is present, lose !M! HP to deal additional !nearlmod:M2! damage.",
+        "UPGRADE_DESCRIPTION": ""
+    },
+    "nearlmod:FallingShield": {
+        "NAME": "Falling Shield",
+        "DESCRIPTION": "This card cost Temporary_HP instead. Deal X damage !M! times. If Horn is present, deal additional !nearlmod:M2! times. Otherwise, summon Horn as nearlmod:Friend.",
+        "UPGRADE_DESCRIPTION": ""
+    },
+    "nearlmod:Bloodbath": {
+        "NAME": "Bloodbath",
+        "DESCRIPTION": "nearlmod:Friend_Card, nearlmod:Unique. NL After you lose all your Temporary_HP next time, gain !nearlmod:M2! Strength and !nearlmod:M2! Dexterity.",
+        "UPGRADE_DESCRIPTION": ""
+    },
+    "nearlmod:FlareGrenade": {
+        "NAME": "Flare Grenade",
+        "DESCRIPTION": "nearlmod:Friend_Card. NL Deal !M! damage to all enemies. Gain !nearlmod:M2! nearlmod:Light for each target.",
+        "UPGRADE_DESCRIPTION": ""
+    },
+    "nearlmod:TempestCommand": {
+        "NAME": "Tempest Command",
+        "DESCRIPTION": "nearlmod:Friend_Card. NL Apply nearlmod:Trust to Horn equal to the number of your nearlmod:Friend.",
+        "UPGRADE_DESCRIPTION": "nearlmod:Friend_Card NL Apply nearlmod:Trust to Horn equal to the number of your nearlmod:Friend plus 2."
+    },
+    "nearlmod:UltimateLineOfDefense": {
+        "NAME": "Ultimate Line of Defense",
+        "DESCRIPTION": "nearlmod:Friend_Card. NL Deal !M! damage to all enemies, lose !nearlmod:M2! HP to trigger 1 additional time.",
+        "UPGRADE_DESCRIPTION": ""
+    },
     "nearlmod:ShieldPhotographyModule": {
         "NAME": "Shield Photography Module",
         "DESCRIPTION": " nearlmod:Friend_Card, nearlmod:Unique. NL Gain !nearlmod:M2! Temporary_HP. At the start of next turn, remove your Temporary_HP.",
