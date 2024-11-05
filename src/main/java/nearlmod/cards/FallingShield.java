@@ -1,17 +1,14 @@
 package nearlmod.cards;
 
 import com.evacipated.cardcrawl.mod.stslib.patches.core.AbstractCreature.TempHPField;
-import com.megacrit.cardcrawl.actions.common.DamageAction;
-import com.megacrit.cardcrawl.actions.common.LoseHPAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
-import com.megacrit.cardcrawl.cards.DamageInfo;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.localization.CardStrings;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import com.megacrit.cardcrawl.relics.ChemicalX;
 import nearlmod.NLMOD;
-import nearlmod.actions.SummonFriendAction;
+import nearlmod.actions.FallingShieldAction;
 import nearlmod.characters.Nearl;
 import nearlmod.orbs.Horn;
 import nearlmod.patches.AbstractCardEnum;
@@ -52,6 +49,7 @@ public class FallingShield extends AbstractNearlCard {
         int times = magicNumber;
         int tempHp = TempHPField.tempHp.get(p);
         int amount = tempHp;
+        boolean summon = false;
         if (p.hasRelic(ChemicalX.ID)) {
             amount += 2;
             p.getRelic(ChemicalX.ID).flash();
@@ -59,15 +57,13 @@ public class FallingShield extends AbstractNearlCard {
         if (extraTriggered()) {
             times += secondMagicNumber;
         } else {
-            addToBot(new SummonFriendAction(new Horn()));
+            summon = true;
         }
-        for (int i = 0; i < times; i++) {
-            addToBot(new DamageAction(m, new DamageInfo(p, amount)));
+        if (freeToPlay() || isInAutoplay) {
+            tempHp = 0;
         }
-        if (!freeToPlay() && !isInAutoplay) {
-            addToBot(new LoseHPAction(p, p, tempHp));
-        }
-        costForTurn = 0;
+        addToBot(new FallingShieldAction(tempHp, amount, times, summon, m));
+        costForTurn = energyOnUse = 0;
     }
 
     @Override
