@@ -13,7 +13,7 @@ import nearlmod.patches.NearlTags;
 import nearlmod.powers.BloodbathPower;
 
 public class Bloodbath extends AbstractFriendCard {
-    public static final String ID = "nearlmod:BloodbathPower";
+    public static final String ID = "nearlmod:Bloodbath";
     public static final CardStrings cardStrings = CardCrawlGame.languagePack.getCardStrings(ID);
     public static final String NAME = cardStrings.NAME;
     public static final String DESCRIPTION = cardStrings.DESCRIPTION;

@@ -15,7 +15,7 @@ import nearlmod.patches.AbstractCardEnum;
 import nearlmod.patches.NearlTags;
 
 public class FallingShield extends AbstractNearlCard {
-    public static final String ID = "nearlmod:TempestPlatoon";
+    public static final String ID = "nearlmod:FallingShield";
     public static final CardStrings cardStrings = CardCrawlGame.languagePack.getCardStrings(ID);
     public static final String NAME = cardStrings.NAME;
     public static final String DESCRIPTION = cardStrings.DESCRIPTION;
