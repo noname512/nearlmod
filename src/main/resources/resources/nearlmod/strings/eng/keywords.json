@@ -156,6 +156,15 @@
     "NAMES": [
       "Cold"
     ],
-    "DESCRIPTION": "Deal 25% less power during multi-hit attacks. Up to two stacks maximum."
+    "DESCRIPTION": "Deal 25% less damage during multi-hit attacks. Up to two stacks maximum."
+  },
+  "FrigidRespite": {
+    "PROPER_NAME": "Frigid Respite",
+    "NAMES": [
+      "FrigidRespite",
+      "Frigid_Respite",
+      "frigid_respite"
+    ],
+    "DESCRIPTION": "Friend do not provide #yFriend #yCard, provide #yBlock at the end of turn instead."
   }
 }

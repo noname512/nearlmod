@@ -646,6 +646,30 @@
         "DESCRIPTION": "nearlmod:伙伴牌 。 NL 对所有敌人造成 !M! 点伤害，失去 !nearlmod:M2! 点生命以额外触发一次。",
         "UPGRADE_DESCRIPTION": ""
     },
+
+    "nearlmod:FearNoCold": {
+        "NAME": "不惧严寒",
+        "DESCRIPTION": "召唤极光作为 nearlmod:伙伴 ，进入 nearlmod:守护 。",
+        "UPGRADE_DESCRIPTION": "召唤极光作为 nearlmod:伙伴 ，进入 nearlmod:守护 。将一张 *家乡的“温暖” 置入你的手牌并给予其 保留 。",
+        "EXTENDED_DESCRIPTION": [
+            " NL 保留 。"
+        ]
+    },
+    "nearlmod:WarmthOfHome": {
+        "NAME": "家乡的“温暖”",
+        "DESCRIPTION": "获得 !B! 点 格挡。如果极光在场，解除她的 nearlmod:低温休憩 状态。",
+        "UPGRADE_DESCRIPTION": ""
+    },
+    "nearlmod:WhatSheSaw": {
+        "NAME": "她所见",
+        "DESCRIPTION": "获得 !B! 点 格挡。如果极光在场，额外触发一次。",
+        "UPGRADE_DESCRIPTION": ""
+    },
+    "nearlmod:Duelist": {
+        "NAME": "决战者",
+        "DESCRIPTION": "给予 !M! 层 nearlmod:寒冷 。如果极光在场，将一张 *人工降雪 置入你的手牌，否则召唤极光作为 nearlmod:伙伴 。",
+        "UPGRADE_DESCRIPTION": "给予 !M! 层 nearlmod:寒冷 。如果极光在场，将一张 *人工降雪+ 置入你的手牌，否则召唤极光作为 nearlmod:伙伴 。"
+    },
     "nearlmod:ShieldPhotographyModule": {
         "NAME": "盾用摄制模块",
         "DESCRIPTION": " nearlmod:伙伴牌 ， nearlmod:唯一 。 NL 获得 !nearlmod:M2! 点 stslib:临时生命 ，在下个回合开始时，清空你的 stslib:临时生命 。",

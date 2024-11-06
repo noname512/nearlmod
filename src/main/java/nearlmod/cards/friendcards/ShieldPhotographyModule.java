@@ -9,6 +9,7 @@ import com.megacrit.cardcrawl.localization.CardStrings;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import nearlmod.orbs.Aurora;
 import nearlmod.patches.AbstractCardEnum;
+import nearlmod.patches.NearlTags;
 import nearlmod.powers.RemoveHPNextTurn;
 
 public class ShieldPhotographyModule extends AbstractFriendCard {
@@ -17,7 +18,7 @@ public class ShieldPhotographyModule extends AbstractFriendCard {
     public static final String NAME = cardStrings.NAME;
     public static final String DESCRIPTION = cardStrings.DESCRIPTION;
     public static final String UPGRADE_DESCRIPTION = cardStrings.UPGRADE_DESCRIPTION;
-    public static final String IMG_PATH = "resources/nearlmod/images/cards/nearldefend.png";
+    public static final String IMG_PATH = "resources/nearlmod/images/cards/shieldphotographymodule.png";
     private static final int COST = 2;
     private static final int TEMP_HP_GAIN = 30;
     private static final int UPGRADE_PLUS_HP = 15;
@@ -27,6 +28,7 @@ public class ShieldPhotographyModule extends AbstractFriendCard {
                 CardType.SKILL, AbstractCardEnum.FRIEND_BLUE,
                 CardRarity.SPECIAL, CardTarget.SELF, "nearlmod:Aurora");
         secondMagicNumber = baseSecondMagicNumber = TEMP_HP_GAIN;
+        tags.add(NearlTags.IS_UNIQUE_CARD);
     }
 
     @Override

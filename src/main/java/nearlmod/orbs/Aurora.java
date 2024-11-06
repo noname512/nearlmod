@@ -8,6 +8,10 @@ import com.megacrit.cardcrawl.helpers.ImageMaster;
 import com.megacrit.cardcrawl.localization.OrbStrings;
 import com.megacrit.cardcrawl.orbs.AbstractOrb;
 import nearlmod.actions.AddFriendCardToHandAction;
+import nearlmod.cards.Duelist;
+import nearlmod.cards.FearNoCold;
+import nearlmod.cards.WarmthOfHome;
+import nearlmod.cards.WhatSheSaw;
 import nearlmod.cards.friendcards.*;
 
 import java.util.ArrayList;
@@ -30,6 +34,7 @@ public class Aurora extends AbstractFriend {
     public Aurora(int amount) {
         super(ORB_ID, NAME, DESCRIPTION, IMAGE, amount);
         curStatus = status.NORMAL;
+        blockGain = 0;
     }
 
     public Aurora() {
@@ -62,24 +67,29 @@ public class Aurora extends AbstractFriend {
     @Override
     public void onEndOfTurn() {
         if (curStatus == status.RESPITE) {
-            addToBot(new GainBlockAction(AbstractDungeon.player, blockGain));
+            addToBot(new GainBlockAction(AbstractDungeon.player, blockGain + trustAmount));
         }
     }
 
-    public void startRespite(int block) {
+    public void startRespite(int block) { // TODO:参考黑球，左下角显示叠甲数
         curStatus = status.RESPITE;
-        blockGain = block;
+        blockGain += block;
         img = ImageMaster.loadImage(RELAX_IMAGE);
     }
 
     public void endRespite() {
         curStatus = status.NORMAL;
+        blockGain = 0;
         img = ImageMaster.loadImage(IMAGE);
     }
 
     @Override
     public ArrayList<AbstractCard> getRelateCards() {
         ArrayList<AbstractCard> list = new ArrayList<>();
+        list.add(new FearNoCold());
+        list.add(new WarmthOfHome());
+        list.add(new WhatSheSaw());
+        list.add(new Duelist());
         return list;
     }
 }

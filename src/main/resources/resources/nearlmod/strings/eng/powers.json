@@ -192,5 +192,12 @@
       " #yStrength and #b",
       " #yDexterity ."
     ]
+  },
+  "nearlmod:ColdPower": {
+    "NAME": "Cold",
+    "DESCRIPTIONS": [
+      "Deal #b",
+      "% less damage during multi-hit attacks. Up to two stacks maximum."
+    ]
   }
 }

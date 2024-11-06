@@ -646,6 +646,30 @@
         "DESCRIPTION": "nearlmod:Friend_Card. NL Deal !M! damage to all enemies, lose !nearlmod:M2! HP to trigger 1 additional time.",
         "UPGRADE_DESCRIPTION": ""
     },
+
+    "nearlmod:FearNoCold": {
+        "NAME": "Fear No Cold",
+        "DESCRIPTION": "Summon Aurora as nearlmod:Friend, enter nearlmod:Guardian.",
+        "UPGRADE_DESCRIPTION": "Summon Aurora as nearlmod:Friend, enter nearlmod:Guardian. Add a *Warmth *of *Home into your hand, and give it Retain.",
+        "EXTENDED_DESCRIPTION": [
+            " NL Retain."
+        ]
+    },
+    "nearlmod:WarmthOfHome": {
+        "NAME": "Warmth of Home",
+        "DESCRIPTION": "Gain !B! Block. If Aurora is present, remove her nearlmod:Frigid_Respite.",
+        "UPGRADE_DESCRIPTION": ""
+    },
+    "nearlmod:WhatSheSaw": {
+        "NAME": "What She Saw",
+        "DESCRIPTION": "Gain !B! Block. If Aurora is present, trigger another 1 time in addition.",
+        "UPGRADE_DESCRIPTION": ""
+    },
+    "nearlmod:Duelist": {
+        "NAME": "Duelist",
+        "DESCRIPTION": "Apply !M! nearlmod:Cold. If Aurora is present, add 1 *Artificial *Snowfall into your hand. Otherwise summon Aurora as nearlmod:Friend.",
+        "UPGRADE_DESCRIPTION": "Apply !M! nearlmod:Cold. If Aurora is present, add 1 *Artificial *Snowfall+ into your hand. Otherwise summon Aurora as nearlmod:Friend."
+    },
     "nearlmod:ShieldPhotographyModule": {
         "NAME": "Shield Photography Module",
         "DESCRIPTION": " nearlmod:Friend_Card, nearlmod:Unique. NL Gain !nearlmod:M2! Temporary_HP. At the start of next turn, remove your Temporary_HP.",

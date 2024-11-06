@@ -19,7 +19,7 @@ public class ArtificialSnowfall extends AbstractFriendCard {
     public static final String NAME = cardStrings.NAME;
     public static final String DESCRIPTION = cardStrings.DESCRIPTION;
     public static final String UPGRADE_DESCRIPTION = cardStrings.UPGRADE_DESCRIPTION;
-    public static final String IMG_PATH = "resources/nearlmod/images/cards/nearlstrike.png";
+    public static final String IMG_PATH = "resources/nearlmod/images/cards/artificialsnowfall.png";
     private static final int COST = 1;
     private static final int BASIC_DAMAGE = 9;
     private static final int TRIGGER_DAMAGE = 27;
