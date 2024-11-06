@@ -5,7 +5,7 @@ import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.localization.OrbStrings;
 import com.megacrit.cardcrawl.orbs.AbstractOrb;
 import nearlmod.actions.AddFriendCardToHandAction;
-import nearlmod.cards.Exemplars;
+import nearlmod.cards.Maxims;
 import nearlmod.cards.FallingShield;
 import nearlmod.cards.Solo;
 import nearlmod.cards.TempestPlatoon;
@@ -55,7 +55,7 @@ public class Horn extends AbstractFriend {
     public ArrayList<AbstractCard> getRelateCards() {
         ArrayList<AbstractCard> list = new ArrayList<>();
         list.add(new TempestPlatoon());
-        list.add(new Exemplars());
+        list.add(new Maxims());
         list.add(new Solo());
         list.add(new FallingShield());
         return list;

@@ -13,20 +13,20 @@ import nearlmod.orbs.Horn;
 import nearlmod.patches.AbstractCardEnum;
 import nearlmod.patches.NearlTags;
 
-public class Exemplars extends AbstractNearlCard {
-    public static final String ID = "nearlmod:Exemplars";
+public class Maxims extends AbstractNearlCard {
+    public static final String ID = "nearlmod:Maxims";
     public static final CardStrings cardStrings = CardCrawlGame.languagePack.getCardStrings(ID);
     public static final String NAME = cardStrings.NAME;
     public static final String DESCRIPTION = cardStrings.DESCRIPTION;
     public static final String UPGRADE_DESCRIPTION = cardStrings.UPGRADE_DESCRIPTION;
-    public static final String IMG_PATH = "resources/nearlmod/images/cards/exemplars.png";
+    public static final String IMG_PATH = "resources/nearlmod/images/cards/maxims.png";
     private static final int COST = 1;
     private static final int ATTACK_DMG = 4;
     private static final int BLOCK_AMT = 4;
     private static final int UPGRADE_PLUS_DMG = 2;
     private static final int UPGRADE_PLUS_BLOCK = 2;
 
-    public Exemplars() {
+    public Maxims() {
         super(ID, NAME, IMG_PATH, COST, DESCRIPTION,
                 CardType.ATTACK, AbstractCardEnum.NEARL_GOLD,
                 CardRarity.COMMON, CardTarget.ENEMY);
@@ -53,7 +53,7 @@ public class Exemplars extends AbstractNearlCard {
 
     @Override
     public AbstractCard makeCopy() {
-        return new Exemplars();
+        return new Maxims();
     }
 
     @Override

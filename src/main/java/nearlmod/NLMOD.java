@@ -304,7 +304,7 @@ public class NLMOD implements EditCardsSubscriber, EditCharactersSubscriber, Edi
         BaseMod.addCard(new BeepActivate()); // “滴滴，启动！”
 
         BaseMod.addCard(new TempestPlatoon()); // 风暴突击
-        BaseMod.addCard(new Exemplars()); // “典范之人”
+        BaseMod.addCard(new Maxims()); // 格言
         BaseMod.addCard(new Solo()); // 独奏曲
         BaseMod.addCard(new FallingShield()); // 坠落之盾
         BaseMod.addCard(new Bloodbath()); // 血战

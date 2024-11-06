@@ -611,8 +611,8 @@
         "DESCRIPTION": "召唤号角作为 nearlmod:伙伴 ，给予所有 nearlmod:伙伴 !M! 点 nearlmod:信赖 。",
         "UPGRADE_DESCRIPTION": "召唤号角作为 nearlmod:伙伴 ，给予所有 nearlmod:伙伴 !M! 点 nearlmod:信赖 ，并额外给予号角 !nearlmod:M2! 点。"
     },
-    "nearlmod:Exemplars": {
-        "NAME": "“典范之人”",
+    "nearlmod:Maxims": {
+        "NAME": "格言",
         "DESCRIPTION": "造成 !D! 点伤害，获得 !B! 点格挡，如果号角在场，额外触发一次。",
         "UPGRADE_DESCRIPTION": ""
     },

@@ -611,8 +611,8 @@
         "DESCRIPTION": "Summon Horn as nearlmod:Friend. Apply !M! nearlmod:Trust to all your nearlmod:Friend.",
         "UPGRADE_DESCRIPTION": "Summon Horn as nearlmod:Friend. Apply !M! nearlmod:Trust to all your nearlmod:Friend and apply additional !nearlmod:M2! nearlmod:Trust to Horn."
     },
-    "nearlmod:Exemplars": {
-        "NAME": "Exemplars",
+    "nearlmod:Maxims": {
+        "NAME": "Maxims",
         "DESCRIPTION": "Deal !D! damage, gain !B! Block. If Horn is present, trigger 1 additional time.",
         "UPGRADE_DESCRIPTION": ""
     },
