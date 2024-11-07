@@ -28,7 +28,7 @@ public class Duelist extends AbstractNearlCard {
     public Duelist() {
         super(ID, NAME, IMG_PATH, COST, DESCRIPTION,
                 CardType.SKILL, AbstractCardEnum.NEARL_GOLD,
-                CardRarity.COMMON, CardTarget.ENEMY);
+                CardRarity.RARE, CardTarget.ENEMY);
         cardsToPreview = new ArtificialSnowfall();
         magicNumber = baseMagicNumber = COLD_CNT;
         tags.add(NearlTags.FRIEND_RELATED);

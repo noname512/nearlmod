@@ -15,12 +15,12 @@ import nearlmod.patches.AbstractCardEnum;
 import nearlmod.patches.NearlTags;
 
 public class Innocent extends AbstractNearlCard {
-    public static final String ID = "nearlmod:Revolution";
+    public static final String ID = "nearlmod:Innocent";
     public static final CardStrings cardStrings = CardCrawlGame.languagePack.getCardStrings(ID);
     public static final String NAME = cardStrings.NAME;
     public static final String DESCRIPTION = cardStrings.DESCRIPTION;
     public static final String UPGRADE_DESCRIPTION = cardStrings.UPGRADE_DESCRIPTION;
-    public static final String IMG_PATH = "resources/nearlmod/images/cards/revolution.png";
+    public static final String IMG_PATH = "resources/nearlmod/images/cards/innocent.png";
     private static final int COST = 2;
     private static final int BLOCK_AMT = 14;
     private static final int UPGRADE_PLUS_BLOCK = 4;

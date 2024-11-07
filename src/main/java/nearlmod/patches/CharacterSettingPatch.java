@@ -34,7 +34,7 @@ public class CharacterSettingPatch {
     };
     public static final List<Set<String>> friendsInTeams = new ArrayList<Set<String>>(){{
             add(new HashSet<>(Arrays.asList(Blemishine.ORB_ID, Whislash.ORB_ID, Viviana.ORB_ID, Shining.ORB_ID, Nightingale.ORB_ID)));
-            add(new HashSet<>(Arrays.asList(Blemishine.ORB_ID, Aurora.ORB_ID)));
+            add(new HashSet<>(Arrays.asList(Blemishine.ORB_ID, Aurora.ORB_ID, Penance.ORB_ID, Horn.ORB_ID)));
     }};
     public static int curTeam = 0;
 

@@ -6,6 +6,7 @@ import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.cards.DamageInfo;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
+import com.megacrit.cardcrawl.helpers.ImageMaster;
 import com.megacrit.cardcrawl.localization.CardStrings;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import nearlmod.characters.Nearl;
@@ -32,6 +33,9 @@ public class TrialOfThorns extends AbstractFriendCard {
                 CardRarity.SPECIAL, CardTarget.SELF, "nearlmod:Penance");
         secondMagicNumber = baseSecondMagicNumber = TEMP_HP;
         magicNumber = baseMagicNumber = ATTACK_DMG;
+        this.bannerSmallRegion = ImageMaster.CARD_BANNER_RARE;
+        this.bannerLargeRegion = ImageMaster.CARD_BANNER_RARE_L;
+
         tags.add(NearlTags.IS_UNIQUE_CARD);
     }
 

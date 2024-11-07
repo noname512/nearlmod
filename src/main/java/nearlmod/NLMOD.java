@@ -246,6 +246,7 @@ public class NLMOD implements EditCardsSubscriber, EditCharactersSubscriber, Edi
         BaseMod.addCard(new UpgradedKnightShield()); // 改良骑士盾牌
         BaseMod.addCard(new Flaw()); // 破绽
         BaseMod.addCard(new InfiniteLightBlade()); // 无尽光刃
+        BaseMod.addCard(new WayToHome()); // 归乡之路
 
         // Rare.
         BaseMod.addCard(new BraveTheDarkness()); // 不畏苦暗
@@ -288,7 +289,6 @@ public class NLMOD implements EditCardsSubscriber, EditCharactersSubscriber, Edi
         BaseMod.addCard(new CreedField()); // 教条立场
         BaseMod.addCard(new BlackFiendProtection()); // 黑恶魔的庇护
 
-        BaseMod.addCard(new WayToHome()); // 归乡之路
         BaseMod.addCard(new VisionOfUnity()); // 比肩的愿景
         BaseMod.addCard(new Rebuke()); // 责骂
         BaseMod.addCard(new MotivationalSkills()); // 激励艺术
@@ -306,15 +306,6 @@ public class NLMOD implements EditCardsSubscriber, EditCharactersSubscriber, Edi
         BaseMod.addCard(new BeepActivate()); // “滴滴，启动！”
 
         // Team 1
-        BaseMod.addCard(new GuardianOfTheLaw()); // 律法卫士
-        BaseMod.addCard(new Revolution()); // 变革
-        BaseMod.addCard(new Innocent()); // “无罪”
-        BaseMod.addCard(new SolidAsFaith()); // 坚如信念
-        BaseMod.addCard(new WreathedInThorns()); // 荆棘环身
-        BaseMod.addCard(new LastWord()); // 一锤定音
-        BaseMod.addCard(new StoicAtonement()); // 坚心苦修
-        BaseMod.addCard(new TrialOfThorns()); // 披荆斩棘
-
         BaseMod.addCard(new TempestPlatoon()); // 风暴突击
         BaseMod.addCard(new Maxims()); // 格言
         BaseMod.addCard(new Solo()); // 独奏曲
@@ -328,10 +319,19 @@ public class NLMOD implements EditCardsSubscriber, EditCharactersSubscriber, Edi
         BaseMod.addCard(new WarmthOfHome()); // 家乡的“温暖”
         BaseMod.addCard(new WhatSheSaw()); // 她所见
         BaseMod.addCard(new Duelist()); // 决战者
+        BaseMod.addCard(new ShieldPhotographyModule()); // 盾用摄制模块
         BaseMod.addCard(new ArtificialSnowfall()); // 人工降雪
         BaseMod.addCard(new FrigidRespite()); // 低温静滞
         BaseMod.addCard(new HomelandProtector()); // 固守家园
-        BaseMod.addCard(new ShieldPhotographyModule()); // 盾用摄制模块
+
+        BaseMod.addCard(new GuardianOfTheLaw()); // 律法卫士
+        BaseMod.addCard(new Revolution()); // 变革
+        BaseMod.addCard(new Innocent()); // “无罪”
+        BaseMod.addCard(new SolidAsFaith()); // 坚如信念
+        BaseMod.addCard(new TrialOfThorns()); // 披荆斩棘
+        BaseMod.addCard(new WreathedInThorns()); // 荆棘环身
+        BaseMod.addCard(new LastWord()); // 一锤定音
+        BaseMod.addCard(new StoicAtonement()); // 坚心苦修
 
         // Special
         BaseMod.addCard(new Beginning()); // 起点
@@ -489,5 +489,10 @@ public class NLMOD implements EditCardsSubscriber, EditCharactersSubscriber, Edi
         friendCards.group.add(new ArtificialSnowfall());
         friendCards.group.add(new HomelandProtector());
         friendCards.group.add(new FrigidRespite());
+
+        friendCards.group.add(new TrialOfThorns());
+        friendCards.group.add(new WreathedInThorns());
+        friendCards.group.add(new LastWord());
+        friendCards.group.add(new StoicAtonement());
     }
 }
