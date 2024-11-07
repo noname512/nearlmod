@@ -301,7 +301,7 @@
 
     "nearlmod:BraveTheDarkness": {
         "NAME": "Brave the Darkness",
-        "DESCRIPTION": "Deal !D! damage, enemy loses 99 Strength this turn. NL nearlmod:Dreadnought : Deal !D! damage to all enemies instead. NL Exhaust.",
+        "DESCRIPTION": "Deal !D! damage, the enemy loses 99 Strength this turn. NL nearlmod:Dreadnought : Deal !D! damage to all enemies instead. NL Exhaust.",
         "UPGRADE_DESCRIPTION": ""
     },
     "nearlmod:FirstAid": {
@@ -604,6 +604,47 @@
         "NAME": "Bombardment Studies",
         "DESCRIPTION": "nearlmod:Friend_Card. NL Stats of *Focused *Bombardment increase !nearlmod:M2!. NL At the start of next turn, add a *Focused *Bombardment into your hand.",
         "UPGRADE_DESCRIPTION": "nearlmod:Friend_Card. NL Stats of *Focused *Bombardment increase !nearlmod:M2!. NL At the start of next turn, add a *Focused *Bombardment+ into your hand."
+    },
+
+    "nearlmod:GuardianOfTheLaw": {
+        "NAME": "Guardian of the Law",
+        "DESCRIPTION": "Summon Penance as nearlmod:Friend. Change your nearlmod:DP into !M! times of Temporary_HP.",
+        "UPGRADE_DESCRIPTION": ""
+    },
+    "nearlmod:Revolution": {
+        "NAME": "Revolution",
+        "DESCRIPTION": "Gain !M! nearlmod:Light. If Penance is present, add !nearlmod:M2! *Switch *Stance+ with Ethereal and Exhaust into your hand.",
+        "UPGRADE_DESCRIPTION": ""
+    },
+    "nearlmod:Innocent": {
+        "NAME": "\"Innocent\"",
+        "DESCRIPTION": "Gain !B! Block. If Penance is present, add a *Wreathed *in *Thorns into your hand.",
+        "UPGRADE_DESCRIPTION": "Gain !B! Block. If Penance is present, add a *Wreathed *in *Thorns+ into your hand."
+    },
+    "nearlmod:SolidAsFaith": {
+        "NAME": "Solid as Faith",
+        "DESCRIPTION": "Gain !M! Temporary_HP. If Penance is present, double your Temporary_HP. Otherwise summon Penance as nearlmod:Friend. NL Exhaust.",
+        "UPGRADE_DESCRIPTION": ""
+    },
+    "nearlmod:WreathedInThorns": {
+        "NAME": "Wreathed in Thorns",
+        "DESCRIPTION": "nearlmod:Friend_Card. Whenever attacked, if you have Temporary_HP, Penance deals !nearlmod:M2! damage back.",
+        "UPGRADE_DESCRIPTION": ""
+    },
+    "nearlmod:LastWord": {
+        "NAME": "Last Word",
+        "DESCRIPTION": "nearlmod:Friend_Card. Deal !M! damage. If you didn't play nearlmod:Friend_Card of Penance, the enemy loses 99 Strength in this turn.",
+        "UPGRADE_DESCRIPTION": ""
+    },
+    "nearlmod:StoicAtonement": {
+        "NAME": "Stoic Atonement",
+        "DESCRIPTION": "nearlmod:Friend_Card. If you do not play attack cards this turn, at the end of turn, Penance deals !M! damage to all enemies and apply 1 nearlmod:Sheltered to you.",
+        "UPGRADE_DESCRIPTION": ""
+    },
+    "nearlmod:TrialOfThorns": {
+        "NAME": "Trial of Thorns",
+        "DESCRIPTION": "nearlmod:Friend_Card, nearlmod:Unique. Gain !nearlmod:M2! Temporary_HP, deal !M! damage.",
+        "UPGRADE_DESCRIPTION": ""
     },
 
     "nearlmod:TempestPlatoon": {

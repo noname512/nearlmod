@@ -17,16 +17,23 @@ public class AddFriendCardToHandAction extends AbstractGameAction {
     }
 
     public AddFriendCardToHandAction(AbstractFriendCard card, boolean needUpgrade) {
+        this(card, needUpgrade, 1);
+    }
+
+    public AddFriendCardToHandAction(AbstractFriendCard card, boolean needUpgrade, int amount) {
         actionType = ActionType.CARD_MANIPULATION;
         duration = Settings.ACTION_DUR_FAST;
         if (needUpgrade || AbstractDungeon.player.hasPower("MasterRealityPower")) card.upgrade();
         this.card = card;
+        this.amount = amount;
     }
 
     @Override
     public void update() {
-        BaseMod.MAX_HAND_SIZE++;
-        AbstractDungeon.effectList.add(new ShowCardAndAddToHandEffect(card, MathUtils.random((float)Settings.WIDTH * 0.2F, (float)Settings.WIDTH * 0.8F), MathUtils.random((float)Settings.HEIGHT * 0.3F, (float)Settings.HEIGHT * 0.7F)));
+        BaseMod.MAX_HAND_SIZE += amount;
+        for (int i = 0; i < amount; i++) {
+            AbstractDungeon.effectList.add(new ShowCardAndAddToHandEffect(card.makeStatEquivalentCopy(), MathUtils.random((float) Settings.WIDTH * 0.2F, (float) Settings.WIDTH * 0.8F), MathUtils.random((float) Settings.HEIGHT * 0.3F, (float) Settings.HEIGHT * 0.7F)));
+        }
         isDone = true;
     }
 }

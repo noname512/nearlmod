@@ -64,6 +64,9 @@ public class SummonFriendAction extends AbstractGameAction {
                 case Whislash.ORB_ID:
                     Whislash.uniqueUsed = false;
                     break;
+                case Penance.ORB_ID:
+                    Penance.uniqueUsed = false;
+                    break;
                 case Horn.ORB_ID:
                     Horn.uniqueUsed = false;
                     break;

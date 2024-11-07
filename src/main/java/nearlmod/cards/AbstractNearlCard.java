@@ -103,6 +103,8 @@ public abstract class AbstractNearlCard extends CustomCard {
         AbstractCard card = super.makeStatEquivalentCopy();
         card.exhaust = this.exhaust;
         card.isEthereal = this.isEthereal;
+        card.retain = this.retain;
+        card.selfRetain = this.selfRetain;
         card.rawDescription = this.rawDescription;
         card.initializeDescription();
         return card;

@@ -67,6 +67,9 @@ public class Nearl extends CustomPlayer {
         "resources/nearlmod/images/char/orb/layer3d.png",
         "resources/nearlmod/images/char/orb/layer4d.png"
     };
+    public static boolean penanceCardPlayedLastTurn;
+    public static boolean penanceCardPlayedThisTurn;
+    public static boolean attackCardPlayedThisTurn;
 
     public Nearl(String name) {
         // 参数列表：角色名，角色类枚举，能量面板贴图路径列表，能量面板特效贴图路径，能量面板贴图旋转速度列表，能量面板，模型资源路径，动画资源路径
@@ -214,6 +217,15 @@ public class Nearl extends CustomPlayer {
         AbstractDungeon.actionManager.addToBottom(new ChangeStanceAction(new DefStance()));
         CostReserves.resetReserves();
         LightPower.amountForBattle = 0;
+        penanceCardPlayedLastTurn = false;
+        penanceCardPlayedThisTurn = false;
+    }
+
+    @Override
+    public void applyStartOfTurnPreDrawCards() {
+        penanceCardPlayedLastTurn = penanceCardPlayedThisTurn;
+        penanceCardPlayedThisTurn = false;
+        attackCardPlayedThisTurn = false;
     }
 
     @Override
@@ -274,6 +286,9 @@ public class Nearl extends CustomPlayer {
 
     @Override
     public void useCard(AbstractCard c, AbstractMonster monster, int energyOnUse) {
+        if (c.type == AbstractCard.CardType.ATTACK) {
+            attackCardPlayedThisTurn = true;
+        }
         if (!Settings.FAST_MODE) {
             if (!(c instanceof AbstractFriendCard) && c.type == AbstractCard.CardType.ATTACK) {
                 if (this.stance.ID.equals(AtkStance.STANCE_ID)) {

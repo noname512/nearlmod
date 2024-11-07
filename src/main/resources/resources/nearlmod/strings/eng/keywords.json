@@ -166,5 +166,13 @@
       "frigid_respite"
     ],
     "DESCRIPTION": "Friend do not provide #yFriend #yCard, provide #yBlock at the end of turn instead."
+  },
+  "Sheltered": {
+    "PROPER_NAME": "Sheltered",
+    "NAMES": [
+      "Sheltered",
+      "sheltered"
+    ],
+    "DESCRIPTION": "Take #b60% less damage in this turn."
   }
 }

@@ -153,6 +153,8 @@ public class NLMOD implements EditCardsSubscriber, EditCharactersSubscriber, Edi
         specialImg.put(Wildmane.ORB_ID, new TextureAtlas.AtlasRegion(new Texture("resources/nearlmod/images/512/card_friend_wildmane.png"), 0, 0, 512, 512));
         specialImg.put(JusticeKnight.ORB_ID, new TextureAtlas.AtlasRegion(new Texture("resources/nearlmod/images/512/card_friend_justiceknight.png"), 0, 0, 512, 512));
 
+        specialImg.put(Penance.ORB_ID, new TextureAtlas.AtlasRegion(new Texture("resources/nearlmod/images/512/card_friend_penance.png"), 0, 0, 512, 512));
+        specialImg.put(Horn.ORB_ID, new TextureAtlas.AtlasRegion(new Texture("resources/nearlmod/images/512/card_friend_horn.png"), 0, 0, 512, 512));
         specialImg.put(Aurora.ORB_ID, new TextureAtlas.AtlasRegion(new Texture("resources/nearlmod/images/512/card_friend_aurora.png"), 0, 0, 512, 512));
     }
 
@@ -302,6 +304,16 @@ public class NLMOD implements EditCardsSubscriber, EditCharactersSubscriber, Edi
         BaseMod.addCard(new LanceCharge()); // 夹枪冲锋
         BaseMod.addCard(new JusticeDrive()); // 正义助威
         BaseMod.addCard(new BeepActivate()); // “滴滴，启动！”
+
+        // Team 1
+        BaseMod.addCard(new GuardianOfTheLaw()); // 律法卫士
+        BaseMod.addCard(new Revolution()); // 变革
+        BaseMod.addCard(new Innocent()); // “无罪”
+        BaseMod.addCard(new SolidAsFaith()); // 坚如信念
+        BaseMod.addCard(new WreathedInThorns()); // 荆棘环身
+        BaseMod.addCard(new LastWord()); // 一锤定音
+        BaseMod.addCard(new StoicAtonement()); // 坚心苦修
+        BaseMod.addCard(new TrialOfThorns()); // 披荆斩棘
 
         BaseMod.addCard(new TempestPlatoon()); // 风暴突击
         BaseMod.addCard(new Maxims()); // 格言

@@ -606,6 +606,47 @@
         "UPGRADE_DESCRIPTION": " nearlmod:伙伴牌 。 NL *专注轰击 数值 + !nearlmod:M2! 。 NL 下回合开始时，将一张 *专注轰击+ 放入你的手牌。"
     },
 
+    "nearlmod:GuardianOfTheLaw": {
+        "NAME": "律法卫士",
+        "DESCRIPTION": "召唤斥罪作为 nearlmod:伙伴 ，将你的 nearlmod:部署费用 转化为 !M! 倍的 stslib:临时生命 。",
+        "UPGRADE_DESCRIPTION": ""
+    },
+    "nearlmod:Revolution": {
+        "NAME": "变革",
+        "DESCRIPTION": "获得 !M! 层 nearlmod:光 ，如果斥罪在场，将 !nearlmod:M2! 张带有 虚无 和 消耗 的 *切换形态+ 置入你的手牌。",
+        "UPGRADE_DESCRIPTION": ""
+    },
+    "nearlmod:Innocent": {
+        "NAME": "“无罪”",
+        "DESCRIPTION": "获得 !B! 点格挡，如果斥罪在场，将一张 *荆棘环身 置入你的手牌。",
+        "UPGRADE_DESCRIPTION": "获得 !B! 点格挡，如果斥罪在场，将一张 *荆棘环身+ 置入你的手牌。"
+    },
+    "nearlmod:SolidAsFaith": {
+        "NAME": "坚如信念",
+        "DESCRIPTION": "获得 !M! 点 stslib:临时生命 。如果斥罪在场，翻倍你的 stslib:临时生命 ，否则召唤斥罪作为 nearlmod:伙伴 。 NL 消耗 。",
+        "UPGRADE_DESCRIPTION": ""
+    },
+    "nearlmod:WreathedInThorns": {
+        "NAME": "荆棘环身",
+        "DESCRIPTION": "nearlmod:伙伴牌 。当你有 stslib:临时生命 时，你每受到一次攻击，斥罪造成 !nearlmod:M2! 点反伤。",
+        "UPGRADE_DESCRIPTION": ""
+    },
+    "nearlmod:LastWord": {
+        "NAME": "一锤定音",
+        "DESCRIPTION": "nearlmod:伙伴牌 。造成 !M! 点伤害，如果你上回合没有打出斥罪的 nearlmod:伙伴牌 ，使目标本回合内失去 99 点 力量 。",
+        "UPGRADE_DESCRIPTION": ""
+    },
+    "nearlmod:StoicAtonement": {
+        "NAME": "坚心苦修",
+        "DESCRIPTION": "nearlmod:伙伴牌 。如果你本回合没有打出攻击牌，回合结束时，斥罪对所有敌人造成 !M! 点伤害，并给予你一层 nearlmod:庇护 。",
+        "UPGRADE_DESCRIPTION": ""
+    },
+    "nearlmod:TrialOfThorns": {
+        "NAME": "披荆斩棘",
+        "DESCRIPTION": "nearlmod:伙伴牌 ， nearlmod:唯一 。获得 !nearlmod:M2! 点临时生命，造成 !M! 点伤害。",
+        "UPGRADE_DESCRIPTION": ""
+    },
+
     "nearlmod:TempestPlatoon": {
         "NAME": "风暴突击",
         "DESCRIPTION": "召唤号角作为 nearlmod:伙伴 ，给予所有 nearlmod:伙伴 !M! 点 nearlmod:信赖 。",
