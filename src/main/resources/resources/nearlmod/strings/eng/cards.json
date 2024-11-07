@@ -301,7 +301,7 @@
 
     "nearlmod:BraveTheDarkness": {
         "NAME": "Brave the Darkness",
-        "DESCRIPTION": "Deal !D! damage, enemy loses 99 Strength this turn. NL nearlmod:Dreadnought : Deal !D! damage to all enemies instead. NL Exhaust.",
+        "DESCRIPTION": "Deal !D! damage, the enemy loses 99 Strength this turn. NL nearlmod:Dreadnought : Deal !D! damage to all enemies instead. NL Exhaust.",
         "UPGRADE_DESCRIPTION": ""
     },
     "nearlmod:FirstAid": {
@@ -604,6 +604,132 @@
         "NAME": "Bombardment Studies",
         "DESCRIPTION": "nearlmod:Friend_Card. NL Stats of *Focused *Bombardment increase !nearlmod:M2!. NL At the start of next turn, add a *Focused *Bombardment into your hand.",
         "UPGRADE_DESCRIPTION": "nearlmod:Friend_Card. NL Stats of *Focused *Bombardment increase !nearlmod:M2!. NL At the start of next turn, add a *Focused *Bombardment+ into your hand."
+    },
+
+    "nearlmod:GuardianOfTheLaw": {
+        "NAME": "Guardian of the Law",
+        "DESCRIPTION": "Summon Penance as nearlmod:Friend. Change your nearlmod:DP into !M! times of Temporary_HP.",
+        "UPGRADE_DESCRIPTION": ""
+    },
+    "nearlmod:Revolution": {
+        "NAME": "Revolution",
+        "DESCRIPTION": "Gain !M! nearlmod:Light. If Penance is present, add !nearlmod:M2! *Switch *Stance+ with Ethereal and Exhaust into your hand.",
+        "UPGRADE_DESCRIPTION": ""
+    },
+    "nearlmod:Innocent": {
+        "NAME": "\"Innocent\"",
+        "DESCRIPTION": "Gain !B! Block. If Penance is present, add a *Wreathed *in *Thorns into your hand.",
+        "UPGRADE_DESCRIPTION": "Gain !B! Block. If Penance is present, add a *Wreathed *in *Thorns+ into your hand."
+    },
+    "nearlmod:SolidAsFaith": {
+        "NAME": "Solid as Faith",
+        "DESCRIPTION": "Gain !M! Temporary_HP. If Penance is present, double your Temporary_HP. Otherwise summon Penance as nearlmod:Friend. NL Exhaust.",
+        "UPGRADE_DESCRIPTION": ""
+    },
+    "nearlmod:WreathedInThorns": {
+        "NAME": "Wreathed in Thorns",
+        "DESCRIPTION": "nearlmod:Friend_Card. Whenever attacked, if you have Temporary_HP, Penance deals !nearlmod:M2! damage back.",
+        "UPGRADE_DESCRIPTION": ""
+    },
+    "nearlmod:LastWord": {
+        "NAME": "Last Word",
+        "DESCRIPTION": "nearlmod:Friend_Card. Deal !M! damage. If you didn't play nearlmod:Friend_Card of Penance, the enemy loses 99 Strength in this turn.",
+        "UPGRADE_DESCRIPTION": ""
+    },
+    "nearlmod:StoicAtonement": {
+        "NAME": "Stoic Atonement",
+        "DESCRIPTION": "nearlmod:Friend_Card. If you do not play attack cards this turn, at the end of turn, Penance deals !M! damage to all enemies and apply 1 nearlmod:Sheltered to you.",
+        "UPGRADE_DESCRIPTION": ""
+    },
+    "nearlmod:TrialOfThorns": {
+        "NAME": "Trial of Thorns",
+        "DESCRIPTION": "nearlmod:Friend_Card, nearlmod:Unique. Gain !nearlmod:M2! Temporary_HP, deal !M! damage.",
+        "UPGRADE_DESCRIPTION": ""
+    },
+
+    "nearlmod:TempestPlatoon": {
+        "NAME": "Tempest Platoon",
+        "DESCRIPTION": "Summon Horn as nearlmod:Friend. Apply !M! nearlmod:Trust to all your nearlmod:Friend.",
+        "UPGRADE_DESCRIPTION": "Summon Horn as nearlmod:Friend. Apply !M! nearlmod:Trust to all your nearlmod:Friend and apply additional !nearlmod:M2! nearlmod:Trust to Horn."
+    },
+    "nearlmod:Maxims": {
+        "NAME": "Maxims",
+        "DESCRIPTION": "Deal !D! damage, gain !B! Block. If Horn is present, trigger 1 additional time.",
+        "UPGRADE_DESCRIPTION": ""
+    },
+    "nearlmod:Solo": {
+        "NAME": "Solo",
+        "DESCRIPTION": "Deal !D! damage. If Horn is present, lose !M! HP to deal additional !nearlmod:M2! damage.",
+        "UPGRADE_DESCRIPTION": ""
+    },
+    "nearlmod:FallingShield": {
+        "NAME": "Falling Shield",
+        "DESCRIPTION": "This card cost Temporary_HP instead. Deal X damage !M! times. If Horn is present, deal additional !nearlmod:M2! times. Otherwise, summon Horn as nearlmod:Friend.",
+        "UPGRADE_DESCRIPTION": ""
+    },
+    "nearlmod:Bloodbath": {
+        "NAME": "Bloodbath",
+        "DESCRIPTION": "nearlmod:Friend_Card, nearlmod:Unique. NL After you lose all your Temporary_HP next time, gain !nearlmod:M2! Strength and !nearlmod:M2! Dexterity.",
+        "UPGRADE_DESCRIPTION": ""
+    },
+    "nearlmod:FlareGrenade": {
+        "NAME": "Flare Grenade",
+        "DESCRIPTION": "nearlmod:Friend_Card. NL Deal !M! damage to all enemies. Gain !nearlmod:M2! nearlmod:Light for each target.",
+        "UPGRADE_DESCRIPTION": ""
+    },
+    "nearlmod:TempestCommand": {
+        "NAME": "Tempest Command",
+        "DESCRIPTION": "nearlmod:Friend_Card. NL Apply nearlmod:Trust to Horn equal to the number of your nearlmod:Friend.",
+        "UPGRADE_DESCRIPTION": "nearlmod:Friend_Card NL Apply nearlmod:Trust to Horn equal to the number of your nearlmod:Friend plus 2."
+    },
+    "nearlmod:UltimateLineOfDefense": {
+        "NAME": "Ultimate Line of Defense",
+        "DESCRIPTION": "nearlmod:Friend_Card. NL Deal !M! damage to all enemies, lose !nearlmod:M2! HP to trigger 1 additional time.",
+        "UPGRADE_DESCRIPTION": ""
+    },
+
+    "nearlmod:FearNoCold": {
+        "NAME": "Fear No Cold",
+        "DESCRIPTION": "Summon Aurora as nearlmod:Friend, enter nearlmod:Guardian.",
+        "UPGRADE_DESCRIPTION": "Summon Aurora as nearlmod:Friend, enter nearlmod:Guardian. Add a *Warmth *of *Home into your hand, and give it Retain.",
+        "EXTENDED_DESCRIPTION": [
+            " NL Retain."
+        ]
+    },
+    "nearlmod:WarmthOfHome": {
+        "NAME": "Warmth of Home",
+        "DESCRIPTION": "Gain !B! Block. If Aurora is present, remove her nearlmod:Frigid_Respite.",
+        "UPGRADE_DESCRIPTION": ""
+    },
+    "nearlmod:WhatSheSaw": {
+        "NAME": "What She Saw",
+        "DESCRIPTION": "Gain !B! Block. If Aurora is present, trigger another 1 time in addition.",
+        "UPGRADE_DESCRIPTION": ""
+    },
+    "nearlmod:Duelist": {
+        "NAME": "Duelist",
+        "DESCRIPTION": "Apply !M! nearlmod:Cold. If Aurora is present, add 1 *Artificial *Snowfall into your hand. Otherwise summon Aurora as nearlmod:Friend.",
+        "UPGRADE_DESCRIPTION": "Apply !M! nearlmod:Cold. If Aurora is present, add 1 *Artificial *Snowfall+ into your hand. Otherwise summon Aurora as nearlmod:Friend."
+    },
+    "nearlmod:ShieldPhotographyModule": {
+        "NAME": "Shield Photography Module",
+        "DESCRIPTION": " nearlmod:Friend_Card, nearlmod:Unique. NL Gain !nearlmod:M2! Temporary_HP. At the start of next turn, remove your Temporary_HP.",
+        "UPGRADE_DESCRIPTION": ""
+    },
+    "nearlmod:ArtificialSnowfall": {
+        "NAME": "Artificial Snowfall",
+        "DESCRIPTION": " nearlmod:Friend_Card. NL Deal !M! damage and apply 1 nearlmod:Cold. If the target already has 2 nearlmod:Cold, deal !nearlmod:M2! damage instead.",
+        "UPGRADE_DESCRIPTION": ""
+    },
+    "nearlmod:HomelandProtector": {
+        "NAME": "Homeland Protector",
+        "DESCRIPTION": " nearlmod:Friend_Card. NL Gain !M! Block, lose 1 Energy at the start of next turn.",
+        "UPGRADE_DESCRIPTION": ""
+    },
+    "nearlmod:FrigidRespite": {
+        "NAME": "Frigid Respite",
+        "DESCRIPTION": " nearlmod:Friend_Card. NL Aurora will not provide nearlmod:Friend_Card. She will apply !nearlmod:M2! Block to you at the end of each turn instead.",
+        "UPGRADE_DESCRIPTION": ""
     },
 
     "nearlmod:Beginning": {

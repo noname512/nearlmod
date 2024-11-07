@@ -11,6 +11,7 @@ import nearlmod.NLMOD;
 import nearlmod.actions.GainCostAction;
 import nearlmod.orbs.Whislash;
 import nearlmod.patches.AbstractCardEnum;
+import nearlmod.patches.NearlTags;
 
 public class ReservedForce extends AbstractNearlCard {
     public static final String ID = "nearlmod:ReservedForce";
@@ -31,6 +32,8 @@ public class ReservedForce extends AbstractNearlCard {
                 CardRarity.COMMON, CardTarget.ENEMY);
         damage = baseDamage = ATTACK_DMG;
         magicNumber = baseMagicNumber = DP_GAIN;
+        tags.add(NearlTags.FRIEND_RELATED);
+        belongFriend = Whislash.ORB_ID;
     }
 
     @Override

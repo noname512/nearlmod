@@ -153,7 +153,9 @@ public class NLMOD implements EditCardsSubscriber, EditCharactersSubscriber, Edi
         specialImg.put(Wildmane.ORB_ID, new TextureAtlas.AtlasRegion(new Texture("resources/nearlmod/images/512/card_friend_wildmane.png"), 0, 0, 512, 512));
         specialImg.put(JusticeKnight.ORB_ID, new TextureAtlas.AtlasRegion(new Texture("resources/nearlmod/images/512/card_friend_justiceknight.png"), 0, 0, 512, 512));
 
-        specialImg.put(Aurora.ORB_ID, new TextureAtlas.AtlasRegion(new Texture("resources/nearlmod/images/512/card_friend_ashlock.png"), 0, 0, 512, 512)); //TODO: 这里是灰毫
+        specialImg.put(Penance.ORB_ID, new TextureAtlas.AtlasRegion(new Texture("resources/nearlmod/images/512/card_friend_penance.png"), 0, 0, 512, 512));
+        specialImg.put(Horn.ORB_ID, new TextureAtlas.AtlasRegion(new Texture("resources/nearlmod/images/512/card_friend_horn.png"), 0, 0, 512, 512));
+        specialImg.put(Aurora.ORB_ID, new TextureAtlas.AtlasRegion(new Texture("resources/nearlmod/images/512/card_friend_aurora.png"), 0, 0, 512, 512));
     }
 
     @Override
@@ -303,6 +305,29 @@ public class NLMOD implements EditCardsSubscriber, EditCharactersSubscriber, Edi
         BaseMod.addCard(new JusticeDrive()); // 正义助威
         BaseMod.addCard(new BeepActivate()); // “滴滴，启动！”
 
+        // Team 1
+        BaseMod.addCard(new GuardianOfTheLaw()); // 律法卫士
+        BaseMod.addCard(new Revolution()); // 变革
+        BaseMod.addCard(new Innocent()); // “无罪”
+        BaseMod.addCard(new SolidAsFaith()); // 坚如信念
+        BaseMod.addCard(new WreathedInThorns()); // 荆棘环身
+        BaseMod.addCard(new LastWord()); // 一锤定音
+        BaseMod.addCard(new StoicAtonement()); // 坚心苦修
+        BaseMod.addCard(new TrialOfThorns()); // 披荆斩棘
+
+        BaseMod.addCard(new TempestPlatoon()); // 风暴突击
+        BaseMod.addCard(new Maxims()); // 格言
+        BaseMod.addCard(new Solo()); // 独奏曲
+        BaseMod.addCard(new FallingShield()); // 坠落之盾
+        BaseMod.addCard(new Bloodbath()); // 血战
+        BaseMod.addCard(new FlareGrenade()); // 照明榴弹
+        BaseMod.addCard(new TempestCommand()); // 暴风号令
+        BaseMod.addCard(new UltimateLineOfDefense()); // 终极防线
+
+        BaseMod.addCard(new FearNoCold()); // 不惧严寒
+        BaseMod.addCard(new WarmthOfHome()); // 家乡的“温暖”
+        BaseMod.addCard(new WhatSheSaw()); // 她所见
+        BaseMod.addCard(new Duelist()); // 决战者
         BaseMod.addCard(new ArtificialSnowfall()); // 人工降雪
         BaseMod.addCard(new FrigidRespite()); // 低温静滞
         BaseMod.addCard(new HomelandProtector()); // 固守家园
@@ -455,6 +480,11 @@ public class NLMOD implements EditCardsSubscriber, EditCharactersSubscriber, Edi
         friendCards.group.add(new JusticeDrive());
 
         // Monthly Team 1
+        friendCards.group.add(new Bloodbath());
+        friendCards.group.add(new FlareGrenade());
+        friendCards.group.add(new TempestCommand());
+        friendCards.group.add(new UltimateLineOfDefense());
+
         friendCards.group.add(new ShieldPhotographyModule());
         friendCards.group.add(new ArtificialSnowfall());
         friendCards.group.add(new HomelandProtector());

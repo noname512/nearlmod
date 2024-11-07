@@ -606,6 +606,132 @@
         "UPGRADE_DESCRIPTION": " nearlmod:伙伴牌 。 NL *专注轰击 数值 + !nearlmod:M2! 。 NL 下回合开始时，将一张 *专注轰击+ 放入你的手牌。"
     },
 
+    "nearlmod:GuardianOfTheLaw": {
+        "NAME": "律法卫士",
+        "DESCRIPTION": "召唤斥罪作为 nearlmod:伙伴 ，将你的 nearlmod:部署费用 转化为 !M! 倍的 stslib:临时生命 。",
+        "UPGRADE_DESCRIPTION": ""
+    },
+    "nearlmod:Revolution": {
+        "NAME": "变革",
+        "DESCRIPTION": "获得 !M! 层 nearlmod:光 ，如果斥罪在场，将 !nearlmod:M2! 张带有 虚无 和 消耗 的 *切换形态+ 置入你的手牌。",
+        "UPGRADE_DESCRIPTION": ""
+    },
+    "nearlmod:Innocent": {
+        "NAME": "“无罪”",
+        "DESCRIPTION": "获得 !B! 点格挡，如果斥罪在场，将一张 *荆棘环身 置入你的手牌。",
+        "UPGRADE_DESCRIPTION": "获得 !B! 点格挡，如果斥罪在场，将一张 *荆棘环身+ 置入你的手牌。"
+    },
+    "nearlmod:SolidAsFaith": {
+        "NAME": "坚如信念",
+        "DESCRIPTION": "获得 !M! 点 stslib:临时生命 。如果斥罪在场，翻倍你的 stslib:临时生命 ，否则召唤斥罪作为 nearlmod:伙伴 。 NL 消耗 。",
+        "UPGRADE_DESCRIPTION": ""
+    },
+    "nearlmod:WreathedInThorns": {
+        "NAME": "荆棘环身",
+        "DESCRIPTION": "nearlmod:伙伴牌 。当你有 stslib:临时生命 时，你每受到一次攻击，斥罪造成 !nearlmod:M2! 点反伤。",
+        "UPGRADE_DESCRIPTION": ""
+    },
+    "nearlmod:LastWord": {
+        "NAME": "一锤定音",
+        "DESCRIPTION": "nearlmod:伙伴牌 。造成 !M! 点伤害，如果你上回合没有打出斥罪的 nearlmod:伙伴牌 ，使目标本回合内失去 99 点 力量 。",
+        "UPGRADE_DESCRIPTION": ""
+    },
+    "nearlmod:StoicAtonement": {
+        "NAME": "坚心苦修",
+        "DESCRIPTION": "nearlmod:伙伴牌 。如果你本回合没有打出攻击牌，回合结束时，斥罪对所有敌人造成 !M! 点伤害，并给予你一层 nearlmod:庇护 。",
+        "UPGRADE_DESCRIPTION": ""
+    },
+    "nearlmod:TrialOfThorns": {
+        "NAME": "披荆斩棘",
+        "DESCRIPTION": "nearlmod:伙伴牌 ， nearlmod:唯一 。获得 !nearlmod:M2! 点临时生命，造成 !M! 点伤害。",
+        "UPGRADE_DESCRIPTION": ""
+    },
+
+    "nearlmod:TempestPlatoon": {
+        "NAME": "风暴突击",
+        "DESCRIPTION": "召唤号角作为 nearlmod:伙伴 ，给予所有 nearlmod:伙伴 !M! 点 nearlmod:信赖 。",
+        "UPGRADE_DESCRIPTION": "召唤号角作为 nearlmod:伙伴 ，给予所有 nearlmod:伙伴 !M! 点 nearlmod:信赖 ，并额外给予号角 !nearlmod:M2! 点。"
+    },
+    "nearlmod:Maxims": {
+        "NAME": "格言",
+        "DESCRIPTION": "造成 !D! 点伤害，获得 !B! 点格挡，如果号角在场，额外触发一次。",
+        "UPGRADE_DESCRIPTION": ""
+    },
+    "nearlmod:Solo": {
+        "NAME": "独奏曲",
+        "DESCRIPTION": "造成 !D! 点伤害，如果号角在场，失去 !M! 点生命以额外造成 !nearlmod:M2! 点伤害。",
+        "UPGRADE_DESCRIPTION": ""
+    },
+    "nearlmod:FallingShield": {
+        "NAME": "坠落的盾",
+        "DESCRIPTION": "本牌消耗 stslib:临时生命 而非 能量 。造成 X 点伤害 !M! 次，如果号角在场，额外造成 !nearlmod:M2! 次。否则召唤号角作为 nearlmod:伙伴 。",
+        "UPGRADE_DESCRIPTION": ""
+    },
+    "nearlmod:Bloodbath": {
+        "NAME": "血战",
+        "DESCRIPTION": "nearlmod:伙伴牌 ， nearlmod:唯一 。 NL 你下一次失去全部 stslib:临时生命 时，获得 !nearlmod:M2! 点 力量 和 !nearlmod:M2! 点 敏捷 。",
+        "UPGRADE_DESCRIPTION": ""
+    },
+    "nearlmod:FlareGrenade": {
+        "NAME": "照明榴弹",
+        "DESCRIPTION": "nearlmod:伙伴牌 。 NL 对所有敌人造成 !M! 点伤害，每击中一个敌人，获得 !nearlmod:M2! 层光。",
+        "UPGRADE_DESCRIPTION": ""
+    },
+    "nearlmod:TempestCommand": {
+        "NAME": "暴风号令",
+        "DESCRIPTION": "nearlmod:伙伴牌 。 NL 给予号角等同于你 nearlmod:伙伴 数量的 nearlmod:信赖 。",
+        "UPGRADE_DESCRIPTION": "nearlmod:伙伴牌 。 NL 给予号角等同于你 nearlmod:伙伴 数量+2的 nearlmod:信赖 。"
+    },
+    "nearlmod:UltimateLineOfDefense": {
+        "NAME": "终极防线",
+        "DESCRIPTION": "nearlmod:伙伴牌 。 NL 对所有敌人造成 !M! 点伤害，失去 !nearlmod:M2! 点生命以额外触发一次。",
+        "UPGRADE_DESCRIPTION": ""
+    },
+
+    "nearlmod:FearNoCold": {
+        "NAME": "不惧严寒",
+        "DESCRIPTION": "召唤极光作为 nearlmod:伙伴 ，进入 nearlmod:守护 。",
+        "UPGRADE_DESCRIPTION": "召唤极光作为 nearlmod:伙伴 ，进入 nearlmod:守护 。将一张 *家乡的“温暖” 置入你的手牌并给予其 保留 。",
+        "EXTENDED_DESCRIPTION": [
+            " NL 保留 。"
+        ]
+    },
+    "nearlmod:WarmthOfHome": {
+        "NAME": "家乡的“温暖”",
+        "DESCRIPTION": "获得 !B! 点 格挡。如果极光在场，解除她的 nearlmod:低温休憩 状态。",
+        "UPGRADE_DESCRIPTION": ""
+    },
+    "nearlmod:WhatSheSaw": {
+        "NAME": "她所见",
+        "DESCRIPTION": "获得 !B! 点 格挡。如果极光在场，额外触发一次。",
+        "UPGRADE_DESCRIPTION": ""
+    },
+    "nearlmod:Duelist": {
+        "NAME": "决战者",
+        "DESCRIPTION": "给予 !M! 层 nearlmod:寒冷 。如果极光在场，将一张 *人工降雪 置入你的手牌，否则召唤极光作为 nearlmod:伙伴 。",
+        "UPGRADE_DESCRIPTION": "给予 !M! 层 nearlmod:寒冷 。如果极光在场，将一张 *人工降雪+ 置入你的手牌，否则召唤极光作为 nearlmod:伙伴 。"
+    },
+    "nearlmod:ShieldPhotographyModule": {
+        "NAME": "盾用摄制模块",
+        "DESCRIPTION": " nearlmod:伙伴牌 ， nearlmod:唯一 。 NL 获得 !nearlmod:M2! 点 stslib:临时生命 ，在下个回合开始时，清空你的 stslib:临时生命 。",
+        "UPGRADE_DESCRIPTION": ""
+    },
+    "nearlmod:ArtificialSnowfall": {
+        "NAME": "人工降雪",
+        "DESCRIPTION": " nearlmod:伙伴牌 。 NL 造成 !M! 点伤害并给予其1层 nearlmod:寒冷 ，如果目标已经有2层 nearlmod:寒冷 ，改为 !nearlmod:M2! 点。",
+        "UPGRADE_DESCRIPTION": ""
+    },
+    "nearlmod:HomelandProtector": {
+        "NAME": "固守家园",
+        "DESCRIPTION": " nearlmod:伙伴牌 。 NL 获得 !M! 点格挡，下回合开始时失去1点能量。",
+        "UPGRADE_DESCRIPTION": ""
+    },
+    "nearlmod:FrigidRespite": {
+        "NAME": "低温休憩",
+        "DESCRIPTION": " nearlmod:伙伴牌 。 NL 极光不再提供 nearlmod:伙伴牌 ，而是回合结束时给予你 !nearlmod:M2! 点 格挡 。",
+        "UPGRADE_DESCRIPTION": ""
+    },
+
     "nearlmod:Beginning": {
         "NAME": "起点",
         "DESCRIPTION": "召唤瑕光作为 nearlmod:伙伴 。",

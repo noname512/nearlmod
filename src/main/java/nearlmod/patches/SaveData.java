@@ -10,7 +10,6 @@ import com.megacrit.cardcrawl.rewards.RewardItem;
 import com.megacrit.cardcrawl.saveAndContinue.SaveAndContinue;
 import com.megacrit.cardcrawl.saveAndContinue.SaveFile;
 import javassist.CtBehavior;
-import nearlmod.NLMOD;
 import nearlmod.arenaevents.LeftHandBattle;
 import nearlmod.cards.AbstractNearlCard;
 import nearlmod.cards.SwallowLight;
@@ -23,17 +22,18 @@ import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
 import java.util.HashMap;
-import java.util.Objects;
 
 public class SaveData {
     private static final Logger logger = LogManager.getLogger(SaveData.class);
     private static int arenaEnterTimes;
+    private static int curTeam;
     private static String specialRewardCard;
     @SpirePatch(clz = SaveFile.class, method = "<ctor>", paramtypez = {SaveFile.SaveType.class})
     public static class SaveTheSaveData {
         @SpirePostfixPatch
         public static void Postfix(SaveFile __instance, SaveFile.SaveType type) {
             SaveData.arenaEnterTimes = ArenaRoom.enterTimes;
+            SaveData.curTeam = CharacterSettingPatch.curTeam;
             SaveData.specialRewardCard = "";
             if (type == SaveFile.SaveType.POST_COMBAT) {
                 if (AbstractDungeon.getCurrRoom() instanceof ArenaRoom) SaveData.arenaEnterTimes--;
@@ -56,6 +56,7 @@ public class SaveData {
         @SpireInsertPatch(locator = Locator.class, localvars = {"params"})
         public static void Insert(SaveFile save, HashMap<Object, Object> params) {
             params.put("ARENA_ENTER_TIMES", SaveData.arenaEnterTimes);
+            params.put("CUR_TEAM", SaveData.curTeam);
             params.put("SPECIAL_REWARD_CARD", SaveData.specialRewardCard);
         }
 
@@ -74,6 +75,7 @@ public class SaveData {
             try {
                 NearlData data = gson.fromJson(savestr, NearlData.class);
                 SaveData.arenaEnterTimes = data.ARENA_ENTER_TIMES;
+                SaveData.curTeam = data.CUR_TEAM;
                 SaveData.specialRewardCard = data.SPECIAL_REWARD_CARD;
                 SaveData.logger.info("Loaded nearlmod save data successfully, arena enter times = " + SaveData.arenaEnterTimes + ", special reward card = " + SaveData.specialRewardCard);
             } catch (Exception e) {
@@ -94,6 +96,7 @@ public class SaveData {
     public static class loadSavePatch {
         @SpirePostfixPatch
         public static void Postfix(AbstractDungeon __instance, SaveFile file) {
+            CharacterSettingPatch.curTeam = SaveData.curTeam;
             ArenaRoom.enterTimes = SaveData.arenaEnterTimes;
             SaveData.logger.info("Save loaded.");
         }

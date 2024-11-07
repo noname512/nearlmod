@@ -6,7 +6,9 @@ import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.localization.CardStrings;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
+import nearlmod.orbs.Whislash;
 import nearlmod.patches.AbstractCardEnum;
+import nearlmod.patches.NearlTags;
 import nearlmod.powers.FanClubPower;
 
 public class FanClub extends AbstractNearlCard {
@@ -18,13 +20,14 @@ public class FanClub extends AbstractNearlCard {
     public static final String IMG_PATH = "resources/nearlmod/images/cards/fanclub.png";
     private static final int COST = 2;
     private static final int TRUST_AMT = 1;
-    private static final int UPGRADED_PLUS_TRUST = 1;
 
     public FanClub() {
         super(ID, NAME, IMG_PATH, COST, DESCRIPTION,
                 CardType.POWER, AbstractCardEnum.NEARL_GOLD,
                 CardRarity.UNCOMMON, CardTarget.SELF);
         magicNumber = baseMagicNumber = TRUST_AMT;
+        tags.add(NearlTags.FRIEND_RELATED);
+        belongFriend = Whislash.ORB_ID;
     }
 
     @Override

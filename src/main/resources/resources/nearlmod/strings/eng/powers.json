@@ -184,5 +184,40 @@
       " turn.",
       " turns."
     ]
+  },
+  "nearlmod:BloodbathPower": {
+    "NAME": "Bloodbath",
+    "DESCRIPTIONS": [
+      "After you lose all your #yTemporary #yHP next time, gain #b",
+      " #yStrength and #b",
+      " #yDexterity ."
+    ]
+  },
+  "nearlmod:ColdPower": {
+    "NAME": "Cold",
+    "DESCRIPTIONS": [
+      "Deal #b",
+      "% less damage during multi-hit attacks. Up to two stacks maximum."
+    ]
+  },
+  "nearlmod:WreathedInThornsPower": {
+    "NAME": "Wreathed in Thorns",
+    "DESCRIPTIONS": [
+      "Whenever attacked, if you have #yTemporary #yHP , Penance deals #b",
+      " damage back."
+    ]
+  },
+  "nearlmod:StoicAtonementPower": {
+    "NAME": "Stoic Atonement",
+    "DESCRIPTIONS": [
+      "If you do not play attack cards this turn, at the end of turn, Penance deals #b",
+      " damage to all enemies and apply 1 #ySheltered to you."
+    ]
+  },
+  "nearlmod:Sheltered": {
+    "NAME": "Sheltered",
+    "DESCRIPTIONS": [
+      "In this turn, take #b60% less damage."
+    ]
   }
 }

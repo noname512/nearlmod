@@ -10,6 +10,7 @@ import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import nearlmod.NLMOD;
 import nearlmod.orbs.Nightingale;
 import nearlmod.patches.AbstractCardEnum;
+import nearlmod.patches.NearlTags;
 import nearlmod.powers.SanctuaryPower;
 
 public class UpgradedKnightShield extends AbstractNearlCard {
@@ -28,6 +29,8 @@ public class UpgradedKnightShield extends AbstractNearlCard {
                 CardType.SKILL, AbstractCardEnum.NEARL_GOLD,
                 CardRarity.UNCOMMON, CardTarget.SELF);
         block = baseBlock = BLOCK_AMT;
+        tags.add(NearlTags.FRIEND_RELATED);
+        belongFriend = Nightingale.ORB_ID;
     }
 
     @Override

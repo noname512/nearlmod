@@ -64,6 +64,15 @@ public class SummonFriendAction extends AbstractGameAction {
                 case Whislash.ORB_ID:
                     Whislash.uniqueUsed = false;
                     break;
+                case Penance.ORB_ID:
+                    Penance.uniqueUsed = false;
+                    break;
+                case Horn.ORB_ID:
+                    Horn.uniqueUsed = false;
+                    break;
+                case Aurora.ORB_ID:
+                    Aurora.uniqueUsed = false;
+                    break;
             }
             addToTop(new ChannelAction(summon, false));
             AbstractDungeon.player.increaseMaxOrbSlots(1, false);

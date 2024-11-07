@@ -5,7 +5,7 @@
       "光",
       "light"
     ],
-    "DESCRIPTION": "一个可叠加状态，处于无畏时使用会对敌人造成伤害，处于守护时使用会为自身提供 [#EFC851]格挡[] ，使用后会消失。"
+    "DESCRIPTION": "一个可叠加状态，处于无畏时使用会对敌人造成伤害，处于守护时使用会为自身提供 #y格挡 ，使用后会消失。"
   },
   "FRIEND": {
     "PROPER_NAME": "伙伴",
@@ -13,7 +13,7 @@
       "伙伴",
       "friend"
     ],
-    "DESCRIPTION": "可以与你并肩战斗，每回合会提供一张属于该伙伴的 [#EFC851]伙伴牌[] 。第二次及之后召唤伙伴时，改为使其 [#EFC851]晋升[] 并获得 #b2 点信赖。"
+    "DESCRIPTION": "可以与你并肩战斗，每回合会提供一张属于该伙伴的 #y伙伴牌 。第二次及之后召唤伙伴时，改为使其 #y晋升 并获得 #b2 点信赖。"
   },
   "PROMOTE": {
     "PROPER_NAME": "晋升",
@@ -21,7 +21,7 @@
       "晋升",
       "promote"
     ],
-    "DESCRIPTION": "伙伴晋升后，改为每回合提供一张属于该伙伴的升级后的 [#EFC851]伙伴牌[] 。"
+    "DESCRIPTION": "伙伴晋升后，改为每回合提供一张属于该伙伴的升级后的 #y伙伴牌 。"
   },
   "FRIEND_CARD": {
     "PROPER_NAME": "伙伴牌",
@@ -30,7 +30,7 @@
       "非伙伴牌",
       "friendcard"
     ],
-    "DESCRIPTION": "[#EFC851]伙伴[] 专属牌，使用对应伙伴的属性加成，不占用手牌上限， [#EFC851]虚无[] 且离开手牌时 [#EFC851]消耗[] 。"
+    "DESCRIPTION": "#y伙伴 专属牌，使用对应 #y伙伴 的 #y信赖 加成，不占用手牌上限， #y虚无 且离开手牌时 #y消耗 。"
   },
   "TRUST": {
     "PROPER_NAME": "信赖",
@@ -38,7 +38,7 @@
       "信赖",
       "trust"
     ],
-    "DESCRIPTION": "[#EFC851]伙伴[] 的一种属性，增加 [#EFC851]伙伴牌[] 造成的伤害、提供的格挡和光。"
+    "DESCRIPTION": "#y伙伴 的一种属性，增加 #y伙伴牌 造成的伤害、提供的 #y格挡 和 #y光 。"
   },
   "PLAY_COST": {
     "PROPER_NAME": "部署费用",
@@ -46,7 +46,7 @@
       "部署费用",
       "DP"
     ],
-    "DESCRIPTION": "一种特殊的 [#EFC851]能量[] ，回合结束时不清零，可用于且优先用于打出 [#EFC851]伙伴牌[] 。"
+    "DESCRIPTION": "一种特殊的 #y能量 ，回合结束时不清零，可用于且优先用于打出 #y伙伴牌 。"
   },
   "UNIQUE": {
     "PROPER_NAME": "唯一",
@@ -54,28 +54,28 @@
       "唯一",
       "非唯一"
     ],
-    "DESCRIPTION": "使用这张牌后， [#EFC851]伙伴[] 不会再提供这张牌。"
+    "DESCRIPTION": "使用这张牌后， #y伙伴 不会再提供这张牌。"
   },
   "CHARGING": {
     "PROPER_NAME": "蓄力",
     "NAMES": [
       "蓄力"
     ],
-    "DESCRIPTION": "在此期间， [#EFC851]伙伴[] 不再提供 [#EFC851]伙伴牌[] 。"
+    "DESCRIPTION": "在此期间， #y伙伴 不再提供 #y伙伴牌 。"
   },
   "EXSANGUINATION": {
     "PROPER_NAME": "血归",
     "NAMES": [
       "血归"
     ],
-    "DESCRIPTION": " [#EFC851]力量[] 不能超过 #b0 。"
+    "DESCRIPTION": " #y力量 不能超过 #b0 。"
   },
   "POEM'S_LOOK": {
     "PROPER_NAME": "诗的容貌",
     "NAMES": [
       "诗的容貌"
     ],
-    "DESCRIPTION": "你使用 [#EFC851]光[] 后，获得等量的 [#EFC851]影[] ；使用 [#EFC851]影[] 后，获得等量的 [#EFC851]光[] 。"
+    "DESCRIPTION": "你使用 #y光 后，获得等量的 #y影 ；使用 #y影 后，获得等量的 #y光 。"
   },
   "SHADOW": {
     "PROPER_NAME": "影",
@@ -90,7 +90,7 @@
       "无畏",
       "atkstance"
     ],
-    "DESCRIPTION": "进入无畏时，你的 [#EFC851]力量[] 会增加，数值取决于你切换至该形态的次数。"
+    "DESCRIPTION": "进入无畏时，你的 #y力量 会增加，数值取决于你切换至该形态的次数。"
   },
   "DEF_STANCE": {
     "PROPER_NAME": "守护",
@@ -98,26 +98,26 @@
       "守护",
       "defstance"
     ],
-    "DESCRIPTION": "进入守护时，你的 [#EFC851]敏捷[] 会增加，数值取决于你切换至该形态的次数。"
+    "DESCRIPTION": "进入守护时，你的 #y敏捷 会增加，数值取决于你切换至该形态的次数。"
   },
   "NEARL_STANCE": {
     "NAMES": [
       "形态",
       "stance"
     ],
-    "DESCRIPTION": "你同一时间只能处于一种形态（守护或无畏）。"
+    "DESCRIPTION": "你同一时间只能处于一种形态（ #y守护 或 #y无畏 ）。"
   },
   "WFPPower": {
     "NAMES": [
       "白恶魔的庇护"
     ],
-    "DESCRIPTION": "你不会再被 [#EFC851]脆弱[] 、 [#EFC851]虚弱[] 、 [#EFC851]易伤[] 。 如果你同时拥有 [#EFC851]黑恶魔的庇护[] ，每回合开始时获得一层 [#EFC851]人工制品[] 。"
+    "DESCRIPTION": "你不会再被 #y脆弱 、 #y虚弱 、 #y易伤 。 如果你同时拥有 #y黑恶魔的庇护 ，每回合开始时获得一层 #y人工制品 。"
   },
   "BFPPower": {
     "NAMES": [
       "黑恶魔的庇护"
     ],
-    "DESCRIPTION": "你每回合第一张非伙伴攻击牌会随机给予目标 #b2 层 [#EFC851]易伤[] 或 [#EFC851]虚弱[] 。如果你同时拥有 [#EFC851]白恶魔的庇护[] ，改为给予目标 #b2 层 [#EFC851]易伤[] 和 [#EFC851]虚弱[] 。"
+    "DESCRIPTION": "你每回合第一张非伙伴攻击牌会随机给予目标 #b2 层 #y易伤 或 #y虚弱 。如果你同时拥有 #y白恶魔的庇护 ，改为给予目标 #b2 层 #y易伤 和 #y虚弱 。"
   },
   "FriendShelter": {
     "NAMES": [
@@ -132,5 +132,29 @@
       "attackup"
     ],
     "DESCRIPTION": "造成的伤害百分比提高。"
+  },
+  "Cold": {
+    "PROPER_NAME": "寒冷",
+    "NAMES": [
+      "Cold"
+    ],
+    "DESCRIPTION": "多段攻击时伤害降低 #r25% 。最多叠加两层。"
+  },
+  "FrigidRespite": {
+    "PROPER_NAME": "低温休憩",
+    "NAMES": [
+      "FrigidRespite",
+      "Frigid_Respite",
+      "低温休憩"
+    ],
+    "DESCRIPTION": "不再提供 #y伙伴牌 ，而是回合结束时给予你一定 #y格挡 。"
+  },
+  "Sheltered": {
+    "PROPER_NAME": "庇护",
+    "NAMES": [
+      "Sheltered",
+      "sheltered"
+    ],
+    "DESCRIPTION": "本回合内，受到的伤害降低 #b60% 。"
   }
 }

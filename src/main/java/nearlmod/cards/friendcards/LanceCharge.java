@@ -11,7 +11,6 @@ import com.megacrit.cardcrawl.localization.CardStrings;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import com.megacrit.cardcrawl.powers.GainStrengthPower;
 import com.megacrit.cardcrawl.powers.StrengthPower;
-import nearlmod.cards.AbstractNearlCard;
 import nearlmod.patches.AbstractCardEnum;
 
 import static nearlmod.patches.NearlTags.IS_KNIGHT_CARD;

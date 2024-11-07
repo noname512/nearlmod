@@ -15,6 +15,7 @@ import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import nearlmod.NLMOD;
 import nearlmod.orbs.Shining;
 import nearlmod.patches.AbstractCardEnum;
+import nearlmod.patches.NearlTags;
 
 public class Sacrifice extends AbstractNearlCard {
     public static final String ID = "nearlmod:Sacrifice";
@@ -33,6 +34,8 @@ public class Sacrifice extends AbstractNearlCard {
                 CardRarity.COMMON, CardTarget.ENEMY);
         damage = baseDamage = ATTACK_DMG;
         cardsToPreview = new Burn();
+        tags.add(NearlTags.FRIEND_RELATED);
+        belongFriend = Shining.ORB_ID;
     }
 
     @Override

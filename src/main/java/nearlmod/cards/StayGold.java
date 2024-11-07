@@ -37,6 +37,8 @@ public class StayGold extends AbstractNearlCard {
         block = baseBlock = BLOCK_AMT;
         tags.add(NearlTags.IS_SUMMON_CARD);
         tags.add(NearlTags.IS_GAIN_LIGHT);
+        tags.add(NearlTags.FRIEND_RELATED);
+        belongFriend = Blemishine.ORB_ID;
 
         previewList = Nearl.getFriendCard(Blemishine.ORB_ID);
     }

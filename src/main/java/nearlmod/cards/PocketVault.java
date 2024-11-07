@@ -13,6 +13,7 @@ import nearlmod.actions.SummonFriendAction;
 import nearlmod.characters.Nearl;
 import nearlmod.orbs.Whislash;
 import nearlmod.patches.AbstractCardEnum;
+import nearlmod.patches.NearlTags;
 
 public class PocketVault extends AbstractNearlCard {
     public static final String ID = "nearlmod:PocketVault";
@@ -25,7 +26,6 @@ public class PocketVault extends AbstractNearlCard {
     private static final int UPGRADE_COST = 1;
     private static final int ATTACK_DMG = 8;
     private static final int CARD_SELECT = 3;
-    // private static final int UPGRADE_PLUS_CARD = 1;
 
     public PocketVault() {
         super(ID, NAME, IMG_PATH, COST, DESCRIPTION,
@@ -33,6 +33,8 @@ public class PocketVault extends AbstractNearlCard {
                 CardRarity.RARE, CardTarget.ENEMY);
         damage = baseDamage = ATTACK_DMG;
         magicNumber = baseMagicNumber = CARD_SELECT;
+        tags.add(NearlTags.FRIEND_RELATED);
+        belongFriend = Whislash.ORB_ID;
 
         previewList = Nearl.getFriendCard(Whislash.ORB_ID);
     }

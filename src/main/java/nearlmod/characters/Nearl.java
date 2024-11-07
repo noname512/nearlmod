@@ -4,10 +4,9 @@ import basemod.BaseMod;
 import com.badlogic.gdx.graphics.Texture;
 import com.megacrit.cardcrawl.actions.utility.WaitAction;
 import com.megacrit.cardcrawl.actions.watcher.ChangeStanceAction;
-import com.megacrit.cardcrawl.cards.CardGroup;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.events.city.Vampires;
-import com.megacrit.cardcrawl.helpers.ImageMaster;
+import com.megacrit.cardcrawl.helpers.*;
 import basemod.abstracts.CustomPlayer;
 import com.badlogic.gdx.graphics.Color;
 import com.badlogic.gdx.graphics.g2d.BitmapFont;
@@ -18,9 +17,6 @@ import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.core.EnergyManager;
 import com.megacrit.cardcrawl.core.Settings;
-import com.megacrit.cardcrawl.helpers.CardHelper;
-import com.megacrit.cardcrawl.helpers.FontHelper;
-import com.megacrit.cardcrawl.helpers.ScreenShake;
 import com.megacrit.cardcrawl.localization.CharacterStrings;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import com.megacrit.cardcrawl.orbs.AbstractOrb;
@@ -31,11 +27,9 @@ import nearlmod.cards.*;
 import nearlmod.cards.friendcards.*;
 import nearlmod.cards.special.LightCard;
 import nearlmod.orbs.AbstractFriend;
-import nearlmod.patches.NearlTags;
+import nearlmod.patches.*;
 import nearlmod.powers.LightPower;
 import nearlmod.relics.*;
-import nearlmod.patches.AbstractCardEnum;
-import nearlmod.patches.NearlEnum;
 import nearlmod.rooms.ArenaRoom;
 import nearlmod.stances.AtkStance;
 import nearlmod.stances.DefStance;
@@ -43,6 +37,7 @@ import nearlmod.util.CostEnergyOrb;
 import nearlmod.util.CostReserves;
 import java.util.ArrayList;
 import java.util.Collections;
+import java.util.Map;
 
 import static nearlmod.NLMOD.friendCards;
 
@@ -72,6 +67,9 @@ public class Nearl extends CustomPlayer {
         "resources/nearlmod/images/char/orb/layer3d.png",
         "resources/nearlmod/images/char/orb/layer4d.png"
     };
+    public static boolean penanceCardPlayedLastTurn;
+    public static boolean penanceCardPlayedThisTurn;
+    public static boolean attackCardPlayedThisTurn;
 
     public Nearl(String name) {
         // 参数列表：角色名，角色类枚举，能量面板贴图路径列表，能量面板特效贴图路径，能量面板贴图旋转速度列表，能量面板，模型资源路径，动画资源路径
@@ -219,6 +217,15 @@ public class Nearl extends CustomPlayer {
         AbstractDungeon.actionManager.addToBottom(new ChangeStanceAction(new DefStance()));
         CostReserves.resetReserves();
         LightPower.amountForBattle = 0;
+        penanceCardPlayedLastTurn = false;
+        penanceCardPlayedThisTurn = false;
+    }
+
+    @Override
+    public void applyStartOfTurnPreDrawCards() {
+        penanceCardPlayedLastTurn = penanceCardPlayedThisTurn;
+        penanceCardPlayedThisTurn = false;
+        attackCardPlayedThisTurn = false;
     }
 
     @Override
@@ -246,8 +253,13 @@ public class Nearl extends CustomPlayer {
     public static ArrayList<AbstractCard> getUnuniqueFriendCard(boolean isPinusSylvestris) {
         ArrayList<AbstractCard> list = new ArrayList<>();
         for (AbstractCard c : friendCards.group)
-            if (!c.hasTag(NearlTags.IS_UNIQUE_CARD) && (!isPinusSylvestris || c.hasTag(NearlTags.IS_KNIGHT_CARD)))
+            if (!c.hasTag(NearlTags.IS_UNIQUE_CARD)) {
+                if (!c.hasTag(NearlTags.IS_KNIGHT_CARD)) {
+                    if (isPinusSylvestris) continue;
+                    if (!CharacterSettingPatch.friendsInTeams.get(CharacterSettingPatch.curTeam).contains(((AbstractFriendCard) c).belongFriend)) continue;
+                }
                 list.add(c.makeCopy());
+            }
         return list;
     }
 
@@ -274,6 +286,9 @@ public class Nearl extends CustomPlayer {
 
     @Override
     public void useCard(AbstractCard c, AbstractMonster monster, int energyOnUse) {
+        if (c.type == AbstractCard.CardType.ATTACK) {
+            attackCardPlayedThisTurn = true;
+        }
         if (!Settings.FAST_MODE) {
             if (!(c instanceof AbstractFriendCard) && c.type == AbstractCard.CardType.ATTACK) {
                 if (this.stance.ID.equals(AtkStance.STANCE_ID)) {
@@ -382,5 +397,18 @@ public class Nearl extends CustomPlayer {
             if (orbs.get(i) instanceof AbstractFriend)
                 return (AbstractFriend)orbs.get(i);
         return null;
+    }
+
+    @Override
+    public ArrayList<AbstractCard> getCardPool(ArrayList<AbstractCard> tmpPool) {
+        for (Map.Entry<String, AbstractCard> c : CardLibrary.cards.entrySet()) {
+            AbstractCard card = c.getValue();
+            if (card instanceof AbstractNearlCard && card.color.equals(AbstractCardEnum.NEARL_GOLD) && card.rarity != AbstractCard.CardRarity.BASIC) {
+                if (!card.hasTag(NearlTags.FRIEND_RELATED) || CharacterSettingPatch.friendsInTeams.get(CharacterSettingPatch.curTeam).contains(((AbstractNearlCard) card).belongFriend)) {
+                    tmpPool.add(card);
+                }
+            }
+        }
+        return tmpPool;
     }
 }

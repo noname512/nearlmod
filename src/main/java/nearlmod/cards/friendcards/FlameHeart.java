@@ -12,7 +12,6 @@ import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import com.megacrit.cardcrawl.powers.IntangiblePlayerPower;
 import com.megacrit.cardcrawl.powers.ThornsPower;
 import nearlmod.actions.GainCostAction;
-import nearlmod.cards.AbstractNearlCard;
 import nearlmod.patches.AbstractCardEnum;
 import nearlmod.powers.LoseThornsPower;
 

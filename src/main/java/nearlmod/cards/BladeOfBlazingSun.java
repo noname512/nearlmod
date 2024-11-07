@@ -31,6 +31,8 @@ public class BladeOfBlazingSun extends AbstractNearlCard {
                 CardRarity.RARE, CardTarget.SELF);
         magicNumber = baseMagicNumber = STRENGTH_AMT;
         tags.add(NearlTags.IS_SUMMON_CARD);
+        tags.add(NearlTags.FRIEND_RELATED);
+        belongFriend = Blemishine.ORB_ID;
 
         previewList = Nearl.getFriendCard(Blemishine.ORB_ID);
     }

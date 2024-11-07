@@ -12,6 +12,7 @@ import nearlmod.NLMOD;
 import nearlmod.actions.WeakenAllAction;
 import nearlmod.orbs.Shining;
 import nearlmod.patches.AbstractCardEnum;
+import nearlmod.patches.NearlTags;
 import nearlmod.powers.CreedFieldPower;
 
 public class Oaths extends AbstractNearlCard {
@@ -34,6 +35,8 @@ public class Oaths extends AbstractNearlCard {
         isMultiDamage = true;
         damage = baseDamage = ATTACK_DMG;
         magicNumber = baseMagicNumber = WEAKNESS_AMT;
+        tags.add(NearlTags.FRIEND_RELATED);
+        belongFriend = Shining.ORB_ID;
     }
 
     @Override

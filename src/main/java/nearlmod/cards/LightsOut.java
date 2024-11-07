@@ -11,6 +11,7 @@ import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import nearlmod.NLMOD;
 import nearlmod.orbs.Viviana;
 import nearlmod.patches.AbstractCardEnum;
+import nearlmod.patches.NearlTags;
 import nearlmod.powers.ShadowPower;
 
 public class LightsOut extends AbstractNearlCard {
@@ -32,6 +33,8 @@ public class LightsOut extends AbstractNearlCard {
                 CardRarity.COMMON, CardTarget.ENEMY);
         damage = baseDamage = ATTACK_DMG;
         magicNumber = baseMagicNumber = SHADOW_GAIN;
+        tags.add(NearlTags.FRIEND_RELATED);
+        belongFriend = Viviana.ORB_ID;
     }
 
     @Override

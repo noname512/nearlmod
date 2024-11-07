@@ -3,7 +3,6 @@ package nearlmod.cards.friendcards;
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
 import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
 import com.megacrit.cardcrawl.actions.common.DamageAction;
-import com.megacrit.cardcrawl.actions.common.GainBlockAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.cards.DamageInfo;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
@@ -13,7 +12,6 @@ import com.megacrit.cardcrawl.localization.CardStrings;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import nearlmod.patches.AbstractCardEnum;
 import nearlmod.powers.ColdPower;
-import nearlmod.powers.LossEnergyNextTurnPower;
 
 public class ArtificialSnowfall extends AbstractFriendCard {
     public static final String ID = "nearlmod:ArtificialSnowfall";
@@ -21,7 +19,7 @@ public class ArtificialSnowfall extends AbstractFriendCard {
     public static final String NAME = cardStrings.NAME;
     public static final String DESCRIPTION = cardStrings.DESCRIPTION;
     public static final String UPGRADE_DESCRIPTION = cardStrings.UPGRADE_DESCRIPTION;
-    public static final String IMG_PATH = "resources/nearlmod/images/cards/nearlstrike.png";
+    public static final String IMG_PATH = "resources/nearlmod/images/cards/artificialsnowfall.png";
     private static final int COST = 1;
     private static final int BASIC_DAMAGE = 9;
     private static final int TRIGGER_DAMAGE = 27;
@@ -34,6 +32,7 @@ public class ArtificialSnowfall extends AbstractFriendCard {
                 CardRarity.SPECIAL, CardTarget.ENEMY, "nearlmod:Aurora");
         magicNumber = baseMagicNumber = BASIC_DAMAGE;
         secondMagicNumber = baseSecondMagicNumber = TRIGGER_DAMAGE;
+        isSecondMagicNumberUseTrust = true;
     }
 
     @Override

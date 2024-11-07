@@ -14,6 +14,7 @@ import nearlmod.cards.friendcards.GlimmeringTouch;
 import nearlmod.cards.friendcards.LSSwiftSword;
 import nearlmod.orbs.Viviana;
 import nearlmod.patches.AbstractCardEnum;
+import nearlmod.patches.NearlTags;
 
 import java.util.ArrayList;
 
@@ -32,6 +33,8 @@ public class SightImpairingShowdown extends AbstractNearlCard {
                 CardType.SKILL, AbstractCardEnum.NEARL_GOLD,
                 CardRarity.UNCOMMON, CardTarget.SELF);
         magicNumber = baseMagicNumber = POWER_GAIN;
+        tags.add(NearlTags.FRIEND_RELATED);
+        belongFriend = Viviana.ORB_ID;
 
         previewList = new ArrayList<>();
         previewList.add(new LSSwiftSword());

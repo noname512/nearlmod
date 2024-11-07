@@ -184,5 +184,40 @@
       " 回合内不会受到伤害。",
       " 回合内不会受到伤害。"
     ]
+  },
+  "nearlmod:BloodbathPower": {
+    "NAME": "血战",
+    "DESCRIPTIONS": [
+      "你下一次失去全部 #y临时生命 时，获得 #b",
+      " 点 #y力量 和 #b",
+      " 点 #y敏捷 。"
+    ]
+  },
+  "nearlmod:ColdPower": {
+    "NAME": "寒冷",
+    "DESCRIPTIONS": [
+      "多段攻击时伤害降低 #b",
+      "% ，最多叠加 #b2 层。"
+    ]
+  },
+  "nearlmod:WreathedInThornsPower": {
+    "NAME": "荆棘环身",
+    "DESCRIPTIONS": [
+      "当你有 #y临时生命 时，每受到一次攻击 ，斥罪造成 #b",
+      " 点反伤。"
+    ]
+  },
+  "nearlmod:StoicAtonementPower": {
+    "NAME": "坚心苦修",
+    "DESCRIPTIONS": [
+      "如果你本回合没有打出攻击牌，回合结束时，斥罪对所有敌人造成 #b",
+      " 点伤害，并给予你一层 #y庇护 。"
+    ]
+  },
+  "nearlmod:Sheltered": {
+    "NAME": "庇护",
+    "DESCRIPTIONS": [
+      "本回合内，受到的伤害降低 #b60% 。"
+    ]
   }
 }
