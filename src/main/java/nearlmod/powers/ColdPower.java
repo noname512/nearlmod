@@ -1,5 +1,6 @@
 package nearlmod.powers;
 
+import basemod.ReflectionHacks;
 import basemod.interfaces.CloneablePowerInterface;
 import com.megacrit.cardcrawl.cards.DamageInfo;
 import com.megacrit.cardcrawl.core.AbstractCreature;
@@ -40,7 +41,7 @@ public class ColdPower extends AbstractPower implements CloneablePowerInterface 
 
     @Override
     public float atDamageGive(float damage, DamageInfo.DamageType type) {
-        if ((owner instanceof AbstractMonster) /* && ((AbstractMonster)owner.isMultiDmg) */) // TODO: 这咋是private
+        if ((owner instanceof AbstractMonster)  && (boolean) (ReflectionHacks.getPrivate(owner,AbstractMonster.class, "isMultiDmg")))
         {
             return damage * (1.0F - 0.25F * amount);
         }

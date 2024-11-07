@@ -49,12 +49,22 @@ public class ArmorlessCleanupSquad extends AbstractMonster {
 
     @Override
     public void takeTurn() {
-        this.state.setAnimation(0, "Attack", false);
-        this.state.addAnimation(0, "Idle", true, 0);
         DamageInfo info;
-        if (nextMove == 4) info = damage.get(1);
-        else info = damage.get(0);
-        setMove((byte)(nextMove % 4 + 1), Intent.ATTACK_DEBUFF, info.base);
+        if (nextMove == 4) {
+            info = damage.get(1);
+            this.state.setAnimation(0, "Skill", false);
+        }
+        else {
+            info = damage.get(0);
+            this.state.setAnimation(0, "Attack", false);
+        }
+        this.state.addAnimation(0, "Idle", true, 0);
+        if (nextMove == 3) {
+            setMove((byte)(nextMove % 4 + 1), Intent.ATTACK_DEBUFF, damage.get(1).base);
+        }
+        else {
+            setMove((byte)(nextMove % 4 + 1), Intent.ATTACK_DEBUFF, damage.get(0).base);
+        }
         AbstractPlayer p = AbstractDungeon.player;
         addToBot(new DamageAction(p, info));
     }
