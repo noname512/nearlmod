@@ -18,9 +18,9 @@ import nearlmod.orbs.*;
 import java.util.*;
 
 public class CharacterSettingPatch {
-    public static final float X_POS = 1400.0F * Settings.scale;
-    public static final float Y_POS = 800.0F * Settings.scale;
-    public static final Hitbox friendTipBtnHitbox = new Hitbox(40.0F * Settings.scale * 0.991F, 40.0F * Settings.scale);
+    public static final float X_POS = 1500.0F * Settings.scale;
+    public static final float Y_POS = 850.0F * Settings.scale;
+    public static final Hitbox friendTipBtnHitbox = new Hitbox(40.0F * Settings.scale, 40.0F * Settings.scale);
     public static final Hitbox teamLeftHitbox = new Hitbox(50.0F * Settings.scale, 50.0F * Settings.scale);
     public static final Hitbox teamRightHitbox = new Hitbox(50.0F * Settings.scale, 50.0F * Settings.scale);
     public static final Hitbox teamTipHitbox = new Hitbox(120.0F * Settings.scale, 120.0F * Settings.scale);
@@ -43,25 +43,25 @@ public class CharacterSettingPatch {
         @SpirePostfixPatch
         public static void Postfix(CharacterOption __instance, SpriteBatch sb) {
             if (__instance.c instanceof Nearl) {
-                friendTipBtnHitbox.move(X_POS + 132.0F * Settings.scale, Y_POS - 50.0F * Settings.scale);
+                friendTipBtnHitbox.move(X_POS + 32.0F * Settings.scale, Y_POS - 50.0F * Settings.scale);
                 friendTipBtnHitbox.render(sb);
-                teamLeftHitbox.move(X_POS + 124.0F * Settings.scale, Y_POS + 24.0F * Settings.scale);
+                teamLeftHitbox.move(X_POS + 24.0F * Settings.scale, Y_POS + 24.0F * Settings.scale);
                 teamLeftHitbox.render(sb);
-                teamLeftHitbox.move(X_POS + 344.0F * Settings.scale, Y_POS + 24.0F * Settings.scale);
-                teamLeftHitbox.render(sb);
-                teamTipHitbox.move(X_POS + 234.0F * Settings.scale, Y_POS + 60.0F * Settings.scale);
+                teamRightHitbox.move(X_POS + 194.0F * Settings.scale, Y_POS + 24.0F * Settings.scale);
+                teamRightHitbox.render(sb);
+                teamTipHitbox.move(X_POS + 109.0F * Settings.scale, Y_POS + 60.0F * Settings.scale);
+                teamTipHitbox.render(sb);
 
                 sb.setColor(Color.WHITE);
-                sb.draw(ImageMaster.CHECKBOX, X_POS + 100.0F * Settings.scale, Y_POS - 82.0F * Settings.scale, 32.0F, 32.0F, 64.0F, 64.0F, Settings.scale * 0.991F, Settings.scale * 0.991F, 0.0F, 0, 0, 64, 64, false, false);
+                sb.draw(ImageMaster.CHECKBOX, X_POS, Y_POS - 82.0F * Settings.scale, 32.0F, 32.0F, 64.0F, 64.0F, Settings.scale * 0.991F, Settings.scale * 0.991F, 0.0F, 0, 0, 64, 64, false, false);
                 if (NLMOD.friendTipMode) {
-                    sb.draw(ImageMaster.TICK, X_POS + 100.0F * Settings.scale, Y_POS - 82.0F * Settings.scale, 32.0F, 32.0F, 64.0F, 64.0F, Settings.scale * 0.991F, Settings.scale * 0.991F, 0.0F, 0, 0, 64, 64, false, false);
+                    sb.draw(ImageMaster.TICK, X_POS, Y_POS - 82.0F * Settings.scale, 32.0F, 32.0F, 64.0F, 64.0F, Settings.scale * 0.991F, Settings.scale * 0.991F, 0.0F, 0, 0, 64, 64, false, false);
                 }
-                FontHelper.renderSmartText(sb, FontHelper.tipHeaderFont, TEXT[0], X_POS, Y_POS - 44.0F * Settings.scale, Settings.BLUE_TEXT_COLOR);
+                FontHelper.renderSmartText(sb, FontHelper.tipHeaderFont, TEXT[0], X_POS + 100.0F * Settings.scale, Y_POS - 24.0F * Settings.scale, Settings.BLUE_TEXT_COLOR);
 
-                FontHelper.renderSmartText(sb, FontHelper.tipHeaderFont, TEXT[2], X_POS, Y_POS + 6.0F * Settings.scale, Settings.BLUE_TEXT_COLOR);
-                sb.draw(ImageMaster.CF_LEFT_ARROW, X_POS + 100.0F * Settings.scale, Y_POS, 24.0F, 24.0F, 48.0F, 48.0F, Settings.scale, Settings.scale, 0.0F, 0, 0, 48, 48, false, false);
-                sb.draw(ImageMaster.CF_RIGHT_ARROW, X_POS + 320.0F * Settings.scale, Y_POS, 24.0F, 24.0F, 48.0F, 48.0F, Settings.scale, Settings.scale, 0.0F, 0, 0, 48, 48, false, false);
-                sb.draw(teams[curTeam], X_POS + 200.0F * Settings.scale, Y_POS, 60.0F, 60.0F, 120.0F, 120.0F, Settings.scale, Settings.scale, 0.0F, 0, 0, 120, 120, false, false);
+                sb.draw(ImageMaster.CF_LEFT_ARROW, X_POS, Y_POS, 24.0F, 24.0F, 48.0F, 48.0F, Settings.scale, Settings.scale, 0.0F, 0, 0, 48, 48, false, false);
+                sb.draw(ImageMaster.CF_RIGHT_ARROW, X_POS + 170.0F * Settings.scale, Y_POS, 24.0F, 24.0F, 48.0F, 48.0F, Settings.scale, Settings.scale, 0.0F, 0, 0, 48, 48, false, false);
+                sb.draw(teams[curTeam], X_POS + 49.0F * Settings.scale, Y_POS, 60.0F, 60.0F, 120.0F, 120.0F, Settings.scale, Settings.scale, 0.0F, 0, 0, 120, 120, false, false);
             }
         }
     }
@@ -114,7 +114,7 @@ public class CharacterSettingPatch {
                 teamTipHitbox.update();
                 if (teamTipHitbox.hovered) {
                     tips.clear();
-                    tips.add(new PowerTip(TEXT[curTeam * 2 + 3], TEXT[curTeam * 2 + 4]));
+                    tips.add(new PowerTip(TEXT[curTeam * 2 + 2], TEXT[curTeam * 2 + 3]));
                     TipHelper.queuePowerTips(InputHelper.mX - 350.0F * Settings.scale, InputHelper.mY - 50.0F * Settings.scale, tips);
                 }
             }
