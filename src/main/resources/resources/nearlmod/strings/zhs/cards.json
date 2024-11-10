@@ -731,6 +731,16 @@
         "DESCRIPTION": " nearlmod:伙伴牌 。 NL 极光不再提供 nearlmod:伙伴牌 ，而是回合结束时给予你 !nearlmod:M2! 点 格挡 。",
         "UPGRADE_DESCRIPTION": ""
     },
+    "nearlmod:BattlefieldCulinarian": {
+        "NAME": "战场烹调师",
+        "DESCRIPTION": "召唤古米作为 nearlmod:伙伴 ，将 !M! 张 *料理 洗入你的抽牌堆。",
+        "UPGRADE_DESCRIPTION": "召唤古米作为 nearlmod:伙伴 ，将 !M! 张 *料理 洗入你的抽牌堆，你的食物牌可以额外获得 !nearlmod:M2! 点 格挡 。"
+    },
+    "nearlmod:Specialty": {
+        "NAME": "特制菜肴",
+        "DESCRIPTION": " nearlmod:伙伴牌 。 NL 获得 !M! 点格挡， NL 切换 nearlmod:形态 。",
+        "UPGRADE_DESCRIPTION": ""
+    },
 
     "nearlmod:Beginning": {
         "NAME": "起点",
@@ -746,6 +756,11 @@
         "NAME": "个人魅力SP",
         "DESCRIPTION": "选择一个红松骑士团的 nearlmod:伙伴 并召唤。",
         "UPGRADE_DESCRIPTION": "选择两个红松骑士团的 nearlmod:伙伴 并召唤。"
+    },
+    "nearlmod:Dishes": {
+        "NAME": "料理",
+        "DESCRIPTION": "获得 !B! 点格挡。 NL 抽一张牌。 NL 消耗。",
+        "UPGRADE_DESCRIPTION": ""
     },
     "nearlmod:SummonPinusFriend": {
         "NAME": "",

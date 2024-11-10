@@ -333,6 +333,9 @@ public class NLMOD implements EditCardsSubscriber, EditCharactersSubscriber, Edi
         BaseMod.addCard(new LastWord()); // 一锤定音
         BaseMod.addCard(new StoicAtonement()); // 坚心苦修
 
+        BaseMod.addCard(new BattlefieldCulinarian()); // 战场烹调师
+        BaseMod.addCard(new Specialty()); // 特制菜肴
+
         // Special
         BaseMod.addCard(new Beginning()); // 起点
         BaseMod.addCard(new BlemishinesFaintLight()); // 瑕光微明
@@ -341,6 +344,8 @@ public class NLMOD implements EditCardsSubscriber, EditCharactersSubscriber, Edi
         BaseMod.addCard(new NearlCard()); // 使徒：临光
         BaseMod.addCard(new NightingaleCard()); // 使徒：夜莺
         BaseMod.addCard(new ShiningCard()); // 使徒：闪灵
+
+        BaseMod.addCard(new Dishes()); // 料理
     }
 
     @Override

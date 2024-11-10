@@ -136,7 +136,8 @@
   "Cold": {
     "PROPER_NAME": "寒冷",
     "NAMES": [
-      "Cold"
+      "Cold",
+      "寒冷"
     ],
     "DESCRIPTION": "多段攻击时伤害降低 #r25% 。最多叠加两层。"
   },

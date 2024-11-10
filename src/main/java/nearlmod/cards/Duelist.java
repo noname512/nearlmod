@@ -8,6 +8,7 @@ import com.megacrit.cardcrawl.localization.CardStrings;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import nearlmod.NLMOD;
 import nearlmod.actions.AddFriendCardToHandAction;
+import nearlmod.actions.SummonFriendAction;
 import nearlmod.cards.friendcards.AbstractFriendCard;
 import nearlmod.cards.friendcards.ArtificialSnowfall;
 import nearlmod.orbs.Aurora;
@@ -32,6 +33,7 @@ public class Duelist extends AbstractNearlCard {
         cardsToPreview = new ArtificialSnowfall();
         magicNumber = baseMagicNumber = COLD_CNT;
         tags.add(NearlTags.FRIEND_RELATED);
+        tags.add(NearlTags.IS_SUMMON_CARD);
         belongFriend = Aurora.ORB_ID;
     }
 
@@ -47,6 +49,9 @@ public class Duelist extends AbstractNearlCard {
             AbstractFriendCard card = new ArtificialSnowfall();
             if (upgraded) card.upgrade();
             addToBot(new AddFriendCardToHandAction(card));
+        }
+        else {
+            addToBot(new SummonFriendAction(new Aurora()));
         }
     }
 
