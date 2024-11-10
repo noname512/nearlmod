@@ -8,6 +8,7 @@ import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.helpers.ImageMaster;
 import com.megacrit.cardcrawl.localization.CardStrings;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
+import nearlmod.orbs.Horn;
 import nearlmod.orbs.Whislash;
 import nearlmod.patches.AbstractCardEnum;
 import nearlmod.patches.NearlTags;
@@ -37,7 +38,7 @@ public class Rebuke extends AbstractFriendCard {
 
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
-        Whislash.uniqueUsed = true;
+        setUniqueUsed(Whislash.ORB_ID);
         AtkStance.incNum++;
         DefStance.incNum++;
         if (p.stance.ID.equals(AtkStance.STANCE_ID))

@@ -46,6 +46,11 @@ public class Horn extends AbstractFriend {
     }
 
     @Override
+    public AbstractFriendCard getUniqueCard() {
+        return new Bloodbath();
+    }
+
+    @Override
     public void onStartOfTurn() {
         addToBot(new AddFriendCardToHandAction(getRandomCard(upgraded, uniqueUsed)));
     }

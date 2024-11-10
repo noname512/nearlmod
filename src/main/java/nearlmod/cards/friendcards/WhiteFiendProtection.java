@@ -35,7 +35,7 @@ public class WhiteFiendProtection extends AbstractFriendCard {
 
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
-        Nightingale.uniqueUsed = true;
+        setUniqueUsed(Nightingale.ORB_ID);
         addToBot(new ApplyPowerAction(p, p, new WFPPower(p), -1));
         if (upgraded) {
             for (AbstractPower power : p.powers)

@@ -55,6 +55,11 @@ public class Viviana extends AbstractFriend {
     }
 
     @Override
+    public AbstractFriendCard getUniqueCard() {
+        return new FlameShadow();
+    }
+
+    @Override
     public void onStartOfTurn() {
         if (chargingTurn > 0) {
             chargingTurn--;

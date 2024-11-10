@@ -3,8 +3,10 @@ package nearlmod.cards;
 import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
+import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.localization.CardStrings;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
+import com.megacrit.cardcrawl.orbs.AbstractOrb;
 import nearlmod.NLMOD;
 import nearlmod.actions.AddFriendCardToHandAction;
 import nearlmod.cards.friendcards.*;
@@ -29,16 +31,13 @@ public class UnitedAsOne extends AbstractNearlCard {
 
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
-        if (!Viviana.uniqueUsed && NLMOD.checkOrb(Viviana.ORB_ID))
-            addToBot(new AddFriendCardToHandAction(new FlameShadow(), upgraded));
-        if (!Blemishine.uniqueUsed && NLMOD.checkOrb(Blemishine.ORB_ID))
-            addToBot(new AddFriendCardToHandAction(new DivineAvatar(), upgraded));
-        if (!Nightingale.uniqueUsed && NLMOD.checkOrb(Nightingale.ORB_ID))
-            addToBot(new AddFriendCardToHandAction(new WhiteFiendProtection(), upgraded));
-        if (!Shining.uniqueUsed && NLMOD.checkOrb(Shining.ORB_ID))
-            addToBot(new AddFriendCardToHandAction(new BlackFiendProtection(), upgraded));
-        if (!Whislash.uniqueUsed && NLMOD.checkOrb(Whislash.ORB_ID))
-            addToBot(new AddFriendCardToHandAction(new Rebuke(), upgraded));
+        for (AbstractOrb orb : AbstractDungeon.player.orbs)
+            if (orb instanceof AbstractFriend) {
+                AbstractFriendCard c = ((AbstractFriend)orb).getUniqueCard();
+                if (c != null) {
+                    addToBot(new AddFriendCardToHandAction(c, upgraded));
+                }
+            }
     }
 
     @Override

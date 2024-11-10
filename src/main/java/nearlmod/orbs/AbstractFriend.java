@@ -43,6 +43,9 @@ public abstract class AbstractFriend extends CustomOrb {
         else fullFontAnimTimer = 0.7F;
         updateDescription();
     }
+    public AbstractFriendCard getUniqueCard() {
+        return null;
+    }
 
     public void applyStrength(int amount) {
         trustAmount += amount;

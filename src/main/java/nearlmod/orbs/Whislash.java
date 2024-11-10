@@ -42,6 +42,11 @@ public class Whislash extends AbstractFriend {
     }
 
     @Override
+    public AbstractFriendCard getUniqueCard() {
+        return new Rebuke();
+    }
+
+    @Override
     public void onStartOfTurn() {
         addToBot(new AddFriendCardToHandAction(getRandomCard(upgraded, uniqueUsed)));
     }

@@ -36,7 +36,7 @@ public class Bloodbath extends AbstractFriendCard {
 
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
-        Horn.uniqueUsed = true;
+        setUniqueUsed(Horn.ORB_ID);
         addToBot(new ApplyPowerAction(p, p, new BloodbathPower(p, secondMagicNumber)));
     }
 

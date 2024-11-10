@@ -74,4 +74,13 @@ public abstract class AbstractFriendCard extends AbstractNearlCard {
     public void triggerOnExhaust() {
         BaseMod.MAX_HAND_SIZE--;
     }
+
+    public void setUniqueUsed(String friend) {
+        for (AbstractOrb o : AbstractDungeon.player.orbs) {
+            if ((o instanceof AbstractFriend) && (o.ID.equals(friend))) {
+                ((AbstractFriend) o).uniqueUsed = true;
+                return;
+            }
+        }
+    }
 }

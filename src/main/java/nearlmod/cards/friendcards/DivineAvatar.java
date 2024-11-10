@@ -13,6 +13,7 @@ import com.megacrit.cardcrawl.localization.CardStrings;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import nearlmod.cards.AbstractNearlCard;
 import nearlmod.orbs.Blemishine;
+import nearlmod.orbs.Horn;
 import nearlmod.patches.AbstractCardEnum;
 import nearlmod.patches.NearlTags;
 
@@ -49,7 +50,7 @@ public class DivineAvatar extends AbstractFriendCard {
             addToBot(new DamageAction(m, info, AbstractGameAction.AttackEffect.SLASH_DIAGONAL));
         }
         addToBot(new HealAction(p, p, secondMagicNumber));
-        Blemishine.uniqueUsed = true;
+        setUniqueUsed(Blemishine.ORB_ID);
     }
 
     @Override

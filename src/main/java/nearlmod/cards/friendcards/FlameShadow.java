@@ -12,6 +12,7 @@ import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import com.megacrit.cardcrawl.powers.AbstractPower;
 import nearlmod.actions.PureDamageAllEnemiesAction;
 import nearlmod.actions.UseShadowAction;
+import nearlmod.orbs.Horn;
 import nearlmod.orbs.Viviana;
 import nearlmod.patches.AbstractCardEnum;
 import nearlmod.patches.NearlTags;
@@ -48,7 +49,7 @@ public class FlameShadow extends AbstractFriendCard {
             addToBot(new RemoveSpecificPowerAction(p, p, power));
         }
         addToBot(new PureDamageAllEnemiesAction(p, dmg, belongFriend + damageSuffix));
-        Viviana.uniqueUsed = true;
+        setUniqueUsed(Viviana.ORB_ID);
         addToBot(new UseShadowAction(p));
         addToBot(new ApplyPowerAction(p, p, new PoemsLooksPower(p)));
         rawDescription = DESCRIPTION;

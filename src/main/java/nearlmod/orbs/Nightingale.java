@@ -42,6 +42,11 @@ public class Nightingale extends AbstractFriend {
     }
 
     @Override
+    public AbstractFriendCard getUniqueCard() {
+        return new WhiteFiendProtection();
+    }
+
+    @Override
     public void onStartOfTurn() {
         addToBot(new AddFriendCardToHandAction(getRandomCard(upgraded, uniqueUsed)));
     }

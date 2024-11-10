@@ -43,6 +43,11 @@ public class Penance extends AbstractFriend {
     }
 
     @Override
+    public AbstractFriendCard getUniqueCard() {
+        return new TrialOfThorns();
+    }
+
+    @Override
     public void onStartOfTurn() {
         addToBot(new AddFriendCardToHandAction(getRandomCard(upgraded, uniqueUsed)));
     }

@@ -34,7 +34,7 @@ public class BlackFiendProtection extends AbstractFriendCard {
 
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
-        Shining.uniqueUsed = true;
+        setUniqueUsed(Shining.ORB_ID);
         addToBot(new ApplyPowerAction(p, p, new BFPPower(p), -1));
         if (upgraded) addToBot(new WeakenAllAction(p, 2));
         BaseMod.MAX_HAND_SIZE --;

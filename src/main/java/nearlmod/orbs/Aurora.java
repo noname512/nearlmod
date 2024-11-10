@@ -57,6 +57,11 @@ public class Aurora extends AbstractFriend {
     }
 
     @Override
+    public AbstractFriendCard getUniqueCard() {
+        return new ShieldPhotographyModule();
+    }
+
+    @Override
     public void onStartOfTurn() {
         if (curStatus == status.NORMAL) {
             addToBot(new AddFriendCardToHandAction(getRandomCard(upgraded, uniqueUsed)));

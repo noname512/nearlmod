@@ -42,6 +42,11 @@ public class Shining extends AbstractFriend {
     }
 
     @Override
+    public AbstractFriendCard getUniqueCard() {
+        return new BlackFiendProtection();
+    }
+
+    @Override
     public void onStartOfTurn() {
         addToBot(new AddFriendCardToHandAction(getRandomCard(upgraded, uniqueUsed)));
     }

@@ -10,6 +10,7 @@ import com.megacrit.cardcrawl.helpers.ImageMaster;
 import com.megacrit.cardcrawl.localization.CardStrings;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import nearlmod.characters.Nearl;
+import nearlmod.orbs.Horn;
 import nearlmod.orbs.Penance;
 import nearlmod.patches.AbstractCardEnum;
 import nearlmod.patches.NearlTags;
@@ -41,7 +42,7 @@ public class TrialOfThorns extends AbstractFriendCard {
 
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
-        Penance.uniqueUsed = true;
+        setUniqueUsed(Penance.ORB_ID);
         addToBot(new AddTemporaryHPAction(p, p, secondMagicNumber));
         DamageInfo info = new DamageInfo(p, magicNumber);
         info.name = belongFriend + damageSuffix;

@@ -9,6 +9,8 @@ import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.helpers.ImageMaster;
 import com.megacrit.cardcrawl.localization.CardStrings;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
+import nearlmod.orbs.Gummy;
+import nearlmod.orbs.Horn;
 import nearlmod.patches.AbstractCardEnum;
 import nearlmod.powers.CookingPower;
 import nearlmod.stances.AtkStance;
@@ -40,6 +42,7 @@ public class Cooking extends AbstractFriendCard {
 
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
+        setUniqueUsed(Gummy.ORB_ID);
         addToBot(new ApplyPowerAction(p, p, new CookingPower(p, secondMagicNumber)));
     }
 

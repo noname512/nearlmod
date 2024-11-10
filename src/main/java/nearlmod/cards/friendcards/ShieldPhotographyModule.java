@@ -9,6 +9,7 @@ import com.megacrit.cardcrawl.helpers.ImageMaster;
 import com.megacrit.cardcrawl.localization.CardStrings;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import nearlmod.orbs.Aurora;
+import nearlmod.orbs.Horn;
 import nearlmod.patches.AbstractCardEnum;
 import nearlmod.patches.NearlTags;
 import nearlmod.powers.RemoveHPNextTurn;
@@ -39,7 +40,7 @@ public class ShieldPhotographyModule extends AbstractFriendCard {
     public void use(AbstractPlayer p, AbstractMonster m) {
         addToBot(new AddTemporaryHPAction(p, p, secondMagicNumber));
         addToBot(new ApplyPowerAction(p, p, new RemoveHPNextTurn(p)));
-        Aurora.uniqueUsed = true;
+        setUniqueUsed(Aurora.ORB_ID);
     }
 
     @Override
