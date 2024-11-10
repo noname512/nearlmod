@@ -48,32 +48,7 @@ public class SummonFriendAction extends AbstractGameAction {
                 break;
             }
         if (!isOrbExist) {
-            switch (summon.ID) {
-                case Blemishine.ORB_ID:
-                    Blemishine.uniqueUsed = false;
-                    break;
-                case Nightingale.ORB_ID:
-                    Nightingale.uniqueUsed = false;
-                    break;
-                case Shining.ORB_ID:
-                    Shining.uniqueUsed = false;
-                    break;
-                case Viviana.ORB_ID:
-                    Viviana.uniqueUsed = false;
-                    break;
-                case Whislash.ORB_ID:
-                    Whislash.uniqueUsed = false;
-                    break;
-                case Penance.ORB_ID:
-                    Penance.uniqueUsed = false;
-                    break;
-                case Horn.ORB_ID:
-                    Horn.uniqueUsed = false;
-                    break;
-                case Aurora.ORB_ID:
-                    Aurora.uniqueUsed = false;
-                    break;
-            }
+            summon.uniqueUsed = false;
             addToTop(new ChannelAction(summon, false));
             AbstractDungeon.player.increaseMaxOrbSlots(1, false);
             if (AbstractDungeon.player.hasRelic("nearlmod:RatSwarm")) {

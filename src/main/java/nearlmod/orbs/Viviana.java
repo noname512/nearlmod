@@ -20,7 +20,6 @@ public class Viviana extends AbstractFriend {
     public static final String[] DESCRIPTION = orbStrings.DESCRIPTION;
     public static final String IMAGE = "resources/nearlmod/images/orbs/viviana.png";
     public static final String CHARGINGIMAGE = "resources/nearlmod/images/orbs/viviana_charging.png";
-    public static boolean uniqueUsed;
     public static int chargingTurn;
 
     public Viviana(int amount) {

@@ -17,7 +17,6 @@ public class Penance extends AbstractFriend {
     public static final String NAME = orbStrings.NAME;
     public static final String[] DESCRIPTION = orbStrings.DESCRIPTION;
     public static final String IMAGE = "resources/nearlmod/images/orbs/penance.png";
-    public static boolean uniqueUsed;
 
     public Penance(int amount) {
         super(ORB_ID, NAME, DESCRIPTION, IMAGE, amount);

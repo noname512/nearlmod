@@ -25,7 +25,7 @@ public class BattlefieldCulinarian extends AbstractNearlCard {
     public static final String NAME = cardStrings.NAME;
     public static final String DESCRIPTION = cardStrings.DESCRIPTION;
     public static final String UPGRADE_DESCRIPTION = cardStrings.UPGRADE_DESCRIPTION;
-    public static final String IMG_PATH = "resources/nearlmod/images/cards/BattlefieldCulinarian.png";
+    public static final String IMG_PATH = "resources/nearlmod/images/cards/battlefieldculinarian.png";
     private static final int COST = 2;
     private static final int UPGRADE_COST = 1;
     private static final int DISHES_NUM = 3;
@@ -48,7 +48,7 @@ public class BattlefieldCulinarian extends AbstractNearlCard {
 
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
-        addToBot(new MakeTempCardInDrawPileAction(new Dishes(), magicNumber, false, false));
+        addToBot(new MakeTempCardInDrawPileAction(new Dishes(), magicNumber, true, true));
         addToBot(new SummonFriendAction(new Gummy()));
         if (upgraded) {
             addToBot(new ApplyPowerAction(p, p, new DeliciousPower(p, secondMagicNumber)));

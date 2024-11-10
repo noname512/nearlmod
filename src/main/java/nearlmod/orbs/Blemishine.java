@@ -20,7 +20,6 @@ public class Blemishine extends AbstractFriend {
     public static final String NAME = orbStrings.NAME;
     public static final String[] DESCRIPTION = orbStrings.DESCRIPTION;
     public static final String IMAGE = "resources/nearlmod/images/orbs/blemishine.png";
-    public static boolean uniqueUsed;
 
     public Blemishine(int amount) {
         super(ORB_ID, NAME, DESCRIPTION, IMAGE, amount);

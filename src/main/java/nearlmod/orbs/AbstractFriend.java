@@ -28,6 +28,7 @@ public abstract class AbstractFriend extends CustomOrb {
     public float realFontSize;
     public float fontAnimTimer;
     public final float fullFontAnimTimer;
+    public boolean uniqueUsed;
     public AbstractFriend(String ID, String NAME, String[] DESCRIPTION, String imgPath, int amount) {
         super(ID, NAME, 0, 0, "", "", imgPath);
         trustAmount = amount;

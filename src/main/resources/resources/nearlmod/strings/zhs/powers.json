@@ -193,7 +193,7 @@
       " 点 #y敏捷 。"
     ]
   },
-  "nearlmod:ColdPower": {
+  "nearlmod:Cold": {
     "NAME": "寒冷",
     "DESCRIPTIONS": [
       "多段攻击时伤害降低 #b",

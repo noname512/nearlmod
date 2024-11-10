@@ -9,6 +9,7 @@ import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.helpers.ImageMaster;
 import com.megacrit.cardcrawl.localization.PowerStrings;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
+import com.megacrit.cardcrawl.monsters.EnemyMoveInfo;
 import com.megacrit.cardcrawl.powers.AbstractPower;
 
 import java.lang.reflect.Field;
@@ -28,7 +29,7 @@ public class ColdPower extends AbstractPower implements CloneablePowerInterface 
         updateDescription();
         region128 = new TextureAtlas.AtlasRegion(ImageMaster.loadImage("resources/nearlmod/images/powers/coldpower 128.png"), 0, 0, 128, 128);
         region48 = new TextureAtlas.AtlasRegion(ImageMaster.loadImage("resources/nearlmod/images/powers/coldpower 48.png"), 0, 0, 48, 48);
-        priority = 0;
+        priority = 100;
     }
 
     @Override
@@ -48,9 +49,10 @@ public class ColdPower extends AbstractPower implements CloneablePowerInterface 
     public float atDamageGive(float damage, DamageInfo.DamageType type) {
         if (owner instanceof AbstractMonster) {
             try {
-                Field field = AbstractMonster.class.getDeclaredField("isMultiDmg");
+                Field field = AbstractMonster.class.getDeclaredField("move");
                 field.setAccessible(true);
-                if (field.getBoolean(owner)) {
+                EnemyMoveInfo info = (EnemyMoveInfo)field.get(owner);
+                if (info.isMultiDamage && info.multiplier >= 2) {
                     return damage * (1.0F - 0.25F * amount);
                 }
             } catch (Exception e) {

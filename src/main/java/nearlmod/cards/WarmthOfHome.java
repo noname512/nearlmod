@@ -4,13 +4,17 @@ import com.megacrit.cardcrawl.actions.common.GainBlockAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
+import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.localization.CardStrings;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import com.megacrit.cardcrawl.orbs.AbstractOrb;
 import nearlmod.NLMOD;
 import nearlmod.orbs.Aurora;
+import nearlmod.orbs.Viviana;
 import nearlmod.patches.AbstractCardEnum;
 import nearlmod.patches.NearlTags;
+
+import static nearlmod.orbs.Aurora.status.RESPITE;
 
 public class WarmthOfHome extends AbstractNearlCard {
     public static final String ID = "nearlmod:WarmthOfHome";
@@ -34,7 +38,13 @@ public class WarmthOfHome extends AbstractNearlCard {
 
     @Override
     public boolean extraTriggered() {
-        return NLMOD.checkOrb(Aurora.ORB_ID);
+        if (NLMOD.checkOrb(Aurora.ORB_ID)) {
+            for (AbstractOrb orb : AbstractDungeon.player.orbs)
+                if (orb instanceof Aurora) {
+                    return ((Aurora)orb).curStatus == RESPITE;
+                }
+        }
+        return false;
     }
 
     @Override

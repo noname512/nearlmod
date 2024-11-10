@@ -17,7 +17,6 @@ public class Shining extends AbstractFriend {
     public static final String NAME = orbStrings.NAME;
     public static final String[] DESCRIPTION = orbStrings.DESCRIPTION;
     public static final String IMAGE = "resources/nearlmod/images/orbs/shining.png";
-    public static boolean uniqueUsed;
 
     public Shining(int amount) {
         super(ORB_ID, NAME, DESCRIPTION, IMAGE, amount);

@@ -9,54 +9,50 @@ import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.helpers.ImageMaster;
 import com.megacrit.cardcrawl.localization.CardStrings;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
-import com.megacrit.cardcrawl.powers.PlatedArmorPower;
-import nearlmod.cards.SwitchType;
 import nearlmod.patches.AbstractCardEnum;
+import nearlmod.powers.CookingPower;
 import nearlmod.stances.AtkStance;
 import nearlmod.stances.DefStance;
 
 import static nearlmod.patches.NearlTags.IS_FOOD;
-import static nearlmod.patches.NearlTags.IS_KNIGHT_CARD;
+import static nearlmod.patches.NearlTags.IS_UNIQUE_CARD;
 
-public class Specialty extends AbstractFriendCard {
-    public static final String ID = "nearlmod:Specialty";
+public class Cooking extends AbstractFriendCard {
+    public static final String ID = "nearlmod:Cooking";
     public static final CardStrings cardStrings = CardCrawlGame.languagePack.getCardStrings(ID);
     public static final String NAME = cardStrings.NAME;
     public static final String DESCRIPTION = cardStrings.DESCRIPTION;
     public static final String UPGRADE_DESCRIPTION = cardStrings.UPGRADE_DESCRIPTION;
-    public static final String IMG_PATH = "resources/nearlmod/images/cards/specialty.png";
-    private static final int COST = 1;
-    private static final int BLOCK_NUM = 7;
-    private static final int UPGRADE_PLUS_BLOCK = 3;
+    public static final String IMG_PATH = "resources/nearlmod/images/cards/cooking.png";
+    private static final int COST = 2;
+    private static final int DISHES_GET = 2;
+    private static final int UPGRADE_DISHSES = 1;
 
-    public Specialty() {
+    public Cooking() {
         super(ID, NAME, IMG_PATH, COST, DESCRIPTION,
                 CardType.SKILL, AbstractCardEnum.FRIEND_BLUE,
                 CardRarity.SPECIAL, CardTarget.SELF, "nearlmod:Gummy");
-        magicNumber = baseMagicNumber = BLOCK_NUM;
-        tags.add(IS_FOOD);
+        secondMagicNumber = baseSecondMagicNumber = DISHES_GET;
+        bannerSmallRegion = ImageMaster.CARD_BANNER_RARE;
+        bannerLargeRegion = ImageMaster.CARD_BANNER_RARE_L;
+        tags.add(IS_UNIQUE_CARD);
     }
 
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
-        addToBot(new GainBlockAction(p, p, magicNumber));
-        if (p.stance.ID.equals(AtkStance.STANCE_ID)) {
-            addToBot(new ChangeStanceAction(new DefStance()));
-        } else {
-            addToBot(new ChangeStanceAction(new AtkStance()));
-        }
+        addToBot(new ApplyPowerAction(p, p, new CookingPower(p, secondMagicNumber)));
     }
 
     @Override
     public AbstractCard makeCopy() {
-        return new Specialty();
+        return new Cooking();
     }
 
     @Override
     public void upgrade() {
         if (!upgraded) {
             upgradeName();
-            upgradeMagicNumber(UPGRADE_PLUS_BLOCK);
+            upgradeSecondMagicNumber(UPGRADE_DISHSES);
         }
     }
 }

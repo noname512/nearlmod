@@ -24,7 +24,6 @@ public class Aurora extends AbstractFriend {
     public static final String[] DESCRIPTION = orbStrings.DESCRIPTION;
     public static final String IMAGE = "resources/nearlmod/images/orbs/aurora.png";
     public static final String RELAX_IMAGE = "resources/nearlmod/images/orbs/aurora_relax.png";
-    public static boolean uniqueUsed;
     public status curStatus;
     public int blockGain;
     public enum status {
