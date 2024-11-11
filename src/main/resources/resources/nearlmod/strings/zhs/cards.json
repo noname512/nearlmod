@@ -731,14 +731,49 @@
         "DESCRIPTION": " nearlmod:伙伴牌 。 NL 极光不再提供 nearlmod:伙伴牌 ，而是回合结束时给予你 !nearlmod:M2! 点 格挡 。",
         "UPGRADE_DESCRIPTION": ""
     },
+
     "nearlmod:BattlefieldCulinarian": {
         "NAME": "战场烹调师",
         "DESCRIPTION": "召唤古米作为 nearlmod:伙伴 ，将 !M! 张 *料理 洗入你的抽牌堆。",
-        "UPGRADE_DESCRIPTION": "召唤古米作为 nearlmod:伙伴 ，将 !M! 张 *料理 洗入你的抽牌堆，你的食物牌可以额外获得 !nearlmod:M2! 点 格挡 。"
+        "UPGRADE_DESCRIPTION": "召唤古米作为 nearlmod:伙伴 ，将 !M! 张 *料理 洗入你的抽牌堆，你的食物牌可以额外提供 !nearlmod:M2! 点 格挡 。"
+    },
+    "nearlmod:Provisions": {
+        "NAME": "备用军粮",
+        "DESCRIPTION": "获得 !B! 点 格挡 ，抽一张牌。如果古米在场，将 !M! 张 *料理 洗入你的抽牌堆。",
+        "UPGRADE_DESCRIPTION": "获得 !B! 点 格挡 ，抽一张牌。如果古米在场，将 !M! 张 *料理+ 洗入你的抽牌堆。"
+    },
+    "nearlmod:Dishes": {
+        "NAME": "料理",
+        "DESCRIPTION": "获得 !B! 点格挡。 NL 抽一张牌。 NL 消耗。",
+        "UPGRADE_DESCRIPTION": ""
+    },
+    "nearlmod:UrsusRoar": {
+        "NAME": "乌萨斯战吼",
+        "DESCRIPTION": "造成 !D! 点伤害。如果古米在场，她造成 !M! 点伤害并获得 !nearlmod:M2! 点 nearlmod:信赖 。",
+        "UPGRADE_DESCRIPTION": ""
+    },
+    "nearlmod:HoneyGingerbread": {
+        "NAME": "蜜糖馅饼礼包",
+        "DESCRIPTION": "如果古米在场，当你打出一张食物牌后，你后续的食物牌可以额外获得 !M! 点 格挡 。否则召唤古米作为 nearlmod:伙伴 。",
+        "UPGRADE_DESCRIPTION": ""
+    },
+    "nearlmod:Cooking": {
+        "NAME": "食粮烹制",
+        "DESCRIPTION": "nearlmod:伙伴牌 ， nearlmod:唯一 。 NL 当你进入 nearlmod:守护 时，将 !nearlmod:M2! 张 *料理 洗入你的抽牌堆。",
+        "UPGRADE_DESCRIPTION": ""
+    },
+    "nearlmod:FryingPanSpecialist": {
+        "NAME": "平底锅专精",
+        "DESCRIPTION": "nearlmod:伙伴牌 。 NL 造成 !M! 点伤害，如果你的上一张牌是古米的 nearlmod:伙伴牌 ，目标本回合失去99点 力量 。"
     },
     "nearlmod:Specialty": {
         "NAME": "特制菜肴",
-        "DESCRIPTION": " nearlmod:伙伴牌 。 NL 获得 !M! 点格挡， NL 切换 nearlmod:形态 。",
+        "DESCRIPTION": "nearlmod:伙伴牌 。 NL 获得 !M! 点格挡， NL 切换 nearlmod:形态 。",
+        "UPGRADE_DESCRIPTION": ""
+    },
+    "nearlmod:PeterheimMiddleSchool": {
+        "NAME": "彼得海姆中学",
+        "DESCRIPTION": "nearlmod:伙伴牌 。 NL 选择 !nearlmod:M2! 张手牌，它们在本回合内获得 保留 。",
         "UPGRADE_DESCRIPTION": ""
     },
 
@@ -756,11 +791,6 @@
         "NAME": "个人魅力SP",
         "DESCRIPTION": "选择一个红松骑士团的 nearlmod:伙伴 并召唤。",
         "UPGRADE_DESCRIPTION": "选择两个红松骑士团的 nearlmod:伙伴 并召唤。"
-    },
-    "nearlmod:Dishes": {
-        "NAME": "料理",
-        "DESCRIPTION": "获得 !B! 点格挡。 NL 抽一张牌。 NL 消耗。",
-        "UPGRADE_DESCRIPTION": ""
     },
     "nearlmod:SummonPinusFriend": {
         "NAME": "",

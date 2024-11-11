@@ -1,22 +1,19 @@
 package nearlmod.cards.friendcards;
 
-import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
 import com.megacrit.cardcrawl.actions.common.GainBlockAction;
 import com.megacrit.cardcrawl.actions.watcher.ChangeStanceAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
-import com.megacrit.cardcrawl.helpers.ImageMaster;
+import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.localization.CardStrings;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
-import com.megacrit.cardcrawl.powers.PlatedArmorPower;
-import nearlmod.cards.SwitchType;
 import nearlmod.patches.AbstractCardEnum;
+import nearlmod.patches.NearlTags;
+import nearlmod.powers.DeliciousPower;
+import nearlmod.powers.HoneyGingerbreadPower;
 import nearlmod.stances.AtkStance;
 import nearlmod.stances.DefStance;
-
-import static nearlmod.patches.NearlTags.IS_FOOD;
-import static nearlmod.patches.NearlTags.IS_KNIGHT_CARD;
 
 public class Specialty extends AbstractFriendCard {
     public static final String ID = "nearlmod:Specialty";
@@ -34,7 +31,7 @@ public class Specialty extends AbstractFriendCard {
                 CardType.SKILL, AbstractCardEnum.FRIEND_BLUE,
                 CardRarity.SPECIAL, CardTarget.SELF, "nearlmod:Gummy");
         magicNumber = baseMagicNumber = BLOCK_NUM;
-        tags.add(IS_FOOD);
+        tags.add(NearlTags.IS_FOOD);
     }
 
     @Override
@@ -45,6 +42,18 @@ public class Specialty extends AbstractFriendCard {
         } else {
             addToBot(new ChangeStanceAction(new AtkStance()));
         }
+    }
+
+    @Override
+    public void applyPowers() {
+        super.applyPowers();
+        if (AbstractDungeon.player.hasPower(DeliciousPower.POWER_ID)) {
+            magicNumber += AbstractDungeon.player.getPower(DeliciousPower.POWER_ID).amount;
+        }
+        if (AbstractDungeon.player.hasPower(HoneyGingerbreadPower.POWER_ID)) {
+            magicNumber += AbstractDungeon.player.getPower(HoneyGingerbreadPower.POWER_ID).amount;
+        }
+        isMagicNumberModified = (magicNumber != baseMagicNumber);
     }
 
     @Override

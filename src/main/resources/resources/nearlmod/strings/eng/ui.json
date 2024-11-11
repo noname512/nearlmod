@@ -84,5 +84,11 @@
       "Semi-Final",
       "Final"
     ]
+  },
+  "nearlmod:Peterheim": {
+    "TEXT": [
+      "Select ",
+      " cards to Retain this turn"
+    ]
   }
 }

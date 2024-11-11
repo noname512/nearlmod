@@ -1,9 +1,6 @@
 package nearlmod.cards;
 
 import com.megacrit.cardcrawl.actions.common.DamageAction;
-import com.megacrit.cardcrawl.actions.common.DrawCardAction;
-import com.megacrit.cardcrawl.actions.common.GainBlockAction;
-import com.megacrit.cardcrawl.actions.common.MakeTempCardInDrawPileAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.cards.DamageInfo;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
@@ -15,9 +12,7 @@ import com.megacrit.cardcrawl.orbs.AbstractOrb;
 import nearlmod.NLMOD;
 import nearlmod.actions.SummonFriendAction;
 import nearlmod.cards.friendcards.AbstractFriendCard;
-import nearlmod.cards.special.Dishes;
 import nearlmod.orbs.Gummy;
-import nearlmod.orbs.Viviana;
 import nearlmod.patches.AbstractCardEnum;
 import nearlmod.patches.NearlTags;
 
@@ -98,7 +93,6 @@ public class UrsusRoar extends AbstractNearlCard {
             upgradeDamage(UPGRADE_DAMAGE_AMT);
             upgradeMagicNumber(UPGRADE_GUMMY_DAMAGE_AMT);
             upgradeSecondMagicNumber(UPGRADE_GUMMY_TRUST);
-            cardsToPreview.upgrade();
             initializeDescription();
         }
     }

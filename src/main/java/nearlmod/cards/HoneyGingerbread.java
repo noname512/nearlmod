@@ -1,49 +1,44 @@
 package nearlmod.cards;
 
-import com.megacrit.cardcrawl.actions.common.*;
+import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.localization.CardStrings;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import nearlmod.NLMOD;
-import nearlmod.cards.special.Dishes;
+import nearlmod.actions.SummonFriendAction;
 import nearlmod.orbs.Gummy;
 import nearlmod.patches.AbstractCardEnum;
 import nearlmod.patches.NearlTags;
+import nearlmod.powers.HoneyGingerbreadPower;
 
-public class Provisions extends AbstractNearlCard {
-    public static final String ID = "nearlmod:Provisions";
+public class HoneyGingerbread extends AbstractNearlCard {
+    public static final String ID = "nearlmod:HoneyGingerbread";
     public static final CardStrings cardStrings = CardCrawlGame.languagePack.getCardStrings(ID);
     public static final String NAME = cardStrings.NAME;
     public static final String DESCRIPTION = cardStrings.DESCRIPTION;
     public static final String UPGRADE_DESCRIPTION = cardStrings.UPGRADE_DESCRIPTION;
-    public static final String IMG_PATH = "resources/nearlmod/images/cards/provisions.png";
-    private static final int COST = 1;
-    private static final int BLOCK_AMT = 3;
-    private static final int DISH_AMT = 2;
-    private static final int UPGRADE_BLOCK_AMT = 1;
+    public static final String IMG_PATH = "resources/nearlmod/images/cards/honeygingerbread.png";
+    private static final int COST = 2;
+    private static final int UPGRADE_COST = 1;
+    private static final int EXTRA_BLOCK = 1;
 
-    public Provisions() {
+    public HoneyGingerbread() {
         super(ID, NAME, IMG_PATH, COST, DESCRIPTION,
-                CardType.SKILL, AbstractCardEnum.NEARL_GOLD,
-                CardRarity.COMMON, CardTarget.SELF);
+                CardType.POWER, AbstractCardEnum.NEARL_GOLD,
+                CardRarity.RARE, CardTarget.SELF);
         tags.add(NearlTags.FRIEND_RELATED);
-        tags.add(NearlTags.IS_FOOD);
         belongFriend = Gummy.ORB_ID;
-        cardsToPreview = new Dishes();
-        block = baseBlock = BLOCK_AMT;
-        magicNumber = baseMagicNumber = DISH_AMT;
+        magicNumber = baseMagicNumber = EXTRA_BLOCK;
     }
 
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
-        addToBot(new GainBlockAction(p, block));
-        addToBot(new DrawCardAction(p, 1));
         if (extraTriggered()) {
-            AbstractCard c = new Dishes();
-            if (upgraded) c.upgrade();
-            addToBot(new MakeTempCardInDrawPileAction(c, magicNumber, true, true));
+            addToBot(new ApplyPowerAction(p, p, new HoneyGingerbreadPower(p, magicNumber)));
+        } else {
+            addToBot(new SummonFriendAction(new Gummy()));
         }
     }
 
@@ -54,16 +49,14 @@ public class Provisions extends AbstractNearlCard {
 
     @Override
     public AbstractCard makeCopy() {
-        return new Provisions();
+        return new HoneyGingerbread();
     }
 
     @Override
     public void upgrade() {
         if (!upgraded) {
             upgradeName();
-            upgradeBlock(UPGRADE_BLOCK_AMT);
-            cardsToPreview.upgrade();
-            rawDescription = UPGRADE_DESCRIPTION;
+            upgradeBaseCost(UPGRADE_COST);
             initializeDescription();
         }
     }

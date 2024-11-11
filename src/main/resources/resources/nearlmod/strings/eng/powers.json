@@ -193,7 +193,7 @@
       " #yDexterity ."
     ]
   },
-  "nearlmod:ColdPower": {
+  "nearlmod:Cold": {
     "NAME": "Cold",
     "DESCRIPTIONS": [
       "Deal #b",
@@ -218,6 +218,28 @@
     "NAME": "Sheltered",
     "DESCRIPTIONS": [
       "In this turn, take #b60% less damage."
+    ]
+  },
+  "nearlmod:DeliciousPower": {
+    "NAME": "Delicious",
+    "DESCRIPTIONS": [
+      "Your food cards can gain #b",
+      " #yBlock in addition."
+    ]
+  },
+  "nearlmod:CookingPower": {
+    "NAME": "Cooking",
+    "DESCRIPTIONS": [
+      "When you enter #yGuardian , add #b",
+      " #yDishes into your draw pile."
+    ]
+  },
+  "nearlmod:HoneyGingerbreadPower": {
+    "NAME": "Honey Gingerbread",
+    "DESCRIPTIONS": [
+      "After you play a food card, your continuous food card can apply #b",
+      " additional #yBlock. (Currently #b",
+      " in total)"
     ]
   }
 }

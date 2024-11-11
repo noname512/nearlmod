@@ -219,5 +219,27 @@
     "DESCRIPTIONS": [
       "本回合内，受到的伤害降低 #b60% 。"
     ]
+  },
+  "nearlmod:DeliciousPower": {
+    "NAME": "美食",
+    "DESCRIPTIONS": [
+      "你的食物牌可以额外提供 #b",
+      " 点 #y格挡 。"
+    ]
+  },
+  "nearlmod:CookingPower": {
+    "NAME": "食粮烹制",
+    "DESCRIPTIONS": [
+      "每当你进入 #y守护 ，将 #b",
+      " 张 #y料理 洗入你的抽牌堆。"
+    ]
+  },
+  "nearlmod:HoneyGingerbreadPower": {
+    "NAME": "蜜糖馅饼礼包",
+    "DESCRIPTIONS": [
+      "当你打出一张食物牌后，你后续的食物牌可以额外获得 #b",
+      " 点 #y格挡 。（当前共计 #b",
+      " 点）"
+    ]
   }
 }

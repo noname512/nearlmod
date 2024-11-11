@@ -30,6 +30,7 @@ public class GumboBreadBowl extends AbstractNearlCard {
                 CardRarity.COMMON, CardTarget.SELF);
         block = baseBlock = BLOCK_AMT;
         tags.add(NearlTags.IS_USE_LIGHT);
+        tags.add(NearlTags.IS_FOOD);
     }
 
     @Override

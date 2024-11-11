@@ -2,22 +2,18 @@ package nearlmod.cards;
 
 import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
 import com.megacrit.cardcrawl.actions.common.MakeTempCardInDrawPileAction;
-import com.megacrit.cardcrawl.actions.common.RemoveSpecificPowerAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.localization.CardStrings;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
-import com.megacrit.cardcrawl.powers.AbstractPower;
 import nearlmod.actions.SummonFriendAction;
 import nearlmod.cards.special.Dishes;
 import nearlmod.characters.Nearl;
 import nearlmod.orbs.Gummy;
-import nearlmod.orbs.Viviana;
 import nearlmod.patches.AbstractCardEnum;
 import nearlmod.patches.NearlTags;
 import nearlmod.powers.DeliciousPower;
-import nearlmod.relics.NormalPerson;
 
 public class BattlefieldCulinarian extends AbstractNearlCard {
     public static final String ID = "nearlmod:BattlefieldCulinarian";

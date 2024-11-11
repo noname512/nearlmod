@@ -36,9 +36,9 @@ public class Gummy extends AbstractFriend {
         if (!notUnique) {
             cards.add(new Cooking());
         }
-        //cards.add(new FlareGrenade());
+        cards.add(new FryingPanSpecialist());
         cards.add(new Specialty());
-        //cards.add(new UltimateLineOfDefense());
+        cards.add(new PeterheimMiddleSchool());
         return getRandomCard(cards, upgraded);
     }
 
@@ -58,7 +58,7 @@ public class Gummy extends AbstractFriend {
         list.add(new BattlefieldCulinarian());
         list.add(new Provisions());
         list.add(new UrsusRoar());
-        //list.add(new FallingShield());
+        list.add(new HoneyGingerbread());
         return list;
     }
 }

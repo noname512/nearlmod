@@ -732,6 +732,51 @@
         "UPGRADE_DESCRIPTION": ""
     },
 
+    "nearlmod:BattlefieldCulinarian": {
+        "NAME": "Battlefield Culinarian",
+        "DESCRIPTION": "Summon Gummy as nearlmod:Friend, add !M! *Dishes into your draw pile.",
+        "UPGRADE_DESCRIPTION": "Summon Gummy as nearlmod:Friend, add !M! *Dishes into your draw pile. Your food cards can gain !nearlmod:M2! Block in addition."
+    },
+    "nearlmod:Provisions": {
+        "NAME": "Provisions",
+        "DESCRIPTION": "Gain !B! Block, draw 1 card. If Gummy is present, add !M! *Dishes into your draw pile.",
+        "UPGRADE_DESCRIPTION": "Gain !B! Block, draw 1 card. If Gummy is present, add !M! *Dishes+ into your draw pile."
+    },
+    "nearlmod:Dishes": {
+        "NAME": "Dishes",
+        "DESCRIPTION": "Gain !B! Block. NL Draw 1 card. NL Exhaust.",
+        "UPGRADE_DESCRIPTION": ""
+    },
+    "nearlmod:UrsusRoar": {
+        "NAME": "Ursus's Roar",
+        "DESCRIPTION": "Deal !D! damage. If Gummy is present, she deals !M! damage and gains !nearlmod:M2! nearlmod:Trust.",
+        "UPGRADE_DESCRIPTION": ""
+    },
+    "nearlmod:HoneyGingerbread": {
+        "NAME": "Honey Gingerbread",
+        "DESCRIPTION": "If Gummy is present, after you play a food card, your continuous food card can apply !M! additional Block. Otherwise, summon Gummy as nearlmod:Friend.",
+        "UPGRADE_DESCRIPTION": ""
+    },
+    "nearlmod:Cooking": {
+        "NAME": "Cooking",
+        "DESCRIPTION": "nearlmod:Friend_Card, nearlmod:Unique. NL When you enter nearlmod:Guardian , add !nearlmod:M2! *Dishes into your draw pile.",
+        "UPGRADE_DESCRIPTION": ""
+    },
+    "nearlmod:FryingPanSpecialist": {
+        "NAME": "Frying Pan Specialist",
+        "DESCRIPTION": "nearlmod:Friend_Card. NL Deal !M! damage, if last card you played is Gummy's nearlmod:Friend_Card, the enemy loses 99 Strength in this turn."
+    },
+    "nearlmod:Specialty": {
+        "NAME": "Specialty",
+        "DESCRIPTION": "nearlmod:Friend_Card. NL Gain !M! Block. NL Switch your nearlmod:Stance.",
+        "UPGRADE_DESCRIPTION": ""
+    },
+    "nearlmod:PeterheimMiddleSchool": {
+        "NAME": "Peterheim Middle School",
+        "DESCRIPTION": "nearlmod:Friend_Card. NL Select !nearlmod:M2! cards from your hand, Retain them this turn.",
+        "UPGRADE_DESCRIPTION": ""
+    },
+
     "nearlmod:Beginning": {
         "NAME": "Beginning",
         "DESCRIPTION": "Summon Blemishine as nearlmod:Friend.",

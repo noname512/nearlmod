@@ -334,7 +334,13 @@ public class NLMOD implements EditCardsSubscriber, EditCharactersSubscriber, Edi
         BaseMod.addCard(new StoicAtonement()); // 坚心苦修
 
         BaseMod.addCard(new BattlefieldCulinarian()); // 战场烹调师
+        BaseMod.addCard(new Provisions()); // 备用军粮
+        BaseMod.addCard(new UrsusRoar()); // 乌萨斯战吼
+        BaseMod.addCard(new HoneyGingerbread()); // 蜜糖馅饼礼包
+        BaseMod.addCard(new Cooking()); // 食粮烹制
+        BaseMod.addCard(new FryingPanSpecialist()); // 平底锅专精
         BaseMod.addCard(new Specialty()); // 特制菜肴
+        BaseMod.addCard(new PeterheimMiddleSchool()); // 彼得海姆中学
 
         // Special
         BaseMod.addCard(new Beginning()); // 起点
