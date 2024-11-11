@@ -154,7 +154,8 @@
     "PROPER_NAME": "庇护",
     "NAMES": [
       "Sheltered",
-      "sheltered"
+      "sheltered",
+      "庇护"
     ],
     "DESCRIPTION": "本回合内，受到的伤害降低 #b60% 。"
   }

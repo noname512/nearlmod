@@ -638,7 +638,7 @@
     },
     "nearlmod:StoicAtonement": {
         "NAME": "坚心苦修",
-        "DESCRIPTION": "nearlmod:伙伴牌 。如果你本回合没有打出攻击牌，回合结束时，斥罪对所有敌人造成 !M! 点伤害，并给予你一层 nearlmod:庇护 。",
+        "DESCRIPTION": "nearlmod:伙伴牌 。如果你本回合没有打出攻击牌，回合结束时，斥罪对所有敌人造成 !nearlmod:M2! 点伤害，并给予你一层 nearlmod:庇护 。",
         "UPGRADE_DESCRIPTION": ""
     },
     "nearlmod:TrialOfThorns": {

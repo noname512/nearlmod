@@ -31,7 +31,7 @@ public class TrialOfThorns extends AbstractFriendCard {
     public TrialOfThorns() {
         super(ID, NAME, IMG_PATH, COST, DESCRIPTION,
                 CardType.ATTACK, AbstractCardEnum.FRIEND_BLUE,
-                CardRarity.SPECIAL, CardTarget.SELF, "nearlmod:Penance");
+                CardRarity.SPECIAL, CardTarget.ENEMY, "nearlmod:Penance");
         secondMagicNumber = baseSecondMagicNumber = TEMP_HP;
         magicNumber = baseMagicNumber = ATTACK_DMG;
         this.bannerSmallRegion = ImageMaster.CARD_BANNER_RARE;

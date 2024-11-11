@@ -207,6 +207,12 @@
       "。"
     ]
   },
+  "nearlmod:RemoveHPNextTurn": {
+    "NAME": "临时生命清空",
+    "DESCRIPTIONS": [
+      "下回合开始时，清空你的临时生命。"
+    ]
+  },
   "nearlmod:WreathedInThornsPower": {
     "NAME": "荆棘环身",
     "DESCRIPTIONS": [
