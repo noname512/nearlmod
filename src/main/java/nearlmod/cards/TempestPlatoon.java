@@ -29,8 +29,8 @@ public class TempestPlatoon extends AbstractNearlCard {
         super(ID, NAME, IMG_PATH, COST, DESCRIPTION,
                 CardType.POWER, AbstractCardEnum.NEARL_GOLD,
                 CardRarity.UNCOMMON, CardTarget.SELF);
-        magicNumber = TRUST_GAIN;
-        secondMagicNumber = EXTRA_TRUST;
+        magicNumber = baseMagicNumber = TRUST_GAIN;
+        secondMagicNumber = baseSecondMagicNumber = EXTRA_TRUST;
         tags.add(NearlTags.IS_SUMMON_CARD);
         tags.add(NearlTags.FRIEND_RELATED);
         belongFriend = Horn.ORB_ID;

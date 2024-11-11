@@ -27,7 +27,7 @@ public class Bloodbath extends AbstractFriendCard {
         super(ID, NAME, IMG_PATH, COST, DESCRIPTION,
                 CardType.SKILL, AbstractCardEnum.FRIEND_BLUE,
                 CardRarity.SPECIAL, CardTarget.SELF, "nearlmod:Horn");
-        secondMagicNumber = POWER_GAIN;
+        secondMagicNumber = baseSecondMagicNumber = POWER_GAIN;
 
         this.bannerSmallRegion = ImageMaster.CARD_BANNER_RARE;
         this.bannerLargeRegion = ImageMaster.CARD_BANNER_RARE_L;
