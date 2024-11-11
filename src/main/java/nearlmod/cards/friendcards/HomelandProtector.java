@@ -8,7 +8,7 @@ import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.localization.CardStrings;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import nearlmod.patches.AbstractCardEnum;
-import nearlmod.powers.LossEnergyNextTurnPower;
+import nearlmod.powers.LoseEnergyPower;
 
 public class HomelandProtector extends AbstractFriendCard {
     public static final String ID = "nearlmod:HomelandProtector";
@@ -33,7 +33,7 @@ public class HomelandProtector extends AbstractFriendCard {
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
         addToBot(new GainBlockAction(p, magicNumber));
-        addToBot(new ApplyPowerAction(p, p, new LossEnergyNextTurnPower(p, secondMagicNumber)));
+        addToBot(new ApplyPowerAction(p, p, new LoseEnergyPower(p, secondMagicNumber)));
     }
 
     @Override

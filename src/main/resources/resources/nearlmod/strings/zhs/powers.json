@@ -200,17 +200,17 @@
       "% ，最多叠加 #b2 层。"
     ]
   },
-  "nearlmod:LossEnergyNextTurnPower": {
+  "nearlmod:LoseEnergyPower": {
     "NAME": "能量下降",
     "DESCRIPTIONS": [
       "下回合开始时，失去",
       "。"
     ]
   },
-  "nearlmod:RemoveHPNextTurn": {
-    "NAME": "临时生命清空",
+  "nearlmod:BloodLoss": {
+    "NAME": "失血",
     "DESCRIPTIONS": [
-      "下回合开始时，清空你的临时生命。"
+      "下回合开始时，失去全部临时生命。"
     ]
   },
   "nearlmod:WreathedInThornsPower": {

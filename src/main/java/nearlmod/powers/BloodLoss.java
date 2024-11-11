@@ -10,20 +10,20 @@ import com.megacrit.cardcrawl.helpers.ImageMaster;
 import com.megacrit.cardcrawl.localization.PowerStrings;
 import com.megacrit.cardcrawl.powers.AbstractPower;
 
-public class RemoveHPNextTurn extends AbstractPower implements CloneablePowerInterface {
-    public static final String POWER_ID = "nearlmod:RemoveHPNextTurn";
+public class BloodLoss extends AbstractPower implements CloneablePowerInterface {
+    public static final String POWER_ID = "nearlmod:BloodLoss";
     public static final PowerStrings powerStrings = CardCrawlGame.languagePack.getPowerStrings(POWER_ID);
     public static final String NAME = powerStrings.NAME;
     public static final String[] DESCRIPTIONS = powerStrings.DESCRIPTIONS;
     public final AbstractPlayer p;
 
-    public RemoveHPNextTurn(AbstractPlayer player) {
+    public BloodLoss(AbstractPlayer player) {
         name = NAME;
         ID = POWER_ID;
         this.owner = player;
         this.p = player;
-        region128 = new TextureAtlas.AtlasRegion(ImageMaster.loadImage("resources/nearlmod/images/powers/gainlightnextturn power 84.png"), 0, 0, 84, 84);
-        region48 = new TextureAtlas.AtlasRegion(ImageMaster.loadImage("resources/nearlmod/images/powers/gainlightnextturn power 32.png"), 0, 0, 32, 32);
+        region128 = new TextureAtlas.AtlasRegion(ImageMaster.loadImage("resources/nearlmod/images/powers/bloodloss power 84.png"), 0, 0, 84, 84);
+        region48 = new TextureAtlas.AtlasRegion(ImageMaster.loadImage("resources/nearlmod/images/powers/bloodloss power 32.png"), 0, 0, 32, 32);
         type = PowerType.DEBUFF;
         updateDescription();
     }
@@ -41,6 +41,6 @@ public class RemoveHPNextTurn extends AbstractPower implements CloneablePowerInt
 
     @Override
     public AbstractPower makeCopy() {
-        return new RemoveHPNextTurn(p);
+        return new BloodLoss(p);
     }
 }

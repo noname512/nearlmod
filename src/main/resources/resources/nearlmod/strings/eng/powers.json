@@ -200,6 +200,19 @@
       "% less damage during multi-hit attacks. Up to two stacks maximum."
     ]
   },
+  "nearlmod:LoseEnergyPower": {
+    "NAME": "Losing Energy",
+    "DESCRIPTIONS": [
+      "At the start of next turn, lose",
+      "."
+    ]
+  },
+  "nearlmod:BloodLoss": {
+    "NAME": "Blood Loss",
+    "DESCRIPTIONS": [
+      "At the start of next turn, lose all your Temporary HP."
+    ]
+  },
   "nearlmod:WreathedInThornsPower": {
     "NAME": "Wreathed in Thorns",
     "DESCRIPTIONS": [
