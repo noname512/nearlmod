@@ -200,6 +200,13 @@
       "% ，最多叠加 #b2 层。"
     ]
   },
+  "nearlmod:LossEnergyNextTurnPower": {
+    "NAME": "能量下降",
+    "DESCRIPTIONS": [
+      "下回合开始时，失去",
+      "。"
+    ]
+  },
   "nearlmod:WreathedInThornsPower": {
     "NAME": "荆棘环身",
     "DESCRIPTIONS": [
@@ -238,8 +245,7 @@
     "NAME": "蜜糖馅饼礼包",
     "DESCRIPTIONS": [
       "当你打出一张食物牌后，你后续的食物牌可以额外获得 #b",
-      " 点 #y格挡 。（当前共计 #b",
-      " 点）"
+      " 点 #y格挡 。"
     ]
   }
 }

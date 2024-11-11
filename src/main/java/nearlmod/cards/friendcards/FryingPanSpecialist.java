@@ -4,6 +4,7 @@ import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
 import com.megacrit.cardcrawl.actions.common.DamageAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.cards.DamageInfo;
+import com.megacrit.cardcrawl.cards.purple.FollowUp;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
@@ -37,13 +38,31 @@ public class FryingPanSpecialist extends AbstractFriendCard {
         DamageInfo info = new DamageInfo(p, magicNumber);
         info.name = Gummy.ORB_ID + damageSuffix;
         addToBot(new DamageAction(m, info));
-        // cardInUse的修改在use的调用之后，此时还是上一张卡
-        if (AbstractDungeon.player.cardInUse instanceof AbstractFriendCard && ((AbstractFriendCard) AbstractDungeon.player.cardInUse).belongFriend.equals(belongFriend)) {
+        if (extraTriggered(1)) {    // 这张卡已经在 cardsPlayedThisCombat 里了，所以要检查上一张
             addToBot(new ApplyPowerAction(m, p, new StrengthPower(m, -99)));
             if (m != null && !m.hasPower("Artifact")) {
                 addToBot(new ApplyPowerAction(m, p, new GainStrengthPower(m, 99)));
             }
         }
+    }
+
+    @Override
+    public boolean extraTriggered() {
+        return extraTriggered(0);
+    }
+
+    public boolean extraTriggered(int prev) {
+        if (AbstractDungeon.actionManager.cardsPlayedThisCombat.size() <= prev) {
+            return false;
+        }
+        AbstractCard c = AbstractDungeon.actionManager.cardsPlayedThisCombat.get(AbstractDungeon.actionManager.cardsPlayedThisCombat.size() - 1 - prev);
+        if (c instanceof AbstractFriendCard && ((AbstractFriendCard)c).belongFriend.equals(belongFriend)) {
+            return true;
+        }
+        else {
+            return false;
+        }
+
     }
 
     @Override

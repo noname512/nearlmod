@@ -505,5 +505,10 @@ public class NLMOD implements EditCardsSubscriber, EditCharactersSubscriber, Edi
         friendCards.group.add(new WreathedInThorns());
         friendCards.group.add(new LastWord());
         friendCards.group.add(new StoicAtonement());
+
+        friendCards.group.add(new Cooking());
+        friendCards.group.add(new FryingPanSpecialist());
+        friendCards.group.add(new Specialty());
+        friendCards.group.add(new PeterheimMiddleSchool());
     }
 }

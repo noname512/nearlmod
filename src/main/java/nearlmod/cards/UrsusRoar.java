@@ -13,6 +13,7 @@ import nearlmod.NLMOD;
 import nearlmod.actions.SummonFriendAction;
 import nearlmod.cards.friendcards.AbstractFriendCard;
 import nearlmod.orbs.Gummy;
+import nearlmod.orbs.Viviana;
 import nearlmod.patches.AbstractCardEnum;
 import nearlmod.patches.NearlTags;
 
@@ -49,7 +50,9 @@ public class UrsusRoar extends AbstractNearlCard {
             DamageInfo GummyInfo = new DamageInfo(p, magicNumber);
             GummyInfo.name = Gummy.ORB_ID + AbstractFriendCard.damageSuffix;
             addToBot(new DamageAction(m, GummyInfo));
-            addToBot(new SummonFriendAction(new Gummy(secondMagicNumber)));
+            for (AbstractOrb orb : p.orbs)
+                if (orb instanceof Gummy)
+                    ((Gummy)orb).applyStrength(secondMagicNumber);
         }
     }
 

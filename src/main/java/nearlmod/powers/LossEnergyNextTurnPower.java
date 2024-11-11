@@ -33,7 +33,12 @@ public class LossEnergyNextTurnPower extends AbstractPower implements CloneableP
 
     @Override
     public void updateDescription() {
-        description = DESCRIPTIONS[0] + amount + DESCRIPTIONS[1];
+        description = DESCRIPTIONS[0];
+        for (int i = 0; i < amount; i++)
+        {
+            description += " [E] ";
+        }
+        description += DESCRIPTIONS[1];
     }
 
     @Override
