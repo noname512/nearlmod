@@ -9,7 +9,6 @@ import com.megacrit.cardcrawl.helpers.ImageMaster;
 import com.megacrit.cardcrawl.localization.CardStrings;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import nearlmod.orbs.Aurora;
-import nearlmod.orbs.Horn;
 import nearlmod.patches.AbstractCardEnum;
 import nearlmod.patches.NearlTags;
 import nearlmod.powers.RemoveHPNextTurn;

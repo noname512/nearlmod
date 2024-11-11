@@ -48,12 +48,13 @@ public class FallingShield extends AbstractNearlCard {
     public void use(AbstractPlayer p, AbstractMonster m) {
         int times = magicNumber;
         int tempHp = TempHPField.tempHp.get(p);
-        int amount = tempHp;
+        baseDamage = tempHp;
         boolean summon = false;
         if (p.hasRelic(ChemicalX.ID)) {
-            amount += 2;
+            baseDamage += 2;
             p.getRelic(ChemicalX.ID).flash();
         }
+        applyPowers();
         if (extraTriggered()) {
             times += secondMagicNumber;
         } else {
@@ -62,7 +63,7 @@ public class FallingShield extends AbstractNearlCard {
         if (freeToPlay() || isInAutoplay) {
             tempHp = 0;
         }
-        addToBot(new FallingShieldAction(tempHp, amount, times, summon, m));
+        addToBot(new FallingShieldAction(tempHp, damage, times, summon, m));
         costForTurn = energyOnUse = 0;
     }
 

@@ -2,8 +2,11 @@ package nearlmod.powers;
 
 import basemod.interfaces.CloneablePowerInterface;
 import com.badlogic.gdx.graphics.g2d.TextureAtlas;
+import com.evacipated.cardcrawl.mod.stslib.actions.tempHp.RemoveAllTemporaryHPAction;
 import com.evacipated.cardcrawl.mod.stslib.patches.core.AbstractCreature.TempHPField;
 import com.evacipated.cardcrawl.mod.stslib.powers.interfaces.OnLoseTempHpPower;
+import com.evacipated.cardcrawl.modthespire.lib.SpirePatch;
+import com.evacipated.cardcrawl.modthespire.lib.SpirePrefixPatch;
 import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
 import com.megacrit.cardcrawl.actions.common.RemoveSpecificPowerAction;
 import com.megacrit.cardcrawl.cards.DamageInfo;
@@ -51,5 +54,16 @@ public class BloodbathPower extends AbstractPower implements CloneablePowerInter
             addToBot(new RemoveSpecificPowerAction(owner, owner, this));
         }
         return damage;
+    }
+
+    @SpirePatch(clz = RemoveAllTemporaryHPAction.class, method = "update")
+    public static class RemoveAllTemporaryHPActionPatch {
+        @SpirePrefixPatch
+        public static void Prefix(RemoveAllTemporaryHPAction _inst) {
+            int hp = TempHPField.tempHp.get(_inst.target);
+            for (AbstractPower po : _inst.target.powers)
+                if (po instanceof BloodbathPower)
+                    ((BloodbathPower) po).onLoseTempHp(new DamageInfo(null, hp, DamageInfo.DamageType.HP_LOSS), hp);
+        }
     }
 }

@@ -1,8 +1,8 @@
 package nearlmod.actions;
 
+import com.evacipated.cardcrawl.mod.stslib.actions.tempHp.RemoveAllTemporaryHPAction;
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
 import com.megacrit.cardcrawl.actions.common.DamageAction;
-import com.megacrit.cardcrawl.actions.common.LoseHPAction;
 import com.megacrit.cardcrawl.cards.DamageInfo;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.core.AbstractCreature;
@@ -30,13 +30,13 @@ public class FallingShieldAction extends AbstractGameAction {
         }
         AbstractPlayer p = AbstractDungeon.player;
         for (int i = 0; i < times; i++) {
-            addToBot(new DamageAction(target, new DamageInfo(p, amount)));
+            addToTop(new DamageAction(target, new DamageInfo(p, amount)));
         }
         if (summon) {
             addToTop(new SummonFriendAction(new Horn()));
         }
         if (cost > 0) {
-            addToBot(new LoseHPAction(p, p, cost));
+            addToTop(new RemoveAllTemporaryHPAction(p, p));
         }
         isDone = true;
     }
