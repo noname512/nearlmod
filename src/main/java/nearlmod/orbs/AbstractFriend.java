@@ -27,6 +27,10 @@ public abstract class AbstractFriend extends CustomOrb {
     public float animationTimer;
     public float realFontSize;
     public float fontAnimTimer;
+    public float secondFontAnimTimer;
+    public float secondFontSize;
+    public boolean showSecondVal;
+    public int secondVal;
     public final float fullFontAnimTimer;
     public boolean uniqueUsed;
     public AbstractFriend(String ID, String NAME, String[] DESCRIPTION, String imgPath, int amount) {
@@ -38,9 +42,10 @@ public abstract class AbstractFriend extends CustomOrb {
         this.DESCRIPTION = DESCRIPTION;
         flipHorizontal = AbstractDungeon.player.flipHorizontal;
         animX = animY = 0;
-        realFontSize = 0.7F;
+        realFontSize = secondFontSize = 0.7F;
         if (Settings.FAST_MODE) fullFontAnimTimer = 0.4F;
         else fullFontAnimTimer = 0.7F;
+        showSecondVal = false;
         updateDescription();
     }
     public AbstractFriendCard getUniqueCard() {
@@ -100,18 +105,29 @@ public abstract class AbstractFriend extends CustomOrb {
         } else {
             realFontSize = 0.7F;
         }
-        FontHelper.renderFontCentered(sb, FontHelper.cardEnergyFont_L, Integer.toString(this.trustAmount), this.cX + MY_X_OFFSET, this.cY + this.bobEffect.y / 2.0F + MY_Y_OFFSET, this.c, realFontSize);
+        FontHelper.renderFontCentered(sb, FontHelper.cardEnergyFont_L, Integer.toString(trustAmount), cX + MY_X_OFFSET, cY + bobEffect.y / 2.0F + MY_Y_OFFSET, c, realFontSize);
+
+        if (showSecondVal) {
+            if (secondFontAnimTimer > 0) {
+                secondFontAnimTimer -= Gdx.graphics.getDeltaTime();
+                if (secondFontAnimTimer > fullFontAnimTimer * 0.5) secondFontSize = 0.7F + (secondFontAnimTimer * 2 / fullFontAnimTimer) * 0.2F;
+                else secondFontSize = 0.7F + (2 - secondFontAnimTimer * 2 / fullFontAnimTimer) * 0.2F;
+            } else {
+                secondFontSize = 0.7F;
+            }
+            FontHelper.renderFontCentered(sb, FontHelper.cardEnergyFont_L, Integer.toString(secondVal), cX + MY_X_OFFSET, cY + bobEffect.y / 2.0F - 80.0F * Settings.scale, c, secondFontSize);
+        }
     }
 
     @Override
     public void render(SpriteBatch sb) {
-        if (this.img != null) {
-            sb.setColor(this.c);
-            sb.draw(this.img, this.cX - (float)this.img.getWidth() / 2.0F + this.bobEffect.y / 4.0F, this.cY - (float)this.img.getHeight() / 2.0F + this.bobEffect.y / 4.0F, (float)this.img.getWidth() / 2.0F, (float)this.img.getHeight() / 2.0F, (float)this.img.getWidth(), (float)this.img.getHeight(), this.scale, this.scale, 0.0F, 0, 0, this.img.getWidth(), this.img.getHeight(), this.flipHorizontal, false);
+        if (img != null) {
+            sb.setColor(c);
+            sb.draw(img, cX - img.getWidth() / 2.0F + bobEffect.y / 4.0F, cY - img.getHeight() / 2.0F + bobEffect.y / 4.0F, img.getWidth() / 2.0F, img.getHeight() / 2.0F, img.getWidth(), img.getHeight(), scale, scale, 0.0F, 0, 0, img.getWidth(), img.getHeight(), flipHorizontal, false);
         }
 
-        this.renderText(sb);
-        this.hb.render(sb);
+        renderText(sb);
+        hb.render(sb);
     }
 
     public void fastAttackAnimation() {
@@ -169,6 +185,6 @@ public abstract class AbstractFriend extends CustomOrb {
     }
 
     public ArrayList<AbstractCard> getRelateCards() {
-        return new ArrayList<AbstractCard>();
+        return new ArrayList<>();
     }
 }

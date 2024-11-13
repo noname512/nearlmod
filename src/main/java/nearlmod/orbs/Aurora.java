@@ -25,7 +25,6 @@ public class Aurora extends AbstractFriend {
     public static final String IMAGE = "resources/nearlmod/images/orbs/aurora.png";
     public static final String RELAX_IMAGE = "resources/nearlmod/images/orbs/aurora_relax.png";
     public status curStatus;
-    public int blockGain;
     public enum status {
         NORMAL, RESPITE
     }
@@ -33,7 +32,7 @@ public class Aurora extends AbstractFriend {
     public Aurora(int amount) {
         super(ORB_ID, NAME, DESCRIPTION, IMAGE, amount);
         curStatus = status.NORMAL;
-        blockGain = 0;
+        secondVal = 0;
     }
 
     public Aurora() {
@@ -71,20 +70,23 @@ public class Aurora extends AbstractFriend {
     @Override
     public void onEndOfTurn() {
         if (curStatus == status.RESPITE) {
-            addToBot(new GainBlockAction(AbstractDungeon.player, blockGain + trustAmount));
+            addToBot(new GainBlockAction(AbstractDungeon.player, secondVal + trustAmount));
         }
     }
 
-    public void startRespite(int block) { // TODO:参考黑球，左下角显示叠甲数
+    public void startRespite(int block) {
         curStatus = status.RESPITE;
-        blockGain += block;
+        secondVal += block;
         img = ImageMaster.loadImage(RELAX_IMAGE);
+        showSecondVal = true;
+        secondFontAnimTimer = fullFontAnimTimer;
     }
 
     public void endRespite() {
         curStatus = status.NORMAL;
-        blockGain = 0;
+        secondVal = 0;
         img = ImageMaster.loadImage(IMAGE);
+        showSecondVal = false;
     }
 
     @Override
