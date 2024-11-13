@@ -57,6 +57,19 @@ public class PegasusHalo extends CustomRelic {
     }
 
     @Override
+    public void instantObtain() {
+        if (AbstractDungeon.player.hasRelic(CureUp.ID)) {
+            for (int i = 0; i < AbstractDungeon.player.relics.size(); i++)
+                if (AbstractDungeon.player.relics.get(i).relicId.equals(CureUp.ID)) {
+                    instantObtain(AbstractDungeon.player, i, true);
+                    break;
+                }
+        } else {
+            super.instantObtain();
+        }
+    }
+
+    @Override
     public AbstractRelic makeCopy() {
         return new PegasusHalo();
     }
