@@ -22,7 +22,7 @@ public class FallingShield extends AbstractNearlCard {
     public static final String UPGRADE_DESCRIPTION = cardStrings.UPGRADE_DESCRIPTION;
     public static final String IMG_PATH = "resources/nearlmod/images/cards/fallingshield.png";
     private static final int COST = -1;
-    private static final int ATTACK_TIMES = 3;
+    private static final int ATTACK_TIMES = 2;
     private static final int EXTRA_TIMES = 2;
     private static final int UPGRADE_PLUS_TIME = 1;
 
