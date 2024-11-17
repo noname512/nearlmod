@@ -208,7 +208,7 @@
     ]
   },
   "nearlmod:BloodLoss": {
-    "NAME": "Blood Loss",
+    "NAME": "Winter cold",
     "DESCRIPTIONS": [
       "At the start of next turn, lose all your Temporary HP."
     ]
@@ -253,6 +253,12 @@
       "After you play a food card, your continuous food card can apply #b",
       " additional #yBlock. (Currently #b",
       " in total)"
+    ]
+  },
+  "nearlmod:Hidden": {
+    "NAME": "Hidden",
+    "DESCRIPTIONS": [
+      "Cannot be damaged. Cannot be applied any Debuff."
     ]
   }
 }

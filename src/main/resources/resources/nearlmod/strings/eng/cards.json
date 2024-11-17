@@ -742,11 +742,6 @@
         "DESCRIPTION": "Gain !B! Block, draw 1 card. If Gummy is present, add !M! *Dishes into your draw pile.",
         "UPGRADE_DESCRIPTION": "Gain !B! Block, draw 1 card. If Gummy is present, add !M! *Dishes+ into your draw pile."
     },
-    "nearlmod:Dishes": {
-        "NAME": "Dishes",
-        "DESCRIPTION": "Gain !B! Block. NL Draw 1 card. NL Exhaust.",
-        "UPGRADE_DESCRIPTION": ""
-    },
     "nearlmod:UrsusRoar": {
         "NAME": "Ursus's Roar",
         "DESCRIPTION": "Deal !D! damage. If Gummy is present, she deals !M! damage and gains !nearlmod:M2! nearlmod:Trust.",
@@ -804,6 +799,16 @@
     "nearlmod:MedalOfChampion": {
         "NAME": "Medal of Champion",
         "DESCRIPTION": "Gain !M! Gold. NL Exhaust.",
+        "UPGRADE_DESCRIPTION": ""
+    },
+    "nearlmod:Dishes": {
+        "NAME": "Dishes",
+        "DESCRIPTION": "Gain !B! Block. NL Draw 1 card. NL Exhaust.",
+        "UPGRADE_DESCRIPTION": ""
+    },
+    "nearlmod:BlockCard": {
+        "NAME": "Block it!",
+        "DESCRIPTION": "Change target's intent (to attack you instead your friend).  NL Remove target's Hidden status. NL Ethereal, Exhaust.",
         "UPGRADE_DESCRIPTION": ""
     },
 

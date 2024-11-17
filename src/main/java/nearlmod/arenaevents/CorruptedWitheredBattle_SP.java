@@ -1,10 +1,6 @@
 package nearlmod.arenaevents;
 
-import com.megacrit.cardcrawl.actions.common.MakeTempCardInHandAction;
-import com.megacrit.cardcrawl.cards.AbstractCard;
-import com.megacrit.cardcrawl.cards.colorless.Panacea;
 import com.megacrit.cardcrawl.cards.curses.Regret;
-import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.core.Settings;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
@@ -15,22 +11,21 @@ import com.megacrit.cardcrawl.monsters.MonsterGroup;
 import com.megacrit.cardcrawl.relics.AbstractRelic;
 import com.megacrit.cardcrawl.rooms.AbstractRoom;
 import com.megacrit.cardcrawl.vfx.cardManip.ShowCardAndObtainEffect;
-import nearlmod.actions.SummonFriendAction;
 import nearlmod.cards.AbstractNearlCard;
-import nearlmod.cards.NightScouringGleam;
 import nearlmod.cards.special.Beginning;
-import nearlmod.monsters.*;
-import nearlmod.orbs.Blemishine;
+import nearlmod.cards.special.BlemishinesFaintLight;
+import nearlmod.monsters.CorruptKnight;
+import nearlmod.monsters.WitheredKnight;
 import nearlmod.relics.LateLight;
 
-public class CorruptedWitheredBattle extends AbstractArenaEvent {
-    public static final String ID = "nearlmod:CorruptedWitheredBattle";
+public class CorruptedWitheredBattle_SP extends AbstractArenaEvent {
+    public static final String ID = "nearlmod:CorruptedWitheredBattle_SP";
     public static final EventStrings eventStrings = CardCrawlGame.languagePack.getEventString(ID);
     public static final String NAME = eventStrings.NAME;
     public static final String[] DESCRIPTIONS = eventStrings.DESCRIPTIONS;
     public static final String[] OPTIONS = eventStrings.OPTIONS;
 
-    public CorruptedWitheredBattle() {
+    public CorruptedWitheredBattle_SP() {
         super(NAME, DESCRIPTIONS[0], "resources/nearlmod/images/events/corruptedwitheredbattle.png");
         this.imageEventText.setDialogOption(OPTIONS[0]);
         this.imageEventText.setDialogOption(OPTIONS[1], CardLibrary.getCopy("Regret"), new LateLight());
@@ -51,28 +46,15 @@ public class CorruptedWitheredBattle extends AbstractArenaEvent {
                 screen = CurScreen.FIGHT;
                 AbstractDungeon.getCurrRoom().rewards.clear();
                 AbstractNearlCard.addSpecificCardsToReward(new Beginning());
-                AbstractDungeon.getCurrRoom().addRelicToRewards(AbstractRelic.RelicTier.COMMON);
-                int gold = 48;
-                if (AbstractDungeon.ascensionLevel >= 13) gold = 36;
+                AbstractNearlCard.addSpecificCardsToReward(new BlemishinesFaintLight());
+                AbstractDungeon.getCurrRoom().addRelicToRewards(AbstractRelic.RelicTier.BOSS);
+                int gold = 99;
+                if (AbstractDungeon.ascensionLevel >= 13) gold = 75;
                 AbstractDungeon.getCurrRoom().addGoldToRewards(gold);
                 AbstractDungeon.lastCombatMetricKey = ID;
                 AbstractDungeon.getCurrRoom().phase = AbstractRoom.RoomPhase.COMBAT;
                 AbstractDungeon.getCurrRoom().monsters = new MonsterGroup(new AbstractMonster[] { new CorruptKnight(-200.0F, 0.0F), new WitheredKnight(80.0F, 0.0F) });
                 enterCombatFromImage();
-
-                AbstractCard arti = new Panacea();
-                if (AbstractDungeon.ascensionLevel < 15) {
-                    arti.upgrade();
-                }
-                AbstractDungeon.actionManager.addToBottom(new SummonFriendAction(new Blemishine()));
-                AbstractDungeon.actionManager.addToBottom(new SummonFriendAction(new Blemishine()));
-                AbstractCard card = new NightScouringGleam();
-                card.upgrade();
-                int amount = 1;
-                if (AbstractDungeon.ascensionLevel < 15) amount = 2;
-                AbstractDungeon.actionManager.addToBottom(new MakeTempCardInHandAction(arti));
-                AbstractDungeon.actionManager.addToBottom(new MakeTempCardInHandAction(card, amount));
-
                 return;
             case 1:
                 logMetric(ID, "Leave");

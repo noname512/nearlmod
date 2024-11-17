@@ -135,5 +135,10 @@
     "NAME": "Knight Shielder",
     "MOVES": [],
     "DIALOG": ["Don't sleep, there's enemy!"]
+  },
+  "nearlmod:FamigliaCleaner": {
+    "NAME": "Famiglia Cleaner",
+    "MOVES": [],
+    "DIALOG": []
   }
 }

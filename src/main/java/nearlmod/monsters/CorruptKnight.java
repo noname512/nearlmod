@@ -57,19 +57,6 @@ public class CorruptKnight extends AbstractMonster {
     @Override
     public void usePreBattleAction() {
         addToBot(new ApplyPowerAction(this, this, new DoubleBossPower(this)));
-        AbstractPlayer p = AbstractDungeon.player;
-        AbstractCard arti = new Panacea();
-        if (AbstractDungeon.ascensionLevel < 15) {
-            arti.upgrade();
-        }
-        addToBot(new SummonFriendAction(new Blemishine()));
-        addToBot(new SummonFriendAction(new Blemishine()));
-        AbstractCard card = new NightScouringGleam();
-        card.upgrade();
-        int amount = 1;
-        if (AbstractDungeon.ascensionLevel < 15) amount = 2;
-        addToBot(new MakeTempCardInHandAction(arti));
-        addToBot(new MakeTempCardInHandAction(card, amount));
         currentTurn = 0;
     }
 

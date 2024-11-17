@@ -742,11 +742,6 @@
         "DESCRIPTION": "获得 !B! 点 格挡 ，抽一张牌。如果古米在场，将 !M! 张 *料理 洗入你的抽牌堆。",
         "UPGRADE_DESCRIPTION": "获得 !B! 点 格挡 ，抽一张牌。如果古米在场，将 !M! 张 *料理+ 洗入你的抽牌堆。"
     },
-    "nearlmod:Dishes": {
-        "NAME": "料理",
-        "DESCRIPTION": "获得 !B! 点格挡。 NL 抽一张牌。 NL 消耗。",
-        "UPGRADE_DESCRIPTION": ""
-    },
     "nearlmod:UrsusRoar": {
         "NAME": "乌萨斯战吼",
         "DESCRIPTION": "造成 !D! 点伤害。如果古米在场，她造成 !M! 点伤害并获得 !nearlmod:M2! 点 nearlmod:信赖 。",
@@ -804,6 +799,16 @@
     "nearlmod:MedalOfChampion": {
         "NAME": "冠军奖章",
         "DESCRIPTION": "获得 !M! 金币。 NL 消耗 。",
+        "UPGRADE_DESCRIPTION": ""
+    },
+    "nearlmod:Dishes": {
+        "NAME": "料理",
+        "DESCRIPTION": "获得 !B! 点格挡。 NL 抽一张牌。 NL 消耗。",
+        "UPGRADE_DESCRIPTION": ""
+    },
+    "nearlmod:BlockCard": {
+        "NAME": "阻挡",
+        "DESCRIPTION": "改变目标意图（改为对你造成伤害而非攻击伙伴）。 NL 取消目标的隐匿状态。 NL 虚无 ， 消耗 。",
         "UPGRADE_DESCRIPTION": ""
     },
 

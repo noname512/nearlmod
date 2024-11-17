@@ -135,5 +135,10 @@
     "NAME": "持盾独立骑士",
     "MOVES": [],
     "DIALOG": ["别睡了，有敌人！"]
+  },
+  "nearlmod:FamigliaCleaner": {
+    "NAME": "家族灭迹人",
+    "MOVES": [],
+    "DIALOG": []
   }
 }

@@ -125,6 +125,9 @@ public class NLMOD implements EditCardsSubscriber, EditCharactersSubscriber, Edi
         BaseMod.addEvent(ArmorlessSquadBattle.ID, ArmorlessSquadBattle.class, "Special");
         BaseMod.addEvent(LazuriteSquadBattle.ID, LazuriteSquadBattle.class, "Special");
         BaseMod.addEvent(WanderingKnightBattle.ID, WanderingKnightBattle.class, "Special");
+
+        BaseMod.addEvent(FamigliaCleanerBattle.ID, FamigliaCleanerBattle.class, "Special");
+        BaseMod.addEvent(CorruptedWitheredBattle_SP.ID, CorruptedWitheredBattle_SP.class, "Special");
     }
 
     private void initializePotions() {
@@ -353,6 +356,7 @@ public class NLMOD implements EditCardsSubscriber, EditCharactersSubscriber, Edi
         BaseMod.addCard(new ShiningCard()); // 使徒：闪灵
 
         BaseMod.addCard(new Dishes()); // 料理
+        BaseMod.addCard(new BlockCard()); // 阻挡
     }
 
     @Override

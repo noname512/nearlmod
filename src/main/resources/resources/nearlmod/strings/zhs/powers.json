@@ -208,7 +208,7 @@
     ]
   },
   "nearlmod:BloodLoss": {
-    "NAME": "失血",
+    "NAME": "极寒",
     "DESCRIPTIONS": [
       "下回合开始时，失去全部临时生命。"
     ]
@@ -252,6 +252,12 @@
     "DESCRIPTIONS": [
       "当你打出一张食物牌后，你后续的食物牌可以额外获得 #b",
       " 点 #y格挡 。"
+    ]
+  },
+  "nearlmod:Hidden": {
+    "NAME": "隐匿",
+    "DESCRIPTIONS": [
+      "无法受到任何伤害。无法被施加任何负面效果。"
     ]
   }
 }
