@@ -140,5 +140,10 @@
     "NAME": "家族灭迹人",
     "MOVES": [],
     "DIALOG": []
+  },
+  "nearlmod:TheWillofSami": {
+    "NAME": "萨米的意志",
+    "MOVES": [],
+    "DIALOG": []
   }
 }

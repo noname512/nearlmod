@@ -107,7 +107,10 @@
   },
   "nearlmod:Hint": {
     "NAME": "警告！",
-    "DESCRIPTIONS": ["这名敌人的技能 #y恐惧凝集 造成的伤害如果没有被完全 #y格挡 ，会击穿你的伙伴！"]
+    "DESCRIPTIONS": [
+      "这名敌人的技能 #y恐惧凝集 造成的伤害如果没有被完全 #y格挡 ，会击穿你的伙伴！",
+      "如果你没有使用卡牌 #y阻挡 ，且这名敌人造成的伤害没有被完全 #y格挡 ，会击穿你的伙伴！"
+    ]
   },
   "nearlmod:StormCounterAttackPower": {
     "NAME": "风暴反击",
@@ -258,6 +261,12 @@
     "NAME": "隐匿",
     "DESCRIPTIONS": [
       "无法受到任何伤害。无法被施加任何负面效果。"
+    ]
+  },
+  "nearlmod:ShelteredEnemy": {
+    "NAME": "庇护",
+    "DESCRIPTIONS": [
+      "在血量小于或等于一半时，受到的伤害降低 #b60% 。"
     ]
   }
 }

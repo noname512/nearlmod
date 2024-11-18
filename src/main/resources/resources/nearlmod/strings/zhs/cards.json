@@ -811,6 +811,12 @@
         "DESCRIPTION": "改变目标意图（改为对你造成伤害而非攻击伙伴）。 NL 取消目标的隐匿状态。 NL 虚无 ， 消耗 。",
         "UPGRADE_DESCRIPTION": ""
     },
+    "nearlmod:IceCone": {
+        "NAME": "冰棱",
+        "DESCRIPTION": "只有本回合未打出过非 *冰凌 时才可打出。 NL 本回合所有手牌消耗增加 1 。 NL 保留 ， 消耗 。",
+        "UPGRADE_DESCRIPTION": "",
+        "EXTENDED_DESCRIPTION": "我本回合使用过其他卡牌！"
+    },
 
     "nearlmod:StartWithAtkStance": {
         "NAME": "无畏",

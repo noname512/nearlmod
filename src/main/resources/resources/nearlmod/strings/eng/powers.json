@@ -107,7 +107,10 @@
   },
   "nearlmod:Hint": {
     "NAME": "Warning!",
-    "DESCRIPTIONS": ["If damage of 'Coalescing Fear', the skill of this enemy is not fully blocked， your #yFriend will be kill!"]
+    "DESCRIPTIONS": [
+      "If damage of 'Coalescing Fear', the skill of this enemy is not fully blocked, your #yFriend will be kill!",
+      "If you do not use card 'Block it!', and damage is no  fully blocked, your #yFriend will be kill!"
+    ]
   },
   "nearlmod:StormCounterAttackPower": {
     "NAME": "Storm Counterattack",
@@ -259,6 +262,12 @@
     "NAME": "Hidden",
     "DESCRIPTIONS": [
       "Cannot be damaged. Cannot be applied any Debuff."
+    ]
+  },
+  "nearlmod:ShelteredEnemy": {
+    "NAME": "Sheltered",
+    "DESCRIPTIONS": [
+      "While hp is 50% or below, take #b60% less damage."
     ]
   }
 }

@@ -37,9 +37,6 @@ public class FamigliaCleaner extends AbstractMonster {
     public static final String[] DIALOG = monsterStrings.DIALOG;
     public static final String IMAGE = "resources/nearlmod/images/monsters/lastkheshig.png";
 
-    public static final float[] POSX = new float[] { 115.0F, 285.0F };
-    public static final float[] POSY = new float[] { 0.0F, 0.0F };
-    private final AbstractMonster[] imitators = new AbstractMonster[2];
     private boolean talked;
 
     public FamigliaCleaner(float x, float y) {
@@ -69,6 +66,7 @@ public class FamigliaCleaner extends AbstractMonster {
 
     @Override
     public void usePreBattleAction() {
+        addToBot(new ApplyPowerAction(this, this, new HintPower(this, 1)));
         addToBot(new ApplyPowerAction(this, this, new HiddenPower(this)));
         addToBot(new SummonFriendAction(new Penance()));
         if (AbstractDungeon.ascensionLevel < 15)

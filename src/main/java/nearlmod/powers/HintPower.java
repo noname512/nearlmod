@@ -12,6 +12,13 @@ public class HintPower extends AbstractPower implements CloneablePowerInterface 
     public static final String NAME = powerStrings.NAME;
     public static final String[] DESCRIPTIONS = powerStrings.DESCRIPTIONS;
 
+    int content;
+
+    public HintPower(AbstractCreature owner, int content) {
+        this(owner);
+        this.content = content;
+    }
+
     public HintPower(AbstractCreature owner) {
         name = NAME;
         ID = POWER_ID;
@@ -23,7 +30,7 @@ public class HintPower extends AbstractPower implements CloneablePowerInterface 
     }
     @Override
     public void updateDescription() {
-        description = DESCRIPTIONS[0];
+        description = DESCRIPTIONS[content];
     }
 
     @Override

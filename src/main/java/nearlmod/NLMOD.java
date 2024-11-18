@@ -127,6 +127,7 @@ public class NLMOD implements EditCardsSubscriber, EditCharactersSubscriber, Edi
         BaseMod.addEvent(WanderingKnightBattle.ID, WanderingKnightBattle.class, "Special");
 
         BaseMod.addEvent(FamigliaCleanerBattle.ID, FamigliaCleanerBattle.class, "Special");
+        BaseMod.addEvent(TheWillofSamiBattle.ID, TheWillofSamiBattle.class, "Special");
         BaseMod.addEvent(CorruptedWitheredBattle_SP.ID, CorruptedWitheredBattle_SP.class, "Special");
     }
 
@@ -357,6 +358,7 @@ public class NLMOD implements EditCardsSubscriber, EditCharactersSubscriber, Edi
 
         BaseMod.addCard(new Dishes()); // 料理
         BaseMod.addCard(new BlockCard()); // 阻挡
+        BaseMod.addCard(new IceCone()); // 冰棱
     }
 
     @Override

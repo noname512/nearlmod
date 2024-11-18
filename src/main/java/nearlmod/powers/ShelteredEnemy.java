@@ -10,13 +10,13 @@ import com.megacrit.cardcrawl.helpers.ImageMaster;
 import com.megacrit.cardcrawl.localization.PowerStrings;
 import com.megacrit.cardcrawl.powers.AbstractPower;
 
-public class Sheltered extends AbstractPower implements CloneablePowerInterface {
-    public static final String POWER_ID = "nearlmod:Sheltered";
+public class ShelteredEnemy extends AbstractPower implements CloneablePowerInterface {
+    public static final String POWER_ID = "nearlmod:ShelteredEnemy";
     public static final PowerStrings powerStrings = CardCrawlGame.languagePack.getPowerStrings(POWER_ID);
     public static final String NAME = powerStrings.NAME;
     public static final String[] DESCRIPTIONS = powerStrings.DESCRIPTIONS;
 
-    public Sheltered(AbstractCreature owner) {
+    public ShelteredEnemy(AbstractCreature owner) {
         name = NAME;
         ID = POWER_ID;
         this.owner = owner;
@@ -33,18 +33,21 @@ public class Sheltered extends AbstractPower implements CloneablePowerInterface 
 
     @Override
     public AbstractPower makeCopy() {
-        return new Sheltered(owner);
-    }
-
-    @Override
-    public void atStartOfTurn() {
-        addToBot(new RemoveSpecificPowerAction(owner, owner, this));
+        return new ShelteredEnemy(owner);
     }
 
     @Override
     public float atDamageReceive(float damage, DamageInfo.DamageType damageType) {
-        if (damageType != DamageInfo.DamageType.NORMAL)
+        if ((damageType == DamageInfo.DamageType.NORMAL) && (owner.currentHealth * 2 <= owner.maxHealth))
             return damage * 0.4F;
         return damage;
+    }
+
+    @Override
+    public int onLoseHp(int damageAmount) {
+        if ((owner.currentHealth - damageAmount) * 2 <= owner.maxHealth) {
+            this.flash();
+        }
+        return damageAmount;
     }
 }
