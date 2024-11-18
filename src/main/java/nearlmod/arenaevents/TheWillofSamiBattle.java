@@ -10,8 +10,7 @@ import com.megacrit.cardcrawl.monsters.MonsterGroup;
 import com.megacrit.cardcrawl.relics.AbstractRelic;
 import com.megacrit.cardcrawl.rooms.AbstractRoom;
 import com.megacrit.cardcrawl.vfx.cardManip.ShowCardAndObtainEffect;
-import nearlmod.monsters.LastKheshig;
-import nearlmod.monsters.TheWillofSami;
+import nearlmod.monsters.TheWillOfSami;
 import nearlmod.relics.ImaginaryFear;
 
 public class TheWillofSamiBattle extends AbstractArenaEvent {
@@ -46,7 +45,7 @@ public class TheWillofSamiBattle extends AbstractArenaEvent {
                 AbstractDungeon.getCurrRoom().addGoldToRewards(70);
                 AbstractDungeon.lastCombatMetricKey = ID;
                 AbstractDungeon.getCurrRoom().phase = AbstractRoom.RoomPhase.COMBAT;
-                AbstractDungeon.getCurrRoom().monsters = new MonsterGroup(new TheWillofSami(-80.0F, 0.0F));
+                AbstractDungeon.getCurrRoom().monsters = new MonsterGroup(new TheWillOfSami(-80.0F, 0.0F));
                 AbstractDungeon.getCurrRoom().eliteTrigger = true;
                 enterCombatFromImage();
                 return;

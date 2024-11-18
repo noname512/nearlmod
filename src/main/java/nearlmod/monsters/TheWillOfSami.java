@@ -1,11 +1,8 @@
 package nearlmod.monsters;
 
-import com.evacipated.cardcrawl.mod.stslib.patches.core.AbstractCreature.TempHPField;
 import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
 import com.megacrit.cardcrawl.actions.common.DamageAction;
 import com.megacrit.cardcrawl.actions.common.MakeTempCardInHandAction;
-import com.megacrit.cardcrawl.actions.common.RemoveSpecificPowerAction;
-import com.megacrit.cardcrawl.actions.utility.WaitAction;
 import com.megacrit.cardcrawl.cards.DamageInfo;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.core.Settings;
@@ -14,30 +11,23 @@ import com.megacrit.cardcrawl.localization.MonsterStrings;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import com.megacrit.cardcrawl.vfx.combat.DeckPoofEffect;
 import nearlmod.actions.EndBattleAction;
-import nearlmod.actions.RemoveLastFriendAction;
 import nearlmod.actions.SummonFriendAction;
-import nearlmod.cards.special.BlockCard;
 import nearlmod.cards.special.IceCone;
-import nearlmod.characters.Nearl;
-import nearlmod.orbs.AbstractFriend;
 import nearlmod.orbs.Aurora;
-import nearlmod.orbs.Penance;
-import nearlmod.powers.HiddenPower;
 import nearlmod.powers.ShelteredEnemy;
 
-public class TheWillofSami extends AbstractMonster {
-    public static final String ID = "nearlmod:TheWillofSami";
+public class TheWillOfSami extends AbstractMonster {
+    public static final String ID = "nearlmod:TheWillOfSami";
     public static final MonsterStrings monsterStrings = CardCrawlGame.languagePack.getMonsterStrings(ID);
     public static final String NAME = monsterStrings.NAME;
     public static final String[] MOVES = monsterStrings.MOVES;
     public static final String[] DIALOG = monsterStrings.DIALOG;
-    public static final String IMAGE = "resources/nearlmod/images/monsters/lastkheshig.png";
     public final int BattleEndTurn;
     public int turn;
     public boolean isStage2;
     public final int IceNum;
-    public TheWillofSami(float x, float y) {
-        super(NAME, ID, 200, 10.0F, 0, 170.0F, 320.0F, IMAGE, x, y);
+    public TheWillOfSami(float x, float y) {
+        super(NAME, ID, 200, 10.0F, 0, 170.0F, 320.0F, null, x, y);
         this.type = EnemyType.BOSS;
         if (AbstractDungeon.ascensionLevel >= 9)
             setHp(210);
@@ -59,12 +49,11 @@ public class TheWillofSami extends AbstractMonster {
         if (AbstractDungeon.ascensionLevel < 15) {
             BattleEndTurn = 20;
             IceNum = 1;
-        }
-        else {
+        } else {
             BattleEndTurn = 16;
             IceNum = 2;
         }
-        loadAnimation("resources/nearlmod/images/monsters/enemy_1185_nmekgt_3/enemy_1185_nmekgt_333.atlas", "resources/nearlmod/images/monsters/enemy_1185_nmekgt_3/enemy_1185_nmekgt_333.json", 1.5F);
+        loadAnimation("resources/nearlmod/images/monsters/enemy_2054_smdeer/enemy_2054_smdeer33.atlas", "resources/nearlmod/images/monsters/enemy_2054_smdeer/enemy_2054_smdeer33.json", 1.5F);
         this.flipHorizontal = true;
         this.stateData.setMix("Idle", "Die", 0.1F);
         this.state.setAnimation(0, "Idle", true);
@@ -88,21 +77,21 @@ public class TheWillofSami extends AbstractMonster {
 
     @Override
     public void takeTurn() {
-        if (this.nextMove == 1) {
+        if (this.nextMove <= 2) {
+            state.setAnimation(0, "Attack", false);
+            state.addAnimation(0, "Idle", true, 0);
             addToBot(new DamageAction(AbstractDungeon.player, this.damage.get(0)));
             if (isStage2) {
                 addToBot(new DamageAction(AbstractDungeon.player, this.damage.get(0)));
             }
-        } else if (this.nextMove == 2) {
-            addToBot(new DamageAction(AbstractDungeon.player, this.damage.get(0)));
-            if (isStage2) {
-                addToBot(new DamageAction(AbstractDungeon.player, this.damage.get(0)));
-            }
-            addToBot(new MakeTempCardInHandAction(new IceCone(), IceNum));
-            if (isStage2) {
+            if (this.nextMove == 2) {
                 addToBot(new MakeTempCardInHandAction(new IceCone(), IceNum));
+                if (isStage2) {
+                    addToBot(new MakeTempCardInHandAction(new IceCone(), IceNum));
+                }
             }
         } else {
+            state.setAnimation(0, "Skill_02", false);
             addToBot(new DamageAction(AbstractDungeon.player, this.damage.get(2)));
             gameOver();
         }
@@ -117,21 +106,17 @@ public class TheWillofSami extends AbstractMonster {
         }
         if (turn >= BattleEndTurn) {
             setMove((byte) 3, Intent.ATTACK_DEBUFF, this.damage.get(2).base);
-        }
-        else {
+        } else {
             if (turn % 4 == 0) {
                 if (isStage2) {
                     setMove((byte) 2, Intent.ATTACK_DEBUFF,  this.damage.get(1).base, 2, true);
-                }
-                else {
+                } else {
                     setMove((byte) 2, Intent.ATTACK_DEBUFF, this.damage.get(1).base);
                 }
-            }
-            else {
+            } else {
                 if (isStage2) {
                     setMove((byte) 1, Intent.ATTACK, this.damage.get(0).base,2,true);
-                }
-                else {
+                } else {
                     setMove((byte) 1, Intent.ATTACK, this.damage.get(0).base);
                 }
             }

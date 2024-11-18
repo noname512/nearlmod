@@ -1,10 +1,7 @@
 package nearlmod.monsters;
 
 import com.evacipated.cardcrawl.mod.stslib.patches.core.AbstractCreature.TempHPField;
-import com.megacrit.cardcrawl.actions.animations.TalkAction;
-import com.megacrit.cardcrawl.actions.animations.VFXAction;
 import com.megacrit.cardcrawl.actions.common.*;
-import com.megacrit.cardcrawl.actions.utility.HideHealthBarAction;
 import com.megacrit.cardcrawl.actions.utility.WaitAction;
 import com.megacrit.cardcrawl.cards.DamageInfo;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
@@ -13,21 +10,15 @@ import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.localization.MonsterStrings;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import com.megacrit.cardcrawl.vfx.combat.DeckPoofEffect;
-import com.megacrit.cardcrawl.vfx.combat.InflameEffect;
-import nearlmod.NLMOD;
 import nearlmod.actions.EndBattleAction;
 import nearlmod.actions.RemoveLastFriendAction;
 import nearlmod.actions.SummonFriendAction;
-import nearlmod.cards.AbstractNearlCard;
-import nearlmod.cards.special.BlemishinesFaintLight;
 import nearlmod.cards.special.BlockCard;
 import nearlmod.characters.Nearl;
 import nearlmod.orbs.AbstractFriend;
-import nearlmod.orbs.Blemishine;
 import nearlmod.orbs.Penance;
 import nearlmod.powers.HiddenPower;
 import nearlmod.powers.HintPower;
-import nearlmod.vfx.CoalescingFearEffect;
 
 public class FamigliaCleaner extends AbstractMonster {
     public static final String ID = "nearlmod:FamigliaCleaner";
@@ -35,12 +26,9 @@ public class FamigliaCleaner extends AbstractMonster {
     public static final String NAME = monsterStrings.NAME;
     public static final String[] MOVES = monsterStrings.MOVES;
     public static final String[] DIALOG = monsterStrings.DIALOG;
-    public static final String IMAGE = "resources/nearlmod/images/monsters/lastkheshig.png";
-
-    private boolean talked;
 
     public FamigliaCleaner(float x, float y) {
-        super(NAME, ID, 60, 10.0F, 0, 170.0F, 320.0F, IMAGE, x, y);
+        super(NAME, ID, 60, 10.0F, 0, 170.0F, 320.0F, null, x, y);
         this.type = EnemyType.ELITE;
         if (AbstractDungeon.ascensionLevel >= 8)
             setHp(65);
@@ -57,8 +45,7 @@ public class FamigliaCleaner extends AbstractMonster {
             this.damage.add(new DamageInfo(this, 14));
             this.damage.add(new DamageInfo(this, 20));
         }
-        talked = false;
-        loadAnimation("resources/nearlmod/images/monsters/enemy_1185_nmekgt_3/enemy_1185_nmekgt_333.atlas", "resources/nearlmod/images/monsters/enemy_1185_nmekgt_3/enemy_1185_nmekgt_333.json", 1.5F);
+        loadAnimation("resources/nearlmod/images/monsters/enemy_1283_sgkill_2/enemy_1283_sgkill_233.atlas", "resources/nearlmod/images/monsters/enemy_1283_sgkill_2/enemy_1283_sgkill_233.json", 1.5F);
         this.flipHorizontal = true;
         this.stateData.setMix("Idle", "Die", 0.1F);
         this.state.setAnimation(0, "Idle", true);
@@ -111,14 +98,14 @@ public class FamigliaCleaner extends AbstractMonster {
 
     @Override
     public void takeTurn() {
-        if (this.nextMove == 1) {
-            attackFriend(this.damage.get(0));
-        } else if (this.nextMove == 2) {
-            attackFriend(this.damage.get(1));
+        if (nextMove <= 2) {
+            state.setAnimation(0, "Attack", false);
+            state.addAnimation(0, "Idle", true, 0);
+            attackFriend(damage.get(nextMove - 1));
         } else {
-            addToBot(new DamageAction(AbstractDungeon.player, this.damage.get(2)));
+            addToBot(new DamageAction(AbstractDungeon.player, damage.get(2)));
         }
-        setMove((byte) 2, Intent.ATTACK_DEBUFF, this.damage.get(1).base);
+        setMove((byte) 2, Intent.ATTACK_DEBUFF, damage.get(1).base);
 
         addToBot(new MakeTempCardInHandAction(new BlockCard()));
         if (!hasPower(HiddenPower.POWER_ID)) {
