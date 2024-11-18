@@ -145,5 +145,10 @@
     "NAME": "The Will of Sami",
     "MOVES": [],
     "DIALOG": []
+  },
+  "nearlmod:Mandragora": {
+    "NAME": "Mandragora",
+    "MOVES": ["Mandragora's Gaze"],
+    "DIALOG": []
   }
 }

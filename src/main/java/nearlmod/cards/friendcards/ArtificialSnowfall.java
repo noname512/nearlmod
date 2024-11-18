@@ -32,7 +32,6 @@ public class ArtificialSnowfall extends AbstractFriendCard {
                 CardRarity.SPECIAL, CardTarget.ENEMY, "nearlmod:Aurora");
         magicNumber = baseMagicNumber = BASIC_DAMAGE;
         secondMagicNumber = baseSecondMagicNumber = TRIGGER_DAMAGE;
-        isSecondMagicNumberUseTrust = true;
     }
 
     @Override

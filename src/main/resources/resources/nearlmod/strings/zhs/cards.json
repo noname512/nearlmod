@@ -815,7 +815,9 @@
         "NAME": "冰棱",
         "DESCRIPTION": "只有本回合未打出过非 *冰凌 时才可打出。 NL 本回合所有手牌消耗增加 1 。 NL 保留 ， 消耗 。",
         "UPGRADE_DESCRIPTION": "",
-        "EXTENDED_DESCRIPTION": "我本回合使用过其他卡牌！"
+        "EXTENDED_DESCRIPTION": [
+            "我本回合使用过其他卡牌！"
+        ]
     },
 
     "nearlmod:StartWithAtkStance": {

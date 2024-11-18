@@ -56,7 +56,7 @@ public class TheWillofSami extends AbstractMonster {
         }
         turn = 1;
         isStage2 = false;
-        if (AbstractDungeon.ascensionLevel <= 15) {
+        if (AbstractDungeon.ascensionLevel < 15) {
             BattleEndTurn = 20;
             IceNum = 1;
         }
@@ -140,6 +140,6 @@ public class TheWillofSami extends AbstractMonster {
 
     @Override
     protected void getMove(int i) {
-        setMove((byte) 1, Intent.ATTACK_DEBUFF, this.damage.get(0).base);
+        setMove((byte) 1, Intent.ATTACK, this.damage.get(0).base);
     }
 }

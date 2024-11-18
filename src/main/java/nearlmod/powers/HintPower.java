@@ -17,6 +17,7 @@ public class HintPower extends AbstractPower implements CloneablePowerInterface 
     public HintPower(AbstractCreature owner, int content) {
         this(owner);
         this.content = content;
+        updateDescription();
     }
 
     public HintPower(AbstractCreature owner) {

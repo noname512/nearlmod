@@ -269,5 +269,12 @@
     "DESCRIPTIONS": [
       "While hp is 50% or below, take #b60% less damage."
     ]
+  },
+  "nearlmod:GazedPower": {
+    "NAME": "Gazed by Mandragora",
+    "DESCRIPTIONS": [
+      "Damage to deal reduce #r60% , block from cards reduce #r60% , whenever you play a non-friend card, take #r",
+      " damage."
+    ]
   }
 }

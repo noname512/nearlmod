@@ -66,6 +66,7 @@ public class FamigliaCleanerBattle extends AbstractArenaEvent {
 
     @Override
     protected void buttonEffect(int buttonPressed) {
+        //TODO：完全没改
         if (screen != CurScreen.INTRO) {
             openMap();
             return;

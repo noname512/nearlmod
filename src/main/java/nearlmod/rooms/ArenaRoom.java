@@ -30,6 +30,7 @@ import nearlmod.events.LaughAllYouWantEvent;
 
 import java.util.ArrayList;
 
+import nearlmod.patches.CharacterSettingPatch;
 import nearlmod.patches.NearlEnum;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
@@ -55,17 +56,33 @@ public class ArenaRoom extends AbstractRoom {
         enterTimes++;
         logger.info("enterTimes = " + enterTimes);
         event = new LaughAllYouWantEvent(); // 防crash
-        if (enterTimes == 1) event = new CorruptedWitheredBattle();
-        else if (enterTimes == 2) event = new LeftHandBattle();
-        else if (enterTimes == 3) event = new CandleKnightBattle();
-        else if (enterTimes == 4) event = new LastKheshigBattle();
-        else if (enterTimes == 5) event = new BloodKnightBattle();
+        if (CharacterSettingPatch.curTeam == 1) {
+            if (enterTimes == 1) event = new CorruptedWitheredBattle();
+            else if (enterTimes == 2) event = new FamigliaCleanerBattle();
+            else if (enterTimes == 3) event = new CandleKnightBattle();
+            else if (enterTimes == 4) event = new TheWillofSamiBattle();
+            else if (enterTimes == 5) event = new CorruptedWitheredBattle_SP();
+            else {
+                int rand = AbstractDungeon.eventRng.random(0, 4);
+                int monsterLevel = enterTimes - 1;
+                if (rand <= 1) event = new LazuriteSquadBattle(monsterLevel);
+                else if (rand <= 3) event = new ArmorlessSquadBattle(monsterLevel);
+                else event = new WanderingKnightBattle(monsterLevel);
+            }
+        }
         else {
-            int rand = AbstractDungeon.eventRng.random(0, 4);
-            int monsterLevel = enterTimes - 1;
-            if (rand <= 1) event = new LazuriteSquadBattle(monsterLevel);
-            else if (rand <= 3) event = new ArmorlessSquadBattle(monsterLevel);
-            else event = new WanderingKnightBattle(monsterLevel);
+            if (enterTimes == 1) event = new CorruptedWitheredBattle();
+            else if (enterTimes == 2) event = new LeftHandBattle();
+            else if (enterTimes == 3) event = new CandleKnightBattle();
+            else if (enterTimes == 4) event = new LastKheshigBattle();
+            else if (enterTimes == 5) event = new BloodKnightBattle();
+            else {
+                int rand = AbstractDungeon.eventRng.random(0, 4);
+                int monsterLevel = enterTimes - 1;
+                if (rand <= 1) event = new LazuriteSquadBattle(monsterLevel);
+                else if (rand <= 3) event = new ArmorlessSquadBattle(monsterLevel);
+                else event = new WanderingKnightBattle(monsterLevel);
+            }
         }
         event.onEnterRoom();
     }

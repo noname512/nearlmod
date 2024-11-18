@@ -11,11 +11,13 @@ import com.megacrit.cardcrawl.monsters.MonsterGroup;
 import com.megacrit.cardcrawl.relics.AbstractRelic;
 import com.megacrit.cardcrawl.rooms.AbstractRoom;
 import com.megacrit.cardcrawl.vfx.cardManip.ShowCardAndObtainEffect;
+import nearlmod.actions.SummonFriendAction;
 import nearlmod.cards.AbstractNearlCard;
 import nearlmod.cards.special.Beginning;
 import nearlmod.cards.special.BlemishinesFaintLight;
 import nearlmod.monsters.CorruptKnight;
 import nearlmod.monsters.WitheredKnight;
+import nearlmod.orbs.Blemishine;
 import nearlmod.relics.LateLight;
 
 public class CorruptedWitheredBattle_SP extends AbstractArenaEvent {
@@ -55,6 +57,9 @@ public class CorruptedWitheredBattle_SP extends AbstractArenaEvent {
                 AbstractDungeon.getCurrRoom().phase = AbstractRoom.RoomPhase.COMBAT;
                 AbstractDungeon.getCurrRoom().monsters = new MonsterGroup(new AbstractMonster[] { new CorruptKnight(-200.0F, 0.0F), new WitheredKnight(80.0F, 0.0F) });
                 enterCombatFromImage();
+                //TODO: A15 怎么修改
+                AbstractDungeon.actionManager.addToBottom(new SummonFriendAction(new Blemishine()));
+                AbstractDungeon.actionManager.addToBottom(new SummonFriendAction(new Blemishine()));
                 return;
             case 1:
                 logMetric(ID, "Leave");
