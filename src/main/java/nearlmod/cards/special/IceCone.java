@@ -7,7 +7,6 @@ import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.localization.CardStrings;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import nearlmod.cards.AbstractNearlCard;
-import nearlmod.monsters.FamigliaCleaner;
 
 public class IceCone extends AbstractNearlCard {
     public static final String ID = "nearlmod:IceCone";
@@ -15,12 +14,12 @@ public class IceCone extends AbstractNearlCard {
     public static final String NAME = cardStrings.NAME;
     public static final String DESCRIPTION = cardStrings.DESCRIPTION;
     public static final String UPGRADE_DESCRIPTION = cardStrings.UPGRADE_DESCRIPTION;
-    public static final String IMG_PATH = "resources/nearlmod/images/cards/dishes.png";
+    public static final String IMG_PATH = "resources/nearlmod/images/cards/icecone.png";
     private static final int COST = 0;
 
     public IceCone() {
         super(ID, NAME, IMG_PATH, COST, DESCRIPTION,
-                CardType.SKILL, CardColor.COLORLESS,
+                CardType.STATUS, CardColor.COLORLESS,
                 CardRarity.SPECIAL, CardTarget.SELF);
         exhaust = true;
         selfRetain = true;

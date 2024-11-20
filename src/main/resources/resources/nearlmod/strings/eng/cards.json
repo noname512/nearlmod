@@ -813,7 +813,7 @@
     },
     "nearlmod:IceCone": {
         "NAME": "Ice Cone",
-        "DESCRIPTION": "Only playable while you didn't play non-Ice Cone card. NL Cost for All your cards are added by 1. NL Retain, Exhaust.",
+        "DESCRIPTION": "Only playable while you didn't play non-Ice Cone card. NL Cost of all your cards are added by 1. NL Retain, Exhaust.",
         "UPGRADE_DESCRIPTION": "",
         "EXTENDED_DESCRIPTION": [
             "I used other cards this turn!"
