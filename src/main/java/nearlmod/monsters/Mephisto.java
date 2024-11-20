@@ -40,6 +40,11 @@ public class Mephisto extends AbstractMonster {
     private final int regen_amt;
     int turn = 0;
     private final int para_turn;
+    // TODO: POSX POSY 没改
+    public static final float[] POSX = new float[] { 195.0F, -235.0F, 165.0F, -265.0F, 225.0F, -205.0F };
+    public static final float[] POSY = new float[] { 85.0F, 75.0F, 225.0F, 215.0F, 345.0F, 335.0F };
+
+    private final AbstractMonster[] minions = new AbstractMonster[4];
 
     public Mephisto(float x, float y) {
         super(NAME, ID, 120, 10.0F, 0, 170.0F, 320.0F, null, x, y);
@@ -99,9 +104,15 @@ public class Mephisto extends AbstractMonster {
             }
         }
         else if (nextMove == 2) {
-            // Summon
+            for (int i = 0; i < minions.length; i++)
+                if (minions[i] == null || minions[i].isDeadOrEscaped()) {
+                    PossessedVeteranJunkman minion = new PossessedVeteranJunkman(POSX[i], POSY[i]);
+                    minions[i] = minion;
+                    addToBot(new SpawnMonsterAction(minion, true));
+                    break;
+                }
         }
-        else {
+        else if (nextMove == 3) {
             int parasiteCount = 1;
             for (AbstractCard c : AbstractDungeon.player.masterDeck.group) {
                 if (c instanceof Parasite) {
@@ -111,7 +122,20 @@ public class Mephisto extends AbstractMonster {
             addToBot(new MakeTempCardInDiscardAndDeckAction(new Parasite()));
             addToBot(new ReduceMaxHpAction(AbstractDungeon.player, parasiteCount * 3));
         }
+        else {
+            gameOver();
+        }
         rollMove();
+    }
+
+    private int minionCount() {
+        int cnt = 0;
+        for (AbstractMonster m : minions) {
+            if ((m != null) && (!m.isDeadOrEscaped())) {
+                cnt ++;
+            }
+        }
+        return cnt;
     }
 
     @Override
@@ -127,7 +151,7 @@ public class Mephisto extends AbstractMonster {
         if ((AbstractDungeon.ascensionLevel >= 15) && (turn >= para_turn) && (lastMoves != 3)) {
             possibleMoves.add(3);
         }
-        if (lastMoves != 2) { // && 宿主数量不超过上限
+        if ((lastMoves != 2) && (minionCount() <= 4)) {
             possibleMoves.add(2);
         }
         if (lastMoves != 1) {
@@ -135,6 +159,9 @@ public class Mephisto extends AbstractMonster {
         }
 
         int move = possibleMoves.get(AbstractDungeon.aiRng.random(possibleMoves.size()));
+        if (turn >= 12) {
+            setMove((byte) 4, Intent.STRONG_DEBUFF);
+        }
         if (move == 1) {
             setMove((byte) 1, Intent.BUFF);
         }
