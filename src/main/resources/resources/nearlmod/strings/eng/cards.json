@@ -691,13 +691,13 @@
     "nearlmod:FearNoCold": {
         "NAME": "Fear No Cold",
         "DESCRIPTION": "Summon Aurora as nearlmod:Friend, enter nearlmod:Guardian.",
-        "UPGRADE_DESCRIPTION": "Summon Aurora as nearlmod:Friend, enter nearlmod:Guardian. Add a *Warmth *of *Home into your hand, and give it Retain.",
+        "UPGRADE_DESCRIPTION": "Summon Aurora as nearlmod:Friend, enter nearlmod:Guardian. Add a *Cheese *Fondue into your hand, and give it Retain.",
         "EXTENDED_DESCRIPTION": [
             " NL Retain."
         ]
     },
-    "nearlmod:WarmthOfHome": {
-        "NAME": "Warmth of Home",
+    "nearlmod:CheeseFondue": {
+        "NAME": "Cheese Fondue",
         "DESCRIPTION": "Gain !B! Block. If Aurora is present, remove her nearlmod:Frigid_Respite.",
         "UPGRADE_DESCRIPTION": ""
     },
@@ -706,8 +706,8 @@
         "DESCRIPTION": "Gain !B! Block. If Aurora is present, trigger another 1 time in addition.",
         "UPGRADE_DESCRIPTION": ""
     },
-    "nearlmod:Duelist": {
-        "NAME": "Duelist",
+    "nearlmod:WarmthOfHome": {
+        "NAME": "\"Warmth\" of Home",
         "DESCRIPTION": "Apply !M! nearlmod:Cold. If Aurora is present, add 1 *Artificial *Snowfall into your hand. Otherwise summon Aurora as nearlmod:Friend.",
         "UPGRADE_DESCRIPTION": "Apply !M! nearlmod:Cold. If Aurora is present, add 1 *Artificial *Snowfall+ into your hand. Otherwise summon Aurora as nearlmod:Friend."
     },
@@ -718,8 +718,8 @@
     },
     "nearlmod:ArtificialSnowfall": {
         "NAME": "Artificial Snowfall",
-        "DESCRIPTION": " nearlmod:Friend_Card. NL Deal !M! damage and apply 1 nearlmod:Cold. If the target already has 2 nearlmod:Cold, deal 3 times damage instead ( !nearlmod:M2! ).",
-        "UPGRADE_DESCRIPTION": " nearlmod:Friend_Card. NL Deal !M! damage and apply 1 nearlmod:Cold. If the target already has 2 nearlmod:Cold, deal 3.3 times damage instead ( !nearlmod:M2! )."
+        "DESCRIPTION": " nearlmod:Friend_Card. NL Deal !M! damage and apply 1 nearlmod:Cold. If the target already has 2 nearlmod:Cold, deal 3 times of damage instead ( !nearlmod:M2! ).",
+        "UPGRADE_DESCRIPTION": " nearlmod:Friend_Card. NL Deal !M! damage and apply 1 nearlmod:Cold. If the target already has 2 nearlmod:Cold, deal 3.3 times of damage instead ( !nearlmod:M2! )."
     },
     "nearlmod:HomelandProtector": {
         "NAME": "Homeland Protector",

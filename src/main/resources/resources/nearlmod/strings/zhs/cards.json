@@ -691,13 +691,13 @@
     "nearlmod:FearNoCold": {
         "NAME": "不惧严寒",
         "DESCRIPTION": "召唤极光作为 nearlmod:伙伴 ，进入 nearlmod:守护 。",
-        "UPGRADE_DESCRIPTION": "召唤极光作为 nearlmod:伙伴 ，进入 nearlmod:守护 。将一张 *家乡的“温暖” 置入你的手牌并给予其 保留 。",
+        "UPGRADE_DESCRIPTION": "召唤极光作为 nearlmod:伙伴 ，进入 nearlmod:守护 。将一张 *奶酪火锅 置入你的手牌并给予其 保留 。",
         "EXTENDED_DESCRIPTION": [
             " NL 保留 。"
         ]
     },
-    "nearlmod:WarmthOfHome": {
-        "NAME": "家乡的“温暖”",
+    "nearlmod:CheeseFondue": {
+        "NAME": "奶酪火锅",
         "DESCRIPTION": "获得 !B! 点 格挡。如果极光在场，解除她的 nearlmod:低温休憩 状态。",
         "UPGRADE_DESCRIPTION": ""
     },
@@ -706,8 +706,8 @@
         "DESCRIPTION": "获得 !B! 点 格挡。如果极光在场，额外触发一次。",
         "UPGRADE_DESCRIPTION": ""
     },
-    "nearlmod:Duelist": {
-        "NAME": "决战者",
+    "nearlmod:WarmthOfHome": {
+        "NAME": "家乡的“温暖”",
         "DESCRIPTION": "给予 !M! 层 nearlmod:寒冷 。如果极光在场，将一张 *人工降雪 置入你的手牌，否则召唤极光作为 nearlmod:伙伴 。",
         "UPGRADE_DESCRIPTION": "给予 !M! 层 nearlmod:寒冷 。如果极光在场，将一张 *人工降雪+ 置入你的手牌，否则召唤极光作为 nearlmod:伙伴 。"
     },

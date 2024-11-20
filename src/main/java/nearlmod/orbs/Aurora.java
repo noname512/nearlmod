@@ -8,9 +8,9 @@ import com.megacrit.cardcrawl.helpers.ImageMaster;
 import com.megacrit.cardcrawl.localization.OrbStrings;
 import com.megacrit.cardcrawl.orbs.AbstractOrb;
 import nearlmod.actions.AddFriendCardToHandAction;
-import nearlmod.cards.Duelist;
-import nearlmod.cards.FearNoCold;
+import nearlmod.cards.CheeseFondue;
 import nearlmod.cards.WarmthOfHome;
+import nearlmod.cards.FearNoCold;
 import nearlmod.cards.WhatSheSaw;
 import nearlmod.cards.friendcards.*;
 
@@ -93,9 +93,9 @@ public class Aurora extends AbstractFriend {
     public ArrayList<AbstractCard> getRelateCards() {
         ArrayList<AbstractCard> list = new ArrayList<>();
         list.add(new FearNoCold());
-        list.add(new WarmthOfHome());
+        list.add(new CheeseFondue());
         list.add(new WhatSheSaw());
-        list.add(new Duelist());
+        list.add(new WarmthOfHome());
         return list;
     }
 }
