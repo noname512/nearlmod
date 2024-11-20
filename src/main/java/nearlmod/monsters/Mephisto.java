@@ -98,6 +98,7 @@ public class Mephisto extends AbstractMonster {
                     PossessedVeteranJunkman minion = new PossessedVeteranJunkman(POSX[i], POSY[i]);
                     minions[i] = minion;
                     addToBot(new SpawnMonsterAction(minion, true));
+                    minion.usePreBattleAction();
                     break;
                 }
         }
