@@ -1,12 +1,8 @@
 package nearlmod.monsters;
 
-import com.evacipated.cardcrawl.mod.stslib.patches.core.AbstractCreature.TempHPField;
 import com.megacrit.cardcrawl.actions.common.*;
 import com.megacrit.cardcrawl.actions.unique.AddCardToDeckAction;
-import com.megacrit.cardcrawl.actions.unique.IncreaseMaxHpAction;
-import com.megacrit.cardcrawl.actions.utility.WaitAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
-import com.megacrit.cardcrawl.cards.DamageInfo;
 import com.megacrit.cardcrawl.cards.curses.Parasite;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.core.Settings;
@@ -17,15 +13,8 @@ import com.megacrit.cardcrawl.powers.RegenPower;
 import com.megacrit.cardcrawl.vfx.combat.DeckPoofEffect;
 import nearlmod.actions.EndBattleAction;
 import nearlmod.actions.ReduceMaxHpAction;
-import nearlmod.actions.RemoveLastFriendAction;
 import nearlmod.actions.SummonFriendAction;
-import nearlmod.cards.special.BlockCard;
-import nearlmod.characters.Nearl;
-import nearlmod.orbs.AbstractFriend;
 import nearlmod.orbs.Gummy;
-import nearlmod.orbs.Penance;
-import nearlmod.powers.HiddenPower;
-import nearlmod.powers.HintPower;
 
 import java.util.ArrayList;
 
@@ -48,22 +37,20 @@ public class Mephisto extends AbstractMonster {
             setHp(130);
         if (AbstractDungeon.ascensionLevel >= 19) {
             para_turn = 3;
-        }
-        else {
+        } else {
             para_turn = 5;
         }
         if (AbstractDungeon.ascensionLevel >= 4) {
             heal_amt = 10;
             regen_amt = 6;
-        }
-        else {
+        } else {
             heal_amt = 8;
             regen_amt = 4;
         }
-        loadAnimation("resources/nearlmod/images/monsters/enemy_1283_sgkill_2/enemy_1283_sgkill_233.atlas", "resources/nearlmod/images/monsters/enemy_1283_sgkill_2/enemy_1283_sgkill_233.json", 1.5F);
-        this.flipHorizontal = true;
-        this.stateData.setMix("Idle", "Die", 0.1F);
-        this.state.setAnimation(0, "Idle", true);
+        loadAnimation("resources/nearlmod/images/monsters/enemy_1507_mephi/enemy_1507_mephi33.atlas", "resources/nearlmod/images/monsters/enemy_1507_mephi/enemy_1507_mephi33.json", 1.5F);
+        flipHorizontal = true;
+        stateData.setMix("Idle", "Die", 0.1F);
+        state.setAnimation(0, "Idle", true);
     }
 
     @Override
@@ -88,6 +75,8 @@ public class Mephisto extends AbstractMonster {
 
     @Override
     public void takeTurn() {
+        state.setAnimation(0, "Skill", false);
+        state.addAnimation(0, "Idle", true, 0);
         if (nextMove == 1) {
             for (AbstractMonster m : AbstractDungeon.getCurrRoom().monsters.monsters) {
                 if (!m.isDeadOrEscaped()) {
@@ -97,11 +86,9 @@ public class Mephisto extends AbstractMonster {
                     }
                 }
             }
-        }
-        else if (nextMove == 2) {
+        } else if (nextMove == 2) {
             // Summon
-        }
-        else {
+        } else {
             int parasiteCount = 1;
             for (AbstractCard c : AbstractDungeon.player.masterDeck.group) {
                 if (c instanceof Parasite) {
@@ -120,7 +107,7 @@ public class Mephisto extends AbstractMonster {
         ArrayList<Integer> possibleMoves = new ArrayList<>();
         int lastMoves = -1;
         if (turn >= 3) {
-            if (moveHistory.get(moveHistory.size()-1) == moveHistory.get(moveHistory.size()-2)) {
+            if (moveHistory.get(moveHistory.size() - 1).equals(moveHistory.get(moveHistory.size() - 2))) {
                 lastMoves = moveHistory.get(moveHistory.size()-1);
             }
         }
