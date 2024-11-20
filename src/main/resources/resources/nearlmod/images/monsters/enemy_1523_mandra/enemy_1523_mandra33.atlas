@@ -39,18 +39,18 @@ F_B_Cloak_I
   orig: 47, 23
   offset: 0, 0
   index: -1
-F_L_Cloak_VI
-  rotate: false
-  xy: 187, 1
-  size: 43, 50
-  orig: 43, 50
-  offset: 0, 0
-  index: -1
 F_L_Cloak_V
   rotate: false
   xy: 190, 53
   size: 42, 50
   orig: 42, 50
+  offset: 0, 0
+  index: -1
+F_L_Cloak_VI
+  rotate: false
+  xy: 187, 1
+  size: 43, 50
+  orig: 43, 50
   offset: 0, 0
   index: -1
 F_L_Forearm
@@ -74,6 +74,13 @@ F_L_Arm
   orig: 23, 25
   offset: 0, 0
   index: -1
+F_L_Hand_E_III
+  rotate: false
+  xy: 460, 1
+  size: 23, 17
+  orig: 23, 17
+  offset: 0, 0
+  index: -1
 F_L_Hand_B_I
   rotate: false
   xy: 398, 33
@@ -88,25 +95,11 @@ F_L_Hand_C_I
   orig: 27, 23
   offset: 0, 0
   index: -1
-F_L_Hand_E_III
-  rotate: false
-  xy: 460, 1
-  size: 23, 17
-  orig: 23, 17
-  offset: 0, 0
-  index: -1
 F_Weapon
   rotate: false
   xy: 234, 160
   size: 22, 89
   orig: 22, 89
-  offset: 0, 0
-  index: -1
-F_L_Hand_C_II
-  rotate: false
-  xy: 492, 22
-  size: 17, 18
-  orig: 17, 18
   offset: 0, 0
   index: -1
 F_L_Hand_E_II
@@ -123,11 +116,11 @@ F_L_Hand_B_II
   orig: 22, 25
   offset: 0, 0
   index: -1
-F_L_Hand_D
+F_L_Hand_C_II
   rotate: false
-  xy: 345, 71
-  size: 25, 25
-  orig: 25, 25
+  xy: 492, 22
+  size: 17, 18
+  orig: 17, 18
   offset: 0, 0
   index: -1
 F_L_Hand_E_I
@@ -135,6 +128,13 @@ F_L_Hand_E_I
   xy: 63, 241
   size: 15, 11
   orig: 15, 11
+  offset: 0, 0
+  index: -1
+F_L_Hand_D
+  rotate: false
+  xy: 321, 152
+  size: 25, 25
+  orig: 25, 25
   offset: 0, 0
   index: -1
 F_L_Cloak_IV
@@ -263,6 +263,13 @@ F_R_Hand_C_VI
   orig: 12, 22
   offset: 0, 1
   index: -1
+F_R_Hand
+  rotate: false
+  xy: 345, 71
+  size: 25, 25
+  orig: 25, 25
+  offset: 0, 0
+  index: -1
 F_R_Hand_B
   rotate: false
   xy: 342, 39
@@ -275,13 +282,6 @@ F_R_Hand_C_I
   xy: 424, 20
   size: 23, 20
   orig: 23, 20
-  offset: 0, 0
-  index: -1
-F_R_Hand
-  rotate: false
-  xy: 321, 152
-  size: 25, 25
-  orig: 25, 25
   offset: 0, 0
   index: -1
 F_R_Hand_C_V
