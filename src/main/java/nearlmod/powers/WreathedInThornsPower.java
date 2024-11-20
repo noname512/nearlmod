@@ -3,6 +3,7 @@ package nearlmod.powers;
 import basemod.interfaces.CloneablePowerInterface;
 import com.badlogic.gdx.graphics.g2d.TextureAtlas;
 import com.evacipated.cardcrawl.mod.stslib.patches.core.AbstractCreature.TempHPField;
+import com.evacipated.cardcrawl.mod.stslib.powers.interfaces.OnLoseTempHpPower;
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
 import com.megacrit.cardcrawl.actions.common.DamageAction;
 import com.megacrit.cardcrawl.cards.DamageInfo;
@@ -16,7 +17,7 @@ import com.megacrit.cardcrawl.powers.AbstractPower;
 import nearlmod.cards.friendcards.AbstractFriendCard;
 import nearlmod.orbs.Penance;
 
-public class WreathedInThornsPower extends AbstractPower implements CloneablePowerInterface {
+public class WreathedInThornsPower extends AbstractPower implements CloneablePowerInterface, OnLoseTempHpPower {
     public static final String POWER_ID = "nearlmod:WreathedInThornsPower";
     public static final PowerStrings powerStrings = CardCrawlGame.languagePack.getPowerStrings(POWER_ID);
     public static final String NAME = powerStrings.NAME;
@@ -39,7 +40,7 @@ public class WreathedInThornsPower extends AbstractPower implements CloneablePow
     }
 
     @Override
-    public int onAttacked(DamageInfo info, int damageAmount) {
+    public int onLoseTempHp(DamageInfo info, int damage) {
         if (info.type == DamageInfo.DamageType.NORMAL && info.owner != null && info.owner != owner && TempHPField.tempHp.get(owner) > 0) {
             int trust = -1;
             for (AbstractOrb o : AbstractDungeon.player.orbs)
@@ -54,7 +55,7 @@ public class WreathedInThornsPower extends AbstractPower implements CloneablePow
                 addToTop(new DamageAction(info.owner, newInfo, AbstractGameAction.AttackEffect.SLASH_HORIZONTAL));
             }
         }
-        return damageAmount;
+        return damage;
     }
 
     @Override

@@ -40,7 +40,7 @@ public class FearNoCold extends AbstractNearlCard {
         addToBot(new SummonFriendAction(new Aurora()));
         addToBot(new ChangeStanceAction(new DefStance()));
         if (upgraded) {
-            AbstractCard c = new WarmthOfHome();
+            AbstractCard c = new CheeseFondue();
             c.selfRetain = true;
             c.rawDescription += cardStrings.EXTENDED_DESCRIPTION[0];
             c.initializeDescription();
