@@ -126,6 +126,7 @@ public class NLMOD implements EditCardsSubscriber, EditCharactersSubscriber, Edi
         BaseMod.addEvent(LazuriteSquadBattle.ID, LazuriteSquadBattle.class, "Special");
         BaseMod.addEvent(WanderingKnightBattle.ID, WanderingKnightBattle.class, "Special");
 
+        BaseMod.addEvent(MephistoBattle.ID, MephistoBattle.class, "Special");
         BaseMod.addEvent(FamigliaCleanerBattle.ID, FamigliaCleanerBattle.class, "Special");
         BaseMod.addEvent(MandragoraBattle.ID, MandragoraBattle.class, "Special");
         BaseMod.addEvent(TheWillofSamiBattle.ID, TheWillofSamiBattle.class, "Special");
