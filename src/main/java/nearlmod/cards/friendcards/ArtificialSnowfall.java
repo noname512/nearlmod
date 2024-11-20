@@ -1,5 +1,6 @@
 package nearlmod.cards.friendcards;
 
+import com.badlogic.gdx.math.MathUtils;
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
 import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
 import com.megacrit.cardcrawl.actions.common.DamageAction;
@@ -10,8 +11,11 @@ import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.localization.CardStrings;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
+import com.megacrit.cardcrawl.powers.AbstractPower;
 import nearlmod.patches.AbstractCardEnum;
 import nearlmod.powers.ColdPower;
+import nearlmod.powers.DayBreakPower;
+import nearlmod.relics.HandOfConqueror;
 
 public class ArtificialSnowfall extends AbstractFriendCard {
     public static final String ID = "nearlmod:ArtificialSnowfall";
@@ -22,16 +26,14 @@ public class ArtificialSnowfall extends AbstractFriendCard {
     public static final String IMG_PATH = "resources/nearlmod/images/cards/artificialsnowfall.png";
     private static final int COST = 1;
     private static final int BASIC_DAMAGE = 9;
-    private static final int TRIGGER_DAMAGE = 27;
     private static final int UPG_BASIC = 2;
-    private static final int UPG_TRIGGER = 9;
+    private float damage_scale = 3.0F;
 
     public ArtificialSnowfall() {
         super(ID, NAME, IMG_PATH, COST, DESCRIPTION,
                 CardType.ATTACK, AbstractCardEnum.FRIEND_BLUE,
                 CardRarity.SPECIAL, CardTarget.ENEMY, "nearlmod:Aurora");
         magicNumber = baseMagicNumber = BASIC_DAMAGE;
-        secondMagicNumber = baseSecondMagicNumber = TRIGGER_DAMAGE;
     }
 
     @Override
@@ -51,24 +53,40 @@ public class ArtificialSnowfall extends AbstractFriendCard {
 
     @Override
     public void applyPowers() {
-        int temp = baseMagicNumber;
-        baseMagicNumber = baseSecondMagicNumber;
+        baseSecondMagicNumber = MathUtils.floor(baseMagicNumber * damage_scale);
         super.applyPowers();
-        secondMagicNumber = magicNumber;
-        isSecondMagicNumberModified = isMagicNumberModified;
-        baseMagicNumber = temp;
-        super.applyPowers();
+        float damage = magicNumber;
+        if (AbstractDungeon.player.hasRelic(HandOfConqueror.ID)) {
+            int amount = AbstractDungeon.player.getRelic(HandOfConqueror.ID).counter;
+            damage = (1 + amount * 0.01F) * damage;
+        }
+        magicNumber = MathUtils.floor(damage);
+        secondMagicNumber = MathUtils.floor(damage * damage_scale);
+        isSecondMagicNumberModified = (baseSecondMagicNumber != secondMagicNumber);
     }
 
     @Override
     public void calculateCardDamage(AbstractMonster mo) {
-        int temp = baseMagicNumber;
-        baseMagicNumber = baseSecondMagicNumber;
-        super.calculateCardDamage(mo);
-        secondMagicNumber = magicNumber;
-        isSecondMagicNumberModified = isMagicNumberModified;
-        baseMagicNumber = temp;
-        super.calculateCardDamage(mo);
+        baseSecondMagicNumber = MathUtils.floor(baseMagicNumber * damage_scale);
+        super.applyPowers();
+        float damage = magicNumber;
+        if (AbstractDungeon.player.hasRelic(HandOfConqueror.ID)) {
+            int amount = AbstractDungeon.player.getRelic(HandOfConqueror.ID).counter;
+            damage = (1 + amount * 0.01F) * damage;
+        }
+        for (AbstractPower power : mo.powers)
+            damage = power.atDamageReceive(damage, DamageInfo.DamageType.NORMAL);
+        if (mo.hasPower("nearlmod:Duel")) {
+            damage = MathUtils.floor(damage * (1 - 0.01F * mo.getPower("nearlmod:Duel").amount));
+        }
+        for (AbstractPower power : mo.powers)
+            damage = power.atDamageFinalReceive(damage, DamageInfo.DamageType.NORMAL);
+        if (damage < 0.0F) {
+            damage = 0.0F;
+        }
+        magicNumber = MathUtils.floor(damage);
+        secondMagicNumber = MathUtils.floor(damage * damage_scale);
+        isSecondMagicNumberModified = (baseSecondMagicNumber != secondMagicNumber);
     }
 
     @Override
@@ -87,11 +105,20 @@ public class ArtificialSnowfall extends AbstractFriendCard {
     }
 
     @Override
+    public AbstractCard makeStatEquivalentCopy() {
+        ArtificialSnowfall c = (ArtificialSnowfall)super.makeStatEquivalentCopy();
+        c.damage_scale = damage_scale;
+        return c;
+    }
+
+    @Override
     public void upgrade() {
         if (!upgraded) {
             upgradeName();
+            damage_scale = 3.3F;
             upgradeMagicNumber(UPG_BASIC);
-            upgradeSecondMagicNumber(UPG_TRIGGER);
+            rawDescription = UPGRADE_DESCRIPTION;
+            initializeDescription();
         }
     }
 }

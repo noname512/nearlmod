@@ -718,8 +718,8 @@
     },
     "nearlmod:ArtificialSnowfall": {
         "NAME": "人工降雪",
-        "DESCRIPTION": " nearlmod:伙伴牌 。 NL 造成 !M! 点伤害并给予其1层 nearlmod:寒冷 ，如果目标已经有2层 nearlmod:寒冷 ，改为 !nearlmod:M2! 点。",
-        "UPGRADE_DESCRIPTION": ""
+        "DESCRIPTION": " nearlmod:伙伴牌 。 NL 造成 !M! 点伤害并给予其1层 nearlmod:寒冷 ，如果目标已经有2层 nearlmod:寒冷 ，伤害提高至原本的 3 倍 （ !nearlmod:M2! 点）。",
+        "UPGRADE_DESCRIPTION": " nearlmod:伙伴牌 。 NL 造成 !M! 点伤害并给予其1层 nearlmod:寒冷 ，如果目标已经有2层 nearlmod:寒冷 ，伤害提高至原本的 3.3 倍 （ !nearlmod:M2! 点）。"
     },
     "nearlmod:HomelandProtector": {
         "NAME": "固守家园",

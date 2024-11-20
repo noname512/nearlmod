@@ -718,8 +718,8 @@
     },
     "nearlmod:ArtificialSnowfall": {
         "NAME": "Artificial Snowfall",
-        "DESCRIPTION": " nearlmod:Friend_Card. NL Deal !M! damage and apply 1 nearlmod:Cold. If the target already has 2 nearlmod:Cold, deal !nearlmod:M2! damage instead.",
-        "UPGRADE_DESCRIPTION": ""
+        "DESCRIPTION": " nearlmod:Friend_Card. NL Deal !M! damage and apply 1 nearlmod:Cold. If the target already has 2 nearlmod:Cold, deal 3 times damage instead ( !nearlmod:M2! ).",
+        "UPGRADE_DESCRIPTION": " nearlmod:Friend_Card. NL Deal !M! damage and apply 1 nearlmod:Cold. If the target already has 2 nearlmod:Cold, deal 3.3 times damage instead ( !nearlmod:M2! )."
     },
     "nearlmod:HomelandProtector": {
         "NAME": "Homeland Protector",
