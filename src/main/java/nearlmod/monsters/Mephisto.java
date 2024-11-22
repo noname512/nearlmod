@@ -61,9 +61,7 @@ public class Mephisto extends AbstractMonster {
     @Override
     public void usePreBattleAction() {
         addToBot(new SummonFriendAction(new Gummy()));
-        if (AbstractDungeon.ascensionLevel < 15) {
-            addToBot(new SummonFriendAction(new Gummy()));
-        }
+        addToBot(new SummonFriendAction(new Gummy()));
     }
 
     void gameOver() {
