@@ -136,19 +136,29 @@
     "MOVES": [],
     "DIALOG": ["Don't sleep, there's enemy!"]
   },
-  "nearlmod:FamigliaCleaner": {
-    "NAME": "Famiglia Cleaner",
+  "nearlmod:Mephisto": {
+    "NAME": "Mephisto",
     "MOVES": [],
     "DIALOG": []
   },
-  "nearlmod:TheWillOfSami": {
-    "NAME": "The Will of Sami",
+  "nearlmod:PossessedVeteranJunkman": {
+    "NAME": "Possessed Veteran Junkman",
+    "MOVES": [],
+    "DIALOG": []
+  },
+  "nearlmod:FamigliaCleaner": {
+    "NAME": "Famiglia Cleaner",
     "MOVES": [],
     "DIALOG": []
   },
   "nearlmod:Mandragora": {
     "NAME": "Mandragora",
     "MOVES": ["Mandragora's Gaze"],
+    "DIALOG": []
+  },
+  "nearlmod:TheWillOfSami": {
+    "NAME": "The Will of Sami",
+    "MOVES": [],
     "DIALOG": []
   }
 }

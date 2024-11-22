@@ -21,10 +21,8 @@ public class ReduceMaxHpAction extends AbstractGameAction {
 
     @Override
     public void update() {
-        if (this.duration == this.startDuration) {
-            target.decreaseMaxHealth(amount);
-            AbstractDungeon.effectsQueue.add(new TextAboveCreatureEffect(target.hb.cX - target.animX, target.hb.cY, TEXT[0] + amount, Settings.RED_TEXT_COLOR));
-        }
+        target.decreaseMaxHealth(amount);
+        AbstractDungeon.effectsQueue.add(new TextAboveCreatureEffect(target.hb.cX - target.animX, target.hb.cY, TEXT[0] + amount, Settings.RED_TEXT_COLOR));
         isDone = true;
     }
 }

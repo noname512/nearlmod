@@ -771,6 +771,26 @@
         "DESCRIPTION": "nearlmod:Friend_Card. NL Select !nearlmod:M2! cards from your hand, Retain them this turn.",
         "UPGRADE_DESCRIPTION": ""
     },
+    "nearlmod:AGraduationGift": {
+        "NAME": "冬将军的毕业礼物",
+        "DESCRIPTION": "nearlmod:伙伴牌 。 NL 造成 !M! 点伤害， NL 如果你打出的上一张牌不是攻击牌，将这张牌的复制置入你的手牌。",
+        "UPGRADE_DESCRIPTION": ""
+    },
+    "nearlmod:AnswerTheCall": {
+        "NAME": "一呼百应",
+        "DESCRIPTION": "nearlmod:伙伴牌 。 NL  切换至 nearlmod:无畏 ， NL 将消耗堆中由古米提供的攻击伙伴牌全部置入你的手牌，它们耗能为0。",
+        "UPGRADE_DESCRIPTION": ""
+    },
+    "nearlmod:AvalancheBreaker": {
+        "NAME": "雪崩击",
+        "DESCRIPTION": "nearlmod:伙伴牌 。 NL 对所有敌人造成 !M! 点伤害， NL 清除其 再生 与 力量 。",
+        "UPGRADE_DESCRIPTION": ""
+    },
+    "nearlmod:LiteratureStorm": {
+        "NAME": "文学风暴",
+        "DESCRIPTION": "nearlmod:伙伴牌 。 NL 对所有敌人造成 !M! 点伤害， NL 获得 !nearlmod:M2! 点力量。",
+        "UPGRADE_DESCRIPTION": ""
+    },
 
     "nearlmod:Beginning": {
         "NAME": "Beginning",

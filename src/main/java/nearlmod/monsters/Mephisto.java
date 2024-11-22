@@ -30,8 +30,8 @@ public class Mephisto extends AbstractMonster {
     int turn = 0;
     private final int para_turn;
     // TODO: POSX POSY 没改
-    public static final float[] POSX = new float[] { 195.0F, -235.0F, 165.0F, -265.0F, 225.0F, -205.0F };
-    public static final float[] POSY = new float[] { 85.0F, 75.0F, 225.0F, 215.0F, 345.0F, 335.0F };
+    public static final float[] POSX = new float[] { -100.0F, -300.0F, -500.0F, -700.0F};
+    public static final float[] POSY = new float[] { -10.0F, 18.0F, 13.0F, -5.0F};
 
     private final AbstractMonster[] minions = new AbstractMonster[4];
 
@@ -109,7 +109,8 @@ public class Mephisto extends AbstractMonster {
                     parasiteCount ++;
                 }
             }
-            addToBot(new MakeTempCardInDiscardAndDeckAction(new Parasite()));
+            addToBot(new AddCardToDeckAction(new Parasite()));
+            addToBot(new MakeTempCardInDiscardAction(new Parasite(), 1));
             addToBot(new ReduceMaxHpAction(AbstractDungeon.player, parasiteCount * 3));
         }
         else {
@@ -141,18 +142,21 @@ public class Mephisto extends AbstractMonster {
         if ((AbstractDungeon.ascensionLevel >= 15) && (turn >= para_turn) && (lastMoves != 3)) {
             possibleMoves.add(3);
         }
-        if ((lastMoves != 2) && (minionCount() <= 4)) {
+        if ((lastMoves != 2) && (minionCount() < 4)) {
             possibleMoves.add(2);
         }
         if (lastMoves != 1) {
             possibleMoves.add(1);
         }
+        if (possibleMoves.isEmpty()) {
+            possibleMoves.add(4);
+        }
 
-        int move = possibleMoves.get(AbstractDungeon.aiRng.random(possibleMoves.size()));
+        int move = possibleMoves.get(AbstractDungeon.aiRng.random(possibleMoves.size() - 1));
         if (turn >= 12) {
             setMove((byte) 4, Intent.STRONG_DEBUFF);
         }
-        if (move == 1) {
+        else if (move == 1) {
             setMove((byte) 1, Intent.BUFF);
         }
         else if (move == 2) {

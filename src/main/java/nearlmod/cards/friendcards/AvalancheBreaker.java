@@ -32,7 +32,7 @@ public class AvalancheBreaker extends AbstractFriendCard {
     public AvalancheBreaker() {
         super(ID, NAME, IMG_PATH, COST, DESCRIPTION,
                 CardType.ATTACK, AbstractCardEnum.FRIEND_BLUE,
-                CardRarity.SPECIAL, CardTarget.SELF, "nearlmod:Gummy");
+                CardRarity.SPECIAL, CardTarget.ALL_ENEMY, "nearlmod:Gummy");
         magicNumber = baseMagicNumber = DAMAGE_AMT;
         bannerSmallRegion = ImageMaster.CARD_BANNER_UNCOMMON;
         bannerLargeRegion = ImageMaster.CARD_BANNER_UNCOMMON_L;
@@ -43,8 +43,12 @@ public class AvalancheBreaker extends AbstractFriendCard {
         addToBot(new PureDamageAllEnemiesAction(p, magicNumber, belongFriend + damageSuffix));
         for (AbstractMonster mo : AbstractDungeon.getCurrRoom().monsters.monsters) {
             if (!mo.isDeadOrEscaped()) {
-                addToBot(new RemoveSpecificPowerAction(m, p, RegenPower.POWER_ID));
-                addToBot(new RemoveSpecificPowerAction(m, p, StrengthPower.POWER_ID));
+                if (mo.hasPower(RegenPower.POWER_ID)) {
+                    addToBot(new RemoveSpecificPowerAction(mo, p, RegenPower.POWER_ID));
+                }
+                if (mo.hasPower(StrengthPower.POWER_ID) && mo.getPower(StrengthPower.POWER_ID).amount > 0) {
+                    addToBot(new RemoveSpecificPowerAction(mo, p, StrengthPower.POWER_ID));
+                }
             }
         }
     }

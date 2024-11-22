@@ -67,7 +67,7 @@ public class Gummy extends AbstractFriend {
     }
 
     public AbstractFriendCard ReduceCost(AbstractFriendCard c) {
-        c.updateCost(c.cost-1);
+        c.modifyCostForCombat(-1);
         return c;
     }
     @Override

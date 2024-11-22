@@ -31,7 +31,7 @@ public class LiteratureStorm extends AbstractFriendCard {
     public LiteratureStorm() {
         super(ID, NAME, IMG_PATH, COST, DESCRIPTION,
                 CardType.ATTACK, AbstractCardEnum.FRIEND_BLUE,
-                CardRarity.SPECIAL, CardTarget.SELF, "nearlmod:Gummy");
+                CardRarity.SPECIAL, CardTarget.ALL_ENEMY, "nearlmod:Gummy");
         magicNumber = baseMagicNumber = DAMAGE_AMT;
         secondMagicNumber = baseSecondMagicNumber = STRENGTH_GET;
         bannerSmallRegion = ImageMaster.CARD_BANNER_UNCOMMON;

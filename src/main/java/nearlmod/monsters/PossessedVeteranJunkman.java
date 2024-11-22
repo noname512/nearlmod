@@ -39,7 +39,7 @@ public class PossessedVeteranJunkman extends AbstractMonster {
 
     @Override
     public void usePreBattleAction() {
-        addToTop(new ApplyPowerAction(this, this, new RegenPower(this, hpRestore)));
+        addToBot(new ApplyPowerAction(this, this, new RegenPower(this, hpRestore)));
     }
 
     @Override

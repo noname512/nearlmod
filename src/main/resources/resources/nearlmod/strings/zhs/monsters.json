@@ -136,19 +136,29 @@
     "MOVES": [],
     "DIALOG": ["别睡了，有敌人！"]
   },
-  "nearlmod:FamigliaCleaner": {
-    "NAME": "家族灭迹人",
+  "nearlmod:Mephisto": {
+    "NAME": "梅菲斯特",
     "MOVES": [],
     "DIALOG": []
   },
-  "nearlmod:TheWillOfSami": {
-    "NAME": "萨米的意志",
+  "nearlmod:PossessedVeteranJunkman": {
+    "NAME": "宿主流浪者",
+    "MOVES": [],
+    "DIALOG": []
+  },
+  "nearlmod:FamigliaCleaner": {
+    "NAME": "家族灭迹人",
     "MOVES": [],
     "DIALOG": []
   },
   "nearlmod:Mandragora": {
     "NAME": "蔓德拉",
     "MOVES": ["蔓德拉的注目"],
+    "DIALOG": []
+  },
+  "nearlmod:TheWillOfSami": {
+    "NAME": "萨米的意志",
+    "MOVES": [],
     "DIALOG": []
   }
 }
