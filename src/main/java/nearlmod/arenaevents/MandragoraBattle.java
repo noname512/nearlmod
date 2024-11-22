@@ -11,7 +11,6 @@ import com.megacrit.cardcrawl.rooms.AbstractRoom;
 import com.megacrit.cardcrawl.vfx.cardManip.ShowCardAndObtainEffect;
 import nearlmod.cards.AbstractNearlCard;
 import nearlmod.cards.SwallowLight;
-import nearlmod.monsters.CandleKnight;
 import nearlmod.monsters.Mandragora;
 import nearlmod.relics.Marigold;
 import nearlmod.relics.NormalPerson;
@@ -24,7 +23,7 @@ public class MandragoraBattle extends AbstractArenaEvent {
     public static final String[] OPTIONS = eventStrings.OPTIONS;
 
     public MandragoraBattle() {
-        super(NAME, DESCRIPTIONS[0], "resources/nearlmod/images/events/candleknightbattle.png");
+        super(NAME, DESCRIPTIONS[0], "resources/nearlmod/images/events/mandragorabattle.png");
         this.imageEventText.setDialogOption(OPTIONS[0]);
         this.imageEventText.setDialogOption(OPTIONS[2], CardLibrary.getCopy("Normality"), new NormalPerson());
         noCardsInRewards = true;
@@ -50,7 +49,7 @@ public class MandragoraBattle extends AbstractArenaEvent {
                     case 0:
                         logMetric(ID, "Fight");
                         CardCrawlGame.music.fadeOutTempBGM();
-                        CardCrawlGame.music.playTempBgmInstantly("m_bat_ccs8_b1_combine.mp3", true);
+                        CardCrawlGame.music.playTempBgmInstantly("m_bat_ghosthunter02_combine.mp3", true);
                         AbstractCard card = new SwallowLight();
                         if (AbstractDungeon.ascensionLevel < 12)
                             card.upgrade();

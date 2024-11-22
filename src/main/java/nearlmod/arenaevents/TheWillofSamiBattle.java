@@ -21,7 +21,7 @@ public class TheWillofSamiBattle extends AbstractArenaEvent {
     public static final String[] OPTIONS = eventStrings.OPTIONS;
 
     public TheWillofSamiBattle() {
-        super(NAME, DESCRIPTIONS[0], "resources/nearlmod/images/events/lastkheshigbattle.png");
+        super(NAME, DESCRIPTIONS[0], "resources/nearlmod/images/events/thewillofsamibattle.png");
         this.imageEventText.setDialogOption(OPTIONS[0]);
         this.imageEventText.setDialogOption(OPTIONS[1], CardLibrary.getCopy("Injury"), new ImaginaryFear());
         noCardsInRewards = true;
@@ -38,7 +38,7 @@ public class TheWillofSamiBattle extends AbstractArenaEvent {
             case 0:
                 logMetric(ID, "Fight");
                 CardCrawlGame.music.fadeOutTempBGM();
-                CardCrawlGame.music.playTempBgmInstantly("m_bat_kazimierz2_1_combine.mp3", true);
+                CardCrawlGame.music.playTempBgmInstantly("m_bat_rouge3boss1_combine.mp3", true);
                 screen = CurScreen.FIGHT;
                 AbstractDungeon.getCurrRoom().rewards.clear();
                 AbstractDungeon.getCurrRoom().addRelicToRewards(AbstractRelic.RelicTier.UNCOMMON);
