@@ -57,7 +57,7 @@ public class ArenaRoom extends AbstractRoom {
         logger.info("enterTimes = " + enterTimes);
         event = new LaughAllYouWantEvent(); // 防crash
         if (CharacterSettingPatch.curTeam == 1) {
-            if (enterTimes == 1) event = new CorruptedWitheredBattle();
+            if (enterTimes == 1) event = new MephistoBattle();
             else if (enterTimes == 2) event = new FamigliaCleanerBattle();
             else if (enterTimes == 3) event = new CandleKnightBattle();
             else if (enterTimes == 4) event = new TheWillofSamiBattle();

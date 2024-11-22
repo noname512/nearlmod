@@ -401,7 +401,7 @@
     },
     "nearlmod:PocketVault": {
         "NAME": "“小金库”",
-        "DESCRIPTION": "造成 !D! 点伤害，如果鞭刃在场，选择抽牌堆和弃牌堆中不超过 !M! 张牌加入你的手牌。 NL 否则召唤鞭刃作为 伙伴 。",
+        "DESCRIPTION": "造成 !D! 点伤害，如果鞭刃在场，选择抽牌堆和弃牌堆中不超过 !M! 张牌加入你的手牌。 NL 否则召唤鞭刃作为 nearlmod:伙伴 。",
         "UPGRADE_DESCRIPTION": ""
     },
 
