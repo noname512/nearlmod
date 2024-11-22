@@ -12,6 +12,7 @@ import nearlmod.characters.Nearl;
 import nearlmod.orbs.Aurora;
 import nearlmod.patches.AbstractCardEnum;
 import nearlmod.patches.NearlTags;
+import nearlmod.stances.AtkStance;
 import nearlmod.stances.DefStance;
 
 public class FearNoCold extends AbstractNearlCard {
@@ -38,7 +39,9 @@ public class FearNoCold extends AbstractNearlCard {
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
         addToBot(new SummonFriendAction(new Aurora()));
-        addToBot(new ChangeStanceAction(new DefStance()));
+        if (!p.stance.name.equals(DefStance.STANCE_ID)) {
+            addToBot(new ChangeStanceAction(new DefStance()));
+        }
         if (upgraded) {
             AbstractCard c = new CheeseFondue();
             c.selfRetain = true;

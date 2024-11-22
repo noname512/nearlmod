@@ -55,6 +55,9 @@ public class Gummy extends AbstractFriend {
     public static AbstractFriendCard getSchoolCard(boolean upgraded) {
         ArrayList<AbstractFriendCard> cards = new ArrayList<>();
         cards.add(new AGraduationGift());
+        cards.add(new AnswerTheCall());
+        cards.add(new AvalancheBreaker());
+        cards.add(new LiteratureStorm());
         return getRandomCard(cards, upgraded);
     }
 
