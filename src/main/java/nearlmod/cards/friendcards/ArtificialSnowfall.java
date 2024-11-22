@@ -14,7 +14,6 @@ import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import com.megacrit.cardcrawl.powers.AbstractPower;
 import nearlmod.patches.AbstractCardEnum;
 import nearlmod.powers.ColdPower;
-import nearlmod.powers.DayBreakPower;
 import nearlmod.relics.HandOfConqueror;
 
 public class ArtificialSnowfall extends AbstractFriendCard {

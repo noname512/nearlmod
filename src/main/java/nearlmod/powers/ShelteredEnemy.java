@@ -2,7 +2,6 @@ package nearlmod.powers;
 
 import basemod.interfaces.CloneablePowerInterface;
 import com.badlogic.gdx.graphics.g2d.TextureAtlas;
-import com.megacrit.cardcrawl.actions.common.RemoveSpecificPowerAction;
 import com.megacrit.cardcrawl.cards.DamageInfo;
 import com.megacrit.cardcrawl.core.AbstractCreature;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
@@ -45,7 +44,7 @@ public class ShelteredEnemy extends AbstractPower implements CloneablePowerInter
 
     @Override
     public int onLoseHp(int damageAmount) {
-        if ((owner.currentHealth - damageAmount) * 2 <= owner.maxHealth) {
+        if (owner.currentHealth > owner.maxHealth && (owner.currentHealth - damageAmount) * 2 <= owner.maxHealth) {
             this.flash();
         }
         return damageAmount;
