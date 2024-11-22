@@ -358,6 +358,7 @@ public class NLMOD implements EditCardsSubscriber, EditCharactersSubscriber, Edi
         BaseMod.addCard(new NightingaleCard()); // 使徒：夜莺
         BaseMod.addCard(new ShiningCard()); // 使徒：闪灵
 
+        BaseMod.addCard(new Salvo()); // 齐射
         BaseMod.addCard(new Dishes()); // 料理
         BaseMod.addCard(new BlockCard()); // 阻挡
         BaseMod.addCard(new IceCone()); // 冰棱
