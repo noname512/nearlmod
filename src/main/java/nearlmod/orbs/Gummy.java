@@ -2,11 +2,14 @@ package nearlmod.orbs;
 
 import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
+import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.localization.OrbStrings;
 import com.megacrit.cardcrawl.orbs.AbstractOrb;
 import nearlmod.actions.AddFriendCardToHandAction;
 import nearlmod.cards.*;
 import nearlmod.cards.friendcards.*;
+import nearlmod.patches.CharacterSettingPatch;
+import nearlmod.rooms.ArenaRoom;
 
 import java.util.ArrayList;
 
@@ -42,14 +45,37 @@ public class Gummy extends AbstractFriend {
         return getRandomCard(cards, upgraded);
     }
 
+    public static AbstractFriendCard getSpecialCard(boolean upgraded) {
+        ArrayList<AbstractFriendCard> cards = new ArrayList<>();
+        cards.add(new FryingPanSpecialist());
+        cards.add(new PeterheimMiddleSchool());
+        return getRandomCard(cards, upgraded);
+    }
+
+    public static AbstractFriendCard getSchoolCard(boolean upgraded) {
+        ArrayList<AbstractFriendCard> cards = new ArrayList<>();
+        cards.add(new AGraduationGift());
+        return getRandomCard(cards, upgraded);
+    }
+
     @Override
     public AbstractFriendCard getUniqueCard() {
         return new Cooking();
     }
 
+    public AbstractFriendCard ReduceCost(AbstractFriendCard c) {
+        c.updateCost(c.cost-1);
+        return c;
+    }
     @Override
     public void onStartOfTurn() {
-        addToBot(new AddFriendCardToHandAction(getRandomCard(upgraded, uniqueUsed)));
+        if ((AbstractDungeon.getCurrRoom() instanceof ArenaRoom) && (ArenaRoom.enterTimes == 1) && (CharacterSettingPatch.curTeam == 1)) {
+            addToBot(new AddFriendCardToHandAction(ReduceCost(getSpecialCard(upgraded))));
+            addToBot(new AddFriendCardToHandAction(ReduceCost(getSchoolCard(upgraded))));
+        }
+        else {
+            addToBot(new AddFriendCardToHandAction(getRandomCard(upgraded, uniqueUsed)));
+        }
     }
 
     @Override

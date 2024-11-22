@@ -803,7 +803,7 @@
     },
     "nearlmod:Dishes": {
         "NAME": "料理",
-        "DESCRIPTION": "获得 !B! 点格挡。 NL 抽一张牌。 NL 消耗。",
+        "DESCRIPTION": "获得 !B! 点格挡。 NL 抽一张牌。 NL 消耗 。",
         "UPGRADE_DESCRIPTION": ""
     },
     "nearlmod:BlockCard": {

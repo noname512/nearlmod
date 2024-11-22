@@ -28,7 +28,7 @@ public class Revolution extends AbstractNearlCard {
     public Revolution() {
         super(ID, NAME, IMG_PATH, COST, DESCRIPTION,
                 CardType.SKILL, AbstractCardEnum.NEARL_GOLD,
-                CardRarity.COMMON, CardTarget.ENEMY);
+                CardRarity.COMMON, CardTarget.SELF);
         magicNumber = baseMagicNumber = LIGHT_AMT;
         secondMagicNumber = baseSecondMagicNumber = CARD_AMT;
         cardsToPreview = new SwitchType();

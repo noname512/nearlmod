@@ -33,9 +33,11 @@ public class UnitedAsOne extends AbstractNearlCard {
     public void use(AbstractPlayer p, AbstractMonster m) {
         for (AbstractOrb orb : AbstractDungeon.player.orbs)
             if (orb instanceof AbstractFriend) {
-                AbstractFriendCard c = ((AbstractFriend)orb).getUniqueCard();
-                if (c != null) {
-                    addToBot(new AddFriendCardToHandAction(c, upgraded));
+                if (!((AbstractFriend) orb).uniqueUsed) {
+                    AbstractFriendCard c = ((AbstractFriend) orb).getUniqueCard();
+                    if (c != null) {
+                        addToBot(new AddFriendCardToHandAction(c, upgraded));
+                    }
                 }
             }
     }
