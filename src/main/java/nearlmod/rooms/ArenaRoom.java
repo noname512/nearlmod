@@ -59,7 +59,7 @@ public class ArenaRoom extends AbstractRoom {
         if (CharacterSettingPatch.curTeam == 1) {
             if (enterTimes == 1) event = new MephistoBattle();
             else if (enterTimes == 2) event = new FamigliaCleanerBattle();
-            else if (enterTimes == 3) event = new CandleKnightBattle();
+            else if (enterTimes == 3) event = new MandragoraBattle();
             else if (enterTimes == 4) event = new TheWillofSamiBattle();
             else if (enterTimes == 5) event = new CorruptedWitheredBattle_SP();
             else {
@@ -70,7 +70,7 @@ public class ArenaRoom extends AbstractRoom {
                 else event = new WanderingKnightBattle(monsterLevel);
             }
         }
-        else {
+        else if (CharacterSettingPatch.curTeam == 0) {
             if (enterTimes == 1) event = new CorruptedWitheredBattle();
             else if (enterTimes == 2) event = new LeftHandBattle();
             else if (enterTimes == 3) event = new CandleKnightBattle();

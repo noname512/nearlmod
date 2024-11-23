@@ -43,7 +43,7 @@ public class Sheltered extends AbstractPower implements CloneablePowerInterface 
 
     @Override
     public float atDamageReceive(float damage, DamageInfo.DamageType damageType) {
-        if (damageType != DamageInfo.DamageType.NORMAL)
+        if (damageType == DamageInfo.DamageType.NORMAL)
             return damage * 0.4F;
         return damage;
     }

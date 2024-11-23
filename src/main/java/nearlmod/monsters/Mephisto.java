@@ -78,7 +78,7 @@ public class Mephisto extends AbstractMonster {
 
     @Override
     public void takeTurn() {
-        state.setAnimation(0, "Skill", false);
+        state.setAnimation(0, "Attack", false);
         state.addAnimation(0, "Idle", true, 0);
         if (nextMove == 1) {
             for (AbstractMonster m : AbstractDungeon.getCurrRoom().monsters.monsters) {
