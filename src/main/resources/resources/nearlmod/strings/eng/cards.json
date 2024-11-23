@@ -679,8 +679,13 @@
     },
     "nearlmod:TempestCommand": {
         "NAME": "Tempest Command",
-        "DESCRIPTION": "nearlmod:Friend_Card. NL Apply nearlmod:Trust to Horn equal to the number of your nearlmod:Friend.",
-        "UPGRADE_DESCRIPTION": "nearlmod:Friend_Card NL Apply nearlmod:Trust to Horn equal to the number of your nearlmod:Friend plus 2."
+        "DESCRIPTION": "nearlmod:Friend_Card. NL Deal !M! damage, add a *Salvo into your hand.",
+        "UPGRADE_DESCRIPTION": "nearlmod:伙伴牌 。 NL Deal !M! damage, add a *Salvo+ into your hand."
+    },
+    "nearlmod:Salvo": {
+        "NAME": "Salvo",
+        "DESCRIPTION": "nearlmod:Friend_Card. NL Deal !M! damage 5 times. Lose !nearlmod:M2! HP.",
+        "UPGRADE_DESCRIPTION": ""
     },
     "nearlmod:UltimateLineOfDefense": {
         "NAME": "Ultimate Line of Defense",

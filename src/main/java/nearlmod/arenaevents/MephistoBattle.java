@@ -1,10 +1,6 @@
 package nearlmod.arenaevents;
 
-import com.megacrit.cardcrawl.actions.common.MakeTempCardInHandAction;
-import com.megacrit.cardcrawl.cards.AbstractCard;
-import com.megacrit.cardcrawl.cards.colorless.Panacea;
 import com.megacrit.cardcrawl.cards.curses.Parasite;
-import com.megacrit.cardcrawl.cards.curses.Regret;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.core.Settings;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
@@ -12,18 +8,11 @@ import com.megacrit.cardcrawl.helpers.CardLibrary;
 import com.megacrit.cardcrawl.localization.EventStrings;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import com.megacrit.cardcrawl.monsters.MonsterGroup;
-import com.megacrit.cardcrawl.relics.AbstractRelic;
 import com.megacrit.cardcrawl.rooms.AbstractRoom;
 import com.megacrit.cardcrawl.vfx.cardManip.ShowCardAndObtainEffect;
-import nearlmod.actions.SummonFriendAction;
 import nearlmod.cards.AbstractNearlCard;
 import nearlmod.cards.BattlefieldCulinarian;
-import nearlmod.cards.NightScouringGleam;
-import nearlmod.cards.special.Beginning;
-import nearlmod.monsters.CorruptKnight;
 import nearlmod.monsters.Mephisto;
-import nearlmod.monsters.WitheredKnight;
-import nearlmod.orbs.Blemishine;
 import nearlmod.relics.LateLight;
 
 public class MephistoBattle extends AbstractArenaEvent {
@@ -34,7 +23,7 @@ public class MephistoBattle extends AbstractArenaEvent {
     public static final String[] OPTIONS = eventStrings.OPTIONS;
 
     public MephistoBattle() {
-        super(NAME, DESCRIPTIONS[0], "resources/nearlmod/images/events/corruptedwitheredbattle.png");
+        super(NAME, DESCRIPTIONS[0], "resources/nearlmod/images/events/mephistobattle.png");
         this.imageEventText.setDialogOption(OPTIONS[0]);
         this.imageEventText.setDialogOption(OPTIONS[1], CardLibrary.getCopy("Regret"), new LateLight());
         noCardsInRewards = true;
@@ -50,7 +39,7 @@ public class MephistoBattle extends AbstractArenaEvent {
             case 0:
                 logMetric(ID, "Fight");
                 CardCrawlGame.music.fadeOutTempBGM();
-                CardCrawlGame.music.playTempBgmInstantly("m_bat_putrid_combine.mp3", true);
+                CardCrawlGame.music.playTempBgmInstantly("m_bat_longmenbatboss_combine.mp3", true);
                 screen = CurScreen.FIGHT;
                 AbstractDungeon.getCurrRoom().rewards.clear();
                 AbstractNearlCard.addSpecificCardsToReward(new BattlefieldCulinarian());

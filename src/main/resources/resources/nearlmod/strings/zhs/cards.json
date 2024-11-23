@@ -679,8 +679,13 @@
     },
     "nearlmod:TempestCommand": {
         "NAME": "暴风号令",
-        "DESCRIPTION": "nearlmod:伙伴牌 。 NL 给予号角等同于你 nearlmod:伙伴 数量的 nearlmod:信赖 。",
-        "UPGRADE_DESCRIPTION": "nearlmod:伙伴牌 。 NL 给予号角等同于你 nearlmod:伙伴 数量+2的 nearlmod:信赖 。"
+        "DESCRIPTION": "nearlmod:伙伴牌 。 NL 造成 !M! 点伤害，将一张 *齐射 置入你的手牌。",
+        "UPGRADE_DESCRIPTION": "nearlmod:伙伴牌 。 NL 造成 !M! 点伤害，将一张 *齐射+ 置入你的手牌。"
+    },
+    "nearlmod:Salvo": {
+        "NAME": "齐射",
+        "DESCRIPTION": "nearlmod:伙伴牌 。 NL 造成 !M! 点伤害 5 次，失去 !nearlmod:M2! 点生命。",
+        "UPGRADE_DESCRIPTION": ""
     },
     "nearlmod:UltimateLineOfDefense": {
         "NAME": "终极防线",
