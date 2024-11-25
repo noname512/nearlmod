@@ -16,17 +16,17 @@ import nearlmod.patches.AbstractCardEnum;
 import nearlmod.patches.NearlTags;
 import nearlmod.powers.ColdPower;
 
-public class WarmthOfHome extends AbstractNearlCard {
-    public static final String ID = "nearlmod:WarmthOfHome";
+public class FindYourWayThroughTheSnow extends AbstractNearlCard {
+    public static final String ID = "nearlmod:FindYourWayThroughTheSnow";
     public static final CardStrings cardStrings = CardCrawlGame.languagePack.getCardStrings(ID);
     public static final String NAME = cardStrings.NAME;
     public static final String DESCRIPTION = cardStrings.DESCRIPTION;
     public static final String UPGRADE_DESCRIPTION = cardStrings.UPGRADE_DESCRIPTION;
-    public static final String IMG_PATH = "resources/nearlmod/images/cards/warmthofhome.png";
+    public static final String IMG_PATH = "resources/nearlmod/images/cards/findyourwaythroughthesnow.png";
     private static final int COST = 1;
     private static final int COLD_CNT = 2;
 
-    public WarmthOfHome() {
+    public FindYourWayThroughTheSnow() {
         super(ID, NAME, IMG_PATH, COST, DESCRIPTION,
                 CardType.SKILL, AbstractCardEnum.NEARL_GOLD,
                 CardRarity.RARE, CardTarget.ENEMY);
@@ -57,7 +57,7 @@ public class WarmthOfHome extends AbstractNearlCard {
 
     @Override
     public AbstractCard makeCopy() {
-        return new WarmthOfHome();
+        return new FindYourWayThroughTheSnow();
     }
 
     @Override

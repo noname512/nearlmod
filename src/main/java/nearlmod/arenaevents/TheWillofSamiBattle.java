@@ -1,5 +1,7 @@
 package nearlmod.arenaevents;
 
+import basemod.devcommands.hand.Hand;
+import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.cards.curses.Injury;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.core.Settings;
@@ -10,8 +12,14 @@ import com.megacrit.cardcrawl.monsters.MonsterGroup;
 import com.megacrit.cardcrawl.relics.AbstractRelic;
 import com.megacrit.cardcrawl.rooms.AbstractRoom;
 import com.megacrit.cardcrawl.vfx.cardManip.ShowCardAndObtainEffect;
+import nearlmod.cards.AbstractNearlCard;
+import nearlmod.cards.FindYourWayThroughTheSnow;
 import nearlmod.monsters.TheWillOfSami;
+import nearlmod.relics.AnmasLove;
+import nearlmod.relics.HandOfConqueror;
 import nearlmod.relics.ImaginaryFear;
+
+import static com.megacrit.cardcrawl.dungeons.AbstractDungeon.rareRelicPool;
 
 public class TheWillofSamiBattle extends AbstractArenaEvent {
     public static final String ID = "nearlmod:TheWillofSamiBattle";
@@ -41,11 +49,24 @@ public class TheWillofSamiBattle extends AbstractArenaEvent {
                 CardCrawlGame.music.playTempBgmInstantly("m_bat_rouge3boss1_combine.mp3", true);
                 screen = CurScreen.FIGHT;
                 AbstractDungeon.getCurrRoom().rewards.clear();
-                AbstractDungeon.getCurrRoom().addRelicToRewards(AbstractRelic.RelicTier.UNCOMMON);
-                AbstractDungeon.getCurrRoom().addGoldToRewards(70);
+                AbstractRelic relic;
+                if (!AbstractDungeon.player.hasRelic(HandOfConqueror.ID) && AbstractDungeon.eventRng.randomBoolean()) {
+                    relic = new HandOfConqueror();
+                    rareRelicPool.remove(HandOfConqueror.ID);
+                }
+                else {
+                    relic = new AnmasLove();
+                }
+                AbstractDungeon.getCurrRoom().addRelicToRewards(relic);
+                AbstractDungeon.getCurrRoom().addGoldToRewards(99);
+                AbstractCard card = new FindYourWayThroughTheSnow();
+                if (AbstractDungeon.ascensionLevel <= 12) {
+                    card.upgrade();
+                }
+                AbstractNearlCard.addSpecificCardsToReward(card);
                 AbstractDungeon.lastCombatMetricKey = ID;
                 AbstractDungeon.getCurrRoom().phase = AbstractRoom.RoomPhase.COMBAT;
-                AbstractDungeon.getCurrRoom().monsters = new MonsterGroup(new TheWillOfSami(-80.0F, 0.0F));
+                AbstractDungeon.getCurrRoom().monsters = new MonsterGroup(new TheWillOfSami(-80.0F, -50.0F));
                 AbstractDungeon.getCurrRoom().eliteTrigger = true;
                 enterCombatFromImage();
                 return;

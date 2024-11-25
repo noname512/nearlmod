@@ -9,11 +9,6 @@
     "FLAVOR": "只要她还屹立在战场上，就没有敌人能夺走我们的胜利。",
     "DESCRIPTIONS": ["替换 #r治疗效果大提升 。你每获得 #b4 点 #y格挡 ，就获得 #b1 点 #y临时生命 。"]
   },
-  "nearlmod:Marigold": {
-    "NAME": "金盏花",
-    "FLAVOR": "或许你不是那光芒，但你亦曾，为守护它而拔剑。",
-    "DESCRIPTIONS": ["每场战斗开始时，召唤薇薇安娜作为 #y伙伴 。"]
-  },
   "nearlmod:EmergencyCallBook": {
     "NAME": "应急通讯指南",
     "FLAVOR": "所有的基站都被毁了，你就是最后一台。",
@@ -58,6 +53,22 @@
     "NAME": "鼠群",
     "FLAVOR": "鼠群，聚集起来吧！",
     "DESCRIPTIONS": ["当你召唤一名新的 #y伙伴 时，获得 #b5 点 #y格挡 。"]
+  },
+
+  "nearlmod:Marigold": {
+    "NAME": "金盏花",
+    "FLAVOR": "或许你不是那光芒，但你亦曾，为守护它而拔剑。",
+    "DESCRIPTIONS": ["每场战斗开始时，召唤薇薇安娜作为 #y伙伴 。"]
+  },
+  "nearlmod:UrsusStudentGroup": {
+    "NAME": "乌萨斯学生团",
+    "FLAVOR": "",
+    "DESCRIPTIONS": ["战斗中，古米有 20% 的概率额外提供一张特别的伙伴牌。"]
+  },
+  "nearlmod:AnmasLove": {
+    "NAME": "安玛的爱",
+    "FLAVOR": "",
+    "DESCRIPTIONS": ["效果待定，目前会偶尔提供一些\"有用\"的帮助。"]
   },
 
   "nearlmod:LateLight": {

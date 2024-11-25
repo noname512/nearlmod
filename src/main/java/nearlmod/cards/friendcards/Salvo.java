@@ -28,7 +28,7 @@ public class Salvo extends AbstractFriendCard {
                 CardType.ATTACK, AbstractCardEnum.FRIEND_BLUE,
                 CardRarity.SPECIAL, CardTarget.ENEMY, "nearlmod:Horn");
         magicNumber = baseMagicNumber = ATTACK_DMG;
-        secondMagicNumber = HP_LOSE;
+        baseSecondMagicNumber = secondMagicNumber = HP_LOSE;
     }
 
     @Override

@@ -9,7 +9,7 @@ import com.megacrit.cardcrawl.localization.OrbStrings;
 import com.megacrit.cardcrawl.orbs.AbstractOrb;
 import nearlmod.actions.AddFriendCardToHandAction;
 import nearlmod.cards.CheeseFondue;
-import nearlmod.cards.WarmthOfHome;
+import nearlmod.cards.FindYourWayThroughTheSnow;
 import nearlmod.cards.FearNoCold;
 import nearlmod.cards.WhatSheSaw;
 import nearlmod.cards.friendcards.*;
@@ -95,7 +95,7 @@ public class Aurora extends AbstractFriend {
         list.add(new FearNoCold());
         list.add(new CheeseFondue());
         list.add(new WhatSheSaw());
-        list.add(new WarmthOfHome());
+        list.add(new FindYourWayThroughTheSnow());
         return list;
     }
 }

@@ -1,5 +1,6 @@
 package nearlmod.arenaevents;
 
+import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.cards.curses.Parasite;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.core.Settings;
@@ -14,6 +15,7 @@ import nearlmod.cards.AbstractNearlCard;
 import nearlmod.cards.BattlefieldCulinarian;
 import nearlmod.monsters.Mephisto;
 import nearlmod.relics.LateLight;
+import nearlmod.relics.UrsusStudentGroup;
 
 public class MephistoBattle extends AbstractArenaEvent {
     public static final String ID = "nearlmod:MephistoBattle";
@@ -42,10 +44,15 @@ public class MephistoBattle extends AbstractArenaEvent {
                 CardCrawlGame.music.playTempBgmInstantly("m_bat_longmenbatboss_combine.mp3", true);
                 screen = CurScreen.FIGHT;
                 AbstractDungeon.getCurrRoom().rewards.clear();
-                AbstractNearlCard.addSpecificCardsToReward(new BattlefieldCulinarian());
+                AbstractCard card = new BattlefieldCulinarian();
+                if (AbstractDungeon.ascensionLevel <= 12) {
+                    card.upgrade();
+                }
+                AbstractNearlCard.addSpecificCardsToReward(card);
                 int gold = 48;
                 if (AbstractDungeon.ascensionLevel >= 13) gold = 36;
                 AbstractDungeon.getCurrRoom().addGoldToRewards(gold);
+                AbstractDungeon.getCurrRoom().addRelicToRewards(new UrsusStudentGroup());
                 AbstractDungeon.lastCombatMetricKey = ID;
                 AbstractDungeon.getCurrRoom().phase = AbstractRoom.RoomPhase.COMBAT;
                 AbstractDungeon.getCurrRoom().monsters = new MonsterGroup(new AbstractMonster[] { new Mephisto(100.0F, 0.0F)});

@@ -711,8 +711,8 @@
         "DESCRIPTION": "Gain !B! Block. If Aurora is present, trigger another 1 time in addition.",
         "UPGRADE_DESCRIPTION": ""
     },
-    "nearlmod:WarmthOfHome": {
-        "NAME": "\"Warmth\" of Home",
+    "nearlmod:FindYourWayThroughTheSnow": {
+        "NAME": "Find Your Way Through The Snow",
         "DESCRIPTION": "Apply !M! nearlmod:Cold. If Aurora is present, add 1 *Artificial *Snowfall into your hand. Otherwise summon Aurora as nearlmod:Friend.",
         "UPGRADE_DESCRIPTION": "Apply !M! nearlmod:Cold. If Aurora is present, add 1 *Artificial *Snowfall+ into your hand. Otherwise summon Aurora as nearlmod:Friend."
     },

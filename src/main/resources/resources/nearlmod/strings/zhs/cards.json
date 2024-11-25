@@ -711,8 +711,8 @@
         "DESCRIPTION": "获得 !B! 点 格挡。如果极光在场，额外触发一次。",
         "UPGRADE_DESCRIPTION": ""
     },
-    "nearlmod:WarmthOfHome": {
-        "NAME": "家乡的“温暖”",
+    "nearlmod:FindYourWayThroughTheSnow": {
+        "NAME": "立雪求道",
         "DESCRIPTION": "给予 !M! 层 nearlmod:寒冷 。如果极光在场，将一张 *人工降雪 置入你的手牌，否则召唤极光作为 nearlmod:伙伴 。",
         "UPGRADE_DESCRIPTION": "给予 !M! 层 nearlmod:寒冷 。如果极光在场，将一张 *人工降雪+ 置入你的手牌，否则召唤极光作为 nearlmod:伙伴 。"
     },

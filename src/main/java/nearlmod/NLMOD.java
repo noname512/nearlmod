@@ -325,7 +325,7 @@ public class NLMOD implements EditCardsSubscriber, EditCharactersSubscriber, Edi
         BaseMod.addCard(new FearNoCold()); // 不惧严寒
         BaseMod.addCard(new CheeseFondue()); // 奶酪火锅
         BaseMod.addCard(new WhatSheSaw()); // 她所见
-        BaseMod.addCard(new WarmthOfHome()); // 家乡的“温暖”
+        BaseMod.addCard(new FindYourWayThroughTheSnow()); // 家乡的“温暖”
         BaseMod.addCard(new ShieldPhotographyModule()); // 盾用摄制模块
         BaseMod.addCard(new ArtificialSnowfall()); // 人工降雪
         BaseMod.addCard(new FrigidRespite()); // 低温静滞
@@ -408,6 +408,8 @@ public class NLMOD implements EditCardsSubscriber, EditCharactersSubscriber, Edi
 
         // event.
         BaseMod.addRelicToCustomPool(new Marigold(), NEARL_GOLD);
+        BaseMod.addRelicToCustomPool(new UrsusStudentGroup(), NEARL_GOLD);
+        BaseMod.addRelicToCustomPool(new AnmasLove(), NEARL_GOLD);
         BaseMod.addRelicToCustomPool(new LateLight(), NEARL_GOLD);
         BaseMod.addRelicToCustomPool(new Revenge(), NEARL_GOLD);
         BaseMod.addRelicToCustomPool(new NormalPerson(), NEARL_GOLD);

@@ -14,6 +14,7 @@ import com.megacrit.cardcrawl.relics.AbstractRelic;
 import com.megacrit.cardcrawl.rooms.AbstractRoom;
 import com.megacrit.cardcrawl.vfx.cardManip.ShowCardAndObtainEffect;
 import nearlmod.cards.AbstractNearlCard;
+import nearlmod.cards.GuardianOfTheLaw;
 import nearlmod.monsters.FamigliaCleaner;
 import nearlmod.relics.Revenge;
 
@@ -33,36 +34,6 @@ public class FamigliaCleanerBattle extends AbstractArenaEvent {
         noCardsInRewards = true;
     }
 
-    public static ArrayList<AbstractCard> getCardsWithRarity(AbstractCard.CardRarity rarity) {
-        ArrayList<AbstractCard> list = new ArrayList<>();
-        AbstractPlayer p = AbstractDungeon.player;
-        int numCards = 3;
-        for (AbstractRelic r : p.relics)
-            numCards = r.changeNumberOfCardsInReward(numCards);
-        if (ModHelper.isModEnabled("Binary")) numCards--;
-        AbstractCard card = null;
-        for (int i = 0; i < numCards; i++) {
-            boolean containsDupe = true;
-            while (containsDupe) {
-                containsDupe = false;
-                if (p.hasRelic("PrismaticShard")) {
-                    card = CardLibrary.getAnyColorCard(rarity);
-                } else {
-                    card = AbstractDungeon.getCard(rarity);
-                }
-                for (AbstractCard c : list)
-                    if (c.cardID.equals(card.cardID)) {
-                        containsDupe = true;
-                        break;
-                    }
-            }
-            if (card != null) {
-                list.add(card);
-            }
-        }
-        return list;
-    }
-
     @Override
     protected void buttonEffect(int buttonPressed) {
         //TODO：完全没改
@@ -77,8 +48,11 @@ public class FamigliaCleanerBattle extends AbstractArenaEvent {
                 CardCrawlGame.music.playTempBgmInstantly("m_bat_act21side_01_combine.mp3", true);
                 screen = CurScreen.FIGHT;
                 AbstractDungeon.getCurrRoom().rewards.clear();
-                AbstractNearlCard.addSpecificCardsToReward(getCardsWithRarity(AbstractCard.CardRarity.UNCOMMON));
-                AbstractDungeon.getCurrRoom().addRelicToRewards(AbstractRelic.RelicTier.RARE);
+                AbstractCard card = new GuardianOfTheLaw();
+                if (AbstractDungeon.ascensionLevel < 12)
+                    card.upgrade();
+                AbstractNearlCard.addSpecificCardsToReward(card);
+                AbstractDungeon.getCurrRoom().addRelicToRewards(AbstractRelic.RelicTier.COMMON);
                 AbstractDungeon.getCurrRoom().addGoldToRewards(50);
                 AbstractDungeon.lastCombatMetricKey = ID;
                 AbstractDungeon.getCurrRoom().phase = AbstractRoom.RoomPhase.COMBAT;

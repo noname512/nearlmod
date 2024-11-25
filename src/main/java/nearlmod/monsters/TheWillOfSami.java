@@ -27,7 +27,7 @@ public class TheWillOfSami extends AbstractMonster {
     public boolean isStage2;
     public final int IceNum;
     public TheWillOfSami(float x, float y) {
-        super(NAME, ID, 200, 10.0F, 0, 170.0F, 320.0F, null, x, y);
+        super(NAME, ID, 200, 10.0F, 0, 570.0F, 520.0F, null, x, y);
         this.type = EnemyType.BOSS;
         if (AbstractDungeon.ascensionLevel >= 9)
             setHp(210);

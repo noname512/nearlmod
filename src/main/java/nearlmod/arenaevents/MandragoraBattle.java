@@ -7,10 +7,12 @@ import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.helpers.CardLibrary;
 import com.megacrit.cardcrawl.localization.EventStrings;
 import com.megacrit.cardcrawl.monsters.MonsterGroup;
+import com.megacrit.cardcrawl.relics.AbstractRelic;
 import com.megacrit.cardcrawl.rooms.AbstractRoom;
 import com.megacrit.cardcrawl.vfx.cardManip.ShowCardAndObtainEffect;
 import nearlmod.cards.AbstractNearlCard;
 import nearlmod.cards.SwallowLight;
+import nearlmod.cards.TempestPlatoon;
 import nearlmod.monsters.Mandragora;
 import nearlmod.relics.Marigold;
 import nearlmod.relics.NormalPerson;
@@ -25,48 +27,33 @@ public class MandragoraBattle extends AbstractArenaEvent {
     public MandragoraBattle() {
         super(NAME, DESCRIPTIONS[0], "resources/nearlmod/images/events/mandragorabattle.png");
         this.imageEventText.setDialogOption(OPTIONS[0]);
-        this.imageEventText.setDialogOption(OPTIONS[2], CardLibrary.getCopy("Normality"), new NormalPerson());
+        this.imageEventText.setDialogOption(OPTIONS[1], CardLibrary.getCopy("Normality"), new NormalPerson());
         noCardsInRewards = true;
     }
 
     @Override
     protected void buttonEffect(int buttonPressed) {
-        //TODO：完全没改
-        switch (this.screen) {
-            case INTRO:
-                switch (buttonPressed) {
-                    case 0:
-                        this.imageEventText.updateBodyText(DESCRIPTIONS[1]);
-                        this.screen = CurScreen.FIGHT;
-                        this.imageEventText.updateDialogOption(0, OPTIONS[1]);
-                        return;
-                    case 1:
-                        leave();
-                        return;
-                }
-            case FIGHT:
-                switch (buttonPressed) {
-                    case 0:
-                        logMetric(ID, "Fight");
-                        CardCrawlGame.music.fadeOutTempBGM();
-                        CardCrawlGame.music.playTempBgmInstantly("m_bat_ghosthunter02_combine.mp3", true);
-                        AbstractCard card = new SwallowLight();
-                        if (AbstractDungeon.ascensionLevel < 12)
-                            card.upgrade();
-                        AbstractDungeon.getCurrRoom().rewards.clear();
-                        AbstractNearlCard.addSpecificCardsToReward(card);
-                        AbstractDungeon.getCurrRoom().addRelicToRewards(new Marigold());
-                        AbstractDungeon.getCurrRoom().addGoldToRewards(99);
-                        AbstractDungeon.lastCombatMetricKey = ID;
-                        AbstractDungeon.getCurrRoom().phase = AbstractRoom.RoomPhase.COMBAT;
-                        AbstractDungeon.getCurrRoom().monsters = new MonsterGroup(new Mandragora(0.0F, 0.0F));
-                        AbstractDungeon.getCurrRoom().eliteTrigger = true;
-                        enterCombatFromImage();
-                        return;
-                    case 1:
-                        leave();
-                        return;
-                }
+        switch (buttonPressed) {
+            case 0:
+                logMetric(ID, "Fight");
+                CardCrawlGame.music.fadeOutTempBGM();
+                CardCrawlGame.music.playTempBgmInstantly("m_bat_ghosthunter02_combine.mp3", true);
+                AbstractCard card = new TempestPlatoon();
+                if (AbstractDungeon.ascensionLevel < 12)
+                    card.upgrade();
+                AbstractDungeon.getCurrRoom().rewards.clear();
+                AbstractNearlCard.addSpecificCardsToReward(card);
+                AbstractDungeon.getCurrRoom().addRelicToRewards(AbstractRelic.RelicTier.UNCOMMON);
+                AbstractDungeon.getCurrRoom().addGoldToRewards(70);
+                AbstractDungeon.lastCombatMetricKey = ID;
+                AbstractDungeon.getCurrRoom().phase = AbstractRoom.RoomPhase.COMBAT;
+                AbstractDungeon.getCurrRoom().monsters = new MonsterGroup(new Mandragora(0.0F, 0.0F));
+                AbstractDungeon.getCurrRoom().eliteTrigger = true;
+                enterCombatFromImage();
+                return;
+            case 1:
+                leave();
+                return;
         }
         openMap();
     }

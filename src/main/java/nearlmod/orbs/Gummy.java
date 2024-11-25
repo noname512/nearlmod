@@ -9,6 +9,7 @@ import nearlmod.actions.AddFriendCardToHandAction;
 import nearlmod.cards.*;
 import nearlmod.cards.friendcards.*;
 import nearlmod.patches.CharacterSettingPatch;
+import nearlmod.relics.UrsusStudentGroup;
 import nearlmod.rooms.ArenaRoom;
 
 import java.util.ArrayList;
@@ -78,6 +79,9 @@ public class Gummy extends AbstractFriend {
         }
         else {
             addToBot(new AddFriendCardToHandAction(getRandomCard(upgraded, uniqueUsed)));
+            if (AbstractDungeon.player.hasRelic(UrsusStudentGroup.ID) && AbstractDungeon.cardRng.random(0, 99) < 20) {
+                addToBot(new AddFriendCardToHandAction(getSchoolCard(upgraded)));
+            }
         }
     }
 
