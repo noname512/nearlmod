@@ -66,7 +66,7 @@ public class TheWillofSamiBattle extends AbstractArenaEvent {
                 AbstractNearlCard.addSpecificCardsToReward(card);
                 AbstractDungeon.lastCombatMetricKey = ID;
                 AbstractDungeon.getCurrRoom().phase = AbstractRoom.RoomPhase.COMBAT;
-                AbstractDungeon.getCurrRoom().monsters = new MonsterGroup(new TheWillOfSami(-80.0F, -50.0F));
+                AbstractDungeon.getCurrRoom().monsters = new MonsterGroup(new TheWillOfSami(-80.0F, 0.0F));
                 AbstractDungeon.getCurrRoom().eliteTrigger = true;
                 enterCombatFromImage();
                 return;

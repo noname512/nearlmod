@@ -54,7 +54,7 @@ public class FallingShield extends AbstractNearlCard {
             baseDamage += 2;
             p.getRelic(ChemicalX.ID).flash();
         }
-        applyPowers();
+        calculateCardDamage(m);
         if (extraTriggered()) {
             times += secondMagicNumber;
         } else {

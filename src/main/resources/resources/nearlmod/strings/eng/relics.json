@@ -9,11 +9,6 @@
     "FLAVOR": "As long as she is on the battlefield, no one can snatch victory from us.",
     "DESCRIPTIONS": ["Replace #rHealing #rBoost . Every time you gain #b4 #yBlock, gain #b1 #yTemporary #yHP ."]
   },
-  "nearlmod:Marigold": {
-    "NAME": "Marigold",
-    "FLAVOR": "Perhaps you are not the light itself, but once, you drew your sword to protect it.",
-    "DESCRIPTIONS": ["At the start of each combat, summon Viviana as #yFriend ."]
-  },
   "nearlmod:EmergencyCallBook": {
     "NAME": "Emergency Call Book",
     "FLAVOR": "All the base stations are destroyed, you are the last one.",
@@ -53,6 +48,22 @@
     "NAME": "Knight Fiction",
     "FLAVOR": "\"When the knight charged toward the endless waves, did you imagine that he was trying to overcome the entire world?\"",
     "DESCRIPTIONS": ["In the same turn, every #b4-th card of same type costs #b0 ."]
+  },
+
+  "nearlmod:Marigold": {
+    "NAME": "Marigold",
+    "FLAVOR": "Perhaps you are not the light itself, but once, you drew your sword to protect it.",
+    "DESCRIPTIONS": ["At the start of each combat, summon Viviana as #yFriend ."]
+  },
+  "nearlmod:UrsusStudentGroup": {
+    "NAME": "乌萨斯学生团",
+    "FLAVOR": "",
+    "DESCRIPTIONS": ["战斗中，古米有 20% 的概率额外提供一张特别的伙伴牌。"]
+  },
+  "nearlmod:AnmasLove": {
+    "NAME": "安玛的爱",
+    "FLAVOR": "",
+    "DESCRIPTIONS": ["偶尔提供一些有用的帮助。"]
   },
 
   "nearlmod:LateLight": {

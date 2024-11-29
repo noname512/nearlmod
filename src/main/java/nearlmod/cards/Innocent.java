@@ -28,7 +28,7 @@ public class Innocent extends AbstractNearlCard {
     public Innocent() {
         super(ID, NAME, IMG_PATH, COST, DESCRIPTION,
                 CardType.SKILL, AbstractCardEnum.NEARL_GOLD,
-                CardRarity.UNCOMMON, CardTarget.ENEMY);
+                CardRarity.UNCOMMON, CardTarget.SELF);
         block = baseBlock = BLOCK_AMT;
         cardsToPreview = new WreathedInThorns();
         tags.add(NearlTags.FRIEND_RELATED);

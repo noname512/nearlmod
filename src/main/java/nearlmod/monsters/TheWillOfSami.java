@@ -53,7 +53,7 @@ public class TheWillOfSami extends AbstractMonster {
             BattleEndTurn = 16;
             IceNum = 2;
         }
-        loadAnimation("resources/nearlmod/images/monsters/enemy_2054_smdeer/enemy_2054_smdeer33.atlas", "resources/nearlmod/images/monsters/enemy_2054_smdeer/enemy_2054_smdeer33.json", 1.5F);
+        loadAnimation("resources/nearlmod/images/monsters/enemy_2054_smdeer/enemy_2054_smdeer33.atlas", "resources/nearlmod/images/monsters/enemy_2054_smdeer/enemy_2054_smdeer33.json", 2.25F);
         this.flipHorizontal = true;
         this.stateData.setMix("Idle", "Die", 0.1F);
         this.state.setAnimation(0, "Idle", true);
