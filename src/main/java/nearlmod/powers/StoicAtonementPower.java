@@ -4,6 +4,7 @@ import basemod.interfaces.CloneablePowerInterface;
 import com.badlogic.gdx.graphics.g2d.TextureAtlas;
 import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
 import com.megacrit.cardcrawl.actions.common.RemoveSpecificPowerAction;
+import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.core.AbstractCreature;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
@@ -45,13 +46,15 @@ public class StoicAtonementPower extends AbstractPower implements CloneablePower
 
     @Override
     public void atEndOfTurn(boolean isPlayer) {
-        if (!Nearl.attackCardPlayedThisTurn) {
+        boolean notPlayedAttack = true;
+        for (AbstractCard c: AbstractDungeon.actionManager.cardsPlayedThisTurn) {
+            if (c.type == AbstractCard.CardType.ATTACK) {
+                notPlayedAttack = false;
+                break;
+            }
+        }
+        if (notPlayedAttack) {
             addToTop(new ApplyPowerAction(owner, owner, new Sheltered(owner)));
-            for (AbstractOrb o : AbstractDungeon.player.orbs)
-                if (o instanceof Penance) {
-                    amount += ((Penance) o).getTrustAmount();
-                    break;
-                }
             addToTop(new PureDamageAllEnemiesAction(owner, amount, Penance.ORB_ID + AbstractFriendCard.damageSuffix));
         }
         addToBot(new RemoveSpecificPowerAction(owner, owner, this));

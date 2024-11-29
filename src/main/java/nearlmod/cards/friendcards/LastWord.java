@@ -11,6 +11,7 @@ import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import com.megacrit.cardcrawl.powers.GainStrengthPower;
 import com.megacrit.cardcrawl.powers.StrengthPower;
 import nearlmod.characters.Nearl;
+import nearlmod.orbs.Penance;
 import nearlmod.patches.AbstractCardEnum;
 
 public class LastWord extends AbstractFriendCard {
@@ -34,7 +35,7 @@ public class LastWord extends AbstractFriendCard {
 
     @Override
     public boolean extraTriggered() {
-        return !Nearl.penanceCardPlayedLastTurn;
+        return !Penance.penanceCardPlayedLastTurn;
     }
 
     @Override
@@ -48,7 +49,6 @@ public class LastWord extends AbstractFriendCard {
                 addToBot(new ApplyPowerAction(m, p, new GainStrengthPower(m, STRENGTH_LOSE)));
             }
         }
-        Nearl.penanceCardPlayedThisTurn = true;
     }
 
     @Override

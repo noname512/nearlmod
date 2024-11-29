@@ -33,7 +33,6 @@ public class WreathedInThorns extends AbstractFriendCard {
     public void use(AbstractPlayer p, AbstractMonster m) {
         addToBot(new ApplyPowerAction(p, p, new WreathedInThornsPower(p, secondMagicNumber)));
         BaseMod.MAX_HAND_SIZE--;
-        Nearl.penanceCardPlayedThisTurn = true;
     }
 
     @Override

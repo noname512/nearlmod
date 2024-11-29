@@ -628,22 +628,22 @@
     },
     "nearlmod:WreathedInThorns": {
         "NAME": "荆棘环身",
-        "DESCRIPTION": "nearlmod:伙伴牌 。当你有 stslib:临时生命 时，你每受到一次攻击，斥罪造成 !nearlmod:M2! 点反伤。",
+        "DESCRIPTION": "nearlmod:伙伴牌 。 NL 当你有 stslib:临时生命 时，你每受到一次攻击，斥罪造成 !nearlmod:M2! 点反伤。",
         "UPGRADE_DESCRIPTION": ""
     },
     "nearlmod:LastWord": {
         "NAME": "一锤定音",
-        "DESCRIPTION": "nearlmod:伙伴牌 。造成 !M! 点伤害，如果你上回合没有打出斥罪的 nearlmod:伙伴牌 ，使目标本回合内失去 99 点 力量 。",
+        "DESCRIPTION": "nearlmod:伙伴牌 。 NL 造成 !M! 点伤害，如果你上回合没有打出斥罪的 nearlmod:伙伴牌 ，使目标本回合内失去 99 点 力量 。",
         "UPGRADE_DESCRIPTION": ""
     },
     "nearlmod:StoicAtonement": {
         "NAME": "坚心苦修",
-        "DESCRIPTION": "nearlmod:伙伴牌 。如果你本回合没有打出攻击牌，回合结束时，斥罪对所有敌人造成 !nearlmod:M2! 点伤害，并给予你一层 nearlmod:庇护 。",
+        "DESCRIPTION": "nearlmod:伙伴牌 。 NL 如果你本回合没有打出攻击牌，回合结束时，斥罪对所有敌人造成 !M! 点伤害，并给予你一层 nearlmod:庇护 。",
         "UPGRADE_DESCRIPTION": ""
     },
     "nearlmod:TrialOfThorns": {
         "NAME": "披荆斩棘",
-        "DESCRIPTION": "nearlmod:伙伴牌 ， nearlmod:唯一 。获得 !nearlmod:M2! 点临时生命，造成 !M! 点伤害。",
+        "DESCRIPTION": "nearlmod:伙伴牌 ， nearlmod:唯一 。 NL 获得 !nearlmod:M2! 点临时生命，造成 !M! 点伤害。",
         "UPGRADE_DESCRIPTION": ""
     },
 

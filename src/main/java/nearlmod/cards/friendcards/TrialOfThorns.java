@@ -47,7 +47,6 @@ public class TrialOfThorns extends AbstractFriendCard {
         DamageInfo info = new DamageInfo(p, magicNumber);
         info.name = belongFriend + damageSuffix;
         addToBot(new DamageAction(m, info));
-        Nearl.penanceCardPlayedThisTurn = true;
     }
 
     @Override

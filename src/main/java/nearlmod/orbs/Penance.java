@@ -2,6 +2,7 @@ package nearlmod.orbs;
 
 import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
+import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.localization.OrbStrings;
 import com.megacrit.cardcrawl.orbs.AbstractOrb;
 import nearlmod.actions.AddFriendCardToHandAction;
@@ -17,9 +18,11 @@ public class Penance extends AbstractFriend {
     public static final String NAME = orbStrings.NAME;
     public static final String[] DESCRIPTION = orbStrings.DESCRIPTION;
     public static final String IMAGE = "resources/nearlmod/images/orbs/penance.png";
+    public static boolean penanceCardPlayedLastTurn;
 
     public Penance(int amount) {
         super(ORB_ID, NAME, DESCRIPTION, IMAGE, amount);
+        penanceCardPlayedLastTurn = false;
     }
 
     public Penance() {
@@ -50,6 +53,18 @@ public class Penance extends AbstractFriend {
     @Override
     public void onStartOfTurn() {
         addToBot(new AddFriendCardToHandAction(getRandomCard(upgraded, uniqueUsed)));
+    }
+
+    @Override
+    public void onEndOfTurn() {
+        penanceCardPlayedLastTurn = false;
+        for (AbstractCard c: AbstractDungeon.actionManager.cardsPlayedThisTurn) {
+            if ((c instanceof AbstractFriendCard) && ((AbstractFriendCard)c).belongFriend.equals(ORB_ID)) {
+                penanceCardPlayedLastTurn = true;
+                break;
+            }
+        }
+        super.onEndOfTurn();
     }
 
     @Override

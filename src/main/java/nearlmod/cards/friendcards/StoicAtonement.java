@@ -25,13 +25,12 @@ public class StoicAtonement extends AbstractFriendCard {
         super(ID, NAME, IMG_PATH, COST, DESCRIPTION,
                 CardType.SKILL, AbstractCardEnum.FRIEND_BLUE,
                 CardRarity.SPECIAL, CardTarget.SELF, "nearlmod:Penance");
-        secondMagicNumber = baseSecondMagicNumber = ATTACK_DMG;
+        magicNumber = baseMagicNumber = ATTACK_DMG;
     }
 
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
-        addToBot(new ApplyPowerAction(p, p, new StoicAtonementPower(p, secondMagicNumber)));
-        Nearl.penanceCardPlayedThisTurn = true;
+        addToBot(new ApplyPowerAction(p, p, new StoicAtonementPower(p, magicNumber)));
     }
 
     @Override
