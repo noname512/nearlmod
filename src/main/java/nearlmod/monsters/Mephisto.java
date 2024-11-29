@@ -1,7 +1,9 @@
 package nearlmod.monsters;
 
+import com.megacrit.cardcrawl.actions.animations.VFXAction;
 import com.megacrit.cardcrawl.actions.common.*;
 import com.megacrit.cardcrawl.actions.unique.AddCardToDeckAction;
+import com.megacrit.cardcrawl.actions.utility.HideHealthBarAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.cards.curses.Parasite;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
@@ -11,9 +13,14 @@ import com.megacrit.cardcrawl.localization.MonsterStrings;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import com.megacrit.cardcrawl.powers.RegenPower;
 import com.megacrit.cardcrawl.vfx.combat.DeckPoofEffect;
+import com.megacrit.cardcrawl.vfx.combat.InflameEffect;
+import nearlmod.NLMOD;
 import nearlmod.actions.EndBattleAction;
 import nearlmod.actions.ReduceMaxHpAction;
 import nearlmod.actions.SummonFriendAction;
+import nearlmod.cards.AbstractNearlCard;
+import nearlmod.cards.special.BlemishinesFaintLight;
+import nearlmod.orbs.Blemishine;
 import nearlmod.orbs.Gummy;
 
 import java.util.ArrayList;
@@ -165,6 +172,16 @@ public class Mephisto extends AbstractMonster {
         }
     }
 
+    @Override
+    public void die() {
+        for (AbstractMonster m : AbstractDungeon.getMonsters().monsters)
+            if (!m.isDeadOrEscaped()) {
+                addToTop(new HideHealthBarAction(m));
+                addToTop(new SuicideAction(m));
+                addToTop(new VFXAction(m, new InflameEffect(m), 0.2F));
+            }
+        super.die();
+    }
     @Override
     protected void getMove(int i) {
     }
