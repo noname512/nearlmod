@@ -20,7 +20,7 @@
     ],
     "OPTIONS": [
       "[Set off early] #gRush #ginto #gthe #gArena #gand #gengaged #gin #ga #gspecial #gcombat.",
-      "[Proceed as usual] #rBecome #rCursed #r- #rRegret, #rLate #rLight.",
+      "[Proceed as usual] #rBeing #rCursed #r- #rRegret, #rLate #rLight.",
       "[Leave]"
     ]
   },
@@ -120,6 +120,67 @@
     "OPTIONS": [
       "[Fight] Go help them and engaged in a special combat.",
       "[Leave] They can do it. I have my own business.",
+      "[Leave]"
+    ]
+  },
+
+  "nearlmod:MephistoBattle": {
+    "NAME": "Gummy's memories",
+    "DESCRIPTIONS": [
+      "\"Darkness... is it?\" NL You are pulled into Gummy's most harrowing memories. During the time when the Reunion Movement took over the city, chaos began to spread like an endless abyss the moment a leader named Mephisto forced all the students into confinement. Fights for food, struggles for survival—conflicts among the students never ceased. NL In a daze, you seemed to catch a glimpse of the source of that chaos, silently standing there.",
+      "He suddenly blew out a cloud of dust, and you immediately felt a searing, unforgettable pain. By the time you came back to your senses, he was already gone without a trace."
+    ],
+    "OPTIONS": [
+      "[Step Forward] #gEngaged #gin #ga #gspecial #gcombat.",
+      "[Remain Silent] #rBeing #rCursed #r- #r3 #r寄生.",
+      "[Leave]"
+    ]
+  },
+  "nearlmod:FamigliaCleanerBattle": {
+    "NAME": "Penance's Memories",
+    "DESCRIPTIONS": [
+      "You are pulled into Penance's most troubled memories. NL Even with the backing of the Bellone family, which provided a degree of safety, living in Syracuse meant that those who crossed powerful families would inevitably face resentment. Having her car smeared with paint was just a crude display of malice, while in the shadows, the \"Cleaner\" lurked, waiting for the moment she made a mistake. She understood all too well what loomed over this twisted order. Should she, like the ordinary citizens, accept it as a way of life? Or should she leverage the new mobile city as a bargaining chip to try and bring about change?",
+      "Faced with the concept of family, how powerless the people of Siracusa truly are. Perhaps what she has paid for this is... the right to true fairness."
+    ],
+    "OPTIONS": [
+      "[Defend Fairness] #gEngaged #gin #ga #gspecial #gcombat.",
+      "[Keep Silent] #rBeing #rCursed #r- #rxx.",
+      "[Leave]"
+    ]
+  },
+  "nearlmod:MandragoraBattle": {
+    "NAME": "Horn's Memories",
+    "DESCRIPTIONS": [
+      "You are pulled into Horn's most perilous memories. NL During the battle at County Hillock, the garrison either perished or defected early on to join Tara. Massive stone pillars descended rapidly from above the communications tower, and Cello fell before Horn and Bagpipe. The Spectre Force caster, Mandragora, manipulated the stones to close in, while the incoming artillery fire was deflected by the shield of rubble. Attack, adjust angle, attack again—if not for the injuries and dwindling ammunition, victory might have been possible...Could it be that the enemy truly has no weaknesses?",
+      "Mandragora suddenly appeared to be provoked, recklessly unleashing Originium Arts. Unable to face her head-on, you had no choice but to retreat."
+    ],
+    "OPTIONS": [
+      "[Fight] #gEngaged #gin #ga #gspecial #gcombat.",
+      "[Escape] #rBeing #rCursed #r- #r3 #rNormality.",
+      "[Leave]"
+    ]
+  },
+  "nearlmod:TheWillofSamiBattle": {
+    "NAME": "Aurora's Memoires",
+    "DESCRIPTIONS": [
+      "You are pulled into Aurora's most frigid memories. NL Following in Magallan's footsteps, she embarked on a journey to the Sami icefields. On the boundless expanse of ice, she trekked northward. Days passed, and the contours of the land gradually faded behind her. The distant landscape was swallowed by snowstorms, leaving only an endless road stretching out before her. Clearly, the harsh environment could not deter her resolve. And so, the ancient mountain range raised a towering peak before them, presenting a test of her determination.",
+      "You can only feel the scene before you growing more terrifying. Under the influence of the Demon, the more fear you feel, the stronger the enemy becomes."
+    ],
+    "OPTIONS": [
+      "[Accept the Challenge] #gEngaged #gin #ga #gspecial #gcombat.",
+      "[Abandon the Challenge] #rBeing #rCursed #r- #rTerrifying #rEntity.",
+      "[Leave]"
+    ]
+  },
+  "nearlmod:CorruptedWitheredBattle_SP": {
+    "NAME": "Nearl Sisters' Memories",
+    "DESCRIPTIONS": [
+      "\"Our family motto is, fear neither hardship nor darkness!\" NL You are drawn into the same memory as Maria. NL During the battle between the Corrupted Knight and the Withering Knight, what if something had gone wrong when you intervened? What if the enemy had not been intimidated by your presence? Would there still have been time to change everything?",
+      "By the time you finally arrived at the arena, all that remained before you were shattered armor and a pool of blood."
+    ],
+    "OPTIONS": [
+      "[Still Time] #gEngaged #gin #ga #gspecial #gcombat.",
+      "[Too Late] #rBeing #rCursed #r- #rRegret, #rLate #rLight.",
       "[Leave]"
     ]
   }
