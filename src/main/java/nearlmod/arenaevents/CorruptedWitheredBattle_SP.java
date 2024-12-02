@@ -57,7 +57,6 @@ public class CorruptedWitheredBattle_SP extends AbstractArenaEvent {
                 AbstractDungeon.getCurrRoom().phase = AbstractRoom.RoomPhase.COMBAT;
                 AbstractDungeon.getCurrRoom().monsters = new MonsterGroup(new AbstractMonster[] { new CorruptKnight(-200.0F, 0.0F), new WitheredKnight(80.0F, 0.0F) });
                 enterCombatFromImage();
-                //TODO: A15 怎么修改
                 AbstractDungeon.actionManager.addToBottom(new SummonFriendAction(new Blemishine()));
                 AbstractDungeon.actionManager.addToBottom(new SummonFriendAction(new Blemishine()));
                 return;
