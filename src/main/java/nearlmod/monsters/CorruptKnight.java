@@ -20,6 +20,7 @@ import com.megacrit.cardcrawl.vfx.SpeechBubble;
 import nearlmod.actions.SummonFriendAction;
 import nearlmod.cards.NightScouringGleam;
 import nearlmod.orbs.Blemishine;
+import nearlmod.patches.CharacterSettingPatch;
 import nearlmod.powers.DoubleBossPower;
 import nearlmod.powers.FriendShelterPower;
 
@@ -107,7 +108,12 @@ public class CorruptKnight extends AbstractMonster {
 
     @Override
     protected void getMove(int i) {
-        setMove((byte) 1, Intent.ATTACK, this.damage.get(0).base);
+        if ((AbstractDungeon.ascensionLevel >= 15) && (CharacterSettingPatch.curTeam == 1)) {
+            setMove((byte) 3, Intent.ATTACK, this.damage.get(0).base);
+        }
+        else {
+            setMove((byte) 1, Intent.ATTACK, this.damage.get(0).base);
+        }
     }
 
     public void die() {

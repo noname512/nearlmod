@@ -14,6 +14,7 @@ import com.megacrit.cardcrawl.orbs.AbstractOrb;
 import com.megacrit.cardcrawl.powers.FrailPower;
 import com.megacrit.cardcrawl.vfx.SpeechBubble;
 import nearlmod.orbs.Blemishine;
+import nearlmod.patches.CharacterSettingPatch;
 import nearlmod.powers.DoubleBossPower;
 import nearlmod.powers.FriendShelterPower;
 
@@ -123,6 +124,11 @@ public class WitheredKnight extends AbstractMonster {
 
     @Override
     protected void getMove(int i) {
-        setMove((byte) 1, Intent.ATTACK_DEBUFF, this.damage.get(0).base);
+        if ((AbstractDungeon.ascensionLevel >= 15) && (CharacterSettingPatch.curTeam == 1)) {
+            setMove((byte) 3, Intent.ATTACK_DEBUFF, this.damage.get(0).base);
+        }
+        else {
+            setMove((byte) 1, Intent.ATTACK_DEBUFF, this.damage.get(0).base);
+        }
     }
 }
