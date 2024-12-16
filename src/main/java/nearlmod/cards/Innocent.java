@@ -45,7 +45,7 @@ public class Innocent extends AbstractNearlCard {
         addToBot(new GainBlockAction(p, p, block));
         if (extraTriggered()) {
             AbstractFriendCard c = new WreathedInThorns();
-            addToBot(new AddFriendCardToHandAction(c, upgraded, secondMagicNumber));
+            addToBot(new AddFriendCardToHandAction(c, upgraded, 1));
         }
     }
 
