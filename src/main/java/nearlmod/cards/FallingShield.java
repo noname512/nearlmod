@@ -26,7 +26,7 @@ public class FallingShield extends AbstractNearlCard {
     public static final String DESCRIPTION = cardStrings.DESCRIPTION;
     public static final String UPGRADE_DESCRIPTION = cardStrings.UPGRADE_DESCRIPTION;
     public static final String IMG_PATH = "resources/nearlmod/images/cards/fallingshield.png";
-    private static final int COST = -1;
+    private static final int COST = 0;
     private static final int ATTACK_TIMES = 2;
     private static final int EXTRA_TIMES = 2;
     private static final int UPGRADE_PLUS_TIME = 1;
@@ -53,30 +53,15 @@ public class FallingShield extends AbstractNearlCard {
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
         int times = magicNumber;
-        int tempHp = TempHPField.tempHp.get(p);
-        baseDamage = tempHp;
+        baseDamage = TempHPField.tempHp.get(p);
         boolean summon = false;
-        if (p.hasRelic(ChemicalX.ID)) {
-            baseDamage += 2;
-            p.getRelic(ChemicalX.ID).flash();
-        }
         calculateCardDamage(m);
         if (extraTriggered()) {
             times += secondMagicNumber;
         } else {
             summon = true;
         }
-        if (isInAutoplay) {
-            tempHp = 0;
-        }
-        if (AbstractDungeon.player != null && AbstractDungeon.currMapNode != null && AbstractDungeon.getCurrRoom().phase == AbstractRoom.RoomPhase.COMBAT && AbstractDungeon.player.hasPower("FreeAttackPower") && this.type == AbstractCard.CardType.ATTACK) {
-            tempHp = 0;
-        }
-        // TODO: 目前无法相应死灵书等，考虑下要不要干脆改描述算了（例如消耗你所有的临时生命，造成等量伤害2次，如果号角在场，再造成2次，否则召唤，类似于这种写法）
-        // TODO: 感觉这个bug是修不完的。直接破坏原有逻辑了（或者大力patch，还是算了吧）
-        addToBot(new FallingShieldAction(tempHp, damage, times, summon, m));
-        costForTurn = 0;
-        energyOnUse = 0;
+        addToBot(new FallingShieldAction(damage, times, summon, m));
     }
 
     @Override

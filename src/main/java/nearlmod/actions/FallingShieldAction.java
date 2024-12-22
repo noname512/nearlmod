@@ -10,13 +10,11 @@ import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import nearlmod.orbs.Horn;
 
 public class FallingShieldAction extends AbstractGameAction {
-    private final int cost;
     private final int times;
     private final boolean summon;
-    public FallingShieldAction(int cost, int amount, int times, boolean summon, AbstractCreature target) {
+    public FallingShieldAction(int amount, int times, boolean summon, AbstractCreature target) {
         this.actionType = ActionType.DAMAGE;
         this.amount = amount;
-        this.cost = cost;
         this.times = times;
         this.summon = summon;
         this.target = target;
@@ -35,9 +33,7 @@ public class FallingShieldAction extends AbstractGameAction {
         if (summon) {
             addToTop(new SummonFriendAction(new Horn()));
         }
-        if (cost > 0) {
-            addToTop(new RemoveAllTemporaryHPAction(p, p));
-        }
+        addToTop(new RemoveAllTemporaryHPAction(p, p));
         isDone = true;
     }
 }

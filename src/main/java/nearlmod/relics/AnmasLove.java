@@ -17,7 +17,11 @@ import com.megacrit.cardcrawl.localization.RelicStrings;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import com.megacrit.cardcrawl.relics.AbstractRelic;
 import com.megacrit.cardcrawl.rewards.RewardItem;
+import com.megacrit.cardcrawl.rewards.chests.BossChest;
 import com.megacrit.cardcrawl.rooms.AbstractRoom;
+import com.megacrit.cardcrawl.rooms.TreasureRoomBoss;
+import com.megacrit.cardcrawl.rooms.TrueVictoryRoom;
+import com.megacrit.cardcrawl.rooms.VictoryRoom;
 import nearlmod.actions.PureDamageAllEnemiesAction;
 import nearlmod.actions.SummonFriendAction;
 import nearlmod.actions.WeakenAllAction;
@@ -32,7 +36,7 @@ public class AnmasLove extends CustomRelic {
     public static final String[] DESCRIPTIONS = relicStrings.DESCRIPTIONS;
     public static final Texture IMG = new Texture("resources/nearlmod/images/relics/revenge.png");
     public static final Texture IMG_OUTLINE = new Texture("resources/nearlmod/images/relics/revenge_p.png");
-    public int triggerIf = 1;       // (triggerIf + 1) percent
+    public int triggerIf = 2;       // (triggerIf + 1) percent
     public AnmasLove() {
         super(ID, IMG, IMG_OUTLINE, RelicTier.SPECIAL, LandingSound.HEAVY);
     }
@@ -63,6 +67,10 @@ public class AnmasLove extends CustomRelic {
         if (counter != -1) {
             AbstractDungeon.ascensionLevel = counter;
             counter = -1;
+        }
+        if ((AbstractDungeon.getCurrRoom() instanceof VictoryRoom) || (AbstractDungeon.getCurrRoom() instanceof TrueVictoryRoom) || (AbstractDungeon.getCurrRoom() instanceof TreasureRoomBoss)) {
+            return;
+            //Cannot trigger this!
         }
         if (AbstractDungeon.relicRng.random(0, 99) <= triggerIf) {
             this.flash();

@@ -664,7 +664,7 @@
     },
     "nearlmod:FallingShield": {
         "NAME": "Falling Shield",
-        "DESCRIPTION": "This card cost Temporary_HP instead. Deal X damage !M! times. If Horn is present, deal additional !nearlmod:M2! times. Otherwise, summon Horn as nearlmod:Friend.",
+        "DESCRIPTION": "Cost all Temporary_HP. Deal that number damage !M! times. If Horn is present, deal additional !nearlmod:M2! times. Otherwise, summon Horn as nearlmod:Friend.",
         "UPGRADE_DESCRIPTION": ""
     },
     "nearlmod:Bloodbath": {
