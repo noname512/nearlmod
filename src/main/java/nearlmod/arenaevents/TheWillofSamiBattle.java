@@ -1,6 +1,5 @@
 package nearlmod.arenaevents;
 
-import basemod.devcommands.hand.Hand;
 import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.cards.curses.Injury;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
@@ -15,7 +14,7 @@ import com.megacrit.cardcrawl.vfx.cardManip.ShowCardAndObtainEffect;
 import nearlmod.cards.AbstractNearlCard;
 import nearlmod.cards.FindYourWayThroughTheSnow;
 import nearlmod.monsters.TheWillOfSami;
-import nearlmod.relics.AnmasLove;
+import nearlmod.relics.AmmasAffection;
 import nearlmod.relics.HandOfConqueror;
 import nearlmod.relics.ImaginaryFear;
 
@@ -55,7 +54,7 @@ public class TheWillofSamiBattle extends AbstractArenaEvent {
                     rareRelicPool.remove(HandOfConqueror.ID);
                 }
                 else {
-                    relic = new AnmasLove();
+                    relic = new AmmasAffection();
                 }
                 AbstractDungeon.getCurrRoom().addRelicToRewards(relic);
                 AbstractDungeon.getCurrRoom().addGoldToRewards(99);

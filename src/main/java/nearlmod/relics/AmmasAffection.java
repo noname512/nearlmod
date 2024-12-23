@@ -3,12 +3,7 @@ package nearlmod.relics;
 import basemod.abstracts.CustomRelic;
 import com.badlogic.gdx.graphics.Texture;
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
-import com.megacrit.cardcrawl.actions.common.DamageAllEnemiesAction;
-import com.megacrit.cardcrawl.actions.common.DrawCardAction;
-import com.megacrit.cardcrawl.actions.common.GainBlockAction;
 import com.megacrit.cardcrawl.actions.common.GainEnergyAction;
-import com.megacrit.cardcrawl.actions.unique.FeedAction;
-import com.megacrit.cardcrawl.actions.unique.IncreaseMaxHpAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.cards.DamageInfo;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
@@ -17,27 +12,24 @@ import com.megacrit.cardcrawl.localization.RelicStrings;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import com.megacrit.cardcrawl.relics.AbstractRelic;
 import com.megacrit.cardcrawl.rewards.RewardItem;
-import com.megacrit.cardcrawl.rewards.chests.BossChest;
 import com.megacrit.cardcrawl.rooms.AbstractRoom;
 import com.megacrit.cardcrawl.rooms.TreasureRoomBoss;
 import com.megacrit.cardcrawl.rooms.TrueVictoryRoom;
 import com.megacrit.cardcrawl.rooms.VictoryRoom;
 import nearlmod.actions.PureDamageAllEnemiesAction;
 import nearlmod.actions.SummonFriendAction;
-import nearlmod.actions.WeakenAllAction;
 import nearlmod.orbs.Aurora;
-import nearlmod.patches.CurseRelicPatch;
 
-public class AnmasLove extends CustomRelic {
+public class AmmasAffection extends CustomRelic {
 
-    public static final String ID = "nearlmod:AnmasLove";
+    public static final String ID = "nearlmod:AmmasAffection";
     public static final RelicStrings relicStrings = CardCrawlGame.languagePack.getRelicStrings(ID);
     public static final String NAME = relicStrings.NAME;
     public static final String[] DESCRIPTIONS = relicStrings.DESCRIPTIONS;
-    public static final Texture IMG = new Texture("resources/nearlmod/images/relics/revenge.png");
-    public static final Texture IMG_OUTLINE = new Texture("resources/nearlmod/images/relics/revenge_p.png");
+    public static final Texture IMG = new Texture("resources/nearlmod/images/relics/ammasaffection.png");
+    public static final Texture IMG_OUTLINE = new Texture("resources/nearlmod/images/relics/ammasaffection_p.png");
     public int triggerIf = 2;       // (triggerIf + 1) percent
-    public AnmasLove() {
+    public AmmasAffection() {
         super(ID, IMG, IMG_OUTLINE, RelicTier.SPECIAL, LandingSound.HEAVY);
     }
 
@@ -143,6 +135,6 @@ public class AnmasLove extends CustomRelic {
 
     @Override
     public AbstractRelic makeCopy() {
-        return new AnmasLove();
+        return new AmmasAffection();
     }
 }

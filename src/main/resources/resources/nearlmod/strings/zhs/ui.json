@@ -87,13 +87,13 @@
   },
   "nearlmod:Peterheim": {
     "TEXT": [
-      "选择",
-      "张牌，本回合内保留"
+      "，本回合内保留"
     ]
   },
   "nearlmod:ReduceMaxHP": {
     "TEXT": [
-      "最大生命-"
+      "最大生命-",
+      ""
     ]
   }
 }

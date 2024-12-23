@@ -409,7 +409,7 @@ public class NLMOD implements EditCardsSubscriber, EditCharactersSubscriber, Edi
         // event.
         BaseMod.addRelicToCustomPool(new Marigold(), NEARL_GOLD);
         BaseMod.addRelicToCustomPool(new UrsusStudentGroup(), NEARL_GOLD);
-        BaseMod.addRelicToCustomPool(new AnmasLove(), NEARL_GOLD);
+        BaseMod.addRelicToCustomPool(new AmmasAffection(), NEARL_GOLD);
         BaseMod.addRelicToCustomPool(new LateLight(), NEARL_GOLD);
         BaseMod.addRelicToCustomPool(new Revenge(), NEARL_GOLD);
         BaseMod.addRelicToCustomPool(new NormalPerson(), NEARL_GOLD);

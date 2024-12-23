@@ -11,10 +11,8 @@ import com.megacrit.cardcrawl.relics.AbstractRelic;
 import com.megacrit.cardcrawl.rooms.AbstractRoom;
 import com.megacrit.cardcrawl.vfx.cardManip.ShowCardAndObtainEffect;
 import nearlmod.cards.AbstractNearlCard;
-import nearlmod.cards.SwallowLight;
 import nearlmod.cards.TempestPlatoon;
 import nearlmod.monsters.Mandragora;
-import nearlmod.relics.Marigold;
 import nearlmod.relics.NormalPerson;
 
 public class MandragoraBattle extends AbstractArenaEvent {

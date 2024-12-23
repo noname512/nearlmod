@@ -5,9 +5,7 @@ import com.megacrit.cardcrawl.core.AbstractCreature;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.core.Settings;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
-import com.megacrit.cardcrawl.localization.UIStrings;
 import com.megacrit.cardcrawl.vfx.TextAboveCreatureEffect;
-import nearlmod.monsters.CandleKnight;
 
 public class ReduceMaxHpAction extends AbstractGameAction {
 
@@ -22,7 +20,7 @@ public class ReduceMaxHpAction extends AbstractGameAction {
     @Override
     public void update() {
         target.decreaseMaxHealth(amount);
-        AbstractDungeon.effectsQueue.add(new TextAboveCreatureEffect(target.hb.cX - target.animX, target.hb.cY, TEXT[0] + amount, Settings.RED_TEXT_COLOR));
+        AbstractDungeon.effectsQueue.add(new TextAboveCreatureEffect(target.hb.cX - target.animX, target.hb.cY, TEXT[0] + amount + TEXT[1], Settings.RED_TEXT_COLOR));
         isDone = true;
     }
 }

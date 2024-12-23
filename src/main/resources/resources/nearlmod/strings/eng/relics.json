@@ -55,15 +55,15 @@
     "FLAVOR": "Perhaps you are not the light itself, but once, you drew your sword to protect it.",
     "DESCRIPTIONS": ["At the start of each combat, summon Viviana as #yFriend ."]
   },
-  "nearlmod:UrsusStudentGroup": {
-    "NAME": "乌萨斯学生团",
-    "FLAVOR": "",
-    "DESCRIPTIONS": ["战斗中，古米有 20% 的概率额外提供一张特别的伙伴牌。"]
+  "nearlmod:ChernobogMedal": {
+    "NAME": "Chernobog Medal",
+    "FLAVOR": "Even though they’re still not ready for it, they wish to walk towards tomorrow.",
+    "DESCRIPTIONS": ["During combat, Gummy has 20% probability to provide an extra special #yFriend #yCard."]
   },
-  "nearlmod:AnmasLove": {
-    "NAME": "安玛的爱",
-    "FLAVOR": "",
-    "DESCRIPTIONS": ["偶尔提供一些有用的帮助。"]
+  "nearlmod:AmmasAffection": {
+    "NAME": "Amma's Affection",
+    "FLAVOR": "Their love is fleeting and unpredictable; you never know what you'll pull out of your pocket—a testament to Their protection, or a handful of melting snow. ",
+    "DESCRIPTIONS": ["Sometimes it works in mysterious ways."]
   },
 
   "nearlmod:LateLight": {

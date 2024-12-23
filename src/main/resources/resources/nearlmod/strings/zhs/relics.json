@@ -60,15 +60,15 @@
     "FLAVOR": "或许你不是那光芒，但你亦曾，为守护它而拔剑。",
     "DESCRIPTIONS": ["每场战斗开始时，召唤薇薇安娜作为 #y伙伴 。"]
   },
-  "nearlmod:UrsusStudentGroup": {
-    "NAME": "乌萨斯学生团",
-    "FLAVOR": "",
+  "nearlmod:ChernobogMedal": {
+    "NAME": "切尔诺伯格警徽",
+    "FLAVOR": "她们还没有准备好，但她们想要走向明天。",
     "DESCRIPTIONS": ["战斗中，古米有 20% 的概率额外提供一张特别的伙伴牌。"]
   },
-  "nearlmod:AnmasLove": {
+  "nearlmod:AmmasAffection": {
     "NAME": "安玛的爱",
-    "FLAVOR": "祂确是爱你的，口袋里那份重量便是佐证；可祂的爱飘忽又无常。",
-    "DESCRIPTIONS": ["偶尔提供一些有用的帮助。"]
+    "FLAVOR": "祂的爱飘忽又无常，你永远不知道能从口袋中取出的，是祂护佑的证明，还是一捧融雪。",
+    "DESCRIPTIONS": ["有时会发挥奇妙的效果。"]
   },
 
   "nearlmod:LateLight": {

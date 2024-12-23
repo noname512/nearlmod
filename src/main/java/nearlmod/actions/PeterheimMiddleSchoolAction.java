@@ -31,7 +31,7 @@ public class PeterheimMiddleSchoolAction extends AbstractGameAction {
                 return;
             }
             duration -= Gdx.graphics.getDeltaTime();
-            AbstractDungeon.handCardSelectScreen.open(TEXT[0] + amount + TEXT[1], amount, false, false, false, false);
+            AbstractDungeon.handCardSelectScreen.open(TEXT[0], amount, false, false, false, false);
             return;
         }
         if (!AbstractDungeon.handCardSelectScreen.wereCardsRetrieved) {
