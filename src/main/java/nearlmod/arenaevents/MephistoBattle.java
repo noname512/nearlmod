@@ -27,7 +27,7 @@ public class MephistoBattle extends AbstractArenaEvent {
     public MephistoBattle() {
         super(NAME, DESCRIPTIONS[0], "resources/nearlmod/images/events/mephistobattle.png");
         this.imageEventText.setDialogOption(OPTIONS[0]);
-        this.imageEventText.setDialogOption(OPTIONS[1], CardLibrary.getCopy("Regret"), new LateLight());
+        this.imageEventText.setDialogOption(OPTIONS[1], CardLibrary.getCopy("Parasite"));
         noCardsInRewards = true;
     }
 

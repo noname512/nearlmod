@@ -59,11 +59,11 @@ public class MandragoraBattle extends AbstractArenaEvent {
     private void leave() {
         logMetric(ID, "Leave");
         this.screen = CurScreen.LEAVE;
-        this.imageEventText.updateBodyText(DESCRIPTIONS[2]);
-        imageEventText.updateDialogOption(0, OPTIONS[3]);
+        this.imageEventText.updateBodyText(DESCRIPTIONS[1]);
+        imageEventText.updateDialogOption(0, OPTIONS[2]);
         imageEventText.clearRemainingOptions();
-        AbstractDungeon.effectList.add(new ShowCardAndObtainEffect(new Normality(), Settings.WIDTH / 2.0F, Settings.HEIGHT / 2.0F));
-        AbstractDungeon.effectList.add(new ShowCardAndObtainEffect(new Normality(), Settings.WIDTH / 2.0F, Settings.HEIGHT / 2.0F));
+        AbstractDungeon.effectList.add(new ShowCardAndObtainEffect(new Normality(), Settings.WIDTH / 2.0F - 175.0F * Settings.xScale, Settings.HEIGHT / 2.0F));
+        AbstractDungeon.effectList.add(new ShowCardAndObtainEffect(new Normality(), Settings.WIDTH / 2.0F + 175.0F * Settings.xScale, Settings.HEIGHT / 2.0F));
         openMap();
     }
 }

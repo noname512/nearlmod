@@ -3,15 +3,21 @@ package nearlmod.relics;
 import basemod.abstracts.CustomRelic;
 import com.badlogic.gdx.graphics.Texture;
 import com.evacipated.cardcrawl.modthespire.lib.*;
+import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
+import com.megacrit.cardcrawl.actions.common.RelicAboveCreatureAction;
 import com.megacrit.cardcrawl.cards.DamageInfo;
 import com.megacrit.cardcrawl.core.AbstractCreature;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.localization.RelicStrings;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
+import com.megacrit.cardcrawl.powers.StrengthPower;
 import com.megacrit.cardcrawl.relics.AbstractRelic;
 import javassist.CtBehavior;
 import nearlmod.patches.CurseRelicPatch;
+import nearlmod.powers.AttackUpPower;
+
+import java.util.Iterator;
 
 public class TangibleTerror extends CustomRelic {
 
@@ -21,6 +27,7 @@ public class TangibleTerror extends CustomRelic {
     public static final String[] DESCRIPTIONS = relicStrings.DESCRIPTIONS;
     public static final Texture IMG = new Texture("resources/nearlmod/images/relics/tangibleterror.png");
     public static final Texture IMG_OUTLINE = new Texture("resources/nearlmod/images/relics/tangibleterror_p.png");
+
     public TangibleTerror() {
         super(ID, IMG, IMG_OUTLINE, CurseRelicPatch.CURSE, LandingSound.HEAVY);
     }
@@ -34,43 +41,21 @@ public class TangibleTerror extends CustomRelic {
     public AbstractRelic makeCopy() {
         return new TangibleTerror();
     }
-
-    @SpirePatch(clz = DamageInfo.class, method = "applyPowers")
-    public static class DamageInfoPatch {
-        @SpireInsertPatch(locator = Locator.class, localvars = {"tmp"})
-        public void Insert(DamageInfo _inst, AbstractCreature owner, AbstractCreature target, @ByRef float[] tmp) {
-            if (_inst.type == DamageInfo.DamageType.NORMAL && target.hasPower(TangibleTerror.ID)) {
-                tmp[0] *= 1.1F;
-                if (_inst.base != tmp[0]) {
-                    _inst.isModified = true;
-                }
-            }
+    public void atBattleStart() {
+        flash();
+        for (AbstractMonster m:AbstractDungeon.getMonsters().monsters) {
+            this.addToTop(new RelicAboveCreatureAction(m, this));
+            m.addPower(new AttackUpPower(m, 10));
         }
 
-        private static class Locator extends SpireInsertLocator {
-            @Override
-            public int[] Locate(CtBehavior ctBehavior) throws Exception {
-                Matcher.FieldAccessMatcher fieldAccessMatcher = new Matcher.FieldAccessMatcher(AbstractCreature.class, "powers");
-                return LineFinder.findInOrder(ctBehavior, fieldAccessMatcher);
-            }
-        }
+        AbstractDungeon.onModifyPower();
     }
 
-    @SpirePatch(clz = AbstractMonster.class, method = "calculateDamage")
-    public static class AbstractMonsterPatch {
-        @SpireInsertPatch(locator = Locator.class, localvars = {"tmp"})
-        public void Insert(AbstractMonster _inst, int dmg, @ByRef float[] tmp) {
-            if (AbstractDungeon.player.hasPower(TangibleTerror.ID)) {
-                tmp[0] *= 1.1F;
-            }
-        }
+    @Override
+    public void onSpawnMonster(AbstractMonster monster) {
+        flash();
+        monster.addPower(new AttackUpPower(monster,10));
 
-        private static class Locator extends SpireInsertLocator {
-            @Override
-            public int[] Locate(CtBehavior ctBehavior) throws Exception {
-                Matcher.FieldAccessMatcher fieldAccessMatcher = new Matcher.FieldAccessMatcher(AbstractMonster.class, "powers");
-                return LineFinder.findInOrder(ctBehavior, fieldAccessMatcher);
-            }
-        }
+        AbstractDungeon.onModifyPower();
     }
 }

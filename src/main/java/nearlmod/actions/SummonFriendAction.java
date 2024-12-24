@@ -10,6 +10,7 @@ import com.megacrit.cardcrawl.core.Settings;
 import nearlmod.orbs.*;
 import nearlmod.relics.LateLight;
 import nearlmod.relics.NormalPerson;
+import nearlmod.relics.OldRules;
 
 public class SummonFriendAction extends AbstractGameAction {
 
@@ -35,6 +36,12 @@ public class SummonFriendAction extends AbstractGameAction {
 
         if (summon.ID.equals(Viviana.ORB_ID) && AbstractDungeon.player.hasRelic(NormalPerson.ID)) {
             AbstractDungeon.player.getRelic(NormalPerson.ID).flash();
+            isDone = true;
+            return;
+        }
+
+        if (summon.ID.equals(Penance.ORB_ID) && AbstractDungeon.player.hasRelic(OldRules.ID)) {
+            AbstractDungeon.player.getRelic(OldRules.ID).flash();
             isDone = true;
             return;
         }

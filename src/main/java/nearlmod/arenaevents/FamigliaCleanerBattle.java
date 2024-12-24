@@ -31,7 +31,7 @@ public class FamigliaCleanerBattle extends AbstractArenaEvent {
     public FamigliaCleanerBattle() {
         super(NAME, DESCRIPTIONS[0], "resources/nearlmod/images/events/famigliacleanerbattle.png");
         this.imageEventText.setDialogOption(OPTIONS[0]);
-        this.imageEventText.setDialogOption(OPTIONS[1], CardLibrary.getCopy("Injury"), new Revenge());
+        this.imageEventText.setDialogOption(OPTIONS[1], new OldRules());
         noCardsInRewards = true;
     }
 

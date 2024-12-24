@@ -31,13 +31,12 @@ public class TheWillofSamiBattle extends AbstractArenaEvent {
     public TheWillofSamiBattle() {
         super(NAME, DESCRIPTIONS[0], "resources/nearlmod/images/events/thewillofsamibattle.png");
         this.imageEventText.setDialogOption(OPTIONS[0]);
-        this.imageEventText.setDialogOption(OPTIONS[1], CardLibrary.getCopy("Injury"), new ImaginaryFear());
+        this.imageEventText.setDialogOption(OPTIONS[1], new TangibleTerror());
         noCardsInRewards = true;
     }
 
     @Override
     protected void buttonEffect(int buttonPressed) {
-        //TODO：完全没改
         if (screen != CurScreen.INTRO) {
             openMap();
             return;

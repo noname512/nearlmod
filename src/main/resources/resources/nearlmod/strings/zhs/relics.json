@@ -60,8 +60,8 @@
     "FLAVOR": "或许你不是那光芒，但你亦曾，为守护它而拔剑。",
     "DESCRIPTIONS": ["每场战斗开始时，召唤薇薇安娜作为 #y伙伴 。"]
   },
-  "nearlmod:ChernobogMedal": {
-    "NAME": "切尔诺伯格警徽",
+  "nearlmod:UrsusStudentGroup": {
+    "NAME": "乌萨斯学生团",
     "FLAVOR": "她们还没有准备好，但她们想要走向明天。",
     "DESCRIPTIONS": ["战斗中，古米有 20% 的概率额外提供一张特别的伙伴牌。"]
   },
@@ -104,6 +104,6 @@
   "nearlmod:TangibleTerror": {
     "NAME": "恐怖实体",
     "FLAVOR": "当内心深处的负面情感成为实在的怪物……",
-    "DESCRIPTIONS": ["你受到的攻击伤害提高10%。"]
+    "DESCRIPTIONS": ["所有敌人的攻击提高10%。"]
   }
 }

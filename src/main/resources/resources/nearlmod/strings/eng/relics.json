@@ -60,8 +60,8 @@
     "FLAVOR": "Perhaps you are not the light itself, but once, you drew your sword to protect it.",
     "DESCRIPTIONS": ["At the start of each combat, summon Viviana as #yFriend ."]
   },
-  "nearlmod:ChernobogMedal": {
-    "NAME": "Chernobog Medal",
+  "nearlmod:UrsusStudentGroup": {
+    "NAME": "Ursus Student Group",
     "FLAVOR": "Even though they’re still not ready for it, they wish to walk towards tomorrow.",
     "DESCRIPTIONS": ["During combat, Gummy has 20% probability to provide an extra special #yFriend #yCard."]
   },
@@ -104,6 +104,6 @@
   "nearlmod:TangibleTerror": {
     "NAME": "Tangible Terror",
     "FLAVOR": "When the negative emotions buried deep within the heart become tangible monsters...",
-    "DESCRIPTIONS": ["Attack damage you take increases 10%."]
+    "DESCRIPTIONS": ["Enemy's attack increases 10%."]
   }
 }

@@ -15,6 +15,7 @@ import com.megacrit.cardcrawl.powers.RegenPower;
 import com.megacrit.cardcrawl.vfx.combat.DeckPoofEffect;
 import com.megacrit.cardcrawl.vfx.combat.InflameEffect;
 import nearlmod.NLMOD;
+import nearlmod.actions.AddCardsToDeckAction;
 import nearlmod.actions.EndBattleAction;
 import nearlmod.actions.ReduceMaxHpAction;
 import nearlmod.actions.SummonFriendAction;
@@ -36,7 +37,6 @@ public class Mephisto extends AbstractMonster {
     private final int regen_amt;
     int turn = 0;
     private final int para_turn;
-    // TODO: POSX POSY 没改
     public static final float[] POSX = new float[] { -100.0F, -300.0F, -500.0F, -700.0F};
     public static final float[] POSY = new float[] { -10.0F, 18.0F, 13.0F, -5.0F};
 
@@ -72,14 +72,8 @@ public class Mephisto extends AbstractMonster {
     }
 
     void gameOver() {
-        AbstractDungeon.actionManager.cleanCardQueue();
-        AbstractDungeon.effectList.add(new DeckPoofEffect(64.0F * Settings.scale, 64.0F * Settings.scale, true));
-        AbstractDungeon.effectList.add(new DeckPoofEffect((float)Settings.WIDTH - 64.0F * Settings.scale, 64.0F * Settings.scale, false));
-        AbstractDungeon.overlayMenu.hideCombatPanels();
         AbstractDungeon.getCurrRoom().smoked = true;
-        addToBot(new AddCardToDeckAction(new Parasite()));
-        addToBot(new AddCardToDeckAction(new Parasite()));
-        addToBot(new AddCardToDeckAction(new Parasite()));
+        addToBot(new AddCardsToDeckAction(new Parasite(), 3));
         addToBot(new EndBattleAction());
     }
 
