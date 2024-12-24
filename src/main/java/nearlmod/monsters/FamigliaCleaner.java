@@ -19,6 +19,7 @@ import nearlmod.orbs.AbstractFriend;
 import nearlmod.orbs.Penance;
 import nearlmod.powers.HiddenPower;
 import nearlmod.powers.HintPower;
+import nearlmod.relics.OldRules;
 
 public class FamigliaCleaner extends AbstractMonster {
     public static final String ID = "nearlmod:FamigliaCleaner";
@@ -93,6 +94,7 @@ public class FamigliaCleaner extends AbstractMonster {
         AbstractDungeon.effectList.add(new DeckPoofEffect((float)Settings.WIDTH - 64.0F * Settings.scale, 64.0F * Settings.scale, false));
         AbstractDungeon.overlayMenu.hideCombatPanels();
         AbstractDungeon.getCurrRoom().smoked = true;
+        AbstractDungeon.getCurrRoom().spawnRelicAndObtain(Settings.WIDTH / 2.0F, Settings.HEIGHT / 2.0F, new OldRules());
         addToBot(new EndBattleAction());
     }
 

@@ -16,6 +16,7 @@ import com.megacrit.cardcrawl.vfx.cardManip.ShowCardAndObtainEffect;
 import nearlmod.cards.AbstractNearlCard;
 import nearlmod.cards.GuardianOfTheLaw;
 import nearlmod.monsters.FamigliaCleaner;
+import nearlmod.relics.OldRules;
 import nearlmod.relics.Revenge;
 
 import java.util.ArrayList;
@@ -36,7 +37,6 @@ public class FamigliaCleanerBattle extends AbstractArenaEvent {
 
     @Override
     protected void buttonEffect(int buttonPressed) {
-        //TODO：完全没改
         if (screen != CurScreen.INTRO) {
             openMap();
             return;
@@ -66,8 +66,7 @@ public class FamigliaCleanerBattle extends AbstractArenaEvent {
                 this.imageEventText.updateBodyText(DESCRIPTIONS[1]);
                 imageEventText.updateDialogOption(0, OPTIONS[2]);
                 imageEventText.clearRemainingOptions();
-                AbstractDungeon.effectList.add(new ShowCardAndObtainEffect(new Injury(), Settings.WIDTH / 2.0F, Settings.HEIGHT / 2.0F));
-                AbstractDungeon.getCurrRoom().spawnRelicAndObtain(Settings.WIDTH / 2.0F, Settings.HEIGHT / 2.0F, new Revenge());
+                AbstractDungeon.getCurrRoom().spawnRelicAndObtain(Settings.WIDTH / 2.0F, Settings.HEIGHT / 2.0F, new OldRules());
                 openMap();
                 return;
         }

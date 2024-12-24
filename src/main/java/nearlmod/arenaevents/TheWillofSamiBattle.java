@@ -17,6 +17,7 @@ import nearlmod.monsters.TheWillOfSami;
 import nearlmod.relics.AmmasAffection;
 import nearlmod.relics.HandOfConqueror;
 import nearlmod.relics.ImaginaryFear;
+import nearlmod.relics.TangibleTerror;
 
 import static com.megacrit.cardcrawl.dungeons.AbstractDungeon.rareRelicPool;
 
@@ -75,8 +76,7 @@ public class TheWillofSamiBattle extends AbstractArenaEvent {
                 this.imageEventText.updateBodyText(DESCRIPTIONS[1]);
                 imageEventText.updateDialogOption(0, OPTIONS[2]);
                 imageEventText.clearRemainingOptions();
-                AbstractDungeon.effectList.add(new ShowCardAndObtainEffect(new Injury(), Settings.WIDTH / 2.0F, Settings.HEIGHT / 2.0F));
-                AbstractDungeon.getCurrRoom().spawnRelicAndObtain(Settings.WIDTH / 2.0F, Settings.HEIGHT / 2.0F, new ImaginaryFear());
+                AbstractDungeon.getCurrRoom().spawnRelicAndObtain(Settings.WIDTH / 2.0F, Settings.HEIGHT / 2.0F, new TangibleTerror());
                 openMap();
                 return;
         }

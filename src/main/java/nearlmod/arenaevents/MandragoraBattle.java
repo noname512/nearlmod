@@ -25,7 +25,7 @@ public class MandragoraBattle extends AbstractArenaEvent {
     public MandragoraBattle() {
         super(NAME, DESCRIPTIONS[0], "resources/nearlmod/images/events/mandragorabattle.png");
         this.imageEventText.setDialogOption(OPTIONS[0]);
-        this.imageEventText.setDialogOption(OPTIONS[1], CardLibrary.getCopy("Normality"), new NormalPerson());
+        this.imageEventText.setDialogOption(OPTIONS[1], CardLibrary.getCopy("Normality"));
         noCardsInRewards = true;
     }
 
@@ -63,7 +63,7 @@ public class MandragoraBattle extends AbstractArenaEvent {
         imageEventText.updateDialogOption(0, OPTIONS[3]);
         imageEventText.clearRemainingOptions();
         AbstractDungeon.effectList.add(new ShowCardAndObtainEffect(new Normality(), Settings.WIDTH / 2.0F, Settings.HEIGHT / 2.0F));
-        AbstractDungeon.getCurrRoom().spawnRelicAndObtain(Settings.WIDTH / 2.0F, Settings.HEIGHT / 2.0F, new NormalPerson());
+        AbstractDungeon.effectList.add(new ShowCardAndObtainEffect(new Normality(), Settings.WIDTH / 2.0F, Settings.HEIGHT / 2.0F));
         openMap();
     }
 }

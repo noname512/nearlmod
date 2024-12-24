@@ -15,6 +15,8 @@ import nearlmod.actions.SummonFriendAction;
 import nearlmod.cards.special.IceCone;
 import nearlmod.orbs.Aurora;
 import nearlmod.powers.ShelteredEnemy;
+import nearlmod.relics.OldRules;
+import nearlmod.relics.TangibleTerror;
 
 public class TheWillOfSami extends AbstractMonster {
     public static final String ID = "nearlmod:TheWillOfSami";
@@ -72,6 +74,7 @@ public class TheWillOfSami extends AbstractMonster {
         AbstractDungeon.effectList.add(new DeckPoofEffect((float)Settings.WIDTH - 64.0F * Settings.scale, 64.0F * Settings.scale, false));
         AbstractDungeon.overlayMenu.hideCombatPanels();
         AbstractDungeon.getCurrRoom().smoked = true;
+        AbstractDungeon.getCurrRoom().spawnRelicAndObtain(Settings.WIDTH / 2.0F, Settings.HEIGHT / 2.0F, new TangibleTerror());
         addToBot(new EndBattleAction());
     }
 
