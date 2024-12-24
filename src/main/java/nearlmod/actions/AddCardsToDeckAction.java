@@ -18,7 +18,7 @@ public class AddCardsToDeckAction extends AbstractGameAction {
 
     public void update() {
         for (int i = 0; i < number; i++) {
-            AbstractDungeon.effectList.add(new ShowCardAndObtainEffect(this.cardToObtain.makeStatEquivalentCopy(), (float)Settings.WIDTH / 2.0F + 175.0F * (i * 2 - number - 1), (float)Settings.HEIGHT / 2.0F));
+            AbstractDungeon.effectList.add(new ShowCardAndObtainEffect(this.cardToObtain.makeStatEquivalentCopy(), (float)Settings.WIDTH / 2.0F + 175.0F * (i * 2 - number + 1), (float)Settings.HEIGHT / 2.0F));
         }
         this.isDone = true;
     }
