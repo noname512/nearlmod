@@ -95,5 +95,15 @@
     "NAME": "凝血缠身",
     "FLAVOR": "仿佛血液的液体连成粘稠的丝线，缠上四肢，流淌在体内的鲜血仿佛与同胞呼应，产生刺痛。",
     "DESCRIPTIONS": ["每场战斗开始时，额外召唤一个凝血之刃作为敌人。"]
+  },
+  "nearlmod:OldRules": {
+    "NAME": "亘古法则",
+    "FLAVOR": "长久不变的法则怎可撼动？",
+    "DESCRIPTIONS": ["你无法再召唤斥罪作为 #y伙伴 。"]
+  },
+  "nearlmod:TangibleTerror": {
+    "NAME": "恐怖实体",
+    "FLAVOR": "当内心深处的负面情感成为实在的怪物……",
+    "DESCRIPTIONS": ["你受到的攻击伤害提高10%。"]
   }
 }
