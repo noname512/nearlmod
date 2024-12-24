@@ -198,7 +198,7 @@ public class ArenaRoom extends AbstractRoom {
     public static class RenderRewardScreenPatch {
         @SpireInsertPatch(rloc = 2)
         public static SpireReturn<?> Insert(CombatRewardScreen __instance, SpriteBatch sb, float ___tipY) {
-            if (AbstractDungeon.getCurrRoom() instanceof ArenaRoom) {
+            if ((AbstractDungeon.getCurrRoom() instanceof ArenaRoom) && (CharacterSettingPatch.curTeam == 0)) {
                 if (enterTimes <= 5) {
                     FontHelper.renderFontCentered(sb, FontHelper.panelNameFont, TEXT[enterTimes + 2], Settings.WIDTH / 2.0F, ___tipY, Color.LIGHT_GRAY);
                     for (AbstractGameEffect e : __instance.effects)
@@ -206,6 +206,7 @@ public class ArenaRoom extends AbstractRoom {
                     return SpireReturn.Return();
                 }
             }
+            // TODO: else if ((AbstractDungeon.getCurrRoom() instanceof ArenaRoom) && (CharacterSettingPatch.curTeam == 1)) {
             return SpireReturn.Continue();
         }
     }
