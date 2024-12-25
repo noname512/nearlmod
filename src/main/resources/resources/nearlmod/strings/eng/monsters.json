@@ -149,12 +149,15 @@
   "nearlmod:FamigliaCleaner": {
     "NAME": "Famiglia Cleaner",
     "MOVES": [],
-    "DIALOG": []
+    "DIALOG": ["Crap, the Cleaner has disappeared into the shadows again, we have to block him!"]
   },
   "nearlmod:Mandragora": {
     "NAME": "Mandragora",
     "MOVES": ["Mandragora's Gaze"],
-    "DIALOG": []
+    "DIALOG": [
+      "It's people like you I hate. You have a decent family background, and you think that gives you the right to trample us lot under your feet–",
+      "What could be better than watching you kneel before me?"
+    ]
   },
   "nearlmod:TheWillOfSami": {
     "NAME": "The Will of Sami",

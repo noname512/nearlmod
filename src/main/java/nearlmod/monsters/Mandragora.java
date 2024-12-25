@@ -1,6 +1,7 @@
 package nearlmod.monsters;
 
 import com.megacrit.cardcrawl.actions.ClearCardQueueAction;
+import com.megacrit.cardcrawl.actions.animations.TalkAction;
 import com.megacrit.cardcrawl.actions.common.*;
 import com.megacrit.cardcrawl.actions.unique.CanLoseAction;
 import com.megacrit.cardcrawl.cards.DamageInfo;
@@ -57,6 +58,8 @@ public class Mandragora extends AbstractMonster {
             addToBot(new SummonFriendAction(new Horn()));
         }
         isStage2 = false;
+        addToBot(new TalkAction(this, DIALOG[0], 3.0F, 3.0F));
+        addToBot(new TalkAction(this, DIALOG[1], 0.3F, 3.0F));
     }
     @Override
     public void takeTurn() {

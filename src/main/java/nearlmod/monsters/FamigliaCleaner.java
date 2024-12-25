@@ -1,6 +1,7 @@
 package nearlmod.monsters;
 
 import com.evacipated.cardcrawl.mod.stslib.patches.core.AbstractCreature.TempHPField;
+import com.megacrit.cardcrawl.actions.animations.TalkAction;
 import com.megacrit.cardcrawl.actions.common.*;
 import com.megacrit.cardcrawl.actions.utility.WaitAction;
 import com.megacrit.cardcrawl.cards.DamageInfo;
@@ -59,6 +60,7 @@ public class FamigliaCleaner extends AbstractMonster {
         addToBot(new SummonFriendAction(new Penance()));
         if (AbstractDungeon.ascensionLevel < 15)
             addToBot(new MakeTempCardInHandAction(new BlockCard()));
+        addToBot(new TalkAction(AbstractDungeon.player, DIALOG[0], 0.3F, 3.0F));
     }
 
     public void blocked()
