@@ -703,7 +703,7 @@
     },
     "nearlmod:CheeseFondue": {
         "NAME": "Cheese Fondue",
-        "DESCRIPTION": "Gain !B! Block. If Aurora is present, remove her nearlmod:Frigid_Respite.",
+        "DESCRIPTION": "Gain !B! Block. If Aurora is present, remove her nearlmod:Frigid_Respite and get a nearlmod:Friend_Card from her.",
         "UPGRADE_DESCRIPTION": ""
     },
     "nearlmod:WhatSheSaw": {
@@ -733,7 +733,7 @@
     },
     "nearlmod:FrigidRespite": {
         "NAME": "Frigid Respite",
-        "DESCRIPTION": " nearlmod:Friend_Card. NL Aurora will not provide nearlmod:Friend_Card. She will apply !nearlmod:M2! Block to you at the end of each turn instead.",
+        "DESCRIPTION": " nearlmod:Friend_Card. NL Gain !M! Block. NL Aurora will not provide nearlmod:Friend_Card. She will apply !nearlmod:M2! Block to you at the start of each turn instead.",
         "UPGRADE_DESCRIPTION": ""
     },
 

@@ -51,8 +51,10 @@ public class CheeseFondue extends AbstractNearlCard {
     public void use(AbstractPlayer p, AbstractMonster m) {
         addToBot(new GainBlockAction(p, p, block));
         for (AbstractOrb o : p.orbs)
-            if (o instanceof Aurora)
+            if (o instanceof Aurora) {
                 ((Aurora) o).endRespite();
+                o.onStartOfTurn();
+            }
     }
 
     @Override

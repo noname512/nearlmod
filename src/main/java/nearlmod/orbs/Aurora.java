@@ -65,10 +65,6 @@ public class Aurora extends AbstractFriend {
         if (curStatus == status.NORMAL) {
             addToBot(new AddFriendCardToHandAction(getRandomCard(upgraded, uniqueUsed)));
         }
-    }
-
-    @Override
-    public void onEndOfTurn() {
         if (curStatus == status.RESPITE) {
             addToBot(new GainBlockAction(AbstractDungeon.player, secondVal + trustAmount));
         }

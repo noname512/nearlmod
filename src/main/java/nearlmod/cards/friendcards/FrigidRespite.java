@@ -1,5 +1,6 @@
 package nearlmod.cards.friendcards;
 
+import com.megacrit.cardcrawl.actions.common.GainBlockAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
@@ -24,11 +25,13 @@ public class FrigidRespite extends AbstractFriendCard {
         super(ID, NAME, IMG_PATH, COST, DESCRIPTION,
                 CardType.SKILL, AbstractCardEnum.FRIEND_BLUE,
                 CardRarity.SPECIAL, CardTarget.SELF, "nearlmod:Aurora");
+        magicNumber = baseMagicNumber = BLOCK_GAIN;
         secondMagicNumber = baseSecondMagicNumber = BLOCK_GAIN;
     }
 
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
+        addToBot(new GainBlockAction(p, magicNumber));
         for (AbstractOrb o : p.orbs)
             if (o instanceof Aurora)
                 ((Aurora) o).startRespite(secondMagicNumber);
@@ -43,6 +46,7 @@ public class FrigidRespite extends AbstractFriendCard {
     public void upgrade() {
         if (!upgraded) {
             upgradeName();
+            upgradeMagicNumber(UPGRADE_PLUS_BLOCK);
             upgradeSecondMagicNumber(UPGRADE_PLUS_BLOCK);
         }
     }

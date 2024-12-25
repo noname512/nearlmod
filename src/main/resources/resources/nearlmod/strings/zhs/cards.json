@@ -664,7 +664,7 @@
     },
     "nearlmod:FallingShield": {
         "NAME": "坠落的盾",
-        "DESCRIPTION": "消耗所有的 stslib:临时生命 。NL 造成等量伤害 !M! 次，如果号角在场，额外造成 !nearlmod:M2! 次。否则召唤号角作为 nearlmod:伙伴 。",
+        "DESCRIPTION": "消耗所有的 stslib:临时生命 。 NL 造成等量伤害 !M! 次，如果号角在场，额外造成 !nearlmod:M2! 次。否则召唤号角作为 nearlmod:伙伴 。",
         "UPGRADE_DESCRIPTION": ""
     },
     "nearlmod:Bloodbath": {
@@ -703,7 +703,7 @@
     },
     "nearlmod:CheeseFondue": {
         "NAME": "奶酪火锅",
-        "DESCRIPTION": "获得 !B! 点 格挡。如果极光在场，解除她的 nearlmod:低温休憩 状态。",
+        "DESCRIPTION": "获得 !B! 点 格挡。如果极光在场，解除她的 nearlmod:低温休憩 状态并获得一张她的 nearlmod:伙伴牌 。",
         "UPGRADE_DESCRIPTION": ""
     },
     "nearlmod:WhatSheSaw": {
@@ -733,7 +733,7 @@
     },
     "nearlmod:FrigidRespite": {
         "NAME": "低温休憩",
-        "DESCRIPTION": " nearlmod:伙伴牌 。 NL 极光不再提供 nearlmod:伙伴牌 ，而是回合结束时给予你 !nearlmod:M2! 点 格挡 。",
+        "DESCRIPTION": " nearlmod:伙伴牌 。 NL 获得 !M! 点格挡。 NL 极光不再提供 nearlmod:伙伴牌 ，而是回合开始时给予你 !nearlmod:M2! 点 格挡 。",
         "UPGRADE_DESCRIPTION": ""
     },
 
