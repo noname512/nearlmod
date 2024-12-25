@@ -51,7 +51,6 @@ public class Salvo extends AbstractFriendCard {
         if (!upgraded) {
             upgradeName();
             upgradeMagicNumber(UPGRADE_DMG);
-            rawDescription = UPGRADE_DESCRIPTION;
             initializeDescription();
         }
     }
