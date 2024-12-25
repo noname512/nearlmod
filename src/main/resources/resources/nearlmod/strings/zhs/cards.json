@@ -728,12 +728,12 @@
     },
     "nearlmod:HomelandProtector": {
         "NAME": "固守家园",
-        "DESCRIPTION": " nearlmod:伙伴牌 。 NL 获得 !M! 点格挡，下回合开始时失去1点能量。",
+        "DESCRIPTION": " nearlmod:伙伴牌 。 NL 获得 !M! 点 格挡 ，下回合开始时失去1点 [E] 。",
         "UPGRADE_DESCRIPTION": ""
     },
     "nearlmod:FrigidRespite": {
         "NAME": "低温休憩",
-        "DESCRIPTION": " nearlmod:伙伴牌 。 NL 获得 !M! 点格挡。 NL 极光不再提供 nearlmod:伙伴牌 ，而是回合开始时给予你 !nearlmod:M2! 点 格挡 。",
+        "DESCRIPTION": " nearlmod:伙伴牌 。 NL 获得 !M! 点 格挡 。 NL 极光不再提供 nearlmod:伙伴牌 ，而是回合开始时给予你 !nearlmod:M2! 点 格挡 。",
         "UPGRADE_DESCRIPTION": ""
     },
 
