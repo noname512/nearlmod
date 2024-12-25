@@ -33,6 +33,7 @@ public class ArtificialSnowfall extends AbstractFriendCard {
                 CardType.ATTACK, AbstractCardEnum.FRIEND_BLUE,
                 CardRarity.SPECIAL, CardTarget.ENEMY, "nearlmod:Aurora");
         magicNumber = baseMagicNumber = BASIC_DAMAGE;
+        secondMagicNumber = baseSecondMagicNumber = MathUtils.floor(baseMagicNumber * damage_scale);
     }
 
     @Override
@@ -116,6 +117,7 @@ public class ArtificialSnowfall extends AbstractFriendCard {
             upgradeName();
             damage_scale = 3.3F;
             upgradeMagicNumber(UPG_BASIC);
+            upgradeSecondMagicNumber(9);    // 36 - 27 = 9; 该数字仅供显示
             rawDescription = UPGRADE_DESCRIPTION;
             initializeDescription();
         }
