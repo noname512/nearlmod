@@ -74,6 +74,14 @@ public class RunPathPatch {
                         return SpireReturn.Return(uiStrings().TEXT[9]);
                     case WanderingKnightBattle.ID:
                         return SpireReturn.Return(uiStrings().TEXT[10]);
+                    case MephistoBattle.ID:
+                        return SpireReturn.Return(uiStrings().TEXT[16]);
+                    case FamigliaCleanerBattle.ID:
+                        return SpireReturn.Return(uiStrings().TEXT[17]);
+                    case MandragoraBattle.ID:
+                        return SpireReturn.Return(uiStrings().TEXT[18]);
+                    case TheWillofSamiBattle.ID:
+                        return SpireReturn.Return(uiStrings().TEXT[19]);
                 }
             }
             return SpireReturn.Continue();
