@@ -21,9 +21,9 @@ public class Revolution extends AbstractNearlCard {
     public static final String UPGRADE_DESCRIPTION = cardStrings.UPGRADE_DESCRIPTION;
     public static final String IMG_PATH = "resources/nearlmod/images/cards/revolution.png";
     private static final int COST = 2;
-    private static final int LIGHT_AMT = 15;
+    private static final int LIGHT_AMT = 18;
     private static final int CARD_AMT = 2;
-    private static final int UPGRADE_PLUS_LIGHT = 5;
+    private static final int UPGRADE_PLUS_LIGHT = 7;
 
     public Revolution() {
         super(ID, NAME, IMG_PATH, COST, DESCRIPTION,

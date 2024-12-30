@@ -2,9 +2,11 @@ package nearlmod.powers;
 
 import basemod.interfaces.CloneablePowerInterface;
 import com.badlogic.gdx.graphics.g2d.TextureAtlas;
+import com.megacrit.cardcrawl.actions.AbstractGameAction;
 import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
 import com.megacrit.cardcrawl.actions.common.RemoveSpecificPowerAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
+import com.megacrit.cardcrawl.cards.DamageInfo;
 import com.megacrit.cardcrawl.core.AbstractCreature;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
@@ -55,7 +57,7 @@ public class StoicAtonementPower extends AbstractPower implements CloneablePower
         }
         if (notPlayedAttack) {
             addToTop(new ApplyPowerAction(owner, owner, new Sheltered(owner)));
-            addToTop(new PureDamageAllEnemiesAction(owner, amount, Penance.ORB_ID + AbstractFriendCard.damageSuffix));
+            addToTop(new PureDamageAllEnemiesAction(owner, amount, Penance.ORB_ID + AbstractFriendCard.damageSuffix, AbstractGameAction.AttackEffect.SLASH_HORIZONTAL, DamageInfo.DamageType.THORNS));
         }
         addToBot(new RemoveSpecificPowerAction(owner, owner, this));
     }

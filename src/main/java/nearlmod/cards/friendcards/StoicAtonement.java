@@ -42,7 +42,7 @@ public class StoicAtonement extends AbstractFriendCard {
     public void upgrade() {
         if (!upgraded) {
             upgradeName();
-            upgradeSecondMagicNumber(UPGRADE_PLUS_DMG);
+            upgradeMagicNumber(UPGRADE_PLUS_DMG);
         }
     }
 }
