@@ -10,6 +10,7 @@ import com.megacrit.cardcrawl.rewards.RewardItem;
 import com.megacrit.cardcrawl.saveAndContinue.SaveAndContinue;
 import com.megacrit.cardcrawl.saveAndContinue.SaveFile;
 import javassist.CtBehavior;
+import nearlmod.arenaevents.CorruptedWitheredBattle_SP;
 import nearlmod.arenaevents.LeftHandBattle;
 import nearlmod.cards.AbstractNearlCard;
 import nearlmod.cards.SwallowLight;
@@ -45,6 +46,9 @@ public class SaveData {
                             else
                                 SaveData.specialRewardCard = "nearlmod:LeftHandBattle";
                         }
+                }
+                if (AbstractDungeon.getCurrRoom() instanceof ArenaRoom && AbstractDungeon.getCurrRoom().event instanceof CorruptedWitheredBattle_SP) {
+                    SaveData.specialRewardCard = "nearlmod:CorruptedWitheredBattle_SP";
                 }
             }
             SaveData.logger.info("Saved arena enter times: " + SaveData.arenaEnterTimes);
@@ -130,6 +134,10 @@ public class SaveData {
                         break;
                     case "nearlmod:LeftHandBattle":
                         AbstractNearlCard.addSpecificCardsToReward(LeftHandBattle.getCardsWithRarity(AbstractCard.CardRarity.UNCOMMON));
+                        break;
+                    case "nearlmod:CorruptedWitheredBattle_SP":
+                        AbstractNearlCard.addSpecificCardsToReward(new Beginning());
+                        AbstractNearlCard.addSpecificCardsToReward(new BlemishinesFaintLight());
                         break;
                 }
                 SaveData.logger.info("Special reward loaded.");
