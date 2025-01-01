@@ -23,10 +23,10 @@ public class TrialOfThorns extends AbstractFriendCard {
     public static final String UPGRADE_DESCRIPTION = cardStrings.UPGRADE_DESCRIPTION;
     public static final String IMG_PATH = "resources/nearlmod/images/cards/trialofthorns.png";
     private static final int COST = 3;
-    private static final int TEMP_HP = 18;
-    private static final int ATTACK_DMG = 8;
-    private static final int UPGRADE_PLUS_HP = 6;
-    private static final int UPGRADE_PLUS_DMG = 2;
+    private static final int TEMP_HP = 22;
+    private static final int ATTACK_DMG = 12;
+    private static final int UPGRADE_PLUS_HP = 8;
+    private static final int UPGRADE_PLUS_DMG = 5;
 
     public TrialOfThorns() {
         super(ID, NAME, IMG_PATH, COST, DESCRIPTION,
